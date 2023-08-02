@@ -32,6 +32,9 @@ $email->addTo($emailRecuperacion/*, $_SESSION['nombreA']*/);
         echo 'Caught exception: '. $e->getMessage() ."\n";
     }
 
+    header('Location: correoContrasena.php');
+} else{
+    echo("No jalo :c");
 }
 
 /*
@@ -52,6 +55,5 @@ if(isset($_POST['emailRec'])) {
 } else {
     echo "Error: No se pudieron enviar los datos del formulario";
 }*/
-// --------------------TEMPORAL------------------
-header('Location: ../recuperacionCuenta.php');
+
 ?>
