@@ -22,10 +22,6 @@
 				<input class="input" type="password" name="repassA" placeholder="***********" required>
 			</div>
 			<div>
-				<!-- <p style="margin-bottom: 7px;"></p> -->
-				<p><a href="olvidarContra.php">No me llegó ningún correo</a></p>
-			</div>
-			<div>
 				<input class="submit" type="submit" value="Aceptar">
 			</div>
 		</form>
