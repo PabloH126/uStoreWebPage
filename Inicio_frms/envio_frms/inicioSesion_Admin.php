@@ -50,7 +50,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
 
     if ($httpStatusCode == 200) {
         if ($data !== null) {
-            $ExpiryTime = time() + (20);
+            $ExpiryTime = time() + (60 * 60 * 24);
             setcookie('SessionData', $response, $ExpiryTime, '/');
 
             //echo $_COOKIE['SessionData'];
