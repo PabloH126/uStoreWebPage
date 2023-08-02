@@ -12,6 +12,11 @@
         $params["domain"],
         $params["secure"],
         $params["httponly"]);
+
+        if(isset($_COOKIE['SessionData'])) 
+        {
+            setcookie('SessionData', '', time() - 42000, '/');
+        }
     }
 
     session_unset();
