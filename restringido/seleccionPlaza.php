@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_COOKIE['SessionData']))
+{
+	header("location: ../index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
