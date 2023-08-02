@@ -7,6 +7,31 @@ session_start();
 if(isset($_SESSION['emailRec'])){
     $emailRecuperacion = $_SESSION['emailRec'];
 
+    $templateId = "d-018214066b7d401f965a271dd1dd520b";
+    /*------ El nombre lo pasa la api -------*/
+    $datos = array(
+        'name' = $_SESSION['nombreA'];
+    );
+
+    $email = new \SendGrid\Mail\Mail();
+    $email->setFrom("ustoreceo@gmail.com", "uStore");
+    $email->setSubject("Recuperacion de cuenta");
+    $email->addTo($emailRecuperacion, $_SESSION['nombreA']);
+    $email->setTemplateId($templateId);
+    $email->addDynamicTemplateDatas($datos);
+
+    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+
+    try {
+        $response = $sendgrid->send($email);
+        $response->statusCode() . "\n";
+        $response->headers();
+        $response->body() . "\n";
+        
+    } catch (Exception $e) {
+        echo 'Caught exception: '. $e->getMessage() ."\n";
+    }
+
 }
 
 /*
