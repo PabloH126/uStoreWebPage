@@ -53,9 +53,9 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             $ExpiryTime = time() + (2 * 60 * 60);
             setcookie('SessionData', $response, $ExpiryTime, '/');
 
-            echo $_COOKIE['SessionData'];
+            //echo $_COOKIE['SessionData'];
             // redirigir al usuario a la página de inicio
-            //header("location: ../../restringido/seleccionPlaza.php");
+            header("location: ../../restringido/seleccionPlaza.php");
             exit;
         } else {
             echo "Error al decodificar JSON";
