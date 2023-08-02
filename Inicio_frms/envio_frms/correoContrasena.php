@@ -11,12 +11,13 @@ if(isset($_SESSION['emailRec'])){
     /*------ El nombre lo pasa la api -------*/
     /*$datos = array(
         'name' = $_SESSION['nombreA'];
+        token c:
     );*/
 
     $email = new \SendGrid\Mail\Mail();
     $email->setFrom("ustoreceo@gmail.com", "uStore");
     $email->setSubject("Recuperacion de cuenta");
-$email->addTo($emailRecuperacion/*, $_SESSION['nombreA']*/);
+    $email->addTo($emailRecuperacion/*, $_SESSION['nombreA']*/);
     $email->setTemplateId($templateId);
     /*$email->addDynamicTemplateDatas($datos);*/
 
