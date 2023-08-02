@@ -1,0 +1,44 @@
+#content{
+	height: 96%;
+}
+
+#animacion{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	transform: translate(0%, -88%);
+	z-index: 3;
+	backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0);
+	animation: desvanecer 1s 1 forwards linear;
+}
+
+@keyframes desvanecer{
+	0%{
+	}
+
+	90%{
+		backdrop-filter: blur(0px);
+	}
+
+	100%{
+		backdrop-filter: blur(0px);
+		z-index: -1;
+	}
+}
+
+.formulario__grupo-incorrecto .formulario__label{
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .input{
+	border-bottom: 1px solid #bb2929;
+}
+
+.formulario__grupo-incorrecto .input:focus{
+	border-bottom: 2.5px solid #bb2929;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}

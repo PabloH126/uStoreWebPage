@@ -1,0 +1,47 @@
+header .content .final{
+	display: grid;
+	width: 60%;
+	grid-template-columns: repeat(6, 1fr);
+	margin: 0;
+}
+
+header .content .final #ultimo,
+header .content .final .bottn{
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	height: 76%;
+}
+
+header .content .final #ultimo:hover,
+header .content .final .bottn:hover{
+	background: white;
+	transition-duration: 0.5s;
+}
+
+header .content .final #ultimo{
+	justify-content: right;
+	padding: 0 20px 0 0;
+	width: 94px;
+	margin: 0 0 0 42px;
+}
+
+header .content .final #ultimo img:hover,
+header .content .final .bottn img:hover{
+	filter: none;
+	transition-duration: 0.5s;
+}
+
+header .content .final #ultimo img,
+header .content .final .bottn img{
+	filter: saturate(0) brightness(3);
+}
+
+
+header .content .final a{
+	height: 60%;
+}
+
+header .content .final #ultimo a{
+	height: 70%;
+}

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/78bd8741-5ab0-4ce0-8bd5-c0f80620a48f/resourceGroups/uStore/providers/Microsoft.Web/sites/ustoree",
+    "appService.deploySubpath": "."
+}

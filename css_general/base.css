@@ -1,0 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+}
+
+header{
+	height: 12%;
+	background-color: #007096;
+}
+
+header .content{
+	height: 100%;
+	justify-content: space-between;
+	display: flex;
+}
+
+header .content #logo{
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+}
+
+header .content #logo img{
+	height: 100%;
+}
+
+header .content .final{
+	display: inline-flex;
+	height: 100%;
+	margin-right: 10px;
+}
+
+header .content .final #ultimo{
+	height: 100%;
+	align-items: center;
+	display: flex;
+}
+
+header .content .final a{
+	height: 86%;
+}
+
+header .content .final img{
+	height: 100%;
+}

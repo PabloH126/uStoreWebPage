@@ -1,0 +1,15 @@
+h1{
+	font-size: 2em;
+	margin: 10px 0 0;
+}
+
+label{
+	margin: 35px 0 20px;
+	font-size: 1.05em;
+	cursor: default;
+}
+
+.input{
+	margin-bottom: 40px;
+	font-size: 1.2em;
+}

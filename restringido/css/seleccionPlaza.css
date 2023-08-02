@@ -1,0 +1,53 @@
+.content{
+	font-family: 'Golos Text', sans-serif;
+	text-align: center;
+}
+
+h1{
+	font-size: 5em;
+	color: #00455c;
+	margin: 35px;
+}
+
+.content .lista {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: 80%;
+	margin: 5px auto; 
+}
+
+.content .lista .item{
+	display: inline-block;
+	background-color: white;
+	border-radius: 20px;
+	text-align: center;
+	height: 250px;
+	width: 190px;
+	box-shadow: 4px 5px 10px 2px #dfdfdf;
+	margin: 16px;
+}
+
+.content .lista .item .logo{
+	display: block;
+	border-radius: 20px;
+	margin: 10px auto;
+}
+
+.content .lista .item .nombre{
+	font-size: 1.25em;
+	font-family: 'Prata', serif;
+	display: block;
+	margin: 10px 0 4px;
+}
+
+.content .lista .item .direccion,
+.content .lista .item .horario{
+	font-family: arial;
+	font-size: 0.9em;
+	margin: 8px;
+	display: block;
+}
+
+.content .lista .item .horario{
+	margin-top: 2px;
+}
