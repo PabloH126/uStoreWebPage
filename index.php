@@ -55,7 +55,7 @@ session_start();
 					</div>
 				</div>
 				<label class="checkbox">
-					<input type="checkbox" checked="checked" name="rememberA" value="true">
+					<input type="checkbox" checked="checked" name="rememberA">
 					Recordarme
 				</label>
 
