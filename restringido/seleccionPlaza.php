@@ -18,6 +18,7 @@
 			<?php
 				if(isset($_SESSION['nombre']))
 				{
+					echo $_SESSION['nombre'];
 					$nombre = $_SESSION['nombre'];
 			?>
 					<h3>Bienvenido, <?php echo $nombre ?></h3>
