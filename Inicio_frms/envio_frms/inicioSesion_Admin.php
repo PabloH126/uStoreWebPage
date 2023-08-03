@@ -5,7 +5,14 @@ session_start();
 if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
     $email = $_POST['emailAL'];
     $pass = $_POST['passAL'];
-    $Remember = $_POST['rememberA'];
+    if(isset($_POST['rememberA']))
+    {
+        $Remember = true;
+    }
+    else
+    {
+        $Remember = false;
+    }
     $passEncryptIngres = md5(md5($pass));
 
     $ch = curl_init();
