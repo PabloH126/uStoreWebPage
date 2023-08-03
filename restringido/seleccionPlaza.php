@@ -1,10 +1,3 @@
-<?php
-session_start();
-if(!isset($_COOKIE['SessionData']))
-{
-	header("location: ../index.php");
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -17,16 +10,15 @@ if(!isset($_COOKIE['SessionData']))
 </head>
 
 <body>
+	<?php require("security.php"); ?>
 	<?php require("templates/template.header_cs.php") ?>
 	<div class="content">
 		<h1>Selección de plaza</h1>
 		
 			<?php
-				if(isset($_COOKIE['SessionData']))
+				if(isset($_SESSION['nombre']))
 				{
-					$data = json_decode($_COOKIE['SessionData'], true);
-
-					$nombre = $data['primerNombre'];
+					$nombre = $_SESSION['nombre'];
 			?>
 					<h3>Bienvenido, <?php echo $nombre ?></h3>
 			<?php

@@ -57,22 +57,20 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
 
     if ($httpStatusCode == 200) {
         if ($data !== null) {
-            /*if($Remember == 1)
+            if($Remember == 1)
             {
                 $ExpiryTime = time() + (60);
             }
             else
             {
                 $ExpiryTime = time() + (20);
-            }*/
-
-            $ExpiryTime = time() + (20);
+            }
             
             setcookie('SessionToken', $response, $ExpiryTime, '/');
 
-            echo $_COOKIE['SessionData'];
+            //echo $_COOKIE['SessionToken'];
             // redirigir al usuario a la página de inicio
-            //header("location: ../../restringido/seleccionPlaza.php");
+            header("location: ../../restringido/seleccionPlaza.php");
             exit;
         } else {
             echo "Error al decodificar JSON";
