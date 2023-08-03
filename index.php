@@ -38,7 +38,7 @@ session_start();
 		
 		<!--LOGIN DE ADMINISTRADORES-->
 		<div class="form">
-			<form action="Inicio_frms/envio_frms/inicioSesion_Admin.php" method="post" id="InicioSesionAdmin">
+			<form action="restringido/security.php" method="post" id="InicioSesionAdmin">
 				<h1>Iniciar sesión</h1>
 				<div>
 					<span class="material-symbols-outlined">mail</span>
