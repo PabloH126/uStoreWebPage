@@ -7,11 +7,11 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
     $pass = $_POST['passAL'];
     if(isset($_POST['rememberA']))
     {
-        $Remember = true;
+        $Remember = "true";
     }
     else
     {
-        $Remember = false;
+        $Remember = "false";
     }
     $passEncryptIngres = md5(md5($pass));
 
