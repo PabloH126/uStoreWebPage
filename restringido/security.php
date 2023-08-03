@@ -13,4 +13,8 @@ $payload = json_decode($payload);
 $_SESSION['email'] = $payload->email;
 $_SESSION['nombre'] = $payload->name;
 $_SESSION['id'] = $payload->sub;
+
+echo $_SESSION['email'];
+echo $_SESSION['nombre'];
+echo $_SESSION['id'];
 ?>
