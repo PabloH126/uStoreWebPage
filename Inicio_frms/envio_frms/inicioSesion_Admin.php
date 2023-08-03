@@ -5,13 +5,13 @@ session_start();
 if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
     $email = $_POST['emailAL'];
     $pass = $_POST['passAL'];
-    $Remember = $_POST['rememberA'];
+    $Remember = isset($_POST['rememberA']) && $_POST['rememberA'] == 'on' ? true : false;
     $passEncryptIngres = md5(md5($pass));
 
     $ch = curl_init();
 
     // Configura la URL de la API
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/AdminsTienda/Login");
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Login/AdminAuthenticate");
     // Configura el cURL para indicar una solicitud POST
     curl_setopt($ch, CURLOPT_POST, 1);
     // Configura cURL para devolver el resultado en lugar de imprimirlo
@@ -50,12 +50,20 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
 
     if ($httpStatusCode == 200) {
         if ($data !== null) {
-            $ExpiryTime = time() + (60 * 60 * 24);
-            setcookie('SessionData', $response, $ExpiryTime, '/');
+            if($Remember == true)
+            {
+                $ExpiryTime = time() + (60);
+            }
+            else
+            {
+                $ExpiryTime = time() + (20);
+            }
+            
+            setcookie('SessionToken', $response, $ExpiryTime, '/');
 
-            //echo $_COOKIE['SessionData'];
+            echo $_COOKIE['SessionData'];
             // redirigir al usuario a la página de inicio
-            header("location: ../../restringido/seleccionPlaza.php");
+            //header("location: ../../restringido/seleccionPlaza.php");
             exit;
         } else {
             echo "Error al decodificar JSON";
