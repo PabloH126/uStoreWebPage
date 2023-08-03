@@ -60,7 +60,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             echo $httpStatusCode;
             echo $response;
             echo $Remember;
-            if($Remember == true)
+            if($Remember == 1)
             {
                 $ExpiryTime = time() + (60);
             }
