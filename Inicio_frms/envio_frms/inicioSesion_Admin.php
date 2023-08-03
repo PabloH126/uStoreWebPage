@@ -57,7 +57,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
 
     if ($httpStatusCode == 200) {
         if ($data !== null) {
-
+            echo $response;
             echo $Remember;
             if($Remember == true)
             {
