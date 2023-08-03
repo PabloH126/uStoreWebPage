@@ -57,9 +57,6 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
 
     if ($httpStatusCode == 200) {
         if ($data !== null) {
-            echo $httpStatusCode;
-            echo $response;
-            echo $Remember;
             if($Remember == 1)
             {
                 $ExpiryTime = time() + (60);
