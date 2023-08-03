@@ -57,14 +57,16 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
 
     if ($httpStatusCode == 200) {
         if ($data !== null) {
-            if($Remember == 1)
+            /*if($Remember == 1)
             {
                 $ExpiryTime = time() + (60);
             }
             else
             {
                 $ExpiryTime = time() + (20);
-            }
+            }*/
+
+            $ExpiryTime = time() + (20);
             
             setcookie('SessionToken', $response, $ExpiryTime, '/');
 
