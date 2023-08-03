@@ -11,7 +11,7 @@
 
 <body>
 	<?php require("security.php"); ?>
-	<?php require("templates/template.header_cs.php") ?>
+	<?php require("templates/template.header_cs.php"); ?>
 	<div class="content">
 		<h1>Selección de plaza</h1>
 		
