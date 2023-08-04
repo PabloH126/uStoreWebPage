@@ -15,6 +15,9 @@ $_SESSION['nombre'] = $payload->name;
 $_SESSION['id'] = $payload->sub;
 
 echo $_SESSION['email'];
-echo $_SESSION['nombre'];
+if($_SESSION['nombre'] == null)
+{
+    $_SESSION['nombre'] == "No hay nombre";
+}
 echo $_SESSION['id'];
 ?>
