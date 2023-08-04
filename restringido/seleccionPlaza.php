@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<?php require("security.php"); ?>
+	<?php require __DIR__ . '/archivo1.php'; ?>
 	<?php require("templates/template.header_cs.php"); ?>
 	<div class="content">
 		<h1>Selección de plaza</h1>
