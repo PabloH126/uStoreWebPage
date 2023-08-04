@@ -1,3 +1,4 @@
+<?php require 'security.php'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +11,6 @@
 </head>
 
 <body>
-	<?php require __DIR__ . '/security.php'; ?>
 	<?php require("templates/template.header_cs.php"); ?>
 	<div class="content">
 		<h1>Selección de plaza</h1>
