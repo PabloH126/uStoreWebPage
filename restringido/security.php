@@ -17,7 +17,7 @@ $_SESSION['id'] = $payload->sub;
 echo $_SESSION['email'];
 if($_SESSION['nombre'] == null)
 {
-    $_SESSION['nombre'] == "No hay nombre";
+    $_SESSION['nombre'] = "No hay nombre";
 }
 echo $_SESSION['id'];
 ?>
