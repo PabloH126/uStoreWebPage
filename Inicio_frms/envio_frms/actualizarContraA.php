@@ -13,12 +13,14 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		// Configura la URL de la API
 		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/AdminsTienda/UpdatePass");
 		// Configura el cURL para indicar una solicitud POST
-		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
 		// Configura cURL para devolver el resultado en lugar de imprimirlo
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	
+		// Configura las cabeceras de la solicitud para indicar que estamos enviando JSON
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Authorization: Bearer ' . $_GET['token']
+			'Authorization: Bearer ' . $_GET['token'],
+			'Content-Type: application/json',
+			'Content-Length: ' . strlen($jsonData),
 		));
 
 		// Configura los datos que se enviarán en el cuerpo de la solicitud
@@ -32,12 +34,6 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 		$jsonData = json_encode($data);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
-
-		// Configura las cabeceras de la solicitud para indicar que estamos enviando JSON
-		curl_setopt($ch, CURLOPT_HTTPHEADER, [
-			'Content-Type: application/json',
-			'Content-Length: ' . strlen($jsonData),
-		]);
 
 		// Realiza la solicitud
 		$response = curl_exec($ch);
