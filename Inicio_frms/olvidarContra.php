@@ -7,7 +7,6 @@
 
 	<?php require("templates/template.styles_frms.php")?>
 	<link rel="stylesheet" type="text/css" href="css_frms/olvidarContra.css">
-	<link rel="stylesheet" type="text/css" href="css_frms/frms.css">
 </head>
 <body>
 <?php require("templates/template.header_is.php")?>

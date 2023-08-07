@@ -49,11 +49,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Inicio de sesion y registro</title>
-	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/index.css">
+	
 	<link rel="shortcut icon" type="text/css" href="img/icono_uStore1.png">
-
 	<link rel="stylesheet" type="text/css" href="css_general/base.css">
+	
 	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/frms.css">
+	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/index.css">
 
 	<!----------GOOGLE FONTS -------->
 
