@@ -11,7 +11,7 @@
 <?php require("templates/template.header_is.php")?>
 <div id="content">
 	<div class="form">
-		<form action="envio_frms/correoContrasena.php" method="post">
+		<form action="../../correoContrasena.php" method="post">
 			<h1>Olvidé mi contraseña</h1>
 			<div>
 				<label for="emailRec">Correo con el que registró la cuenta</label>
