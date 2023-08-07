@@ -12,7 +12,8 @@ const campos = {
 	nombre: false,
 	apellido: false,
 	email: false,
-	password: false
+	password: false,
+	repassword: false
 }
 const validarRegistro = (e) => {
 	switch(e.target.name)
@@ -70,7 +71,7 @@ const validarRePassword = () => {
         document.querySelector(`#grupo__password i`).classList.add('fa-circle-xmark');
         document.querySelector(`#grupo__password .formulario__input-error`).textContent = "La contraseña debe contener al menos 8 caracteres";
         document.querySelector(`#grupo__password .formulario__input-error`).classList.add('formulario__input-error-activo');
-        campos['password'] = false;
+        campos['repassword'] = false;
 	}
 	else if(inputPassword.value !== inputRePassword.value)
 	{
@@ -80,7 +81,7 @@ const validarRePassword = () => {
 		document.querySelector(`#grupo__repassword i`).classList.add('fa-circle-xmark');
 		document.querySelector(`#grupo__repassword i`).classList.add('fa-bounce');
 		document.querySelector(`#grupo__repassword .formulario__input-error`).classList.add('formulario__input-error-activo');
-		campos['password'] = false;
+		campos['repassword'] = false;
 	}
 	else
 	{
@@ -90,7 +91,7 @@ const validarRePassword = () => {
 		document.querySelector(`#grupo__repassword i`).classList.remove('fa-bounce');
 		document.querySelector(`#grupo__repassword i`).classList.add('fa-circle-check');
 		document.querySelector(`#grupo__repassword .formulario__input-error`).classList.remove('formulario__input-error-activo');
-		campos['password'] = true;
+		campos['repassword'] = true;
 	}
 	actualizarBoton();
 }
