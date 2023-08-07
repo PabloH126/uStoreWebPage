@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(!isset($_COOKIE['SessionToken']))
+/*if(!isset($_COOKIE['SessionToken']))
 {
-	header("location: ../index.php");
+    header("location: ../index.php");
 }
-
+*/
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Login/getClaims");
@@ -13,21 +13,18 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Authorization: Bearer ' . $_COOKIE['SessionToken']
-));
+)
+);
 
 $response = curl_exec($ch);
 
-if($response === false)
-{
+if ($response === false) {
     echo 'Error: ' . curl_error($ch);
-}
-else
-{
+} else {
     $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
-if($httpStatusCode != 200)
-{
+if ($httpStatusCode != 200) {
     echo $httpStatusCode;
     echo $reponse;
 }
