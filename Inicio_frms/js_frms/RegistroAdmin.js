@@ -112,17 +112,3 @@ RegistroAdmin.addEventListener('submit', (e) => {
 		e.preventDefault();
 	}
 });
-
-const actualizarBoton = () => {
-	const btn = document.getElementById('submitRegistro');
-
-	if(campos.nombre && campos.apellido && campos.email && campos.password)
-	{
-		btn.removeAttribute('disabled');
-	}
-	else
-	{
-		btn.setAttribute('disabled', 'disabled');
-	}
-
-}
