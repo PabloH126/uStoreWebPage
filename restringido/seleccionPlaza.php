@@ -18,9 +18,8 @@
 			<?php
 				if(isset($_SESSION['nombre']))
 				{
-					$nombre = $_SESSION['nombre'];
 			?>
-					<h3>Bienvenido, <?php echo $nombre ?></h3>
+					<h3>Bienvenido, <?php $_SESSION['nombre']; ?></h3>
 			<?php
 				}
 				else
