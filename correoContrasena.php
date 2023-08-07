@@ -35,7 +35,7 @@ $data = json_decode($response, true);
 
 curl_close($ch);
 
-$recuperacionLink = "https://ustoree.azurewebsites.net/Inicio_frms/envio_frms/actualizarContraA.php?token=" . $data['token'];
+$recuperacionLink = "https://ustoree.azurewebsites.net/Inicio_frms/recuperacionCuenta.php?token=" . $data['token'];
 
 $templateId = "d-018214066b7d401f965a271dd1dd520b";
 
@@ -64,6 +64,5 @@ if ($httpStatusCode != 404) {
     }
 }
 
-header('Location: correoContrasena.php')
-/*header('Location: Inicio_frms/olvidarContra.php');*/
+ header('Location: Inicio_frms/olvidarContra.php');
 ?>
