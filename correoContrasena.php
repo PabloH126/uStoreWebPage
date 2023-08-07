@@ -38,11 +38,6 @@ session_start();
     $recuperacionLink = "https://ustoree.azurewebsites.net/Inicio_frms/envio_frms/actualizarContraA.php?token=" . $data['token'];
     
     $templateId = "d-018214066b7d401f965a271dd1dd520b";
-    /*------ El nombre lo pasa la api -------*/
-    /*$datos = array(
-        'name' = $_SESSION['nombre'];
-        token c:
-    );*/
     
     if($httpStatusCode != 404)
     {
@@ -51,8 +46,8 @@ session_start();
         $email->setSubject("Recuperacion de cuenta");
         $email->addTo($emailRecuperacion);
         $email->setTemplateId($templateId);
-        /*$email->addDynamicTemplateDatas($datos);*/
-    
+        $email->addDynamicTemplateDatas($recuperacionLink);
+
         $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
     
         try {
@@ -66,25 +61,5 @@ session_start();
         }
     }
     
-    header('Location: correoContrasena.php');
-
-/*
-if(isset($_POST['emailRec'])) {
-    //Datos del remitente
-    $header = "From: uStore <uStore@gmail.com>";
- 
-    // Destinatario y contenido del correo electrónico
-    $para = $_POST['emailRec'];
-    $_SESSION['correo'] = $para;
-    
-    $asunto = "Recuperación de cuenta";
-    $contenido = "Hola,\n\nIngresa al siguiente link para recuperar tu cuenta:\n\nhttps://ustore00.000webhostapp.com/Inicio_frms/recuperacionCuenta.php";
- 
-    // Enviar el correo electrónico utilizando la función mail()
-    mail($para, $asunto, $contenido, $header);
-    header('Location: ../olvidarContra.php');
-} else {
-    echo "Error: No se pudieron enviar los datos del formulario";
-}*/
-
+    header('Location: Inicio_frms/olvidarContra.php');
 ?>
