@@ -19,7 +19,7 @@
 				<input class="input" type="email" name="emailRec" placeholder="ejemplo@gmail.com" required>
 			</div>
 			<p id="exito" class="formulario__mensaje-exito <?php 
-						echo (isset($_SESSION['CNV']) && $_SESSION['CNV'] == false) ? '.formulario__mensaje-exito-activo' : ''; 
+						echo (isset($_SESSION['CNV']) && $_SESSION['CNV'] == false) ? 'formulario__mensaje-exito-activo' : ''; 
 						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
 						if (isset($_SESSION['CNV']) && $_SESSION['CNV'] == false) {
 							unset($_SESSION['CNV']);
