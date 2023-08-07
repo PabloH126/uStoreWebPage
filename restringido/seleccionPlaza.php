@@ -1,4 +1,8 @@
-<?php require 'security.php'; ?>
+<?php
+session_start(); 
+require 'security.php'; 
+?>
+
 <!DOCTYPE html>
 <html>
 
