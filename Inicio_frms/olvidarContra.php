@@ -6,6 +6,7 @@
 
 	<?php require("templates/template.styles_frms.php")?>
 	<link rel="stylesheet" type="text/css" href="css_frms/olvidarContra.css">
+	<link rel="stylesheet" type="text/css" href="css_frms/frms.css">
 </head>
 <body>
 <?php require("templates/template.header_is.php")?>
@@ -17,8 +18,13 @@
 				<label for="emailRec">Correo con el que registró la cuenta</label>
 				<input class="input" type="email" name="emailRec" placeholder="ejemplo@gmail.com" required>
 			</div>
-			<p class="formulario__mensaje-exito">Correo enviado</p>
-			<i class="formulario__validacion-estado fa-solid fa-circle-check"></i>
+			<p id="exito" class="formulario__mensaje-exito <?php 
+						echo (isset($_SESSION['CNV']) && $_SESSION['CNV'] == false) ? '.formulario__mensaje-exito-activo' : ''; 
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['CNV']) && $_SESSION['CNV'] == false) {
+							unset($_SESSION['CNV']);
+						}
+					?>"><i class="formulario__validacion-estado fa-solid fa-circle-check"></i>Correo enviado</p>
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<input class="submit" type="submit" value="Enviar correo">
 			</div>

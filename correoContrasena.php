@@ -62,7 +62,10 @@ if ($httpStatusCode != 404) {
     } catch (Exception $e) {
         echo 'Caught exception: ' . $e->getMessage() . "\n";
     }
+    $_SESSION['CNV'] = false;
+} else {
+    $_SESSION['CNV'] = true;
 }
 
- header('Location: Inicio_frms/olvidarContra.php');
+header('Location: Inicio_frms/olvidarContra.php');
 ?>
