@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-echo $_GET['token'];
-/*if(isset($_POST['passA']) && isset($_POST['repassA'])){
+if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 	if($_POST['passA'] == $_POST['repassA']){
     	$passA = $_POST['passA'];
@@ -61,5 +60,5 @@ echo $_GET['token'];
 }else {
    echo "Error: No se pudieron enviar los datos del formulario";
 }
-*/
+
 ?>

@@ -11,7 +11,7 @@
 <?php require("templates/template.header_is.php")?>
 <div id="content">
 	<div class="form">
-		<form action="envio_frms/actualizarContraA.php" method="post">
+		<form action="envio_frms/actualizarContraA.php?<?php $_GET['token']; ?>" method="post">
 			<h1>Recuperación de cuenta</h1>
 			<div>
 				<label for="passA">Nueva contraseña</label>
