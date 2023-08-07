@@ -44,7 +44,7 @@ if (isset($_SESSION['claveE'])) {
         header("Location: index.php");
     }
     //confirmar que las contraseñas son iguales
-    if ($_POST['passA'] == $_POST['repassA']) {
+    else if ($_POST['passA'] == $_POST['repassA']) {
 
         $contrasena = $_POST['passA'];
         $contra = md5(md5($contrasena));
