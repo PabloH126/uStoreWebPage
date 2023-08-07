@@ -15,7 +15,7 @@
 
         if(isset($_COOKIE['SessionData'])) 
         {
-            setcookie('SessionData', '', time() - 42000, '/');
+            setcookie('SessionData', '', 0, '/');
         }
     }
 
