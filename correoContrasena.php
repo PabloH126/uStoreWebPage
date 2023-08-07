@@ -39,13 +39,17 @@ $recuperacionLink = "https://ustoree.azurewebsites.net/Inicio_frms/envio_frms/ac
 
 $templateId = "d-018214066b7d401f965a271dd1dd520b";
 
+$datos = array(
+    'link' => $recuperacionLink
+);
+
 if ($httpStatusCode != 404) {
     $email = new \SendGrid\Mail\Mail();
     $email->setFrom("ustoreceo@gmail.com", "uStore");
     $email->setSubject("Recuperacion de cuenta");
     $email->addTo($emailRecuperacion);
     $email->setTemplateId($templateId);
-    $email->addDynamicTemplateDatas($recuperacionLink);
+    $email->addDynamicTemplateDatas($datos);
 
     $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 
