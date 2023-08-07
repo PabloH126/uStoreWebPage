@@ -17,14 +17,17 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		// Configura cURL para devolver el resultado en lugar de imprimirlo
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_GET['token']
+		));
+
 		// Configura los datos que se enviarán en el cuerpo de la solicitud
 		$data = [
 			[
-				"path": "/password",
-    			"op": "replace",
-    			"value": "uwu"
+				"path" => "/password",
+    			"op" => "replace",
+    			"value" => $passEncryptIngres
 			]
-			'Password' => $passEncryptIngres,
 		];
 
 		$jsonData = json_encode($data);
@@ -38,6 +41,7 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 		// Realiza la solicitud
 		$response = curl_exec($ch);
+		
 		if ($response === false) {
 			// La solicitud falló
 			echo 'Error: ' . curl_error($ch);
