@@ -1,5 +1,10 @@
 #contentI{
 	height: 100%;
+	font-family: arial;
+	text-align: center;
+	position: relative;
+	justify-content: space-between;
+	display: flex;
 }
 
 #animacion{
