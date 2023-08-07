@@ -51,9 +51,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
     }
 
     $data = json_decode($response, true);
-
-    //echo $data['token'];
-    echo $response;
+    
     // Cierra el manejador de cURL
     curl_close($ch);
 
@@ -68,7 +66,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
                 $ExpiryTime = time() + (20);
             }
             
-            setcookie('SessionToken', $response, $ExpiryTime, '/');
+            setcookie('SessionToken', $data['token'], $ExpiryTime, '/');
 
             //echo $_COOKIE['SessionToken'];
             // redirigir al usuario a la página de inicio
