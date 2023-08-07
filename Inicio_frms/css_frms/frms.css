@@ -161,6 +161,7 @@ a:hover{
 
 .formulario__mensaje-activo {
 	display: block;
+	margin: -19px 0px 7px 0px;
 }
 
 .formulario__mensaje-exito {
