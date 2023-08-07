@@ -4,7 +4,7 @@ const inputs = document.querySelectorAll('#RegistroAdmin input');
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{8,}$/, // 8 a 50 digitos.
+	password: /^.{8,50}$/, // 8 a 50 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
@@ -100,7 +100,7 @@ inputs.forEach((input) => {
 });
 
 RegistroAdmin.addEventListener('submit', (e) => {
-	if(campos.nombre && campos.apellido && campos.email && campos.password)
+	if(campos.nombre && campos.apellido && campos.email && campos.password && campos.repassword)
 	{
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 	}

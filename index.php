@@ -38,7 +38,7 @@
 		$_SESSION['nombre'] = $data['nombre'];
 		$_SESSION['email'] = $data['email'];
 		$_SESSION['id'] = $data['id'];
-		
+		echo $_SESSION['nombre'];
 		header("location: restringido/seleccionPlaza.php");
 	}
 ?>
@@ -182,7 +182,7 @@
 							style="color: #cc0000;"></i> Por favor rellena los campos correctamente.</p>
 				</div>
 				<div class="formulario__grupo formulario__grupo-btn-enviar">
-					<input class="submit" type="submit" value="Enviar correo de confirmación" id="submitRegistro">
+					<input class="submit" type="submit" value="Enviar correo de confirmación" id="submitRegistro" disabled>
 				</div>
 			</form>
 		</div>
