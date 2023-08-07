@@ -19,7 +19,7 @@
 			</div>
 			<p class="formulario__mensaje-exito">Correo enviado</p>
 			<i class="formulario__validacion-estado fa-solid fa-circle-check"></i>
-			<div>
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<input class="submit" type="submit" value="Enviar correo">
 			</div>
 		</form>
