@@ -38,7 +38,6 @@
 		$_SESSION['nombre'] = $data['nombre'];
 		$_SESSION['email'] = $data['email'];
 		$_SESSION['id'] = $data['id'];
-		echo $_SESSION['nombre'];
 		header("location: restringido/seleccionPlaza.php");
 	}
 ?>
