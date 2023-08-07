@@ -26,7 +26,7 @@
 							unset($_SESSION['CNV']);
 						}
 					?>">
-			<p><i class="fa-solid fa-circle-check"></i>Correo enviado</p>
+			<p><i class="fa-solid fa-circle-check"></i> Correo enviado</p>
 			</div>
 			<div class="formulario__mensaje 
 					<?php 
