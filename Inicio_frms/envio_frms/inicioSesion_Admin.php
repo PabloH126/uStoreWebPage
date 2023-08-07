@@ -52,7 +52,8 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
 
     $data = json_decode($response, true);
 
-    echo $data['token'];
+    //echo $data['token'];
+    echo $response;
     // Cierra el manejador de cURL
     curl_close($ch);
 
