@@ -31,7 +31,7 @@ form{
 
 h1{
 	margin: 0 0 30px;
-	font-size: 2em;
+	font-size: 3em;
 	text-align: center;
 	cursor: default;
 }
@@ -52,7 +52,7 @@ label{
 .input, select{
 	width: 100%;
 	border: none;
-	font-size: 1.2em;
+	font-size: 1em;
 	outline: none;
 	color: white;
 	background: none;
