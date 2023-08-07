@@ -19,12 +19,10 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 		// Configura los datos que se enviarán en el cuerpo de la solicitud
 		$data = [
-			'patchDoc' => [
-				[
-					"path" => "/password",
-					"op" => "replace",
-					"value" => $passEncryptIngres
-				]
+			[
+				"path" => "/password",
+				"op" => "replace",
+				"value" => $passEncryptIngres
 			]
 		];
 
