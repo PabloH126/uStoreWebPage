@@ -85,9 +85,17 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             {
                 echo 'Error: ' . curl_error($ch);
             }
+            else {
+                // La solicitud fue exitosa, obtenemos el código de estado HTTP
+                $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            }
 
             $data = json_decode($response, true);
-
+            
+            if($data == null)
+            {
+                echo $httpStatusCode;
+            }
             curl_close($ch);
 
             $_SESSION['nombre'] = $data['nombre'];
