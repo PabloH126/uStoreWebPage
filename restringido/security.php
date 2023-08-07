@@ -26,7 +26,7 @@ if ($response === false) {
 
 if ($httpStatusCode != 200) {
     echo $httpStatusCode;
-    echo $reponse;
+    echo $response;
 }
 $data = json_decode($response, true);
 
