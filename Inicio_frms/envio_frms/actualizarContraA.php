@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+echo $_GET['token'];
 if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 	if($_POST['passA'] == $_POST['repassA']){
@@ -25,8 +26,6 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 				"value" => $passEncryptIngres
 			]
 		];
-
-		echo $_GET['token'];
 
 		$jsonData = json_encode($data);
 		// Configura las cabeceras de la solicitud para indicar que estamos enviando JSON
