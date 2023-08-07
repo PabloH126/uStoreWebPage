@@ -38,6 +38,7 @@ if (isset($_SESSION['claveE'])) {
     $_SESSION['apellidoA'] = $_POST['apellidoA'];
     $_SESSION['emailA'] = $_POST['emailA'];
 
+    if($_POST['passA'].length or $_POST['repassA'])
     //confirmar que las contraseñas son iguales
     if ($_POST['passA'] == $_POST['repassA']) {
 

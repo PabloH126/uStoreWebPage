@@ -31,13 +31,9 @@
 		if ($httpStatusCode != 200) {
 			header("location: index.php");
 		}
-		$data = json_decode($response, true);
 
 		curl_close($ch);
 
-		$_SESSION['nombre'] = $data['nombre'];
-		$_SESSION['email'] = $data['email'];
-		$_SESSION['id'] = $data['id'];
 		header("location: restringido/seleccionPlaza.php");
 	}
 ?>
