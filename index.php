@@ -71,7 +71,7 @@
 </head>
 
 <body>
-	<div class="index" id="content">
+	<div id="contentI">
 		
 		<!--LOGIN DE ADMINISTRADORES-->
 		<div class="form">
