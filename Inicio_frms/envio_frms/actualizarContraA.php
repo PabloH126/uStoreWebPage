@@ -46,12 +46,17 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		}
 
-		echo "Codigo de respuesta: " . $httpStatusCode . "\n" . $response;
-
 		// Cierra el manejador de cURL
 		curl_close($ch);
 
-
+		if($httpStatusCode == 401)
+		{
+			echo "Token expirado";
+		}
+		else
+		{
+			header("Location: index.php");
+		}
     	
     }else{
     	echo "Error. las contraseñas no coninciden.";
