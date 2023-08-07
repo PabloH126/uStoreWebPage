@@ -26,6 +26,8 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 			]
 		];
 
+		echo $_GET['token'];
+
 		$jsonData = json_encode($data);
 		// Configura las cabeceras de la solicitud para indicar que estamos enviando JSON
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
