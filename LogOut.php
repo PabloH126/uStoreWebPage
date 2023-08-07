@@ -1,4 +1,5 @@
 <?php
+echo "Se accedio a logout";
 if (isset($_COOKIE['SessionData'])) {
     setcookie('SessionData', '', time() - 42000, '/');
 }
