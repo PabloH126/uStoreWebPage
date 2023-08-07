@@ -1,28 +1,30 @@
 <?php
-    if(session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
+if (isset($_COOKIE['SessionData'])) {
+    setcookie('SessionData', '', time() - 42000, '/');
+}
 
-    if(ini_get("session.use_cookies"))
-    {
-        if(isset($_COOKIE['SessionData'])) 
-        {
-            setcookie('SessionData', '', 0, '/');
-        }
-        $params = session_get_cookie_params();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-        setcookie(session_name(), '', time() - 42000,
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+
+    setcookie(
+        session_name(),
+        '', time() - 42000,
         '/',
         $params["domain"],
         $params["secure"],
-        $params["httponly"]);
+        $params["httponly"]
+    );
 
 
-    }
+}
 
-    session_unset();
-    session_destroy();
+session_unset();
+session_destroy();
 
-    header("Location: index.php");
-    exit;
+header("Location: index.php");
+exit;
 ?>
