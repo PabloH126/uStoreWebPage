@@ -17,7 +17,7 @@
 				<label for="emailRec">Correo con el que registró la cuenta</label>
 				<input class="input" type="email" name="emailRec" placeholder="ejemplo@gmail.com" required>
 			</div>
-			<p class=".formulario__mensaje-exito">Correo enviado</p>
+			<p class="formulario__mensaje-exito">Correo enviado</p>
 			<div>
 				<input class="submit" type="submit" value="Enviar correo">
 			</div>
