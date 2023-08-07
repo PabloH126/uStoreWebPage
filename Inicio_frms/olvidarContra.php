@@ -18,6 +18,7 @@
 				<input class="input" type="email" name="emailRec" placeholder="ejemplo@gmail.com" required>
 			</div>
 			<p class="formulario__mensaje-exito">Correo enviado</p>
+			<i class="formulario__validacion-estado fa-solid fa-circle-check"></i>
 			<div>
 				<input class="submit" type="submit" value="Enviar correo">
 			</div>
