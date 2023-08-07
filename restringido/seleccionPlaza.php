@@ -21,7 +21,7 @@ if ($response === false) {
 }
 
 if ($httpStatusCode != 200) {
-	header("location: index.php");
+	header("location: ../index.php");
 }
 $data = json_decode($response, true);
 
