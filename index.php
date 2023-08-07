@@ -182,7 +182,7 @@
 							style="color: #cc0000;"></i> Por favor rellena los campos correctamente.</p>
 				</div>
 				<div class="formulario__grupo formulario__grupo-btn-enviar">
-					<input class="submit" type="submit" value="Enviar correo de confirmación" id="submitRegistro" disabled>
+					<input class="submit" type="submit" value="Enviar correo de confirmación" id="submitRegistro">
 				</div>
 			</form>
 		</div>
