@@ -58,7 +58,6 @@ const validarCampo = (expresion, input, campo) => {
 		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
 		campos[campo] = false;
 	}
-	actualizarBoton();
 }
 
 const validarRePassword = () => {
@@ -93,7 +92,6 @@ const validarRePassword = () => {
 		document.querySelector(`#grupo__repassword .formulario__input-error`).classList.remove('formulario__input-error-activo');
 		campos['repassword'] = true;
 	}
-	actualizarBoton();
 }
 
 inputs.forEach((input) => {
