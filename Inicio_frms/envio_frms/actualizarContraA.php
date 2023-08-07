@@ -8,9 +8,6 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		
     	$passEncryptIngres = md5(md5($pass));
 
-    	$email = $_SESSION['correo'];
-
-
 		$ch = curl_init();
 
 		// Configura la URL de la API
@@ -22,7 +19,6 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 	
 		// Configura los datos que se enviarán en el cuerpo de la solicitud
 		$data = [
-			'Email' => $email,
 			'Password' => $passEncryptIngres,
 		];
 

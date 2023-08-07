@@ -173,7 +173,7 @@
 							required>
 						<i class="formulario__validacion-estado fa-solid fa-circle-xmark fa-bounce"></i>
 					</div>
-					<p class="formulario__input-error" style="color: #d51b1b">La contraseñas no coinciden</p><br>
+					<p class="formulario__input-error" style="color: #d51b1b">Las contraseñas no coinciden</p><br>
 				</div>
 
 				<div class="formulario__mensaje" id="formulario__mensaje">
