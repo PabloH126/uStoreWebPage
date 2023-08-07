@@ -59,11 +59,11 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
         if ($data !== null) {
             if($Remember == 1)
             {
-                $ExpiryTime = time() + (60);
+                $ExpiryTime = time() + (60 * 60 * 24 * 7);
             }
             else
             {
-                $ExpiryTime = time() + (20);
+                $ExpiryTime = time() + (60 * 60 * 3);
             }
             
             setcookie('SessionToken', $data['token'], $ExpiryTime, '/');
