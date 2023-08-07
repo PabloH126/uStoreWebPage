@@ -26,8 +26,20 @@
 							unset($_SESSION['CNV']);
 						}
 					?>">
-			<p><i class="formulario__validacion-estado fa-solid fa-circle-check"></i>Correo enviado</p>
+			<p><i class="fa-solid fa-circle-check"></i>Correo enviado</p>
 			</div>
+			<div class="formulario__mensaje 
+					<?php 
+						echo (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) ? 'formulario__mensaje-activo' : ''; 
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) {
+							unset($_SESSION['CNV']);
+						}
+					?>" 
+					id="formulario__mensaje">
+					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
+							style="color: #cc0000;"></i> Correo no registrado </p>
+				</div>
 			
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<input class="submit" type="submit" value="Enviar correo">
