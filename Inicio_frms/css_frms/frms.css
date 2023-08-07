@@ -157,12 +157,16 @@ a:hover{
 
 .formulario__mensaje p{
 	margin: 0;
-	margin: -19px 0px 7px 0px;
 }
 
 .formulario__mensaje-activo {
 	display: block;
 }
+
+.formulario__mensaje p{
+	margin: -19px 0px 7px 0px;
+}
+
 
 .formulario__mensaje-exito {
 	font-size: 1em;
