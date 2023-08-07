@@ -21,7 +21,16 @@ if($response === false)
 {
     echo 'Error: ' . curl_error($ch);
 }
+else
+{
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+}
 
+if($httpStatusCode != 200)
+{
+    echo $httpStatusCode;
+    echo $reponse;
+}
 $data = json_decode($response, true);
 
 curl_close($ch);
