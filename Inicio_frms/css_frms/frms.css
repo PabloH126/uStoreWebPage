@@ -163,7 +163,13 @@ a:hover{
 	display: block;
 }
 
-.formulario__mensaje p{
+.formulario__mensaje .oc{
+	background: none;
+	text-align: center;
+	display:none;
+}
+
+.formulario__mensaje p .oc{
 	margin: -19px 0px 7px 0px;
 }
 
