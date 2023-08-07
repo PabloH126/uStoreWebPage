@@ -55,7 +55,7 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		}
 		else
 		{
-			header("Location: index.php");
+			header("Location: ../../index.php");
 		}
     	
     }else{
