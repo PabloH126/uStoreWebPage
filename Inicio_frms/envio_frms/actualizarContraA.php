@@ -41,7 +41,7 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 		// Realiza la solicitud
 		$response = curl_exec($ch);
-		
+
 		if ($response === false) {
 			// La solicitud falló
 			echo 'Error: ' . curl_error($ch);
@@ -50,7 +50,7 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		}
 
-		$data = json_decode($response, true);
+		echo "Codigo de respuesta: " . $httpStatusCode . "\n" . $response;
 
 		// Cierra el manejador de cURL
 		curl_close($ch);
