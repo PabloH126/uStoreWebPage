@@ -45,7 +45,7 @@ if ($httpStatusCode != 404) {
     $email->setSubject("Recuperacion de cuenta");
     $email->addTo($emailRecuperacion);
     $email->setTemplateId($templateId);
-    /*$email->addDynamicTemplateDatas($recuperacionLink);*/
+    $email->addDynamicTemplateDatas($recuperacionLink);
 
     $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 
