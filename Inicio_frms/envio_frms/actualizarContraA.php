@@ -16,12 +16,6 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
 		// Configura cURL para devolver el resultado en lugar de imprimirlo
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		// Configura las cabeceras de la solicitud para indicar que estamos enviando JSON
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Authorization: Bearer ' . $_GET['token'],
-			'Content-Type: application/json',
-			'Content-Length: ' . strlen($jsonData),
-		));
 
 		// Configura los datos que se enviarán en el cuerpo de la solicitud
 		$data = [
@@ -35,6 +29,12 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		];
 
 		$jsonData = json_encode($data);
+		// Configura las cabeceras de la solicitud para indicar que estamos enviando JSON
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_GET['token'],
+			'Content-Type: application/json',
+			'Content-Length: ' . strlen($jsonData),
+		));
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
 
 		// Realiza la solicitud
