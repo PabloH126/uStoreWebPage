@@ -51,7 +51,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
     }
 
     $data = json_decode($response, true);
-    
+
     // Cierra el manejador de cURL
     curl_close($ch);
 
@@ -68,6 +68,32 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             
             setcookie('SessionToken', $data['token'], $ExpiryTime, '/');
 
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Login/getClaims");
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Authorization: Bearer ' . $_COOKIE['SessionToken']
+            )
+            );
+
+            $responseClaims = curl_exec($ch);
+
+            if ($responseClaims === false) 
+            {
+                echo 'Error: ' . curl_error($ch);
+            }
+
+            $data = json_decode($response, true);
+
+            curl_close($ch);
+
+            $_SESSION['nombre'] = $data['nombre'];
+            $_SESSION['email'] = $data['email'];
+            $_SESSION['id'] = $data['id'];
+
             //echo $_COOKIE['SessionToken'];
             // redirigir al usuario a la página de inicio
             header("location: ../../restringido/seleccionPlaza.php");
@@ -78,9 +104,6 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
     } else {
         $_SESSION['fallo'] = 1;
         header("location: ../../index.php");
-        /*echo '<pre>'; // Esto es para formatear la salida
-        print_r($_SESSION); // Imprime todas las variables de sesión
-        echo '</pre>'; */
         exit;
     }
 }
