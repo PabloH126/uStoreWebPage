@@ -164,7 +164,7 @@ a:hover{
 }
 
 .formulario__mensaje-exito {
-	font-size: 14px;
+	font-size: 1em;
 	color: #119200;
 	display: none;
 }
