@@ -19,7 +19,7 @@
 				if(isset($_SESSION['nombre']))
 				{
 			?>
-					<h3>Bienvenido, <?php $_SESSION['nombre']; ?></h3>
+					<h3>Bienvenido, <?php echo $_SESSION['nombre']; ?></h3>
 			<?php
 				}
 				else
