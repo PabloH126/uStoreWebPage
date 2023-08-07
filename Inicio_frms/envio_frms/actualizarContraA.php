@@ -11,7 +11,7 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		$ch = curl_init();
 
 		// Configura la URL de la API
-		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/AdminsTienda/Login");
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/AdminsTienda/UpdatePass");
 		// Configura el cURL para indicar una solicitud POST
 		curl_setopt($ch, CURLOPT_POST, 1);
 		// Configura cURL para devolver el resultado en lugar de imprimirlo
