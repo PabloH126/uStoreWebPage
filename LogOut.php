@@ -5,6 +5,10 @@
 
     if(ini_get("session.use_cookies"))
     {
+        if(isset($_COOKIE['SessionData'])) 
+        {
+            setcookie('SessionData', '', 0, '/');
+        }
         $params = session_get_cookie_params();
 
         setcookie(session_name(), '', time() - 42000,
@@ -13,10 +17,7 @@
         $params["secure"],
         $params["httponly"]);
 
-        if(isset($_COOKIE['SessionData'])) 
-        {
-            setcookie('SessionData', '', 0, '/');
-        }
+
     }
 
     session_unset();
