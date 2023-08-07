@@ -6,7 +6,7 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 	if($_POST['passA'] == $_POST['repassA']){
     	$passA = $_POST['passA'];
 		
-    	$passEncryptIngres = md5(md5($pass));
+    	$passEncryptIngres = md5(md5($passA));
 
 		$ch = curl_init();
 
