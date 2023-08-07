@@ -1,7 +1,6 @@
 <?php
-echo "Se accedio a logout";
-if (isset($_COOKIE['SessionData'])) {
-    setcookie('SessionData', '', time() - 42000, '/');
+if (isset($_COOKIE['SessionToken'])) {
+    setcookie('SessionToken', '', time() - 42000, '/');
 }
 
 if (session_status() == PHP_SESSION_NONE) {
