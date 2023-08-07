@@ -12,3 +12,7 @@ label{
 .input{
 	font-size: 1.2em;
 }
+
+.submit{
+	margin: 0;
+}
