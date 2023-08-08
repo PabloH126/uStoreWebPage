@@ -168,7 +168,7 @@ a:hover{
 .formulario__mensajeOc{
 	background: none;
 	display:none;
-	line-height: 58px;
+	text-align: center;
 }
 
 .formulario__mensajeOc p{

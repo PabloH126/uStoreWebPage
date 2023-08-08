@@ -32,7 +32,7 @@
 				
 				<div class="formulario__mensajeOc 
 					<?php 
-						echo (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) ? 'formulario__mensaje-activo' : ''; 
+						echo (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) ? 'formulario__mensaje-activoOc' : ''; 
 						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
 						if (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) {
 							unset($_SESSION['CNV']);
