@@ -146,8 +146,8 @@ a:hover{
 }
 
 .formulario__mensaje{
-	height: 45px;
-	line-height: 58px;
+	/*height: 45px;
+	line-height: 58px;*/
 	background: none;
 	padding: 0 15px;
 	border-radius: 3px;
