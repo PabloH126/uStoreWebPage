@@ -34,7 +34,7 @@
 						if (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) {
 							unset($_SESSION['CNV']);
 						}
-					?>" 
+					?>" class="oc"
 					id="formulario__mensaje" >
 					<p style="color: #d51b1b" class="oc"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> Correo no registrado </p>
