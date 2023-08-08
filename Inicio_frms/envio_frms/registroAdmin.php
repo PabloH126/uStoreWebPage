@@ -20,7 +20,7 @@ if(isset($_POST['claveA'])){
         $ch = curl_init();
 
         // Configura la URL de la API
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/AdminsTienda/Register");
+        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Register/RegisterAdmin");
 
         // Configura cURL para enviar una solicitud POST
         curl_setopt($ch, CURLOPT_POST, 1);
