@@ -35,7 +35,7 @@
 							unset($_SESSION['CNV']);
 						}
 					?>" 
-					id="formulario__mensaje" class="oc">
+					id="formulario__mensaje" >
 					<p style="color: #d51b1b" class="oc"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> Correo no registrado </p>
 				</div>

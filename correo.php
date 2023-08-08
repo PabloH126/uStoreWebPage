@@ -39,7 +39,7 @@ if (isset($_SESSION['claveE'])) {
     $_SESSION['emailA'] = $_POST['emailA'];
 
     //Si las contraseñas tienen menos de 8 caracteres, redirige al index
-    if((strlen($_POST['passA']) < 8) or (strlen($_POST['repassA']) < 8))
+    if(isset($_POST['passA']) && isset($_POST['repassA']) && ((strlen($_POST['passA']) < 8) or (strlen($_POST['repassA']) < 8)))
     {
         header("Location: index.php");
     }
