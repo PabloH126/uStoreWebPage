@@ -30,9 +30,9 @@
 				<i class="fa-solid fa-circle-check"></i>
 				</p> </div>
 				
-				<div class="formulario__mensajeOc 
+				<div class="formulario__mensaje
 					<?php 
-						echo (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) ? 'formulario__mensaje-activoOc' : ''; 
+						echo (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) ? 'formulario__mensaje-activo' : ''; 
 						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
 						if (isset($_SESSION['CNV']) && $_SESSION['CNV'] == true) {
 							unset($_SESSION['CNV']);
