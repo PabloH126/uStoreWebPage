@@ -2,10 +2,10 @@
 session_start();
 
 if(isset($_POST['passA']) && isset($_POST['repassA']) && ((strlen($_POST['passA']) < 8) or (strlen($_POST['repassA']) < 8)))
-    {
+	{
 		$_SESSION['ContraNV'] = true;
-        header("Location: ../recuperacionCuenta.php");
-    }
+		header("Location: ../recuperacionCuenta.php");
+	}
 
 if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
@@ -66,7 +66,8 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		}
     	
     }else{
-    	echo "Error. las contraseñas no coninciden.";
+		$_SESSION['ContrasenasDif'] = True;
+    	/*echo "Error. las contraseñas no coninciden.";*/
     }
 
 }else {
