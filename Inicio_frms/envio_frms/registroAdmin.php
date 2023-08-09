@@ -59,7 +59,7 @@ if(isset($_POST['claveA'])){
         {
             $_SESSION['emailRegistrado'] = true;
         }
-        echo $httpStatusCode;
+        
         header("location: ../../index.php");
         exit;
 	} else {
