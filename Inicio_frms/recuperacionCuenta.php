@@ -23,16 +23,15 @@
 			</div>
 			<!--------------- PRUEBA --------------->
 			<div class="formulario__mensaje <?php 
-						echo (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) ? 'formulario__mensaje-activo' : ''; 
+						echo (isset($_SESSION['TokenExpirado']) && $_SESSION['TokenExpirado'] == true) ? 'formulario__mensaje-activo' : ''; 
 						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
-						if (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) {
-							unset($_SESSION['emailRegistrado']);
+						if (isset($_SESSION['TokenExpirado']) && $_SESSION['TokenExpirado'] == true) {
+							unset($_SESSION['TokenExpirado']);
 						}
 					?>" id="formulario__mensaje">
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
-							style="color: #cc0000;"></i> Email ya registrado en uStore</p>
+							style="color: #cc0000;"></i> Token Expirado :c</p>
 				</div>
-			<p id="tokenStatus"></p>
 
 
 
