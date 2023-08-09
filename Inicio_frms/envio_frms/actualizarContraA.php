@@ -67,6 +67,7 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
     	
     }else{
 		$_SESSION['ContrasenasDif'] = True;
+		header("Location: ../recuperacionCuenta.php");
     	/*echo "Error. las contraseñas no coninciden.";*/
     }
 
