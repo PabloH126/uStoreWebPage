@@ -46,9 +46,19 @@ if(isset($_POST['claveA'])){
 
         // Realiza la solicitud
         $response = curl_exec($ch);
-
+        if($response === false)
+        {
+            echo 'Error: ' . curl_error($ch);
+        } else {
+            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        }
         // Cierra el manejador de cURL
         curl_close($ch);
+
+        if($httpStatusCode == 409)
+        {
+            $_SESSION['emailRegistrado'] = true;
+        }
 
         header("location: ../../index.php");
         exit;
