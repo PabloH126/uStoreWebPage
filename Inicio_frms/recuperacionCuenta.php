@@ -37,6 +37,7 @@
 							style="color: #cc0000;"></i> Link expirado</p>
 			</div>
 			<div class="formulario__mensaje <?php 
+						//Cuando la contraseña es de menos de 8 caracteres
 						echo (isset($_SESSION['ContraNV']) && $_SESSION['ContraNV'] == true) ? 'formulario__mensaje-activo' : '';
 						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
 						if (isset($_SESSION['ContraNV']) && $_SESSION['ContraNV'] == true) {
@@ -45,6 +46,18 @@
 					?>" id="formulario__mensaje">
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> La contraseña debe ser de al menos 8 caracteres</p>
+			</div>
+
+			<div class="formulario__mensaje <?php 
+					//Cuando las contraseñas son diferentes
+						echo (isset($_SESSION['ContrasenasDif']) && $_SESSION['ContrasenasDif'] == true) ? 'formulario__mensaje-activo' : '';
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['ContrasenasDif']) && $_SESSION['ContrasenasDif'] == true) {
+							unset($_SESSION['ContrasenasDif']);
+						}
+					?>" id="formulario__mensaje">
+					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
+							style="color: #cc0000;"></i> Las contraseñas no coinciden </p>
 			</div>
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
