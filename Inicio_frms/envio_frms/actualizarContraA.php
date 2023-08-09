@@ -51,7 +51,8 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 		if($httpStatusCode == 401)
 		{
-			echo "Token expirado";
+			/*echo "Token expirado";*/
+			echo json_encode(array("status" => "expired"));
 		}
 		else
 		{

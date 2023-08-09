@@ -21,6 +21,18 @@
 				<label for="repassA">Confirmación de contraseña</label>
 				<input class="input" type="password" name="repassA" placeholder="***********" required>
 			</div>
+			<!--------------- PRUEBA --------------->
+			<div class="formulario__mensaje <?php 
+						echo (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) ? 'formulario__mensaje-activo' : ''; 
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) {
+							unset($_SESSION['emailRegistrado']);
+						}
+					?>" id="formulario__mensaje">
+					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
+							style="color: #cc0000;"></i> Email ya registrado en uStore</p>
+				</div>
+			<p id="tokenStatus"></p>
 			<div>
 				<input class="submit" type="submit" value="Aceptar">
 			</div>
