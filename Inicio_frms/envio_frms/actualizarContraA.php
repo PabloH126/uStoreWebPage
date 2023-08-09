@@ -53,6 +53,7 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 		{
 			/*echo "Token expirado";*/
 			$_SESSION['TokenExpirado'] = True;
+			header("Location: ../recuperacionCuenta.php");
 		}
 		else
 		{

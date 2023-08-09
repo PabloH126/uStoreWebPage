@@ -1,8 +1,6 @@
 <?php
 	session_start();
-	
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -29,7 +27,7 @@
 			</div>
 			<!--------------- PRUEBA --------------->
 			<div class="formulario__mensaje <?php 
-						echo (isset($_SESSION['TokenExpirado']) && $_SESSION['TokenExpirado'] == true) ? 'formulario__mensaje-activo' : ''; 
+						echo (isset($_SESSION['TokenExpirado']) && $_SESSION['TokenExpirado'] == true) ? 'formulario__mensaje-activo' : '';
 						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
 						if (isset($_SESSION['TokenExpirado']) && $_SESSION['TokenExpirado'] == true) {
 							unset($_SESSION['TokenExpirado']);
