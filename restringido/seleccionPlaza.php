@@ -1,6 +1,7 @@
 <?php
 session_start(); 
 require 'security.php';
+
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Login/getClaims");
@@ -9,8 +10,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 	'Authorization: Bearer ' . $_COOKIE['SessionToken']
-)
-);
+));
 
 $response = curl_exec($ch);
 
@@ -30,6 +30,31 @@ curl_close($ch);
 $_SESSION['nombre'] = $data['nombre'];
 $_SESSION['email'] = $data['email'];
 $_SESSION['id'] = $data['id'];
+
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Malls/GetAllMalls");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+	'Authorization: Bearer ' . $_COOKIE['SessionToken']
+));
+
+$response = curl_exec($ch);
+
+if ($response === false) {
+	echo 'Error: ' . curl_error($ch);
+} else {
+	$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+}
+
+if ($httpStatusCode != 200) {
+	$mallsError = "Error al intentar recuperar las plazas. Codigo de respuesta: " . $httpStatusCode;
+}
+$malls = json_decode($response, true);
+
+curl_close($ch);
+
 ?>
 
 <!DOCTYPE html>
@@ -63,14 +88,31 @@ $_SESSION['id'] = $data['id'];
 				}
 			?>
 		<div class="lista">
-			<div class="item">
-				<a href="centro_comercial/andares/tiendas/lista_tiendas.php"><img width="80%" class="logo"
-						onmouseout="this.src='img/logo_andares.png';" onmouseover="this.src='img/img_andares1.jpg';"
-						src="img/logo_andares.png"></a>
-				<strong class="nombre">Andares</strong>
-				<span class="direccion">Blvrd Puerta de Hierro 4965, Guadalajara, Jal.</span>
-				<strong class="horario">11:00 - 21:00</strong>
-			</div>
+		  	<?php 
+				  if($mallsError != null)
+				  { ?>
+					<p><?php echo $mallsError;?></p>
+			<?php 
+				  }
+				  else
+				  { 
+					foreach ($malls as $mall)
+					{ ?>
+						<div class="item">
+							<a href="centro_comercial/andares/tiendas/lista_tiendas.php?id=<?php echo $mall['idCentroComercial']?>">
+							<img width="80%" class="logo"
+									onmouseout="this.src='<?php echo $mall['iconoCentroComercial']; ?>';" 
+									onmouseover="this.src='<?php echo $mall['imagenCentroComercial']; ?>';"
+									src="<?php echo $mall['iconoCentroComercial']; ?>">
+							</a>
+							<strong class="nombre"><?php echo $mall['nombreCentroComercial']; ?></strong>
+							<span class="direccion"><?php echo $mall['direccionCentroComercial']; ?></span>
+							<strong class="horario"><?php echo $mall['horarioCentroComercial']; ?></strong>
+						</div>
+			<?php	
+					}
+				  }
+			?>
 		</div>
 	</div>
 </body>
