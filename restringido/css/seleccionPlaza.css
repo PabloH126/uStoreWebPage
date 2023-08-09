@@ -24,6 +24,7 @@ h1{
 	height: 250px;
 	width: 190px;
 	box-shadow: 4px 5px 10px 2px #dfdfdf;
+	-webkit-box-shadow: 4px 5px 10px 2px #dfdfdf;
 	margin: 16px;
 }
 

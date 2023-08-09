@@ -81,10 +81,12 @@ span{
 input::placeholder{
 	color: white;
 	opacity: 0.7;
+	-webkit-opacity: 0.7;
 }
 
 input[type="checkbox"] {
   appearance: none;
+  -webkit-appearance: none;
   font: inherit;
   color: currentColor;
   width: 1.15em;
@@ -92,6 +94,7 @@ input[type="checkbox"] {
   border: 0.15em solid currentColor;
   border-radius: 0.15em;
   transform: translateY(-0.075em);
+  -webkit-transform: translateY(-0.075em);
   cursor: pointer;
   display: grid;
   place-content: center;
@@ -106,13 +109,16 @@ input[type="checkbox"]::before {
   width: 0.63em;
   height: 0.65em;
   transform: scale(0);
+  -webkit-transform: scale(0);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
+  -webkit-box-shadow: inset 1em 1em var(--form-control-color);
    background-color: white;
 }
 
 input[type="checkbox"]:checked::before {
-  transform: scale(1);
+	transform: scale(1);
+	-webkit-transform: scale(1);
 }
 
 .submit{
