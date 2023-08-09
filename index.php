@@ -187,6 +187,16 @@
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> Email ya registrado</p>
 				</div>
+				<div class="formulario__mensaje <?php 
+						echo (isset($_SESSION['PassNV']) && $_SESSION['PassNV'] == true) ? 'formulario__mensaje-activo' : '';
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['PassNV']) && $_SESSION['PassNV'] == true) {
+							unset($_SESSION['PassNV']);
+						}
+					?>" id="formulario__mensaje">
+					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
+							style="color: #cc0000;"></i> La contraseña debe ser de al menos 8 caracteres</p>
+				</div>
 				<div class="formulario__grupo formulario__grupo-btn-enviar">
 					<input class="submit" type="submit" value="Enviar correo de confirmación" id="submitRegistro">
 				</div>

@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if(isset($_POST['passA']) && isset($_POST['repassA']) && ((strlen($_POST['passA']) < 8) or (strlen($_POST['repassA']) < 8)))
+    {
+		$_SESSION['ContraNV'] = true;
+        header("Location: ../recuperacionCuenta.php");
+    }
+
 if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 	if($_POST['passA'] == $_POST['repassA']){

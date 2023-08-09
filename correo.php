@@ -41,6 +41,7 @@ if (isset($_SESSION['claveE'])) {
     //Si las contraseñas tienen menos de 8 caracteres, redirige al index
     if(isset($_POST['passA']) && isset($_POST['repassA']) && ((strlen($_POST['passA']) < 8) or (strlen($_POST['repassA']) < 8)))
     {
+        $_SESSION['PassNV'] == true;
         header("Location: index.php");
     }
     //confirmar que las contraseñas son iguales

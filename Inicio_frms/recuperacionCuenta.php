@@ -35,8 +35,18 @@
 					?>" id="formulario__mensaje">
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> Token Expirado :c</p>
-				</div>
-
+			</div>
+			<div class="formulario__mensaje <?php 
+						echo (isset($_SESSION['ContraNV']) && $_SESSION['ContraNV'] == true) ? 'formulario__mensaje-activo' : '';
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['ContraNV']) && $_SESSION['ContraNV'] == true) {
+							unset($_SESSION['ContraNV']);
+						}
+					?>" id="formulario__mensaje">
+					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
+							style="color: #cc0000;"></i> La contraseña debe ser de al menos 8 caracteres</p>
+			</div>
+			
 
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
