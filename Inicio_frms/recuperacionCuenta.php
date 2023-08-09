@@ -35,7 +35,7 @@
 			<p id="tokenStatus"></p>
 
 
-			
+
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<input class="submit" type="submit" value="Aceptar">
 			</div>

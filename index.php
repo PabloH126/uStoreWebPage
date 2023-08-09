@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	if(!isset($_SESSION['fallo']))
+	if(!isset($_SESSION['fallo']) && !isset($_SESSION['emailRegistrado']))
 	{
 		session_unset();
 		session_destroy();
