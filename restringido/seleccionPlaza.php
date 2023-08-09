@@ -65,7 +65,6 @@ curl_close($ch);
 	<title>Selección de plaza</title>
 	<?php require("templates/template.styles.php") ?>
 	<link rel="stylesheet" type="text/css" href="css/seleccionPlaza.css">
-
 </head>
 
 <body>
@@ -113,6 +112,7 @@ curl_close($ch);
 					}
 				  }
 			?>
+
 		</div>
 	</div>
 </body>
