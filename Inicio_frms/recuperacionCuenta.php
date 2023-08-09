@@ -18,11 +18,11 @@
 		<form action="envio_frms/actualizarContraA.php?token=<?php echo $_GET['token']; ?>" method="post">
 			<h1>Recuperación de cuenta</h1>
 			<div>
-				<label for="passA">Nueva contraseña</label>
+				<label for="passA" pattern=".{8,}">Nueva contraseña</label>
 				<input class="input" type="password" name="passA" placeholder="***********" required>
 			</div>
 			<div>
-				<label for="repassA">Confirmación de contraseña</label>
+				<label for="repassA" pattern=".{8,}">Confirmación de contraseña</label>
 				<input class="input" type="password" name="repassA" placeholder="***********" required>
 			</div>
 			<!--------------- PRUEBA --------------->

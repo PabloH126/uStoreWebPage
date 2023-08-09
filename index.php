@@ -152,7 +152,7 @@
 				</div>
 
 				<div class="formulario__grupo" id="grupo__password">
-					<label for="passA" class="formulario__label">Contraseña</label>
+					<label for="passA" pattern=".{8,}" class="formulario__label">Contraseña</label>
 					<div class="formulario__grupo-input">
 						<input class="input" class="input" type="password" name="passA" id="passA"
 							placeholder="***********" required>
@@ -163,7 +163,7 @@
 				</div>
 
 				<div class="formulario__grupo" id="grupo__repassword">
-					<label for="repassA" class="formulario__label">Confirmación de contraseña</label>
+					<label for="repassA" pattern=".{8,}" class="formulario__label">Confirmación de contraseña</label>
 					<div class="formulario__grupo-input">
 						<input class="input" type="password" name="repassA" id="repassA" placeholder="***********"
 							required>
@@ -185,7 +185,7 @@
 						}
 					?>" id="formulario__mensaje">
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
-							style="color: #cc0000;"></i> Email ya registrado en uStore</p>
+							style="color: #cc0000;"></i> Email ya registrado</p>
 				</div>
 				<div class="formulario__grupo formulario__grupo-btn-enviar">
 					<input class="submit" type="submit" value="Enviar correo de confirmación" id="submitRegistro">
