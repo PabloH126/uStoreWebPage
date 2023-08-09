@@ -25,7 +25,6 @@
 				<label for="repassA" pattern=".{8,}">Confirmación de contraseña</label>
 				<input class="input" type="password" name="repassA" placeholder="***********" required>
 			</div>
-			<!--------------- PRUEBA --------------->
 			<div class="formulario__mensaje <?php 
 						echo (isset($_SESSION['TokenExpirado']) && $_SESSION['TokenExpirado'] == true) ? 'formulario__mensaje-activo' : '';
 						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
@@ -34,7 +33,7 @@
 						}
 					?>" id="formulario__mensaje">
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
-							style="color: #cc0000;"></i> Token Expirado :c</p>
+							style="color: #cc0000;"></i> Link expirado</p>
 			</div>
 			<div class="formulario__mensaje <?php 
 						echo (isset($_SESSION['ContraNV']) && $_SESSION['ContraNV'] == true) ? 'formulario__mensaje-activo' : '';
@@ -46,13 +45,11 @@
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> La contraseña debe ser de al menos 8 caracteres</p>
 			</div>
-			
-
-
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<input class="submit" type="submit" value="Aceptar">
 			</div>
 		</form>
 	</div>
+	<script src="https://kit.fontawesome.com/4995f75cde.js" crossorigin="anonymous"></script>
 </body>
 </html>

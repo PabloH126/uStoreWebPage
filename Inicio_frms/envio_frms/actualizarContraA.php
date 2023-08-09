@@ -57,7 +57,6 @@ if(isset($_POST['passA']) && isset($_POST['repassA'])){
 
 		if($httpStatusCode == 401)
 		{
-			/*echo "Token expirado";*/
 			$_SESSION['TokenExpirado'] = True;
 			header("Location: ../recuperacionCuenta.php");
 		}
