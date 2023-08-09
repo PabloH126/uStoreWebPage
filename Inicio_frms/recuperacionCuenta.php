@@ -33,7 +33,10 @@
 							style="color: #cc0000;"></i> Email ya registrado en uStore</p>
 				</div>
 			<p id="tokenStatus"></p>
-			<div>
+
+
+			
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<input class="submit" type="submit" value="Aceptar">
 			</div>
 		</form>
