@@ -76,7 +76,7 @@ curl_close($ch);
 				if(isset($_SESSION['nombre']))
 				{
 			?>
-					<h3>Bienvenido, <?php echo $_SESSION['nombre']; ?></h3>
+					<h3>Bienvenido(a), <?php echo $_SESSION['nombre']; ?></h3>
 			<?php
 				}
 				else
