@@ -99,7 +99,7 @@
 						<div class="horario">
 							<label class="label"><strong>Horario</strong></label>
 							<div>
-								<div class="lunes">
+								<div class="dias">
 									<label>Lunes</label>
 									<div>
 										<?php
