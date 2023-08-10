@@ -47,6 +47,26 @@
 		echo '<option value="pm">pm</option>';
 		echo '</select>';
 	}
+
+	function diasSelect($dia) {
+		echo '<div class="dia">';
+			echo '<label>' . $dia . '</label>';
+
+			echo '<div>';
+				SelectHoras();
+				SelectMinutos();
+				SelectAMPM();
+			echo '</div>';
+
+			echo '<label> - </label>';
+			
+			echo '<div>';
+				SelectHoras();
+				SelectMinutos();
+				SelectAMPM();
+			echo '</div>';
+		echo '</div>';
+	}
 	
 ?>
 
@@ -98,133 +118,16 @@
 						</div>
 						<div class="horario">
 							<label class="label"><strong>Horario</strong></label>
-							<div>
-								<div class="dias">
-									<label>Lunes</label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-									<label> - </label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-								</div>
-								<div class="dias">
-									<label>Martes</label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-									<label> - </label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-								</div>
-								<div class="dias">
-									<label>Miércoles</label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-									<label> - </label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-								</div>
-								<div class="dias">
-									<label>Jueves</label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-									<label> - </label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-								</div>
-								<div class="dias">
-									<label>Viernes</label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-									<label> - </label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-								</div>
-								<div class="dias">
-									<label>Sábado</label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-									<label> - </label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-								</div>
-								<div class="dias">
-									<label>Domingo</label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-									<label> - </label>
-									<div>
-										<?php
-											SelectHoras();
-											SelectMinutos();
-											SelectAMPM();
-										?>
-									</div>
-								</div>
+							<div class="dias">
+								<?php 
+									diasSelect("Lunes");
+									diasSelect("Martes");
+									diasSelect("Miércoles");
+									diasSelect("Jueves");
+									diasSelect("Viernes");
+									diasSelect("Sábado");
+									diasSelect("Domingo");
+								?>
 							</div>
 						</div>
 					</div>

@@ -19,8 +19,10 @@ h1{
 }
 
 .content .lista .forms .derecha{
-	display: inline-block;
-	text-align: end;
+	/*display: inline-block;
+	text-align: end;*/
+	display: flex;
+	flex-direction: column;
 }
 
 .content .lista .forms .label{
@@ -47,11 +49,18 @@ h1{
 }
 
 .content .lista .forms .derecha .horario{
-	display: inline-grid;
+	/*display: inline-grid;*/
+	display: flex;
+	flex-direction: column;
 }
 
-.content .lista .forms .derecha .horario .dias label,
-.content .lista .forms .derecha .horario .dias div{
+.content.lista .forms .derecha .horario .dias{
+	display: flex;
+	flex-direction: column;
+}
+
+.content .lista .forms .derecha .horario .dias .dia label,
+.content .lista .forms .derecha .horario .dias .dia div{
 	display: inline-flex;
 }
 
