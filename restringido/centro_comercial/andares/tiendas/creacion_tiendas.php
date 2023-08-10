@@ -167,24 +167,24 @@
 											for($i = 00; $i < 13; $i++)
 											{
 										?>
-											<option value="<?php echo $i; ?>"></option>	
-										</select>
+											<option value="<?php echo $i; ?>"><?php echo $i; ?></option>	
 										<?php 
 											}
 										?>
+										</select>
 										<select name="minutos" id="minutos">
 										<?php
 										 	for($i = 00; $i < 60; $i++)
 											{
 										?>
-											<option value="<?php echo $i; ?>"></option>	
-										</select>
+											<option value="<?php echo $i; ?>"><?php echo $i; ?></option>	
 										<?php 
 											} 
 										?>
+										</select>
 										<select name="am/pm" id="am/pm">
-											<option value="am"></option>
-											<option value="pm"></option>
+											<option value="am">am</option>
+											<option value="pm">pm</option>
 										</select>
 									</div>
 								</div>
