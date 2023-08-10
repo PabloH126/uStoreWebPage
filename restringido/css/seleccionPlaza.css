@@ -62,7 +62,7 @@ h1{
 }
 
 /*Diseno Responsivo*/
-@media only screen and (max-width: 1570px){
+@media only screen and (max-width: 1626px){
 
 	.content .lista .item{
 		height: 250px;
