@@ -84,11 +84,11 @@
 											for($i = 00; $i < 13; $i++)
 											{
 										?>
-											<option value="<?php echo $i; ?>"></option>	
-										</select>
+											<option value="<?php echo $i; ?>"><?php echo $i; ?></option>	
 										<?php 
 											}
 										?>
+										</select>
 										<select name="minutos" id="minutos">
 										<?php
 										 	for($i = 00; $i < 60; $i++)
