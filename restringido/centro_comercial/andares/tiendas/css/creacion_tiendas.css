@@ -19,7 +19,6 @@ h1{
 }
 
 .content .lista .forms .derecha{
-	/*display: inline-block;*/
 	text-align: end;
 	display: flex;
 	flex-direction: column;
@@ -49,7 +48,6 @@ h1{
 }
 
 .content .lista .forms .derecha .horario{
-	/*display: inline-grid;*/
 	display: flex;
 	flex-direction: column;
 }
