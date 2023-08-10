@@ -20,6 +20,9 @@
 			<div class="bottn" id="chat" title="Chats">
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/chat_select.png"></a>
 			</div>
+			<div class="bottn" id="plazas" title="Plazas">
+				<a href="seleccionPlaza.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/mall_selected.png"></a>
+			</div>
 			<div id="ultimo" title="Perfil">
 				<a href="../../../../Inicio_frms/index.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/account_select.png"></a>	
 			</div>
