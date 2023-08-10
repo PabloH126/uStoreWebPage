@@ -43,9 +43,9 @@
 	<div class="content">
 		<div class="lista">
 			<?php 
-				  if($mallsError != null)
+				  if($tiendasError != null)
 				  { ?>
-					<p><?php echo $tiendasError;?></p>
+					<h1><?php echo $tiendasError;?></h1>
 			<?php 
 				  }
 				  else
@@ -58,12 +58,14 @@
 			</div>
 			<?php
 					}
-				  }
 			?>
 
 			<div class="item" id="agregar">
 				<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
 			</div>
+			<?php
+				  }
+			?>
 		</div>
 	</div>
 </body>

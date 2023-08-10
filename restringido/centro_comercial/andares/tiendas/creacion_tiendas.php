@@ -94,8 +94,8 @@
 										 	for($i = 00; $i < 60; $i++)
 											{
 										?>
-											<option value="<?php echo $i; ?>"></option>	
-											<?php 
+											<option value="<?php echo $i; ?>"><?php echo $i; ?></option>	
+										<?php 
 											} 
 										?>
 										</select>
