@@ -56,10 +56,14 @@ h1{
 	display: flex;
 	flex-direction: column;
 }
+.content .lista .forms .derecha .horario .dias select{
+	appearance: none;
+}
 
 .content .lista .forms .derecha .horario .dias .dia label,
 .content .lista .forms .derecha .horario .dias .dia div{
 	display: inline-flex;
+	margin: 3px;
 }
 
 .content .lista .boton input{
