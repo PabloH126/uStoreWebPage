@@ -82,7 +82,7 @@ curl_close($ch);
 				else
 				{
 			?>
-					<h3>Error, vuelve a iniciar sesion</h3>
+					<h3>Error, vuelve a iniciar sesión</h3>
 			<?php
 				}
 			?>

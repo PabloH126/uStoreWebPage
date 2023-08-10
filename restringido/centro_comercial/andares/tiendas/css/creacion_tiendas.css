@@ -9,57 +9,57 @@ h1{
 	padding: 20px;
 }
 
-.content .lista .form{
+.content .lista .forms{
 	display: flex;
 }
 
-.content .lista .form form{
+.content .lista .forms .izquierda{
 	display: inline-block;
-	width: 50%;
-}
-
-.content .lista .form .izquierda{
 	text-align: initial;
 }
 
-.content .lista .form .derecha{
+.content .lista .forms .derecha{
+	display: inline-block;
 	text-align: end;
 }
 
-.content .lista .form form .label{
+.content .lista .forms .label{
 	display: block;
 	margin: 10px 0;
 }
 
-.content .lista .form .izquierda #nombre input{
+.content .lista .forms .izquierda #nombre input{
 	width: 75%;
 	height: 2.3em;
 	outline: none;
 }
 
-.content .lista .form .izquierda .categorias .categoria{
+.content .lista .forms .izquierda .categorias .categoria{
 	margin: 10px;
 }
 
-.content .lista .form .derecha .promociones input{
+.content .lista .forms .derecha .promociones input{
 	display: inline-flex;
 }
 
-.content .lista .form .derecha .promociones  div{
+.content .lista .forms .derecha .promociones  div{
 	/*display: inline-flex;*/
 }
 
-.content .lista .form .derecha .horario{
+.content .lista .forms .derecha .horario{
 	display: inline-grid;
 }
 
-.content .lista .form .derecha .horario .lunes label,
-.content .lista .form .derecha .horario .lunes div,
-.content .lista .form .derecha .horario .martes label,
-.content .lista .form .derecha .horario .martes div{
+.content .lista .forms .derecha .horario .lunes label,
+.content .lista .forms .derecha .horario .lunes div,
+.content .lista .forms .derecha .horario .martes label,
+.content .lista .forms .derecha .horario .martes div{
 	display: inline-flex;
 }
 
-.content .lista .form #guardar{
-	position: absolute;
+.content .lista .boton input{
+	width: 30%;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 4px;
 }
