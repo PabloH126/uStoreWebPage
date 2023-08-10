@@ -59,3 +59,18 @@ h1{
 .content .lista .item .horario{
 	margin-top: 2px;
 }
+
+/*Diseno Responsivo*/
+@media only screen and (min-width: 1366px){
+/****
+	#box1 div{
+		display: block;
+		width: 95%;
+	}
+
+	#box2 div{
+		display: block;
+		width: 90%;
+	}
+	*/
+}
