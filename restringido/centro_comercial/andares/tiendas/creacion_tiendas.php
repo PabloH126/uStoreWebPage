@@ -80,7 +80,7 @@
 					</div>
 				</div>
 				<div class="boton">
-					<input type="submit" name="Guardar">
+					<input type="submit" name="" value="Guardar">
 				</div>
 			</form>
 		</div>
