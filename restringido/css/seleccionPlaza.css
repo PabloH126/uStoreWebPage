@@ -11,6 +11,7 @@ h1{
 
 .content .lista {
 	display: grid;
+	-webkit-display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	width: 80%;
 	margin: 5px auto; 
@@ -32,10 +33,12 @@ h1{
 	border-radius: 20px;
 	margin: 10px auto;
 	transition: transform 0.5s ease-in-out;
+	-webkit-transition: transform 0.5s ease-in-out;
 }
 
 .logo:hover{
 	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
 }
 
 .content .lista .item .nombre{

@@ -59,6 +59,7 @@ label{
 	font-family: 'Source Code Pro', monospace;
 	border-bottom: solid white 1px;
 	transition: border-color 0.2s ease-in-out;
+	-webkit-transition: border-color 0.2s ease-in-out;
 }
 
 input:focus{
@@ -74,6 +75,7 @@ span{
 .checkbox{
 	margin: 0 0 15px;
 	display: grid;
+	-webkit-display: grid;
   	grid-template-columns: 1em auto;
   	gap: 0.5em;
 }
@@ -97,6 +99,7 @@ input[type="checkbox"] {
   -webkit-transform: translateY(-0.075em);
   cursor: pointer;
   display: grid;
+  -webkit-display: grid;
   place-content: center;
 }
 
@@ -111,6 +114,7 @@ input[type="checkbox"]::before {
   transform: scale(0);
   -webkit-transform: scale(0);
   transition: 120ms transform ease-in-out;
+  -webkit-transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
   -webkit-box-shadow: inset 1em 1em var(--form-control-color);
    background-color: white;

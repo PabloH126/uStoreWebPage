@@ -1,5 +1,6 @@
 header .content .final{
 	display: grid;
+	-webkit-display: grid;
 	width: 60%;
 	grid-template-columns: repeat(6, 1fr);
 	margin: 0;
@@ -17,6 +18,7 @@ header .content .final #ultimo:hover,
 header .content .final .bottn:hover{
 	background: white;
 	transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
 }
 
 header .content .final #ultimo{
@@ -30,6 +32,7 @@ header .content .final #ultimo img:hover,
 header .content .final .bottn img:hover{
 	filter: none;
 	transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
 }
 
 header .content .final #ultimo img,
