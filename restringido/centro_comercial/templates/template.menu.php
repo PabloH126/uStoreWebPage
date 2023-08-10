@@ -6,7 +6,7 @@
 		
 		<div class="final">
 			<div class="bottn" id="tienda">
-				<a href="lista_tiendas.php"><img src="../../img/tienda_select.png"></a>
+				<a href="lista_tiendas.php"><img src="../img/tienda_select.png"></a>
 			</div>
 			<div class="bottn" id="solicitudes">
 				<a href=""><img src="../../img/solicitudes_select.png"></a>
