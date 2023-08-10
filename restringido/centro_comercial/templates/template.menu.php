@@ -18,7 +18,7 @@
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tendencias_select.png"></a>
 			</div>
 			<div class="bottn" id="chat">
-				<a href=""><https://ustoredata.blob.core.windows.net/webpage/nav/chat_select.png"></a>
+				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/chat_select.png"></a>
 			</div>
 			<div id="ultimo">
 				<a href="../../../../Inicio_frms/index.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/account_select.png"></a>	
