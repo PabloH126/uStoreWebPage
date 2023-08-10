@@ -5,22 +5,22 @@
 		</div>
 		
 		<div class="final">
-			<div class="bottn" id="tienda" title="tiendas">
-				<a href="centro_comercial/andares/tiendas/lista_tiendas.php?id=<?php echo $mall['idCentroComercial']?>"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
+			<div class="bottn" id="tienda" title="Tiendas creadas">
+				<a href="centro_comercial/andares/tiendas/lista_tiendas.php?id=<?php echo $_GET['id']; ?>"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
 			</div>
-			<div class="bottn" id="solicitudes">
+			<div class="bottn" id="solicitudes" title="Solicitudas de apartado">
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/solicitudes_select.png"></a>
 			</div>
-			<div class="bottn" id="ofertas">
+			<div class="bottn" id="ofertas" title="Publicación de promociones">
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/ofertas_select.png"></a>
 			</div>
-			<div class="bottn" id="tendencias">
+			<div class="bottn" id="tendencias" title="Tendencias de venta">
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tendencias_select.png"></a>
 			</div>
-			<div class="bottn" id="chat">
+			<div class="bottn" id="chat" title="Chats">
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/chat_select.png"></a>
 			</div>
-			<div id="ultimo">
+			<div id="ultimo" title="Perfil">
 				<a href="../../../../Inicio_frms/index.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/account_select.png"></a>	
 			</div>
 			

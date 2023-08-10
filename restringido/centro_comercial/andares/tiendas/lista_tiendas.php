@@ -2,6 +2,8 @@
 	session_start();
 	require '../../../security.php';;
 
+	$_SESSION['idMall'] = $_GET['id'];
+
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_GET['id']);
