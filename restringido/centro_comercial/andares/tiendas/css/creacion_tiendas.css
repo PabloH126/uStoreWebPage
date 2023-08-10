@@ -58,6 +58,8 @@ h1{
 }
 .content .lista .forms .derecha .horario .dias select{
 	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
 
 .content .lista .forms .derecha .horario .dias .dia label,
