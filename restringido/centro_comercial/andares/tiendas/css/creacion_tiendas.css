@@ -50,14 +50,8 @@ h1{
 	display: inline-grid;
 }
 
-.content .lista .forms .derecha .horario .lunes label,
-.content .lista .forms .derecha .horario .lunes div,
-.content .lista .forms .derecha .horario .martes label,
-.content .lista .forms .derecha .horario .martes div,
-.content .lista .forms .derecha .horario .miercoles label,
-.content .lista .forms .derecha .horario .miercoles div,
-.content .lista .forms .derecha .horario .jueves label,
-.content .lista .forms .derecha .horario .jueves div{
+.content .lista .forms .derecha .horario .dias label,
+.content .lista .forms .derecha .horario .dias div{
 	display: inline-flex;
 }
 

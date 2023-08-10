@@ -76,7 +76,7 @@
 						<div class="horario">
 							<label class="label"><strong>Horario</strong></label>
 							<div>
-								<div class="lunes">
+								<div class="dias">
 									<label>Lunes</label>
 									<div>
 										<select name="horas" id="horas">
@@ -132,7 +132,7 @@
 										</select>
 									</div>
 								</div>
-								<div class="martes">
+								<div class="dias">
 									<label>Martes</label>
 									<div>
 										<select name="horas" id="horas">
@@ -188,7 +188,7 @@
 										</select>
 									</div>
 								</div>
-								<div class="miercoles">
+								<div class="dias">
 									<label>Miércoles</label>
 									<div>
 										<select name="horas" id="horas">
@@ -244,7 +244,7 @@
 										</select>
 									</div>
 								</div>
-								<div class="jueves">
+								<div class="dias">
 									<label>Jueves</label>
 									<div>
 										<select name="horas" id="horas">
@@ -300,7 +300,7 @@
 										</select>
 									</div>
 								</div>
-								<div class="Viernes">
+								<div class="dias">
 									<label>Viernes</label>
 									<div>
 										<select name="horas" id="horas">
@@ -356,7 +356,7 @@
 										</select>
 									</div>
 								</div>
-								<div class="sabado">
+								<div class="dias">
 									<label>Sábado</label>
 									<div>
 										<select name="horas" id="horas">
@@ -412,7 +412,7 @@
 										</select>
 									</div>
 								</div>
-								<div class="domingo">
+								<div class="dias">
 									<label>Domingo</label>
 									<div>
 										<select name="horas" id="horas">
