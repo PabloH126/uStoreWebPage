@@ -45,7 +45,7 @@
 			<?php 
 				  if($tiendasError != null)
 				  { ?>
-					<h6><?php echo $tiendasError;?></h6>
+					<h3><?php echo $tiendasError;?></h3>
 			<?php 
 				  }
 				  else

@@ -50,6 +50,8 @@ h1{
 	display: inline-grid;
 }
 
+.content .lista .forms .derecha .horario .lunes label,
+.content .lista .forms .derecha .horario .lunes div
 .content .lista .forms .derecha .horario .dias label,
 .content .lista .forms .derecha .horario .dias div{
 	display: inline-flex;

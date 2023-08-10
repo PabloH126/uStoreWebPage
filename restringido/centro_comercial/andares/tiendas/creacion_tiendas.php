@@ -76,7 +76,7 @@
 						<div class="horario">
 							<label class="label"><strong>Horario</strong></label>
 							<div>
-								<div class="dias">
+								<div class="lunes">
 									<label>Lunes</label>
 									<div>
 										<select name="horas" id="horas">
