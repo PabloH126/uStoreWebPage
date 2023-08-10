@@ -22,10 +22,11 @@ h1{
 	background-color: white;
 	border-radius: 20px;
 	text-align: center;
-	height: 250px;
+	height: 280px;
 	box-shadow: 4px 5px 10px 2px #dfdfdf;
 	-webkit-box-shadow: 4px 5px 10px 2px #dfdfdf;
-	margin: 16px 32px;
+	margin: 16px 64px;
+	
 }
 
 .content .lista .item .logo{
@@ -61,10 +62,10 @@ h1{
 }
 
 /*Diseno Responsivo*/
-@media only screen and (min-width: 1366px){
+@media only screen and (max-width: 1366px){
 
 	.content .lista .item{
-		height: 280px;
-		margin: 16px 64px;
+		height: 250px;
+		margin: 16px 32px;
 	}
 }
