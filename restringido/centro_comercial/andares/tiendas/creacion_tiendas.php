@@ -79,29 +79,113 @@
 								<div class="lunes">
 									<label>Lunes</label>
 									<div>
-										<select>12</select>
-										<select>00</select>
-										<select>pm</select>
+										<select name="horas" id="horas">
+										<?php 
+											for($i = 00; $i < 13; $i++)
+											{
+										?>
+											<option value="<?php echo $i; ?>"></option>	
+										</select>
+										<?php 
+											}
+										?>
+										<select name="minutos" id="minutos">
+										<?php
+										 	for($i = 00; $i < 60; $i++)
+											{
+										?>
+											<option value="<?php echo $i; ?>"></option>	
+										</select>
+										<?php 
+											} 
+										?>
+										<select name="am/pm" id="am/pm">
+											<option value="am"></option>
+											<option value="pm"></option>
+										</select>
 									</div>
 									<label> - </label>
 									<div>
-										<select>11</select>
-										<select>00</select>
-										<select>pm</select>
+										<select name="horas" id="horas">
+										<?php 
+											for($i = 00; $i < 13; $i++)
+											{
+										?>
+											<option value="<?php echo $i; ?>"></option>	
+										</select>
+										<?php 
+											}
+										?>
+										<select name="minutos" id="minutos">
+										<?php
+										 	for($i = 00; $i < 60; $i++)
+											{
+										?>
+											<option value="<?php echo $i; ?>"></option>	
+										</select>
+										<?php 
+											} 
+										?>
+										<select name="am/pm" id="am/pm">
+											<option value="am"></option>
+											<option value="pm"></option>
+										</select>
 									</div>
 								</div>
 								<div class="martes">
 									<label>Martes</label>
 									<div>
-										<select></select>
-										<select></select>
-										<select></select>
+										<select name="horas" id="horas">
+										<?php 
+											for($i = 00; $i < 13; $i++)
+											{
+										?>
+											<option value="<?php echo $i; ?>"></option>	
+										</select>
+										<?php 
+											}
+										?>
+										<select name="minutos" id="minutos">
+										<?php
+										 	for($i = 00; $i < 60; $i++)
+											{
+										?>
+											<option value="<?php echo $i; ?>"></option>	
+										</select>
+										<?php 
+											} 
+										?>
+										<select name="am/pm" id="am/pm">
+											<option value="am"></option>
+											<option value="pm"></option>
+										</select>
 									</div>
 									<label> - </label>
 									<div>
-										<select></select>
-										<select></select>
-										<select></select>
+										<select name="horas" id="horas">
+										<?php 
+											for($i = 00; $i < 13; $i++)
+											{
+										?>
+											<option value="<?php echo $i; ?>"></option>	
+										</select>
+										<?php 
+											}
+										?>
+										<select name="minutos" id="minutos">
+										<?php
+										 	for($i = 00; $i < 60; $i++)
+											{
+										?>
+											<option value="<?php echo $i; ?>"></option>	
+										</select>
+										<?php 
+											} 
+										?>
+										<select name="am/pm" id="am/pm">
+											<option value="am"></option>
+											<option value="pm"></option>
+										</select>
 									</div>
 								</div>
 							</div>

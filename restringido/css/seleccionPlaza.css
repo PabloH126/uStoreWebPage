@@ -19,7 +19,6 @@ h1{
 
 .content .lista .item{
 	display: grid;
-	/*display: inline-block;*/
 	background-color: white;
 	border-radius: 20px;
 	text-align: center;
@@ -27,13 +26,11 @@ h1{
 	box-shadow: 4px 5px 10px 2px #dfdfdf;
 	-webkit-box-shadow: 4px 5px 10px 2px #dfdfdf;
 	margin: 16px 64px;
-	
 }
 
 .content .lista .item .logo{
 	display: block;
 	border-radius: 20px;
-	/*margin: 10px auto;*/
 	margin: 10px auto 0;
 	transition: transform 0.5s ease-in-out;
 	-webkit-transition: transform 0.5s ease-in-out;
@@ -45,11 +42,9 @@ h1{
 }
 
 .content .lista .item .nombre{
-	font-size: 1.25em;
-	font-family: 'Prata', serif;
+	font-size: 1.1em;
 	display: block;
 	margin: 0 8px;
-	/*margin: 10px 0 4px;*/
 }
 
 .content .lista .item .direccion,
@@ -57,12 +52,7 @@ h1{
 	font-family: arial;
 	font-size: 0.9em;
 	margin: 0px 8px;
-	/*margin: 8px;*/
 	display: block;
-}
-
-.content .lista .item .horario{
-	/*margin-top: 2px;*/
 }
 
 /*Diseno Responsivo*/
