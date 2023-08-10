@@ -1,3 +1,32 @@
+<?php 
+	session_start();
+	require '../../../security.php';;
+
+	$ch = curl_init();
+
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateTienda");
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Authorization: Bearer ' . $_COOKIE['SessionToken']
+	));
+	
+	$response = curl_exec($ch);
+	
+	if ($response === false) {
+		echo 'Error: ' . curl_error($ch);
+	} else {
+		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	}
+	
+	if ($httpStatusCode != 200) {
+		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+	}
+	$tiendas = json_decode($response, true);
+	curl_close($ch);
+	
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

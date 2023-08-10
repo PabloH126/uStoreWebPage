@@ -18,7 +18,8 @@ h1{
 }
 
 .content .lista .item{
-	display: inline-block;
+	display: grid;
+	/*display: inline-block;*/
 	background-color: white;
 	border-radius: 20px;
 	text-align: center;
@@ -32,7 +33,8 @@ h1{
 .content .lista .item .logo{
 	display: block;
 	border-radius: 20px;
-	margin: 10px auto;
+	/*margin: 10px auto;*/
+	margin: 10px auto 0;
 	transition: transform 0.5s ease-in-out;
 	-webkit-transition: transform 0.5s ease-in-out;
 }
@@ -46,19 +48,21 @@ h1{
 	font-size: 1.25em;
 	font-family: 'Prata', serif;
 	display: block;
-	margin: 10px 0 4px;
+	margin: 0 8px;
+	/*margin: 10px 0 4px;*/
 }
 
 .content .lista .item .direccion,
 .content .lista .item .horario{
 	font-family: arial;
 	font-size: 0.9em;
-	margin: 8px;
+	margin: 0px 8px;
+	/*margin: 8px;*/
 	display: block;
 }
 
 .content .lista .item .horario{
-	margin-top: 2px;
+	/*margin-top: 2px;*/
 }
 
 /*Diseno Responsivo*/
