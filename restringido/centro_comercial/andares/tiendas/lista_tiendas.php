@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	require '../../security.php';
+	require 'security.php';
 
 	$ch = curl_init();
 
