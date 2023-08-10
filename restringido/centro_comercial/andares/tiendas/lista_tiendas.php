@@ -23,7 +23,7 @@
 		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
 	}
 	$tiendas = json_decode($response, true);
-	
+	echo $tiendas;
 	curl_close($ch);
 	
 ?>
