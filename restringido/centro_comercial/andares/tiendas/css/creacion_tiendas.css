@@ -181,7 +181,7 @@ h1{
 
 	.content .lista .forms .derecha .promociones .imageP .box{
 		height: 51px;
-		border: 1px dashed solid;
+		border: 1px dashed;
 	}
 
 	.content .lista .forms .derecha .promociones .imageP .ip label::before{
