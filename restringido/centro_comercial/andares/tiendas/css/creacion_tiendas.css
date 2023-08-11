@@ -97,3 +97,8 @@ h1{
 	text-align: end;
 	display: grid;
 }
+
+.content .lista .forms .label{
+	display: block;
+	margin: 10px 0;
+}
