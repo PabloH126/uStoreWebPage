@@ -1,5 +1,5 @@
 h1{
-	font-size: 3em;
+	font-size: 4em;
 	margin: 20px 0 15px 0;
 }
 
@@ -105,4 +105,12 @@ h1{
 .content .lista .forms .label{
 	display: block;
 	margin: 10px 0;
+}
+
+@media only screen and (max-width: 1502px){
+
+	h1{
+		font-size: 3em;
+	}
+
 }
