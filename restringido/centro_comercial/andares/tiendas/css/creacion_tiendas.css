@@ -84,18 +84,14 @@ h1{
 }
 
 .content .lista .forms .derecha .promociones .imageP .ip label::before{
-	content: 'Seleccionar archivo';
+	content: 'Seleccionar';
     display: inline-block;
-    background-color: #007bff;
-    color: white;
-    border: none;
+	font-size: small;
+    background-color: #efefef;
+    border: #6c6c6c 1px solid;
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 3px 9px;
     cursor: pointer;
-}
-
-.custom-file-input::before:hover {
-    background-color: #0056b3;
 }
 
 .content .lista .forms .derecha .promociones .imageP .ip input{
