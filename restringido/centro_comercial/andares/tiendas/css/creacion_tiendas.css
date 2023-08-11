@@ -83,6 +83,10 @@ h1{
 	display: inline-flex;
 }
 
+.content .lista .forms .derecha .promociones .imageP .box{
+	
+}
+
 .content .lista .forms .derecha .promociones .imageP .ip label::before{
 	content: 'Seleccionar';
     display: inline-block;
