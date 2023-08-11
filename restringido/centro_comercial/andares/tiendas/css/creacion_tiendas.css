@@ -78,6 +78,26 @@ h1{
 }
 
 /* *promociones* */
+
+.content .lista .forms .derecha .promociones .imageP label::before{
+	content: 'Seleccionar archivo';
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.custom-file-input::before:hover {
+    background-color: #0056b3;
+}
+
+.content .lista .forms .derecha .promociones .imageP input{
+	display: none;
+}
+
 /*
 .content .lista .forms .derecha .promociones .imageP .ip{
 	overflow: hidden;
