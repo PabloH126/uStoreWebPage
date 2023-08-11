@@ -60,7 +60,7 @@ h1{
 /* logo */
 
 .content .lista .forms .izquierda .logoT .contentL{
-	display: inline-block;
+	display: grid;
 	width: 28%;
 	justify-content: space-evenly;
 }
