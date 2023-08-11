@@ -2,24 +2,24 @@
 	session_start();
 	require '../../../security.php';
 	
-	function SelectHoras($dia) {
-		echo '<select name="horas' . $dia . '" id="horas">';
+	function SelectHoras($dia, $periodo) {
+		echo '<select name="horas' . $dia . $periodo . '" id="horas">';
 		for ($i = 0; $i < 13; $i++) {
 			echo '<option value="' . str_pad($i, 2, '0', STR_PAD_LEFT) . '">' . str_pad($i, 2, '0', STR_PAD_LEFT) . '</option>';
 		}
 		echo '</select>';
 	}
 	
-	function SelectMinutos($dia) {
-		echo '<select name="minutos' . $dia . '" id="minutos">';
+	function SelectMinutos($dia, $periodo) {
+		echo '<select name="minutos' . $dia . $periodo . '" id="minutos">';
 		for ($i = 0; $i < 60; $i++) {
 			echo '<option value="' . str_pad($i, 2, '0', STR_PAD_LEFT) . '">' . str_pad($i, 2, '0', STR_PAD_LEFT) . '</option>';
 		}
 		echo '</select>';
 	}
 	
-	function SelectAMPM($dia) {
-		echo '<select name="am/pm' . $dia . '" id="am/pm">';
+	function SelectAMPM($dia, $periodo) {
+		echo '<select name="am/pm' . $dia . $periodo . '" id="am/pm">';
 		echo '<option value="am">am</option>';
 		echo '<option value="pm">pm</option>';
 		echo '</select>';
@@ -30,17 +30,17 @@
 			echo '<label>' . $dia . '</label>';
 
 			echo '<div>';
-				SelectHoras($dia);
-				SelectMinutos($dia);
-				SelectAMPM($dia);
+				SelectHoras($dia, 'apertura');
+				SelectMinutos($dia, 'apertura');
+				SelectAMPM($dia, 'apertura');
 			echo '</div>';
 
 			echo '<label> - </label>';
 			
 			echo '<div>';
-				SelectHoras($dia);
-				SelectMinutos($dia);
-				SelectAMPM($dia);
+				SelectHoras($dia, 'cierre');
+				SelectMinutos($dia, 'cierre');
+				SelectAMPM($dia, 'cierre');
 			echo '</div>';
 		echo '</div>';
 	}

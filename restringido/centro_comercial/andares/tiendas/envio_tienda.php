@@ -30,11 +30,14 @@
 
     function generateArrayHorario($dia)
     {
-        if(isset($_POST['horas' . $dia]) && isset($_POST['minutos' . $dia]) && isset($_POST['am/pm' . $dia]))
+        if(isset($_POST['horas' . $dia . 'apertura']) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['am/pm' . $dia . 'apertura'])
+         && isset($_POST['horas' . $dia . 'cierre']) && isset($_POST['minutos' . $dia . 'cierre']) && isset($_POST['am/pm' . $dia . 'cierre']))
         {
             array(
                 "dia" => $dia,
-                "horarioApertura"
+                "horarioApertura" => $_POST['horas' . $dia . 'apertura'] . ':' . $_POST['minutos' . $dia . 'apertura'] . ' ' . $_POST['am/pm' . $dia . 'apertura'],
+                "horarioCierre" =>  $_POST['horas' . $dia . 'cierre'] . ':' . $_POST['minutos' . $dia . 'cierre'] . ' ' . $_POST['am/pm' . $dia . 'cierre'],
+                "idTienda"
             );
         }
     }

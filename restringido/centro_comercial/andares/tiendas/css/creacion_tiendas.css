@@ -61,6 +61,8 @@ h1{
 
 .content .lista .forms .izquierda .logoT .contentL{
 	display: inline-block;
+	width: 28%;
+	justify-content: space-evenly;
 }
 
 /* promociones*/
@@ -78,6 +80,10 @@ h1{
 	border: 2px dashed black;
 }
 
+.content .lista .forms .izquierda .logoT .contentL .box{
+	height: 110px;
+}
+
 .content .lista .forms .izquierda .logoT .contentL .ip label::before,
 .content .lista .forms .derecha .promociones .imageP .ip label::before{
 	content: 'Seleccionar';
@@ -89,6 +95,11 @@ h1{
     padding: 3px 9px;
 	margin: 0 18px;
     cursor: pointer;
+}
+
+.content .lista .forms .izquierda .logoT .contentL .ip label::before{
+	padding: 3px 17px;
+	margin: auto;
 }
 
 .content .lista .forms .izquierda .logoT .contentL .ip input,
