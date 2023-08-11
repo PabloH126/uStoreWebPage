@@ -79,7 +79,11 @@ h1{
 
 /* *promociones* */
 
-.content .lista .forms .derecha .promociones .imageP label::before{
+.content .lista .forms .derecha .promociones .imageP{
+	display: inline-flex;
+}
+
+.content .lista .forms .derecha .promociones .imageP .ip label::before{
 	content: 'Seleccionar archivo';
     display: inline-block;
     background-color: #007bff;
@@ -94,7 +98,7 @@ h1{
     background-color: #0056b3;
 }
 
-.content .lista .forms .derecha .promociones .imageP input{
+.content .lista .forms .derecha .promociones .imageP .ip input{
 	display: none;
 }
 
