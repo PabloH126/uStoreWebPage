@@ -1,16 +1,16 @@
 <?php
     session_start();
 
-    $logoTienda = $_FILES['logoTienda'];
-
-    //CREATE TIENDA
-    $ch = curl_init();
-    
-    $data = array(
+    $data = [
         'NombreTienda' => $_POST['nombreTienda'],
         'IdCentroComercial' => $_SESSION['idMall'],
-        'logoTienda' => new CURLFile($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name'])
-    );
+    ];
+    
+    $logoTienda = $_FILES['logoTienda'];
+    
+    $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
+    //CREATE TIENDA
+    $ch = curl_init();
     
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateTienda");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
