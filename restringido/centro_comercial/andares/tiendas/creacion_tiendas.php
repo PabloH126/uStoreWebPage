@@ -90,6 +90,41 @@
 									<input type="checkbox" name="categoria2T" value="2">
 									Categoría 2
 								</label>
+
+								<label class="categoria" for="categoria2T">	
+									<input type="checkbox" name="categoria2T" value="2">
+									Categoría 2
+								</label>
+
+								<label class="categoria" for="categoria2T">	
+									<input type="checkbox" name="categoria2T" value="2">
+									Categoría 2
+								</label>
+
+								<label class="categoria" for="categoria2T">	
+									<input type="checkbox" name="categoria2T" value="2">
+									Categoría 2
+								</label>
+
+								<label class="categoria" for="categoria2T">	
+									<input type="checkbox" name="categoria2T" value="2">
+									Categoría 2
+								</label>
+
+								<label class="categoria" for="categoria2T">	
+									<input type="checkbox" name="categoria2T" value="2">
+									Categoría 2
+								</label>
+
+								<label class="categoria" for="categoria2T">	
+									<input type="checkbox" name="categoria2T" value="2">
+									Categoría 2
+								</label>
+
+								<label class="categoria" for="categoria2T">	
+									<input type="checkbox" name="categoria2T" value="2">
+									Categoría 2
+								</label>
 							</div>
 						</div>	
 					</div>
