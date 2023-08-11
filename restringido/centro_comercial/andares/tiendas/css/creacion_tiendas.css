@@ -84,7 +84,8 @@ h1{
 }
 
 .content .lista .forms .derecha .promociones .imageP .box{
-	
+	height: 10px;
+	width: 10px;
 }
 
 .content .lista .forms .derecha .promociones .imageP .ip label::before{
