@@ -158,11 +158,19 @@ h1{
 		border: 1px dashed;
 	}
 
+	.content .lista .forms .izquierda .logoT .contentL .box{
+		height: 64px;
+	}
+
 	.content .lista .forms .izquierda .logoT .contentL .ip label::before,
 	.content .lista .forms .derecha .promociones .imageP .ip label::before{
 		font-size: small;
 		cursor: pointer;
 		margin: 0;
+	}
+
+	.content .lista .forms .izquierda .logoT .contentL .ip label::before{
+		padding: 3px 10px;
 	}
 
 	.content .lista .forms .derecha .horario .dias .dia div{
