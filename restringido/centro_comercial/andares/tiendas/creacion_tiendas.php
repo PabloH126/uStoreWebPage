@@ -88,9 +88,7 @@
 						<div class="promociones">
 							<label class="label"><strong>Imágenes promocionales</strong></label>
 							<div>
-								<input type="file" name="imagen1">
-								<input type="file" name="imagen2">
-								<input type="file" name="imagen3">
+								<input type="file" name="imagenPromocional">
 							</div>
 						</div>
 						<div class="horario">
