@@ -55,6 +55,10 @@ $malls = json_decode($response, true);
 
 curl_close($ch);
 
+if(isset($_SESSION['idMall']))
+{
+	unset($_SESSION['idMall']);
+}
 ?>
 
 <!DOCTYPE html>
