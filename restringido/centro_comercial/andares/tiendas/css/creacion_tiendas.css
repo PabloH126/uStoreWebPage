@@ -50,8 +50,37 @@ h1{
 	gap: 0.5em;
 }
 
+input[type="checkbox"]{
+	appearance: none;
+	font-size: inherit;
+	color: currentColor;
+	width: 1.1em;
+	border: 0.15em solid currentColor;
+	border-radius: 0.15em;
+	transform: translateY(-0.075em);
+	cursor: pointer;
+	display: grid;
+	place-content: center;
+}
 
+.checkbox + .checkbox {
+	margin-top: 1em;
+  }
 
+input[type="checkbox"]::before{
+	content: "";
+	width: 0.63em;
+	height: 0.63em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	transition: inset 1em 1em var(--form-control-color);
+	background: #6c6c6c;
+}
+
+input[type="checkbox"]:checked::before {
+	transform: scale(1);
+	-webkit-transform: scale(1);
+}
 
 .content .lista .forms .derecha{
 	text-align: end;
