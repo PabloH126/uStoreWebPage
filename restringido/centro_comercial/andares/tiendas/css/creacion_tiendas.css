@@ -83,6 +83,10 @@ h1{
 	padding: 4px;
 }*/
 
+.content .lista form{
+	font-size: 2em;
+}
+
 .content .lista form .forms{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
