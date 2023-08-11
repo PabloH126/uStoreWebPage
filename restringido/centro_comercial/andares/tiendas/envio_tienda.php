@@ -28,18 +28,36 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
+    if($httpStatusCode != 201)
+    {
+        echo $httpStatusCode;
+    }
+
     $dataTienda = json_decode($response, true);
 
     curl_close($ch);
 
 
     //CREATE HORARIO
+    $arraysHorario = array(
+        generateArrayHorario('Lunes', $dataTienda),
+        generateArrayHorario('Martes', $dataTienda),
+        generateArrayHorario('Miércoles', $dataTienda),
+        generateArrayHorario('Jueves', $dataTienda),
+        generateArrayHorario('Viernes', $dataTienda),
+        generateArrayHorario('Sábado', $dataTienda),
+        generateArrayHorario('Domingo', $dataTienda)
+    );
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Horarios/CreateHorario");
     curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+        'Authorization: Bearer ' . $_COOKIE['SessionToken'],
+        'Content-Type: application/json',
+        'Content-Length: ' . strlen($jsonData)
     ));
     
     $response = curl_exec($ch);
@@ -60,7 +78,7 @@
         if(isset($_POST['horas' . $dia . 'apertura']) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['am/pm' . $dia . 'apertura'])
          && isset($_POST['horas' . $dia . 'cierre']) && isset($_POST['minutos' . $dia . 'cierre']) && isset($_POST['am/pm' . $dia . 'cierre']))
         {
-             return array(
+            return array(
                 "dia" => $dia,
                 "horarioApertura" => $_POST['horas' . $dia . 'apertura'] . ':' . $_POST['minutos' . $dia . 'apertura'] . ' ' . $_POST['am/pm' . $dia . 'apertura'],
                 "horarioCierre" =>  $_POST['horas' . $dia . 'cierre'] . ':' . $_POST['minutos' . $dia . 'cierre'] . ' ' . $_POST['am/pm' . $dia . 'cierre'],
