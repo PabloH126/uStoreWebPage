@@ -10,17 +10,12 @@
     //CREATE TIENDA
     $ch = curl_init();
 
-    $cuerpo = [];
-    foreach($data as $key => $value)
-    {
-        $cuerpo[$key] = $value;
-    }
-    $cuerpo['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
+    $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
     
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateTienda");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $cuerpo);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Authorization: Bearer ' . $_COOKIE['SessionToken']
     ));
@@ -53,6 +48,8 @@
         generateArrayHorario('Sábado', $dataTienda),
         generateArrayHorario('Domingo', $dataTienda)
     );
+
+    $jsonData = json_encode($arraysHorario);
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Horarios/CreateHorario");
