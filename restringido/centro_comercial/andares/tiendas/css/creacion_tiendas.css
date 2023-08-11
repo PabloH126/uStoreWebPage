@@ -45,7 +45,9 @@ h1{
 /* categorias */
 
 .content .lista .forms .izquierda .categorias .categoria{
-
+	margin: 0 0 7px;
+	display: flex;
+	gap: 0.5em;
 }
 
 

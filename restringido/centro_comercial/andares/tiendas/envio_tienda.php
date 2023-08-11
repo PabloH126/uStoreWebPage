@@ -2,12 +2,12 @@
     session_start();
 
     $data = [
-        'NombreTienda' => $_POST['nombreTienda'],
-        'IdCentroComercial' => $_SESSION['idMall'],
+        'nombreTienda' => $_POST['nombreTienda'],
+        'idCentroComercial' => $_SESSION['idMall'],
     ];
     
     $logoTienda = $_FILES['logoTienda'];
-    
+
     $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
     //CREATE TIENDA
     $ch = curl_init();
