@@ -70,6 +70,15 @@ h1{
 
 /* *categorias* */
 
+
+
+.content .lista .forms .derecha{
+	text-align: end;
+	display: grid;
+}
+
+/* *promociones* */
+
 .content .lista .forms .derecha .promociones .imageP .ip{
 	overflow: hidden;
 	white-space: nowrap;
@@ -95,14 +104,6 @@ h1{
 .content .lista .forms .derecha .promociones .imageP .ip::before:hover{
 	background-color: #0056b3;
 }
-
-.content .lista .forms .derecha{
-	text-align: end;
-	display: grid;
-}
-
-/* *promociones* */
-
 
 
 /* horario */
