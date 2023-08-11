@@ -92,10 +92,12 @@
 								<input type="file" id="fileInput">
 							</div>
 							<div class="imageP">
-								<input type="file">
+								<label for="fileInput" >
+								<input type="file" id="fileInput">
 							</div>
 							<div class="imageP">
-								<input type="file">
+								<label for="fileInput" >
+								<input type="file" id="fileInput">
 							</div>
 						</div>
 						<div class="horario">
