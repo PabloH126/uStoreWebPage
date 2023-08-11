@@ -8,7 +8,7 @@ h1{
 	background: #f7f7f7;
 	padding: 20px;
 }
-
+/*
 .content .lista .forms{
 	display: flex;
 }
@@ -44,7 +44,7 @@ h1{
 }
 
 .content .lista .forms .derecha .promociones  div{
-	/*display: inline-flex;*/
+	/*display: inline-flex;
 }
 
 .content .lista .forms .derecha .horario{
@@ -81,4 +81,4 @@ h1{
 	font-size: 1.1em;
 	font-weight: bold;
 	padding: 4px;
-}
+}*/
