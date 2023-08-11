@@ -9,28 +9,8 @@ h1{
 	padding: 2%;
 }
 /*
-
-.content .lista .forms .izquierda{
-	display: inline-block;
-	text-align: initial;
-}
-
-.content .lista .forms .derecha{
-	text-align: end;
-	display: flex;
-	flex-direction: column;
-}
-
 .content .lista .forms .izquierda .categorias .categoria{
 	margin: 10px;
-}
-
-.content .lista .forms .derecha .promociones input{
-	display: inline-flex;
-}
-
-.content .lista .forms .derecha .promociones  div{
-	/*display: inline-flex;
 }
 
 .content .lista .forms .derecha .horario{
@@ -77,12 +57,14 @@ h1{
 	display: grid;
 }
 
-/* *promociones* */
+/* logo */
+/* promociones */
 
 .content .lista .forms .derecha .promociones .imageP{
 	display: inline-flex;
 }
 
+.content .lista .forms .izquierda .logo .box,
 .content .lista .forms .derecha .promociones .imageP .box{
 	height: 92px;
 	margin: 0 2px 4px;
@@ -90,6 +72,7 @@ h1{
 	border: 2px dashed black;
 }
 
+.content .lista .forms .izquierda .logo .ip label::before,
 .content .lista .forms .derecha .promociones .imageP .ip label::before{
 	content: 'Seleccionar';
     display: inline-block;
@@ -102,37 +85,10 @@ h1{
     cursor: pointer;
 }
 
+.content .lista .forms .izquierda .logo .ip input,
 .content .lista .forms .derecha .promociones .imageP .ip input{
 	display: none;
 }
-
-/*
-.content .lista .forms .derecha .promociones .imageP .ip{
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	width: 0;
-	padding: 0;
-	border: none;
-	margin: 0;
-	height: 100%;
-}
-
-.content .lista .forms .derecha .promociones .imageP .ip::before{
-	content: 'Seleccionar archivo';
-	display: inline-block;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	border-radius: 4px;
-	padding: 8px 16px;
-	cursor: pointer;
-}
-
-.content .lista .forms .derecha .promociones .imageP .ip::before:hover{
-	background-color: #0056b3;
-}
-*/
 
 /* horario */
 
@@ -179,11 +135,13 @@ h1{
 		font-size: 1em;
 	}
 
+	.content .lista .forms .izquierda .logo .box,
 	.content .lista .forms .derecha .promociones .imageP .box{
 		height: 51px;
 		border: 1px dashed;
 	}
 
+	.content .lista .forms .izquierda .logo .ip label::before,
 	.content .lista .forms .derecha .promociones .imageP .ip label::before{
 		font-size: small;
 		cursor: pointer;

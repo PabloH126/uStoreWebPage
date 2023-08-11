@@ -2,24 +2,24 @@
 	session_start();
 	require '../../../security.php';
 	
-	function SelectHoras() {
-		echo '<select name="horas" id="horas">';
+	function SelectHoras($dia) {
+		echo '<select name="horas' . $dia . '" id="horas">';
 		for ($i = 0; $i < 13; $i++) {
 			echo '<option value="' . str_pad($i, 2, '0', STR_PAD_LEFT) . '">' . str_pad($i, 2, '0', STR_PAD_LEFT) . '</option>';
 		}
 		echo '</select>';
 	}
 	
-	function SelectMinutos() {
-		echo '<select name="minutos" id="minutos">';
+	function SelectMinutos($dia) {
+		echo '<select name="minutos' . $dia . '" id="minutos">';
 		for ($i = 0; $i < 60; $i++) {
 			echo '<option value="' . str_pad($i, 2, '0', STR_PAD_LEFT) . '">' . str_pad($i, 2, '0', STR_PAD_LEFT) . '</option>';
 		}
 		echo '</select>';
 	}
 	
-	function SelectAMPM() {
-		echo '<select name="am/pm" id="am/pm">';
+	function SelectAMPM($dia) {
+		echo '<select name="am/pm' . $dia . '" id="am/pm">';
 		echo '<option value="am">am</option>';
 		echo '<option value="pm">pm</option>';
 		echo '</select>';
@@ -30,17 +30,17 @@
 			echo '<label>' . $dia . '</label>';
 
 			echo '<div>';
-				SelectHoras();
-				SelectMinutos();
-				SelectAMPM();
+				SelectHoras($dia);
+				SelectMinutos($dia);
+				SelectAMPM($dia);
 			echo '</div>';
 
 			echo '<label> - </label>';
 			
 			echo '<div>';
-				SelectHoras();
-				SelectMinutos();
-				SelectAMPM();
+				SelectHoras($dia);
+				SelectMinutos($dia);
+				SelectAMPM($dia);
 			echo '</div>';
 		echo '</div>';
 	}
@@ -68,11 +68,14 @@
 							<label class="label" for="nombreTienda"><strong>Nombre de tienda</strong></label>
 							<input type="text" name="nombreTienda">
 						</div>
-						<div>
-							<div class="box"></div>
-							<div class="ip">
-								<label for="logoTienda" >
-								<input type="file" id="logoTienda">
+						<div class="logo">
+							<label class="label" for="logoTienda"><strong>Logo de tienda</strong></label>
+							<div>
+								<div class="box"></div>
+								<div class="ip">
+									<label for="logoTienda" >
+									<input type="file" id="logoTienda">
+								</div>
 							</div>
 						</div>
 						<div class="categorias">

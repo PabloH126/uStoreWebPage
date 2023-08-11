@@ -28,6 +28,12 @@
     
     curl_close($ch);
 
-    
+    function generateArrayHorario($dia)
+    {
+        if(isset($dia))
+        {
+            array();
+        }
+    }
 ?>
 
