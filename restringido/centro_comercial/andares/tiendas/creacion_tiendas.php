@@ -80,7 +80,7 @@
 						</div>
 						<div class="categorias">
 							<label class="label"><strong>Categorías de la tienda</strong></label>
-							<div class="contetntC">
+							<div class="contentC">
 								<div class="scrollable-box">
 									<label class="categoria" for="categoria1T">	
 										<input type="checkbox" name="categoria1T" value="1">
