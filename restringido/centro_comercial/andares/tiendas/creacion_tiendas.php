@@ -87,8 +87,14 @@
 					<div class="derecha">
 						<div class="promociones">
 							<label class="label"><strong>Imágenes promocionales</strong></label>
-							<div>
-								<input type="file" name="imagenPromocional">
+							<div class="ip">
+								<input type="file" name="imagenPromocional1">
+							</div>
+							<div class="ip">
+								<input type="file" name="imagenPromocional2">
+							</div>
+							<div class="ip">
+								<input type="file" name="imagenPromocional3">
 							</div>
 						</div>
 						<div class="horario">
