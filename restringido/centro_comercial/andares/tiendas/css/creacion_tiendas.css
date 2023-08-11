@@ -130,13 +130,24 @@ h1{
 }
 
 
-
 .content .lista .forms .derecha .horario .dias .dia label,
 .content .lista .forms .derecha .horario .dias .dia div{
 	display: inline-flex;
 	margin: 3px;
 	font-size: 0.8em;
 	font-weight: bold;
+}
+
+.content .lista .forms .derecha .horario .dias select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding: 5px 13px;
+	border: #a5a5a5 1px solid;
+	font-weight: bold;
+	font-family: arial;
+	font-size: 0.8em;
+	outline: none;
 }
 
 
