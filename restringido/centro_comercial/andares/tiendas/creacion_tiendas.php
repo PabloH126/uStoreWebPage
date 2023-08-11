@@ -180,6 +180,6 @@
 			</form>
 		</div>
 	</div>
-	<script src="script.js"></script>
+	<script src="js/creacionTiendasScroll.js"></script>
 </body>
 </html>
