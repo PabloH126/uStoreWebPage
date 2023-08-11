@@ -6,7 +6,7 @@
 		
 		<div class="final">
 			<div class="bottn" id="plazas" title="Plazas">
-				<a href="seleccionPlaza.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/mall_selected.png"></a>
+				<a href="seleccionPlaza.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/mall_select.png"></a>
 			</div>
 			<div class="bottn" id="tienda" title="Tiendas creadas">
 				<a href="lista_tiendas.php?id=<?php echo $_SESSION['idMall']; ?>"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
