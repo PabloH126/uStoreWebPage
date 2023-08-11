@@ -11,7 +11,7 @@ header .content .final .bottn{
 	align-items: center;
 	justify-content: center;
 	display: flex;
-	height: 102%;
+	height: 100%;
 }
 
 header .content .final #ultimo:hover,
@@ -54,6 +54,6 @@ header .content .final #ultimo a{
 
 	header .content .final #ultimo,
 	header .content .final .bottn{
-		height: 76%;
+		height: 56%;
 	}
 }
