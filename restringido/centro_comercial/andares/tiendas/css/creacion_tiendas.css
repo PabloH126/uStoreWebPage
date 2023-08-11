@@ -135,7 +135,6 @@ h1{
 	display: inline-flex;
 	margin: 3px;
 	font-size: 0.8em;
-	font-weight: bold;
 }
 
 .content .lista .forms .derecha .horario .dias select{
@@ -150,6 +149,12 @@ h1{
 	outline: none;
 }
 
+.content .lista .boton input{
+	width: 30%;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 4px;
+}
 
 /*responsivo*/
 @media only screen and (max-width: 1502px){
