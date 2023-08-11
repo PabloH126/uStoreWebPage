@@ -68,9 +68,9 @@
 							<label class="label" for="nombreTienda"><strong>Nombre de tienda</strong></label>
 							<input type="text" name="nombreTienda">
 						</div>
-						<div class="logo">
+						<div class="logoT">
 							<label class="label" for="logoTienda"><strong>Logo de tienda</strong></label>
-							<div>
+							<div class="contentL">
 								<div class="box"></div>
 								<div class="ip">
 									<label for="logoTienda" >
