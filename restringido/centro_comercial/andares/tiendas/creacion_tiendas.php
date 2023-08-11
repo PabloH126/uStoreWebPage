@@ -80,52 +80,55 @@
 						</div>
 						<div class="categorias">
 							<label class="label"><strong>Categorías de la tienda</strong></label>
-							<div class="scrollable-box">
-								<label class="categoria" for="categoria1T">	
-									<input type="checkbox" name="categoria1T" value="1">
-									Categoría 1
-								</label>
+							<div class="contetntC">
+								<div class="scrollable-box">
+									<label class="categoria" for="categoria1T">	
+										<input type="checkbox" name="categoria1T" value="1">
+										Categoría 1
+									</label>
 
-								<label class="categoria" for="categoria2T">	
-									<input type="checkbox" name="categoria2T" value="2">
-									Categoría 2
-								</label>
+									<label class="categoria" for="categoria2T">	
+										<input type="checkbox" name="categoria2T" value="2">
+										Categoría 2
+									</label>
 
-								<label class="categoria" for="categoria2T">	
-									<input type="checkbox" name="categoria2T" value="2">
-									Categoría 2
-								</label>
+									<label class="categoria" for="categoria2T">	
+										<input type="checkbox" name="categoria2T" value="2">
+										Categoría 2
+									</label>
 
-								<label class="categoria" for="categoria2T">	
-									<input type="checkbox" name="categoria2T" value="2">
-									Categoría 2
-								</label>
+									<label class="categoria" for="categoria2T">	
+										<input type="checkbox" name="categoria2T" value="2">
+										Categoría 2
+									</label>
 
-								<label class="categoria" for="categoria2T">	
-									<input type="checkbox" name="categoria2T" value="2">
-									Categoría 2
-								</label>
+									<label class="categoria" for="categoria2T">	
+										<input type="checkbox" name="categoria2T" value="2">
+										Categoría 2
+									</label>
 
-								<label class="categoria" for="categoria2T">	
-									<input type="checkbox" name="categoria2T" value="2">
-									Categoría 2
-								</label>
+									<label class="categoria" for="categoria2T">	
+										<input type="checkbox" name="categoria2T" value="2">
+										Categoría 2
+									</label>
 
-								<label class="categoria" for="categoria2T">	
-									<input type="checkbox" name="categoria2T" value="2">
-									Categoría 2
-								</label>
+									<label class="categoria" for="categoria2T">	
+										<input type="checkbox" name="categoria2T" value="2">
+										Categoría 2
+									</label>
 
-								<label class="categoria" for="categoria2T">	
-									<input type="checkbox" name="categoria2T" value="2">
-									Categoría 2
-								</label>
+									<label class="categoria" for="categoria2T">	
+										<input type="checkbox" name="categoria2T" value="2">
+										Categoría 2
+									</label>
 
-								<label class="categoria" for="categoria2T">	
-									<input type="checkbox" name="categoria2T" value="2">
-									Categoría 2
-								</label>
+									<label class="categoria" for="categoria2T">	
+										<input type="checkbox" name="categoria2T" value="2">
+										Categoría 2
+									</label>
+								</div>
 							</div>
+							
 						</div>	
 					</div>
 					<div class="derecha">
