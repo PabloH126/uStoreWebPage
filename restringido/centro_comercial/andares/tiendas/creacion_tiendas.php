@@ -68,9 +68,12 @@
 							<label class="label" for="nombreTienda"><strong>Nombre de tienda</strong></label>
 							<input type="text" name="nombreTienda">
 						</div>
-						<div class="">
-							<label class="label" for="logoTienda"><strong>Logo de tienda</strong></label>
-							<input type="file" name="logoTienda">
+						<div>
+							<div class="box"></div>
+							<div class="ip">
+								<label for="logoTienda" >
+								<input type="file" id="logoTienda">
+							</div>
 						</div>
 						<div class="categorias">
 							<label class="label"><strong>Categorías de la tienda</strong></label>
