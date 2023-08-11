@@ -81,7 +81,7 @@
 						<div class="categorias">
 							<label class="label"><strong>Categorías de la tienda</strong></label>
 							<div class="contentC">
-								<div class="scrollable-box">
+								<div class="scrollable-box" id="checkbox-list">
 									<label class="categoria" for="categoria1T">	
 										<input type="checkbox" name="categoria1T" value="1">
 										Categoría 1
@@ -180,5 +180,6 @@
 			</form>
 		</div>
 	</div>
+	<script src="script.js"></script>
 </body>
 </html>
