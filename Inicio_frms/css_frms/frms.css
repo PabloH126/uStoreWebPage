@@ -109,8 +109,8 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::before {
   content: "";
-  width: 0.63em;
-  height: 0.65em;
+  width: 0.68em;
+  height: 0.68em;
   transform: scale(0);
   -webkit-transform: scale(0);
   transition: 120ms transform ease-in-out;
