@@ -82,3 +82,18 @@ h1{
 	font-weight: bold;
 	padding: 4px;
 }*/
+
+.content .lista form .forms{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.content .lista .forms .izquierda{
+	display: grid;
+	text-align: initial;
+}
+
+.content .lista .forms .derecha{
+	text-align: end;
+	display: grid;
+}
