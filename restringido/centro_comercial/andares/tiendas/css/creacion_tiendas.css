@@ -70,7 +70,31 @@ h1{
 
 /* *categorias* */
 
+.content .lista .forms .derecha .promociones .imageP .ip{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 0;
+	padding: 0;
+	border: none;
+	margin: 0;
+	height: 100%;
+}
 
+.content .lista .forms .derecha .promociones .imageP .ip::before{
+	content: 'Seleccionar archivo';
+	display: inline-block;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 16px;
+	cursor: pointer;
+}
+
+.content .lista .forms .derecha .promociones .imageP .ip::before:hover{
+	background-color: #0056b3;
+}
 
 .content .lista .forms .derecha{
 	text-align: end;
@@ -79,12 +103,15 @@ h1{
 
 /* *promociones* */
 
+
+
+/* horario */
+
 /*.content.lista .forms .derecha .horario .dias{
 	display: flex;
 	flex-direction: column;
 	font-weight: bold;
 }*/
-
 
 .content .lista .forms .derecha .horario .dias .dia label,
 .content .lista .forms .derecha .horario .dias .dia div{
