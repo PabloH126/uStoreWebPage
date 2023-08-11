@@ -80,10 +80,12 @@
 						</div>
 						<div class="categorias">
 							<label class="label"><strong>Categorías de la tienda</strong></label>
-							<div class="categoria">
+							
+							<label class="categoria" for="categoria1T">	
 								<input type="checkbox" name="categoria1T" value="1">
-								<label for="categoria1T">Categoría 1</label>
-							</div>
+								Categoría 1
+							</label>
+
 							<div class="categoria">
 								<input type="checkbox" name="categoria2T" value="2">
 								<label for="categoria2T">Categoría 2</label>
