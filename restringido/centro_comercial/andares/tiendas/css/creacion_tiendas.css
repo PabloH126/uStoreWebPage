@@ -122,8 +122,8 @@ h1{
 /* *promociones* */
 
 .content.lista .forms .derecha .horario .dias{
-	font-size: 0.8em;
-	font-weight: bold;
+	/*font-size: 0.8em;
+	font-weight: bold;*/
 	/*display: flex;
 	flex-direction: column;
 	font-weight: bold;*/
@@ -135,6 +135,8 @@ h1{
 .content .lista .forms .derecha .horario .dias .dia div{
 	display: inline-flex;
 	margin: 3px;
+	font-size: 0.8em;
+	font-weight: bold;
 }
 
 
