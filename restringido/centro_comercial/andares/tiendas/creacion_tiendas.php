@@ -92,7 +92,7 @@
 									<label for="fileInput" >
 									<input type="file" id="fileInput">
 								</div>
-								<div class="iP">
+								<div class="ip">
 									<label for="fileInput" >
 									<input type="file" id="fileInput">
 								</div>
