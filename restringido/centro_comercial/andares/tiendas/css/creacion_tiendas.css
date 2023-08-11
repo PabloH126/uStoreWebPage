@@ -13,12 +13,6 @@ h1{
 	margin: 10px;
 }
 
-.content .lista .forms .derecha .horario{
-	display: flex;
-	flex-direction: column;
-	font-weight: bold;
-}
-
 */
 
 .content .lista form{
@@ -51,7 +45,7 @@ h1{
 /* categorias */
 
 .content .lista .forms .izquierda .categorias .categoria{
-	
+
 }
 
 

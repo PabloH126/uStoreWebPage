@@ -74,7 +74,7 @@
 								<div class="box"></div>
 								<div class="ip">
 									<label for="logoTienda" >
-									<input type="file" id="logoTienda">
+									<input type="file" id="logoTienda" name="logoTienda">
 								</div>
 							</div>
 						</div>
@@ -86,10 +86,10 @@
 								Categoría 1
 							</label>
 
-							<div class="categoria">
+							<label class="categoria" for="categoria2T">	
 								<input type="checkbox" name="categoria2T" value="2">
-								<label for="categoria2T">Categoría 2</label>
-							</div>
+								Categoría 2
+							</label>
 						</div>	
 					</div>
 					<div class="derecha">
