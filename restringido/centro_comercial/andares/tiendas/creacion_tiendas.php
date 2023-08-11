@@ -92,38 +92,38 @@
 										Categoría 2
 									</label>
 
-									<label class="categoria" for="categoria2T">	
-										<input type="checkbox" name="categoria2T" value="2">
+									<label class="categoria" for="categoria3T">	
+										<input type="checkbox" name="categoria3T" value="3">
 										Categoría 3
 									</label>
 
-									<label class="categoria" for="categoria2T">	
-										<input type="checkbox" name="categoria2T" value="2">
+									<label class="categoria" for="categoria4T">	
+										<input type="checkbox" name="categoria4T" value="4">
 										Categoría 4
 									</label>
 
-									<label class="categoria" for="categoria2T">	
-										<input type="checkbox" name="categoria2T" value="2">
+									<label class="categoria" for="categoria5T">	
+										<input type="checkbox" name="categoria5T" value="5">
 										Categoría 5
 									</label>
 
-									<label class="categoria" for="categoria2T">	
-										<input type="checkbox" name="categoria2T" value="2">
+									<label class="categoria" for="categoria6T">	
+										<input type="checkbox" name="categoria6T" value="6">
 										Categoría 6
 									</label>
 
-									<label class="categoria" for="categoria2T">	
-										<input type="checkbox" name="categoria2T" value="2">
+									<label class="categoria" for="categoria7T">	
+										<input type="checkbox" name="categoria7T" value="7">
 										Categoría 7
 									</label>
 
-									<label class="categoria" for="categoria2T">	
-										<input type="checkbox" name="categoria2T" value="2">
+									<label class="categoria" for="categoria8T">	
+										<input type="checkbox" name="categoria8T" value="8">
 										Categoría 8
 									</label>
 
-									<label class="categoria" for="categoria2T">	
-										<input type="checkbox" name="categoria2T" value="2">
+									<label class="categoria" for="categoria9T">	
+										<input type="checkbox" name="categoria9T" value="9">
 										Categoría 9
 									</label>
 								</div>
