@@ -2,7 +2,7 @@ header .content .final{
 	display: grid;
 	-webkit-display: grid;
 	width: 60%;
-	grid-template-columns: repeat(6, 1fr);
+	grid-template-columns: repeat(7, 1fr);
 	margin: 0;
 }
 
