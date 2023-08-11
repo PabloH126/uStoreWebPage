@@ -75,7 +75,7 @@
         echo $httpStatusCode;
     }
 
-    //CREATE HORARIOS CATEGORIAS TIENDA
+    //CREATE CATEGORIAS TIENDA
 
     function generateArrayHorario($dia, $dataTienda)
     {

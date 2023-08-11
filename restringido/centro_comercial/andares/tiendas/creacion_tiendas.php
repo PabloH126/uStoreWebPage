@@ -80,6 +80,7 @@
 						</div>
 						<div class="categorias">
 							<label class="label"><strong>Categorías de la tienda</strong></label>
+							
 							<div class="contentC">
 								<div class="scrollable-box" id="checkbox-list">
 									<label class="categoria" for="categoria1T">	
@@ -180,6 +181,6 @@
 			</form>
 		</div>
 	</div>
-	<script src="js/creacionTiendasScroll.js"></script>
+	<!--<script src="js/creacionTiendasScroll.js"></script>-->
 </body>
 </html>
