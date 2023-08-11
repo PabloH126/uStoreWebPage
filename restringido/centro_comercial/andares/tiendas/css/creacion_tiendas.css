@@ -181,12 +181,13 @@ h1{
 
 	.content .lista .forms .derecha .promociones .imageP .box{
 		height: 51px;
-		border: 1px;
+		border: 1px dashed solid;
 	}
 
 	.content .lista .forms .derecha .promociones .imageP .ip label::before{
 		font-size: small;
 		cursor: pointer;
+		margin: 0;
 	}
 
 	.content .lista .forms .derecha .horario .dias .dia div{
