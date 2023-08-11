@@ -107,6 +107,15 @@ h1{
 	margin: 10px 0;
 }
 
+.content .lista .forms .izquierda #nombre input{
+	width: 83%;
+	height: 2.em;
+	outline: none;
+	font-size: 1em;
+	padding: 0 10px;
+}
+
+
 
 /*responsivo*/
 @media only screen and (max-width: 1502px){
