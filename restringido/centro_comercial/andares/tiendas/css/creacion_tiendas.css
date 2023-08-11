@@ -152,6 +152,10 @@ h1{
 		font-size: 1em;
 	}
 
+	.content .lista .forms .izquierda .logoT .contentL{
+		width: 21%;
+	}
+
 	.content .lista .forms .izquierda .logoT .contentL .box,
 	.content .lista .forms .derecha .promociones .imageP .box{
 		height: 51px;
