@@ -88,17 +88,26 @@
 						<div class="promociones">
 							<label class="label"><strong>Imágenes promocionales</strong></label>
 							<div class="imageP">
-								<div class="ip">
-									<label for="fileInput" >
-									<input type="file" id="fileInput">
+								<div class="cont">
+									<div class="box"></div>
+									<div class="ip">
+										<label for="fileInput" >
+										<input type="file" id="fileInput">
+									</div>
 								</div>
-								<div class="ip">
-									<label for="fileInput" >
-									<input type="file" id="fileInput">
+								<div class="cont">
+									<div class="box"></div>
+									<div class="ip">
+										<label for="fileInput" >
+										<input type="file" id="fileInput">
+									</div>
 								</div>
-								<div class="ip">
-									<label for="fileInput" >
-									<input type="file" id="fileInput">
+								<div class="cont">
+									<div class="box"></div>
+									<div class="ip">
+										<label for="fileInput" >
+										<input type="file" id="fileInput">
+									</div>
 								</div>
 							</div>
 						</div>
