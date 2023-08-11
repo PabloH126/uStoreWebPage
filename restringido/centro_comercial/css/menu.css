@@ -49,7 +49,7 @@ header .content .final #ultimo a{
 	height: 70%;
 }
 
-/*1366*/
+/*diseño responsivo*/
 @media only screen and (max-width: 1502px){
 
 	header .content .final #ultimo,

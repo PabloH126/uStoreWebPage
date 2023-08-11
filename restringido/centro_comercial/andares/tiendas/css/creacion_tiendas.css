@@ -9,9 +9,6 @@ h1{
 	padding: 2%;
 }
 /*
-.content .lista .forms{
-	display: flex;
-}
 
 .content .lista .forms .izquierda{
 	display: inline-block;
@@ -22,17 +19,6 @@ h1{
 	text-align: end;
 	display: flex;
 	flex-direction: column;
-}
-
-.content .lista .forms .label{
-	display: block;
-	margin: 10px 0;
-}
-
-.content .lista .forms .izquierda #nombre input{
-	width: 75%;
-	height: 2.3em;
-	outline: none;
 }
 
 .content .lista .forms .izquierda .categorias .categoria{
@@ -53,35 +39,7 @@ h1{
 	font-weight: bold;
 }
 
-.content.lista .forms .derecha .horario .dias{
-	display: flex;
-	flex-direction: column;
-	font-weight: bold;
-}
-.content .lista .forms .derecha .horario .dias select{
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	padding: 5px 13px;
-	border: #a5a5a5 1px solid;
-	font-weight: bold;
-	font-family: arial;
-	font-size: 0.8em;
-	outline: none;
-}
-
-.content .lista .forms .derecha .horario .dias .dia label,
-.content .lista .forms .derecha .horario .dias .dia div{
-	display: inline-flex;
-	margin: 3px;
-}
-
-.content .lista .boton input{
-	width: 30%;
-	font-size: 1.1em;
-	font-weight: bold;
-	padding: 4px;
-}*/
+*/
 
 .content .lista form{
 	font-size: 2em;
@@ -121,13 +79,11 @@ h1{
 
 /* *promociones* */
 
-.content.lista .forms .derecha .horario .dias{
-	/*font-size: 0.8em;
-	font-weight: bold;*/
-	/*display: flex;
+/*.content.lista .forms .derecha .horario .dias{
+	display: flex;
 	flex-direction: column;
-	font-weight: bold;*/
-}
+	font-weight: bold;
+}*/
 
 
 .content .lista .forms .derecha .horario .dias .dia label,
@@ -164,6 +120,10 @@ h1{
 	}
 
 	.content .lista form{
+		font-size: 1em;
+	}
+
+	.content .lista .forms .derecha .horario .dias .dia div{
 		font-size: 1em;
 	}
 }

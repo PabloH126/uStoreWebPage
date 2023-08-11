@@ -61,7 +61,7 @@
 	<div class="content">
 		<h1>Creación de tienda</h1>
 		<div class="lista">
-			<form action="envio_tienda.php">
+			<form action="envio_tienda.php" method="post" enctype="multipart/form-data">
 				<div class="forms">
 					<div class="izquierda">
 						<div id="nombre">
