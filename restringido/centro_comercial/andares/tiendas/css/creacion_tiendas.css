@@ -84,20 +84,21 @@ h1{
 }
 
 .content .lista .forms .derecha .promociones .imageP .box{
-	height: 51px;
+	height: 92px;
 	margin: 0 2px 4px;
 	border-radius: 12px;
-	border: 1px dashed black;
+	border: 2px dashed black;
 }
 
 .content .lista .forms .derecha .promociones .imageP .ip label::before{
 	content: 'Seleccionar';
     display: inline-block;
-	font-size: small;
+	font-size: 0.6em;
     background-color: #efefef;
     border: #6c6c6c 1px solid;
     border-radius: 4px;
     padding: 3px 9px;
+	margin: 0 18px;
     cursor: pointer;
 }
 
@@ -176,6 +177,16 @@ h1{
 
 	.content .lista form{
 		font-size: 1em;
+	}
+
+	.content .lista .forms .derecha .promociones .imageP .box{
+		height: 51px;
+		border: 1px;
+	}
+
+	.content .lista .forms .derecha .promociones .imageP .ip label::before{
+		font-size: small;
+		cursor: pointer;
 	}
 
 	.content .lista .forms .derecha .horario .dias .dia div{

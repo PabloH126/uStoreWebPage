@@ -88,21 +88,21 @@
 						<div class="promociones">
 							<label class="label"><strong>Imágenes promocionales</strong></label>
 							<div class="imageP">
-								<div class="cont">
+								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
 										<input type="file" id="fileInput">
 									</div>
 								</div>
-								<div class="cont">
+								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
 										<input type="file" id="fileInput">
 									</div>
 								</div>
-								<div class="cont">
+								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
