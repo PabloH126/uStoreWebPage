@@ -181,6 +181,5 @@
 			</form>
 		</div>
 	</div>
-	<!--<script src="js/creacionTiendasScroll.js"></script>-->
 </body>
 </html>
