@@ -92,19 +92,14 @@ h1{
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.content .lista .forms .izquierda{
-	display: grid;
-	text-align: initial;
-}
-
-.content .lista .forms .derecha{
-	text-align: end;
-	display: grid;
-}
-
 .content .lista .forms .label{
 	display: block;
 	margin: 10px 0;
+}
+
+.content .lista .forms .izquierda{
+	display: grid;
+	text-align: initial;
 }
 
 .content .lista .forms .izquierda #nombre input{
@@ -115,6 +110,32 @@ h1{
 	padding: 0 10px;
 }
 
+/* *categorias* */
+
+
+
+.content .lista .forms .derecha{
+	text-align: end;
+	display: grid;
+}
+
+/* *promociones* */
+
+.content.lista .forms .derecha .horario .dias{
+	font-size: 0.8em;
+	font-weight: bold;
+	/*display: flex;
+	flex-direction: column;
+	font-weight: bold;*/
+}
+
+
+
+.content .lista .forms .derecha .horario .dias .dia label,
+.content .lista .forms .derecha .horario .dias .dia div{
+	display: inline-flex;
+	margin: 3px;
+}
 
 
 /*responsivo*/
