@@ -72,7 +72,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Crear tienda</title>
-	<?php require("templates/template.styles.php")?>
+	<?php require("../templates/template.styles.php")?>
 	<?php require("tiendas/templates/template.secc_tiendas.php")?>
 	<link rel="stylesheet" type="text/css" href="css/creacion_tiendas.css">
 </head>
