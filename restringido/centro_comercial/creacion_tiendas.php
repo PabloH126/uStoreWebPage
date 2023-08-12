@@ -103,7 +103,17 @@
 							
 							<div class="contentC">
 								<div class="scrollable-box" id="checkbox-list">
-
+									<?php 
+										foreach ($categorias as $categoria) 
+										{
+									?>
+									<label class="categoria" for="categoria<?php echo $categoria['idCategoria'] ?>T">	
+										<input type="checkbox" name="categoria<?php echo $categoria['idCategoria'] ?>T" value="<?php echo $categoria['idCategoria'] ?>">
+										<?php echo $categoria['categoria1'] ?>
+									</label>
+									<?php
+										}
+									?>
 								</div>
 							</div>
 						</div>	
