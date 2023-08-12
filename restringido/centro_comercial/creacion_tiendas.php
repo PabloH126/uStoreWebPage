@@ -44,6 +44,26 @@
 			echo '</div>';
 		echo '</div>';
 	}
+
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Authorization: Bearer ' . $_COOKIE['SessionToken']
+	));
+	
+	$response = curl_exec($ch);
+	
+	if ($response === false) {
+		echo 'Error: ' . curl_error($ch);
+	} else {
+		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	}
+	
+	$categorias = json_decode($response, true);
+
+	curl_close($ch);
 	
 ?>
 
@@ -83,50 +103,17 @@
 							
 							<div class="contentC">
 								<div class="scrollable-box" id="checkbox-list">
-									<label class="categoria" for="categoria1T">	
-										<input type="checkbox" name="categoria1T" value="1">
-										Categoría 1
+									<?php 
+										foreach ($categorias as $categoria) 
+										{
+									?>
+									<label class="categoria" for="categoria<?php echo $categoria['idCategoria'] ?>T">	
+										<input type="checkbox" name="categoria<?php echo $categoria['idCategoria'] ?>T" value="<?php echo $categoria['idCategoria'] ?>">
+										<?php echo $categoria['categoria1'] ?>
 									</label>
-
-									<label class="categoria" for="categoria2T">	
-										<input type="checkbox" name="categoria2T" value="2">
-										Categoría 2
-									</label>
-
-									<label class="categoria" for="categoria3T">	
-										<input type="checkbox" name="categoria3T" value="3">
-										Categoría 3
-									</label>
-
-									<label class="categoria" for="categoria4T">	
-										<input type="checkbox" name="categoria4T" value="4">
-										Categoría 4
-									</label>
-
-									<label class="categoria" for="categoria5T">	
-										<input type="checkbox" name="categoria5T" value="5">
-										Categoría 5
-									</label>
-
-									<label class="categoria" for="categoria6T">	
-										<input type="checkbox" name="categoria6T" value="6">
-										Categoría 6
-									</label>
-
-									<label class="categoria" for="categoria7T">	
-										<input type="checkbox" name="categoria7T" value="7">
-										Categoría 7
-									</label>
-
-									<label class="categoria" for="categoria8T">	
-										<input type="checkbox" name="categoria8T" value="8">
-										Categoría 8
-									</label>
-
-									<label class="categoria" for="categoria9T">	
-										<input type="checkbox" name="categoria9T" value="9">
-										Categoría 9
-									</label>
+									<?php
+										}
+									?>
 								</div>
 							</div>
 						</div>	
