@@ -81,9 +81,12 @@
     
     $categorias = $_POST['categorias'];
 
-    $arraysCategorias = array (
-        generateArrayCategorias($categorias, $dataTienda)
-    );
+    $arraysCategorias = array ();
+
+    foreach($categorias as $cat)
+    {
+        $arraysCategorias[] = generateArrayCategorias($cat, $dataTienda);
+    }
 
     $jsonData = json_encode($arraysCategorias);
 
@@ -112,15 +115,12 @@
     }
     
     curl_close($ch);
-    function generateArrayCategorias($categorias, $dataTienda)
+    function generateArrayCategorias($cat, $dataTienda)
     {
-        foreach($categorias as $cat)
-        {
             return array(
                 "idTienda" => $dataTienda['idTienda'],
                 "idCategoria" => $cat
             );
-        }
     }
 
     function generateArrayHorario($dia, $dataTienda)

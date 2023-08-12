@@ -189,7 +189,6 @@ input[type="checkbox"]:checked::before {
 .content .lista .forms .derecha .horario .dias .dia div {
 	display: inline-flex;
 	margin: 3px;
-	/*font-size: 0.8em;*/
 }
 
 .content .lista .forms .izquierda .logoYApartados .apartados .contentA select,
