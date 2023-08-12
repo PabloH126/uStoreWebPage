@@ -6,10 +6,10 @@
 		
 		<div class="final">
 			<div class="bottn" id="plazas" title="Plazas">
-				<a href="<?php echo __DIR__ . '/restringido/seleccionPlaza.php'; ?>"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/mall_select.png"></a>
+				<a href="https://ustoree.azurewebsites.net/restringido/seleccionPlaza.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/mall_select.png"></a>
 			</div>
 			<div class="bottn" id="tienda" title="Tiendas creadas">
-				<a href="<?php echo __DIR__ . '/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall']; ?>"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
+				<a href="<?php echo 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall']; ?>"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
 			</div>
 			<div class="bottn" id="solicitudes" title="Solicitudes de apartado">
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/solicitudes_select.png"></a>
