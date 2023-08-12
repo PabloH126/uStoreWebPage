@@ -86,7 +86,7 @@
 					<div class="izquierda">
 						<div id="nombre">
 							<label class="label" for="nombreTienda"><strong>Nombre de tienda</strong></label>
-							<input type="text" name="nombreTienda">
+							<input type="text" name="nombreTienda" required>
 						</div>
 						<div class="logoT">
 							<label class="label" for="logoTienda"><strong>Logo de la tienda</strong></label>
@@ -94,12 +94,12 @@
 								<div class="box"></div>
 								<div class="ip">
 									<label for="logoTienda" >
-									<input type="file" id="logoTienda" name="logoTienda">
+									<input type="file" id="logoTienda" name="logoTienda" required>
 								</div>
 							</div>
 						</div>
 						<div class="categorias">
-							<label class="label"><strong>Categorías de la tienda</strong></label>
+							<label class="label"><strong>Categorías de la tienda</strong required></label>
 							
 							<div class="contentC">
 								<div class="scrollable-box" id="checkbox-list">
@@ -129,21 +129,21 @@
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput">
+										<input type="file" id="fileInput" required>
 									</div>
 								</div>
 								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput">
+										<input type="file" id="fileInput" required>
 									</div>
 								</div>
 								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput">
+										<input type="file" id="fileInput" required>
 									</div>
 								</div>
 							</div>
