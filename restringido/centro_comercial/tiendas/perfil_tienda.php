@@ -7,6 +7,6 @@
 	<?php require("tiendas/templates/template.secc_tiendas.php")?>
 </head>
 <body>
-
+    <?php require("../templates/template.menu.php")?>
 </body>
 </html>
