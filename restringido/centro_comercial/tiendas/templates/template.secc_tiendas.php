@@ -1,1 +1,1 @@
-<link rel="stylesheet" type="text/css" href="../css/tiendas.css">
+<link rel="stylesheet" type="text/css" href="tiendas/css/tiendas.css">
