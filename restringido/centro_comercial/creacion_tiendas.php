@@ -100,7 +100,7 @@
 								</div>
 							</div>
 							<div class="Apartados">
-								<label for=""><strong>Tiempo default de apartados</strong></label>
+								<label class="label" for=""><strong>Tiempo default de apartados</strong></label>
 
 							</div>
 						</div>

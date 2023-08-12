@@ -12,7 +12,6 @@ h1{
 .content .lista .forms .izquierda .categorias .categoria{
 	margin: 10px;
 }
-
 */
 
 .content .lista form{
@@ -40,6 +39,11 @@ h1{
 	outline: none;
 	font-size: 1em;
 	padding: 0 10px;
+}
+
+/* apartados */
+.content .lista .forms .izquierda .logoYApartados{
+	display: flex;
 }
 
 /* categorias */
@@ -111,6 +115,11 @@ input[type="checkbox"]:checked::before {
 }
 
 /* logo */
+
+.content .lista .forms .izquierda .logoT{
+	margin-right: 37px;
+}
+
 
 .content .lista .forms .izquierda .logoT .contentL{
 	display: grid;
@@ -211,7 +220,7 @@ input[type="checkbox"]:checked::before {
 	}
 
 	.content .lista .forms .izquierda .logoT .contentL{
-		width: 21%;
+		/*width: 21%;*/
 	}
 
 	.content .lista .forms .izquierda .logoT .contentL .box,
@@ -244,7 +253,7 @@ input[type="checkbox"]:checked::before {
 	}
 
 	.content .lista .forms .izquierda .notas,
-.content .lista .forms .derecha .notas{
-	font-size: 0.76em;	
-}
+	.content .lista .forms .derecha .notas{
+		font-size: 0.76em;	
+	}
 }
