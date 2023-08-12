@@ -104,9 +104,10 @@ input[type="checkbox"]:checked::before {
 }
 
 /*Notas*/
-/*.content .lista .forms .izquierda*/ .notas{
-	font-size: 0.76em;
-	color: #6c6c6c;/* a5a5a5 4a4a4a*/;
+.content .lista .forms .izquierda .notas,
+.content .lista .forms .derecha .notas{
+	font-size: 0.7em;
+	color: #6c6c6c;;
 }
 
 /* logo */
@@ -241,4 +242,9 @@ input[type="checkbox"]:checked::before {
 	.content .lista .forms .derecha .horario .dias .dia div{
 		font-size: 1em;
 	}
+
+	.content .lista .forms .izquierda .notas,
+.content .lista .forms .derecha .notas{
+	font-size: 0.76em;	
+}
 }
