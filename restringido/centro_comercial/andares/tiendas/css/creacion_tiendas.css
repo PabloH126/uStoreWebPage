@@ -106,7 +106,7 @@ input[type="checkbox"]:checked::before {
 /*Notas*/
 .content .lista .forms .izquierda .notas,
 .content .lista .forms .derecha .notas{
-	font-size: 0.7em;
+	font-size: 0.58em;
 	color: #6c6c6c;;
 }
 
