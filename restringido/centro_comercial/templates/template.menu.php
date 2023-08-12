@@ -1,7 +1,7 @@
 <header>
 	<div class="content">
 		<div id="logo">
-			<img src="<?php echo __DIR__ . '/img/uStore.png'; ?>">
+			<img src="https://ustoree.azurewebsites.net/img/uStore.png">
 		</div>
 		
 		<div class="final">
