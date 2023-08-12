@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	require '../../../security.php';
+	require '../security.php';
 	
 	function SelectHoras($dia, $periodo) {
 		echo '<select name="horas' . $dia . $periodo . '" id="horas">';
@@ -52,12 +52,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Crear tienda</title>
-	<?php require("../../templates/template.styles.php")?>
-	<?php require("templates/template.secc_tiendas.php")?>
+	<?php require("templates/template.styles.php")?>
+	<?php require("tiendas/templates/template.secc_tiendas.php")?>
 	<link rel="stylesheet" type="text/css" href="css/creacion_tiendas.css">
 </head>
 <body>
-	<?php require("../../templates/template.menu.php")?>
+	<?php require("templates/template.menu.php")?>
 	<div class="content">
 		<h1>Creación de tienda</h1>
 		<div class="lista">
