@@ -47,6 +47,11 @@ h1 {
 	display: flex;
 }
 
+.content .lista .forms .izquierda .logoYApartados .apartados .contentA{
+	display: grid;
+	justify-items: center;
+}
+
 /* categorias */
 
 .content .lista .forms .izquierda .categorias .contentC {
@@ -257,6 +262,7 @@ input[type="checkbox"]:checked::before {
 	.content .lista .forms .izquierda .logoYApartados .apartados div,
 	.content .lista .forms .derecha .horario .dias .dia div {
 		font-size: 1em;
+		margin: 1px 3px 0;
 	}
 
 	.content .lista .forms .izquierda .notas,

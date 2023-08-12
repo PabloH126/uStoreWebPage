@@ -101,7 +101,7 @@
 							</div>
 							<div class="apartados">
 								<label class="label"><strong>Periodos de apartado</strong></label>
-								<div>
+								<div class="contentA">
 									<div>
 										<div class="numeroA">
 											<select name="" id="">
