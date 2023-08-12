@@ -95,7 +95,7 @@
 									<div class="box"></div>
 									<div class="ip">
 										<label for="logoTienda" >
-										<input type="file" id="logoTienda" name="logoTienda" required>
+										<input type="file" id="logoTienda" name="logoTienda">
 									</div>
 								</div>
 							</div>
@@ -136,21 +136,21 @@
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput" name="imagen1" required>
+										<input type="file" id="fileInput" name="imagen1">
 									</div>
 								</div>
 								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput" name="imagen2" required>
+										<input type="file" id="fileInput" name="imagen2">
 									</div>
 								</div>
 								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput" name="imagen3" required>
+										<input type="file" id="fileInput" name="imagen3">
 									</div>
 								</div>
 							</div>
