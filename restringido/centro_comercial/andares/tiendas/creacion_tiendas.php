@@ -130,10 +130,7 @@
 								</div>
 							</div>
 						</div>	
-						<div class="notas">
-							<span>* Si es día no laboral, dejar su configuración en su forma inicial.</span>
-							<span>* Las imagenes deben estar en formato de imagen JPG, PNG o JPEG</span>
-						</div>
+						
 					</div>
 					<div class="derecha">
 						<div class="promociones">
@@ -175,6 +172,10 @@
 									diasSelect("Domingo");
 								?>
 							</div>
+						</div>
+						<div class="notas">
+							<span>* Si es día no laboral, dejar su configuración en su forma inicial.</span>
+							<span>* Las imagenes deben estar en formato de imagen JPG, PNG o JPEG</span>
 						</div>
 					</div>
 				</div>
