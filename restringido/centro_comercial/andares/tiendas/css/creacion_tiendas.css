@@ -103,6 +103,11 @@ input[type="checkbox"]:checked::before {
 	display: grid;
 }
 
+/*Notas*/
+.content .lista .forms .izquierda .notas{
+	
+}
+
 /* logo */
 
 .content .lista .forms .izquierda .logoT .contentL{
@@ -200,7 +205,7 @@ input[type="checkbox"]:checked::before {
 
 	.content .lista .forms .izquierda .categorias .contentC{
 		width: 300px;
-		height: 144px;
+		height: 135px;
 	}
 
 	.content .lista .forms .izquierda .logoT .contentL{
