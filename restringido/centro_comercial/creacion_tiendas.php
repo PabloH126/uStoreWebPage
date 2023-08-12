@@ -111,10 +111,10 @@
 									</div>
 									<div class="tiempoA">
 										<select name="" id="">
-											<option value="">segundos</option>
-											<option value="">minutos</option>
-											<option value="">horas</option>
-											<option value="">días</option>
+											<option value="">Segundos</option>
+											<option value="">Minutos</option>
+											<option value="">Horas</option>
+											<option value="">Días</option>
 										</select>
 									</div>
 								</div>
