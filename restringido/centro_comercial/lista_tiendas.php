@@ -35,7 +35,7 @@
 	<title>Selección de tienda</title>
 	<?php require("templates/template.styles.php")?>
 	<?php require("tiendas/templates/template.secc_tiendas.php")?>
-	<link rel="stylesheet" type="text/css" href="css/lista_tiendas.css">
+	<link rel="stylesheet" type="text/css" href="tiendas/css/lista_tiendas.css">
 </head>
 <body>
 	<?php require("templates/template.menu.php")?>
