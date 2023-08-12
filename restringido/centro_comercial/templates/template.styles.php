@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../../../../css_general/base.css">
 <link rel="shortcut icon" type="text/css" href="../../../../img/icono_uStore1.png">
-<link rel="stylesheet" type="text/css" href="../../css/menu.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
 <link rel="stylesheet" type="text/css" href="../../../css/seleccionPlaza.css">
 
 <!--GOOGLE ICONS-->
