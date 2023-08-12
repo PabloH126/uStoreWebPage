@@ -1,39 +1,40 @@
-h1{
+h1 {
 	font-size: 3.5em;
 	margin: 20px 0 15px 0;
 }
 
-.content .lista{
+.content .lista {
 	display: inline-block;
 	background: #f7f7f7;
 	padding: 1% 2% 2%;
 }
+
 /*
 .content .lista .forms .izquierda .categorias .categoria{
 	margin: 10px;
 }
 */
 
-.content .lista form{
+.content .lista form {
 	font-size: 2em;
 }
 
-.content .lista form .forms{
+.content .lista form .forms {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.content .lista .forms .label{
+.content .lista .forms .label {
 	display: block;
 	margin: 10px 0;
 }
 
-.content .lista .forms .izquierda{
+.content .lista .forms .izquierda {
 	display: grid;
 	text-align: initial;
 }
 
-.content .lista .forms .izquierda #nombre input{
+.content .lista .forms .izquierda #nombre input {
 	width: 83%;
 	height: 2em;
 	outline: none;
@@ -42,13 +43,13 @@ h1{
 }
 
 /* apartados */
-.content .lista .forms .izquierda .logoYApartados{
+.content .lista .forms .izquierda .logoYApartados {
 	display: flex;
 }
 
 /* categorias */
 
-.content .lista .forms .izquierda .categorias .contentC{
+.content .lista .forms .izquierda .categorias .contentC {
 	width: 423px;
 	height: 221px;
 	overflow: hidden;
@@ -56,20 +57,20 @@ h1{
 	border-radius: 5px;
 }
 
-.content .lista .forms .izquierda .categorias .contentC .scrollable-box{
+.content .lista .forms .izquierda .categorias .contentC .scrollable-box {
 	width: 100%;
 	height: 100%;
 	padding: 10px;
 	overflow: auto;
 }
 
-.content .lista .forms .izquierda .categorias .categoria{
+.content .lista .forms .izquierda .categorias .categoria {
 	margin: 0 0 7px;
 	display: flex;
 	gap: 0.5em;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
 	appearance: none;
 	font-size: inherit;
 	color: currentColor;
@@ -83,11 +84,11 @@ input[type="checkbox"]{
 	place-content: center;
 }
 
-.checkbox + .checkbox {
+.checkbox+.checkbox {
 	margin-top: 1em;
-  }
+}
 
-input[type="checkbox"]::before{
+input[type="checkbox"]::before {
 	content: "";
 	width: 0.63em;
 	height: 0.63em;
@@ -102,70 +103,71 @@ input[type="checkbox"]:checked::before {
 	-webkit-transform: scale(1);
 }
 
-.content .lista .forms .derecha{
+.content .lista .forms .derecha {
 	text-align: end;
 	display: grid;
 }
 
 /*Notas*/
 .content .lista .forms .izquierda .notas,
-.content .lista .forms .derecha .notas{
+.content .lista .forms .derecha .notas {
 	font-size: 0.58em;
-	color: #6c6c6c;;
+	color: #6c6c6c;
+	;
 }
 
 /* logo */
 
-.content .lista .forms .izquierda .logoT{
+.content .lista .forms .izquierda .logoT {
 	margin-right: 37px;
 }
 
 
-.content .lista .forms .izquierda .logoT .contentL{
+.content .lista .forms .izquierda .logoT .contentL {
 	display: grid;
-	width: 28%;
+	/*width: 28%;*/
 	justify-content: space-evenly;
 }
 
 /* promociones*/
 
-.content .lista .forms .derecha .promociones .imageP{
+.content .lista .forms .derecha .promociones .imageP {
 	display: inline-flex;
 }
 
 /* promociones y logo*/
 .content .lista .forms .izquierda .logoT .contentL .box,
-.content .lista .forms .derecha .promociones .imageP .box{
+.content .lista .forms .derecha .promociones .imageP .box {
 	height: 92px;
 	margin: 0 2px 4px;
 	border-radius: 12px;
 	border: 2px dashed black;
 }
 
-.content .lista .forms .izquierda .logoT .contentL .box{
+.content .lista .forms .izquierda .logoT .contentL .box {
 	height: 110px;
 }
 
 .content .lista .forms .izquierda .logoT .contentL .ip label::before,
-.content .lista .forms .derecha .promociones .imageP .ip label::before{
+.content .lista .forms .derecha .promociones .imageP .ip label::before {
 	content: 'Seleccionar';
-    display: inline-block;
+	display: inline-block;
 	font-size: 0.6em;
-    background-color: #efefef;
-    border: #6c6c6c 1px solid;
-    border-radius: 4px;
-    padding: 3px 9px;
+	background-color: #efefef;
+	border: #6c6c6c 1px solid;
+	border-radius: 4px;
+	padding: 3px 9px;
 	margin: 0 18px;
-    cursor: pointer;
+	cursor: pointer;
 }
 
-.content .lista .forms .izquierda .logoT .contentL .ip label::before{
+.content .lista .forms .izquierda .logoT .contentL .ip label::before {
 	padding: 3px 17px;
 	margin: auto;
 }
 
 .content .lista .forms .izquierda .logoT .contentL .ip input,
-.content .lista .forms .derecha .promociones .imageP .ip input{
+.content .lista .forms .derecha .promociones .imageP .ip input {
 	display: none;
 }
 
@@ -178,13 +180,13 @@ input[type="checkbox"]:checked::before {
 }*/
 
 .content .lista .forms .derecha .horario .dias .dia label,
-.content .lista .forms .derecha .horario .dias .dia div{
+.content .lista .forms .derecha .horario .dias .dia div {
 	display: inline-flex;
 	margin: 3px;
 	font-size: 0.8em;
 }
 
-.content .lista .forms .derecha .horario .dias select{
+.content .lista .forms .derecha .horario .dias select {
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -196,7 +198,7 @@ input[type="checkbox"]:checked::before {
 	outline: none;
 }
 
-.content .lista .boton input{
+.content .lista .boton input {
 	width: 30%;
 	font-size: 1.1em;
 	font-weight: bold;
@@ -204,56 +206,56 @@ input[type="checkbox"]:checked::before {
 }
 
 /*responsivo*/
-@media only screen and (max-width: 1502px){
+@media only screen and (max-width: 1502px) {
 
-	h1{
+	h1 {
 		font-size: 3em;
 	}
 
-	.content .lista form{
+	.content .lista form {
 		font-size: 1em;
 	}
 
-	.content .lista .forms .izquierda .categorias .contentC{
+	.content .lista .forms .izquierda .categorias .contentC {
 		width: 300px;
 		height: 135px;
 	}
 
-	.content .lista .forms .izquierda .logoT .contentL{
+	.content .lista .forms .izquierda .logoT .contentL {
 		/*width: 21%;*/
 	}
 
 	.content .lista .forms .izquierda .logoT .contentL .box,
-	.content .lista .forms .derecha .promociones .imageP .box{
+	.content .lista .forms .derecha .promociones .imageP .box {
 		height: 51px;
 		border: 1px dashed;
 	}
 
-	.content .lista .forms .izquierda .logoT .contentL .box{
+	.content .lista .forms .izquierda .logoT .contentL .box {
 		height: 64px;
 	}
 
 	.content .lista .forms .izquierda .logoT .contentL .ip label::before,
-	.content .lista .forms .derecha .promociones .imageP .ip label::before{
+	.content .lista .forms .derecha .promociones .imageP .ip label::before {
 		font-size: small;
 		cursor: pointer;
 		margin: 0;
 	}
 
-	.content .lista .forms .izquierda .logoT .contentL .ip label::before{
+	.content .lista .forms .izquierda .logoT .contentL .ip label::before {
 		padding: 3px 10px;
 	}
 
-	input[type="checkbox"]{
+	input[type="checkbox"] {
 		transform: translateY(-0.075em);
 	}
 
-	.content .lista .forms .derecha .horario .dias .dia div{
+	.content .lista .forms .derecha .horario .dias .dia div {
 		font-size: 1em;
 	}
 
 	.content .lista .forms .izquierda .notas,
-	.content .lista .forms .derecha .notas{
-		font-size: 0.76em;	
+	.content .lista .forms .derecha .notas {
+		font-size: 0.76em;
 	}
 }
