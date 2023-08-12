@@ -174,5 +174,6 @@
 			</form>
 		</div>
 	</div>
+	<script src="js/creacion_tiendas.js"></script>
 </body>
 </html>
