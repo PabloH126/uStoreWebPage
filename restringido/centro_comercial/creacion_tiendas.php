@@ -88,16 +88,19 @@
 							<label class="label" for="nombreTienda"><strong>Nombre de tienda</strong></label>
 							<input type="text" name="nombreTienda" required>
 						</div>
-						<div class="logoT">
-							<label class="label" for="logoTienda"><strong>Logo de la tienda</strong></label>
-							<div class="contentL">
-								<div class="box"></div>
-								<div class="ip">
-									<label for="logoTienda" >
-									<input type="file" id="logoTienda" name="logoTienda" required>
+						<div class="logo">
+							<div class="logoT">
+								<label class="label" for="logoTienda"><strong>Logo de la tienda</strong></label>
+								<div class="contentL">
+									<div class="box"></div>
+									<div class="ip">
+										<label for="logoTienda" >
+										<input type="file" id="logoTienda" name="logoTienda" required>
+									</div>
 								</div>
 							</div>
 						</div>
+						
 						<div class="categorias">
 							<label class="label"><strong>Categorías de la tienda</strong required></label>
 							
@@ -108,7 +111,7 @@
 										{
 									?>
 									<label class="categoria" for="categoria<?php echo $categoria['idCategoria'] ?>T">	
-										<input type="checkbox" name="categoria<?php echo $categoria['idCategoria'] ?>T" value="<?php echo $categoria['idCategoria'] ?>">
+										<input type="checkbox" name="categorias[]" value="<?php echo $categoria['idCategoria'] ?>">
 										<?php echo $categoria['categoria1'] ?>
 									</label>
 									<?php
