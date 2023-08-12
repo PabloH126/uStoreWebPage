@@ -43,27 +43,27 @@
 	<div class="content">
 		<div class="lista">
 			<?php 
-				  if($tiendasError != null)
-				  { ?>
-					<h3><?php echo $tiendasError;?></h3>
+				if($tiendasError != null)
+				{ ?>
+				<h3><?php echo $tiendasError;?></h3>
 			<?php 
-				  }
-				  else
-				  { 
-					foreach ($tiendas as $tienda)
-					{ ?>
-						<div class="item">
-							<a href=""><img width="60%" class="logo" src="<?php echo $tienda['logoTienda']; ?>"></a>
-							<strong class="nombre"><?php echo $tienda['nombreTienda'];?></strong>
-						</div>
+				}
+				else
+				{ 
+				foreach ($tiendas as $tienda)
+				{ ?>
+					<div class="item">
+						<a href=""><img width="60%" class="logo" src="<?php echo $tienda['logoTienda']; ?>"></a>
+						<strong class="nombre"><?php echo $tienda['nombreTienda'];?></strong>
+					</div>
 			<?php
-					}
+				}
 			?>
-						<div class="item" id="agregar">
-							<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
-						</div>
+					<div class="item" id="agregar">
+						<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
+					</div>
 			<?php
-				  }
+				}
 			?>
 		</div>
 	</div>

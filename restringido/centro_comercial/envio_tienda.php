@@ -117,10 +117,10 @@
     curl_close($ch);
     function generateArrayCategorias($cat, $dataTienda)
     {
-            return array(
-                "idTienda" => $dataTienda['idTienda'],
-                "idCategoria" => $cat
-            );
+        return array(
+            "idTienda" => $dataTienda['idTienda'],
+            "idCategoria" => $cat
+        );
     }
 
     function generateArrayHorario($dia, $dataTienda)
