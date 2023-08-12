@@ -255,6 +255,7 @@ input[type="checkbox"]:checked::before {
 	}
 
 	.content .lista .forms .izquierda .logoYApartados .apartados div,
+	.content .lista .forms .izquierda .logoYApartados .apartados select,
 	.content .lista .forms .derecha .horario .dias .dia div {
 		font-size: 1em;
 	}
