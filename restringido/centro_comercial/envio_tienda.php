@@ -1,6 +1,6 @@
 <?php
     session_start();
-    /*
+    
     $data = [
         'NombreTienda' => $_POST['nombreTienda'],
         'IdCentroComercial' => $_SESSION['idMall'],
@@ -76,7 +76,7 @@
     }
 
     //CREATE CATEGORIAS TIENDA
-    */
+    
     $categorias = $_POST['categorias'];
 
     foreach($categorias as $cat)
