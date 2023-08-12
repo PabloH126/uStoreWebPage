@@ -88,7 +88,7 @@
 							<label class="label" for="nombreTienda"><strong>Nombre de tienda</strong></label>
 							<input type="text" name="nombreTienda" required>
 						</div>
-						<div class="logo">
+						<div class="logoYApartados">
 							<div class="logoT">
 								<label class="label" for="logoTienda"><strong>Logo de la tienda</strong></label>
 								<div class="contentL">
@@ -98,6 +98,10 @@
 										<input type="file" id="logoTienda" name="logoTienda" required>
 									</div>
 								</div>
+							</div>
+							<div class="Apartados">
+								<label for=""><strong>Tiempo default de apartados</strong></label>
+
 							</div>
 						</div>
 						
@@ -132,21 +136,21 @@
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput" required>
+										<input type="file" id="fileInput" name="imagen1" required>
 									</div>
 								</div>
 								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput" required>
+										<input type="file" id="fileInput" name="imagen2" required>
 									</div>
 								</div>
 								<div>
 									<div class="box"></div>
 									<div class="ip">
 										<label for="fileInput" >
-										<input type="file" id="fileInput" required>
+										<input type="file" id="fileInput" name="imagen3" required>
 									</div>
 								</div>
 							</div>
