@@ -102,54 +102,56 @@
 							<div class="apartados">
 								<label class="label"><strong>Periodos de apartado</strong></label>
 								<div>
-									<div class="numeroA">
-										<select name="" id="">
-											<option value="">1</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>
+									<div>
+										<div class="numeroA">
+											<select name="" id="">
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+											</select>
+										</div>
+										<div class="tiempoA">
+											<select name="" id="">
+												<option value="">Segundos</option>
+												<option value="">Minutos</option>
+												<option value="">Horas</option>
+												<option value="">Días</option>
+											</select>
+										</div>
 									</div>
-									<div class="tiempoA">
-										<select name="" id="">
-											<option value="">Segundos</option>
-											<option value="">Minutos</option>
-											<option value="">Horas</option>
-											<option value="">Días</option>
-										</select>
+									<div>
+										<div class="numeroA">
+											<select name="" id="">
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+											</select>
+										</div>
+										<div class="tiempoA">
+											<select name="" id="">
+												<option value="">Segundos</option>
+												<option value="">Minutos</option>
+												<option value="">Horas</option>
+												<option value="">Días</option>
+											</select>
+										</div>
 									</div>
-								</div>
-								<div>
-									<div class="numeroA">
-										<select name="" id="">
-											<option value="">1</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>
-									</div>
-									<div class="tiempoA">
-										<select name="" id="">
-											<option value="">Segundos</option>
-											<option value="">Minutos</option>
-											<option value="">Horas</option>
-											<option value="">Días</option>
-										</select>
-									</div>
-								</div>
-								<div>
-									<div class="numeroA">
-										<select name="" id="">
-											<option value="">1</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>
-									</div>
-									<div class="tiempoA">
-										<select name="" id="">
-											<option value="">Segundos</option>
-											<option value="">Minutos</option>
-											<option value="">Horas</option>
-											<option value="">Días</option>
-										</select>
+									<div>
+										<div class="numeroA">
+											<select name="" id="">
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+											</select>
+										</div>
+										<div class="tiempoA">
+											<select name="" id="">
+												<option value="">Segundos</option>
+												<option value="">Minutos</option>
+												<option value="">Horas</option>
+												<option value="">Días</option>
+											</select>
+										</div>
 									</div>
 								</div>
 							</div>
