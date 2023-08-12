@@ -99,9 +99,25 @@
 									</div>
 								</div>
 							</div>
-							<div class="Apartados">
-								<label class="label" for=""><strong>Periodos de apartado</strong></label>
-
+							<div class="apartados">
+								<label class="label"><strong>Periodos de apartado</strong></label>
+								<div>
+									<div class="numeroA">
+										<select name="" id="">
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+										</select>
+									</div>
+									<div class="tiempoA">
+										<select name="" id="">
+											<option value="">segundos</option>
+											<option value="">minutos</option>
+											<option value="">horas</option>
+											<option value="">días</option>
+										</select>
+									</div>
+								</div>
 							</div>
 						</div>
 						

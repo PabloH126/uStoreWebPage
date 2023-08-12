@@ -179,6 +179,7 @@ input[type="checkbox"]:checked::before {
 	font-weight: bold;
 }*/
 
+
 .content .lista .forms .derecha .horario .dias .dia label,
 .content .lista .forms .derecha .horario .dias .dia div {
 	display: inline-flex;
@@ -197,6 +198,8 @@ input[type="checkbox"]:checked::before {
 	font-size: 0.8em;
 	outline: none;
 }
+
+
 
 .content .lista .boton input {
 	width: 30%;
