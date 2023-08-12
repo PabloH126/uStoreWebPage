@@ -161,6 +161,11 @@ input[type="checkbox"]:checked::before {
 	cursor: pointer;
 }
 
+.content .lista .forms .izquierda .logoT .contentL .ip label::before:hover,
+.content .lista .forms .derecha .promociones .imageP .ip label::before:hover{
+
+}
+
 .content .lista .forms .izquierda .logoT .contentL .ip label::before {
 	padding: 3px 17px;
 	margin: auto;
