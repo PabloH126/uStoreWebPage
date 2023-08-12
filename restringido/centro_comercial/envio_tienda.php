@@ -83,6 +83,13 @@
     {
         echo $cat;
     }
+
+    function generateArrayCategorias()
+    {
+        return array(
+            ""
+        )
+    }
     function generateArrayHorario($dia, $dataTienda)
     {
         if(isset($_POST['horas' . $dia . 'apertura']) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['am/pm' . $dia . 'apertura'])

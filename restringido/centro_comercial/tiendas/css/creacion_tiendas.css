@@ -192,7 +192,7 @@ input[type="checkbox"]:checked::before {
 	font-size: 0.8em;
 }
 
-.content .lista .forms .izquierda .logoYApartados .apartados select,
+.content .lista .forms .izquierda .logoYApartados .apartados .contentA select,
 .content .lista .forms .derecha .horario .dias select {
 	appearance: none;
 	-webkit-appearance: none;
@@ -201,7 +201,7 @@ input[type="checkbox"]:checked::before {
 	border: #a5a5a5 1px solid;
 	font-weight: bold;
 	font-family: arial;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	outline: none;
 }
 
