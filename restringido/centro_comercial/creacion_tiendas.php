@@ -100,7 +100,7 @@
 								</div>
 							</div>
 							<div class="Apartados">
-								<label class="label" for=""><strong>Tiempo predeterminado de apartados</strong></label>
+								<label class="label" for=""><strong>Periodos de apartado</strong></label>
 
 							</div>
 						</div>
