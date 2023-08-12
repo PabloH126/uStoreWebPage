@@ -131,7 +131,7 @@
 							</div>
 						</div>	
 						<div class="notas">
-							<span>* Las imagenes deben estar en formato de imagen JPG, PNG o JPEG</span>
+							<span>* Las imagenes en formato de imagen JPG, PNG o JPEG</span>
 						</div>
 					</div>
 					<div class="derecha">
