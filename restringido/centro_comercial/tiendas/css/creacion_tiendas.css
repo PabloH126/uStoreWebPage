@@ -9,12 +9,6 @@ h1 {
 	padding: 1% 2% 2%;
 }
 
-/*
-.content .lista .forms .izquierda .categorias .categoria{
-	margin: 10px;
-}
-*/
-
 .content .lista form {
 	font-size: 2em;
 }
@@ -193,12 +187,6 @@ input[type="checkbox"]:checked::before {
 
 /* horario */
 
-/*.content.lista .forms .derecha .horario .dias{
-	display: flex;
-	flex-direction: column;
-	font-weight: bold;
-}*/
-
 .content .lista .forms .izquierda .logoYApartados .apartados div,
 .content .lista .forms .derecha .horario .dias .dia label,
 .content .lista .forms .derecha .horario .dias .dia div {
@@ -218,8 +206,6 @@ input[type="checkbox"]:checked::before {
 	font-size: 0.8em;
 	outline: none;
 }
-
-
 
 .content .lista .boton input {
 	width: 30%;
@@ -242,10 +228,6 @@ input[type="checkbox"]:checked::before {
 	.content .lista .forms .izquierda .categorias .contentC {
 		width: 300px;
 		height: 135px;
-	}
-
-	.content .lista .forms .izquierda .logoT .contentL {
-		/*width: 21%;*/
 	}
 
 	.content .lista .forms .izquierda .logoT .contentL .box,

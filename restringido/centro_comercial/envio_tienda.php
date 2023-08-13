@@ -1,13 +1,14 @@
 <?php
     session_start();
-    
+    //CREATE TIENDA
+
     $data = [
         'NombreTienda' => $_POST['nombreTienda'],
         'IdCentroComercial' => $_SESSION['idMall'],
     ];
     
     $logoTienda = $_FILES['logoTienda'];
-    //CREATE TIENDA
+
     $ch = curl_init();
 
     $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
@@ -36,9 +37,11 @@
     $dataTienda = json_decode($response, true);
 
     curl_close($ch);
+ //----------------------------------------------------------------------------------------//   
 
 
     //CREATE HORARIO
+
     $arraysHorario = array(
         generateArrayHorario('Lunes', $dataTienda),
         generateArrayHorario('Martes', $dataTienda),
@@ -76,6 +79,8 @@
     }
 
     curl_close($ch);
+ //----------------------------------------------------------------------------------------// 
+
 
     //CREATE CATEGORIAS TIENDA
     
@@ -115,6 +120,8 @@
     }
     
     curl_close($ch);
+ //----------------------------------------------------------------------------------------//   
+
 
     //CREATE PERIODOS PREDETERMINADOS TIENDA
     $periodos = generateArrayPeriodosPredeterminados($dataTienda);
@@ -146,9 +153,53 @@
     {
         echo $httpStatusCode;
     }
+//----------------------------------------------------------------------------------------//   
 
+
+    //CREATE IMAGENES BANNER TIENDA
+
+    $imagen1 = $_FILES['imagen1'];
+    $imagen2 = $_FILES['imagen2'];
+    $imagen3 = $_FILES['imagen3'];
+
+    $data = [];
+    $data['primera'] = curl_file_create($imagen1['tmp_name'], $imagen1['type'], $imagen1['name']);
+    $data['segunda'] = curl_file_create($imagen2['tmp_name'], $imagen2['type'], $imagen2['name']);
+    $data['tercera'] = curl_file_create($imagen3['tmp_name'], $imagen3['type'], $imagen3['name']);
+
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenNewTienda?idTienda=" . $dataTienda['idTienda']);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+    ));
     
+    $response = curl_exec($ch);
     
+    if ($response === false) {
+        echo 'Error: ' . curl_error($ch);
+    } else {
+        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    }
+
+    if($httpStatusCode != 201)
+    {
+        echo $httpStatusCode;
+    }
+
+    $dataTienda = json_decode($response, true);
+
+    curl_close($ch);
+//----------------------------------------------------------------------------------------//   
+
+
+    header("Location: https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" . $dataTienda['idTienda']);
+
+
+//----------------------------------------------------------------------------------------//     
     //FUNCIONES
     function generateArrayCategorias($cat, $dataTienda)
     {
