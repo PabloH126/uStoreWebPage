@@ -164,24 +164,24 @@
 							<label class="label"><strong>Imágenes promocionales</strong></label>
 							<div class="imageP">
 								<div>
-									<div class="box"></div>
+									<div class="box"><img src="" id="imagenSelec" alt=""></div>
 									<div class="ip">
-										<label for="fileInput" >
-										<input type="file" id="fileInput" name="imagen1">
+										<label for="fileInput1" >
+										<input type="file" id="fileInput1" name="imagen1">
 									</div>
 								</div>
 								<div>
-									<div class="box"></div>
+									<div class="box"><img src="" id="imagenSelec" alt=""></div>
 									<div class="ip">
-										<label for="fileInput" >
-										<input type="file" id="fileInput" name="imagen2">
+										<label for="fileInput2" >
+										<input type="file" id="fileInput2" name="imagen2">
 									</div>
 								</div>
 								<div>
-									<div class="box"></div>
+									<div class="box"><img src="" id="imagenSelec" alt=""></div>
 									<div class="ip">
-										<label for="fileInput" >
-										<input type="file" id="fileInput" name="imagen3">
+										<label for="fileInput3" >
+										<input type="file" id="fileInput3" name="imagen3">
 									</div>
 								</div>
 							</div>
