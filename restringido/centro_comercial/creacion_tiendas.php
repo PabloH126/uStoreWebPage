@@ -50,7 +50,7 @@
 		echo '<div class="numeroA">';
 			echo '<select name="numero' . $periodo . '" id="numero' . $periodo . '">';
 		
-		for($i = 0; $i < 61; $i++)
+		for($i = 1; $i < 61; $i++)
 		{
 				echo '<option value="' . $i . '">' . $i . '</option>';
 		}

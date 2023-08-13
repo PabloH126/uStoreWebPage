@@ -156,10 +156,15 @@ input[type="checkbox"]:checked::before {
 	height: 110px;
 }
 
-.content .lista .forms .izquierda .logoT .contentL .box img,
-.content .lista .forms .derecha .promociones .imageP .box img{
+.content .lista .forms .izquierda .logoT .contentL .box img{
 	max-height: 110px;
 	max-width: 128px;
+	border-radius: 12px;
+}
+
+.content .lista .forms .derecha .promociones .imageP .box img{
+	max-height: 88px;
+	max-width: 148px;
 	border-radius: 12px;
 }
 
@@ -253,10 +258,14 @@ input[type="checkbox"]:checked::before {
 		height: 64px;
 	}
 
-	.content .lista .forms .izquierda .logoT .contentL .box img,
-	.content .lista .forms .derecha .promociones .imageP .box img{
+	.content .lista .forms .izquierda .logoT .contentL .box img{
 		max-height: 62px;
 		max-width: 83px;
+	}
+
+	.content .lista .forms .derecha .promociones .imageP .box img{
+		max-height: 49px;
+		max-width: 81px;
 	}
 
 	.content .lista .forms .izquierda .logoT .contentL .ip label::before,
