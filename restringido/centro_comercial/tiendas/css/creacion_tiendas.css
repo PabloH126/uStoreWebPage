@@ -143,7 +143,8 @@ input[type="checkbox"]:checked::before {
 /* promociones y logo*/
 .content .lista .forms .izquierda .logoT .contentL .box,
 .content .lista .forms .derecha .promociones .imageP .box,
-img {
+.content .lista .forms .izquierda .logoT .contentL .box img,
+.content .lista .forms .derecha .promociones .imageP .box {
 	height: 92px;
 	margin: 0 2px 4px;
 	border-radius: 12px;
