@@ -185,7 +185,7 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 201)
+    if($httpStatusCode != 200)
     {
         echo $httpStatusCode;
     }
