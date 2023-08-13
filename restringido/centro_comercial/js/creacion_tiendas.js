@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     var checkboxes = document.querySelectorAll('#checkbox-list input[type="checkbox"]');
     var maxSelect = 8;
@@ -24,4 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+document.querySelector("form").addEventListener("submit", function(e) {
+    let img1 = document.getElementById("fileInput1").value;
+    let img2 = document.getElementById("fileInput2").value;
+    let img3 = document.getElementById("fileInput3").value;
+
+    let logoTienda = 
 });

@@ -14,9 +14,16 @@
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src="https://www.google.es/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com.mx%2Fpin%2F648307308851877117%2F&psig=AOvVaw1jnDRCYDWf7LZ2Ff_KygRR&ust=1691988338116000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCJjR_vDp2IADFQAAAAAdAAAAABAD" alt="">
+                        <img src="https://ih1.redbubble.net/image.976992026.3783/pp,504x498-pad,600x600,f8f8f8.jpg" alt="">
                     </div>
-                    <div class="nameCat"></div>
+                    <div class="nameCat">
+                        <div class="name">
+                            <h1>wi</h1>
+                        </div>
+                        <div class="cat">
+
+                        </div>
+                    </div>
                 </div>
                 <div class="botI">
                     <div class="tit"></div>

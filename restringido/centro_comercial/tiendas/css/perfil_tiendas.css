@@ -1,6 +1,6 @@
 .content{height: 88%;}
 
-.contentT{
+.content .contentT{
     height: 100%;
     padding: 1%;
     display: grid;
@@ -8,8 +8,8 @@
     gap: 1%;
 }
 
-.izquierda,
-.derecha{
+.content .contentT .izquierda,
+.content .contentT .derecha{
     border: 1px solid #691717;
 }
 
@@ -22,7 +22,8 @@
 }
 
 .contentT .izquierda .topI .icon img{
-
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .topI, .topD{
@@ -48,8 +49,12 @@
     height: 100%;
 }
 
-.nameCat{
+.contentT .izquierda .topI .nameCat{
     width: 80%;
+}
+
+.contentT .izquierda .topI .nameCat .name{
+
 }
 
 .tit{
