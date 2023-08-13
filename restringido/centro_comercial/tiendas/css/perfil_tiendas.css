@@ -1,6 +1,6 @@
 .content{height: 88%;}
 
-.lista{
+.contentT{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     height: 100%;
