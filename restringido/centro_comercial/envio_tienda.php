@@ -196,7 +196,7 @@
 //----------------------------------------------------------------------------------------//   
 
 
-    header('Location: https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $dataTienda['idTienda'] . '');
+    header('Location: https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $dataTienda['idTienda']);
 
 
 //----------------------------------------------------------------------------------------//     

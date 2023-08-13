@@ -5,6 +5,7 @@
     grid-template-columns: repeat(2, 1fr);
     height: 100%;
     border: 1px black solid;
+    padding: 1%;
 }
 
 .izquierda,
