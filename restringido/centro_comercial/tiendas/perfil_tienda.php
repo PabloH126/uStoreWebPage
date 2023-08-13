@@ -13,7 +13,9 @@
         <div class="contentT">
             <div class="izquierda">
                 <div class="topI">
-                    <div class="icon"></div>
+                    <div class="icon">
+                        <img src="" alt="">
+                    </div>
                     <div class="nameCat"></div>
                 </div>
                 <div class="botI">

@@ -21,6 +21,10 @@
     display: flex;
 }
 
+.contentT .izquierda .topI .icon img{
+
+}
+
 .topI, .topD{
     height: 18%;
 }
