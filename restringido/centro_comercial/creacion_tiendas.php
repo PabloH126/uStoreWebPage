@@ -113,8 +113,7 @@
 							<div class="logoT">
 								<label class="label" for="logoTienda"><strong>Logo de la tienda</strong></label>
 								<div class="contentL">
-									<div class="box"></div>
-									<img src="" id="imagenSelec" alt="">
+									<div class="box"> <img src="" id="imagenSelec" alt=""></div>
 									<div class="ip">
 										<label for="logoTienda" >
 										<input type="file" id="logoTienda" name="logoTienda">
