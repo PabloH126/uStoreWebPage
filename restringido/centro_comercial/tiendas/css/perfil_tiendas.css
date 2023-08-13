@@ -1,6 +1,54 @@
 .content{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 79%;
+    height: 88%;
     border: 1px black solid;
+}
+
+.izquierda,
+.derecha{
+    border: 1px solid #691717;
+}
+
+.topI,.botI, .topD, .botD{
+    border: 1px solid red;
+}
+
+.topI{
+    display: flex;
+}
+
+.topI, .topD{
+    height: 25%;
+}
+
+.topD{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.botI, .botD{
+    height: 74%;
+}
+
+.icon, .nameCat, .tit, .ban, .info, .comnts{
+    border: 1px solid orange;
+}
+
+.icon{width: 20%;}
+
+.icon, .nameCat, .info{
+    height: 100%;
+}
+
+.nameCat{
+    width: 80%;
+}
+
+.tit{
+    height: 15%;
+}
+
+.ban, .comnts{
+    height: 85%;
 }
