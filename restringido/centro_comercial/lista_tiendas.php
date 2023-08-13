@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	require '../security.php';;
+	require '../security.php';
 
 	$_SESSION['idMall'] = $_GET['id'];
 

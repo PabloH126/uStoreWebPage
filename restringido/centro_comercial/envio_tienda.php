@@ -115,12 +115,64 @@
     }
     
     curl_close($ch);
+
+    //CREATE PERIODOS PREDETERMINADOS TIENDA
+    $periodos = generateArrayPeriodosPredeterminados($dataTienda);
+
+    $jsonData = json_encode($periodos);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/");
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Authorization: Bearer ' . $_COOKIE['SessionToken'],
+        'Content-Type: application/json',
+        'Content-Length: ' . strlen($jsonData)
+    ));
+    
+    $response = curl_exec($ch);
+    
+    if ($response === false) {
+        echo 'Error: ' . curl_error($ch);
+    } else {
+        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    }
+    
+    curl_close($ch);
+
+    if($httpStatusCode != 200)
+    {
+        echo $httpStatusCode;
+    }
+    
+    //FUNCIONES
     function generateArrayCategorias($cat, $dataTienda)
     {
         return array(
             "idTienda" => $dataTienda['idTienda'],
             "idCategoria" => $cat
         );
+    }
+
+    function generateArrayPeriodosPredeterminados($dataTienda)
+    {
+        $periodos = [];
+        for($i = 1; $i <= 3; $i++)
+        {
+            $numero = $_POST['numeroPeriodo' . $i];
+            $tiempo = $_POST['tiempoPeriodo' . $i];
+
+            $apartadoPredeterminado = $numero . $tiempo;
+
+            $periodos[] = [
+                'apartadoPredeterminado' => $apartadoPredeterminado,
+                'idTienda' => $dataTienda['idTienda']
+            ];
+        } 
+
+        return $periodos;
     }
 
     function generateArrayHorario($dia, $dataTienda)

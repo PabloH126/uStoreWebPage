@@ -44,6 +44,27 @@
 			echo '</div>';
 		echo '</div>';
 	}
+	
+	function PeriodosSelect($periodo)
+	{
+		echo '<div class="numeroA">';
+			echo '<select name="numero' . $periodo . '" id="numero' . $periodo . '">';
+		
+		for($i = 0; $i < 61; $i++)
+		{
+				echo '<option value="' . $i . '">' . $i . '</option>';
+		}
+			echo '</select>';
+		echo '</div>';
+		echo '<div class="tiempoA">';
+			echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
+				echo '<option value="">Segundos</option>';
+				echo '<option value="">Minutos</option>';
+				echo '<option value="">Horas</option>';
+				echo '<option value="">Días</option>';
+			echo '</select>';
+		echo '</div>';
+	}
 
 
 	$ch = curl_init();
@@ -103,55 +124,13 @@
 								<label class="label"><strong>Periodos de apartado</strong></label>
 								<div class="contentA">
 									<div>
-										<div class="numeroA">
-											<select name="" id="">
-												<option value="">1</option>
-												<option value="">2</option>
-												<option value="">3</option>
-											</select>
-										</div>
-										<div class="tiempoA">
-											<select name="" id="">
-												<option value="">Segundos</option>
-												<option value="">Minutos</option>
-												<option value="">Horas</option>
-												<option value="">Días</option>
-											</select>
-										</div>
+										<?php PeriodosSelect('Periodo1'); ?>
 									</div>
 									<div>
-										<div class="numeroA">
-											<select name="" id="">
-												<option value="">1</option>
-												<option value="">2</option>
-												<option value="">3</option>
-											</select>
-										</div>
-										<div class="tiempoA">
-											<select name="" id="">
-												<option value="">Segundos</option>
-												<option value="">Minutos</option>
-												<option value="">Horas</option>
-												<option value="">Días</option>
-											</select>
-										</div>
+										<?php PeriodosSelect('Periodo2'); ?>
 									</div>
 									<div>
-										<div class="numeroA">
-											<select name="" id="">
-												<option value="">1</option>
-												<option value="">2</option>
-												<option value="">3</option>
-											</select>
-										</div>
-										<div class="tiempoA">
-											<select name="" id="">
-												<option value="">Segundos</option>
-												<option value="">Minutos</option>
-												<option value="">Horas</option>
-												<option value="">Días</option>
-											</select>
-										</div>
+										<?php PeriodosSelect('Periodo3'); ?>
 									</div>
 								</div>
 							</div>

@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+	require '../security.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,5 +14,8 @@
 </head>
 <body>
     <?php require("../templates/template.menu.php")?>
+    <div class="content">
+
+    </div>
 </body>
 </html>
