@@ -1,7 +1,8 @@
+.content{height: 88%;}
 .contentT{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 88%;
+    height: 100%;
     border: 1px black solid;
 }
 
