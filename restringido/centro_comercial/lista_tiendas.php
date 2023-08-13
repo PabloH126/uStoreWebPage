@@ -53,7 +53,7 @@
 				foreach ($tiendas as $tienda)
 				{ ?>
 					<div class="item">
-						<a href="tiendas/perfil_tienda.php?id=''"><img width="60%" class="logo" src="<?php echo $tienda['logoTienda']; ?>"></a>
+						<a href="tiendas/perfil_tienda.php?id=<?php echo $tienda['idTienda']; ?>'"><img width="60%" class="logo" src="<?php echo $tienda['logoTienda']; ?>"></a>
 						<strong class="nombre"><?php echo $tienda['nombreTienda'];?></strong>
 					</div>
 			<?php
