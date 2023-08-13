@@ -36,6 +36,8 @@
 
     $dataTienda = json_decode($response, true);
 
+    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $dataTienda['idTienda'];
+
     curl_close($ch);
 //----------------------------------------------------------------------------------------//   
 
@@ -193,13 +195,9 @@
     $dataTienda = json_decode($response, true);
 
     curl_close($ch);
-//----------------------------------------------------------------------------------------//   
-
-
-    header('Location: https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $dataTienda['idTienda']);
-
-
 //----------------------------------------------------------------------------------------//     
+
+
     //FUNCIONES
     function generateArrayCategorias($cat, $dataTienda)
     {
@@ -240,5 +238,9 @@
             );
         }
     }
-?>
+//----------------------------------------------------------------------------------------//  
 
+
+    header('Location: ' . $urlSalida);
+    exit;
+?>
