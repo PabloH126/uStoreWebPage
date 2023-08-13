@@ -142,17 +142,26 @@ input[type="checkbox"]:checked::before {
 
 /* promociones y logo*/
 .content .lista .forms .izquierda .logoT .contentL .box,
-.content .lista .forms .derecha .promociones .imageP .box,
-.content .lista .forms .izquierda .logoT .contentL .box img,
-.content .lista .forms .derecha .promociones .imageP .box {
+.content .lista .forms .derecha .promociones .imageP .box{
 	height: 92px;
 	margin: 0 2px 4px;
 	border-radius: 12px;
 	border: 2px dashed black;
+	display: grid;
+	justify-content: space-between;
+	align-items: center;
+	justify-items: start;
 }
 
 .content .lista .forms .izquierda .logoT .contentL .box {
 	height: 110px;
+}
+
+.content .lista .forms .izquierda .logoT .contentL .box img,
+.content .lista .forms .derecha .promociones .imageP .box img{
+	max-height: 110px;
+	max-width: 128px;
+	border-radius: 12px;
 }
 
 .content .lista .forms .izquierda .logoT .contentL .ip label::before,
@@ -243,6 +252,12 @@ input[type="checkbox"]:checked::before {
 
 	.content .lista .forms .izquierda .logoT .contentL .box {
 		height: 64px;
+	}
+
+	.content .lista .forms .izquierda .logoT .contentL .box img,
+	.content .lista .forms .derecha .promociones .imageP .box img{
+		max-height: 62px;
+		max-width: 83px;
 	}
 
 	.content .lista .forms .izquierda .logoT .contentL .ip label::before,
