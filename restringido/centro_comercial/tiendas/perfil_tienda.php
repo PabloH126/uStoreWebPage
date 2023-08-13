@@ -14,7 +14,7 @@
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src="" alt="">
+                        <img src="https://www.google.es/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com.mx%2Fpin%2F648307308851877117%2F&psig=AOvVaw1jnDRCYDWf7LZ2Ff_KygRR&ust=1691988338116000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCJjR_vDp2IADFQAAAAAdAAAAABAD" alt="">
                     </div>
                     <div class="nameCat"></div>
                 </div>
