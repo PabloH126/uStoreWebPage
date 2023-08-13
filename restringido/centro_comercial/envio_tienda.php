@@ -164,7 +164,7 @@
             $numero = $_POST['numeroPeriodo' . $i];
             $tiempo = $_POST['tiempoPeriodo' . $i];
 
-            $apartadoPredeterminado = $numero . $tiempo;
+            $apartadoPredeterminado = '' . $numero . '' . $tiempo;
 
             $periodos[] = [
                 'apartadoPredeterminado' => $apartadoPredeterminado,
