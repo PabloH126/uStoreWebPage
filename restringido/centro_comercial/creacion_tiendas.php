@@ -114,6 +114,7 @@
 								<label class="label" for="logoTienda"><strong>Logo de la tienda</strong></label>
 								<div class="contentL">
 									<div class="box"></div>
+									<img src="" id="imagenSelec" alt="">
 									<div class="ip">
 										<label for="logoTienda" >
 										<input type="file" id="logoTienda" name="logoTienda">
@@ -212,6 +213,7 @@
 			</form>
 		</div>
 	</div>
+	<script src="js/mostrarImg.js"></script>
 	<script src="js/creacion_tiendas.js"></script>
 </body>
 </html>

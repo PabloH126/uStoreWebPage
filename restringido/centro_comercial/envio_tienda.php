@@ -146,6 +146,8 @@
     {
         echo $httpStatusCode;
     }
+
+    
     
     //FUNCIONES
     function generateArrayCategorias($cat, $dataTienda)
