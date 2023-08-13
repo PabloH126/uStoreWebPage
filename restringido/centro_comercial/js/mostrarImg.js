@@ -6,6 +6,10 @@ const imagenInput3 = document.getElementById('fileInput3');
 
 const imagenMostrada = document.getElementById('imagenSelec');
 
+const imagenMostrada1 = document.getElementById('imagenSelec1');
+const imagenMostrada2 = document.getElementById('imagenSelec2');
+const imagenMostrada3 = document.getElementById('imagenSelec3');
+
 imagenInput.addEventListener('change', (event) => {
     const imagenSeleccionada = event.target.files[0];
     
@@ -20,7 +24,7 @@ imagenInput1.addEventListener('change', (event) => {
     
     if (imagenSeleccionada) {
         const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada.src = imagenURL;
+        imagenMostrada1.src = imagenURL;
     }
 });
 
@@ -29,7 +33,7 @@ imagenInput2.addEventListener('change', (event) => {
     
     if (imagenSeleccionada) {
         const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada.src = imagenURL;
+        imagenMostrada2.src = imagenURL;
     }
 });
 
@@ -39,7 +43,7 @@ imagenInput3.addEventListener('change', (event) => {
     
     if (imagenSeleccionada) {
         const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada.src = imagenURL;
+        imagenMostrada3.src = imagenURL;
     }
 });
 
