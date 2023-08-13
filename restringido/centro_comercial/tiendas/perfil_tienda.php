@@ -10,7 +10,7 @@
 <body>
     <?php require("../templates/template.menu.php")?>
     <div class="content">
-        <div>
+        <div class="contentT">
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon"></div>
