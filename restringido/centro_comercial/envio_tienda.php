@@ -122,7 +122,7 @@
     $jsonData = json_encode($periodos);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/");
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/CreatePeriodos");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
