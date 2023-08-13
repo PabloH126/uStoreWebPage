@@ -36,7 +36,7 @@
 
     $dataTienda = json_decode($response, true);
 
-    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $dataTienda['idTienda'];
+    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall'];
 
     curl_close($ch);
 //----------------------------------------------------------------------------------------//   
