@@ -164,8 +164,7 @@
             $numero = $_POST['numeroPeriodo' . $i];
             $tiempo = $_POST['tiempoPeriodo' . $i];
 
-            $apartadoPredeterminado = '' . $numero . '' . $tiempo;
-            echo $apartadoPredeterminado . '<br>';
+            $apartadoPredeterminado = $numero . ' ' . $tiempo;
             $periodos[] = [
                 'apartadoPredeterminado' => $apartadoPredeterminado,
                 'idTienda' => $dataTienda['idTienda']

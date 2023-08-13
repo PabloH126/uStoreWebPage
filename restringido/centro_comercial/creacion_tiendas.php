@@ -58,10 +58,10 @@
 		echo '</div>';
 		echo '<div class="tiempoA">';
 			echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
-				echo '<option value="">Segundos</option>';
-				echo '<option value="">Minutos</option>';
-				echo '<option value="">Horas</option>';
-				echo '<option value="">Días</option>';
+				echo '<option value="segundos">Segundos</option>';
+				echo '<option value="minutos">Minutos</option>';
+				echo '<option value="horas">Horas</option>';
+				echo '<option value="dias">Días</option>';
 			echo '</select>';
 		echo '</div>';
 	}
