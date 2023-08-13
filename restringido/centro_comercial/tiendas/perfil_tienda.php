@@ -5,7 +5,7 @@
 	<title>Perfil tienda</title>
 	<?php require("../templates/template.styles.php")?>
 	<?php require("templates/template.secc_tiendas.php")?>
-    <link rel="stylesheet" href="css/perfil_tienda.css">
+    <link rel="stylesheet" href="css/perfil_tiendas.css">
 </head>
 <body>
     <?php require("../templates/template.menu.php")?>
