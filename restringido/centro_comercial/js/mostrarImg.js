@@ -14,3 +14,32 @@ imagenInput.addEventListener('change', (event) => {
         imagenMostrada.src = imagenURL;
     }
 });
+
+imagenInput1.addEventListener('change', (event) => {
+    const imagenSeleccionada = event.target.files[0];
+    
+    if (imagenSeleccionada) {
+        const imagenURL = URL.createObjectURL(imagenSeleccionada);
+        imagenMostrada.src = imagenURL;
+    }
+});
+
+imagenInput2.addEventListener('change', (event) => {
+    const imagenSeleccionada = event.target.files[0];
+    
+    if (imagenSeleccionada) {
+        const imagenURL = URL.createObjectURL(imagenSeleccionada);
+        imagenMostrada.src = imagenURL;
+    }
+});
+
+
+imagenInput3.addEventListener('change', (event) => {
+    const imagenSeleccionada = event.target.files[0];
+    
+    if (imagenSeleccionada) {
+        const imagenURL = URL.createObjectURL(imagenSeleccionada);
+        imagenMostrada.src = imagenURL;
+    }
+});
+
