@@ -1,6 +1,8 @@
-.content{height: 88%;}
+.content {
+    height: 88%;
+}
 
-.content .contentT{
+.content .contentT {
     height: 100%;
     padding: 1%;
     display: grid;
@@ -9,92 +11,112 @@
 }
 
 .content .contentT .izquierda,
-.content .contentT .derecha{
+.content .contentT .derecha {
     /*border: 1px solid #691717;*/
 }
 
-.topI,.botI, .topD, .botD{
+.topI,
+.botI,
+.topD,
+.botD {
     /*border: 1px solid red;*/
 }
 
-.topI{
+.topI {
     display: flex;
 }
 
-.contentT .izquierda .topI .icon img{
+.contentT .izquierda .topI .icon img {
     max-height: 100%;
     max-width: 100%;
 }
 
-.topI, .topD{
+.topI,
+.topD {
     height: 18%;
 }
 
-.topD{
+.topD {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.botI, .botD{
+.botI,
+.botD {
     height: 69%;
 }
 
-.icon, .nameCat, .tit, .ban, .info, .comnts{
+.icon,
+.nameCat,
+.tit,
+.ban,
+.info,
+.comnts {
     /*border: 1px solid orange;*/
 }
 
-.icon{width: 20%;}
+.icon {
+    width: 20%;
+}
 
-.icon, .nameCat, .info{
+.icon,
+.nameCat,
+.info {
     height: 100%;
 }
 
-.contentT .izquierda .topI .nameCat{
+.contentT .izquierda .topI .nameCat {
     width: 80%;
     display: grid;
     justify-items: start;
     align-items: center;
 }
 
-.contentT .izquierda .topI .nameCat .name h1{
+.contentT .izquierda .topI .nameCat .name h1 {
     margin: 0px;
 }
 
-.contentT .izquierda .topI .nameCat .cats{
+.contentT .izquierda .topI .nameCat .cats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     justify-content: start;
-    height: 3em;
 }
 
-.contentT .izquierda .topI .nameCat .cat{
-    background: #e6e6e6;
-    border-radius: 35%;
+.contentT .izquierda .topI .nameCat .cat {
     height: 100%;
     display: grid;
     align-items: center;
     font-size: 0.8em;
-    margin: 3px 0;
 }
 
-.contentT .izquierda .topI .nameCat .cat label{
+.contentT .izquierda .topI .nameCat .cat label {
     margin: 2px;
+    background: #e6e6e6;
+    border-radius: 10px;
+    padding: 2%;
+    max-width: 300px;
+    overflow: hidden;
 }
 
-.tit{
+.tit {
     height: 15%;
 }
 
-.ban, .comnts{
+.ban,
+.comnts {
     height: 85%;
 }
 
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 
-    .contentT .izquierda .topI .nameCat .name h1{
+    .contentT .izquierda .topI .nameCat .name h1 {
         font-size: 2.5em;
+    }
+
+    .contentT .izquierda .topI .nameCat .cat {
+        font-size: 0.8em;
     }
 
 }
