@@ -58,7 +58,6 @@
 
 .contentT .izquierda .topI .nameCat .name h1{
     margin: 0px;
-    font-size: 3em;
 }
 
 .contentT .izquierda .topI .nameCat .cats{
@@ -67,7 +66,6 @@
 }
 
 .contentT .izquierda .topI .nameCat .cat{
-
 }
 
 .tit{
@@ -76,4 +74,13 @@
 
 .ban, .comnts{
     height: 85%;
+}
+
+/*responsivo*/
+@media only screen and (max-width: 1502px) {
+
+    .contentT .izquierda .topI .nameCat .name h1{
+        font-size: 3em;
+    }
+
 }
