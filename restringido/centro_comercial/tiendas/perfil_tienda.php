@@ -25,19 +25,19 @@
                         </div>
                         <div class="cats">
                         	<div class="cat">
-                        		Categorias
+                        		<label>Categorias</label>
                         	</div>
                             <div class="cat">
-                        		Categorias
+                                <label>Departamentales</label>
                         	</div>
                             <div class="cat">
-                        		Categorias
+                                <label>Entretenimiento</label>
                         	</div>
                             <div class="cat">
-                        		Categorias
+                                <label>Estilo de vida</label>
                         	</div>
                             <div class="cat">
-                        		Categorias
+                                <label>Videojuegos</label>
                         	</div>
                         </div>
                     </div>

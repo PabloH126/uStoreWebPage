@@ -64,10 +64,22 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
+    justify-content: start;
+    height: 3em;
 }
 
 .contentT .izquierda .topI .nameCat .cat{
+    background: #e6e6e6;
+    border-radius: 35%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    font-size: 0.8em;
+    margin: 3px 0;
+}
 
+.contentT .izquierda .topI .nameCat .cat label{
+    margin: 2px;
 }
 
 .tit{
@@ -82,7 +94,7 @@
 @media only screen and (max-width: 1502px) {
 
     .contentT .izquierda .topI .nameCat .name h1{
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
 }
