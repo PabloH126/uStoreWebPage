@@ -18,10 +18,12 @@
                     </div>
                     <div class="nameCat">
                         <div class="name">
-                            <h1>wi</h1>
+                            <h1>Wi</h1>
                         </div>
-                        <div class="cat">
-
+                        <div class="cats">
+                        	<div class="cat">
+                        		holi
+                        	</div>
                         </div>
                     </div>
                 </div>

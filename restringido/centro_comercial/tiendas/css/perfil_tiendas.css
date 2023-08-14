@@ -10,11 +10,11 @@
 
 .content .contentT .izquierda,
 .content .contentT .derecha{
-    border: 1px solid #691717;
+    /*border: 1px solid #691717;*/
 }
 
 .topI,.botI, .topD, .botD{
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 .topI{
@@ -40,7 +40,7 @@
 }
 
 .icon, .nameCat, .tit, .ban, .info, .comnts{
-    border: 1px solid orange;
+    /*border: 1px solid orange;*/
 }
 
 .icon{width: 20%;}
@@ -51,9 +51,22 @@
 
 .contentT .izquierda .topI .nameCat{
     width: 80%;
+    display: grid;
+    justify-items: start;
+    align-items: center;
 }
 
-.contentT .izquierda .topI .nameCat .name{
+.contentT .izquierda .topI .nameCat .name h1{
+    margin: 0px;
+    font-size: 3em;
+}
+
+.contentT .izquierda .topI .nameCat .cats{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentT .izquierda .topI .nameCat .cat{
 
 }
 
