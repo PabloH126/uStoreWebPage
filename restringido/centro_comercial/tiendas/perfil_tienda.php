@@ -43,7 +43,9 @@
                     </div>
                 </div>
                 <div class="botI">
-                    <div class="tit"></div>
+                    <div class="tit">
+                        <h2>Promociones</h2>
+                    </div>
                     <div class="ban"></div>
                 </div>
             </div>

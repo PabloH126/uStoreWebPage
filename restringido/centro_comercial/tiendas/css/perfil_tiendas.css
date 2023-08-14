@@ -98,8 +98,17 @@
     overflow: hidden;
 }
 
-.tit {
+.content .izquierda .botI .tit {
     height: 15%;
+}
+
+.content .izquierda .botI .tit h2 {
+    display: grid;
+    height: 100%;
+    justify-items: start;
+    align-items: center;
+    margin: 0 2%;
+    font-size: 2.5em;
 }
 
 .ban,
@@ -116,6 +125,10 @@
 
     .contentT .izquierda .topI .nameCat .cat {
         font-size: 0.8em;
+    }
+
+    .content .izquierda .botI .tit h2 {
+        font-size: 1.5em;
     }
 
 }
