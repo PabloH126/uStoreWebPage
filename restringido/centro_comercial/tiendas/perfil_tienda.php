@@ -25,7 +25,19 @@
                         </div>
                         <div class="cats">
                         	<div class="cat">
-                        		holi
+                        		Categorias
+                        	</div>
+                            <div class="cat">
+                        		Categorias
+                        	</div>
+                            <div class="cat">
+                        		Categorias
+                        	</div>
+                            <div class="cat">
+                        		Categorias
+                        	</div>
+                            <div class="cat">
+                        		Categorias
                         	</div>
                         </div>
                     </div>
