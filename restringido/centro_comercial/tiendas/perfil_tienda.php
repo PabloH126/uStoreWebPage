@@ -131,11 +131,25 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     </div>
                     <div class="info">
                         <div class="horario">
-                            <strong><?php echo $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] ?></strong>
+                            <strong><?php 
+                                        if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am")
+                                        {
+                                            echo "Dia no laborable";
+                                        }
+                                        else
+                                        {
+                                            echo $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'];
+                                        }     
+                                    ?>
+                            </strong>
                             <div>cerrao</div>
                             <div id="submenu_horario">
                                 <h4>Horario</h4>
-                                <span><strong>Lunes</strong> 11:00 am - 9:00 pm</span>
+                                <?php
+                                    foreach($horarios as $horario)
+                                    {
+                                ?>
+                                <span><strong><?php echo $horario['dia']; ?></strong><?php echo $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre']; ?></span>
                                 <span><strong>Martes</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Miércoles</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Jueves</strong> 11:00 am - 9:00 pm</span>
