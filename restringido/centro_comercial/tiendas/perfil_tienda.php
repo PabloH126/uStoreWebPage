@@ -109,9 +109,9 @@ $horarioDia = getHorarioDia($horarios, $dia);
                         
                         <div class="slider">
                             <img src="https://img.asmedia.epimg.net/resizer/G1ImGL71jB-ju5MG7cOwY-VNOnU=/1472x828/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/7S7RYRUXMBDTZI3QUNRJ6RARFE.jpg" alt="">
-                        <!--    <img src="https://www.mundodeportivo.com/alfabeta/hero/2021/03/naruto.1677590248.2134.jpg?width=1200" alt="">
+                            <img src="https://www.mundodeportivo.com/alfabeta/hero/2021/03/naruto.1677590248.2134.jpg?width=1200" alt="">
                             <img src="https://www.mundodeportivo.com/alfabeta/hero/2023/03/image-2023-03-23t222927.291.jpg?width=1200&aspect_ratio=16:9" alt="">
-                        --></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,7 +174,7 @@ $horarioDia = getHorarioDia($horarios, $dia);
             </div>
         </div>
     </div>
-    <!--<script src="js/slider.js"></script>-->
+    <script src="js/slider.js"></script>
 </body>
 
 </html>
