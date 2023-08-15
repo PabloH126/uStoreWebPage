@@ -47,7 +47,18 @@ function horariosConfigurados() {
 function periodosConfigurados() {
     const periodos = ["Periodo1", "Periodo2", "Periodo3"];
 
-    for
+    for (let periodo of periodos)
+    {
+        let numero = document.querySelector(`select[name="numero${periodo}"]`).value;
+        let tiempo = document.querySelector(`select[name="tiempo${periodo}"]`).value;
+
+        if(numero !== "1" || tiempo !== "minutos")
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 document.querySelector("form").addEventListener("submit", function (e) {
@@ -76,5 +87,11 @@ document.querySelector("form").addEventListener("submit", function (e) {
         alert("Se debe seleccionar aal menos una categoria");
         e.preventDefault();
         return;
+    }
+
+    if(!horariosConfigurados())
+    {
+        alert("Se debe configurar al menos un horario");
+        e.preventDefault();
     }
 });
