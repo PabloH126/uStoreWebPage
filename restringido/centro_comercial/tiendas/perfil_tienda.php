@@ -155,7 +155,6 @@ $horarioDia = getHorarioDia($horarios, $dia);
                                         }
                                         else
                                         {
-
                                 ?>
                                             <span><strong><?php echo $horario['dia']; ?></strong><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></span>
                                 <?php

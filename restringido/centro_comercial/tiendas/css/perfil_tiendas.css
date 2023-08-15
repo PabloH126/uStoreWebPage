@@ -194,7 +194,8 @@
         font-size: 0.8em;
     }
 
-    .content .izquierda .botI .tit h2 {
+    .content .izquierda .botI .tit h2,
+    .content .derecha .botD .tit h2 {
         font-size: 1.5em;
     }
 
