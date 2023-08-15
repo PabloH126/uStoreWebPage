@@ -118,9 +118,14 @@
 
 .derecha .topD .info .horario #submenu_horario h4,
 .derecha .topD .info .horario #submenu_horario span{
-    display: block;
+    display: grid;
+    grid-auto-flow: column;
     padding: 10px;
     text-align: center;
+}
+
+.derecha .topD .info .horario #submenu_horario strong{
+    margin: 0 10px;
 }
 
 .botI,
