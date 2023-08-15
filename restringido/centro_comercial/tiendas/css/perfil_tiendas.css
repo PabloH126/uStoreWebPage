@@ -41,6 +41,16 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+.derecha .topD .info div{
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 4px 5px 10px 2px #dfdfdf;
+    height: 80%;
+    margin: 0 13%;
+    padding: 10px;
+}
+
 .botI,
 .botD {
     height: 69%;
