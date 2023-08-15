@@ -148,7 +148,7 @@ $horarioDia = getHorarioDia($horarios, $dia);
                                 <?php
                                     foreach($horarios as $horario)
                                     {
-                                        if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am")
+                                        if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am")
                                         {
                                             echo "Dia no laborable";
                                         }
