@@ -134,16 +134,6 @@ $horarioDia = getHorarioDia($horarios, $dia);
                             <strong><?php echo $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] ?></strong>
                             <div>cerrao</div>
                             <div id="submenu_horario">
-                                <table>
-                                    <tr>
-                                        <th><h4>Horario</h4></th>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Lunes</strong> </td>
-                                        <td> 11:00 am - 9:00 pm</td>
-                                    </tr>
-                                </table>
-                                <!--
                                 <h4>Horario</h4>
                                 <span><strong>Lunes</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Martes</strong> 11:00 am - 9:00 pm</span>
@@ -152,7 +142,6 @@ $horarioDia = getHorarioDia($horarios, $dia);
                                 <span><strong>Viernes</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Sábado</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Domingo</strong> 11:00 am - 9:00 pm</span>
-                            -->
                             </div>
                         </div>
                     </div>
