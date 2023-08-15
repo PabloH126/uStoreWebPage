@@ -27,7 +27,10 @@ function horariosConfigurados() {
 
     for (let dia of dias)
     {
-        let horaApertura = document.querySelector('select[name="')
+        let horaApertura = document.querySelector(`select[name="horas${dia}apertura"]`).value;
+        let minutoApertura = document.querySelector(`select[name="minutos${dia}apertura"]`).value;
+        let ampmApertura = document.querySelector(`select[name="am/pm${dia}apertura"]`).value;
+        
     }
 }
 
