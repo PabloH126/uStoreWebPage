@@ -139,6 +139,15 @@ echo $fechaActual->format('h:i:s A');
                             <strong>11:00 am - 9:00 pm</strong>
                             <div>cerrao</div>
                             <div id="submenu_horario">
+                                <table>
+                                    <tr>
+                                        <th><h4>Horario</h4></th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lunes</strong> </td>
+                                        <td> <span>11:00 am - 9:00 pm</span></td>
+                                    </tr>
+                                </table>
                                 <!--
                                 <h4>Horario</h4>
                                 <span><strong>Lunes</strong> 11:00 am - 9:00 pm</span>
@@ -148,7 +157,7 @@ echo $fechaActual->format('h:i:s A');
                                 <span><strong>Viernes</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Sábado</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Domingo</strong> 11:00 am - 9:00 pm</span>
-                                >
+                            -->
                             </div>
                         </div>
                     </div>
