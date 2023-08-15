@@ -33,10 +33,7 @@ $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" 
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 
-setlocale(LC_TIME, 'es_ES.UTF-8');
-
 $zonaHoraria = new DateTimeZone('America/Mexico_City');
-
 $formateo = new IntlDateFormatter(
     'es_ES',
     IntlDateFormatter::FULL,
@@ -45,7 +42,6 @@ $formateo = new IntlDateFormatter(
     null,
     'EEEE'
 );
-
 $dia = $formateo->format(new DateTime('now', $zonaHoraria));
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
