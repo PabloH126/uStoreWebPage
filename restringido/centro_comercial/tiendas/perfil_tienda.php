@@ -131,18 +131,17 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     </div>
                     <div class="info">
                         <div class="horario">
-                            <strong><?php 
-                                        if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am")
-                                        {
-                                            echo "Dia no laborable";
-                                        }
-                                        else
-                                        {
-                                            echo $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'];
-                                        }     
-                                    ?>
-                            </strong>
-                            <div>cerrao</div>
+                            <?php 
+                                if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am")
+                                {
+                                    echo "<strong> Cerrado </strong>";
+                                }
+                                else
+                                {
+                                    echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
+                                    echo "<div> cerrao </div>";
+                                }
+                            ?>
                             <div id="submenu_horario">
                                 <h4>Horario</h4>
                                 <?php
@@ -151,7 +150,7 @@ $horarioDia = getHorarioDia($horarios, $dia);
                                         if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am")
                                         {
                                 ?>
-                                            <span><strong><?php echo $horario['dia']; ?></strong>Día no laborable</span>
+                                            <span><strong><?php echo $horario['dia']; ?></strong>Cerrado</span>
                                 <?php
                                         }
                                         else

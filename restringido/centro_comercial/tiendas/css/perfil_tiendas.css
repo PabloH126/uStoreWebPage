@@ -105,14 +105,18 @@
     font-size: 2em;
 }
 
+.derecha .topD .info .horario:hover #submenu_horario{
+    display: flex;
+    flex-direction: column;
+}
+
 .derecha .topD .info .horario #submenu_horario{
     position: absolute;
     width: 319px;
     z-index: 1;
     top: 15%;
     left: 65.8%;
-    display: flex;
-    flex-direction: column;
+    display: none;
     height: auto;
 }
 
