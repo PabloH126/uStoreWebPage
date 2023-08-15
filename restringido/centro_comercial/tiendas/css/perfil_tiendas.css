@@ -180,6 +180,7 @@
 
 .slider img{
     max-height: 20em !important;
+    border-radius: 18px;
 }
 
 
