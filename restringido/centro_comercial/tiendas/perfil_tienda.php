@@ -1,25 +1,36 @@
 <?php
 session_start();
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Authorization: Bearer ' . $_COOKIE['SessionToken']
-));
+function getDatosTienda($url)
+{
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+    ));
+    
+    $response = curl_exec($ch);
+    
+    if ($response === false) {
+        echo 'Error: ' . curl_error($ch);
+    } else {
+        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    }
 
-$response = curl_exec($ch);
+    curl_close($ch);
 
-if ($response === false) {
-    echo 'Error: ' . curl_error($ch);
-} else {
-    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if($httpStatusCode != 200)
+    {
+        echo $httpStatusCode;
+    }
+
+    return json_decode($response);
 }
 
-echo $httpStatusCode;
-
-$categorias = json_decode($respose);
-curl_close($ch);
+$tienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id']);
+$categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
+$horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,12 +50,12 @@ curl_close($ch);
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src="https://ih1.redbubble.net/image.976992026.3783/pp,504x498-pad,600x600,f8f8f8.jpg"
+                        <img src=<?php echo $tienda['logoTienda']; ?>
                             alt="">
                     </div>
                     <div class="nameCat">
                         <div class="name">
-                            <h1>Wi</h1>
+                            <h1><?php echo $tienda['nombreTienda']; ?></h1>
                         </div>
                         <div class="categorias">
                             <div class="categoria">
@@ -57,7 +68,7 @@ curl_close($ch);
                                     
                             ?>
                                 <div class="categoria">
-                                    <label><?php echo $cat['categoria1']?></label>
+                                    <label><?php echo $cat['categoria1']; ?></label>
                                 </div>
                             <?php
                                 }
@@ -82,9 +93,21 @@ curl_close($ch);
             </div>
             <div class="derecha">
                 <div class="topD">
-                    <div class="info"></div>
-                    <div class="info"></div>
-                    <div class="info"></div>
+                    <div class="info">
+                        <div>
+                                holi
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div>
+                                holi
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div>
+                            holi
+                        </div>
+                    </div>
                 </div>
                 <div class="botD">
                     <div class="tit"></div>
