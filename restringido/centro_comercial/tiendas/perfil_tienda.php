@@ -31,6 +31,12 @@ function getDatosTienda($url)
 $tienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id']);
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
+
+echo $tienda;
+echo "<br>";
+echo $categorias;
+echo "<br>";
+echo $horarios;
 ?>
 <!DOCTYPE html>
 <html>
