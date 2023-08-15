@@ -16,6 +16,8 @@ if ($response === false) {
     $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
+echo $httpStatusCode;
+
 $categorias = json_decode($respose);
 curl_close($ch);
 ?>
@@ -50,21 +52,16 @@ curl_close($ch);
                             </div>
 
                             <?php
-                                foreach ($categorias as $cat) {
+                                foreach ($categorias as $cat) 
+                                {
                                     
                             ?>
                                 <div class="categoria">
-                                    <label><?php echo $cat['']?></label>
+                                    <label><?php echo $cat['categoria1']?></label>
                                 </div>
-                            <div class="categoria">
-                                <label>Entretenimiento</label>
-                            </div>
-                            <div class="categoria">
-                                <label>Estilo de vida</label>
-                            </div>
-                            <div class="categoria">
-                                <label>Videojuegos</label>
-                            </div>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
