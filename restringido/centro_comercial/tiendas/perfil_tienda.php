@@ -26,18 +26,14 @@ function getDatosTienda($url)
         echo $httpStatusCode;
     }
 
+    echo $response;
     return json_decode($response);
 }
 
-$tienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id']);
+$tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id']);
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 
-echo $tienda['logoTienda'];
-
-echo $categorias;
-
-echo $horarios;
 ?>
 <!DOCTYPE html>
 <html>
