@@ -26,7 +26,7 @@ function getDatosTienda($url)
         echo $httpStatusCode;
     }
 
-    return json_decode($response);
+    return json_decode($response, true);
 }
 
 $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id']);
