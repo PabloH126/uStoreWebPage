@@ -116,7 +116,7 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
             </div>
         </div>
     </div>
-    <script src="js/slider.js"></script>
+    <!--<script src="js/slider.js"></script>-->
 </body>
 
 </html>
