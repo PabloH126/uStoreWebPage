@@ -1,44 +1,47 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-	<title>Perfil tienda</title>
-	<?php require("../templates/template.styles.php")?>
-	<?php require("templates/template.secc_tiendas.php")?>
+    <meta charset="utf-8">
+    <title>Perfil tienda</title>
+    <?php require("../templates/template.styles.php") ?>
+    <?php require("templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" href="css/perfil_tiendas.css">
 </head>
+
 <body>
-    <?php require("../templates/template.menu.php")?>
+    <?php require("../templates/template.menu.php") ?>
     <div class="content">
         <div class="contentT">
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src="https://ih1.redbubble.net/image.976992026.3783/pp,504x498-pad,600x600,f8f8f8.jpg" alt="">
+                        <img src="https://ih1.redbubble.net/image.976992026.3783/pp,504x498-pad,600x600,f8f8f8.jpg"
+                            alt="">
                     </div>
                     <div class="nameCat">
                         <div class="name">
                             <h1>Wi</h1>
                         </div>
-                        <div class="cats">
-                        	<div class="cat">
-                        		<label>Categorias</label>
-                        	</div>
-                            <div class="cat">
+                        <div class="categorias">
+                            <div class="categoria">
+                                <label>Categorias</label>
+                            </div>
+                            <div class="categoria">
                                 <label>Departamentales</label>
-                        	</div>
-                            <div class="cat">
+                            </div>
+                            <div class="categoria">
                                 <label>Entretenimiento</label>
-                        	</div>
-                            <div class="cat">
+                            </div>
+                            <div class="categoria">
                                 <label>Estilo de vida</label>
-                        	</div>
-                            <div class="cat">
+                            </div>
+                            <div class="categoria">
                                 <label>Videojuegos</label>
-                        	</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,7 +49,9 @@
                     <div class="tit">
                         <h2>Promociones</h2>
                     </div>
-                    <div class="ban"></div>
+                    <div class="slider">
+
+                    </div>
                 </div>
             </div>
             <div class="derecha">
@@ -63,4 +68,5 @@
         </div>
     </div>
 </body>
+
 </html>
