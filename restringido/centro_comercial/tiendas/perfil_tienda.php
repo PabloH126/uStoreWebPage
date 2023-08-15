@@ -93,16 +93,19 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
                     <div class="info">
                         <div class="calificacion">
                             <strong>cali</strong>
+                            <div>12345</div>
                         </div>
                     </div>
                     <div class="info">
                         <div class="Precio">
-                            Precio    
+                            <div>Precio</div>     
+                            <div>$$</div>
                         </div>
                     </div>
                     <div class="info">
                         <div class="horario">
                             <strong>hora - hora</strong>
+                            <div>cerrao</div>
                         </div>
                     </div>
                 </div>

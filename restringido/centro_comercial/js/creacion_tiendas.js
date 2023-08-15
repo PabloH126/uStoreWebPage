@@ -31,7 +31,12 @@ function horariosConfigurados() {
         let minutoApertura = document.querySelector(`select[name="minutos${dia}apertura"]`).value;
         let ampmApertura = document.querySelector(`select[name="am/pm${dia}apertura"]`).value;
         
-    }
+        let horaCierre = document.querySelector(`select[name="horas${dia}cierre"]`).value;
+        let minutoCierre = document.querySelector(`select[name="minutos${dia}cierre"]`).value;
+        let ampmCierre = document.querySelector(`select[name="am/pm${dia}cierre"]`).value;
+
+        if(horaApertura !== "00" || )
+    }   
 }
 
 document.querySelector("form").addEventListener("submit", function (e) {
