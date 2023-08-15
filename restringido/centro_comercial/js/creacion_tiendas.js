@@ -35,8 +35,19 @@ function horariosConfigurados() {
         let minutoCierre = document.querySelector(`select[name="minutos${dia}cierre"]`).value;
         let ampmCierre = document.querySelector(`select[name="am/pm${dia}cierre"]`).value;
 
-        if(horaApertura !== "00" || )
+        if(horaApertura !== "00" || minutoApertura !== "00" || ampmApertura !== "am" || horaCierre !== "00" || minutoCierre !== "00" || ampmCierre !== "am")
+        {
+            return true;
+        }
     }   
+
+    return false;
+}
+
+function periodosConfigurados() {
+    const periodos = ["Periodo1", "Periodo2", "Periodo3"];
+
+    for
 }
 
 document.querySelector("form").addEventListener("submit", function (e) {

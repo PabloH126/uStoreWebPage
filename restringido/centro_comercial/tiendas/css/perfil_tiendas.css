@@ -41,7 +41,9 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
-.derecha .topD .info div{
+.derecha .topD .info .class,
+.derecha .topD .info .precio
+.derecha .topD .info .horario{
     background-color: white;
     border-radius: 20px;
     text-align: center;
