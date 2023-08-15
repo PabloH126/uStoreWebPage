@@ -116,6 +116,10 @@
     height: 85%;
 }
 
+.slider-container{
+    
+}
+
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 
