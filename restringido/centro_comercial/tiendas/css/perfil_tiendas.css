@@ -107,12 +107,11 @@
 
 .derecha .topD .info .horario #submenu_horario{
     position: absolute;
-    min-width: 600px;
+    width: 319px;
     z-index: 1;
-    top: 42px;
-    left: 0;
-    right: 0;
-    display: none;
+    top: 134px;
+    left: 800px;
+    display: flex;
 }
 
 .botI,
