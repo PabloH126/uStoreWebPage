@@ -49,7 +49,7 @@
 .icon,
 .nameCat,
 .tit,
-.slider,
+.slider-container,
 .info,
 .comnts {
     /*border: 1px solid orange;*/
@@ -111,7 +111,7 @@
     font-size: 2.5em;
 }
 
-.slider,
+.slider-container,
 .comnts {
     height: 85%;
 }
