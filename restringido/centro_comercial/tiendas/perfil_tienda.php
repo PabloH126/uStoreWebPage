@@ -59,21 +59,17 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
                             <h1><?php echo $tiendas['nombreTienda']; ?></h1>
                         </div>
                         <div class="categorias">
+                        <?php
+                            foreach ($categorias as $cat) 
+                            {
+                                
+                        ?>
                             <div class="categoria">
-                                <label>Categorias</label>
+                                <label><?php echo $cat['categoria1']; ?></label>
                             </div>
-
-                            <?php
-                                foreach ($categorias as $cat) 
-                                {
-                                    
-                            ?>
-                                <div class="categoria">
-                                    <label><?php echo $cat['categoria1']; ?></label>
-                                </div>
-                            <?php
-                                }
-                            ?>
+                        <?php
+                            }
+                        ?>
                         </div>
                     </div>
                 </div>
@@ -95,18 +91,18 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
             <div class="derecha">
                 <div class="topD">
                     <div class="info">
-                        <div>
-                                holi
+                        <div class="calificacion">
+                            <strong>cali</strong>
                         </div>
                     </div>
                     <div class="info">
-                        <div>
-                                holi
+                        <div class="Precio">
+                            Precio    
                         </div>
                     </div>
-                    <div class="info">
+                    <div class="horario">
                         <div>
-                            holi
+                            <strong>hora - hora</strong>
                         </div>
                     </div>
                 </div>

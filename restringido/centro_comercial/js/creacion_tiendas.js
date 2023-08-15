@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function horariosConfigurados() {
+    
+}
+
 document.querySelector("form").addEventListener("submit", function (e) {
     let img1 = document.getElementById("fileInput1").value;
     let img2 = document.getElementById("fileInput2").value;
