@@ -166,9 +166,9 @@
     $imagen3 = $_FILES['imagen3'];
 
     $data = [];
-    $data['primera'] = $imagen1 != null ? curl_file_create($imagen1['tmp_name'], $imagen1['type'], $imagen1['name']) : null; 
-    $data['segunda'] = $imagen2 != null ? curl_file_create($imagen2['tmp_name'], $imagen2['type'], $imagen2['name']) : null;
-    $data['tercera'] = $imagen3 != null ? curl_file_create($imagen3['tmp_name'], $imagen3['type'], $imagen3['name']) : null;
+    $data['primera'] = $_FILES['imagen1'] != null ? curl_file_create($imagen1['tmp_name'], $imagen1['type'], $imagen1['name']) : null; 
+    $data['segunda'] = $_FILES['imagen2'] != null ? curl_file_create($imagen2['tmp_name'], $imagen2['type'], $imagen2['name']) : null;
+    $data['tercera'] = $_FILES['imagen3'] != null ? curl_file_create($imagen3['tmp_name'], $imagen3['type'], $imagen3['name']) : null;
 
     $ch = curl_init();
 
