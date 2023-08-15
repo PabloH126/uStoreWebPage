@@ -3,6 +3,7 @@ let currentIndex = 0;
 
 function showSlide(index) {
   const slideWidth = slider.clientWidth;
+  slideWidth = slideWidth+49;
   slider.style.transform = `translateX(-${slideWidth * index}px)`;
 }
 
