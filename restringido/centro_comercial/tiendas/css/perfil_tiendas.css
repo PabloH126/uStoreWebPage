@@ -147,11 +147,13 @@
 }
 
 
-.content .izquierda .botI .tit {
+.content .izquierda .botI .tit,
+.content .derecha .botD .tit {
     height: 15%;
 }
 
-.content .izquierda .botI .tit h2 {
+.content .izquierda .botI .tit h2,
+.content .derecha .botD .tit {
     display: grid;
     height: 100%;
     justify-items: start;
