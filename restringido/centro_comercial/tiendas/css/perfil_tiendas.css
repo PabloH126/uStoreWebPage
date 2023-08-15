@@ -114,10 +114,18 @@
 .slider-container,
 .comnts {
     height: 85%;
+    max-height: 85%;;
 }
 
 .slider-container{
-    
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slider-container .slider{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 /*responsivo*/
