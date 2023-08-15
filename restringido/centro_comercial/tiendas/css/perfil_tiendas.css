@@ -114,6 +114,11 @@
     display: flex;
 }
 
+.derecha .topD .info .horario #submenu_horario h4,
+.derecha .topD .info .horario #submenu_horario {
+
+}
+
 .botI,
 .botD {
     height: 69%;

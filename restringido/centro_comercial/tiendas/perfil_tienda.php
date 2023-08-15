@@ -44,7 +44,7 @@ $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" 
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 
-$zonaHoraria = new DateTimeZone('America/Mexico_City');
+$zonaHoraria = new DateTimeZone('America/Guadalajara');
 $fechaActual = new DateTime('now', $zonaHoraria);
 $formateo = new IntlDateFormatter(
     'es_ES',
