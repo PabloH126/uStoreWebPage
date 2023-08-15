@@ -13,9 +13,9 @@
         $params["secure"],
         $params["httponly"]);
 
-        if(isset($_COOKIE['SessionData'])) 
+        if(isset($_COOKIE['SessionToken'])) 
         {
-            setcookie('SessionData', '', time() - 42000, '/');
+            setcookie('SessionToken', '', time() - 42000, '/');
         }
     }
 

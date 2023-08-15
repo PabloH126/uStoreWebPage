@@ -20,7 +20,7 @@ if(isset($_POST['claveA'])){
         $ch = curl_init();
 
         // Configura la URL de la API
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/AdminsTienda/Register");
+        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Register/RegisterAdmin");
 
         // Configura cURL para enviar una solicitud POST
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -46,10 +46,20 @@ if(isset($_POST['claveA'])){
 
         // Realiza la solicitud
         $response = curl_exec($ch);
-
+        if($response === false)
+        {
+            echo 'Error: ' . curl_error($ch);
+        } else {
+            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        }
         // Cierra el manejador de cURL
         curl_close($ch);
 
+        if($httpStatusCode == 409)
+        {
+            $_SESSION['emailRegistrado'] = true;
+        }
+        
         header("location: ../../index.php");
         exit;
 	} else {

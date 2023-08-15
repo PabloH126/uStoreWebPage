@@ -12,7 +12,8 @@ const campos = {
 	nombre: false,
 	apellido: false,
 	email: false,
-	password: false
+	password: false,
+	repassword: false
 }
 const validarRegistro = (e) => {
 	switch(e.target.name)
@@ -63,7 +64,15 @@ const validarRePassword = () => {
 	const inputPassword = document.getElementById('passA');
 	const inputRePassword = document.getElementById('repassA');
 
-	if(inputPassword.value !== inputRePassword.value)
+	if (inputPassword.value.length < 8) {
+        document.getElementById(`grupo__password`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__password`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__password i`).classList.add('fa-circle-xmark');
+        document.querySelector(`#grupo__password .formulario__input-error`).textContent = "La contraseña debe contener al menos 8 caracteres";
+        document.querySelector(`#grupo__password .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos['repassword'] = false;
+	}
+	else if(inputPassword.value !== inputRePassword.value)
 	{
 		document.getElementById(`grupo__repassword`).classList.add('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__repassword`).classList.remove('formulario__grupo-correcto');
@@ -71,7 +80,7 @@ const validarRePassword = () => {
 		document.querySelector(`#grupo__repassword i`).classList.add('fa-circle-xmark');
 		document.querySelector(`#grupo__repassword i`).classList.add('fa-bounce');
 		document.querySelector(`#grupo__repassword .formulario__input-error`).classList.add('formulario__input-error-activo');
-		campos['password'] = false;
+		campos['repassword'] = false;
 	}
 	else
 	{
@@ -81,7 +90,7 @@ const validarRePassword = () => {
 		document.querySelector(`#grupo__repassword i`).classList.remove('fa-bounce');
 		document.querySelector(`#grupo__repassword i`).classList.add('fa-circle-check');
 		document.querySelector(`#grupo__repassword .formulario__input-error`).classList.remove('formulario__input-error-activo');
-		campos['password'] = true;
+		campos['repassword'] = true;
 	}
 }
 
@@ -91,7 +100,7 @@ inputs.forEach((input) => {
 });
 
 RegistroAdmin.addEventListener('submit', (e) => {
-	if(campos.nombre && campos.apellido && campos.email && campos.password)
+	if(campos.nombre && campos.apellido && campos.email && campos.password && campos.repassword)
 	{
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 	}

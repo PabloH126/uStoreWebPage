@@ -1,22 +1,55 @@
 <?php
-session_start();
-	if(!isset($_SESSION['fallo']))
+	session_start();
+
+	if(!isset($_SESSION['fallo']) && !isset($_SESSION['emailRegistrado']))
 	{
 		session_unset();
 		session_destroy();
 	}
+
+	if(isset($_COOKIE['SessionToken']))
+	{
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Login/getClaims");
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_COOKIE['SessionToken']
+		)
+		);
+
+		$response = curl_exec($ch);
+
+		if ($response === false) {
+			echo 'Error: ' . curl_error($ch);
+		} else {
+			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		}
+
+		if ($httpStatusCode != 200) {
+			header("location: index.php");
+		}
+
+		curl_close($ch);
+
+		header("location: restringido/seleccionPlaza.php");
+	}
 ?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Inicio de sesion y registro</title>
-	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/index.css">
+	
 	<link rel="shortcut icon" type="text/css" href="img/icono_uStore1.png">
-
 	<link rel="stylesheet" type="text/css" href="css_general/base.css">
+	
 	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/frms.css">
+	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/index.css">
 
 	<!----------GOOGLE FONTS -------->
 
@@ -34,7 +67,7 @@ session_start();
 </head>
 
 <body>
-	<div id="content">
+	<div id="contentI">
 		
 		<!--LOGIN DE ADMINISTRADORES-->
 		<div class="form">
@@ -119,7 +152,7 @@ session_start();
 				</div>
 
 				<div class="formulario__grupo" id="grupo__password">
-					<label for="passA" class="formulario__label">Contraseña</label>
+					<label for="passA" pattern=".{8,}" class="formulario__label">Contraseña</label>
 					<div class="formulario__grupo-input">
 						<input class="input" class="input" type="password" name="passA" id="passA"
 							placeholder="***********" required>
@@ -130,21 +163,42 @@ session_start();
 				</div>
 
 				<div class="formulario__grupo" id="grupo__repassword">
-					<label for="repassA" class="formulario__label">Confirmación de contraseña</label>
+					<label for="repassA" pattern=".{8,}" class="formulario__label">Confirmación de contraseña</label>
 					<div class="formulario__grupo-input">
 						<input class="input" type="password" name="repassA" id="repassA" placeholder="***********"
 							required>
 						<i class="formulario__validacion-estado fa-solid fa-circle-xmark fa-bounce"></i>
 					</div>
-					<p class="formulario__input-error" style="color: #d51b1b">La contraseñas no coinciden</p><br>
+					<p class="formulario__input-error" style="color: #d51b1b">Las contraseñas no coinciden</p><br>
 				</div>
 
 				<div class="formulario__mensaje" id="formulario__mensaje">
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> Por favor rellena los campos correctamente.</p>
 				</div>
+
+				<div class="formulario__mensaje <?php 
+						echo (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) ? 'formulario__mensaje-activo' : ''; 
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) {
+							unset($_SESSION['emailRegistrado']);
+						}
+					?>" id="formulario__mensaje">
+					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
+							style="color: #cc0000;"></i> Email ya registrado</p>
+				</div>
+				<div class="formulario__mensaje <?php 
+						echo (isset($_SESSION['PassNV']) && $_SESSION['PassNV'] == true) ? 'formulario__mensaje-activo' : '';
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['PassNV']) && $_SESSION['PassNV'] == true) {
+							unset($_SESSION['PassNV']);
+						}
+					?>" id="formulario__mensaje">
+					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
+							style="color: #cc0000;"></i> La contraseña debe ser de al menos 8 caracteres</p>
+				</div>
 				<div class="formulario__grupo formulario__grupo-btn-enviar">
-					<input class="submit" type="submit" value="Enviar correo de confirmación">
+					<input class="submit" type="submit" value="Enviar correo de confirmación" id="submitRegistro">
 				</div>
 			</form>
 		</div>

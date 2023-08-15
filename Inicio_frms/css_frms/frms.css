@@ -13,14 +13,10 @@ html, body{
 
 .form{
 	display: inline-flex;
-	padding: 2% 4% 0 3%;
+	padding: 0% 4% 0 3%;
 	width: 43%;
 	margin: auto;
 	align-items: center;
-}
-
-#formR{
-	padding-top: 0.7%;
 }
 
 form{
@@ -63,6 +59,7 @@ label{
 	font-family: 'Source Code Pro', monospace;
 	border-bottom: solid white 1px;
 	transition: border-color 0.2s ease-in-out;
+	-webkit-transition: border-color 0.2s ease-in-out;
 }
 
 input:focus{
@@ -78,6 +75,7 @@ span{
 .checkbox{
 	margin: 0 0 15px;
 	display: grid;
+	-webkit-display: grid;
   	grid-template-columns: 1em auto;
   	gap: 0.5em;
 }
@@ -85,10 +83,12 @@ span{
 input::placeholder{
 	color: white;
 	opacity: 0.7;
+	-webkit-opacity: 0.7;
 }
 
 input[type="checkbox"] {
   appearance: none;
+  -webkit-appearance: none;
   font: inherit;
   color: currentColor;
   width: 1.15em;
@@ -96,8 +96,10 @@ input[type="checkbox"] {
   border: 0.15em solid currentColor;
   border-radius: 0.15em;
   transform: translateY(-0.075em);
+  -webkit-transform: translateY(-0.075em);
   cursor: pointer;
   display: grid;
+  -webkit-display: grid;
   place-content: center;
 }
 
@@ -107,16 +109,20 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::before {
   content: "";
-  width: 0.63em;
-  height: 0.65em;
+  width: 0.68em;
+  height: 0.68em;
   transform: scale(0);
+  -webkit-transform: scale(0);
   transition: 120ms transform ease-in-out;
+  -webkit-transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
+  -webkit-box-shadow: inset 1em 1em var(--form-control-color);
    background-color: white;
 }
 
 input[type="checkbox"]:checked::before {
-  transform: scale(1);
+	transform: scale(1);
+	-webkit-transform: scale(1);
 }
 
 .submit{
@@ -160,21 +166,24 @@ a:hover{
 }
 
 .formulario__mensaje p{
-	margin: 0;
+	margin: -20px 0px 7px 0px;
 }
+
 
 .formulario__mensaje-activo {
 	display: block;
 }
 
 .formulario__mensaje-exito {
-	font-size: 14px;
+	font-size: 1em;
 	color: #119200;
 	display: none;
+	text-align: center;
 }
 
 .formulario__mensaje-exito-activo {
 	display: block;
+	margin: -19px 0px 7px 0px;
 }
 
 .formulario__input-error {

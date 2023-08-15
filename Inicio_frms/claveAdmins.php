@@ -9,7 +9,6 @@
 	<title>Clave de confirmación</title>
 	<?php require("templates/template.styles_frms.php")?>
 	<link rel="stylesheet" type="text/css" href="css_frms/claveAdmins.css">
-	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/frms.css">
 </head>
 <body>
 <?php require("templates/template.header_is.php")?>
@@ -18,7 +17,7 @@
 		<form style="text-align: center;" action="envio_frms/registroAdmin.php" method="post" id="ClaveAdmin">
 			<h1>Clave de administrador</h1>
 			<div class="formulario__grupo" id="grupo_clave">
-				<input id="clave" class="input" type="text" name="claveA" placeholder="AA35B8SP" required>
+				<input id="clave" class="input" type="text" name="claveA" placeholder="AA35B8SP" maxlength="8" required>
 				<p style="margin-bottom: 7px;"><a href="../correo.php">No me llegó ningún correo</a></p>
 
 				<i class="formulario__validacion-estado fa-solid fa-circle-xmark fa-bounce"></i>

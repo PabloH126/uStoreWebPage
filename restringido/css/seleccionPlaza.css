@@ -11,43 +11,62 @@ h1{
 
 .content .lista {
 	display: grid;
+	-webkit-display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	width: 80%;
 	margin: 5px auto; 
 }
 
 .content .lista .item{
-	display: inline-block;
+	display: grid;
 	background-color: white;
 	border-radius: 20px;
 	text-align: center;
-	height: 250px;
-	width: 190px;
+	height: 280px;
 	box-shadow: 4px 5px 10px 2px #dfdfdf;
-	margin: 16px;
+	-webkit-box-shadow: 4px 5px 10px 2px #dfdfdf;
+	margin: 16px 64px;
 }
 
 .content .lista .item .logo{
 	display: block;
 	border-radius: 20px;
-	margin: 10px auto;
+	margin: 10px auto 0;
+	transition: transform 0.5s ease-in-out;
+	-webkit-transition: transform 0.5s ease-in-out;
+}
+
+.logo:hover{
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
 }
 
 .content .lista .item .nombre{
-	font-size: 1.25em;
-	font-family: 'Prata', serif;
+	font-size: 1.1em;
 	display: block;
-	margin: 10px 0 4px;
+	margin: 0 8px;
 }
 
 .content .lista .item .direccion,
 .content .lista .item .horario{
 	font-family: arial;
 	font-size: 0.9em;
-	margin: 8px;
+	margin: 0px 8px;
 	display: block;
 }
 
-.content .lista .item .horario{
-	margin-top: 2px;
+/*Diseno Responsivo*/
+@media only screen and (max-width: 1626px){
+
+	.content .lista .item{
+		height: 250px;
+		margin: 16px 55px;
+	}
+}
+
+@media only screen and (max-width: 1502px){
+
+	.content .lista .item{
+		margin: 16px 32px;
+	}
 }

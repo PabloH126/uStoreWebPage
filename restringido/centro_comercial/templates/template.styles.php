@@ -1,7 +1,7 @@
-<link rel="stylesheet" type="text/css" href="../../../../css_general/base.css">
-<link rel="shortcut icon" type="text/css" href="../../../../img/icono_uStore1.png">
-<link rel="stylesheet" type="text/css" href="../../css/menu.css">
-<link rel="stylesheet" type="text/css" href="../../../css/seleccionPlaza.css">
+<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/css_general/base.css">
+<link rel="shortcut icon" type="text/css" href="https://ustoree.azurewebsites.net/img/icono_uStore1.png">
+<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/css/menu.css">
+<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/css/seleccionPlaza.css">
 
 <!--GOOGLE ICONS-->
 <!--ADD-->
