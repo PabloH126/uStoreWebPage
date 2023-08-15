@@ -40,8 +40,6 @@ function getHorarioDia($horarios, $dia)
     }
 }
 
-function getHoraCierre($)
-
 $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id']);
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
@@ -61,8 +59,8 @@ $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
 $horarioDia = getHorarioDia($horarios, $dia);
 echo $horarioDia['dia'];
-echo "<br>"
-echo $fechaActual = 
+echo "<br>";
+echo $fechaActual->format('h:i:s A');
 ?>
 <!DOCTYPE html>
 <html>
