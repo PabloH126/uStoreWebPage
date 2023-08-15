@@ -167,7 +167,9 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     </div>
                 </div>
                 <div class="botD">
-                    <div class="tit"></div>
+                    <div class="tit">
+                        <h2>Comentarios</h2>
+                    </div>
                     <div class="comnts"></div>
                 </div>
             </div>
