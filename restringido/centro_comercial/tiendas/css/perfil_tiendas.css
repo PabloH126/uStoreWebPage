@@ -112,6 +112,8 @@
     top: 134px;
     left: 800px;
     display: flex;
+    flex-direction: column;
+    height: auto;
 }
 
 .derecha .topD .info .horario #submenu_horario h4,
