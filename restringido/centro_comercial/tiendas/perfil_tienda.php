@@ -33,9 +33,6 @@ $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" 
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 
-echo $tiendas;
-echo $categorias;
-echo $horarios;
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,7 +52,7 @@ echo $horarios;
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src=<?php echo $tienda['logoTienda']; ?>
+                        <img src="<?php echo $tienda['logoTienda']; ?>"
                             alt="">
                     </div>
                     <div class="nameCat">
