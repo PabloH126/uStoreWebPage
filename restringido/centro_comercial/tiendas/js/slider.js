@@ -9,6 +9,6 @@ function showSlide(index) {
 setInterval(() => {
   currentIndex = (currentIndex + 1) % 3;
   showSlide(currentIndex);
-}, 3000);
+}, 10000);
 
 showSlide(currentIndex);
