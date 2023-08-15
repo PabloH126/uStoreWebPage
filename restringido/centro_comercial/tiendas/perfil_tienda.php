@@ -79,12 +79,12 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
                     </div>
                     
                     <div class="slider-container">
-                        <!--
+                        
                         <div class="slider">
                             <img src="https://img.asmedia.epimg.net/resizer/G1ImGL71jB-ju5MG7cOwY-VNOnU=/1472x828/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/7S7RYRUXMBDTZI3QUNRJ6RARFE.jpg" alt="">
-                            <img src="https://www.mundodeportivo.com/alfabeta/hero/2021/03/naruto.1677590248.2134.jpg?width=1200" alt="">
+                        <!--    <img src="https://www.mundodeportivo.com/alfabeta/hero/2021/03/naruto.1677590248.2134.jpg?width=1200" alt="">
                             <img src="https://www.mundodeportivo.com/alfabeta/hero/2023/03/image-2023-03-23t222927.291.jpg?width=1200&aspect_ratio=16:9" alt="">
-                        </div>-->
+                        --></div>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
                 <div class="topD">
                     <div class="info">
                         <div class="calificacion">
-                            <strong>cali</strong>
+                            <strong>4.5</strong>
                             <div>12345</div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
                     </div>
                     <div class="info">
                         <div class="horario">
-                            <strong>hora - hora</strong>
+                            <strong>11:00 am - 9:00 pm</strong>
                             <div>cerrao</div>
                         </div>
                     </div>

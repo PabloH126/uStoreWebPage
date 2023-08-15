@@ -93,11 +93,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
     {
         alert("Se debe configurar al menos un horario");
         e.preventDefault();
+        return;
     }
 
     if(!periodosConfigurados())
     {
         alert("Se debe configurar al menos un periodo de apartado predeterminado");
         e.preventDefault();
+        return;
     }
 });
