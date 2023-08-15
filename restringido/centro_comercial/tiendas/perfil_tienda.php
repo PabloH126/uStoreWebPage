@@ -45,7 +45,7 @@ $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 
 $zonaHoraria = new DateTimeZone('America/Mexico_City');
-$fechaActual = new DateTime('now', $zonaHoraria);
+$fechaActual = new DateTime();
 $formateo = new IntlDateFormatter(
     'es_MX',
     IntlDateFormatter::FULL,
@@ -139,6 +139,7 @@ echo $fechaActual->format('h:i:s A');
                             <strong>11:00 am - 9:00 pm</strong>
                             <div>cerrao</div>
                             <div id="submenu_horario">
+                                <!--
                                 <h4>Horario</h4>
                                 <span><strong>Lunes</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Martes</strong> 11:00 am - 9:00 pm</span>
@@ -147,6 +148,7 @@ echo $fechaActual->format('h:i:s A');
                                 <span><strong>Viernes</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Sábado</strong> 11:00 am - 9:00 pm</span>
                                 <span><strong>Domingo</strong> 11:00 am - 9:00 pm</span>
+                                >
                             </div>
                         </div>
                     </div>
