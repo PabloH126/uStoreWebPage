@@ -54,7 +54,7 @@ $formateo = new IntlDateFormatter(
     null,
     'EEEE'
 );
-$dia = $formateo->format($fechaActual);
+$dia = $formateo->format(new DateTime('now', $zonaHoraria));
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
 $horarioDia = getHorarioDia($horarios, $dia);
