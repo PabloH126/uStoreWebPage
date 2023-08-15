@@ -52,7 +52,7 @@ function periodosConfigurados() {
         let numero = document.querySelector(`select[name="numero${periodo}"]`).value;
         let tiempo = document.querySelector(`select[name="tiempo${periodo}"]`).value;
 
-        if(numero !== "1" || tiempo !== "minutos")
+        if(numero !== "" || tiempo !== "")
         {
             return true;
         }
@@ -92,6 +92,12 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if(!horariosConfigurados())
     {
         alert("Se debe configurar al menos un horario");
+        e.preventDefault();
+    }
+
+    if(!periodosConfigurados())
+    {
+        alert("Se debe configurar al menos un periodo de apartado predeterminado");
         e.preventDefault();
     }
 });

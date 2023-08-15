@@ -51,6 +51,12 @@
     height: 80%;
     margin: 8% 13%;
     padding: 10px;
+    display: grid;
+    align-items: center;
+}
+
+.derecha .topD .info .calificacion strong{
+    font-size: 2em;
 }
 
 .botI,

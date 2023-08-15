@@ -49,7 +49,7 @@
 	{
 		echo '<div class="numeroA">';
 			echo '<select name="numero' . $periodo . '" id="numero' . $periodo . '">';
-		
+				echo '<option value="">numero</option>';
 		for($i = 1; $i < 61; $i++)
 		{
 				echo '<option value="' . $i . '">' . $i . '</option>';
@@ -58,6 +58,7 @@
 		echo '</div>';
 		echo '<div class="tiempoA">';
 			echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
+				echo '<option value="">tiempo</option>';
 				echo '<option value="minutos">Minutos</option>';
 				echo '<option value="horas">Horas</option>';
 				echo '<option value="dias">Días</option>';
