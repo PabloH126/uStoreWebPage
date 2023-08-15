@@ -1,5 +1,23 @@
 <?php
 session_start();
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Authorization: Bearer ' . $_COOKIE['SessionToken']
+));
+
+$response = curl_exec($ch);
+
+if ($response === false) {
+    echo 'Error: ' . curl_error($ch);
+} else {
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+}
+
+$categorias = json_decode($respose);
+curl_close($ch);
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,9 +48,14 @@ session_start();
                             <div class="categoria">
                                 <label>Categorias</label>
                             </div>
-                            <div class="categoria">
-                                <label>Departamentales</label>
-                            </div>
+
+                            <?php
+                                foreach ($categorias as $cat) {
+                                    
+                            ?>
+                                <div class="categoria">
+                                    <label><?php echo $cat['']?></label>
+                                </div>
                             <div class="categoria">
                                 <label>Entretenimiento</label>
                             </div>
@@ -49,12 +72,14 @@ session_start();
                     <div class="tit">
                         <h2>Promociones</h2>
                     </div>
+                    
                     <div class="slider-container">
+                        <!--
                         <div class="slider">
                             <img src="https://img.asmedia.epimg.net/resizer/G1ImGL71jB-ju5MG7cOwY-VNOnU=/1472x828/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/7S7RYRUXMBDTZI3QUNRJ6RARFE.jpg" alt="">
                             <img src="https://www.mundodeportivo.com/alfabeta/hero/2021/03/naruto.1677590248.2134.jpg?width=1200" alt="">
                             <img src="https://www.mundodeportivo.com/alfabeta/hero/2023/03/image-2023-03-23t222927.291.jpg?width=1200&aspect_ratio=16:9" alt="">
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
