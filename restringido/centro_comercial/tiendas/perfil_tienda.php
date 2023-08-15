@@ -46,6 +46,7 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
 
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
 $fechaActual = new DateTime('now', $zonaHoraria);
+$fechaActual->modify('+2 day');
 $formateo = new IntlDateFormatter(
     'es_MX',
     IntlDateFormatter::FULL,
