@@ -46,7 +46,6 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
 
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
 $fechaActual = new DateTime('now', $zonaHoraria);
-$fechaActual->modify('+2 day');
 $formateo = new IntlDateFormatter(
     'es_MX',
     IntlDateFormatter::FULL,
@@ -55,15 +54,11 @@ $formateo = new IntlDateFormatter(
     null,
     'EEEE'
 );
-
 $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
-echo $dia;
+
 $horarioDia = getHorarioDia($horarios, $dia);
-echo "<br>";
-echo $horarioDia['dia'];
-echo "<br>";
-echo $fechaActual->format('h:i:s A');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -136,7 +131,7 @@ echo $fechaActual->format('h:i:s A');
                     </div>
                     <div class="info">
                         <div class="horario">
-                            <strong>11:00 am - 9:00 pm</strong>
+                            <strong><?php echo $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] ?></strong>
                             <div>cerrao</div>
                             <div id="submenu_horario">
                                 <table>
