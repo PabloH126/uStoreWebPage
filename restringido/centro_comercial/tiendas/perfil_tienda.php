@@ -44,22 +44,21 @@ $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" 
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 
-$zonaHoraria = new DateTimeZone('America/Mexico_City');
-$fechaActual = new DateTime();
+$zonaHoraria = new DateTimeZone('Etc/GMT+6');
+$fechaActual = new DateTime('now', $zonaHoraria);
 $formateo = new IntlDateFormatter(
     'es_MX',
     IntlDateFormatter::FULL,
     IntlDateFormatter::FULL,
     $zonaHoraria,
-    IntlDateFormatter::GREGORIAN,
-    'EEEE, d MMMM y H:mm:ss'
+    null,
+    'EEEE'
 );
 
 $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 echo $dia;
 $horarioDia = getHorarioDia($horarios, $dia);
-
 echo "<br>";
 echo $horarioDia['dia'];
 echo "<br>";
@@ -145,7 +144,7 @@ echo $fechaActual->format('h:i:s A');
                                     </tr>
                                     <tr>
                                         <td><strong>Lunes</strong> </td>
-                                        <td> <span>11:00 am - 9:00 pm</span></td>
+                                        <td> 11:00 am - 9:00 pm</td>
                                     </tr>
                                 </table>
                                 <!--
