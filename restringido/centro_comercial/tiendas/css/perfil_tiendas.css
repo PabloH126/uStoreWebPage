@@ -111,7 +111,7 @@
     top: 42px;
     left: 0;
     right: 0;
-    
+    display: none;
 }
 
 .botI,
