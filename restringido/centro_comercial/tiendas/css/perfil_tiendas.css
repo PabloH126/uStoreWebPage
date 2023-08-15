@@ -37,43 +37,6 @@
     height: 18%;
 }
 
-.topD {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.derecha .topD .info .calificacion,
-.derecha .topD .info .precio,
-.derecha .topD .info .horario{
-    background-color: white;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 4px 5px 10px 2px #dfdfdf;
-    height: 80%;
-    margin: 6% 13%;
-    padding: 10px;
-    display: grid;
-    align-items: center;
-}
-
-.derecha .topD .info .calificacion strong{
-    font-size: 2em;
-}
-
-.botI,
-.botD {
-    height: 69%;
-}
-
-.icon,
-.nameCat,
-.tit,
-.slider-container,
-.info,
-.comnts {
-    /*border: 1px solid orange;*/
-}
-
 .icon {
     width: 20%;
 }
@@ -116,6 +79,55 @@
     max-width: 300px;
     overflow: hidden;
 }
+
+
+.topD {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.derecha .topD .info .calificacion,
+.derecha .topD .info .precio,
+.derecha .topD .info .horario{
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 4px 5px 10px 2px #dfdfdf;
+    height: 80%;
+    margin: 6% 13%;
+    padding: 10px;
+    display: grid;
+    align-items: center;
+}
+
+.derecha .topD .info .calificacion strong{
+    font-size: 2em;
+}
+
+.derecha .topD .info .horario .submenu_horario{
+    position: absolute;
+    min-width: 600px;
+    z-index: 1;
+    top: 42px;
+    left: 0;
+    right: 0;
+    
+}
+
+.botI,
+.botD {
+    height: 69%;
+}
+
+.icon,
+.nameCat,
+.tit,
+.slider-container,
+.info,
+.comnts {
+    /*border: 1px solid orange;*/
+}
+
 
 .content .izquierda .botI .tit {
     height: 15%;

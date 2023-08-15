@@ -29,6 +29,17 @@ function getDatosTienda($url)
     return json_decode($response, true);
 }
 
+function getHorarioDia($horarios, $dia)
+{
+    foreach($horarios as $horario)
+    {
+        if($horario['dia'] == $dia)
+        {
+            return $horario;
+        }
+    }
+}
+
 $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id']);
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
@@ -45,7 +56,8 @@ $formateo = new IntlDateFormatter(
 $dia = $formateo->format(new DateTime('now', $zonaHoraria));
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
-echo $dia;
+$horarioDia = getHorarioDia($horarios, $dia);
+echo $horarioDia['dia'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -120,6 +132,16 @@ echo $dia;
                         <div class="horario">
                             <strong>11:00 am - 9:00 pm</strong>
                             <div>cerrao</div>
+                            <div id="submenu_horario">
+                                <h4>Horario</h4>
+                                <span>Lunes 11:00 am - 9:00 pm</span>
+                                <span>Martes 11:00 am - 9:00 pm</span>
+                                <span>Miercoles 11:00 am - 9:00 pm</span>
+                                <span>Jueves 11:00 am - 9:00 pm</span>
+                                <span>Viernes 11:00 am - 9:00 pm</span>
+                                <span>Sabado 11:00 am - 9:00 pm</span>
+                                <span>Domingo 11:00 am - 9:00 pm</span>
+                            </div>
                         </div>
                     </div>
                 </div>
