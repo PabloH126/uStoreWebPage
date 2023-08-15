@@ -33,6 +33,7 @@ $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" 
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 
+echo $tiendas;
 ?>
 <!DOCTYPE html>
 <html>
