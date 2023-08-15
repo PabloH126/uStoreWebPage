@@ -5,6 +5,7 @@
     $data = [
         'NombreTienda' => $_POST['nombreTienda'],
         'IdCentroComercial' => $_SESSION['idMall'],
+        'rangoPrecio' => 0
     ];
     
     $logoTienda = $_FILES['logoTienda'];
