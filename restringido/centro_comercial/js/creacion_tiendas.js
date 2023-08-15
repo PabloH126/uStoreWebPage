@@ -84,7 +84,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
 
     if (!checked) {
-        alert("Se debe seleccionar aal menos una categoria");
+        alert("Se debe seleccionar al menos una categoria");
         e.preventDefault();
         return;
     }
