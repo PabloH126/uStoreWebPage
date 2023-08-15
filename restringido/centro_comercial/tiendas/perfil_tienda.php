@@ -51,11 +51,10 @@ $formateo = new IntlDateFormatter(
     IntlDateFormatter::FULL,
     IntlDateFormatter::FULL,
     $zonaHoraria,
-    null,
-    'EEEE'
+    IntlDateFormatter::GREGORIAN,
+    'EEEE, d MMMM y H:mm:ss'
 );
 
-echo $fechaActual->format('Y-m-d H:i:s');
 $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 echo $dia;
