@@ -25,7 +25,6 @@ function getDatosTienda($url)
     {
         echo $httpStatusCode;
     }
-    echo $httpStatusCode;
 
     return json_decode($response);
 }
@@ -34,10 +33,10 @@ $tienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" .
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 
-echo $tienda;
-echo "<br>";
+echo $tienda['logoTienda'];
+
 echo $categorias;
-echo "<br>";
+
 echo $horarios;
 ?>
 <!DOCTYPE html>
