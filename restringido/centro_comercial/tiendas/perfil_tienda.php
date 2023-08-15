@@ -35,9 +35,19 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
 
 setlocale(LC_TIME, 'es_ES.UTF-8');
 
-$formateo = new Int1DateFormatter(
-    
-)
+$formateo = new IntlDateFormatter(
+    'es_ES',
+    IntlDateFormatter::FULL,
+    IntlDateFormatter::FULL,
+    null,
+    null,
+    'EEEE'
+);
+
+$dia = $formateo->format(new DateTime());
+$dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
+
+echo $dia;
 ?>
 <!DOCTYPE html>
 <html>
