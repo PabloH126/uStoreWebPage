@@ -58,6 +58,8 @@ $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
 $horarioDia = getHorarioDia($horarios, $dia);
+echo $dia;
+echo "<br>";
 echo $horarioDia['dia'];
 echo "<br>";
 echo $fechaActual->format('h:i:s A');
