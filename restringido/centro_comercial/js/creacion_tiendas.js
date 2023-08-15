@@ -23,7 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function horariosConfigurados() {
-    
+    const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+    for (let dia of dias)
+    {
+        let horaApertura = document.querySelector('select[name="')
+    }
 }
 
 document.querySelector("form").addEventListener("submit", function (e) {

@@ -100,8 +100,8 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
                             Precio    
                         </div>
                     </div>
-                    <div class="horario">
-                        <div>
+                    <div class="info">
+                        <div class="horario">
                             <strong>hora - hora</strong>
                         </div>
                     </div>
