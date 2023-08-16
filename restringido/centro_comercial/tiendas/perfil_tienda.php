@@ -70,6 +70,8 @@ $horarioDia = getHorarioDia($horarios, $dia);
     <?php require("../templates/template.styles.php") ?>
     <?php require("templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" href="css/perfil_tiendas.css">
+    <!-- ICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -120,8 +122,8 @@ $horarioDia = getHorarioDia($horarios, $dia);
                                     }
                                 ?>
                         </div>
-                        <div class="btn-left"><</div>
-                        <div class="btn-right">></div>
+                        <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
+                        <div class="btn-right"><i class='bx bx-chevron-right' ></i></div>
                     </div>
                 </div>
             </div>
