@@ -162,12 +162,12 @@
     //CREATE IMAGENES BANNER TIENDA
 
     $imagenes = [
-
-    ]
-    $imagen1 = isset($_FILES['imagen1']) ? $_FILES['imagen1'] : null;
-    $imagen2 = isset($_FILES['imagen2']) ? $_FILES['imagen2'] : null;
-    $imagen3 = isset($_FILES['imagen3']) ? $_FILES['imagen3'] : null;    
-
+        'imagen1' => isset($_FILES['imagen1']) ? $_FILES['imagen1'] : null,
+        'imagen2' => isset($_FILES['imagen2']) ? $_FILES['imagen2'] : null,
+        'imagen3' => isset($_FILES['imagen3']) ? $_FILES['imagen3'] : null
+    ]  
+    
+    foreach()
     $data = [];
     $imagen1 != null ? curl_file_create($imagen1['tmp_name'], $imagen1['type'], $imagen1['name']) : null; 
     $imagen2 != null ? curl_file_create($imagen2['tmp_name'], $imagen2['type'], $imagen2['name']) : null;

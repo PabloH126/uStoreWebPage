@@ -7,7 +7,7 @@ const btnLeft = document.querySelector(".btn-left"),
 
 if(sliderImg.length === 3){
     sliderImg.forEach(img => {
-        sliderImg.style.setProperty("width", "calc(100% / 3)");
+        img.style.setProperty("width", "calc(100% / 3)");
     });
 }else if(sliderImg.length === 2){
     sliderImg.style.setProperty("width", "calc(100% / 2)");
