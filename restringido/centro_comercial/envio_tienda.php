@@ -161,6 +161,9 @@
 
     //CREATE IMAGENES BANNER TIENDA
 
+    $imagenes = [
+
+    ]
     $imagen1 = isset($_FILES['imagen1']) ? $_FILES['imagen1'] : null;
     $imagen2 = isset($_FILES['imagen2']) ? $_FILES['imagen2'] : null;
     $imagen3 = isset($_FILES['imagen3']) ? $_FILES['imagen3'] : null;    
@@ -202,10 +205,10 @@
     //FUNCIONES
     function generateArrayCategorias($cat, $dataTienda)
     {
-        return array(
+        return [
             "idTienda" => $dataTienda['idTienda'],
             "idCategoria" => $cat
-        );
+        ];
     }
 
     function generateArrayPeriodosPredeterminados($dataTienda)
@@ -234,12 +237,12 @@
         if(isset($_POST['horas' . $dia . 'apertura']) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['am/pm' . $dia . 'apertura'])
          && isset($_POST['horas' . $dia . 'cierre']) && isset($_POST['minutos' . $dia . 'cierre']) && isset($_POST['am/pm' . $dia . 'cierre']))
         {
-            return array(
+            return [
                 "dia" => $dia,
                 "horarioApertura" => $_POST['horas' . $dia . 'apertura'] . ':' . $_POST['minutos' . $dia . 'apertura'] . ' ' . $_POST['am/pm' . $dia . 'apertura'],
                 "horarioCierre" =>  $_POST['horas' . $dia . 'cierre'] . ':' . $_POST['minutos' . $dia . 'cierre'] . ' ' . $_POST['am/pm' . $dia . 'cierre'],
                 "idTienda" => $dataTienda['idTienda']
-            );
+            ];
         }
     }
 //----------------------------------------------------------------------------------------//  
