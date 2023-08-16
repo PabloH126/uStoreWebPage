@@ -3,6 +3,12 @@ const btnLeft = document.querySelector(".btn-left"),
       slider = document.querySelector("#slider"),
       sliderImg = document.querySelectorAll(".slider-img");
 
+if(sliderImg.length === 2){
+    slider.style.setProperty("--slider-img-width", "calc(100%/2)");
+}else if(slider.length === 1){
+    slider.style.setProperty("--slider-img", "100%");
+}
+
 btnLeft.addEventListener("click", e => moveToLeft())
 btnRight.addEventListener("click", e => moveToRight())
 
@@ -27,7 +33,6 @@ function moveToRight() {
     operacion = operacion + widthImg;
     slider.style.transform = `translate(-${operacion}%)`;
     slider.style.transition = "all ease .6s"
-    
 }  
 
 function moveToLeft() {
