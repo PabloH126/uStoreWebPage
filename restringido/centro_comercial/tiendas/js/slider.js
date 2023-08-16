@@ -3,7 +3,7 @@ const btnLeft = document.querySelector(".btn-left"),
       slider = document.querySelector("#slider"),
       sliderImg = document.querySelectorAll(".slider-img");
 
-    alert(.sliderImg.length);
+    alert("holi");
 
 if(sliderImg.length === 3){
     sliderImg.style.setProperty("width", "calc(100% / 3)");
