@@ -191,7 +191,7 @@
    display: flex;
 }
 
-.section-img{
+.slider-img{
     height: 100%;
     width: calc(100%/3);
 }
