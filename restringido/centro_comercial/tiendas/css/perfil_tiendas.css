@@ -222,6 +222,12 @@
     user-select: none;
 }
 
+.btn-left:hover,
+.btn-right:hover{
+    background-color: #333333d4;
+    color: #fff;
+}
+
 .btn-left{
     left: 10px;
 }
