@@ -173,7 +173,7 @@
         if($imagen != null)
         {
             $data = [
-                $key => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
+                'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
             ];
             
             $ch = curl_init();
