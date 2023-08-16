@@ -184,7 +184,7 @@ $horarioDia = getHorarioDia($horarios, $dia);
             </div>
         </div>
     </div>
-    <!--<script src="js/slider.js"></script>-->
+    <script src="js/slider.js"></script>
 </body>
 
 </html>
