@@ -189,14 +189,13 @@
    justify-items: center;
    justify-content: center;*/
 
-   width: 300%;
+   /*width: 300%;*/
    height: 100%;
    display: flex;
 }
 
 .slider-img{
     height: 100%;
-    /*width: calc(100%/3);*/
 }
 
 .slider img{/*
