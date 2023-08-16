@@ -176,6 +176,7 @@
     border-radius: 15px;
     overflow: hidden;
     margin-left: 9%;
+    position: relative;
 }
 
 .slider-container .slider{
@@ -188,7 +189,6 @@
    width: 300%;
    height: 100%;
    display: flex;
-   position: relative;
 }
 
 .section-img{
