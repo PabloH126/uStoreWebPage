@@ -213,10 +213,10 @@
     font-size: 1.5rem;
     background-color: transparent;
     border-radius: 50%;
-    padding: 4px 9px;
+    padding: 4px;
     font-weight: 600;
     cursor: pointer;
-    color: #ffffff81;
+    color: #b3b3b3cf;
     transform: translate(0,-50%);
     transition: .5s ease;
     user-select: none;
