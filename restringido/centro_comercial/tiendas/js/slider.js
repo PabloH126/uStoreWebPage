@@ -3,16 +3,18 @@ const btnLeft = document.querySelector(".btn-left"),
       slider = document.querySelector("#slider"),
       sliderImg = document.querySelectorAll(".slider-img");
 
-    alert("hol");
-
 if(sliderImg.length === 3){
     sliderImg.forEach(img => {
         img.style.setProperty("width", "calc(100% / 3)");
     });
 }else if(sliderImg.length === 2){
-    sliderImg.style.setProperty("width", "calc(100% / 2)");
+    sliderImg.forEach(img => {
+        img.style.setProperty("width", "calc(100% / 2)");
+    });
 }else if(slider.length === 1){
-    sliderImg.style.setProperty("width", "100%");
+    sliderImg.forEach(img => {
+        img.style.setProperty("width", "100%");
+    });
 }
 
 btnLeft.addEventListener("click", e => moveToLeft())

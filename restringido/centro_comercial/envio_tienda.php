@@ -165,40 +165,46 @@
         'imagen1' => isset($_FILES['imagen1']) ? $_FILES['imagen1'] : null,
         'imagen2' => isset($_FILES['imagen2']) ? $_FILES['imagen2'] : null,
         'imagen3' => isset($_FILES['imagen3']) ? $_FILES['imagen3'] : null
-    ]  
+    ];
     
-    foreach()
     $data = [];
-    $imagen1 != null ? curl_file_create($imagen1['tmp_name'], $imagen1['type'], $imagen1['name']) : null; 
-    $imagen2 != null ? curl_file_create($imagen2['tmp_name'], $imagen2['type'], $imagen2['name']) : null;
-    $imagen3 != null ? curl_file_create($imagen3['tmp_name'], $imagen3['type'], $imagen3['name']) : null;
-
-    $ch = curl_init();
-
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenNewTienda?idTienda=" . $dataTienda['idTienda']);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $_COOKIE['SessionToken']
-    ));
-    
-    $response = curl_exec($ch);
-    
-    if ($response === false) {
-        echo 'Error: ' . curl_error($ch);
-    } else {
-        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    }
-
-    if($httpStatusCode != 200)
+    foreach($imagenes as $key => $imagen)
     {
-        echo $httpStatusCode;
+        if($imagen != null)
+        {
+            $data = [
+                $key => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
+            ];
+            
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenNewTienda?idTienda=" . $dataTienda['idTienda']);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Authorization: Bearer ' . $_COOKIE['SessionToken']
+            ));
+            
+            $response = curl_exec($ch);
+            
+            if ($response === false) {
+                echo 'Error: ' . curl_error($ch);
+            } else {
+                $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            }
+
+            if($httpStatusCode != 200)
+            {
+                echo $httpStatusCode;
+            }
+
+            $dataTienda = json_decode($response, true);
+
+            curl_close($ch);
+        }
     }
 
-    $dataTienda = json_decode($response, true);
-
-    curl_close($ch);
 //----------------------------------------------------------------------------------------//     
 
 
