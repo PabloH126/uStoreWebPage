@@ -200,6 +200,8 @@
             {
                 echo $httpStatusCode;
             }
+            echo "si se pudo mandar la imagen";
+            echo $httpStatusCode;
 
             $dataTienda = json_decode($response, true);
 
