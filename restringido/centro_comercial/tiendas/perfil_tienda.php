@@ -108,19 +108,22 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     
                     <div class="slider-container">
                         
-                        <div class="slider">
-                        <?php
-                            foreach($imagenesTienda as $imagen)
-                            {
-
-                        ?>
-                            <img src="<?php echo $imagen['imagenTienda'] ?>" alt="">
-                        <?php
-                            }
-                        ?>
+                        <div class="slider">                           
+                            <section class="slider-img">
+                                <?php
+                                    foreach($imagenesTienda as $imagen)
+                                    {
+                                ?>
+                                    <img src="<?php echo $imagen['imagenTienda'] ?>" alt="">
+                                <?php
+                                    }
+                                ?>
+                            </section>
                             <!--<img src="https://www.mundodeportivo.com/alfabeta/hero/2021/03/naruto.1677590248.2134.jpg?width=1200" alt="">
                             <img src="https://www.mundodeportivo.com/alfabeta/hero/2023/03/image-2023-03-23t222927.291.jpg?width=1200&aspect_ratio=16:9" alt="">-->
                         </div>
+                        <div class="btn-left"><</div>
+                        <div class="btn-right">></div>
                     </div>
                 </div>
             </div>
