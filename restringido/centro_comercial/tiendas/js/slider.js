@@ -4,11 +4,11 @@ const btnLeft = document.querySelector(".btn-left"),
       sliderImg = document.querySelectorAll(".slider-img");
 
 if(sliderImg.length === 3){
-    slider.style.setProperty("--slider-img-width", "calc(100% / 3)");
+    slider-img.style.setProperty("width", "calc(100% / 3)");
 }else if(sliderImg.length === 2){
-    slider.style.setProperty("--slider-img-width", "calc(100% / 2)");
+    slider-img.style.setProperty("width", "calc(100% / 2)");
 }else if(slider.length === 1){
-    slider.style.setProperty("--slider-img-width", "100%");
+    slider-img.style.setProperty("width", "100%");
 }
 
 btnLeft.addEventListener("click", e => moveToLeft())
