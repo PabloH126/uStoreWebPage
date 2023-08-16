@@ -12,10 +12,12 @@ if(sliderImg.length === 3){
         img.style.setProperty("width", "calc(100% / 3)");
     });
 }else if(sliderImg.length === 2){
+    slider.style.setProperty("width", "200%");
     sliderImg.forEach(img => {
         img.style.setProperty("width", "calc(100% / 2)");
     });
 }else if(slider.length === 1){
+    slider.style.setProperty("width", "100%");
     sliderImg.forEach(img => {
         img.style.setProperty("width", "100%");
     });
