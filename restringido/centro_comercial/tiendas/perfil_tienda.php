@@ -108,7 +108,7 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     
                     <div class="slider-container">
                         
-                        <div class="slider">                           
+                        <div class="slider" id="slider">                           
                                 <?php
                                     foreach($imagenesTienda as $imagen)
                                     {

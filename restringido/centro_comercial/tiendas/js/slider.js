@@ -1,4 +1,4 @@
-const slider = document.querySelector(".slider");
+/*const slider = document.querySelector(".slider");
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -11,4 +11,11 @@ setInterval(() => {
   showSlide(currentIndex);
 }, 9000);
 
-showSlide(currentIndex);
+showSlide(currentIndex);*/
+
+const btnLeft = document.querySelector(".btn-left"),
+      btnRight = document.querySelector(".btn-right"),
+      slider = document.querySelector("#slider"),
+      sliderImg = document.querySelectorAll(".slider-img");
+
+console.log(sliderImg)
