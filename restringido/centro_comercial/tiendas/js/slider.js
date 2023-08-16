@@ -18,4 +18,4 @@ const btnLeft = document.querySelector(".btn-left"),
       slider = document.querySelector("#slider"),
       sliderImg = document.querySelectorAll(".slider-img");
 
-console.log(sliderImg)
+console.log(sliderImg);
