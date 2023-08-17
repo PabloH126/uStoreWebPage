@@ -165,7 +165,7 @@
 
     $imagen1 = isset($_FILES['imagen1']) ? $_FILES['imagen1'] : null;
     $imagen2 = isset($_FILES['imagen2']) ? $_FILES['imagen2'] : null;
-    $imagen3 = isset($_FILES['imagen3']) ? $_FILES['imagen3'] : null;
+    $imagen3 = isset($_FILES['imagen3']) ? $_FILES['imagen3'] : 'no hay imagen';
 
     $imagenes = [
         'imagen1' => $imagen1,
