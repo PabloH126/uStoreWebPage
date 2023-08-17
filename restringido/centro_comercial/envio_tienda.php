@@ -166,23 +166,17 @@
 
     if(isset($_FILES['imagen1']))
     {
-        $imagenes = [
-            'imagen1' => $_FILES['imagen1']
-        ];
+        $imagenes['imagen1'] = $_FILES['imagen1'];
     }
 
     if(isset($_FILES['imagen2']))
     {
-        $imagenes = [
-            'imagen2' => $_FILES['imagen2']
-        ];
+        $imagenes['imagen2'] = $_FILES['imagen2'];
     }
 
     if(isset($_FILES['imagen3']))
     {
-        $imagenes = [
-            'imagen3' => $_FILES['imagen3']
-        ];
+        $imagenes['imagen3'] = $_FILES['imagen3'];
     }
 
     foreach ($imagenes as $imagen) {
