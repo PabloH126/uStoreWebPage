@@ -3,8 +3,6 @@ const btnLeft = document.querySelector(".btn-left"),
       slider = document.querySelector("#slider"),
       sliderImg = document.querySelectorAll(".slider-img");
 
-      alert("holi c:");
-
 if(sliderImg.length === 3){
     slider.style.setProperty("width", "300%");
 
