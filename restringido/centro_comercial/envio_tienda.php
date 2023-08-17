@@ -172,7 +172,37 @@
     $data = [];
     foreach($imagenes as $key => $imagen)
     {
-        echo $imagen;
+        if($imagen != null)
+        {
+            $data = [
+                'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
+            ];
+            
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenTienda?idTienda=" . $dataTienda['idTienda']);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Authorization: Bearer ' . $_COOKIE['SessionToken']
+            ));
+            
+            $response = curl_exec($ch);
+            
+            if ($response === false) {
+                echo 'Error: ' . curl_error($ch);
+            } else {
+                $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            }
+
+            if($httpStatusCode != 200)
+            {
+                echo $httpStatusCode;
+            }
+
+            curl_close($ch);
+        }
     }
 
 //----------------------------------------------------------------------------------------//       
