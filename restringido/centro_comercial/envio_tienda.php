@@ -164,17 +164,17 @@
     //CREATE IMAGENES BANNER TIENDA
     $imagenes = [];
 
-    if(isset($_FILES['imagen1']))
+    if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
     {
         $imagenes['imagen1'] = $_FILES['imagen1'];
     }
 
-    if(isset($_FILES['imagen2']))
+    if(isset($_FILES['imagen2']) && $_FILES['imagen2']['error'] == 0)
     {
         $imagenes['imagen2'] = $_FILES['imagen2'];
     }
 
-    if(isset($_FILES['imagen3']))
+    if(isset($_FILES['imagen3']) && $_FILES['imagen3']['error'] == 0)
     {
         $imagenes['imagen3'] = $_FILES['imagen3'];
     }
