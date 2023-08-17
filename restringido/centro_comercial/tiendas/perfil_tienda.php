@@ -7,9 +7,12 @@ function getDatosTienda($url)
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $_COOKIE['SessionToken']
-    )
+    curl_setopt(
+        $ch,
+        CURLOPT_HTTPHEADER,
+        array(
+            'Authorization: Bearer ' . $_COOKIE['SessionToken']
+        )
     );
 
     $response = curl_exec($ch);
@@ -184,9 +187,9 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     </div>
                 </div>
             </div>
-            <div>
-                <a>Ver todos los productos</a>
-            </div>
+        </div>
+        <div class="bttnProductos">
+            <a>Ver todos los productos</a>
         </div>
     </div>
     <script src="js/slider.js"></script>

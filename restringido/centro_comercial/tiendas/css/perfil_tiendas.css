@@ -3,8 +3,8 @@
 }
 
 .content .contentT {
-    height: 100%;
-    padding: 1%;
+    height: 99%;
+    margin: 1%;
     display: grid;
     grid-template-columns: 57% 40%;
     gap: 1%;
@@ -223,7 +223,14 @@
     right: 10px;
 }
 
-
+.productos a{
+    background: #007096;
+    color: white;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 
 /*responsivo*/
