@@ -204,7 +204,7 @@
             {
                 echo $httpStatusCode;
             }
-            echo $httpStatusCode;
+            echo '<br>' . $httpStatusCode;
             curl_close($ch);
         }
 
