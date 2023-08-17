@@ -5,7 +5,9 @@
     $data = [
         'NombreTienda' => $_POST['nombreTienda'],
         'IdCentroComercial' => $_SESSION['idMall'],
-        'rangoPrecio' => 0
+        'rangoPrecio' => 0,
+        'apartados' => 0,
+        'vistas' => 0
     ];
     
     $logoTienda = $_FILES['logoTienda'];
@@ -160,52 +162,65 @@
 
 
     //CREATE IMAGENES BANNER TIENDA
+    $imagenes = [];
 
-    $imagen1 = isset($_FILES['imagen1']) ? $_FILES['imagen1'] : null;
-    $imagen2 = isset($_FILES['imagen2']) ? $_FILES['imagen2'] : null;
-    $imagen3 = isset($_FILES['imagen3']) ? $_FILES['imagen3'] : null;    
-
-    $data = [];
-    $data['primera'] = $imagen1 != null ? curl_file_create($imagen1['tmp_name'], $imagen1['type'], $imagen1['name']) : null; 
-    $data['segunda'] = $imagen2 != null ? curl_file_create($imagen2['tmp_name'], $imagen2['type'], $imagen2['name']) : null;
-    $data['tercera'] = $imagen3 != null ? curl_file_create($imagen3['tmp_name'], $imagen3['type'], $imagen3['name']) : null;
-
-    $ch = curl_init();
-
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenNewTienda?idTienda=" . $dataTienda['idTienda']);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $_COOKIE['SessionToken']
-    ));
-    
-    $response = curl_exec($ch);
-    
-    if ($response === false) {
-        echo 'Error: ' . curl_error($ch);
-    } else {
-        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    }
-
-    if($httpStatusCode != 200)
+    if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
     {
-        echo $httpStatusCode;
+        $imagenes['imagen1'] = $_FILES['imagen1'];
     }
 
-    $dataTienda = json_decode($response, true);
+    if(isset($_FILES['imagen2']) && $_FILES['imagen2']['error'] == 0)
+    {
+        $imagenes['imagen2'] = $_FILES['imagen2'];
+    }
 
-    curl_close($ch);
-//----------------------------------------------------------------------------------------//     
+    if(isset($_FILES['imagen3']) && $_FILES['imagen3']['error'] == 0)
+    {
+        $imagenes['imagen3'] = $_FILES['imagen3'];
+    }    
+    $data = [];
 
+    foreach($imagenes as $key => $imagen)
+    {
+        $data = [
+            'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
+        ];
+        
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenTienda?idTienda=" . $dataTienda['idTienda']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Authorization: Bearer ' . $_COOKIE['SessionToken']
+        ));
+        
+        $response = curl_exec($ch);
+        
+        if ($response === false) {
+            echo 'Error: ' . curl_error($ch);
+        } else {
+            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        }
+
+        if($httpStatusCode != 200)
+        {
+            echo $httpStatusCode;
+        }
+
+        curl_close($ch);
+    }
+
+//----------------------------------------------------------------------------------------//       
 
     //FUNCIONES
     function generateArrayCategorias($cat, $dataTienda)
     {
-        return array(
+        return [
             "idTienda" => $dataTienda['idTienda'],
             "idCategoria" => $cat
-        );
+        ];
     }
 
     function generateArrayPeriodosPredeterminados($dataTienda)
@@ -234,16 +249,15 @@
         if(isset($_POST['horas' . $dia . 'apertura']) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['am/pm' . $dia . 'apertura'])
          && isset($_POST['horas' . $dia . 'cierre']) && isset($_POST['minutos' . $dia . 'cierre']) && isset($_POST['am/pm' . $dia . 'cierre']))
         {
-            return array(
+            return [
                 "dia" => $dia,
                 "horarioApertura" => $_POST['horas' . $dia . 'apertura'] . ':' . $_POST['minutos' . $dia . 'apertura'] . ' ' . $_POST['am/pm' . $dia . 'apertura'],
                 "horarioCierre" =>  $_POST['horas' . $dia . 'cierre'] . ':' . $_POST['minutos' . $dia . 'cierre'] . ' ' . $_POST['am/pm' . $dia . 'cierre'],
                 "idTienda" => $dataTienda['idTienda']
-            );
+            ];
         }
     }
 //----------------------------------------------------------------------------------------//  
-
 
     header('Location: ' . $urlSalida);
     exit;

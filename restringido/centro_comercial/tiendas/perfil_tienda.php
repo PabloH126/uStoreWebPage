@@ -7,12 +7,16 @@ function getDatosTienda($url)
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $_COOKIE['SessionToken']
-    ));
-    
+    curl_setopt(
+        $ch,
+        CURLOPT_HTTPHEADER,
+        array(
+            'Authorization: Bearer ' . $_COOKIE['SessionToken']
+        )
+    );
+
     $response = curl_exec($ch);
-    
+
     if ($response === false) {
         echo 'Error: ' . curl_error($ch);
     } else {
@@ -21,8 +25,7 @@ function getDatosTienda($url)
 
     curl_close($ch);
 
-    if($httpStatusCode != 200)
-    {
+    if ($httpStatusCode != 200) {
         echo $httpStatusCode;
     }
 
@@ -31,10 +34,8 @@ function getDatosTienda($url)
 
 function getHorarioDia($horarios, $dia)
 {
-    foreach($horarios as $horario)
-    {
-        if($horario['dia'] == $dia)
-        {
+    foreach ($horarios as $horario) {
+        if ($horario['dia'] == $dia) {
             return $horario;
         }
     }
@@ -70,6 +71,8 @@ $horarioDia = getHorarioDia($horarios, $dia);
     <?php require("../templates/template.styles.php") ?>
     <?php require("templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" href="css/perfil_tiendas.css">
+    <!-- ICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -79,25 +82,27 @@ $horarioDia = getHorarioDia($horarios, $dia);
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src="<?php echo $tiendas['logoTienda']; ?>"
-                            alt="">
+                        <img src="<?php echo $tiendas['logoTienda']; ?>" alt="">
                     </div>
                     <div class="nameCat">
                         <div class="name">
-                            <h1><?php echo $tiendas['nombreTienda']; ?></h1>
+                            <h1>
+                                <?php echo $tiendas['nombreTienda']; ?>
+                            </h1>
                         </div>
                         <div class="categorias">
-                        <?php
-                            foreach ($categorias as $cat) 
-                            {
-                                
-                        ?>
-                            <div class="categoria">
-                                <label><?php echo $cat['categoria1']; ?></label>
-                            </div>
-                        <?php
+                            <?php
+                            foreach ($categorias as $cat) {
+
+                                ?>
+                                <div class="categoria">
+                                    <label>
+                                        <?php echo $cat['categoria1']; ?>
+                                    </label>
+                                </div>
+                                <?php
                             }
-                        ?>
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -105,22 +110,22 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     <div class="tit">
                         <h2>Promociones</h2>
                     </div>
-                    
-                    <div class="slider-container">
-                        
-                        <div class="slider">
-                        <?php
-                            foreach($imagenesTienda as $imagen)
-                            {
 
-                        ?>
-                            <img src="<?php echo $imagen['imagenTienda'] ?>" alt="">
-                        <?php
+                    <div class="slider-container">
+
+                        <div class="slider" id="slider">
+                            <?php
+                            foreach ($imagenesTienda as $imagen) {
+                                ?>
+                                <section class="slider-img">
+                                    <img src="<?php echo $imagen['imagenTienda'] ?>" alt="">
+                                </section>
+                                <?php
                             }
-                        ?>
-                            <!--<img src="https://www.mundodeportivo.com/alfabeta/hero/2021/03/naruto.1677590248.2134.jpg?width=1200" alt="">
-                            <img src="https://www.mundodeportivo.com/alfabeta/hero/2023/03/image-2023-03-23t222927.291.jpg?width=1200&aspect_ratio=16:9" alt="">-->
+                            ?>
                         </div>
+                        <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
+                        <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
                     </div>
                 </div>
             </div>
@@ -134,41 +139,40 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     </div>
                     <div class="info">
                         <div class="precio">
-                            <div>Precio</div>     
+                            <div>Precio</div>
                             <div>$$</div>
                         </div>
                     </div>
                     <div class="info">
                         <div class="horario">
-                            <?php 
-                                if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am")
-                                {
-                                    echo "<strong> Cerrado </strong>";
-                                }
-                                else
-                                {
-                                    echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
-                                    echo "<div> cerrao </div>";
-                                }
+                            <?php
+                            if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am") {
+                                echo "<strong> Cerrado </strong>";
+                            } else {
+                                echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
+                                echo "<div> cerrao </div>";
+                            }
                             ?>
                             <div id="submenu_horario">
                                 <h4>Horario</h4>
                                 <?php
-                                    foreach($horarios as $horario)
-                                    {
-                                        if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am")
-                                        {
-                                ?>
-                                            <span><strong><?php echo $horario['dia']; ?></strong>Cerrado</span>
-                                <?php
-                                        }
-                                        else
-                                        {
-                                ?>
-                                            <span><strong><?php echo $horario['dia']; ?></strong><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></span>
-                                <?php
-                                        }
+                                foreach ($horarios as $horario) {
+                                    if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am") {
+                                        ?>
+                                        <span><strong>
+                                                <?php echo $horario['dia']; ?>
+                                            </strong>Cerrado</span>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <span><strong>
+                                                <?php echo $horario['dia']; ?>
+                                            </strong>
+                                            <?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?>
+                                        </span>
+                                        <?php
                                     }
+                                }
                                 ?>
                             </div>
                         </div>
@@ -178,12 +182,17 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     <div class="tit">
                         <h2>Comentarios</h2>
                     </div>
-                    <div class="comnts"></div>
+                    <div class="comnts">
+                        <div class="comentarios"></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="bttnProductos">
+            <a>Ver todos los productos</a>
+        </div>
     </div>
-    <!--<script src="js/slider.js"></script>-->
+    <script src="js/slider.js"></script>
 </body>
 
 </html>
