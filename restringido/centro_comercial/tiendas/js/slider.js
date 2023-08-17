@@ -15,6 +15,8 @@ if(sliderImg.length === 3){
         img.style.setProperty("width", "calc(100% / 2)");
     });
 }else if(slider.length === 1){
+    btnLeft.style.setProperty("display", "none");
+    btnRight.style.setProperty("display", "none");
     slider.style.setProperty("width", "100%");
     sliderImg.forEach(img => {
         img.style.setProperty("width", "100%");
