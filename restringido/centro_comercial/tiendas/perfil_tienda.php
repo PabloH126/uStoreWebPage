@@ -45,6 +45,7 @@ $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" 
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 $imagenesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas/GetImagenesTienda?idTienda=" . $_GET['id']);
+$calificacionTienda = getDatosTienda("");
 
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
 $fechaActual = new DateTime('now', $zonaHoraria);
@@ -139,7 +140,10 @@ $horarioDia = getHorarioDia($horarios, $dia);
                     </div>
                     <div class="info">
                         <div class="precio">
-                            <div>Precio</div>
+                            <div>Rango de precio</div>
+                            <?php
+                                if($tiendas['rangoPrecio'] < )
+
                             <div>$$</div>
                         </div>
                     </div>
