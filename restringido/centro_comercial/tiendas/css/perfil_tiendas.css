@@ -1,12 +1,13 @@
 .content {
     height: 88%;
+    display: grid;
 }
 
 .content .contentT {
-    height: 83%;
+    height: 89%;
     margin: 1%;
     display: grid;
-    grid-template-columns: 57% 40%;
+    grid-template-columns: 57% 43%;
     gap: 1%;
 }
 
