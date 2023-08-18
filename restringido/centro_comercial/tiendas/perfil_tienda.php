@@ -216,7 +216,7 @@ $margenCierre->sub(new DateInterval('PT30M'));
                                     {
                                         echo '<div><span style="color: orange">Por cerrar<span></div>';
                                     }
-                                    else if($fechaActual >= $horarioCierre && $horarioCierre < $horarioApertura)
+                                    else if($fechaActual >= $horarioCierre || $fechaActual < $horarioApertura)
                                     {
                                         echo '<div><span style="color: red">Cerrado ahora<span></div>';
                                     }
