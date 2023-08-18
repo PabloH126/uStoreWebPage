@@ -80,7 +80,7 @@ $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 $horarioDia = getHorarioDia($horarios, $dia);
 $horaApertura24 = date("H:i", strtotime($horarioDia['horarioApertura']));
 $horaCierre24 = date("H:i", strtotime($horarioDia['horarioCierre']));
-$margenCierre = $horaCierre24 . " -30 minutes";
+$margenCierre = date($horaCierre24 . " -30 minutes");
 
 echo $horarioDia['horarioCierre'] . "<br>";
 echo $horarioDia['horarioApertura'] . "<br>";
