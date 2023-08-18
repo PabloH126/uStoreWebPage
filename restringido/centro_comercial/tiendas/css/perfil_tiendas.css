@@ -233,9 +233,24 @@
     font-weight: bold;
 }
 
+a{
+    text-decoration: none;
+}
+
 .bttnProductos a:hover{
     background: #016283;
 }
+
+.edicionTienda{
+    position: absolute;
+    right: 1%;
+    color: white;
+    background: #007096;
+    border-radius: 15%;
+    font-size: 1em;
+}
+
+
 
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
