@@ -243,11 +243,17 @@ a{
 
 .edicionTienda{
     position: absolute;
-    right: 1%;
+    right: 3%;
+    bottom: 4%;
     color: white;
+    font-size: 2em;
+}
+
+.edicionTienda a{
     background: #007096;
-    border-radius: 15%;
-    font-size: 1em;
+    color: white;
+    padding: 20%;
+    border-radius: 50%;
 }
 
 
