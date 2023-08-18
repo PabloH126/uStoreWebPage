@@ -84,7 +84,9 @@ $horarioCierre24 = date('H:i', strtotime($horarioDia['horarioCierre']));
 
 $horarioApertura = DateTime::createFromFormat('H:i', $horarioApertura24, $zonaHoraria);
 $horarioCierre = DateTime::createFromFormat('H:i', $horarioCierre24, $zonaHoraria);
-$margenCierre = $horarioCierre->sub(new DateInterval('PT30M'));
+
+$margenCierre = clone $horarioCierre;
+$margenCierre->sub(new DateInterval('PT30M'));
 
 echo $horarioDia['horarioCierre'] . "<br>";
 echo $horarioDia['horarioApertura'] . "<br>";
