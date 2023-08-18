@@ -236,7 +236,7 @@ echo $fechaActual->format('Y-m-d H:i:s');
                                         if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am") 
                                         {
                                 ?>
-                                            <span>
+                                            <span style="font-color: red">
                                                 <strong><?php echo $horario['dia']; ?></strong>
                                                 Cerrado
                                             </span>
