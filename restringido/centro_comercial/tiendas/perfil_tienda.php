@@ -86,10 +86,10 @@ $horarioCierre = DateTime::createFromFormat('H:i', $horarioDia['horarioCierre'],
 echo $horarioDia['horarioCierre'] . "<br>";
 echo $horarioDia['horarioApertura'] . "<br>";
 
-echo $horarioApertura . "<br>";
-echo $horarioCierre . "<br>";
+echo $horarioApertura->format('Y-m-d H:i:s') . "<br>";
+echo $horarioCierre->format('Y-m-d H:i:s') . "<br>";
 
-echo $margenCierre . "<br>";
+echo $margenCierre->format('Y-m-d H:i:s') . "<br>";
 
 echo $dia . "<br>";
 echo $fechaActual->format('Y-m-d H:i:s');
