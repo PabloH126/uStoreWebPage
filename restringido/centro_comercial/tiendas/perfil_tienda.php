@@ -66,6 +66,7 @@ $rangoPrecio = (double) $tiendas['rangoPrecio'];
 
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
 $fechaActual = new DateTime('now', $zonaHoraria);
+
 $formateo = new IntlDateFormatter(
     'es_MX',
     IntlDateFormatter::FULL,
@@ -78,10 +79,11 @@ $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
 $horarioDia = getHorarioDia($horarios, $dia);
-
+$horarioApertura24 = date('H:i', strtotime($horarioDia['horarioApertura']));
+$horarioCierre24 = date('H:i', strtotime($horarioDia['horarioCierre']));
 $margenCierre = new DateInterval('PT30M');
-$horarioApertura = DateTime::createFromFormat('H:i', $horarioDia['horarioApertura'], $zonaHoraria);
-$horarioCierre = DateTime::createFromFormat('H:i', $horarioDia['horarioCierre'], $zonaHoraria);
+$horarioApertura = DateTime::createFromFormat('H:i', $horarioApertura24, $zonaHoraria);
+$horarioCierre = DateTime::createFromFormat('H:i', $horarioCierre24, $zonaHoraria);
 
 echo $horarioDia['horarioCierre'] . "<br>";
 echo $horarioDia['horarioApertura'] . "<br>";
