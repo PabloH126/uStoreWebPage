@@ -78,15 +78,16 @@ $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
 $horarioDia = getHorarioDia($horarios, $dia);
-$horaApertura24 = date("H:i", strtotime($horarioDia['horarioApertura']));
-$horaCierre24 = date("H:i", strtotime($horarioDia['horarioCierre']));
-$margenCierre = date("H:i", strtotime($horaCierre24 . " -30 minutes"));
+
+$margenCierre = new DateInterval('PT30M');
+$horarioApertura = DateTime::createFromFormat('H:i', $horarioDia['horarioApertura'], $zonaHoraria);
+$horarioCierre = DateTime::createFromFormat('H:i', $horarioDia['horarioCierre'], $zonaHoraria);
 
 echo $horarioDia['horarioCierre'] . "<br>";
 echo $horarioDia['horarioApertura'] . "<br>";
 
-echo $horaApertura24 . "<br>";
-echo $horaCierre24 . "<br>";
+echo $horarioApertura . "<br>";
+echo $horarioCierre . "<br>";
 
 echo $margenCierre . "<br>";
 
