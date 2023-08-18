@@ -44,6 +44,48 @@ function horariosConfigurados() {
     return false;
 }
 
+function validarHorariosCorrectos()
+{
+    const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+    for(let dia of dias)
+    {
+        let horaApertura = parseInt(document.querySelector(`select[name="horas${dia}apertura"]`).value, 10);
+        let minutoApertura = parseInt(document.querySelector(`select[name="minutos${dia}apertura"]`).value, 10);
+        let ampmApertura = document.querySelector(`select[name="am/pm${dia}apertura"]`).value;
+        
+        let horaCierre = parseInt(document.querySelector(`select[name="horas${dia}cierre"]`).value, 10);
+        let minutoCierre = parseInt(document.querySelector(`select[name="minutos${dia}cierre"]`).value, 10);
+        let ampmCierre = document.querySelector(`select[name="am/pm${dia}cierre"]`).value;
+
+        if(ampmApertura === 'pm' && horaApertura !== 12)
+        {
+            horaApertura += 12;
+        }
+        else if (ampmApertura === 'am' && horaApertura === 12)
+        {
+            horaApertura = 0;
+        }
+
+        if(ampmCierre === 'pm' && horaCierre !== 12)
+        {
+            horaCierre += 12;
+        }
+        else if (ampmCierre === 'am' && horaCierre === 12)
+        {
+            horaCierre = 0;
+        }
+
+        if(horaCierre < horaApertura || (horaCierre === horaApertura && minutoCierre < minutoApertura))
+        {
+            alert("Por favor ingresa un horario válido para el día ${dia}.");
+            return false;
+        }
+
+        return true;
+    }
+
+}
+
 function periodosConfigurados() {
     const periodos = ["Periodo1", "Periodo2", "Periodo3"];
 
@@ -99,6 +141,12 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if(!periodosConfigurados())
     {
         alert("Se debe configurar al menos un periodo de apartado predeterminado");
+        e.preventDefault();
+        return;
+    }
+
+    if(!validarHorariosCorrectos())
+    {
         e.preventDefault();
         return;
     }
