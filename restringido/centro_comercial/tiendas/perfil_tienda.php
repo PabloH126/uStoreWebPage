@@ -215,7 +215,12 @@ echo $fechaActual->format('Y-m-d H:i:s');
                                 echo "<strong> Cerrado </strong>";
                             } else {
                                 echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
-                                echo "<div> cerrao </div>";
+                                if($fechaActual >= $horarioApertura && $fechaActual < $margenCierre)
+                                {
+                                    echo "<div> cerrao </div>";
+                                }
+                                else if($fechaActual >= $margenCierre && $fechaActual < $horarioCierre)
+                                
                             }
                             ?>
                             <div id="submenu_horario">
