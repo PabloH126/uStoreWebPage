@@ -261,7 +261,10 @@ $margenCierre->sub(new DateInterval('PT60M'));
             </div>
         </div>
         <div class="bttnProductos">
-            <a>Ver todos los productos</a>
+            <a href="">Ver todos los productos</a>
+        </div>
+        <div class="edicionTienda">
+            <a href=""><i class='bx bx-pencil'></i></a>
         </div>
     </div>
     <script src="js/slider.js"></script>
