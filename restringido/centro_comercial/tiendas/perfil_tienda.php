@@ -76,9 +76,15 @@ $formateo = new IntlDateFormatter(
 );
 $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
-echo $dia;
-$horarioDia = getHorarioDia($horarios, $dia);
 
+$horarioDia = getHorarioDia($horarios, $dia);
+$horaApertura24 = date("H:i", strtotime($horarioDia['horarioApertura']));
+$horaCierre24 = date("H:i", strtotime($horarioDia['horarioCierre']));
+$margenCierre = date("H:i", strtotime($horarioDia['horarioCierre'] . " -30 minutes"));
+echo $horaApertura24 . "<br>";
+echo $horaCierre24 . "<br>";
+echo $margenCierre . "<br>";
+echo $dia;
 ?>
 <!DOCTYPE html>
 <html>
