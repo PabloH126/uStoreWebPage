@@ -160,7 +160,7 @@ $horarioDia = getHorarioDia($horarios, $dia);
                                     }
                                     else
                                     {
-                                        echo "sin calificaciones";
+                                        echo "N/A";
                                     }
                                 ?>
                             </strong>
