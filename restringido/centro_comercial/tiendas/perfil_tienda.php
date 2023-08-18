@@ -45,7 +45,16 @@ $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" 
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 $imagenesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas/GetImagenesTienda?idTienda=" . $_GET['id']);
-$calificacionTienda = getDatosTienda("");
+$calificacionesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesTienda?idTienda=" . $_GET['id']);
+
+$suma;
+foreach($calificacionesTienda as $calificacion)
+{
+    $suma += $calificacion['calificacion'];
+}
+
+$promedio = $suma / count($calificacionesTienda);
+
 $rangoPrecio = (double) $tiendas['rangoPrecio'];
 
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
@@ -135,13 +144,13 @@ $horarioDia = getHorarioDia($horarios, $dia);
                 <div class="topD">
                     <div class="info">
                         <div class="calificacion">
-                            <strong>4.5</strong>
+                            <strong><?php echo $promedio ?></strong>
                             <div>12345</div>
                         </div>
                     </div>
                     <div class="info">
                         <div class="precio">
-                            <div>Rango de precio</div>
+                            <div>Rango</div>
                             <?php
                                 if($rangoPrecio <= 0)
                                 {
