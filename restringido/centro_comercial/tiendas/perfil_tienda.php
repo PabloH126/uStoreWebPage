@@ -29,8 +29,6 @@ function getDatosTienda($url)
         echo $httpStatusCode;
     }
 
-    echo $response;
-
     return json_decode($response, true);
 }
 
@@ -49,13 +47,21 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
 $imagenesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas/GetImagenesTienda?idTienda=" . $_GET['id']);
 $calificacionesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesTienda?idTienda=" . $_GET['id']);
 
-$suma = 0;
-foreach($calificacionesTienda as $calificacion)
+if(is_array($calificacionesTienda))
 {
-    $suma += $calificacion['calificacion'];
+    $suma = 0;
+    foreach($calificacionesTienda as $calificacion)
+    {
+        $suma += $calificacion['calificacion'];
+    }
+
+    $promedio = $suma / count($calificacionesTienda);
+}
+else
+{
+    $promedio = 0;
 }
 
-$promedio = $suma / count($calificacionesTienda);
 
 $rangoPrecio = (double) $tiendas['rangoPrecio'];
 
