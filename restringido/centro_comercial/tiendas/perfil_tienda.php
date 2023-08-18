@@ -217,30 +217,39 @@ echo $fechaActual->format('Y-m-d H:i:s');
                                 echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
                                 if($fechaActual >= $horarioApertura && $fechaActual < $margenCierre)
                                 {
-                                    echo "<div> cerrao </div>";
+                                    echo "<div> abierto </div>";
                                 }
                                 else if($fechaActual >= $margenCierre && $fechaActual < $horarioCierre)
-                                
+                                {
+                                    echo "<div> por cerrar </div>";
+                                }
+                                else if($fechaActual >= $horarioCierre)
+                                {
+                                    echo "<div> cerrao </div>";
+                                }
                             }
                             ?>
                             <div id="submenu_horario">
                                 <h4>Horario</h4>
                                 <?php
-                                foreach ($horarios as $horario) {
-                                    if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am") {
-                                        ?>
-                                        <span><strong>
-                                                <?php echo $horario['dia']; ?>
-                                            </strong>Cerrado</span>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <span><strong>
-                                                <?php echo $horario['dia']; ?>
-                                            </strong>
-                                            <?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?>
-                                        </span>
-                                        <?php
+                                    foreach ($horarios as $horario) {
+                                        if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am") 
+                                        {
+                                ?>
+                                            <span>
+                                                <strong><?php echo $horario['dia']; ?></strong>
+                                                Cerrado
+                                            </span>
+                                <?php
+                                        } 
+                                        else 
+                                        {
+                                ?>
+                                            <span>
+                                                <strong><?php echo $horario['dia']; ?></strong>
+                                                <?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?>
+                                            </span>
+                                <?php
                                     }
                                 }
                                 ?>
