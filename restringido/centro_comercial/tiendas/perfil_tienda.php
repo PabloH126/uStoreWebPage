@@ -91,7 +91,8 @@ echo $horarioDiaCierre . "<br>";
 echo $horaApertura24 . "<br>";
 echo $horaCierre24 . "<br>";
 echo $margenCierre . "<br>";
-echo $dia;
+echo $dia . "<br>";
+echo $fechaActual;
 ?>
 <!DOCTYPE html>
 <html>
