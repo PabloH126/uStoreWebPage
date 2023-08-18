@@ -211,23 +211,27 @@ echo $fechaActual->format('Y-m-d H:i:s');
                     <div class="info">
                         <div class="horario">
                             <?php
-                            if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am") {
-                                echo "<strong> Cerrado </strong>";
-                            } else {
-                                echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
-                                if($fechaActual >= $horarioApertura && $fechaActual < $margenCierre)
+                                if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am") 
                                 {
-                                    echo "<div> abierto </div>";
-                                }
-                                else if($fechaActual >= $margenCierre && $fechaActual < $horarioCierre)
+                                    echo "<strong> Cerrado </strong>";
+                                } 
+                                else 
                                 {
-                                    echo "<div> por cerrar </div>";
+                                    echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
+
+                                    if($fechaActual >= $horarioApertura && $fechaActual < $margenCierre)
+                                    {
+                                        echo '<div><span style="color: green">Abierto ahora<span></div>';
+                                    }
+                                    else if($fechaActual >= $margenCierre && $fechaActual < $horarioCierre)
+                                    {
+                                        echo '<div><span style="color: orange">Por cerrar<span></div>';
+                                    }
+                                    else if($fechaActual >= $horarioCierre)
+                                    {
+                                        echo '<div><span style="color: red">Cerrado ahora<span></div>';
+                                    }
                                 }
-                                else if($fechaActual >= $horarioCierre)
-                                {
-                                    echo "<div> cerrao </div>";
-                                }
-                            }
                             ?>
                             <div id="submenu_horario">
                                 <h4>Horario</h4>
@@ -236,7 +240,7 @@ echo $fechaActual->format('Y-m-d H:i:s');
                                         if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am") 
                                         {
                                 ?>
-                                            <span style="color: red">
+                                            <span>
                                                 <strong><?php echo $horario['dia']; ?></strong>
                                                 Cerrado
                                             </span>
