@@ -152,8 +152,19 @@ $horarioDia = getHorarioDia($horarios, $dia);
                 <div class="topD">
                     <div class="info">
                         <div class="calificacion">
-                            <strong><?php echo $promedio ?></strong>
-                            <div>12345</div>
+                            <strong>
+                                <?php 
+                                    if($promedio != 0)
+                                    {
+                                        echo $promedio;
+                                    }
+                                    else
+                                    {
+                                        echo "No hay calificaciones";
+                                    }
+                                ?>
+                            </strong>
+                            <div>estrellitas uwu</div>
                         </div>
                     </div>
                     <div class="info">
