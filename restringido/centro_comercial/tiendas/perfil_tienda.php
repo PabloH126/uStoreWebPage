@@ -62,7 +62,6 @@ else
     $promedio = 0;
 }
 
-
 $rangoPrecio = (double) $tiendas['rangoPrecio'];
 
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
@@ -77,7 +76,7 @@ $formateo = new IntlDateFormatter(
 );
 $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
-
+echo $dia;
 $horarioDia = getHorarioDia($horarios, $dia);
 
 ?>
