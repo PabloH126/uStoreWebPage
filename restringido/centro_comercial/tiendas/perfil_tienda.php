@@ -81,18 +81,17 @@ $horarioDia = getHorarioDia($horarios, $dia);
 $horaApertura24 = date("H:i", strtotime($horarioDia['horarioApertura']));
 $horaCierre24 = date("H:i", strtotime($horarioDia['horarioCierre']));
 $margenCierre = date("H:i", strtotime($horarioDia['horarioCierre'] . " -30 minutes"));
+
 echo $horarioDia['horarioCierre'] . "<br>";
 echo $horarioDia['horarioApertura'] . "<br>";
 
-$horarioDiaApertura = substr($horarioDia['horarioApertura'], 0, 5);
-$horarioDiaCierre = substr($horarioDia['horarioCierre'], 0, 5);
-echo $horarioDiaApertura . "<br>";
-echo $horarioDiaCierre . "<br>";
 echo $horaApertura24 . "<br>";
 echo $horaCierre24 . "<br>";
+
 echo $margenCierre . "<br>";
+
 echo $dia . "<br>";
-echo $fechaActual;
+echo $fechaActual->format('Y-m-d H:i:s');
 ?>
 <!DOCTYPE html>
 <html>
