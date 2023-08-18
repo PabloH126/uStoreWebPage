@@ -87,17 +87,6 @@ $horarioCierre = DateTime::createFromFormat('H:i', $horarioCierre24, $zonaHorari
 
 $margenCierre = clone $horarioCierre;
 $margenCierre->sub(new DateInterval('PT30M'));
-
-echo $horarioDia['horarioCierre'] . "<br>";
-echo $horarioDia['horarioApertura'] . "<br>";
-
-echo $horarioApertura->format('Y-m-d H:i:s') . "<br>";
-echo $horarioCierre->format('Y-m-d H:i:s') . "<br>";
-
-echo $margenCierre->format('Y-m-d H:i:s') . "<br>";
-
-echo $dia . "<br>";
-echo $fechaActual->format('Y-m-d H:i:s');
 ?>
 <!DOCTYPE html>
 <html>
@@ -227,7 +216,7 @@ echo $fechaActual->format('Y-m-d H:i:s');
                                     {
                                         echo '<div><span style="color: orange">Por cerrar<span></div>';
                                     }
-                                    else if($fechaActual >= $horarioCierre)
+                                    else if($fechaActual >= $horarioCierre && $horarioCierre < $horarioApertura)
                                     {
                                         echo '<div><span style="color: red">Cerrado ahora<span></div>';
                                     }

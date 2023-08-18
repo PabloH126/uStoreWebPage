@@ -235,7 +235,7 @@
 
 .bttnProductos a:hover{
     background: #016283;
-    poin
+    cursor: pointer;
 }
 
 /*responsivo*/
