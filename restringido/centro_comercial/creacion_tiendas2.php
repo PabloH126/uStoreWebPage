@@ -21,7 +21,7 @@
                     </div>
                     <div>siguiente c:</div>
                 </fieldset>
-
+<!--
                 <fieldset>
                     <legend><div>2/6</div></legend>
                     <div>
@@ -71,7 +71,7 @@
                     <div>atras</div>
                     <div>siguiente c:</div>
                     <button type="submit">Enviar</button>
-                </fieldset>
+                </fieldset>-->
             </form>
         </div>
     </div>
