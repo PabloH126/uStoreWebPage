@@ -13,14 +13,15 @@
 		<h1>Creación de tienda</h1>
         <div class="lista">
             <form>
-                <fieldset>
-                    <legend class="coso"><div>1/6</div></legend>
+                <div class="form">
+                    <div class="numeracion"><p>1/6</p></div>
                     <div>
                         <label for="nombreTienda"></label>
                         <input type="text" id="nombreTienda" required>
                     </div>
                     <div>siguiente c:</div>
-                </fieldset>
+                </div>
+                    
 <!--
                 <fieldset>
                     <legend><div>2/6</div></legend>
