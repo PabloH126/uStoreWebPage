@@ -13,7 +13,7 @@ h1 {
 	font-size: 2em;
 }
 
-.content .lista form .item .numeracion {
+.content .lista form .item .numeracion p{
 	display: inline-block;
     background: #007096;
     color: white;
