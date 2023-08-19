@@ -79,11 +79,9 @@ $dia = $formateo->format($fechaActual);
 $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
 $horarioDia = getHorarioDia($horarios, $dia);
-$horarioApertura24 = date('H:i', strtotime($horarioDia['horarioApertura']));
-$horarioCierre24 = date('H:i', strtotime($horarioDia['horarioCierre']));
 
-$horarioApertura = DateTime::createFromFormat('H:i', $horarioApertura24, $zonaHoraria);
-$horarioCierre = DateTime::createFromFormat('H:i', $horarioCierre24, $zonaHoraria);
+$horarioApertura = DateTime::createFromFormat('H:i', $horarioDia['horarioApertura'], $zonaHoraria);
+$horarioCierre = DateTime::createFromFormat('H:i', $horarioDia['horarioCierre'], $zonaHoraria);
 
 $margenCierre = clone $horarioCierre;
 $margenCierre->sub(new DateInterval('PT60M'));
@@ -200,7 +198,7 @@ $margenCierre->sub(new DateInterval('PT60M'));
                     <div class="info">
                         <div class="horario">
                             <?php
-                                if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am") 
+                                if ($horarioDia['horarioApertura'] == "00:00" && $horarioDia['horarioCierre'] == "00:00") 
                                 {
                                     echo '<strong style="color: red"> Cerrado </strong>';
                                 } 
@@ -226,7 +224,7 @@ $margenCierre->sub(new DateInterval('PT60M'));
                                 <h4>Horario</h4>
                                 <?php
                                     foreach ($horarios as $horario) {
-                                        if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am") 
+                                        if ($horario['horarioApertura'] == "00:00" && $horario['horarioCierre'] == "00:00") 
                                         {
                                 ?>
                                             <span>
