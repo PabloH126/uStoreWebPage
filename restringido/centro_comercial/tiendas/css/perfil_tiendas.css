@@ -246,7 +246,7 @@ a{
     right: 5%;
     bottom: 7%;
     color: white;
-    font-size: 2em;
+    font-size: 2.8em;
 }
 
 .edicionTienda a{
@@ -256,6 +256,9 @@ a{
     border-radius: 50%;
 }
 
+.edicionTienda a:hover{
+    background: #016283;
+}
 
 
 /*responsivo*/

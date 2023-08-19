@@ -29,13 +29,11 @@ function horariosConfigurados() {
     {
         let horaApertura = document.querySelector(`select[name="horas${dia}apertura"]`).value;
         let minutoApertura = document.querySelector(`select[name="minutos${dia}apertura"]`).value;
-        let ampmApertura = document.querySelector(`select[name="am/pm${dia}apertura"]`).value;
         
         let horaCierre = document.querySelector(`select[name="horas${dia}cierre"]`).value;
         let minutoCierre = document.querySelector(`select[name="minutos${dia}cierre"]`).value;
-        let ampmCierre = document.querySelector(`select[name="am/pm${dia}cierre"]`).value;
 
-        if(horaApertura !== "00" || minutoApertura !== "00" || ampmApertura !== "am" || horaCierre !== "00" || minutoCierre !== "00" || ampmCierre !== "am")
+        if(horaApertura !== "00" || minutoApertura !== "00" || horaCierre !== "00" || minutoCierre !== "00")
         {
             return true;
         }
@@ -47,34 +45,14 @@ function horariosConfigurados() {
 function validarHorariosCorrectos()
 {
     const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
-    
+
     for(let dia of dias)
     {
         let horaApertura = parseInt(document.querySelector(`select[name="horas${dia}apertura"]`).value, 10);
         let minutoApertura = parseInt(document.querySelector(`select[name="minutos${dia}apertura"]`).value, 10);
-        let ampmApertura = document.querySelector(`select[name="am/pm${dia}apertura"]`).value;
         
         let horaCierre = parseInt(document.querySelector(`select[name="horas${dia}cierre"]`).value, 10);
         let minutoCierre = parseInt(document.querySelector(`select[name="minutos${dia}cierre"]`).value, 10);
-        let ampmCierre = document.querySelector(`select[name="am/pm${dia}cierre"]`).value;
-
-        if(ampmApertura === 'pm' && horaApertura !== 12)
-        {
-            horaApertura += 12;
-        }
-        else if (ampmApertura === 'am' && horaApertura === 12)
-        {
-            horaApertura = 0;
-        }
-
-        if(ampmCierre === 'pm' && horaCierre !== 12)
-        {
-            horaCierre += 12;
-        }
-        else if (ampmCierre === 'am' && horaCierre === 12)
-        {
-            horaCierre = 0;
-        }
 
         if(horaCierre < horaApertura || (horaCierre === horaApertura && minutoCierre < minutoApertura))
         {
