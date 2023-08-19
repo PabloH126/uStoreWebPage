@@ -13,6 +13,14 @@ h1 {
 	font-size: 2em;
 }
 
+.content .lista form legend{
+    background: #007096;
+    color: white;
+    padding: 1%;
+    border-radius: 49%;
+    font-weight: bold;
+}
+
 
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
