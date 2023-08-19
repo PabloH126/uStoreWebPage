@@ -9,11 +9,11 @@ h1 {
 	padding: 1% 2% 2%;
 }
 
-form {
+.content .lista form {
 	font-size: 2em;
 }
 
-legend .coso {
+.contetn .lista form fieldset legend {
     background: #007096;
     color: white;
     padding: 1%;
