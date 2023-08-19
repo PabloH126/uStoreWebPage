@@ -192,7 +192,7 @@
 							</div>
 						</div>
 						<div class="notas">
-							<span>* Si es día no laboral, dejar el día en 00:00 am.</span>
+							<span>* Si es día no laboral, dejar el día en 00:00.</span>
 							
 						</div>
 					</div>
