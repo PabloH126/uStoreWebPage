@@ -1,0 +1,14 @@
+h1 {
+	font-size: 3.5em;
+	margin: 20px 0 15px 0;
+}
+
+.content .lista {
+	display: inline-block;
+	background: #f7f7f7;
+	padding: 1% 2% 2%;
+}
+
+.content .lista form {
+	font-size: 2em;
+}

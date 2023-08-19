@@ -11,7 +11,7 @@
 <?php require("templates/template.menu.php")?>
 	<div class="content">
 		<h1>Creación de tienda</h1>
-        <div>
+        <div class="lista">
             <form>
                 <fieldset>
                     <legend>Información de Contacto</legend>
