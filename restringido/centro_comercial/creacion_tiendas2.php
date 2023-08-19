@@ -15,7 +15,7 @@
             <form>
                 <div class="item">
                     <p>1/6</p>
-                    <div>
+                    <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" required>
                     </div>

@@ -33,6 +33,12 @@ h1 {
 	display: block;
 }
 
+.content .lista form .item .name input{
+	font-size: 1em;
+	padding: 5px;
+	margin: 6% 0;
+}
+
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 
