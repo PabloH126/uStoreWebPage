@@ -229,7 +229,7 @@ $margenCierre->sub(new DateInterval('PT60M'));
                                 ?>
                                             <span>
                                                 <strong><?php echo $horario['dia']; ?></strong>
-                                                <span style="color: red">Cerrado</span>
+                                                <p style="color: red">Cerrado</p>
                                             </span>
                                 <?php
                                         } 
@@ -238,7 +238,7 @@ $margenCierre->sub(new DateInterval('PT60M'));
                                 ?>
                                             <span>
                                                 <strong><?php echo $horario['dia']; ?></strong>
-                                                <span style="color: green"><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></span>
+                                                <p style="color: green"><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></p>
                                             </span>
                                 <?php
                                     }
