@@ -57,8 +57,6 @@ function validarHorariosCorrectos()
         let tiempoApertura = horaApertura * 60 + minutoApertura;
         let tiempoCierre = horaCierre * 60 + minutoCierre;
 
-        alert(`Tiempo de apertura: ${tiempoApertura} Tiempo de cierre: ${tiempoCierre}` );
-
         if(tiempoApertura > tiempoCierre)
         {
             alert(`Por favor ingresa un horario válido para el día ${dia}.`);
@@ -133,7 +131,4 @@ document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
         return;
     }
-
-    e.preventDefault();
-    return;
 });
