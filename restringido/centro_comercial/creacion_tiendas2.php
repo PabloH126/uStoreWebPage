@@ -16,7 +16,7 @@
                 <div class="item">
                     <p>1/6</p>
                     <div>
-                        <label for="nombreTienda"></label>
+                        <label for="nombreTienda">Nombre de la tienda</label>
                         <input type="text" id="nombreTienda" required>
                     </div>
                     <div>siguiente c:</div>
