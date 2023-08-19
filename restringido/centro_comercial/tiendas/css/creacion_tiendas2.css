@@ -24,6 +24,11 @@ h1 {
     font-weight: bold;
 }
 
+.content .lista form .item div{
+	margin: auto;
+	font-size: 2em;
+}
+
 .content .lista form .item label{
 	display: block;
 }
