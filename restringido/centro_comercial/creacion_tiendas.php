@@ -4,7 +4,7 @@
 	
 	function SelectHoras($dia, $periodo) {
 		echo '<select name="horas' . $dia . $periodo . '" id="horas">';
-		for ($i = 0; $i < 13; $i++) {
+		for ($i = 0; $i < 25; $i++) {
 			echo '<option value="' . str_pad($i, 2, '0', STR_PAD_LEFT) . '">' . str_pad($i, 2, '0', STR_PAD_LEFT) . '</option>';
 		}
 		echo '</select>';
@@ -17,13 +17,6 @@
 		}
 		echo '</select>';
 	}
-	
-	function SelectAMPM($dia, $periodo) {
-		echo '<select name="am/pm' . $dia . $periodo . '" id="am/pm">';
-		echo '<option value="am">am</option>';
-		echo '<option value="pm">pm</option>';
-		echo '</select>';
-	}
 
 	function diasSelect($dia) {
 		echo '<div class="dia">';
@@ -32,7 +25,6 @@
 			echo '<div>';
 				SelectHoras($dia, 'apertura');
 				SelectMinutos($dia, 'apertura');
-				SelectAMPM($dia, 'apertura');
 			echo '</div>';
 
 			echo '<label> - </label>';
@@ -40,7 +32,6 @@
 			echo '<div>';
 				SelectHoras($dia, 'cierre');
 				SelectMinutos($dia, 'cierre');
-				SelectAMPM($dia, 'cierre');
 			echo '</div>';
 		echo '</div>';
 	}
