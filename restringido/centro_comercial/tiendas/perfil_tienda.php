@@ -202,7 +202,7 @@ $margenCierre->sub(new DateInterval('PT60M'));
                             <?php
                                 if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am") 
                                 {
-                                    echo "<strong> Cerrado </strong>";
+                                    echo '<strong style="color: red"> Cerrado </strong>';
                                 } 
                                 else 
                                 {
