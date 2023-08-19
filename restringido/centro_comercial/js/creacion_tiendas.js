@@ -59,10 +59,9 @@ function validarHorariosCorrectos()
             alert("Por favor ingresa un horario válido para el día ${dia}.");
             return false;
         }
-
-        return true;
     }
 
+    return true;
 }
 
 function periodosConfigurados() {
