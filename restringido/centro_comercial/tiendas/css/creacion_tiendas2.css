@@ -20,4 +20,8 @@ h1 {
 	h1 {
 		font-size: 3em;
 	}
+
+    .content .lista form {
+		font-size: 1em;
+	}
 }
