@@ -19,7 +19,9 @@
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" required>
                     </div>
-                    <button>Siguiente</button>
+                    <div class="bttn">
+                        <button>Siguiente</button>
+                    </div>
                 </div>
                     
 <!--
