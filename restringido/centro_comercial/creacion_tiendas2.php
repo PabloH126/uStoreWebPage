@@ -6,6 +6,7 @@
 	<?php require("templates/template.styles.php")?>
 	<?php require("tiendas/templates/template.secc_tiendas.php")?>
 	<link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 <?php require("templates/template.menu.php")?>
@@ -20,7 +21,7 @@
                         <input type="text" id="nombreTienda" required>
                     </div>
                     <div class="bttn">
-                        <button>Siguiente</button>
+                        <button><i class='bx bx-right-arrow-alt'></i></button>
                     </div>
                 </div>
                     
