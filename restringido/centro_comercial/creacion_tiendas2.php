@@ -14,6 +14,29 @@
 		<h1>Creación de tienda</h1>
         <div class="lista">
             <form>
+              <!--  <div class="item">
+                    <p>1/6</p>
+                    <div class="name">
+                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
+                        <input type="text" id="nombreTienda" required>
+                    </div>
+                    <div class="bttn">
+                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                    </div>
+                </div>-->
+                    
+
+                <<div class="item">
+                    <p>2/6</p>
+                    <div class="name">
+                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
+                        <input type="text" id="nombreTienda" required>
+                    </div>
+                    <div class="bttn">
+                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                    </div>
+                </div>
+<!--
                 <div class="item">
                     <p>1/6</p>
                     <div class="name">
@@ -24,58 +47,39 @@
                         <button><i class='bx bx-right-arrow-alt'></i></button>
                     </div>
                 </div>
-                    
-<!--
-                <fieldset>
-                    <legend><div>2/6</div></legend>
-                    <div>
-                        <label for="nombreTienda"></label>
-                        <input type="text" id="nombreTienda" required>
-                    </div>
-                    <div>atras</div>
-                    <div>siguiente c:</div>
-                </fieldset>
 
-                <fieldset>
-                    <legend><div>3/6</div></legend>
-                    <div>
-                        <label for="nombreTienda"></label>
+                <div class="item">
+                    <p>1/6</p>
+                    <div class="name">
+                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" required>
                     </div>
-                    <div>atras</div>
-                    <div>siguiente c:</div>
-                </fieldset>
+                    <div class="bttn">
+                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                    </div>
+                </div>
 
-                <fieldset>
-                    <legend><div>4/6</div></legend>
-                    <div>
-                        <label for="nombreTienda"></label>
+                <div class="item">
+                    <p>1/6</p>
+                    <div class="name">
+                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" required>
                     </div>
-                    <div>atras</div>
-                    <div>siguiente c:</div>
-                </fieldset>
+                    <div class="bttn">
+                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                    </div>
+                </div>
 
-                <fieldset>
-                    <legend><div>5/6</div></legend>
-                    <div>
-                        <label for="nombreTienda"></label>
+                <div class="item">
+                    <p>1/6</p>
+                    <div class="name">
+                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" required>
                     </div>
-                    <div>atras</div>
-                    <div>siguiente c:</div>
-                </fieldset>
-
-                <fieldset>
-                    <legend><div>6/6</div></legend>
-                    <div>
-                        <label for="nombreTienda"></label>
-                        <input type="text" id="nombreTienda" required>
+                    <div class="bttn">
+                        <button><i class='bx bx-right-arrow-alt'></i></button>
                     </div>
-                    <div>atras</div>
-                    <div>siguiente c:</div>
-                    <button type="submit">Enviar</button>
-                </fieldset>-->
+                </div>-->
             </form>
         </div>
     </div>
