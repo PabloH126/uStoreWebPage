@@ -14,7 +14,7 @@
         <div class="lista">
             <form>
                 <fieldset>
-                    <legend><div>1/6</div></legend>
+                    <legend class="coso"><div>1/6</div></legend>
                     <div>
                         <label for="nombreTienda"></label>
                         <input type="text" id="nombreTienda" required>
