@@ -13,8 +13,10 @@ h1 {
 	font-size: 2em;
 }
 
-.content .lista form .item .numeracion p{
-	display: inline-block;
+.content .lista form .item p{
+	position: absolute;
+	transform: translate(-24px, -23px);
+	display: block;
     background: #007096;
     color: white;
     padding: 1%;

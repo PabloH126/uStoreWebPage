@@ -14,7 +14,7 @@
         <div class="lista">
             <form>
                 <div class="item">
-                    <div class="numeracion"><p>1/6</p></div>
+                    <p>1/6</p>
                     <div>
                         <label for="nombreTienda"></label>
                         <input type="text" id="nombreTienda" required>
