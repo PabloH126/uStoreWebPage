@@ -48,13 +48,16 @@ function validarHorariosCorrectos()
 
     for(let dia of dias)
     {
-        let horaApertura = parseInt(document.querySelector(`select[name="horas${dia}apertura"]`).value, 10);
-        let minutoApertura = parseInt(document.querySelector(`select[name="minutos${dia}apertura"]`).value, 10);
+        let horaApertura = document.querySelector(`select[name="horas${dia}apertura"]`).value;
+        let minutoApertura = document.querySelector(`select[name="minutos${dia}apertura"]`).value;
         
-        let horaCierre = parseInt(document.querySelector(`select[name="horas${dia}cierre"]`).value, 10);
-        let minutoCierre = parseInt(document.querySelector(`select[name="minutos${dia}cierre"]`).value, 10);
+        let horaCierre = document.querySelector(`select[name="horas${dia}cierre"]`).value;
+        let minutoCierre = document.querySelector(`select[name="minutos${dia}cierre"]`).value;
 
-        if(horaCierre < horaApertura || (horaCierre === horaApertura && minutoCierre < minutoApertura))
+        let tiempoApertura = horaApertura * 60 + minutoApertura;
+        let tiempoCierre = horaCierre * 60 + minutoCierre;
+
+        if(tiempoApertura > tiempoCierre)
         {
             alert("Por favor ingresa un horario válido para el día ${dia}.");
             return false;
