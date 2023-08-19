@@ -24,6 +24,9 @@ h1 {
     font-weight: bold;
 }
 
+.content .lista form .item label{
+	display: block;
+}
 
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
