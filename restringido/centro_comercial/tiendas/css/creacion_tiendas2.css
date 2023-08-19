@@ -44,6 +44,11 @@ h1 {
 	outline: none;
 }
 
+.content .lista form .item button{
+	margin: auto;
+	display: block;
+}
+
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 
