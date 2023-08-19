@@ -13,7 +13,7 @@
 		<h1>Creación de tienda</h1>
         <div class="lista">
             <form>
-                <div class="form">
+                <div class="item">
                     <div class="numeracion"><p>1/6</p></div>
                     <div>
                         <label for="nombreTienda"></label>
