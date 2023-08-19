@@ -229,7 +229,7 @@
     color: white;
     padding: 15px;
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 1.8em;
     font-weight: bold;
 }
 
@@ -243,8 +243,8 @@ a{
 
 .edicionTienda{
     position: absolute;
-    right: 3%;
-    bottom: 4%;
+    right: 5%;
+    bottom: 7%;
     color: white;
     font-size: 2em;
 }
@@ -280,6 +280,15 @@ a{
 
     .slider-container {
         width: 70%;
+    }
+
+    .bttnProductos a {
+        font-size: 1.3em;
+    }
+
+    .edicionTienda{
+        right: 3%;
+        bottom: 4%;
     }
 
 }

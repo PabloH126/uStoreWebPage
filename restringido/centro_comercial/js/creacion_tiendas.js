@@ -47,6 +47,7 @@ function horariosConfigurados() {
 function validarHorariosCorrectos()
 {
     const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+    
     for(let dia of dias)
     {
         let horaApertura = parseInt(document.querySelector(`select[name="horas${dia}apertura"]`).value, 10);
