@@ -48,11 +48,11 @@ function validarHorariosCorrectos()
 
     for(let dia of dias)
     {
-        let horaApertura = parseInt(document.querySelector(`select[name="horas${dia}apertura"]`).value);
-        let minutoApertura = parseInt(document.querySelector(`select[name="minutos${dia}apertura"]`).value);
+        let horaApertura = parseInt(document.querySelector(`select[name="horas${dia}apertura"]`).value, 10);
+        let minutoApertura = parseInt(document.querySelector(`select[name="minutos${dia}apertura"]`).value, 10);
         
-        let horaCierre = parseInt(document.querySelector(`select[name="horas${dia}cierre"]`).value);
-        let minutoCierre = parseInt(document.querySelector(`select[name="minutos${dia}cierre"]`).value);
+        let horaCierre = parseInt(document.querySelector(`select[name="horas${dia}cierre"]`).value, 10);
+        let minutoCierre = parseInt(document.querySelector(`select[name="minutos${dia}cierre"]`).value, 10);
 
         let tiempoApertura = horaApertura * 60 + minutoApertura;
         let tiempoCierre = horaCierre * 60 + minutoCierre;
@@ -135,4 +135,5 @@ document.querySelector("form").addEventListener("submit", function (e) {
     }
 
     e.preventDefault();
+    return;
 });
