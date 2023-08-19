@@ -19,7 +19,7 @@ h1 {
 
 .content .lista form .item p{
 	position: absolute;
-	transform: translate(-46px, -43px);
+	transform: translate(-70px, -67px);
 	display: block;
     background: #007096;
     color: white;
@@ -40,7 +40,7 @@ h1 {
 
 .content .lista form .item .name input{
 	font-size: 1em;
-	padding: 5px;
+	padding: 9px;
 	margin: 8% 0;
 	outline: none;
 }
@@ -70,6 +70,10 @@ h1 {
 
     .content .lista form {
 		font-size: 1em;
+	}
+
+	.content .lista form .item p{
+		transform: translate(-46px, -43px);
 	}
 
 	.content .lista form .item .name input{
