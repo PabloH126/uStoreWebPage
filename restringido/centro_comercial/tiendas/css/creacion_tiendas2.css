@@ -15,6 +15,7 @@ h1 {
 
 .content .lista form .item{
 	padding: 2%;
+	height: auto;
 }
 
 .content .lista form .item p{
