@@ -54,7 +54,10 @@ h1 {
 	border: none;
 	color: white;
 	padding: 16%;
-	border-radius: 15px;
+	border-radius: 29px;
+	font-size: 0.8em;
+	width: 73px;
+	max-height: 1.7em;
 }
 
 /*responsivo*/
