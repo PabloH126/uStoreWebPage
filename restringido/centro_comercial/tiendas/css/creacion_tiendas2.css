@@ -13,6 +13,10 @@ h1 {
 	font-size: 2em;
 }
 
+.content .lista form .item{
+	height: auto;
+}
+
 .content .lista form .item p{
 	position: absolute;
 	transform: translate(-24px, -23px);
