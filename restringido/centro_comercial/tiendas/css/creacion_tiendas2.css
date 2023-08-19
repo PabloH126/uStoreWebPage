@@ -26,6 +26,7 @@ h1 {
     padding: 1%;
     border-radius: 50%;
     font-weight: bold;
+	font-size: 1.1em;
 }
 
 .content .lista form .item div{
@@ -40,12 +41,12 @@ h1 {
 .content .lista form .item .name input{
 	font-size: 1em;
 	padding: 5px;
-	margin: 6% 0;
+	margin: 8% 0;
 	outline: none;
 }
 
 .content .lista form .item .bttn{
-	margin-left: 86%;
+	margin-left: 87%;
 	display: block;
 }
 
@@ -54,9 +55,9 @@ h1 {
 	border: none;
 	color: white;
 	padding: 16%;
-	border-radius: 29px;
+	border-radius: 115px;
 	font-size: 0.8em;
-	width: 73px;
+	width: 127px;
 	max-height: 1.7em;
 }
 
@@ -69,5 +70,18 @@ h1 {
 
     .content .lista form {
 		font-size: 1em;
+	}
+
+	.content .lista form .item .name input{
+		margin: 6% 0;
+	}
+
+	.content .lista form .item .bttn{
+		margin-left: 86%;
+	}
+
+	.content .lista form .item .bttn button{
+		border-radius: 29px;
+		width: 73px;
 	}
 }
