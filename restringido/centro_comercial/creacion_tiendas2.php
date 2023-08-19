@@ -15,12 +15,63 @@
             <form>
                 <fieldset>
                     <legend><div>1/6</div></legend>
-                    
-                    <label for="nombreTienda"></label>
-                    <input type="text" id="nombreTienda" required>
+                    <div>
+                        <label for="nombreTienda"></label>
+                        <input type="text" id="nombreTienda" required>
+                    </div>
+                    <div>siguiente c:</div>
                 </fieldset>
-                
-                <button type="submit">Enviar</button>
+
+                <fieldset>
+                    <legend><div>2/6</div></legend>
+                    <div>
+                        <label for="nombreTienda"></label>
+                        <input type="text" id="nombreTienda" required>
+                    </div>
+                    <div>atras</div>
+                    <div>siguiente c:</div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><div>3/6</div></legend>
+                    <div>
+                        <label for="nombreTienda"></label>
+                        <input type="text" id="nombreTienda" required>
+                    </div>
+                    <div>atras</div>
+                    <div>siguiente c:</div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><div>4/6</div></legend>
+                    <div>
+                        <label for="nombreTienda"></label>
+                        <input type="text" id="nombreTienda" required>
+                    </div>
+                    <div>atras</div>
+                    <div>siguiente c:</div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><div>5/6</div></legend>
+                    <div>
+                        <label for="nombreTienda"></label>
+                        <input type="text" id="nombreTienda" required>
+                    </div>
+                    <div>atras</div>
+                    <div>siguiente c:</div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><div>6/6</div></legend>
+                    <div>
+                        <label for="nombreTienda"></label>
+                        <input type="text" id="nombreTienda" required>
+                    </div>
+                    <div>atras</div>
+                    <div>siguiente c:</div>
+                    <button type="submit">Enviar</button>
+                </fieldset>
             </form>
         </div>
     </div>
