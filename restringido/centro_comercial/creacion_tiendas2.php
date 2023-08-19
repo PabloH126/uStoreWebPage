@@ -26,11 +26,17 @@
                 </div>-->
                     
 
-                <<div class="item">
+                <div class="item">
                     <p>2/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" required>
+                    <div class="logoT">
+                        <label for="logoTienda"><strong>Logo de la tienda</strong></label>
+                        <div class="contentL">
+                            <div class="box"> <img id="imagenSelec" alt=""></div>
+                            <div class="ip">
+                                <label for="logoTienda" >
+                                <input type="file" id="logoTienda" name="logoTienda">
+                            </div>
+                        </div>
                     </div>
                     <div class="bttn">
                         <button><i class='bx bx-right-arrow-alt'></i></button>

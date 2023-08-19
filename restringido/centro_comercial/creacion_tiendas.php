@@ -106,7 +106,6 @@
 								<div class="contentL">
 									<div class="box"> <img src="" id="imagenSelec" alt=""></div>
 									<div class="ip">
-										<label for="logoTienda" >
 										<input type="file" id="logoTienda" name="logoTienda">
 									</div>
 								</div>
