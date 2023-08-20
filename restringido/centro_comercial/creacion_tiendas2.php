@@ -53,7 +53,7 @@
                 <div class="item">
                     <p>3/6</p>
                     <div class="categorias">
-                        <label for="logoTienda"><strong>Categorías de la tienda</strong></label>
+                        <label><strong>Categorías de la tienda</strong></label>
                         <label class="categoria" for="categoria T">	
                             <input type="checkbox" name="categorias[]" value="">
                         </label>
