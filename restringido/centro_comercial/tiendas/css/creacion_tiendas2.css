@@ -125,11 +125,15 @@ h1 {
 	box-shadow: 3px 4px 10px 2px #dfdfdf;
 	margin: 15px;
 	padding: 8px 5px;
-
+	transition: box-shadow 0.3s;
 }
 
 .content .lista form .item .categorias .optionsC .contentC input[type="checkbox"] {
 	display: none;
+}
+
+.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked+label {
+	box-shadow: 3px 4px 10px 2px blue;
 }
 
 /*responsivo*/
