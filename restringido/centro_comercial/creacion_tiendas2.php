@@ -55,8 +55,12 @@
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <label class="categoria" for="categoria T">	
-                            <input type="checkbox" name="categorias[]" value="">
+                            alimentos y bebidas
                         </label>
+                        <label>departamentales</label>
+                        <label>bebes</label>
+                        <label>videojuegos</label>
+                        <label>estilo de vida</label>
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="back">
