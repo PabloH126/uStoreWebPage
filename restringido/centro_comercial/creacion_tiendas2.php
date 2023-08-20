@@ -14,7 +14,7 @@
 		<h1>Creación de tienda</h1>
         <div class="lista">
             <form>
-              <!--  <div class="item">
+                <div class="item">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
@@ -23,7 +23,7 @@
                     <div class="bttn">
                         <button><i class='bx bx-right-arrow-alt'></i></button>
                     </div>
-                </div>-->
+                </div>
                     
 
                 <div class="item">
