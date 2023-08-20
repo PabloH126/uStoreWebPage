@@ -48,7 +48,7 @@ h1 {
 
 .content .lista form .item .bttns{
 	display: flex;
-	font-size: 1em;
+	font-size: 31px;
 }
 
 .content .lista form .item #back{
@@ -101,7 +101,7 @@ h1 {
 	background: #007096;
 	color: white;
 	border-radius: 26px;
-	width: 74%;
+	width: 81%;
 }
 
 .content .lista form .item .logoT .contentL .ip input{
@@ -127,8 +127,14 @@ h1 {
 		margin: 6% 0;
 	}
 
-	.content .lista form .item .bttn{
-		
+	.content .lista form .item .bttns{
+		display: flex;
+		font-size: 1em;
+	}
+
+	.content .lista form .item .logoT .contentL .ip label::before{
+		width: 74%;
+		font-size: 37px;
 	}
 
 	.content .lista form .item .bttn button{
