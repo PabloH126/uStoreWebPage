@@ -20,7 +20,7 @@
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" required>
                     </div>
-                    <div class="bttn">
+                    <div class="bttn" id="one">
                         <button><i class='bx bx-right-arrow-alt'></i></button>
                     </div>
                 </div>
