@@ -63,12 +63,12 @@ h1 {
 }
 
 /*logo*/
-.content .lista .forms .izquierda .logoT .contentL {
+.content .lista form .item .logoT .contentL {
 	/*display: grid;
 	justify-content: space-evenly;*/
 }
 
-.content .lista .forms .izquierda .logoT .contentL .box{
+.content .lista form .item .logoT .contentL .box{
 	/*height: 92px;
 	margin: 0 2px 4px;
 	border-radius: 12px;
@@ -78,13 +78,13 @@ h1 {
 	justify-items: center;*/
 }
 
-.content .lista .forms .izquierda .logoT .contentL .box img{
+.content .lista form .item .logoT .contentL .box img{
 	/*max-height: 110px;
 	max-width: 128px;
 	border-radius: 12px;*/
 }
 
-.content .lista .forms .izquierda .logoT .contentL .ip label::before{
+.content .lista form .item .logoT .contentL .ip label::before{
 	/*content: 'Seleccionar';
 	display: inline-block;
 	font-size: 0.6em;
@@ -96,7 +96,7 @@ h1 {
 	cursor: pointer;*/
 }
 
-.content .lista .forms .izquierda .logoT .contentL .ip input{
+.content .lista form .item .logoT .contentL .ip input{
 	/*display: none;*/
 }
 
