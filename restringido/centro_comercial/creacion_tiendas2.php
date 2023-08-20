@@ -25,7 +25,7 @@
                     </div>
                 </div>
                     
-<!--
+
                 <div class="item">
                     <p>2/6</p>
                     <div class="logoT">
@@ -46,7 +46,7 @@
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
-                </div> -->
+                </div> 
 
 <!--
                 <div class="item">
