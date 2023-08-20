@@ -54,11 +54,13 @@
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
-                        <input type="checkbox">alimentos y bebidas</input>
-                        <input type="checkbox">departamentales</input>
-                        <input type="checkbox">bebes</input>
-                        <input type="checkbox">videojuegos</input>
-                        <input type="checkbox">estilo de vida</input>
+                        <div>
+                            <input type="checkbox">alimentos y bebidas</input>
+                            <input type="checkbox">departamentales</input>
+                            <input type="checkbox">bebes</input>
+                            <input type="checkbox">videojuegos</input>
+                            <input type="checkbox">estilo de vida</input>
+                        </div>
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="back">
