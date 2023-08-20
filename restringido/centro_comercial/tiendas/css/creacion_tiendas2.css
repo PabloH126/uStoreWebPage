@@ -146,6 +146,10 @@ h1 {
 		width: 73px;
 	}
 
+	.content .lista form .item #one{
+		margin-left: 91%;
+	}
+
 	.content .lista form .item #back{
 		margin-right: 5%;
 		margin-left: 249%;
