@@ -72,7 +72,7 @@ h1 {
 	border: 2px dashed black;
 }
 
-.content .lista form .item .logoT .contentL .box .ip label{
+.content .lista form .item .logoT .contentL .ip #labelL{
 	display: flex;
 	justify-content: center;
 }
