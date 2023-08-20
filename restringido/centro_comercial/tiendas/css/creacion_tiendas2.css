@@ -46,6 +46,15 @@ h1 {
 	text-align: center;
 }
 
+.content .lista form .item .bttns{
+	display: flex;
+}
+
+.content .lista form .item .bttn #next{
+	margin-right: 5%;
+	margin-left: 247%;
+}
+
 .content .lista form .item .bttn #next{
 	margin-left: 87%;
 	display: block;
@@ -119,7 +128,7 @@ h1 {
 	}
 
 	.content .lista form .item .bttn{
-		margin-left: 86%;
+		
 	}
 
 	.content .lista form .item .bttn button{

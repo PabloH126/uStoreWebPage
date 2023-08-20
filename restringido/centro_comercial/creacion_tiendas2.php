@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="bttns">
                         <div class="bttn" id="back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
