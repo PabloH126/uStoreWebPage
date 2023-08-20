@@ -51,12 +51,12 @@ h1 {
 	font-size: 1em;
 }
 
-.content .lista form .item .bttn #back{
+.content .lista form .item #back{
 	margin-right: 5%;
 	margin-left: 247%;
 }
 
-.content .lista form .item .bttn #next{
+.content .lista form .item #next{
 	margin-left: 87%;
 	display: block;
 }
