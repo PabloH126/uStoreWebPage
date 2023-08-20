@@ -114,10 +114,9 @@ h1 {
 
 /*Categorias*/
 .content .lista form .item .categorias .optionsC{
-	font-size: 1em;
+	font-size: 0.7em;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-auto-rows: minmax(100px, auto);
 }
 
 .content .lista form .item .categorias .optionsC input[type="checkbox"]{
