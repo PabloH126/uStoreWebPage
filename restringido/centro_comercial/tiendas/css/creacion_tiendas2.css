@@ -126,6 +126,7 @@ h1 {
 	margin: 15px;
 	padding: 8px 5px;
 	transition: box-shadow 0.3s;
+	cursor: pointer;
 }
 
 .content .lista form .item .categorias .optionsC .contentC input[type="checkbox"] {
