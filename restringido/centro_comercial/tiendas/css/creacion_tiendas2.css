@@ -64,12 +64,17 @@ h1 {
 
 /*logo*/
 .content .lista form .item .logoT .contentL {
-
+	margin-top: 2%;
 }
 
 .content .lista form .item .logoT .contentL .box{
 	border-radius: 12px;
 	border: 2px dashed black;
+}
+
+.content .lista form .item .logoT .contentL .box .ip #labelL{
+	display: flex;
+	justify-content: center;
 }
 
 .content .lista form .item .logoT .contentL .box img{
@@ -80,7 +85,7 @@ h1 {
 
 .content .lista form .item .logoT .contentL .ip label::before{
 	content: 'Seleccionar';
-	font-size: 0.6em;
+	font-size: 29px;
 	border-radius: 4px;
 	padding: 3px 17px;
 	cursor: pointer;

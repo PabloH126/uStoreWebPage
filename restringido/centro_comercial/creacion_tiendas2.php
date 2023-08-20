@@ -33,7 +33,7 @@
                         <div class="contentL">
                             <div class="box"> <img id="imagenSelec" alt=""></div>
                             <div class="ip">
-                                <label for="logoTienda" >
+                                <label for="logoTienda" id="labelL" >
                                 <input type="file" id="logoTienda" name="logoTienda">
                             </div>
                         </div>
