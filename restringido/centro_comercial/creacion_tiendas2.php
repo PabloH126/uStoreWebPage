@@ -54,13 +54,13 @@
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
-                        <label class="categoria" for="categoria T">	
+                        <input class="categoria" for="categoria T">	
                             alimentos y bebidas
-                        </label>
-                        <label>departamentales</label>
-                        <label>bebes</label>
-                        <label>videojuegos</label>
-                        <label>estilo de vida</label>
+                        </input>
+                        <input>departamentales</input>
+                        <input>bebes</input>
+                        <input>videojuegos</input>
+                        <input>estilo de vida</input>
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="back">
