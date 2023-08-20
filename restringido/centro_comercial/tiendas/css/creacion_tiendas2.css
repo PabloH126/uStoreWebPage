@@ -64,28 +64,28 @@ h1 {
 
 /*logo*/
 .content .lista form .item .logoT .contentL {
-	/*display: grid;
-	justify-content: space-evenly;*/
+	display: grid;
+	justify-content: space-evenly;
 }
 
 .content .lista form .item .logoT .contentL .box{
-	/*height: 92px;
+	height: 92px;
 	margin: 0 2px 4px;
 	border-radius: 12px;
 	border: 2px dashed black;
 	display: grid;
 	align-items: center;
-	justify-items: center;*/
+	justify-items: center;
 }
 
 .content .lista form .item .logoT .contentL .box img{
-	/*max-height: 110px;
+	max-height: 110px;
 	max-width: 128px;
-	border-radius: 12px;*/
+	border-radius: 12px;
 }
 
 .content .lista form .item .logoT .contentL .ip label::before{
-	/*content: 'Seleccionar';
+	content: 'Seleccionar';
 	display: inline-block;
 	font-size: 0.6em;
 	background-color: #efefef;
@@ -93,11 +93,11 @@ h1 {
 	border-radius: 4px;
 	padding: 3px 17px;
 	margin: auto;
-	cursor: pointer;*/
+	cursor: pointer;
 }
 
 .content .lista form .item .logoT .contentL .ip input{
-	/*display: none;*/
+	display: none;
 }
 
 /*responsivo*/
