@@ -60,6 +60,11 @@
                             <input type="checkbox">bebes</input>
                             <input type="checkbox">videojuegos</input>
                             <input type="checkbox">estilo de vida</input>
+                            <input type="checkbox">categoria1</input>
+                            <input type="checkbox">categoria2</input>
+                            <input type="checkbox">categoria3</input>
+                            <input type="checkbox">categoria4</input>
+                            <input type="checkbox">categoria5</input>
                         </div>
                     </div>
                     <div class="bttns">

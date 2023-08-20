@@ -112,6 +112,18 @@ h1 {
 	display: none;
 }
 
+/*Categorias*/
+.content .lista form .item .categorias .opctionsC{
+	font-size: 1em;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: minmax(100px, auto);
+}
+
+.content .lista form .item .categorias .opctionsC input[type="checkbox"]{
+	display: none;
+}
+
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 
