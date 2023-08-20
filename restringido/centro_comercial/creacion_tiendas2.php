@@ -14,7 +14,8 @@
 		<h1>Creación de tienda</h1>
         <div class="lista">
             <form>
-                <div class="item">
+                <!-- Nombre de tienda-->
+             <!--   <div class="item">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
@@ -25,8 +26,8 @@
                     </div>
                 </div>
                     
-
-                <div class="item">
+                <!-- Logo de tienda-->
+             <!--   <div class="item">
                     <p>2/6</p>
                     <div class="logoT">
                         <label for="logoTienda"><strong>Logo de la tienda</strong></label>
@@ -48,29 +49,25 @@
                     </div>
                 </div> 
 
+                <!-- Categorias de tienda-->
+                <div class="item">
+                    <p>3/6</p>
+                    <div class="categorias">
+                        <label for="logoTienda"><strong>Categorías de la tienda</strong></label>
+                        <label class="categoria" for="categoria T">	
+                            <input type="checkbox" name="categorias[]" value="">
+                        </label>
+                    </div>
+                    <div class="bttns">
+                        <div class="bttn" id="back">
+                            <button><i class='bx bx-left-arrow-alt'></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button><i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
+                    </div>
+                </div> 
 <!--
-                <div class="item">
-                    <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" required>
-                    </div>
-                    <div class="bttn">
-                        <button><i class='bx bx-right-arrow-alt'></i></button>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" required>
-                    </div>
-                    <div class="bttn">
-                        <button><i class='bx bx-right-arrow-alt'></i></button>
-                    </div>
-                </div>
-
                 <div class="item">
                     <p>1/6</p>
                     <div class="name">
