@@ -3,7 +3,7 @@ h1 {
 }
 
 .content .lista {
-    text-align: initial;
+	text-align: initial;
 	display: inline-block;
 	padding: 1% 2% 2%;
 }
@@ -12,33 +12,33 @@ h1 {
 	font-size: 2em;
 }
 
-.content .lista form .item{
+.content .lista form .item {
 	padding: 2%;
 	height: auto;
 }
 
-.content .lista form .item p{
+.content .lista form .item p {
 	position: absolute;
 	transform: translate(-70px, -67px);
 	display: block;
-    background: #007096;
-    color: white;
-    padding: 1%;
-    border-radius: 50%;
-    font-weight: bold;
+	background: #007096;
+	color: white;
+	padding: 1%;
+	border-radius: 50%;
+	font-weight: bold;
 	font-size: 1.1em;
 }
 
-.content .lista form .item div{
+.content .lista form .item div {
 	margin: auto;
 	font-size: 2em;
 }
 
-.content .lista form .item label{
+.content .lista form .item label {
 	display: block;
 }
 
-.content .lista form .item .name input{
+.content .lista form .item .name input {
 	font-size: 1em;
 	padding: 9px;
 	margin: 8% 0;
@@ -46,25 +46,25 @@ h1 {
 	text-align: center;
 }
 
-.content .lista form .item .bttns{
+.content .lista form .item .bttns {
 	display: flex;
 	font-size: 31px;
 }
 
-.content .lista form .item #one{
+.content .lista form .item #one {
 	margin-left: 89%;
 }
 
-.content .lista form .item #back{
+.content .lista form .item #back {
 	margin-right: 5%;
 	margin-left: 188%;
 }
 
-.content .lista form .item #next{
+.content .lista form .item #next {
 	display: block;
 }
 
-.content .lista form .item .bttn button{
+.content .lista form .item .bttn button {
 	background: #007096;
 	border: none;
 	color: white;
@@ -80,23 +80,23 @@ h1 {
 	margin-top: 2%;
 }
 
-.content .lista form .item .logoT .contentL .box{
+.content .lista form .item .logoT .contentL .box {
 	border-radius: 12px;
 	border: 2px dashed black;
 }
 
-.content .lista form .item .logoT .contentL .ip #labelL{
+.content .lista form .item .logoT .contentL .ip #labelL {
 	display: flex;
 	justify-content: center;
 }
 
-.content .lista form .item .logoT .contentL .box img{
+.content .lista form .item .logoT .contentL .box img {
 	max-height: 110px;
 	max-width: 128px;
 	border-radius: 12px;
 }
 
-.content .lista form .item .logoT .contentL .ip label::before{
+.content .lista form .item .logoT .contentL .ip label::before {
 	content: 'Seleccionar';
 	font-size: 37px;
 	padding: 7px 0;
@@ -108,18 +108,21 @@ h1 {
 	width: 81%;
 }
 
-.content .lista form .item .logoT .contentL .ip input{
+.content .lista form .item .logoT .contentL .ip input {
 	display: none;
 }
 
 /*Categorias*/
-.content .lista form .item .categorias .optionsC{
-	font-size: 0.7em;
+.content .lista form .item .categorias .optionsC {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 }
 
-.content .lista form .item .categorias .optionsC input[type="checkbox"]{
+.content .lista form .item .categorias .optionsC .contentC {
+	font-size: 0.7em;
+}
+
+.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"] {
 	display: none;
 }
 
@@ -130,38 +133,38 @@ h1 {
 		font-size: 3em;
 	}
 
-    .content .lista form {
+	.content .lista form {
 		font-size: 1em;
 	}
 
-	.content .lista form .item p{
+	.content .lista form .item p {
 		transform: translate(-46px, -43px);
 	}
 
-	.content .lista form .item .name input{
+	.content .lista form .item .name input {
 		margin: 6% 0;
 	}
 
-	.content .lista form .item .bttns{
+	.content .lista form .item .bttns {
 		display: flex;
 		font-size: 1em;
 	}
 
-	.content .lista form .item .logoT .contentL .ip label::before{
+	.content .lista form .item .logoT .contentL .ip label::before {
 		width: 74%;
 		font-size: 29px;
 	}
 
-	.content .lista form .item .bttn button{
+	.content .lista form .item .bttn button {
 		border-radius: 29px;
 		width: 73px;
 	}
 
-	.content .lista form .item #one{
+	.content .lista form .item #one {
 		margin-left: 91%;
 	}
 
-	.content .lista form .item #back{
+	.content .lista form .item #back {
 		margin-right: 5%;
 		margin-left: 249%;
 	}
