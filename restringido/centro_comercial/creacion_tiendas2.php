@@ -38,11 +38,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bttn" id="back">
-                        <button><i class='bx bx-left-arrow-alt'></i></button>
-                    </div>
-                    <div class="bttn" id="next">
-                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                    <div>
+                        <div class="bttn" id="back">
+                            <button><i class='bx bx-left-arrow-alt'></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button><i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
                     </div>
                 </div>
 <!--
