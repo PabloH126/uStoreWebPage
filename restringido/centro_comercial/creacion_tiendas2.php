@@ -54,7 +54,7 @@
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
-                        <div>
+                        <div class="optionsC">
                             <input type="checkbox">alimentos y bebidas</input>
                             <input type="checkbox">departamentales</input>
                             <input type="checkbox">bebes</input>
