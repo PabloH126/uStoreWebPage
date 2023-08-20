@@ -86,9 +86,13 @@ h1 {
 .content .lista form .item .logoT .contentL .ip label::before{
 	content: 'Seleccionar';
 	font-size: 29px;
-	border-radius: 4px;
-	padding: 3px 17px;
+	padding: 7px 0;
 	cursor: pointer;
+	margin: 10px 0;
+	background: #007096;
+	color: white;
+	border-radius: 26px;
+	width: 74%;
 }
 
 .content .lista form .item .logoT .contentL .ip input{
