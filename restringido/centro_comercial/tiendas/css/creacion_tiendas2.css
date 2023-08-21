@@ -129,21 +129,22 @@ h1 {
 	padding: 8px 5px;
 	transition: box-shadow 0.3s
 		/*, transform 0.3s*/
-	/*;
+		/*;
 	cursor: pointer;*/
 }
 
-.content .lista form .item .categorias .optionsC input[type="checkbox"]:checked + .contentC {
-    box-shadow: 3px 4px 10px 2px blue;
+.content .lista form .item .categorias .optionsC input[type="checkbox"]:checked+.contentC {
+	box-shadow: 3px 4px 10px 2px blue;
 }
+
 /*
 
 .content .lista form .item .categorias .optionsC .contentC label {
 	/*cursor: pointer;
 }
-
+*/
 .content .lista form .item .categorias .optionsC .contentC input[type="checkbox"] {
-	/*display: none;*/
+	display: none;
 	/*
 	position: absolute;
 	opacity: 0;
@@ -152,7 +153,7 @@ h1 {
 	height: 100%;
 	width: 100%;
 	top: 0;
-	left: 0;
+	left: 0;*/
 }
 
 /*
@@ -172,7 +173,7 @@ h1 {
 /*
 .content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked {
 	/*transform: scale(1.05);*/
-	/*box-shadow: 3px 4px 10px 2px blue;*/
+/*box-shadow: 3px 4px 10px 2px blue;*/
 /*
 	box-shadow: none;
 }
