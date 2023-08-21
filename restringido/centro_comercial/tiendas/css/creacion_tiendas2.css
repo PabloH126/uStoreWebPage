@@ -119,7 +119,7 @@ h1 {
 }
 
 .content .lista form .item .categorias .optionsC .contentC {
-	position: relative;
+	/*position: relative;*/
 
 	font-size: 1.3rem;
 	background: white;
