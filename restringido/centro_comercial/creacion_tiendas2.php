@@ -64,13 +64,16 @@
                                 <label for="departamentales">departamentales</label>
                             </div>
                             <div class="contentC">
-                                <input type="checkbox">bebes</input>
+                                <input type="checkbox" id="bebebs">
+                                <label for="bebes">bebes</label>
                             </div>
                             <div class="contentC">
-                                <input type="checkbox">videojuegos</input>
+                                <input type="checkbox" id="videojuegos">
+                                <label for="videojuegos">videojuegos</label>
                             </div>
                             <div class="contentC">
-                                <input type="checkbox">estilo de vida</input>
+                                <input type="checkbox" id="vida">
+                                <label for="vida">estilo de vida</label>
                             </div>
                         </div>
                     </div>
