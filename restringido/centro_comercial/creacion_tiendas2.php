@@ -60,7 +60,8 @@
                                 <label for="alimentosBebidas">alimentos y bebidas</label>
                             </div>
                             <div class="contentC">
-                                <input type="checkbox">departamentales</input>
+                                <input type="checkbox" id="departamentales">
+                                <label for="departamentales">departamentales</label>
                             </div>
                             <div class="contentC">
                                 <input type="checkbox">bebes</input>
