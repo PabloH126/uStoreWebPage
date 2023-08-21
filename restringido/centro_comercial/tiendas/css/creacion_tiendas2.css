@@ -125,7 +125,7 @@ h1 {
 	box-shadow: 3px 4px 10px 2px #dfdfdf;
 	margin: 15px;
 	padding: 8px 5px;
-	transition: box-shadow 0.3s;
+	transition: box-shadow 0.3s, transform 0.3s;
 	cursor: pointer;
 }
 
@@ -133,7 +133,8 @@ h1 {
 	display: none;
 }
 
-.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked+label {
+.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked {
+	transform: scale(1.05);
 	box-shadow: 3px 4px 10px 2px blue;
 }
 
