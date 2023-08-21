@@ -121,38 +121,25 @@ h1 {
 .content .lista form .item .categorias .optionsC .contentC {
 	position: relative;
 
-	/*font-size: 1.3rem;
+	font-size: 1.3rem;
 	background: white;
 	border-radius: 15px;
 	box-shadow: 3px 4px 10px 2px #dfdfdf;
 	margin: 15px;
 	padding: 8px 5px;
-	transition: box-shadow 0.3s*/
+	transition: box-shadow 0.3s
 		/*, transform 0.3s*/
 	/*;
 	cursor: pointer;*/
 }
 
-.content .lista form .item .categorias .optionsC .contentC::before{
-	content: "";
-	position: absolute;
-	top: -3;
-	left: -3;
-	right: -3;
-	bottom: -3;
-	border-radius: 15px;
-	box-shadow: 3px 4px 10px 2px #dfdfdf;
-	z-index: -1;
-	transition: box-shadow 0.3s;
+.content .lista form .item .categorias .optionsC input[type="checkbox"]:checked + .contentC {
+    box-shadow: 3px 4px 10px 2px blue;
 }
-
-.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked::before {
-	box-shadow: 3px 4px 10px 2px blue;
-}
-
+/*
 
 .content .lista form .item .categorias .optionsC .contentC label {
-	/*cursor: pointer;*/
+	/*cursor: pointer;
 }
 
 .content .lista form .item .categorias .optionsC .contentC input[type="checkbox"] {
@@ -165,7 +152,7 @@ h1 {
 	height: 100%;
 	width: 100%;
 	top: 0;
-	left: 0;*/
+	left: 0;
 }
 
 /*
