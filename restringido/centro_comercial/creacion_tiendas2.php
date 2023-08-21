@@ -64,7 +64,7 @@
                                 <label for="departamentales">departamentales</label>
                             </div>
                             <div class="contentC">
-                                <input type="checkbox" id="bebebs">
+                                <input type="checkbox" id="bebes">
                                 <label for="bebes">bebes</label>
                             </div>
                             <div class="contentC">
