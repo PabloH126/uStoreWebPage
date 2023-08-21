@@ -55,24 +55,28 @@
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">
+                            <input type="checkbox" id="alimentosBebidas">
                             <div class="contentC">
-                                <input type="checkbox" id="alimentosBebidas">
                                 <label for="alimentosBebidas">alimentos y bebidas</label>
                             </div>
+
+                            <input type="checkbox" id="departamentales">
                             <div class="contentC">
-                                <input type="checkbox" id="departamentales">
                                 <label for="departamentales">departamentales</label>
                             </div>
+
+                            <input type="checkbox" id="bebes">
                             <div class="contentC">
-                                <input type="checkbox" id="bebes">
                                 <label for="bebes">bebes</label>
                             </div>
+
+                            <input type="checkbox" id="videojuegos">
                             <div class="contentC">
-                                <input type="checkbox" id="videojuegos">
                                 <label for="videojuegos">videojuegos</label>
                             </div>
+                            
+                            <input type="checkbox" id="vida">
                             <div class="contentC">
-                                <input type="checkbox" id="vida">
                                 <label for="vida">estilo de vida</label>
                             </div>
                         </div>
