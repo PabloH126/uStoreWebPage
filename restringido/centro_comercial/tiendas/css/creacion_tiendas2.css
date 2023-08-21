@@ -137,7 +137,7 @@ h1 {
 	display: none;
 }
 
-.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked ~ .contentC{
+.content .lista form .item .categorias .optionsC input[type="checkbox"]:checked ~ .contentC{
 	/*transform: scale(1.05);*/
 	box-shadow: 3px 4px 10px 2px blue;
 }
