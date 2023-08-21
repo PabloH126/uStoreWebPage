@@ -149,25 +149,22 @@ h1 {
 
 
 .content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked + label {
-    box-shadow: none;
-}
+	box-shadow: none;
+}	
 
 .content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked ~ label {
-    box-shadow: none;
-}
-
-.content .lista form .item .categorias .optionsC .contentC:hover {
-    box-shadow: 3px 4px 10px 2px #dfdfdf;
-}
-
-.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked + label {
-    box-shadow: none;
+	box-shadow: none;
 }
 
 .content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked ~ .contentC {
-    box-shadow: none;
+	box-shadow: none;
 }
 
+
+.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked {
+	/*transform: scale(1.05);*/
+	box-shadow: 3px 4px 10px 2px blue;
+}
 
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
