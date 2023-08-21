@@ -56,7 +56,8 @@
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">
                             <div class="contentC">
-                                <input type="checkbox">alimentos y bebidas</input>
+                                <input type="checkbox" id="alimentosBebidas">
+                                <label for="alimentosBebidas">alimentos y bebidas</label>
                             </div>
                             <div class="contentC">
                                 <input type="checkbox">departamentales</input>
