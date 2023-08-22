@@ -173,7 +173,7 @@
                 <div class="item">
                     <p>5/6</p>
                     <div class="promociones">
-                        <label><strong>Logo de la tienda</strong></label>
+                        <label><strong>Promociones de la tienda</strong></label>
                         <div class="imageP">
                             <div class="contentP">
                                 <div class="box"><img src="" id="imagenSelec1" alt=""></div>

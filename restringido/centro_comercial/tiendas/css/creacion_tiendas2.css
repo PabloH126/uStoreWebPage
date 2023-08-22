@@ -194,7 +194,7 @@ h1 {
 }
 
 .content .lista form .item .promociones .imageP .contentP .box{
-	font-size: 6rem;
+	font-size: 10rem;
 }
 
 .content .lista form .item .promociones .imageP .contentP .ip{
@@ -207,7 +207,8 @@ h1 {
 
 .content .lista form .item .promociones .imageP .contentP .ip  label::before{
 	font-size: 30px;
-	padding: 7px 12px;
+	padding: 7px 16px;
+	margin: 10px 39px;
 	width: 100%;
 }
 
@@ -256,5 +257,13 @@ h1 {
 
 	.content .lista form .item .categorias .optionsC .contentC {
 		font-size: 1.3rem;
+	}
+
+	.content .lista form .item .promociones .imageP .contentP .box{
+		font-size: 6rem;
+	}
+
+	.content .lista form .item .promociones .imageP .contentP .ip  label::before{
+		padding: 7px 12px;
 	}
 }
