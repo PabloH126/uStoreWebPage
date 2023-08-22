@@ -1,3 +1,12 @@
+<?php
+
+    function selectHorarios($dia)
+    {
+        echo '<td>' . $dia . '</td>';
+        echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
+        echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
+    }
+?>
 <!DOCTYPE html>
 <html>
 
