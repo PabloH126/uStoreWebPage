@@ -57,11 +57,11 @@
 
     function CategoriasSelect($categorias)
     {
-        foreach ($categorias['categoria1'] as $categoria) 
+        foreach ($categorias as $categoria) 
         {
-            echo '<input type="checkbox" id="' . $categoria . '">';
+            echo '<input type="checkbox" id="' . $categoria['categoria1'] . '">';
             echo '<div class="contentC">';
-                echo '<label for="' . $categoria . '">' . $categoria . '</label>';
+                echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
             echo '</div>';
         }
     }
