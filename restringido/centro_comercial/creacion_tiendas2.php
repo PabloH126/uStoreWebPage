@@ -267,7 +267,7 @@
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn back">
+                        <div class="bttn back" id="ult">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="send">
