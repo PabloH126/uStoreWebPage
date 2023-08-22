@@ -55,6 +55,14 @@
         echo '</div>';
     }
 
+    function CategoriasSelect($categoria)
+    {
+        echo '<input type="checkbox" id="' . $categoria . '">';
+        echo '<div class="contentC">';
+        echo '<label for="' . $categoria . '">' . $categoria . '</label>';
+        echo '</div>';
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -167,41 +175,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Lunes</td>
-                                    <td><input type="time" name="lunes_inicio"></td>
-                                    <td><input type="time" name="lunes_fin"></td>
-                                </tr>
-                                <tr>
-                                    <td>Martes</td>
-                                    <td><input type="time" name="martes_inicio"></td>
-                                    <td><input type="time" name="martes_fin"></td>
-                                </tr>
-                                <tr>
-                                    <td>Miércoles</td>
-                                    <td><input type="time" name="miercoles_inicio"></td>
-                                    <td><input type="time" name="miercoles_fin"></td>
-                                </tr>
-                                <tr>
-                                    <td>Jueves</td>
-                                    <td><input type="time" name="jueves_inicio"></td>
-                                    <td><input type="time" name="jueves_fin"></td>
-                                </tr>
-                                <tr>
-                                    <td>Viernes</td>
-                                    <td><input type="time" name="viernes_inicio"></td>
-                                    <td><input type="time" name="viernes_fin"></td>
-                                </tr>
-                                <tr>
-                                    <td>Sábado</td>
-                                    <td><input type="time" name="sabado_inicio"></td>
-                                    <td><input type="time" name="sabado_fin"></td>
-                                </tr>
-                                <tr>
-                                    <td>Domingo</td>
-                                    <td><input type="time" name="domingo_inicio"></td>
-                                    <td><input type="time" name="domingo_fin"></td>
-                                </tr>
+                                <?php
+                                    selectHorarios('Lunes');
+                                    selectHorarios('Martes');
+                                    selectHorarios('Miércoles');
+                                    selectHorarios('Jueves');
+                                    selectHorarios('Viernes');
+                                    selectHorarios('Sábado');
+                                    selectHorarios('Domingo');
+                                ?>
                             </tbody>
                         </table>
                         <div class="notas">
@@ -263,7 +245,7 @@
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
-                            <div class="apartadosT" min="1" max="165" step="1">
+                            <div class="apartadosT">
                                 <input type="number">
                                 <select name="" id="">
                                     <option value="">Minutos</option>

@@ -216,11 +216,19 @@ h1 {
 	display: grid;
 }
 
-.content .lista form .item .apartados .contentA .apartadosT input[type="number"]{
+.content .lista form .item .apartados .contentA .apartadosT input[type="number"],
+.content .lista form .item .apartados .contentA .apartadosT select{
 	font-size: 1.8rem;
-	width: 47%;
 	outline: none;
 	text-align: center;
+}
+
+.content .lista form .item .apartados .contentA .apartadosT input[type="number"]{
+	width: 47%;
+}
+
+.content .lista form .item .apartados .contentA .apartadosT select{
+	width: 28%;
 }
 
 .content .lista form .item #ult {
