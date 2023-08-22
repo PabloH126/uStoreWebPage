@@ -263,11 +263,9 @@
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
-                            <div>
-                                <input type="number">
-                            </div>
-                            <div><input type="number"></div>
-                            <div><input type="number"></div>
+                            <input type="number">
+                            <input type="number">
+                            <input type="number">
                         </div>
                     </div>
                     <div class="bttns">
