@@ -212,6 +212,10 @@ h1 {
 	width: 100%;
 }
 
+.content .lista form .item #send ~ #back{
+	background-color: red;
+}
+
 .content .lista form .item #send button {
 	width: 100%;
 	padding: 10%;

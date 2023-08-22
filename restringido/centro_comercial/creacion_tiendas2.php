@@ -1,11 +1,60 @@
 <?php
+    session_start();
+    require '../security.php';
 
-function selectHorarios($dia)
-{
-    echo '<td>' . $dia . '</td>';
-    echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
-    echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
-}
+    //REQUEST DE LAS CATEGORIAS
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+    ));
+
+    $response = curl_exec($ch);
+
+    if ($response === false) {
+        echo 'Error: ' . curl_error($ch);
+    } else {
+        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    }
+
+    $categorias = json_decode($response, true);
+
+    curl_close($ch);
+
+    //FUNCIONES DEL FORMULARIO
+
+    function selectHorarios($dia)
+    {
+        echo '<tr>';
+        echo '<td>' . $dia . '</td>';
+        echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
+        echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
+        echo '</tr>';
+    }
+
+    function PeriodosSelect($periodo)
+    {
+        echo '<div class="numeroA">';
+            echo '<select name="numero' . $periodo . '" id="numero' . $periodo . '">';
+                echo '<option value="">numero</option>';
+        for($i = 1; $i < 61; $i++)
+        {
+                echo '<option value="' . $i . '">' . $i . '</option>';
+        }
+            echo '</select>';
+        echo '</div>';
+        echo '<div class="tiempoA">';
+            echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
+                echo '<option value="">tiempo</option>';
+                echo '<option value="minutos">Minutos</option>';
+                echo '<option value="horas">Horas</option>';
+                echo '<option value="dias">Días</option>';
+            echo '</select>';
+        echo '</div>';
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -113,8 +162,8 @@ function selectHorarios($dia)
                             <thead>
                                 <tr>
                                     <th>Día</th>
-                                    <th>Inicio</th>
-                                    <th>Fin</th>
+                                    <th>Hora de apertura</th>
+                                    <th>Hora de cierre</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -211,7 +260,7 @@ function selectHorarios($dia)
                 <!-- Periodos de apartado de la tienda -->
                 <div class="item">
                     <p>6/6</p>
-                    <div class="logoT">
+                    <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentL">
                             <div class="box"> <img id="imagenSelec" alt=""></div>
