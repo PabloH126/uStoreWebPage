@@ -57,7 +57,7 @@
 
     function CategoriasSelect($categorias)
     {
-        foreach ($categorias as $categoria) 
+        foreach ($categorias['categoria1'] as $categoria) 
         {
             echo '<input type="checkbox" id="' . $categoria . '">';
             echo '<div class="contentC">';
