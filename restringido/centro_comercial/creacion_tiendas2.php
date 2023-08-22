@@ -105,7 +105,7 @@ function selectHorarios($dia)
                 </div> 
 
                 <!-- Horario de tienda-->
-                <div class="item">
+                <!-- <div class="item">
                     <p>4/6</p>
                     <div class="horarioT">
                         <label><strong>Horario de la tienda</strong></label>
@@ -170,7 +170,7 @@ function selectHorarios($dia)
                 </div>
 
                 <!-- Promociones de tienda -->
-                <!-- <div class="item">
+                 <div class="item">
                     <p>5/6</p>
                     <div class="promociones">
                         <label><strong>Promociones de la tienda</strong></label>
