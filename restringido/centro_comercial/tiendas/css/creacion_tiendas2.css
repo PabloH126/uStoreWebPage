@@ -85,6 +85,11 @@ h1 {
 .content .lista form .item .logoT .contentL .box {
 	border-radius: 12px;
 	border: 2px dashed black;
+	display: grid;
+	height: 114px;
+	width: 198px;
+	justify-content: center;
+	justify-items: center;
 }
 
 .content .lista form .item .promociones .contentP .ip label,
@@ -194,12 +199,12 @@ h1 {
 }
 
 .content .lista form .item .promociones .imageP .contentP .box {
-	font-size: 10rem;
+	/*font-size: 10rem;*/
 }
 
-.content .lista form .item .promociones .imageP .contentP .box img{
-	max-height: 88px;
-	max-width: 148px;
+.content .lista form .item .promociones .imageP .contentP .box img {
+	max-height: 109px;
+	max-width: 192px;
 	border-radius: 12px;
 }
 
@@ -220,27 +225,27 @@ h1 {
 
 /*Apartados*/
 
-.content .lista form .item .apartados .contentA{
+.content .lista form .item .apartados .contentA {
 	display: grid;
 	margin: 0 0 4%;
 }
 
-.content .lista form .item .apartados .contentA .apartadosT{
+.content .lista form .item .apartados .contentA .apartadosT {
 	line-height: 0;
 }
 
 .content .lista form .item .apartados .contentA .apartadosT input[type="number"],
-.content .lista form .item .apartados .contentA .apartadosT select{
+.content .lista form .item .apartados .contentA .apartadosT select {
 	font-size: 2.4rem;
 	outline: none;
 	text-align: center;
 }
 
-.content .lista form .item .apartados .contentA .apartadosT input[type="number"]{
+.content .lista form .item .apartados .contentA .apartadosT input[type="number"] {
 	width: 47%;
 }
 
-.content .lista form .item .apartados .contentA .apartadosT select{
+.content .lista form .item .apartados .contentA .apartadosT select {
 	width: 28%;
 }
 
@@ -314,7 +319,7 @@ h1 {
 	}
 
 	.content .lista form .item .apartados .contentA .apartadosT input[type="number"],
-	.content .lista form .item .apartados .contentA .apartadosT select{
+	.content .lista form .item .apartados .contentA .apartadosT select {
 		font-size: 1.5rem;
 	}
 
