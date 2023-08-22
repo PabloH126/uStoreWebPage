@@ -182,14 +182,14 @@
                                     <input type="file" id="fileInput1" name="imagen1">
                                 </div>
                             </div>
-                            <div>
+                            <div class="contentP">
                                 <div class="box"><img src="" id="imagenSelec2" alt=""></div>
                                 <div class="ip">
                                     <label for="fileInput2" >
                                     <input type="file" id="fileInput2" name="imagen2">
                                 </div>
                             </div>
-                            <div>
+                            <div class="contentP">
                                 <div class="box"><img src="" id="imagenSelec3" alt=""></div>
                                 <div class="ip">
                                     <label for="fileInput3" >
