@@ -170,7 +170,7 @@ function selectHorarios($dia)
                 </div>
 
                 <!-- Promociones de tienda -->
-                 <div class="item">
+                <!-- <div class="item">
                     <p>5/6</p>
                     <div class="promociones">
                         <label><strong>Promociones de la tienda</strong></label>
@@ -209,15 +209,15 @@ function selectHorarios($dia)
                 </div> -->
 
                 <!-- Periodos de apartado de la tienda -->
-                <!--<div class="item">
+                <div class="item">
                     <p>6/6</p>
                     <div class="logoT">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentL">
                             <div class="box"> <img id="imagenSelec" alt=""></div>
                             <div class="ip">
-                                <label for="logoTienda" id="labelL" >
-                                <input type="file" id="logoTienda" name="logoTienda">
+                                <label for="logoTienda" id="labelL">
+                                    <input type="file" id="logoTienda" name="logoTienda">
                             </div>
                         </div>
                     </div>
@@ -226,10 +226,10 @@ function selectHorarios($dia)
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button><i class='bx bx-right-arrow-alt'></i></button>
+                            <button>Guardar</button>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </form>
         </div>
     </div>
