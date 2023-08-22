@@ -34,7 +34,7 @@
 
     if($httpStatusCode != 201)
     {
-        echo $httpStatusCode;
+        echo $httpStatusCode . ' create tienda';
     }
 
     $dataTienda = json_decode($response, true);
@@ -80,7 +80,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode;
+        echo $httpStatusCode . ' create horario';
     }
 
     curl_close($ch);
@@ -121,7 +121,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode;
+        echo $httpStatusCode . ' create categorias de tienda';
     }
     
     curl_close($ch);
@@ -156,7 +156,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode;
+        echo $httpStatusCode . ' create periodos predeterminados';
     }
 //----------------------------------------------------------------------------------------//   
 
@@ -206,7 +206,7 @@
 
         if($httpStatusCode != 200)
         {
-            echo $httpStatusCode;
+            echo $httpStatusCode . 'create imagenes tienda';
         }
 
         curl_close($ch);
