@@ -154,6 +154,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="notas">
+							<span>* Si es día no laboral, dejar el día en 00:00 o en --:--.</span>
+						</div>
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="back">

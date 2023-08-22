@@ -166,6 +166,11 @@ h1 {
 	font-size: 1.3rem;
 }
 
+.content .lista form .item .notas{
+	font-size: 0.58em;
+	color: #6c6c6c;
+}
+
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 
