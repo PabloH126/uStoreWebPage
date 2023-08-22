@@ -261,5 +261,6 @@
             </form>
         </div>
     </div>
+    <script src="js/mostrarImg.js"></script>
 </body>
 </html>
