@@ -132,7 +132,7 @@ h1 {
 }
 
 .content .lista form .item .categorias .optionsC input[type="checkbox"]:checked+.contentC {
-	box-shadow: 3px 4px 10px 2px #007096;
+	box-shadow: 0px 0px 10px 3px #007096;
 }
 
 .content .lista form .item .categorias .optionsC .contentC label {
