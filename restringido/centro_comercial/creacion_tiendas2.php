@@ -55,12 +55,15 @@
         echo '</div>';
     }
 
-    function CategoriasSelect($categoria)
+    function CategoriasSelect($categorias)
     {
-        echo '<input type="checkbox" id="' . $categoria . '">';
-        echo '<div class="contentC">';
-        echo '<label for="' . $categoria . '">' . $categoria . '</label>';
-        echo '</div>';
+        foreach ($categorias as $categoria) 
+        {
+            echo '<input type="checkbox" id="' . $categoria . '">';
+            echo '<div class="contentC">';
+                echo '<label for="' . $categoria . '">' . $categoria . '</label>';
+            echo '</div>';
+        }
     }
 
 ?>
@@ -123,32 +126,7 @@
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">
-                            
-                            <input type="checkbox" id="alimentosBebidas">
-                            <div class="contentC">
-                                
-                                <label for="alimentosBebidas">alimentos y bebidas</label>
-                            </div>
-
-                            <input type="checkbox" id="departamentales">
-                            <div class="contentC">
-                                <label for="departamentales">departamentales</label>
-                            </div>
-                            
-                            <input type="checkbox" id="bebes">
-                            <div class="contentC">                                
-                                <label for="bebes">bebes</label>
-                            </div>
-                            
-                            <input type="checkbox" id="videojuegos">
-                            <div class="contentC">
-                                <label for="videojuegos">videojuegos</label>
-                            </div>
-
-                            <input type="checkbox" id="vida">
-                            <div class="contentC">
-                                <label for="vida">estilo de vida</label>
-                            </div>
+                            <?php CategoriasSelect($categorias); ?>
                         </div>
                     </div>
                     <div class="bttns">

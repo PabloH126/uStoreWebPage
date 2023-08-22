@@ -212,13 +212,19 @@ h1 {
 	width: 100%;
 }
 
+/*Apartados*/
+
 .content .lista form .item .apartados .contentA{
 	display: grid;
 }
 
+.content .lista form .item .apartados .contentA .apartadosT{
+	line-height: 0;
+}
+
 .content .lista form .item .apartados .contentA .apartadosT input[type="number"],
 .content .lista form .item .apartados .contentA .apartadosT select{
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	outline: none;
 	text-align: center;
 }
