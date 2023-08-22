@@ -97,7 +97,7 @@
 
                 <div class="item">
                     <p>4/6</p>
-                    <div class="horario">
+                    <div class="horarioT">
                         <label><strong>Horario de la tienda</strong></label>
                         <table>
                             <thead>
