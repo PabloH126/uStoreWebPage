@@ -142,6 +142,13 @@ h1 {
 	display: none;
 }
 
+/*Horario*/
+.content .lista form .item .horario table{
+	font-size: 1.5rem;
+}
+
+
+
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 

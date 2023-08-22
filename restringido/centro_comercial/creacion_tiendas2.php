@@ -99,7 +99,7 @@
                     <p>4/6</p>
                     <div class="Horario">
                         <label><strong>Horario de la tienda</strong></label>
-                        <table border="1">
+                        <table>
                             <thead>
                                 <tr>
                                     <th>Día</th>
@@ -117,6 +117,31 @@
                                     <td>Martes</td>
                                     <td><input type="time" name="martes_inicio"></td>
                                     <td><input type="time" name="martes_fin"></td>
+                                </tr>
+                                <tr>
+                                    <td>Miércoles</td>
+                                    <td><input type="time" name="miercoles_inicio"></td>
+                                    <td><input type="time" name="miercoles_fin"></td>
+                                </tr>
+                                <tr>
+                                    <td>Jueves</td>
+                                    <td><input type="time" name="jueves_inicio"></td>
+                                    <td><input type="time" name="jueves_fin"></td>
+                                </tr>
+                                <tr>
+                                    <td>Viernes</td>
+                                    <td><input type="time" name="viernes_inicio"></td>
+                                    <td><input type="time" name="viernes_fin"></td>
+                                </tr>
+                                <tr>
+                                    <td>Sábado</td>
+                                    <td><input type="time" name="sabado_inicio"></td>
+                                    <td><input type="time" name="sabado_fin"></td>
+                                </tr>
+                                <tr>
+                                    <td>Domingo</td>
+                                    <td><input type="time" name="domingo_inicio"></td>
+                                    <td><input type="time" name="domingo_fin"></td>
                                 </tr>
                             </tbody>
                         </table>
