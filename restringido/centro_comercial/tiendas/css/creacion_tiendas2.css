@@ -183,6 +183,22 @@ h1 {
 	margin: 4px 0 0;
 }
 
+/*promociones*/
+.content .lista form .item .promociones .contentP{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.content .lista form .item .promociones ,.imageP .contentP .box{
+	font-size: 1.5em;
+}
+
+.content .lista form .item .promociones .imageP .contentP .ip  label::before{
+	font-size: 30px;
+	padding: 7px 12px;
+	width: 100%;
+}
+
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 
