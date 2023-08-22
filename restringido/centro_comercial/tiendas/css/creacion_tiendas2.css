@@ -216,6 +216,7 @@ h1 {
 
 .content .lista form .item .apartados .contentA{
 	display: grid;
+	margin: 0 0 4%;
 }
 
 .content .lista form .item .apartados .contentA .apartadosT{
@@ -224,7 +225,7 @@ h1 {
 
 .content .lista form .item .apartados .contentA .apartadosT input[type="number"],
 .content .lista form .item .apartados .contentA .apartadosT select{
-	font-size: 1.5rem;
+	font-size: 2.4rem;
 	outline: none;
 	text-align: center;
 }
@@ -304,6 +305,11 @@ h1 {
 
 	.content .lista form .item #ult {
 		margin-left: 200%;
+	}
+
+	.content .lista form .item .apartados .contentA .apartadosT input[type="number"],
+	.content .lista form .item .apartados .contentA .apartadosT select{
+		font-size: 1.5rem;
 	}
 
 }
