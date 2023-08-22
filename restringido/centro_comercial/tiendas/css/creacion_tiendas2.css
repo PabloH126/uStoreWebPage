@@ -189,8 +189,20 @@ h1 {
 	grid-template-columns: repeat(3, 1fr);
 }
 
+.content .lista form .item .promociones .imageP .contentP{
+	margin: 3% 2% 0;
+}
+
 .content .lista form .item .promociones .imageP .contentP .box{
-	font-size: 1.5em;
+	font-size: 1em;
+}
+
+.content .lista form .item .promociones .imageP .contentP .ip{
+	font-size: 1.8em;
+}
+
+.content .lista form .item .promociones .imageP .contentP .ip  label{
+	margin: 0 5px;
 }
 
 .content .lista form .item .promociones .imageP .contentP .ip  label::before{
