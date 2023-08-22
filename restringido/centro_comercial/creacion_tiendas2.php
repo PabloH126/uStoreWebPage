@@ -219,7 +219,7 @@
                 </div>
 
                 <!-- Promociones de tienda -->
-                <!-- <div class="item">
+                 <div class="item">
                     <p>5/6</p>
                     <div class="promociones">
                         <label><strong>Promociones de la tienda</strong></label>
@@ -255,7 +255,7 @@
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
-                </div> -->
+                </div> 
 
                 <!-- Periodos de apartado de la tienda -->
                 <div class="item">
@@ -271,7 +271,7 @@
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn" id="back">
+                        <div class="bttn ult" id="back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="send">
