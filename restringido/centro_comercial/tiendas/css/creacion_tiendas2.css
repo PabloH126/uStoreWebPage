@@ -216,6 +216,12 @@ h1 {
 	display: grid;
 }
 
+.content .lista form .item .apartados .contentA .apartadosT input[type="number"]{
+	font-size: 1.8rem;
+	width: 47%;
+	outline: none;
+	text-align: center;
+}
 
 .content .lista form .item #ult {
 	margin-left: 133%;

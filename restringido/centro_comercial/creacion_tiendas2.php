@@ -263,7 +263,7 @@
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
-                            <div class="apartadosT">
+                            <div class="apartadosT" min="1" max="165" step="1">
                                 <input type="number">
                                 <select name="" id="">
                                     <option value="">Minutos</option>
