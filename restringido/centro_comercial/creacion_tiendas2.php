@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Crear tienda</title>
-	<?php require("templates/template.styles.php")?>
-	<?php require("tiendas/templates/template.secc_tiendas.php")?>
-	<link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas2.css">
+    <meta charset="utf-8">
+    <title>Crear tienda</title>
+    <?php require("templates/template.styles.php") ?>
+    <?php require("tiendas/templates/template.secc_tiendas.php") ?>
+    <link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas2.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-<?php require("templates/template.menu.php")?>
-	<div class="content">
-		<h1>Creación de tienda</h1>
+    <?php require("templates/template.menu.php") ?>
+    <div class="content">
+        <h1>Creación de tienda</h1>
         <div class="lista">
             <form>
                 <!-- Nombre de tienda-->
-                <div class="item">
+                <!--     <div class="item">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
@@ -27,10 +29,10 @@
                 </div>
                     
                 <!-- Logo de tienda-->
-                <div class="item">
+                <!--   <div class="item">
                     <p>2/6</p>
                     <div class="logoT">
-                        <label for="logoTienda"><strong>Logo de la tienda</strong></label>
+                        <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
                             <div class="box"> <img id="imagenSelec" alt=""></div>
                             <div class="ip">
@@ -50,7 +52,7 @@
                 </div> 
 
                 <!-- Categorias de tienda-->
-                <div class="item">
+                <!--   <div class="item">
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
@@ -91,19 +93,44 @@
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
-                </div> 
-<!--
+                </div> -->
+
                 <div class="item">
-                    <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" required>
+                    <p>4/6</p>
+                    <div class="Horario">
+                        <label><strong>Horario de la tienda</strong></label>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Día</th>
+                                    <th>Inicio</th>
+                                    <th>Fin</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lunes</td>
+                                    <td><input type="time" name="lunes_inicio"></td>
+                                    <td><input type="time" name="lunes_fin"></td>
+                                </tr>
+                                <tr>
+                                    <td>Martes</td>
+                                    <td><input type="time" name="martes_inicio"></td>
+                                    <td><input type="time" name="martes_fin"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="bttn">
-                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                    <div class="bttns">
+                        <div class="bttn" id="back">
+                            <button><i class='bx bx-left-arrow-alt'></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button><i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
                     </div>
                 </div>
-
+                <!--
                 <div class="item">
                     <p>1/6</p>
                     <div class="name">
