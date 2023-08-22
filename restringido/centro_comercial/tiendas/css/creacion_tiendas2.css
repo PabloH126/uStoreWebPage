@@ -212,7 +212,9 @@ h1 {
 	width: 100%;
 }
 
-
+.content .lista form .item .apartados .contentA{
+	display: grid;
+}
 
 
 .content .lista form .item #ult {
