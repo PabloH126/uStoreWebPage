@@ -26,7 +26,7 @@ function selectHorarios($dia)
         <div class="lista">
             <form>
                 <!-- Nombre de tienda-->
-                <div class="item">
+                <!-- <div class="item">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
@@ -38,7 +38,7 @@ function selectHorarios($dia)
                 </div>
 
                 <!-- Logo de tienda-->
-                <!-- <div class="item">
+                 <div class="item">
                     <p>2/6</p>
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
