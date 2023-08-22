@@ -82,8 +82,8 @@ h1 {
 }
 
 .content .lista form .item .logoT .contentL .box {
-	height: 151px;
-	width: 263px;
+	height: 201px;
+	width: 385px;
 }
 
 .content .lista form .item .promociones .contentP .box,
@@ -96,8 +96,8 @@ h1 {
 }
 
 .content .lista form .item .logoT .contentL .box img {
-	max-height: 145px;
-	max-width: 255px;
+	max-height: 193px;
+	max-width: 348px;
 	border-radius: 12px;
 }
 
@@ -202,13 +202,13 @@ h1 {
 }
 
 .content .lista form .item .promociones .imageP .contentP .box {
-	height: 114px;
-	width: 198px;
+	height: 166px;
+	width: 251px;
 }
 
 .content .lista form .item .promociones .imageP .contentP .box img {
-	max-height: 109px;
-	max-width: 192px;
+	max-height: 161px;
+	max-width: 241px;
 	border-radius: 12px;
 }
 
@@ -286,6 +286,16 @@ h1 {
 		font-size: 1em;
 	}
 
+	.content .lista form .item .logoT .contentL .box {
+		height: 151px;
+		width: 263px;
+	}
+
+	.content .lista form .item .promociones .imageP .contentP .box img {
+		max-height: 193px;
+		max-width: 348px;
+	}
+
 	.content .lista form .item .logoT .contentL .ip label::before {
 		width: 74%;
 		font-size: 29px;
@@ -309,8 +319,14 @@ h1 {
 		font-size: 1.3rem;
 	}
 
+	.content .lista form .item .logoT .contentL .box img {
+		max-height: 145px;
+		max-width: 255px;
+	}
+
 	.content .lista form .item .promociones .imageP .contentP .box {
-		/*font-size: 6rem;*/
+		height: 114px;
+		width: 198px;
 	}
 
 	.content .lista form .item .promociones .imageP .contentP .ip label::before {
