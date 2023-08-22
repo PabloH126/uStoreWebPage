@@ -262,8 +262,12 @@
                     <p>6/6</p>
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
-                        <div class="contentL">
-                            
+                        <div class="contentA">
+                            <div>
+                                <input type="number">
+                            </div>
+                            <div><input type="number"></div>
+                            <div><input type="number"></div>
                         </div>
                     </div>
                     <div class="bttns">
