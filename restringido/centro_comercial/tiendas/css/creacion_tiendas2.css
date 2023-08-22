@@ -127,60 +127,21 @@ h1 {
 	box-shadow: 3px 4px 10px 2px #dfdfdf;
 	margin: 15px;
 	padding: 8px 5px;
-	transition: box-shadow 0.3s
-		/*, transform 0.3s*/
-		/*;
-	cursor: pointer;*/
+	transition: box-shadow 0.3s;
+	cursor: pointer;
 }
 
 .content .lista form .item .categorias .optionsC input[type="checkbox"]:checked+.contentC {
-	box-shadow: 3px 4px 10px 2px blue;
+	box-shadow: 3px 4px 10px 2px #007096;
 }
-
-/*
 
 .content .lista form .item .categorias .optionsC .contentC label {
-	/*cursor: pointer;
+	cursor: pointer;
 }
-*/
+
 .content .lista form .item .categorias .optionsC input[type="checkbox"] {
 	display: none;
-	/*
-	position: absolute;
-	opacity: 0;
-	z-index: 2;
-	cursor: pointer;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;*/
 }
-
-/*
-.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked+label {
-	box-shadow: none;
-}
-
-.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked~label {
-	box-shadow: none;
-}*/
-
-/*.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked~.contentC {
-	box-shadow: none;
-}*/
-
-
-/*
-.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked {
-	/*transform: scale(1.05);*/
-/*box-shadow: 3px 4px 10px 2px blue;*/
-/*
-	box-shadow: none;
-}
-
-.content .lista form .item .categorias .optionsC .contentC input[type="checkbox"]:checked+label+.contentC {
-	box-shadow: 3px 4px 10px 2px blue;
-}*/
 
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
