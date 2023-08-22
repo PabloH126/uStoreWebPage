@@ -1,11 +1,11 @@
 <?php
 
-    function selectHorarios($dia)
-    {
-        echo '<td>' . $dia . '</td>';
-        echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
-        echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
-    }
+function selectHorarios($dia)
+{
+    echo '<td>' . $dia . '</td>';
+    echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
+    echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,9 +36,9 @@
                         <button><i class='bx bx-right-arrow-alt'></i></button>
                     </div>
                 </div>
-                    
+
                 <!-- Logo de tienda-->
-               <div class="item">
+                <!-- <div class="item">
                     <p>2/6</p>
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
@@ -61,7 +61,7 @@
                 </div> 
 
                 <!-- Categorias de tienda-->
-                <div class="item">
+                <!-- <div class="item">
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
@@ -105,7 +105,7 @@
                 </div> 
 
                 <!-- Horario de tienda-->
-                 <div class="item">
+                <!-- <div class="item">
                     <p>4/6</p>
                     <div class="horarioT">
                         <label><strong>Horario de la tienda</strong></label>
@@ -156,8 +156,8 @@
                             </tbody>
                         </table>
                         <div class="notas">
-							<span>* Si es día no laboral, dejar el día en 00:00 o en --:--.</span>
-						</div>
+                            <span>* Si es día no laboral, dejar el día en 00:00 o en --:--.</span>
+                        </div>
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="back">
@@ -170,7 +170,7 @@
                 </div>
 
                 <!-- Promociones de tienda -->
-                <div class="item">
+                <!-- <div class="item">
                     <p>5/6</p>
                     <div class="promociones">
                         <label><strong>Promociones de la tienda</strong></label>
@@ -206,12 +206,13 @@
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
-                </div> 
-<!--
-                <div class="item">
+                </div> -->
+
+                <!-- Periodos de apartado de la tienda -->
+                <!--<div class="item">
                     <p>6/6</p>
                     <div class="logoT">
-                        <label><strong>Logo de la tienda</strong></label>
+                        <label><strong>Periodos de apartado</strong></label>
                         <div class="contentL">
                             <div class="box"> <img id="imagenSelec" alt=""></div>
                             <div class="ip">
@@ -228,7 +229,7 @@
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
-                </div> 
+                </div> -->
             </form>
         </div>
     </div>
