@@ -184,12 +184,12 @@ h1 {
 }
 
 /*promociones*/
-.content .lista form .item .promociones .contentP{
+.content .lista form .item .promociones .imageP{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 }
 
-.content .lista form .item .promociones ,.imageP .contentP .box{
+.content .lista form .item .promociones .imageP .contentP .box{
 	font-size: 1.5em;
 }
 
