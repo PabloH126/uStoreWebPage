@@ -263,9 +263,30 @@
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
-                            <input type="number">
-                            <input type="number">
-                            <input type="number">
+                            <div class="apartadosT">
+                                <input type="number">
+                                <select name="" id="">
+                                    <option value="">Minutos</option>
+                                    <option value="">Horas</option>
+                                    <option value="">Dias</option>
+                                </select>
+                            </div>
+                            <div class="apartadosT">
+                                <input type="number">
+                                <select name="" id="">
+                                    <option value="">Minutos</option>
+                                    <option value="">Horas</option>
+                                    <option value="">Dias</option>
+                                </select>
+                            </div>
+                            <div class="apartadosT">
+                                <input type="number">
+                                <select name="" id="">
+                                    <option value="">Minutos</option>
+                                    <option value="">Horas</option>
+                                    <option value="">Dias</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="bttns">
