@@ -159,6 +159,10 @@ h1 {
 	padding: 1px 14px;
 }
 
+.content .lista form .item .horarioT table td:last-child{
+	border-right: none;
+}
+
 .content .lista form .item .horarioT table tbody input[type="time"]{
 	border: none;
 	outline: none;
