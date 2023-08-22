@@ -263,11 +263,7 @@
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentL">
-                            <div class="box"> <img id="imagenSelec" alt=""></div>
-                            <div class="ip">
-                                <label for="logoTienda" id="labelL">
-                                    <input type="file" id="logoTienda" name="logoTienda">
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="bttns">
