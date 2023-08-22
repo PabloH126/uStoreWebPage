@@ -26,7 +26,7 @@
         <div class="lista">
             <form>
                 <!-- Nombre de tienda-->
-                <!--<div class="item">
+                <div class="item">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
@@ -38,7 +38,7 @@
                 </div>
                     
                 <!-- Logo de tienda-->
-              <!-- <div class="item">
+               <div class="item">
                     <p>2/6</p>
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
@@ -61,7 +61,7 @@
                 </div> 
 
                 <!-- Categorias de tienda-->
-               <!-- <div class="item">
+                <div class="item">
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
@@ -105,7 +105,7 @@
                 </div> 
 
                 <!-- Horario de tienda-->
-                <!-- <div class="item">
+                 <div class="item">
                     <p>4/6</p>
                     <div class="horarioT">
                         <label><strong>Horario de la tienda</strong></label>
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                 </div>
--->
+
                 <!-- Promociones de tienda -->
                 <div class="item">
                     <p>5/6</p>
