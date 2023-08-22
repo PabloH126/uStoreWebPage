@@ -87,8 +87,8 @@
                 </div>
 
                 <!-- Logo de tienda-->
-                <div class="item">
-                <!--    <p>2/6</p>
+                <!--<div class="item">
+                    <p>2/6</p>
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
