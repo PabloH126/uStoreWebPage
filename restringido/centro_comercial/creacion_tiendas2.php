@@ -26,7 +26,7 @@
         <div class="lista">
             <form>
                 <!-- Nombre de tienda-->
-                <div class="item">
+                <!--<div class="item">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
@@ -38,7 +38,7 @@
                 </div>
                     
                 <!-- Logo de tienda-->
-              <div class="item">
+              <!-- <div class="item">
                     <p>2/6</p>
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
@@ -61,7 +61,7 @@
                 </div> 
 
                 <!-- Categorias de tienda-->
-               <div class="item">
+               <!-- <div class="item">
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
@@ -104,7 +104,8 @@
                     </div>
                 </div> 
 
-                <div class="item">
+                <!-- Horario de tienda-->
+                <!-- <div class="item">
                     <p>4/6</p>
                     <div class="horarioT">
                         <label><strong>Horario de la tienda</strong></label>
@@ -167,17 +168,67 @@
                         </div>
                     </div>
                 </div>
-                <!--
+-->
+                <!-- Promociones de tienda -->
                 <div class="item">
-                    <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" required>
+                    <p>5/6</p>
+                    <div class="promociones">
+                        <label><strong>Logo de la tienda</strong></label>
+                        <div class="imageP">
+                            <div class="contentP">
+                                <div class="box"><img src="" id="imagenSelec1" alt=""></div>
+                                <div class="ip">
+                                    <label for="fileInput1" >
+                                    <input type="file" id="fileInput1" name="imagen1">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="box"><img src="" id="imagenSelec2" alt=""></div>
+                                <div class="ip">
+                                    <label for="fileInput2" >
+                                    <input type="file" id="fileInput2" name="imagen2">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="box"><img src="" id="imagenSelec3" alt=""></div>
+                                <div class="ip">
+                                    <label for="fileInput3" >
+                                    <input type="file" id="fileInput3" name="imagen3">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bttn">
-                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                    <div class="bttns">
+                        <div class="bttn" id="back">
+                            <button><i class='bx bx-left-arrow-alt'></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button><i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
                     </div>
-                </div>-->
+                </div> 
+<!--
+                <div class="item">
+                    <p>6/6</p>
+                    <div class="logoT">
+                        <label><strong>Logo de la tienda</strong></label>
+                        <div class="contentL">
+                            <div class="box"> <img id="imagenSelec" alt=""></div>
+                            <div class="ip">
+                                <label for="logoTienda" id="labelL" >
+                                <input type="file" id="logoTienda" name="logoTienda">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bttns">
+                        <div class="bttn" id="back">
+                            <button><i class='bx bx-left-arrow-alt'></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button><i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
+                    </div>
+                </div> 
             </form>
         </div>
     </div>
