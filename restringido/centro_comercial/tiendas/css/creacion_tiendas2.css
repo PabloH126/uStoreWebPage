@@ -291,11 +291,6 @@ h1 {
 		width: 263px;
 	}
 
-	.content .lista form .item .promociones .imageP .contentP .box img {
-		max-height: 193px;
-		max-width: 348px;
-	}
-
 	.content .lista form .item .logoT .contentL .ip label::before {
 		width: 74%;
 		font-size: 29px;
@@ -327,6 +322,11 @@ h1 {
 	.content .lista form .item .promociones .imageP .contentP .box {
 		height: 114px;
 		width: 198px;
+	}
+
+	.content .lista form .item .promociones .imageP .contentP .box img {
+		max-height: 108px;
+		max-width: 348px;
 	}
 
 	.content .lista form .item .promociones .imageP .contentP .ip label::before {
