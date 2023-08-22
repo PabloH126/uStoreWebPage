@@ -87,7 +87,7 @@
                 </div>
 
                 <!-- Logo de tienda-->
-                <!-- <div class="item">
+                <div class="item">
                     <p>2/6</p>
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn" id="back">
+                        <div class="bttn back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="next">
@@ -110,7 +110,7 @@
                 </div> 
 
                 <!-- Categorias de tienda-->
-                <!-- <div class="item">
+                <div class="item">
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn" id="back">
+                        <div class="bttn back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="next">
@@ -154,7 +154,7 @@
                 </div> 
 
                 <!-- Horario de tienda-->
-                <!-- <div class="item">
+                <div class="item">
                     <p>4/6</p>
                     <div class="horarioT">
                         <label><strong>Horario de la tienda</strong></label>
@@ -209,7 +209,7 @@
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn" id="back">
+                        <div class="bttn back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="next">
@@ -248,7 +248,7 @@
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn" id="back">
+                        <div class="bttn back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="next">
@@ -267,7 +267,7 @@
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn ult" id="back">
+                        <div class="bttn back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="send">

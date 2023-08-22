@@ -55,7 +55,7 @@ h1 {
 	margin-left: 89%;
 }
 
-.content .lista form .item #back {
+.content .lista form .item .back {
 	margin-right: 5%;
 	margin-left: 188%;
 }
@@ -212,7 +212,7 @@ h1 {
 	width: 100%;
 }
 
-.content .lista form .item .ult #back {
+.content .lista form .item .ult {
 	background-color: red;
 }
 
