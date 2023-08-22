@@ -197,6 +197,12 @@ h1 {
 	font-size: 10rem;
 }
 
+.content .lista .forms .derecha .promociones .imageP .box img{
+	max-height: 88px;
+	max-width: 148px;
+	border-radius: 12px;
+}
+
 .content .lista form .item .promociones .imageP .contentP .ip {
 	font-size: 1.8em;
 }
