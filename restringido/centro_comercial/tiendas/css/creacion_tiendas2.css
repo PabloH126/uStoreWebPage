@@ -120,8 +120,7 @@ h1 {
 
 .content .lista form .item .categorias .optionsC .contentC {
 	position: relative;
-
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	background: white;
 	border-radius: 15px;
 	box-shadow: 3px 4px 10px 2px #dfdfdf;
@@ -184,5 +183,9 @@ h1 {
 	.content .lista form .item #back {
 		margin-right: 5%;
 		margin-left: 249%;
+	}
+
+	.content .lista form .item .categorias .optionsC .contentC {
+		font-size: 1.3rem;
 	}
 }
