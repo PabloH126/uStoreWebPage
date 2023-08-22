@@ -271,7 +271,7 @@
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="send">
-                            <button>Guardar</button>
+                            <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
                 </div>
