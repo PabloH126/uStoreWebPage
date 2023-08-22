@@ -148,16 +148,16 @@ h1 {
 }
 
 /*Horario*/
-.content .lista form .item .horarioT table{
+.content .lista form .item .horarioT table {
 	font-size: 1.4rem;
 	margin: 5px 0 0;
 }
 
-.content .lista form .item .horarioT table tbody{
- font-size: 1.3rem;
+.content .lista form .item .horarioT table tbody {
+	font-size: 1.3rem;
 }
 
-.content .lista form .item .horarioT table td{
+.content .lista form .item .horarioT table td {
 	border-right: 1px black dashed;
 	padding: 1px 14px;
 }
@@ -166,49 +166,53 @@ h1 {
 	text-align: right;
 }
 
-.content .lista form .item .horarioT table td:last-child{
+.content .lista form .item .horarioT table td:last-child {
 	border-right: none;
 }
 
-.content .lista form .item .horarioT table tbody input[type="time"]{
+.content .lista form .item .horarioT table tbody input[type="time"] {
 	border: none;
 	outline: none;
 	font-family: arial;
 	font-size: 1.3rem;
 }
 
-.content .lista form .item .notas{
+.content .lista form .item .notas {
 	font-size: 1rem;
 	color: #6c6c6c;
 	margin: 4px 0 0;
 }
 
 /*promociones*/
-.content .lista form .item .promociones .imageP{
+.content .lista form .item .promociones .imageP {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 }
 
-.content .lista form .item .promociones .imageP .contentP{
+.content .lista form .item .promociones .imageP .contentP {
 	margin: 4% 3% 0;
 }
 
-.content .lista form .item .promociones .imageP .contentP .box{
+.content .lista form .item .promociones .imageP .contentP .box {
 	font-size: 10rem;
 }
 
-.content .lista form .item .promociones .imageP .contentP .ip{
+.content .lista form .item .promociones .imageP .contentP .ip {
 	font-size: 1.8em;
 }
 
-.content .lista form .item .promociones .imageP .contentP .ip  label{
+.content .lista form .item .promociones .imageP .contentP .ip label {
 	margin: 0 5px;
 }
 
-.content .lista form .item .promociones .imageP .contentP .ip  label::before{
+.content .lista form .item .promociones .imageP .contentP .ip label::before {
 	font-size: 30px;
 	padding: 7px 16px;
 	margin: 10px 39px;
+	width: 100%;
+}
+
+.content .lista form .item #send {
 	width: 100%;
 }
 
@@ -259,11 +263,11 @@ h1 {
 		font-size: 1.3rem;
 	}
 
-	.content .lista form .item .promociones .imageP .contentP .box{
+	.content .lista form .item .promociones .imageP .contentP .box {
 		font-size: 6rem;
 	}
 
-	.content .lista form .item .promociones .imageP .contentP .ip  label::before{
+	.content .lista form .item .promociones .imageP .contentP .ip label::before {
 		padding: 7px 12px;
 		margin: 10px;
 	}

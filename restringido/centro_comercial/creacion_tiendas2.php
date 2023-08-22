@@ -225,7 +225,7 @@ function selectHorarios($dia)
                         <div class="bttn" id="back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
-                        <div class="bttn" id="next">
+                        <div class="bttn" id="send">
                             <button>Guardar</button>
                         </div>
                     </div>
