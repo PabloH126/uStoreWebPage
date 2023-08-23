@@ -90,7 +90,7 @@
 
                 <!-- Logo de tienda-->
                 <div class="item">
-                    <p>2/6</p>
+                 <!--   <p>2/6</p> -->
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
@@ -113,7 +113,7 @@
 
                 <!-- Categorias de tienda-->
                 <div class="item">
-                    <p>3/6</p>
+                   <!-- <p>3/6</p> -->
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">

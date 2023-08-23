@@ -4,16 +4,20 @@ h1 {
 
 .content .lista {
 	display: inline-block;
-	padding: 1% 2% 2%;
+	/*padding: 1% 2% 2%;*/
 }
 
 .content .lista form {
 	font-size: 2em;
+
+	display: flex;
 }
 
 .content .lista form .item {
 	padding: 2%;
 	height: auto;
+
+	min-width: 93%;
 }
 
 .content .lista form .item p {
