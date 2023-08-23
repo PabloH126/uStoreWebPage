@@ -43,7 +43,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Inicio de sesion y registro</title>
+	<title>Inicio de sesión y registro</title>
 	
 	<link rel="shortcut icon" type="text/css" href="img/icono_uStore1.png">
 	<link rel="stylesheet" type="text/css" href="css_general/base.css">

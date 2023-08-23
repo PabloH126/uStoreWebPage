@@ -2,14 +2,19 @@ h1 {
 	margin: 20px 0 15px 0;
 }
 
+.content{
+	overflow: hidden;
+}
+
 .content .lista {
 	display: inline-block;
 	/*padding: 1% 2% 2%;*/
+	
 }
 
 .content .lista form {
 	font-size: 2em;
-	/*ooooooooooooooaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+	
 	display: flex;
 }
 
