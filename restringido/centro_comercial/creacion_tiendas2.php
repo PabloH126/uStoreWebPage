@@ -75,7 +75,7 @@ function CategoriasSelect($categorias)
     <div class="content">
         <h1>Creación de tienda</h1>
         <div class="lista">
-            <form action="envio_tienda.php" method="post">
+            <form action="envio_tienda.php" method="post" class="form-tiendas">
                 <!-- Nombre de tienda-->
                 <div class="item active">
                     <p>1/6</p>
@@ -233,6 +233,7 @@ function CategoriasSelect($categorias)
             </form>
         </div>
     </div>
+    <script src="js/slider_formularios.js"></script>
     <script src="js/mostrarImg.js"></script>
     <script src="js/creacion_tiendas.js"></script>
 </body>
