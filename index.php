@@ -77,14 +77,14 @@
 					<span class="material-symbols-outlined">mail</span>
 					<div id="box">
 						<label for="emailAL">Correo electrónico</label>
-						<input class="input" type="email" name="emailAL" placeholder="ejemplo@gmail.com" required>
+						<input class="input" type="email" id="emailAL" name="emailAL" placeholder="ejemplo@gmail.com" required>
 					</div>
 				</div>
 				<div>
 					<span class="material-symbols-outlined">lock</span>
 					<div id="box">
 						<label for="passAL">Contraseña</label>
-						<input class="input" type="password" name="passAL" placeholder="***********" required>
+						<input class="input" type="password" id="passAL" name="passAL" placeholder="***********" required>
 					</div>
 				</div>
 				<label class="checkbox">
