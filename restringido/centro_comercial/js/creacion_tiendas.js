@@ -105,16 +105,17 @@ function validacionPeriodos() {
 
     for (let periodo of periodos)
     {
-        let numero = document.querySelector(`select[name="numero${periodo}"]`).value;
+        let numero = document.querySelector(`input[name="numero${periodo}"]`).value;
         let tiempo = document.querySelector(`select[name="tiempo${periodo}"]`).value;
 
-        if(!numero)
+        if((!numero && tiempo !== "") || (numer && tiempo === ""))
         {
-            return true;
+            alert(`Por favor ingresa un periodo de apartado predeterminado válido para el ${periodo}`);
+            return false;
         }
     }
 
-    return false;
+    return true;
 }
 
 document.querySelector("form").addEventListener("submit", function (e) {
