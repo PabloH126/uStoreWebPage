@@ -108,7 +108,7 @@ function validacionPeriodos() {
         let numero = document.querySelector(`input[name="numero${periodo}"]`).value;
         let tiempo = document.querySelector(`select[name="tiempo${periodo}"]`).value;
 
-        if((!numero && tiempo !== "") || (numer && tiempo === ""))
+        if((!numero && tiempo !== "") || (numero && tiempo === ""))
         {
             alert(`Por favor ingresa un periodo de apartado predeterminado válido para el ${periodo}`);
             return false;
