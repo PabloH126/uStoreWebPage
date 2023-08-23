@@ -68,6 +68,7 @@ function validarHorariosCorrectos()
 
         let[horaApertura, minutoApertura] = apertura.split(":").map(val => parseInt(val, 10));
         let[horaCierre, minutoCierre] = apertura.split(":").map(val => parseInt(val, 10));
+
         let tiempoApertura = horaApertura * 60 + minutoApertura;
         let tiempoCierre = horaCierre * 60 + minutoCierre;
 
@@ -90,6 +91,24 @@ function periodosConfigurados() {
         let tiempo = document.querySelector(`select[name="tiempo${periodo}"]`).value;
 
         if(numero !== "" || tiempo !== "")
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+function validacionPeriodos() {
+    const periodos = ["Periodo1", "Periodo2", "Periodo3"];
+
+    for (let periodo of periodos)
+    {
+        let numero = document.querySelector(`select[name="numero${periodo}"]`).value;
+        let tiempo = document.querySelector(`select[name="tiempo${periodo}"]`).value;
+
+        if(!numero)
         {
             return true;
         }
