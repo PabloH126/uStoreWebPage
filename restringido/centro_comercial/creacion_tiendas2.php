@@ -84,7 +84,7 @@
     <div class="content">
         <h1>Creación de tienda</h1>
         <div class="lista">
-            <form>
+            <form action="envio_tienda.php" method="post">
                 <!-- Nombre de tienda-->
                 <div class="item">
                     <p>1/6</p>
@@ -262,5 +262,6 @@
         </div>
     </div>
     <script src="js/mostrarImg.js"></script>
+    <script src="js/creacion_tiendas.js"></script>
 </body>
 </html>

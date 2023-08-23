@@ -246,7 +246,7 @@
 
     function generateArrayHorario($dia, $dataTienda)
     {
-        if(isset($_POST['horas' . $dia . 'apertura']) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['horas' . $dia . 'cierre']) && isset($_POST['minutos' . $dia . 'cierre']))
+        if(isset($_POST[$dia]) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['horas' . $dia . 'cierre']) && isset($_POST['minutos' . $dia . 'cierre']))
         {
             return [
                 "dia" => $dia,
