@@ -57,7 +57,6 @@
             echo '</div>';
         }
     }
-
 ?>
 <!DOCTYPE html>
 <html>
