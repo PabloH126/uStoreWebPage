@@ -228,7 +228,7 @@
         $periodos = [];
         for($i = 1; $i <= 3; $i++)
         {
-            $numero = $_POST['numeroPeriodo' . $i];
+            $numero = str_pad($_POST['numeroPeriodo' . $i], 2, 0, STR_PAD_LEFT);
             $tiempo = $_POST['tiempoPeriodo' . $i];
             
             if($numero != "" && $tiempo != "")
@@ -246,12 +246,12 @@
 
     function generateArrayHorario($dia, $dataTienda)
     {
-        if(isset($_POST[$dia]) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['horas' . $dia . 'cierre']) && isset($_POST['minutos' . $dia . 'cierre']))
+        if(isset($_POST[$dia . '_apertura']) && isset($_POST[$dia . '_cierre']))
         {
             return [
                 "dia" => $dia,
-                "horarioApertura" => $_POST['horas' . $dia . 'apertura'] . ':' . $_POST['minutos' . $dia . 'apertura'],
-                "horarioCierre" =>  $_POST['horas' . $dia . 'cierre'] . ':' . $_POST['minutos' . $dia . 'cierre'],
+                "horarioApertura" => $_POST[$dia . '_apertura'],
+                "horarioCierre" =>  $_POST[$dia . '_cierre'],
                 "idTienda" => $dataTienda['idTienda']
             ];
         }

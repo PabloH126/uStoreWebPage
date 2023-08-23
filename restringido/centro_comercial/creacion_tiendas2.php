@@ -25,33 +25,24 @@
 
     //FUNCIONES DEL FORMULARIO
 
-    function selectHorarios($dia)
+    function HorariosSelect($dia)
     {
         echo '<tr>';
-        echo '<td>' . $dia . '</td>';
-        echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
-        echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
+        echo    '<td>' . $dia . '</td>';
+        echo    '<td><input type="time" name="' . $dia . '_apertura"></td>';
+        echo    '<td><input type="time" name="' . $dia . '_cierre"></td>';
         echo '</tr>';
     }
 
     function PeriodosSelect($periodo)
     {
-        echo '<div class="numeroA">';
-            echo '<select name="numero' . $periodo . '" id="numero' . $periodo . '">';
-                echo '<option value="">numero</option>';
-        for($i = 1; $i < 61; $i++)
-        {
-                echo '<option value="' . $i . '">' . $i . '</option>';
-        }
-            echo '</select>';
-        echo '</div>';
-        echo '<div class="tiempoA">';
-            echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
-                echo '<option value="">tiempo</option>';
-                echo '<option value="minutos">Minutos</option>';
-                echo '<option value="horas">Horas</option>';
-                echo '<option value="dias">Días</option>';
-            echo '</select>';
+        echo '<div class="apartadosT">';
+        echo    '<input type="number" name="numero' . $periodo . '">';
+        echo    '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
+        echo        '<option value="minutos">Minutos</option>';
+        echo        '<option value="horas">Horas</option>';
+        echo        '<option value="dias">Dias</option>';
+        echo    '</select>';
         echo '</div>';
     }
 
@@ -61,7 +52,7 @@
         {
             echo '<input type="checkbox" id="' . $categoria['categoria1'] . '">';
             echo '<div class="contentC">';
-                echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
+            echo    '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
             echo '</div>';
         }
     }
@@ -154,13 +145,13 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    selectHorarios('Lunes');
-                                    selectHorarios('Martes');
-                                    selectHorarios('Miércoles');
-                                    selectHorarios('Jueves');
-                                    selectHorarios('Viernes');
-                                    selectHorarios('Sábado');
-                                    selectHorarios('Domingo');
+                                    HorariosSelect('Lunes');
+                                    HorariosSelect('Martes');
+                                    HorariosSelect('Miércoles');
+                                    HorariosSelect('Jueves');
+                                    HorariosSelect('Viernes');
+                                    HorariosSelect('Sábado');
+                                    HorariosSelect('Domingo');
                                 ?>
                             </tbody>
                         </table>
@@ -223,30 +214,11 @@
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
-                            <div class="apartadosT">
-                                <input type="number">
-                                <select name="" id="">
-                                    <option value="">Minutos</option>
-                                    <option value="">Horas</option>
-                                    <option value="">Dias</option>
-                                </select>
-                            </div>
-                            <div class="apartadosT">
-                                <input type="number">
-                                <select name="" id="">
-                                    <option value="">Minutos</option>
-                                    <option value="">Horas</option>
-                                    <option value="">Dias</option>
-                                </select>
-                            </div>
-                            <div class="apartadosT">
-                                <input type="number">
-                                <select name="" id="">
-                                    <option value="">Minutos</option>
-                                    <option value="">Horas</option>
-                                    <option value="">Dias</option>
-                                </select>
-                            </div>
+                            <?php
+                                PeriodosSelect('Periodo1');
+                                PeriodosSelect('Periodo2');
+                                PeriodosSelect('Periodo3');
+                            ?>
                         </div>
                     </div>
                     <div class="bttns">
