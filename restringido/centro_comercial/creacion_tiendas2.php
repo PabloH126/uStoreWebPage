@@ -1,62 +1,62 @@
 <?php
-    session_start();
-    require '../security.php';
+session_start();
+require '../security.php';
 
-    //REQUEST DE LAS CATEGORIAS
+//REQUEST DE LAS CATEGORIAS
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $_COOKIE['SessionToken']
-    ));
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Authorization: Bearer ' . $_COOKIE['SessionToken']
+)
+);
 
-    $response = curl_exec($ch);
+$response = curl_exec($ch);
 
-    if ($response === false) {
-        echo 'Error: ' . curl_error($ch);
-    } else {
-        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    }
+if ($response === false) {
+    echo 'Error: ' . curl_error($ch);
+} else {
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+}
 
-    $categorias = json_decode($response, true);
+$categorias = json_decode($response, true);
 
-    curl_close($ch);
+curl_close($ch);
 
-    //FUNCIONES DEL FORMULARIO
+//FUNCIONES DEL FORMULARIO
 
-    function HorariosSelect($dia)
-    {
-        echo '<tr>';
-        echo    '<td>' . $dia . '</td>';
-        echo    '<td><input type="time" name="' . $dia . '_apertura"></td>';
-        echo    '<td><input type="time" name="' . $dia . '_cierre"></td>';
-        echo '</tr>';
-    }
+function HorariosSelect($dia)
+{
+    echo '<tr>';
+    echo '<td>' . $dia . '</td>';
+    echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
+    echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
+    echo '</tr>';
+}
 
-    function PeriodosSelect($periodo)
-    {
-        echo '<div class="apartadosT">';
-        echo    '<input type="number" name="numero' . $periodo . '">';
-        echo    '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
-        echo        '<option value="">Tiempo</option>';
-        echo        '<option value="minutos">Minutos</option>';
-        echo        '<option value="horas">Horas</option>';
-        echo        '<option value="dias">Dias</option>';
-        echo    '</select>';
+function PeriodosSelect($periodo)
+{
+    echo '<div class="apartadosT">';
+    echo '<input type="number" name="numero' . $periodo . '">';
+    echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
+    echo '<option value="">Tiempo</option>';
+    echo '<option value="minutos">Minutos</option>';
+    echo '<option value="horas">Horas</option>';
+    echo '<option value="dias">Dias</option>';
+    echo '</select>';
+    echo '</div>';
+}
+
+function CategoriasSelect($categorias)
+{
+    foreach ($categorias as $categoria) {
+        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '">';
+        echo '<div class="contentC">';
+        echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
     }
-
-    function CategoriasSelect($categorias)
-    {
-        foreach ($categorias as $categoria) 
-        {
-            echo '<input type="checkbox" id="' . $categoria['categoria1'] . '">';
-            echo '<div class="contentC">';
-            echo    '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
-            echo '</div>';
-        }
-    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -90,14 +90,14 @@
 
                 <!-- Logo de tienda-->
                 <div class="item">
-                 <!--   <p>2/6</p> -->
+                    <!--   <p>2/6</p> -->
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
                             <div class="box"> <img id="imagenSelec" alt=""></div>
                             <div class="ip">
-                                <label for="logoTienda" id="labelL" >
-                                <input type="file" id="logoTienda" name="logoTienda">
+                                <label for="logoTienda" id="labelL">
+                                    <input type="file" id="logoTienda" name="logoTienda">
                             </div>
                         </div>
                     </div>
@@ -109,11 +109,11 @@
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- Categorias de tienda-->
                 <div class="item">
-                   <!-- <p>3/6</p> -->
+                    <!-- <p>3/6</p> -->
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">
@@ -128,7 +128,7 @@
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- Horario de tienda-->
                 <!-- <div class="item">
@@ -145,13 +145,13 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    HorariosSelect('Lunes');
-                                    HorariosSelect('Martes');
-                                    HorariosSelect('Miércoles');
-                                    HorariosSelect('Jueves');
-                                    HorariosSelect('Viernes');
-                                    HorariosSelect('Sábado');
-                                    HorariosSelect('Domingo');
+                                HorariosSelect('Lunes');
+                                HorariosSelect('Martes');
+                                HorariosSelect('Miércoles');
+                                HorariosSelect('Jueves');
+                                HorariosSelect('Viernes');
+                                HorariosSelect('Sábado');
+                                HorariosSelect('Domingo');
                                 ?>
                             </tbody>
                         </table>
@@ -215,9 +215,9 @@
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
                             <?php
-                                PeriodosSelect('Periodo1');
-                                PeriodosSelect('Periodo2');
-                                PeriodosSelect('Periodo3');
+                            PeriodosSelect('Periodo1');
+                            PeriodosSelect('Periodo2');
+                            PeriodosSelect('Periodo3');
                             ?>
                         </div>
                     </div>
@@ -236,4 +236,5 @@
     <script src="js/mostrarImg.js"></script>
     <script src="js/creacion_tiendas.js"></script>
 </body>
+
 </html>

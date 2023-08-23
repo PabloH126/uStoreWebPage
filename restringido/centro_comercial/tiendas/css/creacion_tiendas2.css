@@ -2,20 +2,21 @@ h1 {
 	margin: 20px 0 15px 0;
 }
 
-.content{
+.content {
 	overflow: hidden;
 }
 
 .content .lista {
 	display: inline-block;
 	/*padding: 1% 2% 2%;*/
-	
+
 }
 
 .content .lista form {
 	font-size: 2em;
-	
+
 	display: flex;
+	align-items: flex-start;
 }
 
 .content .lista form .item {
@@ -24,10 +25,15 @@ h1 {
 
 	min-width: 93%;
 	opacity: 0;
+	transition: all .2s linear;
 }
 
-.content .lista form .item.active{
+.content .lista form .item.active {
 	opacity: 1;
+}
+
+.content .lista form .item.to-left {
+	margin-left: -100%;
 }
 
 .content .lista form .item p {
