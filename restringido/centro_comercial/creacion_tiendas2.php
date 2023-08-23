@@ -83,7 +83,7 @@ function CategoriasSelect($categorias)
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" required>
                     </div>
-                    <div class="bttn" id="one">
+                    <div class="bttn bttn-next" id="one">
                         <button><i class='bx bx-right-arrow-alt'></i></button>
                     </div>
                 </div>
@@ -102,10 +102,10 @@ function CategoriasSelect($categorias)
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn back">
+                        <div class="bttn bttn-back back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
-                        <div class="bttn" id="next">
+                        <div class="bttn bttn-next" id="next">
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
@@ -121,10 +121,10 @@ function CategoriasSelect($categorias)
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn back">
+                        <div class="bttn bttn-back back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
-                        <div class="bttn" id="next">
+                        <div class="bttn bttn-next" id="next">
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
@@ -160,10 +160,10 @@ function CategoriasSelect($categorias)
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn back">
+                        <div class="bttn bttn-back back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
-                        <div class="bttn" id="next">
+                        <div class="bttn bttn-next" id="next">
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
@@ -199,10 +199,10 @@ function CategoriasSelect($categorias)
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn back">
+                        <div class="bttn bttn-back back">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
-                        <div class="bttn" id="next">
+                        <div class="bttn bttn-next" id="next">
                             <button><i class='bx bx-right-arrow-alt'></i></button>
                         </div>
                     </div>
@@ -222,7 +222,7 @@ function CategoriasSelect($categorias)
                         </div>
                     </div>
                     <div class="bttns">
-                        <div class="bttn back" id="ult">
+                        <div class="bttn bttn-back back" id="ult">
                             <button><i class='bx bx-left-arrow-alt'></i></button>
                         </div>
                         <div class="bttn" id="send">

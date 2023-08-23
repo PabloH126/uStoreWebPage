@@ -3,11 +3,11 @@ let progressOptions = document.querySelectorAll('.progressbar__option');
 
 form.addEventListener('click', function(e) {
     let element = e.target; //detectar donde se hace click
-    alert(element);
-    /*
-    let isButtonNext = element.classList.contains('step__button--next');
-    let isButtonBack = element.classList.contains('step__button--back');
+    let isButtonNext = element.classList.contains('bttn-next');
+    let isButtonBack = element.classList.contains('bttn-back');
     if (isButtonNext || isButtonBack) {
+        alert("es un boton");
+        /*
         let currentStep = document.getElementById('step-' + element.dataset.step);
         let jumpStep = document.getElementById('step-' + element.dataset.to_step);
         currentStep.addEventListener('animationend', function callback() {
@@ -23,6 +23,6 @@ form.addEventListener('click', function(e) {
             currentStep.removeEventListener('animationend', callback);
         });
         currentStep.classList.add('inactive');
-        jumpStep.classList.remove('inactive');
-    }*/
+        jumpStep.classList.remove('inactive');*/
+    }
 });
