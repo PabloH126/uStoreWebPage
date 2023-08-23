@@ -48,12 +48,26 @@ function validarHorariosCorrectos()
 
     for(let dia of dias)
     {
-        let horaApertura = parseInt(document.querySelector(`select[name="horas${dia}apertura"]`).value, 10);
-        let minutoApertura = parseInt(document.querySelector(`select[name="minutos${dia}apertura"]`).value, 10);
-        
-        let horaCierre = parseInt(document.querySelector(`select[name="horas${dia}cierre"]`).value, 10);
-        let minutoCierre = parseInt(document.querySelector(`select[name="minutos${dia}cierre"]`).value, 10);
+        let apertura  = document.querySelector(`input[name="${dia}_apertura"]`).value;
+        let cierre  = document.querySelector(`input[name="${dia}_cierre"]`).value;
 
+        if((apertura && !cierre))
+        {
+            alert(`Por favor ingresa la hora de cierre del ${dia}`)
+            return false;
+        }
+        else if((!apertura && cierre))
+        {
+            alert(`Por favor ingresa la hora de apertura de ${dia}`)
+            return false;
+        }
+        else if(!apertura && !cierre)
+        {
+            continue;
+        }
+
+        let[horaApertura, minutoApertura] = apertura.split(":").map(val => parseInt(val, 10));
+        let[horaCierre, minutoCierre] = apertura.split(":").map(val => parseInt(val, 10));
         let tiempoApertura = horaApertura * 60 + minutoApertura;
         let tiempoCierre = horaCierre * 60 + minutoCierre;
 
