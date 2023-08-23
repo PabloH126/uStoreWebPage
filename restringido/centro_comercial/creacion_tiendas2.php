@@ -77,7 +77,7 @@
         <div class="lista">
             <form action="envio_tienda.php" method="post">
                 <!-- Nombre de tienda-->
-                <div class="item">
+                <div class="item active">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>

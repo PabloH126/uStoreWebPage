@@ -23,6 +23,7 @@ h1 {
 	height: auto;
 
 	min-width: 93%;
+	opacity: 0;
 }
 
 .content .lista form .item p {
