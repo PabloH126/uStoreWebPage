@@ -96,7 +96,7 @@ function periodosConfigurados() {
 
     for (let periodo of periodos)
     {
-        let numero = document.querySelector(`select[name="numero${periodo}"]`).value;
+        let numero = document.querySelector(`input[name="numero${periodo}"]`).value;
         let tiempo = document.querySelector(`select[name="tiempo${periodo}"]`).value;
 
         if(numero !== "" || tiempo !== "")
