@@ -4,6 +4,7 @@ h1 {
 
 .content {
 	overflow: hidden;
+	overflow-x: hidden;
 }
 
 .content .lista {
