@@ -10,19 +10,13 @@ form.addEventListener('click', function(e) {
         //si fue seleccionado el bttn-next o el bttn-back
         let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
         let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
-        /* currentStep.addEventListener('animationend', function callback() {*/
-            currentStep.classList.remove('active');
-            jumpStep.classList.add('active');
-            if (isButtonNext) {
-                currentStep.classList.add('to-left');
-        /*        progressOptions[element.dataset.to_step - 1].classList.add('active');
-       */   } else {
-                jumpStep.classList.remove('to-left');
-        /*      progressOptions[element.dataset.step - 1].classList.remove('active');
-       */   }
-        /*    currentStep.removeEventListener('animationend', callback);
-        /*});
-        currentStep.classList.add('inactive');
-        /*jumpStep.classList.remove('inactive');*/
+        currentStep.classList.remove('active');
+        jumpStep.classList.add('active');
+        if (isButtonNext) {
+            currentStep.classList.add('to-left');
+            progressOptions[element.dataset.to_step - 1].classList.add('active');
+        } else {
+            jumpStep.classList.remove('to-left');
+        }
     }
 });
