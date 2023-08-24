@@ -6,7 +6,6 @@ form.addEventListener('click', function(e) {
     let isButtonNext = element.classList.contains('bttn-next');
     let isButtonBack = element.classList.contains('bttn-back');
     if (isButtonNext || isButtonBack) {
-        alert("es un boton");
         /*
         let currentStep = document.getElementById('step-' + element.dataset.step);
         let jumpStep = document.getElementById('step-' + element.dataset.to_step);
