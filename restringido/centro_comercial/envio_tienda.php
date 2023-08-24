@@ -249,6 +249,8 @@
     {
         if((isset($_POST[$dia . '_apertura']) && isset($_POST[$dia . '_cierre'])) && ($_POST[$dia . '_apertura'] != "00:00" && $_POST[$dia . '_cierre'] != "00:00"))
         {
+            echo $dia . '_apertura';
+            echo $dia . '_cierre';
             echo $_POST[$dia . '_apertura'] . '<br>';
             echo $_POST[$dia . '_cierre'] . '<br>';
             echo $dataTienda['idTienda']. '<br>';
