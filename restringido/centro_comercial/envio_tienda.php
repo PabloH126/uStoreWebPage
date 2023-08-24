@@ -247,22 +247,21 @@
 
     function generateArrayHorario($dia, $dataTienda)
     {
-        if((isset($_POST[$dia . '_apertura']) && $_POST[$dia . '_apertura'] != "" && isset($_POST[$dia . '_cierre']) && $_POST[$dia . '_cierre'] != ""))
+        if(((isset($_POST[$dia . '_apertura']) && $_POST[$dia . '_apertura'] != "") 
+            && (isset($_POST[$dia . '_cierre']) && $_POST[$dia . '_cierre'] != "")
+            && ($_POST[$dia . '_apertura'] != "00:00" || $_POST[$dia . '_cierre'] != "00:00")))
         {
-            if($_POST[$dia . '_apertura'] != "00:00" || $_POST[$dia . '_cierre'] != "00:00")
-            {
-                echo $dia . '_apertura <br>';
-                echo $dia . '_cierre <br>';
-                echo $_POST[$dia . '_apertura'] . '<br>';
-                echo $_POST[$dia . '_cierre'] . '<br>';
-                echo $dataTienda['idTienda']. '<br>';
-                return [
-                    "dia" => $dia,
-                    "horarioApertura" => $_POST[$dia . '_apertura'],
-                    "horarioCierre" =>  $_POST[$dia . '_cierre'],
-                    "idTienda" => $dataTienda['idTienda']
-                ];
-            }
+            echo $dia . '_apertura <br>';
+            echo $dia . '_cierre <br>';
+            echo $_POST[$dia . '_apertura'] . '<br>';
+            echo $_POST[$dia . '_cierre'] . '<br>';
+            echo $dataTienda['idTienda']. '<br>';
+            return [
+                "dia" => $dia,
+                "horarioApertura" => $_POST[$dia . '_apertura'],
+                "horarioCierre" =>  $_POST[$dia . '_cierre'],
+                "idTienda" => $dataTienda['idTienda']
+            ];
         }
         else
         {
