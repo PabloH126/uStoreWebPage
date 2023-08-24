@@ -1,209 +1,241 @@
-<?php 
-	session_start();
-	require '../security.php';
-	
-	function SelectHoras($dia, $periodo) {
-		echo '<select name="horas' . $dia . $periodo . '" id="horas">';
-		for ($i = 0; $i < 25; $i++) {
-			echo '<option value="' . str_pad($i, 2, '0', STR_PAD_LEFT) . '">' . str_pad($i, 2, '0', STR_PAD_LEFT) . '</option>';
-		}
-		echo '</select>';
-	}
-	
-	function SelectMinutos($dia, $periodo) {
-		echo '<select name="minutos' . $dia . $periodo . '" id="minutos">';
-		for ($i = 0; $i < 60; $i++) {
-			echo '<option value="' . str_pad($i, 2, '0', STR_PAD_LEFT) . '">' . str_pad($i, 2, '0', STR_PAD_LEFT) . '</option>';
-		}
-		echo '</select>';
-	}
+<?php
+session_start();
+require '../security.php';
 
-	function diasSelect($dia) {
-		echo '<div class="dia">';
-			echo '<label>' . $dia . '</label>';
+//REQUEST DE LAS CATEGORIAS
 
-			echo '<div>';
-				SelectHoras($dia, 'apertura');
-				SelectMinutos($dia, 'apertura');
-			echo '</div>';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Authorization: Bearer ' . $_COOKIE['SessionToken']
+)
+);
 
-			echo '<label> - </label>';
-			
-			echo '<div>';
-				SelectHoras($dia, 'cierre');
-				SelectMinutos($dia, 'cierre');
-			echo '</div>';
-		echo '</div>';
-	}
-	
-	function PeriodosSelect($periodo)
-	{
-		echo '<div class="numeroA">';
-			echo '<select name="numero' . $periodo . '" id="numero' . $periodo . '">';
-				echo '<option value="">numero</option>';
-		for($i = 1; $i < 61; $i++)
-		{
-				echo '<option value="' . $i . '">' . $i . '</option>';
-		}
-			echo '</select>';
-		echo '</div>';
-		echo '<div class="tiempoA">';
-			echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
-				echo '<option value="">tiempo</option>';
-				echo '<option value="minutos">Minutos</option>';
-				echo '<option value="horas">Horas</option>';
-				echo '<option value="dias">Días</option>';
-			echo '</select>';
-		echo '</div>';
-	}
+$response = curl_exec($ch);
 
+if ($response === false) {
+    echo 'Error: ' . curl_error($ch);
+} else {
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+}
 
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	));
-	
-	$response = curl_exec($ch);
-	
-	if ($response === false) {
-		echo 'Error: ' . curl_error($ch);
-	} else {
-		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	}
-	
-	$categorias = json_decode($response, true);
+$categorias = json_decode($response, true);
 
-	curl_close($ch);
-	
+curl_close($ch);
+
+//FUNCIONES DEL FORMULARIO
+
+function HorariosSelect($dia)
+{
+    echo '<tr>';
+    echo '<td>' . $dia . '</td>';
+    echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
+    echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
+    echo '</tr>';
+}
+
+function PeriodosSelect($periodo)
+{
+    echo '<div class="apartadosT">';
+    echo '<input type="number" name="numero' . $periodo . '">';
+    echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
+    echo '<option value="">Tiempo</option>';
+    echo '<option value="minutos">Minutos</option>';
+    echo '<option value="horas">Horas</option>';
+    echo '<option value="dias">Dias</option>';
+    echo '</select>';
+    echo '</div>';
+}
+
+function CategoriasSelect($categorias)
+{
+    foreach ($categorias as $categoria) {
+        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '">';
+        echo '<div class="contentC">';
+        echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
+        echo '</div>';
+    }
+}
 ?>
-
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Crear tienda</title>
-	<?php require("templates/template.styles.php")?>
-	<?php require("tiendas/templates/template.secc_tiendas.php")?>
-	<link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas.css">
+    <meta charset="utf-8">
+    <title>Crear tienda</title>
+    <?php require("templates/template.styles.php") ?>
+    <?php require("tiendas/templates/template.secc_tiendas.php") ?>
+    <link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-	<?php require("templates/template.menu.php")?>
-	<div class="content">
-		<h1>Creación de tienda</h1>
-		<div class="lista">
-			<form action="envio_tienda.php" method="post" enctype="multipart/form-data">
-				<div class="forms">
-					<div class="izquierda">
-						<div id="nombre">
-							<label class="label" for="nombreTienda"><strong>Nombre de tienda</strong></label>
-							<input type="text" name="nombreTienda" required>
-						</div>
-						<div class="logoYApartados">
-							<div class="logoT">
-								<label class="label" for="logoTienda"><strong>Logo de la tienda</strong></label>
-								<div class="contentL">
-									<div class="box"> <img src="" id="imagenSelec" alt=""></div>
-									<div class="ip">
-										<label for="logoTienda" >
-										<input type="file" id="logoTienda" name="logoTienda">
-									</div>
-								</div>
-							</div>
-							<div class="apartados">
-								<label class="label"><strong>Periodos de apartado</strong></label>
-								<div class="contentA">
-									<div>
-										<?php PeriodosSelect('Periodo1'); ?>
-									</div>
-									<div>
-										<?php PeriodosSelect('Periodo2'); ?>
-									</div>
-									<div>
-										<?php PeriodosSelect('Periodo3'); ?>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="categorias">
-							<label class="label"><strong>Categorías de la tienda</strong required></label>
-							
-							<div class="contentC">
-								<div class="scrollable-box" id="checkbox-list">
-									<?php 
-										foreach ($categorias as $categoria) 
-										{
-									?>
-									<label class="categoria" for="categoria<?php echo $categoria['idCategoria'] ?>T">	
-										<input type="checkbox" name="categorias[]" value="<?php echo $categoria['idCategoria'] ?>">
-										<?php echo $categoria['categoria1'] ?>
-									</label>
-									<?php
-										}
-									?>
-								</div>
-							</div>
-						</div>	
-						<div class="notas">
-							<span>* Imágenes en formato de imagen JPG, PNG o JPEG</span>
-						</div>
-					</div>
-					<div class="derecha">
-						<div class="promociones">
-							<label class="label"><strong>Imágenes promocionales</strong></label>
-							<div class="imageP">
-								<div>
-									<div class="box"><img src="" id="imagenSelec1" alt=""></div>
-									<div class="ip">
-										<label for="fileInput1" >
-										<input type="file" id="fileInput1" name="imagen1">
-									</div>
-								</div>
-								<div>
-									<div class="box"><img src="" id="imagenSelec2" alt=""></div>
-									<div class="ip">
-										<label for="fileInput2" >
-										<input type="file" id="fileInput2" name="imagen2">
-									</div>
-								</div>
-								<div>
-									<div class="box"><img src="" id="imagenSelec3" alt=""></div>
-									<div class="ip">
-										<label for="fileInput3" >
-										<input type="file" id="fileInput3" name="imagen3">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="horario">
-							<label class="label"><strong>Horario</strong></label>
-							<div class="dias">
-								<?php 
-									diasSelect("Lunes");
-									diasSelect("Martes");
-									diasSelect("Miércoles");
-									diasSelect("Jueves");
-									diasSelect("Viernes");
-									diasSelect("Sábado");
-									diasSelect("Domingo");
-								?>
-							</div>
-						</div>
-						<div class="notas">
-							<span>* Si es día no laboral, dejar el día en 00:00.</span>
-							
-						</div>
-					</div>
-				</div>
-				<div class="boton">
-					<input type="submit" name="" value="Guardar">
-				</div>
-			</form>
-		</div>
-	</div>
-	<script src="js/mostrarImg.js"></script>
-	<script src="js/creacion_tiendas.js"></script>
+    <?php require("templates/template.menu.php") ?>
+    <div class="content">
+        <h1>Creación de tienda</h1>
+        <div class="lista">
+            <form action="envio_tienda.php" method="post" class="form-tiendas">
+                <!-- Nombre de tienda-->
+                <div class="item active" id="item-1">
+                    <p>1/6</p>
+                    <div class="name">
+                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
+                        <input type="text" id="nombreTienda" name="nombreTienda">
+                    </div>
+                    <div class="bttn" id="one">
+                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    </div>
+                </div>
+
+                <!-- Logo de tienda-->
+                <div class="item" id="item-2">
+                    <p>2/6</p>
+                    <div class="logoT">
+                        <label><strong>Logo de la tienda</strong></label>
+                        <div class="contentL">
+                            <div class="box"> <img id="imagenSelec" alt=""></div>
+                            <div class="ip">
+                                <label for="logoTienda" id="labelL">
+                                <input type="file" id="logoTienda" name="logoTienda">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bttns">
+                        <div class="bttn back">
+                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categorias de tienda-->
+                <div class="item" id="item-3">
+                    <p>3/6</p>
+                    <div class="categorias">
+                        <label><strong>Categorías de la tienda</strong></label>
+                        <div class="optionsC">
+                            <?php CategoriasSelect($categorias); ?>
+                        </div>
+                    </div>
+                    <div class="bttns">
+                        <div class="bttn back">
+                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horario de tienda-->
+                <div class="item" id="item-4">
+                    <p>4/6</p>
+                    <div class="horarioT">
+                        <label><strong>Horario de la tienda</strong></label>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Día</th>
+                                    <th>Hora de apertura</th>
+                                    <th>Hora de cierre</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                HorariosSelect('Lunes');
+                                HorariosSelect('Martes');
+                                HorariosSelect('Miércoles');
+                                HorariosSelect('Jueves');
+                                HorariosSelect('Viernes');
+                                HorariosSelect('Sábado');
+                                HorariosSelect('Domingo');
+                                ?>
+                            </tbody>
+                        </table>
+                        <div class="notas">
+                            <span>* Si es día no laboral, dejar el día en 00:00 o en --:--.</span>
+                        </div>
+                    </div>
+                    <div class="bttns">
+                        <div class="bttn back">
+                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promociones de tienda -->
+                <div class="item" id="item-5">
+                    <p>5/6</p>
+                    <div class="promociones">
+                        <label><strong>Promociones de la tienda</strong></label>
+                        <div class="imageP">
+                            <div class="contentP">
+                                <div class="box"><img src="" id="imagenSelec1" alt=""></div>
+                                <div class="ip">
+                                    <label for="fileInput1" >
+                                    <input type="file" id="fileInput1" name="imagen1">
+                                </div>
+                            </div>
+                            <div class="contentP">
+                                <div class="box"><img src="" id="imagenSelec2" alt=""></div>
+                                <div class="ip">
+                                    <label for="fileInput2" >
+                                    <input type="file" id="fileInput2" name="imagen2">
+                                </div>
+                            </div>
+                            <div class="contentP">
+                                <div class="box"><img src="" id="imagenSelec3" alt=""></div>
+                                <div class="ip">
+                                    <label for="fileInput3" >
+                                    <input type="file" id="fileInput3" name="imagen3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bttns">
+                        <div class="bttn back">
+                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Periodos de apartado de la tienda -->
+                <div class="item" id="item-6">
+                    <p>6/6</p>
+                    <div class="apartados">
+                        <label><strong>Periodos de apartado</strong></label>
+                        <div class="contentA">
+                            <?php
+                            PeriodosSelect('Periodo1');
+                            PeriodosSelect('Periodo2');
+                            PeriodosSelect('Periodo3');
+                            ?>
+                        </div>
+                    </div>
+                    <div class="bttns">
+                        <div class="bttn back" id="ult">
+                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
+                        </div>
+                        <div class="bttn" id="send">
+                            <button type="submit">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/slider_formularios.js"></script>
+    <script src="js/mostrarImg.js"></script>
+    <script src="js/creacion_tiendas.js"></script>
 </body>
+
 </html>
