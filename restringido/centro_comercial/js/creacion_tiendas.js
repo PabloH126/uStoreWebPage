@@ -181,4 +181,10 @@ document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
         return;
     }
+
+    if(!validacionPeriodos())
+    {
+        e.preventDefault();
+        return;
+    }
 });
