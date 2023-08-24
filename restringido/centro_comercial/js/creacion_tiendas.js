@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var checkboxes = document.querySelectorAll('#checkbox-list input[type="checkbox"]');
+    var checkboxes = document.querySelectorAll('#optionsC input[type="checkbox"]');
     var maxSelect = 8;
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
-            var counter = document.querySelectorAll('#checkbox-list input[type="checkbox"]:checked').length;
+            var counter = document.querySelectorAll('#optionsC input[type="checkbox"]:checked').length;
 
             if (counter >= maxSelect) {
                 checkboxes.forEach(function (c) {
@@ -23,8 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function nombreValidacion() {
-    var nombre = document.querySelector(`input[name=""]`)
+    var nombre = document.querySelector(`input[id="nombreTienda"]`);
+
+    if(!nombre || !nombre.value.trim())
+    {
+        return false;
+    }
+
+    return true;
 }
+
+
 function horariosConfigurados() {
     const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 
@@ -165,6 +174,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     if(!validarHorariosCorrectos())
     {
+        e.preventDefault();
+        return;
+    }
+
+    if(!nombreValidacion())
+    {
+        alert("Por favor ingresa un nombre para la tienda");
         e.preventDefault();
         return;
     }
