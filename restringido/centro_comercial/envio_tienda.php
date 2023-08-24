@@ -247,10 +247,8 @@
 
     function generateArrayHorario($dia, $dataTienda)
     {
-        if((isset($_POST[$dia . '_apertura']) && isset($_POST[$dia . '_cierre'])))
+        if((isset($_POST[$dia . '_apertura']) && $_POST[$dia . '_apertura'] != "" && isset($_POST[$dia . '_cierre']) && $_POST[$dia . '_cierre'] != ""))
         {
-
-            
             if($_POST[$dia . '_apertura'] != "00:00" || $_POST[$dia . '_cierre'] != "00:00")
             {
                 echo $dia . '_apertura <br>';
