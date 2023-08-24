@@ -297,6 +297,11 @@ h1 {
 		font-size: 1em;
 	}
 
+	.content .lista form .item{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
 	.content .lista form .item p {
 		transform: translate(-46px, -43px);
 	}
