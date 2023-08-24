@@ -10,7 +10,7 @@ form.addEventListener('click', function(e) {
         //si fue seleccionado el bttn-next o el bttn-back
         let currentStep = document.getElementById('item-' + element.dataset.item);
         let jumpStep = document.getElementById('item-' + element.dataset.to_item);
-        alert(currentStep, jumpStep);        /*
+        console.log(currentStep, jumpStep);       /*
         currentStep.addEventListener('animationend', function callback() {
             currentStep.classList.remove('active');
             jumpStep.classList.add('active');
