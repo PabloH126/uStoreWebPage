@@ -132,7 +132,7 @@ function CategoriasSelect($categorias)
 
                 <!-- Horario de tienda-->
                 <div class="item" id="item-4">
-                    <!--<p>4/6</p>-->
+                    <p>4/6</p>
                     <div class="horarioT">
                         <label><strong>Horario de la tienda</strong></label>
                         <table>
@@ -171,7 +171,7 @@ function CategoriasSelect($categorias)
 
                 <!-- Promociones de tienda -->
                 <div class="item" id="item-5">
-                    <!--<p>5/6</p>-->
+                    <p>5/6</p>
                     <div class="promociones">
                         <label><strong>Promociones de la tienda</strong></label>
                         <div class="imageP">
@@ -210,7 +210,7 @@ function CategoriasSelect($categorias)
 
                 <!-- Periodos de apartado de la tienda -->
                 <div class="item" id="item-6">
-                    <!--<p>6/6</p>-->
+                    <p>6/6</p>
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
