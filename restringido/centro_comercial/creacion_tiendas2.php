@@ -84,7 +84,7 @@ function CategoriasSelect($categorias)
                         <input type="text" id="nombreTienda" required>
                     </div>
                     <div class="bttn" id="one">
-                        <button type="button" class="bttn-next"><i class='bx bx-right-arrow-alt'></i></button>
+                        <button type="button" class="bttn-next"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
                     </div>
                 </div>
 
