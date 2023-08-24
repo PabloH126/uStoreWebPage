@@ -81,8 +81,6 @@ function validarHorariosCorrectos()
         let tiempoApertura = horaApertura * 60 + minutoApertura;
         let tiempoCierre = horaCierre * 60 + minutoCierre;
 
-        alert (tiempoApertura);
-        alert (tiempoCierre);
         if(tiempoApertura > tiempoCierre)
         {
             alert(`Por favor ingresa un horario válido para el día ${dia}.`);
@@ -148,11 +146,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
         return;
     }
-    else if (!img1 && !img2 && !img3) {
-        alert("Se debe subir al menos una imagen paraa el banner de la tienda");
-        e.preventDefault();
-        return;
-    }
 
     let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
     let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
@@ -170,15 +163,21 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    if(!periodosConfigurados())
+    if(!validarHorariosCorrectos())
     {
-        alert("Se debe configurar al menos un periodo de apartado predeterminado");
         e.preventDefault();
         return;
     }
 
-    if(!validarHorariosCorrectos())
+    if (!img1 && !img2 && !img3) {
+        alert("Se debe subir al menos una imagen paraa el banner de la tienda");
+        e.preventDefault();
+        return;
+    }
+
+    if(!periodosConfigurados())
     {
+        alert("Se debe configurar al menos un periodo de apartado predeterminado");
         e.preventDefault();
         return;
     }
