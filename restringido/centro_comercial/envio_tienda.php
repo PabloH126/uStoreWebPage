@@ -251,10 +251,20 @@
         {
             echo $_POST[$dia . '_apertura'] . '<br>';
             echo $_POST[$dia . '_cierre'] . '<br>';
+            echo $dataTienda['idTienda']. '<br>';
             return [
                 "dia" => $dia,
                 "horarioApertura" => $_POST[$dia . '_apertura'],
                 "horarioCierre" =>  $_POST[$dia . '_cierre'],
+                "idTienda" => $dataTienda['idTienda']
+            ];
+        }
+        else
+        {
+            return [
+                "dia" => $dia,
+                "horarioApertura" => "00:00",
+                "horarioCierre" =>  "00:00",
                 "idTienda" => $dataTienda['idTienda']
             ];
         }
