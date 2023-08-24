@@ -226,7 +226,7 @@ function CategoriasSelect($categorias)
                             <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
                         </div>
                         <div class="bttn" id="send">
-                            <button>Guardar</button>
+                            <button type="submit">Guardar</button>
                         </div>
                     </div>
                 </div>
