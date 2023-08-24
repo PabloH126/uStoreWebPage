@@ -103,10 +103,10 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
                         </div>
                     </div>
                 </div>
@@ -122,10 +122,10 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
                         </div>
                     </div>
                 </div>
@@ -161,10 +161,10 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
                         </div>
                     </div>
                 </div>
@@ -200,10 +200,10 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
                         </div>
                     </div>
                 </div> 
@@ -223,7 +223,7 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back" id="ult">
-                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
                         </div>
                         <div class="bttn" id="send">
                             <button>Guardar</button>
