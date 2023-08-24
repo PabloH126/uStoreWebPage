@@ -60,12 +60,12 @@ function validarHorariosCorrectos()
         let apertura  = document.querySelector(`input[name="${dia}_apertura"]`).value;
         let cierre  = document.querySelector(`input[name="${dia}_cierre"]`).value;
 
-        if((apertura && !cierre))
+        if(apertura && !cierre)
         {
             alert(`Por favor ingresa la hora de cierre del ${dia}`)
             return false;
         }
-        else if((!apertura && cierre))
+        else if(!apertura && cierre)
         {
             alert(`Por favor ingresa la hora de apertura de ${dia}`)
             return false;
