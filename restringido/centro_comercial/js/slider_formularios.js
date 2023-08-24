@@ -1,5 +1,4 @@
 let form = document.querySelector('.form-tiendas');
-/*let progressOptions = document.querySelectorAll('.progressbar__option');*/
 
 form.addEventListener('click', function(e) {
     let element = e.target; //detectar donde se hace click
