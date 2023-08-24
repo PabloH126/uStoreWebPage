@@ -77,19 +77,19 @@ function CategoriasSelect($categorias)
         <div class="lista">
             <form action="envio_tienda.php" method="post" class="form-tiendas">
                 <!-- Nombre de tienda-->
-                <div class="item active">
+                <div class="item active" id="item-1">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" required>
                     </div>
                     <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to-item="2"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
                     </div>
                 </div>
 
                 <!-- Logo de tienda-->
-                <div class="item">
+                <div class="item" id="item-2">
                     <!--   <p>2/6</p> -->
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
@@ -103,16 +103,16 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="2" data-to-item="1"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="2" data-to-item="3"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Categorias de tienda-->
-                <div class="item">
+                <div class="item" id="item-3">
                     <!-- <p>3/6</p> -->
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
@@ -122,16 +122,16 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="3" data-to-item="2"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="3" data-to-item="4"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Horario de tienda-->
-                <div class="item">
+                <div class="item" id="item-4">
                     <p>4/6</p>
                     <div class="horarioT">
                         <label><strong>Horario de la tienda</strong></label>
@@ -161,16 +161,16 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="4" data-to-item="3"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="4" data-to-item="5"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Promociones de tienda -->
-                <div class="item">
+                <div class="item" id="item-5">
                     <p>5/6</p>
                     <div class="promociones">
                         <label><strong>Promociones de la tienda</strong></label>
@@ -200,16 +200,16 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="5" data-to-item="4"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="5" data-to-item="5"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
+                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next'></i></button>
                         </div>
                     </div>
                 </div> 
 
                 <!-- Periodos de apartado de la tienda -->
-                <div class="item">
+                <div class="item" id="item-6">
                     <p>6/6</p>
                     <div class="apartados">
                         <label><strong>Periodos de apartado</strong></label>
@@ -223,7 +223,7 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back" id="ult">
-                            <button type="button" class="bttn-back" data-item="6" data-to-item="5"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
+                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back'></i></button>
                         </div>
                         <div class="bttn" id="send">
                             <button>Guardar</button>
