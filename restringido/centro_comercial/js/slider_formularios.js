@@ -2,7 +2,6 @@ let form = document.querySelector('.form-tiendas');
 let progressOptions = document.querySelectorAll('.progressbar__option');
 
 form.addEventListener('click', function(e) {
-    alert("oa");
     let element = e.target; //detectar donde se hace click
     let isButtonNext = element.classList.contains('bttn-next');
     let isButtonBack = element.classList.contains('bttn-back');
