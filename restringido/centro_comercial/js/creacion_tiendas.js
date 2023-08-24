@@ -76,7 +76,7 @@ function validarHorariosCorrectos()
         }
 
         let[horaApertura, minutoApertura] = apertura.split(":").map(val => parseInt(val, 10));
-        let[horaCierre, minutoCierre] = apertura.split(":").map(val => parseInt(val, 10));
+        let[horaCierre, minutoCierre] = cierre.split(":").map(val => parseInt(val, 10));
 
         let tiempoApertura = horaApertura * 60 + minutoApertura;
         let tiempoCierre = horaCierre * 60 + minutoCierre;
