@@ -1,5 +1,5 @@
 let form = document.querySelector('.form-tiendas');
-let progressOptions = document.querySelectorAll('.progressbar__option');
+/*let progressOptions = document.querySelectorAll('.progressbar__option');*/
 
 form.addEventListener('click', function(e) {
     let element = e.target; //detectar donde se hace click
@@ -8,8 +8,8 @@ form.addEventListener('click', function(e) {
 
     if (isButtonNext || isButtonBack) {
         //si fue seleccionado el bttn-next o el bttn-back
-        let currentStep = document.getElementById('item-' + element.dataset.item);
-        let jumpStep = document.getElementById('item-' + element.dataset.to_item);
+        let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+        let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
         console.log(currentStep, jumpStep);       /*
         currentStep.addEventListener('animationend', function callback() {
             currentStep.classList.remove('active');
