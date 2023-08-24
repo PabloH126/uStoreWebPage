@@ -161,7 +161,7 @@ h1 {
 	background: white;
 	border-radius: 15px;
 	box-shadow: 3px 4px 10px 2px #dfdfdf;
-	margin: 15px;
+	margin: 13px 15px;
 	padding: 8px 5px;
 	transition: box-shadow 0.3s;
 	cursor: pointer;
