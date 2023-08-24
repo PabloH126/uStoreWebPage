@@ -1,10 +1,10 @@
 .content {
     height: 88%;
-    display: grid;
+    display: flow-root;
 }
 
 .content .contentT {
-    height: 89%;
+    height: 86%;
     margin: 1%;
     display: grid;
     grid-template-columns: 57% 43%;
@@ -14,7 +14,7 @@
 .content .contentT .izquierda,
 .content .contentT .derecha {
     /*border: 1px solid #691717;*/
-    height: 97%;
+    height: 64%;
 }
 
 .topI,
@@ -115,7 +115,7 @@
     width: 319px;
     z-index: 1;
     top: 15%;
-    left: 65.8%;
+    left: 68.8%;
     display: none;
     height: auto;
 }
@@ -224,13 +224,40 @@
     right: 10px;
 }
 
-.productos a {
+.bttnProductos a {
     background: #007096;
     color: white;
     padding: 15px;
-    border-radius: 3px;
-    font-size: 20px;
+    border-radius: 15px;
+    font-size: 1.8em;
     font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+}
+
+.bttnProductos a:hover{
+    background: #016283;
+}
+
+.edicionTienda{
+    position: absolute;
+    right: 5%;
+    bottom: 7%;
+    color: white;
+    font-size: 2.8em;
+}
+
+.edicionTienda a{
+    background: #007096;
+    color: white;
+    padding: 20%;
+    border-radius: 50%;
+}
+
+.edicionTienda a:hover{
+    background: #016283;
 }
 
 
@@ -251,11 +278,21 @@
     }
 
     .derecha .topD .info .horario #submenu_horario {
-        left: 59%;
+        left: 62%;
     }
 
     .slider-container {
         width: 70%;
+    }
+
+    .bttnProductos a {
+        font-size: 1.3em;
+    }
+
+    .edicionTienda{
+        right: 3%;
+        bottom: 4%;
+        font-size: 2em;
     }
 
 }

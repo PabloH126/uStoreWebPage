@@ -43,7 +43,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Inicio de sesion y registro</title>
+	<title>Inicio de sesión y registro</title>
 	
 	<link rel="shortcut icon" type="text/css" href="img/icono_uStore1.png">
 	<link rel="stylesheet" type="text/css" href="css_general/base.css">
@@ -77,14 +77,14 @@
 					<span class="material-symbols-outlined">mail</span>
 					<div id="box">
 						<label for="emailAL">Correo electrónico</label>
-						<input class="input" type="email" name="emailAL" placeholder="ejemplo@gmail.com" required>
+						<input class="input" type="email" id="emailAL" name="emailAL" placeholder="ejemplo@gmail.com" required>
 					</div>
 				</div>
 				<div>
 					<span class="material-symbols-outlined">lock</span>
 					<div id="box">
 						<label for="passAL">Contraseña</label>
-						<input class="input" type="password" name="passAL" placeholder="***********" required>
+						<input class="input" type="password" id="passAL" name="passAL" placeholder="***********" required>
 					</div>
 				</div>
 				<label class="checkbox">

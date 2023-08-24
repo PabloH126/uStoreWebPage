@@ -1,5 +1,6 @@
 <?php
     session_start();
+
     //CREATE TIENDA
 
     $data = [
@@ -34,7 +35,7 @@
 
     if($httpStatusCode != 201)
     {
-        echo $httpStatusCode;
+        echo $httpStatusCode . ' create tienda';
     }
 
     $dataTienda = json_decode($response, true);
@@ -80,7 +81,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode;
+        echo $httpStatusCode . ' create horario';
     }
 
     curl_close($ch);
@@ -121,7 +122,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode;
+        echo $httpStatusCode . ' create categorias de tienda';
     }
     
     curl_close($ch);
@@ -156,7 +157,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode;
+        echo $httpStatusCode . ' create periodos predeterminados';
     }
 //----------------------------------------------------------------------------------------//   
 
@@ -206,7 +207,7 @@
 
         if($httpStatusCode != 200)
         {
-            echo $httpStatusCode;
+            echo $httpStatusCode . 'create imagenes tienda';
         }
 
         curl_close($ch);
@@ -228,7 +229,7 @@
         $periodos = [];
         for($i = 1; $i <= 3; $i++)
         {
-            $numero = $_POST['numeroPeriodo' . $i];
+            $numero = str_pad($_POST['numeroPeriodo' . $i], 2, 0, STR_PAD_LEFT);
             $tiempo = $_POST['tiempoPeriodo' . $i];
             
             if($numero != "" && $tiempo != "")
@@ -246,13 +247,23 @@
 
     function generateArrayHorario($dia, $dataTienda)
     {
-        if(isset($_POST['horas' . $dia . 'apertura']) && isset($_POST['minutos' . $dia . 'apertura']) && isset($_POST['am/pm' . $dia . 'apertura'])
-         && isset($_POST['horas' . $dia . 'cierre']) && isset($_POST['minutos' . $dia . 'cierre']) && isset($_POST['am/pm' . $dia . 'cierre']))
+        if(((isset($_POST[$dia . '_apertura']) && $_POST[$dia . '_apertura'] != "") 
+            && (isset($_POST[$dia . '_cierre']) && $_POST[$dia . '_cierre'] != "")
+            && ($_POST[$dia . '_apertura'] != "00:00" || $_POST[$dia . '_cierre'] != "00:00")))
         {
             return [
                 "dia" => $dia,
-                "horarioApertura" => $_POST['horas' . $dia . 'apertura'] . ':' . $_POST['minutos' . $dia . 'apertura'] . ' ' . $_POST['am/pm' . $dia . 'apertura'],
-                "horarioCierre" =>  $_POST['horas' . $dia . 'cierre'] . ':' . $_POST['minutos' . $dia . 'cierre'] . ' ' . $_POST['am/pm' . $dia . 'cierre'],
+                "horarioApertura" => $_POST[$dia . '_apertura'],
+                "horarioCierre" =>  $_POST[$dia . '_cierre'],
+                "idTienda" => $dataTienda['idTienda']
+            ];
+        }
+        else
+        {
+            return [
+                "dia" => $dia,
+                "horarioApertura" => "00:00",
+                "horarioCierre" =>  "00:00",
                 "idTienda" => $dataTienda['idTienda']
             ];
         }

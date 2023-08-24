@@ -45,9 +45,28 @@ $tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" 
 $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 $imagenesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas/GetImagenesTienda?idTienda=" . $_GET['id']);
+$calificacionesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesTienda?idTienda=" . $_GET['id']);
+
+if(is_array($calificacionesTienda))
+{
+    $suma = 0;
+    foreach($calificacionesTienda as $calificacion)
+    {
+        $suma += $calificacion['calificacion'];
+    }
+
+    $promedio = $suma / count($calificacionesTienda);
+}
+else
+{
+    $promedio = 0;
+}
+
+$rangoPrecio = (double) $tiendas['rangoPrecio'];
 
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
 $fechaActual = new DateTime('now', $zonaHoraria);
+
 $formateo = new IntlDateFormatter(
     'es_MX',
     IntlDateFormatter::FULL,
@@ -61,6 +80,11 @@ $dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
 
 $horarioDia = getHorarioDia($horarios, $dia);
 
+$horarioApertura = DateTime::createFromFormat('H:i', $horarioDia['horarioApertura'], $zonaHoraria);
+$horarioCierre = DateTime::createFromFormat('H:i', $horarioDia['horarioCierre'], $zonaHoraria);
+
+$margenCierre = clone $horarioCierre;
+$margenCierre->sub(new DateInterval('PT60M'));
 ?>
 <!DOCTYPE html>
 <html>
@@ -133,44 +157,90 @@ $horarioDia = getHorarioDia($horarios, $dia);
                 <div class="topD">
                     <div class="info">
                         <div class="calificacion">
-                            <strong>4.5</strong>
-                            <div>12345</div>
+                            <strong>
+                                <?php 
+                                    if($promedio != 0)
+                                    {
+                                        echo $promedio;
+                                    }
+                                    else
+                                    {
+                                        echo "N/A";
+                                    }
+                                ?>
+                            </strong>
+                            <div>estrellitas uwu</div>
                         </div>
                     </div>
                     <div class="info">
                         <div class="precio">
-                            <div>Precio</div>
-                            <div>$$</div>
+                            <div>Rango</div>
+                            <?php
+                                if($rangoPrecio <= 0)
+                                {
+                                    echo 'No hay productos';
+                                }
+                                else if($rangoPrecio < 1000)
+                                {
+                                    echo '<div>$</div>';
+                                }
+                                else if($rangoPrecio >= 1000 && $rangoPrecio < 5000)
+                                {
+                                    echo '<div>$$</div>';
+                                }
+                                else if($rangoPrecio >= 5000)
+                                {
+                                    echo '<div>$$$</div>';
+                                }
+                            ?>
                         </div>
                     </div>
                     <div class="info">
                         <div class="horario">
                             <?php
-                            if ($horarioDia['horarioApertura'] == "00:00 am" && $horarioDia['horarioCierre'] == "00:00 am") {
-                                echo "<strong> Cerrado </strong>";
-                            } else {
-                                echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
-                                echo "<div> cerrao </div>";
-                            }
+                                if ($horarioDia['horarioApertura'] == "00:00" && $horarioDia['horarioCierre'] == "00:00") 
+                                {
+                                    echo '<strong style="color: red"> Cerrado </strong>';
+                                } 
+                                else 
+                                {
+                                    echo "<strong>" . $horarioDia['horarioApertura'] . ' - ' . $horarioDia['horarioCierre'] . "</strong>";
+
+                                    if($fechaActual >= $horarioApertura && $fechaActual < $margenCierre)
+                                    {
+                                        echo '<div><span style="color: green">Abierto ahora<span></div>';
+                                    }
+                                    else if($fechaActual >= $margenCierre && $fechaActual < $horarioCierre)
+                                    {
+                                        echo '<div><span style="color: orange">Por cerrar<span></div>';
+                                    }
+                                    else if($fechaActual >= $horarioCierre || $fechaActual < $horarioApertura)
+                                    {
+                                        echo '<div><span style="color: red">Cerrado ahora<span></div>';
+                                    }
+                                }
                             ?>
                             <div id="submenu_horario">
                                 <h4>Horario</h4>
                                 <?php
-                                foreach ($horarios as $horario) {
-                                    if ($horario['horarioApertura'] == "00:00 am" && $horario['horarioCierre'] == "00:00 am") {
-                                        ?>
-                                        <span><strong>
-                                                <?php echo $horario['dia']; ?>
-                                            </strong>Cerrado</span>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <span><strong>
-                                                <?php echo $horario['dia']; ?>
-                                            </strong>
-                                            <?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?>
-                                        </span>
-                                        <?php
+                                    foreach ($horarios as $horario) {
+                                        if ($horario['horarioApertura'] == "00:00" && $horario['horarioCierre'] == "00:00") 
+                                        {
+                                ?>
+                                            <span>
+                                                <strong><?php echo $horario['dia']; ?></strong>
+                                                <p style="color: red">Cerrado</p>
+                                            </span>
+                                <?php
+                                        } 
+                                        else 
+                                        {
+                                ?>
+                                            <span>
+                                                <strong><?php echo $horario['dia']; ?></strong>
+                                                <p style="color: green"><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></p>
+                                            </span>
+                                <?php
                                     }
                                 }
                                 ?>
@@ -189,7 +259,10 @@ $horarioDia = getHorarioDia($horarios, $dia);
             </div>
         </div>
         <div class="bttnProductos">
-            <a>Ver todos los productos</a>
+            <a href="">Ver todos los productos</a>
+        </div>
+        <div class="edicionTienda">
+            <a href=""><i class='bx bx-pencil'></i></a>
         </div>
     </div>
     <script src="js/slider.js"></script>
