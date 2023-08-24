@@ -70,10 +70,6 @@ h1 {
 	font-size: 31px;
 }
 
-.content .lista form .item .bttns:hover{
-	background: #016283;
-}
-
 .content .lista form .item #one {
 	margin-left: 89%;
 }
@@ -96,6 +92,10 @@ h1 {
 	font-size: 0.8em;
 	width: 127px;
 	max-height: 1.7em;
+}
+
+.content .lista form .item .bttn button {
+	background: #016283;
 }
 
 /*logo y promociones*/
