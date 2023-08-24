@@ -1,5 +1,6 @@
 <?php
     session_start();
+    echo $_SESSION['idMall'];
     //CREATE TIENDA
 
     $data = [
