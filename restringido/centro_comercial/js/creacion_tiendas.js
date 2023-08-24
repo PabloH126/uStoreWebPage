@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function nombreValidacion() {
+    var nombre = document.querySelector(`input[name=""]`)
+}
 function horariosConfigurados() {
     const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 
