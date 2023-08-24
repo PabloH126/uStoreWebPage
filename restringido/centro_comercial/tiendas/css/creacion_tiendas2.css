@@ -38,7 +38,7 @@ h1 {
 }
 
 .content .lista form .item p {
-	position: absolute;
+	position: fixed;
 	transform: translate(-70px, -67px);
 	display: block;
 	background: #007096;
