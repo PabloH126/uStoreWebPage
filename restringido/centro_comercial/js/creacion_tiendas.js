@@ -39,13 +39,10 @@ function horariosConfigurados() {
 
     for (let dia of dias)
     {
-        let horaApertura = document.querySelector(`select[name="horas${dia}apertura"]`).value;
-        let minutoApertura = document.querySelector(`select[name="minutos${dia}apertura"]`).value;
-        
-        let horaCierre = document.querySelector(`select[name="horas${dia}cierre"]`).value;
-        let minutoCierre = document.querySelector(`select[name="minutos${dia}cierre"]`).value;
+        let apertura  = document.querySelector(`input[name="${dia}_apertura"]`).value;
+        let cierre  = document.querySelector(`input[name="${dia}_cierre"]`).value;
 
-        if(horaApertura !== "00" || minutoApertura !== "00" || horaCierre !== "00" || minutoCierre !== "00")
+        if(apertura || cierre)
         {
             return true;
         }
