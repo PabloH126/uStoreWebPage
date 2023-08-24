@@ -94,7 +94,7 @@ h1 {
 	max-height: 1.7em;
 }
 
-.content .lista form .item .bttn button {
+.content .lista form .item .bttn button:hover {
 	background: #016283;
 }
 
