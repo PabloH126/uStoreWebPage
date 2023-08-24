@@ -96,6 +96,7 @@ h1 {
 
 .content .lista form .item .bttn button:hover {
 	background: #016283;
+	cursor: pointer;
 }
 
 /*logo y promociones*/
