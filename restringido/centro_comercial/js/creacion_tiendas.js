@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var checkboxes = document.querySelectorAll('#optionsC input[type="checkbox"]');
+    var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
-            var counter = document.querySelectorAll('#optionsC input[type="checkbox"]:checked').length;
+            var counter = document.querySelectorAll('.optionsC input[type="checkbox"]:checked').length;
 
             if (counter >= maxSelect) {
                 checkboxes.forEach(function (c) {
@@ -137,6 +137,12 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     let logoTienda = document.getElementById("logoTienda").value;
 
+    if(!nombreValidacion())
+    {
+        alert("Por favor ingresa un nombre para la tienda");
+        e.preventDefault();
+        return;
+    }
 
     if (!logoTienda) {
         alert("Se debe subir un logo de tienda");
@@ -174,13 +180,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     if(!validarHorariosCorrectos())
     {
-        e.preventDefault();
-        return;
-    }
-
-    if(!nombreValidacion())
-    {
-        alert("Por favor ingresa un nombre para la tienda");
         e.preventDefault();
         return;
     }
