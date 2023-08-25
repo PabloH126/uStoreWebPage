@@ -228,6 +228,7 @@ h1 {
 }
 
 /*logo y banners*/
+.content .lista form .item .logoT .contentL .box i,
 .content .lista form .item .promociones .imageP .contentP .box i {
 	font-size: 1.1rem;
 	position: relative;
@@ -239,6 +240,7 @@ h1 {
 	transition: 0.5s ease;
 }
 
+.content .lista form .item .logoT .contentL .box i,
 .content .lista form .item .promociones .imageP .contentP .box i:hover{
 	background-color: #8989898c;
 	color: #fff;
