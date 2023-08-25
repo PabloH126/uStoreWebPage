@@ -17,9 +17,9 @@ if(sliderImg.length === 3){
         img.style.setProperty("width", "calc(100% / 2)");
     });
 }else if(sliderImg.length === 1){
-    izquierda.style.setProperty("height, 100%");
-    /*derecha.style.setProperty("height, 100%");
-    btnLeft.style.setProperty("display", "none");*/
+    /*izquierda.style.setProperty("height, 100%");
+    derecha.style.setProperty("height, 100%");*/
+    btnLeft.style.setProperty("display", "none");
     btnRight.style.setProperty("display", "none");
     slider.style.setProperty("width", "100%");
     sliderImg.forEach(img => {
