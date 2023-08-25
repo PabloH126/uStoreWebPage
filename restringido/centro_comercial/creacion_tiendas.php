@@ -94,7 +94,10 @@ function CategoriasSelect($categorias)
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
-                            <div class="box"> <img id="imagenSelec" alt=""></div>
+                            <div class="box">
+                                <i class='bx bx-x'></i>
+                                <img id="imagenSelec" alt="">
+                            </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
                                 <input type="file" id="logoTienda" name="logoTienda" accept="image/*">
