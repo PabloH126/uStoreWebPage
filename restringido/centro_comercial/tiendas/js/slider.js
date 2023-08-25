@@ -1,13 +1,12 @@
 const btnLeft = document.querySelector(".btn-left"),
       btnRight = document.querySelector(".btn-right"),
       slider = document.querySelector("#slider"),
-      sliderImg = document.querySelectorAll(".slider-img")
-      izquierda = document.querySelector(".izquierda")
+      sliderImg = document.querySelectorAll(".slider-img"),
+      izquierda = document.querySelector(".izquierda"),
       derecha = document.querySelector(".derecha");
 
 if(sliderImg.length === 3){
     slider.style.setProperty("width", "300%");
-
     sliderImg.forEach(img => {
         img.style.setProperty("width", "calc(100% / 3)");
     });
@@ -17,8 +16,8 @@ if(sliderImg.length === 3){
         img.style.setProperty("width", "calc(100% / 2)");
     });
 }else if(sliderImg.length === 1){
-    /*izquierda.style.setProperty("height, 100%");
-    derecha.style.setProperty("height, 100%");*/
+    izquierda.style.setProperty("height, 100%");
+    derecha.style.setProperty("height, 100%");
     btnLeft.style.setProperty("display", "none");
     btnRight.style.setProperty("display", "none");
     slider.style.setProperty("width", "100%");

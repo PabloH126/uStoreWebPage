@@ -212,6 +212,17 @@
             echo $httpStatusCode . 'create imagenes tienda';
         }
 
+        $fileType = $_FILES['imagen']['type'];
+        $allowedTypes = array('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/webp');
+
+        $imageInfo = getimagesize($_FILES['imagen']['tmp_name']);
+
+        if (!in_array($fileType, $allowedTypes) || $imageInfo === false) 
+        {
+            die('El archivo subido no es una imagen válida.');
+        }
+
+
         curl_close($ch);
     }
 
