@@ -13,15 +13,7 @@
 
 .content .contentT .izquierda,
 .content .contentT .derecha {
-    /*border: 1px solid #691717;*/
     height: 67%;
-}
-
-.topI,
-.botI,
-.topD,
-.botD {
-    /*border: 1px solid red;*/
 }
 
 .topI {

@@ -38,7 +38,7 @@ function HorariosSelect($dia)
 function PeriodosSelect($periodo)
 {
     echo '<div class="apartadosT">';
-    echo '<input type="number" name="numero' . $periodo . '">';
+    echo '<input type="number" name="numero' . $periodo . '" min="0" step="1">';
     echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
     echo '<option value="">Tiempo</option>';
     echo '<option value="minutos">Minutos</option>';
@@ -97,7 +97,7 @@ function CategoriasSelect($categorias)
                             <div class="box"> <img id="imagenSelec" alt=""></div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
-                                <input type="file" id="logoTienda" name="logoTienda">
+                                <input type="file" id="logoTienda" name="logoTienda" accept="image/*">
                             </div>
                         </div>
                     </div>
@@ -179,21 +179,21 @@ function CategoriasSelect($categorias)
                                 <div class="box"><img src="" id="imagenSelec1" alt=""></div>
                                 <div class="ip">
                                     <label for="fileInput1" >
-                                    <input type="file" id="fileInput1" name="imagen1">
+                                    <input type="file" id="fileInput1" name="imagen1" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
                                 <div class="box"><img src="" id="imagenSelec2" alt=""></div>
                                 <div class="ip">
                                     <label for="fileInput2" >
-                                    <input type="file" id="fileInput2" name="imagen2">
+                                    <input type="file" id="fileInput2" name="imagen2" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
                                 <div class="box"><img src="" id="imagenSelec3" alt=""></div>
                                 <div class="ip">
                                     <label for="fileInput3" >
-                                    <input type="file" id="fileInput3" name="imagen3">
+                                    <input type="file" id="fileInput3" name="imagen3" accept="image/*">
                                 </div>
                             </div>
                         </div>
