@@ -185,7 +185,7 @@ function CategoriasSelect($categorias)
                         <div class="imageP">
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x'></i>
+                                    <i id="bx-x" class='bx bx-x'></i>
                                     <img src="" id="imagenSelec1" alt="">
                                 </div>
                                 <div class="ip">

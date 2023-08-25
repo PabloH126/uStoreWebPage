@@ -355,7 +355,7 @@ h1 {
 	}
 
 	/*logo y banners*/
-	.content .lista form .item .promociones .imageP .contentP .box i.bx.bx-x {
+	.content .lista form .item .promociones .imageP .contentP #bx-x {
 		font-size: 1.1rem;
 		position: absolute;
 		top: 41%;
@@ -365,7 +365,7 @@ h1 {
 		border-radius: 50%;
 	}
 
-	.content .lista form .item .promociones .imageP .contentP .box i.bx.bx-x:hover{
+	.content .lista form .item .promociones .imageP .contentP .box #bx-x:hover{
 		background-color: #8989898c;
 		color: #fff;
 		cursor: pointer;
