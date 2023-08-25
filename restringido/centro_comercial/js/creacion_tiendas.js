@@ -159,6 +159,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
+    if(logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
+    {
+        alert("La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+
     let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
     let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
 
@@ -187,13 +194,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    if(logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
-    {
-        alert("La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-
     if(img1.files.length && !validacionSizeImagen(img1, maxSize))
     {
         alert("La imagen 1 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
@@ -208,7 +208,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    if(img3.files.length && !validacionSizeImagen(img2, maxSize))
+    if(img3.files.length && !validacionSizeImagen(img3, maxSize))
     {
         alert("La imagen 3 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
         e.preventDefault();
