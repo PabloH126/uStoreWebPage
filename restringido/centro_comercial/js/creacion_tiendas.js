@@ -127,7 +127,19 @@ function validacionPeriodos() {
     return true;
 }
 
+function validacionSizeImagen(imagen, maxSize)
+{
+    if(imagen.files[0].size > maxSize)
+    {
+        return false;
+    }
+
+    return true;
+}
+
 document.querySelector("form").addEventListener("submit", function (e) {
+    const maxSize = 5 * 1024 * 1024;
+    
     let img1 = document.getElementById("fileInput1").value;
     let img2 = document.getElementById("fileInput2").value;
     let img3 = document.getElementById("fileInput3").value;
@@ -190,5 +202,5 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     var submitButton = document.querySelector('button[type="submit"]');
     submitButton.disabled = true;
-    submitButton.innerText = 'Creando...';
+    submitButton.innerText = 'espere...';
 });
