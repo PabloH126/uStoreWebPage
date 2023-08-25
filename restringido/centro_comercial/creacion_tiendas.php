@@ -194,14 +194,20 @@ function CategoriasSelect($categorias)
                                 </div>
                             </div>
                             <div class="contentP">
-                                <div class="box"><img src="" id="imagenSelec2" alt=""></div>
+                                <div class="box">
+                                    <i class='bx bx-x'></i>
+                                    <img src="" id="imagenSelec2" alt="">
+                                </div>
                                 <div class="ip">
                                     <label for="fileInput2" >
                                     <input type="file" id="fileInput2" name="imagen2" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
-                                <div class="box"><img src="" id="imagenSelec3" alt=""></div>
+                                <div class="box">
+                                    <i class='bx bx-x'></i>
+                                    <img src="" id="imagenSelec3" alt="">
+                                </div>
                                 <div class="ip">
                                     <label for="fileInput3" >
                                     <input type="file" id="fileInput3" name="imagen3" accept="image/*">
