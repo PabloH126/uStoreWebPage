@@ -165,21 +165,35 @@
 
 
     //CREATE IMAGENES BANNER TIENDA
+    $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    $maxSize = 5 * 1024 * 1024; // 5 MB
     $imagenes = [];
 
-    if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
+    if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0 && in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
     {
         $imagenes['imagen1'] = $_FILES['imagen1'];
     }
+    else
+    {
+        die("Error: Imagen 1 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG).");
+    }
 
-    if(isset($_FILES['imagen2']) && $_FILES['imagen2']['error'] == 0)
+    if(isset($_FILES['imagen2']) && $_FILES['imagen2']['error'] == 0 && in_array($_FILES['imagen2']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
     {
         $imagenes['imagen2'] = $_FILES['imagen2'];
     }
+    else
+    {
+        die("Error: Imagen 2 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG).");
+    }
 
-    if(isset($_FILES['imagen3']) && $_FILES['imagen3']['error'] == 0)
+    if(isset($_FILES['imagen3']) && $_FILES['imagen3']['error'] == 0 && in_array($_FILES['imagen3']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
     {
         $imagenes['imagen3'] = $_FILES['imagen3'];
+    }
+    else
+    {
+        die("Error: Imagen 3 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG).");
     }    
     $data = [];
 
@@ -211,17 +225,6 @@
         {
             echo $httpStatusCode . 'create imagenes tienda';
         }
-
-        $fileType = $_FILES['imagen']['type'];
-        $allowedTypes = array('image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/webp');
-
-        $imageInfo = getimagesize($_FILES['imagen']['tmp_name']);
-
-        if (!in_array($fileType, $allowedTypes) || $imageInfo === false) 
-        {
-            die('El archivo subido no es una imagen válida.');
-        }
-
 
         curl_close($ch);
     }
