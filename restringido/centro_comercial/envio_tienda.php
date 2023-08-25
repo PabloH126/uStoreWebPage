@@ -175,7 +175,7 @@
     }
     else
     {
-        die("Error: Imagen 1 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG).");
+        die("Error: Imagen 1 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los {$maxSize} bytes de tamaño máximo.");
     }
 
     if(isset($_FILES['imagen2']) && $_FILES['imagen2']['error'] == 0 && in_array($_FILES['imagen2']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
@@ -184,7 +184,7 @@
     }
     else
     {
-        die("Error: Imagen 2 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG).");
+        die("Error: Imagen 2 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los {$maxSize} bytes de tamaño máximo.");
     }
 
     if(isset($_FILES['imagen3']) && $_FILES['imagen3']['error'] == 0 && in_array($_FILES['imagen3']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
@@ -193,7 +193,7 @@
     }
     else
     {
-        die("Error: Imagen 3 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG).");
+        die("Error: Imagen 3 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG)que no supere los {$maxSize} bytes de tamaño máximo.");
     }    
     $data = [];
 
