@@ -6,6 +6,15 @@
     $maxSize = 5 * 1024 * 1024; // 5 MB
     $imagenes = [];
 
+    if(in_array($logoTienda['type'], $allowedImageTypes) && $logoTienda['size'] <= $maxSize)
+    {
+        $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
+    }
+    else
+    {
+        die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+    }
+
     if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
     {
         if(in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
@@ -14,7 +23,7 @@
         }
         else
         {
-            die("Error: Imagen 1 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los {$maxSize} bytes de tamaño máximo y sea de un tipo de imagen válido.");
+            die("Error las imagenes de promociones: Imagen 1 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
         }
     }
 
@@ -26,7 +35,7 @@
         }
         else
         {
-            die("Error: Imagen 2 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los {$maxSize} bytes de tamaño máximo y sea de un tipo de imagen válido.");
+            die("Error las imagenes de promociones: Imagen 2 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
         }
     }
 
@@ -38,7 +47,7 @@
         }
         else
         {
-            die("Error: Imagen 3 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los {$maxSize} bytes de tamaño máximo y sea de un tipo de imagen válido.");
+            die("Error las imagenes de promociones: Imagen 3 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido");
         }
     }
 
