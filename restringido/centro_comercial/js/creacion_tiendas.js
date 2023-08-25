@@ -187,4 +187,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
         return;
     }
+
+    var submitButton = document.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.innerText = 'Creando...';
 });
