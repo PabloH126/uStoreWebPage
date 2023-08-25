@@ -24,8 +24,8 @@ header .content .final .bottn:hover{
 header .content .final #ultimo{
 	justify-content: right;
 	padding: 0 20px 0 0;
-	width: 94px;
-	margin-left: 47%;
+	width: 126px;
+	margin-left: 27%;
 }
 
 header .content .final #ultimo img:hover,
@@ -58,6 +58,7 @@ header .content .final #ultimo a{
 	}
 
 	header .content .final #ultimo{
+		width: 94px;
 		margin-left: 25%;
 	}
 }
