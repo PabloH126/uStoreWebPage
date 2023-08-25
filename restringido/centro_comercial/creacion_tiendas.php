@@ -124,6 +124,9 @@ function CategoriasSelect($categorias)
                         <div class="optionsC">
                             <?php CategoriasSelect($categorias); ?>
                         </div>
+                        <div class="notas">
+                            <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
+                        </div>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
