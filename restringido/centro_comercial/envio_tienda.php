@@ -6,7 +6,7 @@
     $maxSize = 5 * 1024 * 1024; // 5 MB
     $imagenes = [];
 
-    if(in_array($logoTienda['type'], $allowedImageTypes) && $logoTienda['size'] <= $maxSize)
+    if(in_array($_FILES['logoTienda']['type'], $allowedImageTypes) && $_FILES['logoTienda']['size'] <= $maxSize)
     {
         $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
     }

@@ -101,6 +101,9 @@ function CategoriasSelect($categorias)
                             </div>
                         </div>
                     </div>
+                    <div class="notas">
+                            <span>* Si es día no laboral, dejar el día en 00:00 o en --:--.</span>
+                        </div>
                     <div class="bttns">
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
@@ -173,7 +176,7 @@ function CategoriasSelect($categorias)
                 <div class="item" id="item-5">
                     <p>5/6</p>
                     <div class="promociones">
-                        <label><strong>Promociones de la tienda</strong></label>
+                        <label><strong>Banners de la tienda</strong></label>
                         <div class="imageP">
                             <div class="contentP">
                                 <div class="box"><img src="" id="imagenSelec1" alt=""></div>

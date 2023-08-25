@@ -139,12 +139,12 @@ function validacionSizeImagen(imagen, maxSize)
 
 document.querySelector("form").addEventListener("submit", function (e) {
     const maxSize = 5 * 1024 * 1024;
-    
-    let img1 = document.getElementById("fileInput1").value;
-    let img2 = document.getElementById("fileInput2").value;
-    let img3 = document.getElementById("fileInput3").value;
 
-    let logoTienda = document.getElementById("logoTienda").value;
+    let img1 = document.getElementById("fileInput1");
+    let img2 = document.getElementById("fileInput2");
+    let img3 = document.getElementById("fileInput3");
+
+    let logoTienda = document.getElementById("logoTienda");
 
     if(!nombreValidacion())
     {
@@ -153,7 +153,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    if (!logoTienda) {
+    if (!logoTienda.files.length) {
         alert("Se debe subir un logo de tienda");
         e.preventDefault();
         return;
@@ -181,8 +181,36 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    if (!img1 && !img2 && !img3) {
-        alert("Se debe subir al menos una imagen paraa el banner de la tienda");
+    if (!img1.files.length && !img2.files.length && !img3.files.length) {
+        alert("Se debe subir al menos una imagen para el banner de la tienda");
+        e.preventDefault();
+        return;
+    }
+
+    if(logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
+    {
+        alert("La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+
+    if(img1.files.length && !validacionSizeImagen(img1, maxSize))
+    {
+        alert("La imagen 1 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+
+    if(img2.files.length && !validacionSizeImagen(img2, maxSize))
+    {
+        alert("La imagen 2 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+
+    if(img3.files.length && !validacionSizeImagen(img2, maxSize))
+    {
+        alert("La imagen 3 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
         e.preventDefault();
         return;
     }
@@ -202,5 +230,4 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     var submitButton = document.querySelector('button[type="submit"]');
     submitButton.disabled = true;
-    submitButton.innerText = 'espere...';
 });
