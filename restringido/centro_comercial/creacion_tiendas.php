@@ -101,9 +101,11 @@ function CategoriasSelect($categorias)
                             </div>
                         </div>
                     </div>
+
                     <div class="notas">
-                            <span>* Si es día no laboral, dejar el día en 00:00 o en --:--.</span>
-                        </div>
+                        <span>* La imagen del logo no debe superar los 5mb.</span>
+                    </div>
+
                     <div class="bttns">
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
@@ -201,6 +203,11 @@ function CategoriasSelect($categorias)
                             </div>
                         </div>
                     </div>
+
+                    <div class="notas">
+                        <span>* Cada imagen no debe superar los 5mb.</span>
+                    </div>
+
                     <div class="bttns">
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
