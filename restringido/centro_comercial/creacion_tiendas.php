@@ -38,12 +38,12 @@ function HorariosSelect($dia)
 function PeriodosSelect($periodo)
 {
     echo '<div class="apartadosT">';
-    echo '<input type="number" name="numero' . $periodo . '" min="0" step="1">';
+    echo '<input type="number" name="numero' . $periodo . '" min="1" step="1">';
     echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
     echo '<option value="">Tiempo</option>';
     echo '<option value="minutos">Minutos</option>';
     echo '<option value="horas">Horas</option>';
-    echo '<option value="dias">Dias</option>';
+    echo '<option value="dias">Días</option>';
     echo '</select>';
     echo '</div>';
 }
@@ -203,11 +203,9 @@ function CategoriasSelect($categorias)
                             </div>
                         </div>
                     </div>
-
                     <div class="notas">
                         <span>* Cada imagen no debe superar los 5mb.</span>
                     </div>
-
                     <div class="bttns">
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
@@ -229,6 +227,9 @@ function CategoriasSelect($categorias)
                             PeriodosSelect('Periodo2');
                             PeriodosSelect('Periodo3');
                             ?>
+                        </div>
+                        <div class="notas">
+                            <span>* Los campos en blanco y en "Tiempo", no se guardarán.</span>
                         </div>
                     </div>
                     <div class="bttns">
