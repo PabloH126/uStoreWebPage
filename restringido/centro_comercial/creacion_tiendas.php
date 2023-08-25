@@ -184,7 +184,12 @@ function CategoriasSelect($categorias)
                         <label><strong>Banners de la tienda</strong></label>
                         <div class="imageP">
                             <div class="contentP">
-                                <div class="box"><i class='bx bx-x'></i><img src="" id="imagenSelec1" alt=""></div>
+                                <div class="box">
+                                    <div class="box-x">
+                                        <i class='bx bx-x'></i>
+                                    </div>
+                                    <img src="" id="imagenSelec1" alt="">
+                                </div>
                                 <div class="ip">
                                     <label for="fileInput1" >
                                     <input type="file" id="fileInput1" name="imagen1" accept="image/*">
