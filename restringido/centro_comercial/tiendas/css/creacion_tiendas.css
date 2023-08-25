@@ -236,6 +236,7 @@ h1 {
 	background-color: transparent;
 	color: #b3b3b3cf;
 	border-radius: 50%;
+	transition: 0.5s ease;
 }
 
 .content .lista form .item .promociones .imageP .contentP .box i:hover{
