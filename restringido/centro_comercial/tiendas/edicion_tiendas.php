@@ -85,6 +85,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     <?php require("../templates/template.styles.php") ?>
     <?php require("templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="css/creacion_tiendas.css">
+    <link rel="stylesheet" href="css/edicion_tiendas.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -138,7 +139,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         <div class="bttn" id="delete-store">
                                 <button type="button" class=""><i class='bx bx-trash'></i></button>
                         </div>
-                        
+
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
