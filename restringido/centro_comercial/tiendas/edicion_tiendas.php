@@ -70,19 +70,9 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
 function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
     foreach ($categoriasDisponibles as $categoria) {
-        $key = array_search($categoria['idCategoria'], $categoriasTiendaId);
-        if($key !== false)
-        {
-            $isChecked = 'checked';
-            $idCT = $categoriasTiendaId[$key]['idCT'];
-        }
-        else
-        {
-            $isChecked = '';
-            $idCT = '';
-        }
+        $isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
         echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
-        echo '<input type="hidden" name="idCTs[]" value="' . $idCT . '">';
+        //echo '<input type="hidden" name="idCTs[]" value="' . $idCT . '">';
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
@@ -107,7 +97,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     <div class="content">
         <h1>Edición de tienda</h1>
         <div class="lista">
-            <form action="actualizar_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="actualizar_tienda.php?id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->
                 <div class="item active" id="item-1">
                     <p>1/6</p>
