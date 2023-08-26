@@ -79,8 +79,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
                 $categoriaTienda = $cat;
                 break;
             }
+            */
         }
-
+        /*
         echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
