@@ -74,6 +74,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
             {
                 $isChecked = 'checked';
                 $categoriaTienda = $cat;
+                echo $categoriasTienda['idCT'] . '<br>';
                 break;
             }
         }
