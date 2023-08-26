@@ -73,7 +73,7 @@
         }
     }
     
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateTienda");
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateTienda");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_TIMEOUT, 30);
@@ -253,7 +253,7 @@
 
         if($httpStatusCode != 200)
         {
-            echo $httpStatusCode . 'create imagenes tienda';
+            echo $httpStatusCode . 'update imagenes tienda';
         }
 
         curl_close($ch);
