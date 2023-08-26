@@ -65,18 +65,18 @@ function CategoriasSelect($categorias)
 <head>
     <meta charset="utf-8">
     <title>Crear tienda</title>
-    <?php require("templates/template.styles.php") ?>
-    <?php require("tiendas/templates/template.secc_tiendas.php") ?>
-    <link rel="stylesheet" type="text/css" href="css/creacion_tiendas.css">
+    <?php require("../templates/template.styles.php") ?>
+    <?php require("templates/template.secc_tiendas.php") ?>
+    <link rel="stylesheet" type="text/css" href="../css/creacion_tiendas.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <?php require("templates/template.menu.php") ?>
+    <?php require("../templates/template.menu.php") ?>
     <div class="content">
         <h1>Creación de tienda</h1>
         <div class="lista">
-            <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->
                 <div class="item active" id="item-1">
                     <p>1/6</p>
