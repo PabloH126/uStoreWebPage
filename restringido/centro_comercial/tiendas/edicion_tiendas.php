@@ -76,6 +76,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
             $key = array_search($categoria['idCategoria'], $categoriasTiendaId);
             echo $key;
             $categoriaTienda = $categoriasTiendaId[$key];
+            echo $categoriaTienda
         }
         else
         {
