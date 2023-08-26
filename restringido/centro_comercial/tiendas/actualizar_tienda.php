@@ -103,13 +103,13 @@
     //CREATE HORARIO
 
     $arraysHorario = array(
-        generateArrayHorario('Lunes', $dataTienda),
-        generateArrayHorario('Martes', $dataTienda),
-        generateArrayHorario('Miércoles', $dataTienda),
-        generateArrayHorario('Jueves', $dataTienda),
-        generateArrayHorario('Viernes', $dataTienda),
-        generateArrayHorario('Sábado', $dataTienda),
-        generateArrayHorario('Domingo', $dataTienda)
+        generateArrayHorario('Lunes'),
+        generateArrayHorario('Martes'),
+        generateArrayHorario('Miércoles'),
+        generateArrayHorario('Jueves'),
+        generateArrayHorario('Viernes'),
+        generateArrayHorario('Sábado'),
+        generateArrayHorario('Domingo')
     );
 
     $jsonData = json_encode($arraysHorario);
@@ -145,18 +145,13 @@
     //CREATE CATEGORIAS TIENDA
     
     $categorias = $_POST['categorias'];
-    $idCTs = $_POST['idCTs'];
-    foreach ($idCTs as $idCT) {
-        echo $idCT . '<br>';
-    }
+
     $arraysCategorias = array ();
 
     foreach($categorias as $index => $cat)
     {
-        $idCT = $idCTs[$index];
-        $arraysCategorias[] = generateArrayCategorias($cat, $idCT, $dataTienda);
+        $arraysCategorias[] = generateArrayCategorias($cat);
     }
-
     $jsonData = json_encode($arraysCategorias);
 
     $ch = curl_init();
@@ -266,10 +261,9 @@
 //----------------------------------------------------------------------------------------//       
 
     //FUNCIONES
-    function generateArrayCategorias($cat, $idCT, $dataTienda)
+    function generateArrayCategorias($cat)
     {
         return [
-            "idCT" => $idCT,
             "idTienda" => $_GET['id'],
             "idCategoria" => $cat
         ];
@@ -297,7 +291,7 @@
         return $periodos;
     }
 
-    function generateArrayHorario($dia, $dataTienda)
+    function generateArrayHorario($dia)
     {
         if(((isset($_POST[$dia . '_apertura']) && $_POST[$dia . '_apertura'] != "") 
             && (isset($_POST[$dia . '_cierre']) && $_POST[$dia . '_cierre'] != "")
