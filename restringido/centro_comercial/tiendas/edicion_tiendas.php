@@ -70,9 +70,20 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
 function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
     foreach ($categoriasDisponibles as $categoria) {
-        $isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
+        if(in_array($categoria['idCategoria'], $categoriasTiendaId))
+        {
+            $isChecked = 'checked';
+            $key = array_search($categoria['idCategoria'], $categoriasTiendaId);
+            $categoriaTienda = $categoriasTiendaId[$key];
+        }
+        else
+        {
+            $isChecked = '';
+        }
+
         echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
-        //echo '<input type="hidden" name="idCTs[]" value="' . $idCT . '">';
+        echo '<input type="hidden" name="idCTs[]" value="' . $categoriasTiendaId['idCT'] . '">';
+        echo $categoriasTiendaId['idCT'];
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
