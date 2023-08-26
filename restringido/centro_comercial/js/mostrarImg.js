@@ -15,6 +15,11 @@ const deleteIcons = document.querySelectorAll(".delete-icon");
 const imagenSelecArray = document.querySelectorAll(".imagen-selec");
 const fileInputs = document.querySelectorAll(".file-input");
 
+console.log(deleteIcons);
+console.log(imagenSelecArray);
+console.log(fileInputs);
+
+
 deleteIcons.forEach((deleteIcon, index) => {
     deleteIcon.addEventListener("click", function() {
         fileInputs[index].value = "";
