@@ -10,6 +10,12 @@ const imagenMostrada1 = document.getElementById('imagenSelec1');
 const imagenMostrada2 = document.getElementById('imagenSelec2');
 const imagenMostrada3 = document.getElementById('imagenSelec3');
 
+/*Borrar imagenes*/
+const deleteIcons = document.querySelectorAll(".delete-icon");
+const imagenSelecArray = document.querySelectorAll(".imagen-selec");
+const fileInputs = document.querySelectorAll(".file-input");
+
+
 imagenInput.addEventListener('change', (event) => {
     const imagenSeleccionada = event.target.files[0];
     
