@@ -1,7 +1,7 @@
 <?php
 session_start();
 require '../../security.php';
-include 'datosTienda.php';
+//include 'datosTienda.php';
 
 //REQUEST DE LAS CATEGORIAS
 
