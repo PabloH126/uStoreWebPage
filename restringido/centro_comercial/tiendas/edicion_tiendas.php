@@ -70,26 +70,27 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
 function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
     foreach ($categoriasDisponibles as $categoria) {
-        if(in_array($categoria['idCategoria'], $categoriasTiendaId))
-        {
-            $isChecked = 'checked';
-            $key = array_search($categoria['idCategoria'], $categoriasTiendaId);
-            echo $key;
-            $categoriaTienda = $categoriasTiendaId[$key];
-            echo '<br>' . $categoriaTienda;
+        $isChecked = '';
+        $categoriaTienda = null;
+        
+        foreach ($categoriasTiendaId as $cat) {
+            if ($categoria['idCategoria'] == $cat['idCategoria'])
+            {
+                $isChecked = 'checked';
+                $categoriaTienda = $cat;
+                break;
+            }
         }
-        else
-        {
-            $isChecked = '';
-        }
-        /*
+
         echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
-
-        echo '<input type="hidden" name="idCTs[]" value="' . $categoriaTienda['idCT'] . '">';
-        */
+        
+        if($categoriaTienda){
+            echo '<input type="hidden" name="idCTs[]" value="' . $categoriaTienda['idCT'] . '">';
+        }
+        
     }
 }
 ?>
