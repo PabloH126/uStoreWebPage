@@ -230,7 +230,7 @@
         ];
         echo '<br>' . $index . '<br>';
 
-        if ($idImagenes[$index] == null)
+        if (!isset($idImagenes[$index]))
         {
             $idImagenes[$index] = 0;
         }
