@@ -11,8 +11,8 @@
     {
         if(in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
         {
-            $imagenes[1] = $_FILES['imagen1'];
-            $idImagenes[1] = $_POST['idImagen1'];
+            $imagenes[0] = $_FILES['imagen1'];
+            $idImagenes[0] = $_POST['idImagen1'];
         }
         else
         {
@@ -24,8 +24,8 @@
     {
         if(in_array($_FILES['imagen2']['type'], $allowedImageTypes) && $_FILES['imagen2']['size'] <= $maxSize)
         {
-            $imagenes[2] = $_FILES['imagen2'];
-            $idImagenes[2] = $_POST['idImagen2'];
+            $imagenes[1] = $_FILES['imagen2'];
+            $idImagenes[1] = $_POST['idImagen2'];
         }
         else
         {
@@ -37,8 +37,8 @@
     {
         if(in_array($_FILES['imagen3']['type'], $allowedImageTypes) && $_FILES['imagen3']['size'] <= $maxSize)
         {
-            $imagenes[3] = $_FILES['imagen3'];
-            $idImagenes[3] = $_POST['idImagen3'];
+            $imagenes[2] = $_FILES['imagen3'];
+            $idImagenes[2] = $_POST['idImagen3'];
         }
         else
         {
