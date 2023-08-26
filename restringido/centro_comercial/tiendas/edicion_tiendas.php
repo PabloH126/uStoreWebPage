@@ -57,7 +57,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
     foreach ($categoriasDisponibles as $categoria) {
         //$isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
-        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
+        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '">';
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
