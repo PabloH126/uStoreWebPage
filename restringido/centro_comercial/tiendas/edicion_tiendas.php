@@ -70,7 +70,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
         $categoriaTienda = null;
         
         foreach ($categoriasTienda as $cat) {
-            echo $cat;
+            echo $cat['idCT'];
             if ($categoria['idCategoria'] == $cat['idCategoria'])
             {
                 $isChecked = 'checked';
