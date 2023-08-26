@@ -225,18 +225,14 @@
 
     foreach($imagenes as $index => $imagen)
     {
-        $i = 0;
-
         $data = [
             'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
         ];
-        echo '<br>' . $index . '<br>';
+        echo $index . '<br>';
         echo $_POST['idImagen1'] . '<br>';
         echo $_POST['idImagen2'] . '<br>';
         echo $_POST['idImagen3'] . '<br>';
-        echo $idImagenes[$i];
-        $i++;
-
+        echo $idImagenes[$index];
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $_GET['id'] . "&idImagenTienda=" . $idImagenes[$index]);
