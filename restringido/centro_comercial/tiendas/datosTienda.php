@@ -1,4 +1,6 @@
 <?php
+
+echo $_GET['id'];
 function getDatosTienda($url)
 {
     $ch = curl_init();
