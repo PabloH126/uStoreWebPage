@@ -1,6 +1,5 @@
 <?php
-
-echo $_GET['id'];
+session_start();
 function getDatosTienda($url)
 {
     $ch = curl_init();
