@@ -27,10 +27,6 @@ curl_close($ch);
 
 
 $categoriasTiendaId = array_column($categorias, 'idCategoria');
-foreach ($categoriasTiendaId as $categoriastienda)
-{
-    echo $categoriastienda;
-}
 
 
 //FUNCIONES DEL FORMULARIO
@@ -57,11 +53,11 @@ function PeriodosSelect($periodo)
     echo '</div>';
 }
 
-function CategoriasSelect($categoriasDisponibles)
+function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
     foreach ($categoriasDisponibles as $categoria) {
-        //$isChecked = in_array()
-        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '">';
+        $isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
+        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
@@ -83,7 +79,7 @@ function CategoriasSelect($categoriasDisponibles)
 <body>
     <?php require("../templates/template.menu.php") ?>
     <div class="content">
-        <h1>Edición de <?php echo $tiendas['nombreTienda']; ?></h1>
+        <h1>Edición de tienda</h1>
         <div class="lista">
             <form action="" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->

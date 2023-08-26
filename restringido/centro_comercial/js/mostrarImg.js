@@ -10,8 +10,6 @@ const imagenMostrada1 = document.getElementById('imagenSelec1');
 const imagenMostrada2 = document.getElementById('imagenSelec2');
 const imagenMostrada3 = document.getElementById('imagenSelec3');
 
-alert("yastoy");
-
 imagenInput.addEventListener('change', (event) => {
     const imagenSeleccionada = event.target.files[0];
     
