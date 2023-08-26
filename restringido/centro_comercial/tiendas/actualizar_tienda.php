@@ -228,8 +228,13 @@
         $data = [
             'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
         ];
-        echo $index . '<br>';
-        echo $idImagenes[$index];
+        echo '<br>' . $index . '<br>';
+
+        if ($idImagenes[$index] == null)
+        {
+            $idImagenes[$index] = 0;
+        }
+
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $_GET['id'] . "&idImagenTienda=" . $idImagenes[$index]);
