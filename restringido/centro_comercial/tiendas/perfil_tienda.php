@@ -176,7 +176,7 @@ include 'datosTienda.php';
             </div>
         </div>
         <div class="bttnProductos">
-            <a title="Ver todos los productos" href="productos/lista_productos.php">Ver todos los productos</a>
+            <a title="Ver todos los productos" href="productos/lista_productos.php?id=<?php echo $_GET['id']; ?>">Ver todos los productos</a>
         </div>
         <div class="edicionTienda">
             <a title="Edición de tienda" href="edicion_tiendas.php?id=<?php echo $_GET['id']; ?>"><i class='bx bx-pencil'></i></a>

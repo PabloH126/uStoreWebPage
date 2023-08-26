@@ -33,12 +33,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Selección de tienda</title>
-	<?php require("templates/template.styles.php")?>
-	<?php require("tiendas/templates/template.secc_tiendas.php")?>
-	<link rel="stylesheet" type="text/css" href="tiendas/css/lista_tiendas.css">
+	<?php require("../../templates/template.styles.php")?>
+	<?php require("../templates/template.secc_tiendas.php")?>
+	<link rel="stylesheet" type="text/css" href="../css/lista_tiendas.css">
 </head>
 <body>
-	<?php require("templates/template.menu.php")?>
+	<?php require("../../templates/template.menu.php")?>
 
 	<div class="content">
 		<div class="lista">
@@ -60,7 +60,7 @@
 				}
 			?>
 					<div class="item" id="agregar">
-						<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
+						<a href=""><span class="material-symbols-outlined">add</span></a>
 					</div>
 			<?php
 				}

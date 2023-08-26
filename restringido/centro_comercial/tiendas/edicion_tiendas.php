@@ -48,13 +48,19 @@ function HorariosSelect($dia, $horarios)
 
 function PeriodosSelect($periodo, $periodosPredeterminados)
 {
+    list($cantidad, $tiempo) = explode(' ', $periodosPredeterminados['apartadoPredeterminado'], 2);
+
+    $selectedMinutos = ($tiempo === 'minutos') ? 'selected' : '';
+    $selectedHoras = ($tiempo === 'horas') ? 'selected' : '';
+    $selectedDias = ($tiempo === 'dias') ? 'selected' : '';
+
     echo '<div class="apartadosT">';
-    echo '<input type="number" name="numero' . $periodo . '" min="1" step="1">';
+    echo '<input type="number" name="numero' . $periodo . '" min="1" step="1" value="' . $cantidad . '">';
     echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
     echo '<option value="">Tiempo</option>';
-    echo '<option value="minutos">Minutos</option>';
-    echo '<option value="horas">Horas</option>';
-    echo '<option value="dias">Días</option>';
+    echo '<option value="minutos" ' . $selectedMinutos . '>Minutos</option>';
+    echo '<option value="horas" ' . $selectedHoras . '>Horas</option>';
+    echo '<option value="dias" ' . $selectedDias . '>Días</option>';
     echo '</select>';
     echo '</div>';
 }
@@ -250,9 +256,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
                             <?php
-                            PeriodosSelect('Periodo1', $periodosPredeterminados);
-                            PeriodosSelect('Periodo2', $periodosPredeterminados);
-                            PeriodosSelect('Periodo3', $periodosPredeterminados);
+                            PeriodosSelect('Periodo1', $periodosPredeterminados[0]);
+                            PeriodosSelect('Periodo2', $periodosPredeterminados[1]);
+                            PeriodosSelect('Periodo3', $periodosPredeterminados[2]);
                             ?>
                         </div>
                         <div class="notas">
