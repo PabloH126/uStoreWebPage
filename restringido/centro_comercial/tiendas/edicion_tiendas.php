@@ -46,7 +46,7 @@ function HorariosSelect($dia, $horarios)
     }
 }
 
-function PeriodosSelect($periodo)
+function PeriodosSelect($periodo, $periodos)
 {
     echo '<div class="apartadosT">';
     echo '<input type="number" name="numero' . $periodo . '" min="1" step="1">';
