@@ -65,7 +65,6 @@ h1 {
 .content .lista form .item .bttns {
 	display: flex;
 	font-size: 31px;
-	width: 100%;
 }
 
 .content .lista form .item #one {
