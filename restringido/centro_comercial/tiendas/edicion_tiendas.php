@@ -43,14 +43,6 @@ function HorariosSelect($dia, $horarios)
             echo '<td><input type="time" name="' . $dia . '_cierre" value="' . $horario['horarioCierre'] . '"></td>';
             echo '</tr>';
         }
-        else
-        {
-            echo '<tr>';
-            echo '<td>' . $dia . '</td>';
-            echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
-            echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
-            echo '</tr>';
-        }
     }
 }
 
