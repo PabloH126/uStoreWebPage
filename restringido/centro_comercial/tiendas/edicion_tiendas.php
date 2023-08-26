@@ -79,9 +79,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     }
 }
 
-echo $imagenesTienda[0]['idImagenesTiendas'];
-echo $imagenesTienda[1]['idImagenesTiendas'];
-echo $imagenesTienda[2]['idImagenesTiendas'];
+echo $imagenesTienda[0]['idImagenesTiendas'] . '<br>';
+echo $imagenesTienda[1]['idImagenesTiendas'] . '<br>';
+echo $imagenesTienda[2]['idImagenesTiendas'] . '<br>';
 ?>
 <!DOCTYPE html>
 <html>
