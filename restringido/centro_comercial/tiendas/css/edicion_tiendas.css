@@ -2,8 +2,17 @@
     width: 100%;
 }
 
+.content .lista form .item .bttns #delete-store{
+    margin: 0;
+}
+
 .content .lista form .item #one{
     margin-left: 81%;
+}
+
+.content .lista form .item .back{
+    margin-right: 1%;
+    margin-left: 70%;
 }
 
 @media only screen and (max-width: 1502px) {
