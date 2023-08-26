@@ -46,7 +46,7 @@ function HorariosSelect($dia, $horarios)
     }
 }
 
-function PeriodosSelect($periodo, $periodos)
+function PeriodosSelect($periodo, $periodosPredeterminados)
 {
     echo '<div class="apartadosT">';
     echo '<input type="number" name="numero' . $periodo . '" min="1" step="1">';
@@ -250,9 +250,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
                             <?php
-                            PeriodosSelect('Periodo1');
-                            PeriodosSelect('Periodo2');
-                            PeriodosSelect('Periodo3');
+                            PeriodosSelect('Periodo1', $periodosPredeterminados);
+                            PeriodosSelect('Periodo2', $periodosPredeterminados);
+                            PeriodosSelect('Periodo3', $periodosPredeterminados);
                             ?>
                         </div>
                         <div class="notas">

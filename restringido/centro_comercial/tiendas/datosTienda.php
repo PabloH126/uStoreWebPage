@@ -45,6 +45,7 @@ $categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias
 $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
 $imagenesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas/GetImagenesTienda?idTienda=" . $_GET['id']);
 $calificacionesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesTienda?idTienda=" . $_GET['id']);
+$periodosPredeterminados = getDatosTienda("https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/GetPeriodos?idTienda=" . $_GET['id']);
 
 if (is_array($calificacionesTienda)) {
     $suma = 0;
