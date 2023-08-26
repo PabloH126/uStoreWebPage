@@ -19,4 +19,8 @@
     .content .lista form .item #one{
         margin-left: 85%;
     }
+
+    .content .lista form .item .back{
+        margin-left: 76%;
+    }
 }

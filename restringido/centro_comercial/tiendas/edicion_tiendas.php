@@ -291,7 +291,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     </div>
     <script src="../js/slider_formularios.js"></script>
     <script src="../js/mostrarImg.js"></script>
-    <script src="../js/creacion_tiendas.js"></script>
+    <script src="../js/edicion_tiendas.js"></script>
 </body>
 
 </html>
