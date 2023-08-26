@@ -25,6 +25,10 @@ $categoriasDisponibles = json_decode($response, true);
 
 curl_close($ch);
 
+
+$categoriasTiendaId = array_column($categorias, 'idCategoria');
+
+
 //FUNCIONES DEL FORMULARIO
 
 function HorariosSelect($dia, $horarios)
@@ -63,34 +67,16 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
     echo '</div>';
 }
 
-function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
+function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
     foreach ($categoriasDisponibles as $categoria) {
-        $isChecked = '';
-        $categoriaTienda = null;
-        
-        foreach ($categoriasTienda as $cat => $value) {
-            echo $cat . ': ' . $value;
-            /*
-            echo $cat['idCT'];
-            if ($categoria['idCategoria'] == $cat['idCategoria'])
-            {
-                $isChecked = 'checked';
-                $categoriaTienda = $cat;
-                break;
-            }
-            */
-        }
-        /*
+        $isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
+
         echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
+        
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
-        
-        if($categoriaTienda){
-            echo '<input type="hidden" name="idCTs[]" value="' . $categoriaTienda['idCT'] . '">';
-        }
-        */
     }
 }
 ?>
@@ -173,7 +159,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">
-                            <?php CategoriasSelect($categoriasDisponibles, $categorias); ?>
+                            <?php CategoriasSelect($categoriasDisponibles, $categoriasTiendaId); ?>
                         </div>
                         <div class="notas">
                             <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
