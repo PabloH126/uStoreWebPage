@@ -114,7 +114,7 @@ h1 {
 	display: grid;
 	align-items: center;
 	justify-items: center;
-	
+	position: relative;
 }
 
 .content .lista form .item .logoT .contentL .box img {
@@ -232,9 +232,9 @@ h1 {
 .content .lista form .item .logoT .contentL .box i,
 .content .lista form .item .promociones .imageP .contentP .box i {
 	font-size: 1.1rem;
-	position: relative;
-	top: -31%;
-	left: 43%;
+	position: absolute;
+	top: 5%;
+	left: 88%;
 	background-color: transparent;
 	color: #b3b3b3cf;
 	border-radius: 50%;
