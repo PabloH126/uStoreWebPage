@@ -86,7 +86,7 @@ function CategoriasSelect($categorias)
     <title>Crear tienda</title>
     <?php require("templates/template.styles.php") ?>
     <?php require("tiendas/templates/template.secc_tiendas.php") ?>
-    <link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas.css">
+    <link rel="stylesheet" type="text/css" href="css/creacion_tiendas.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -120,7 +120,7 @@ function CategoriasSelect($categorias)
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
-                                <input type="file" id="logoTienda" name="logoTienda" accept="image/*">
+                                <input type="file" class="file-input" id="logoTienda" name="logoTienda" accept="image/*">
                             </div>
                         </div>
                     </div>
@@ -213,7 +213,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput1" >
-                                    <input type="file" id="fileInput1" name="imagen1" accept="image/*">
+                                    <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -223,7 +223,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput2" >
-                                    <input type="file" id="fileInput2" name="imagen2" accept="image/*">
+                                    <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -233,7 +233,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput3" >
-                                    <input type="file" id="fileInput3" name="imagen3" accept="image/*">
+                                    <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
                                 </div>
                             </div>
                         </div>

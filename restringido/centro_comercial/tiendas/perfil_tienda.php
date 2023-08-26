@@ -3,23 +3,6 @@ session_start();
 require '../../security.php';
 include 'datosTienda.php';
 
-if(is_array($calificacionesTienda))
-{
-    $suma = 0;
-    foreach($calificacionesTienda as $calificacion)
-    {
-        $suma += $calificacion['calificacion'];
-    }
-
-    $promedio = $suma / count($calificacionesTienda);
-}
-else
-{
-    $promedio = 0;
-}
-
-$rangoPrecio = (double) $tiendas['rangoPrecio'];
-
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
 $fechaActual = new DateTime('now', $zonaHoraria);
 
@@ -218,7 +201,7 @@ $margenCierre->sub(new DateInterval('PT60M'));
             <a href="">Ver todos los productos</a>
         </div>
         <div class="edicionTienda">
-            <a href="../edicion_tiendas.php"><i class='bx bx-pencil'></i></a>
+            <a href="edicion_tiendas.php"><i class='bx bx-pencil'></i></a>
         </div>
     </div>
     <script src="js/slider.js"></script>
