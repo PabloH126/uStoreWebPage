@@ -176,10 +176,10 @@ include 'datosTienda.php';
             </div>
         </div>
         <div class="bttnProductos">
-            <a href="">Ver todos los productos</a>
+            <a title="Ver todos los productos" href="">Ver todos los productos</a>
         </div>
         <div class="edicionTienda">
-            <a href="edicion_tiendas.php?id=<?php echo $_GET['id']; ?>"><i class='bx bx-pencil'></i></a>
+            <a title="Edición de tienda" href="edicion_tiendas.php?id=<?php echo $_GET['id']; ?>"><i class='bx bx-pencil'></i></a>
         </div>
     </div>
     <script src="js/slider.js"></script>
