@@ -50,8 +50,8 @@
 
     $data = [
         'idTienda' => $_GET['id'],
-        'NombreTienda' => $_POST['nombreTienda'],
-        'IdCentroComercial' => $_SESSION['idMall'],
+        'nombreTienda' => $_POST['nombreTienda'],
+        'idCentroComercial' => $_SESSION['idMall'],
         'rangoPrecio' => 0,
         'apartados' => 0,
         'vistas' => 0
