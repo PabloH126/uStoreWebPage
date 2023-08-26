@@ -6,15 +6,6 @@
     $maxSize = 5 * 1024 * 1024; // 5 MB
     $imagenes = [];
 
-    if(in_array($_FILES['logoTienda']['type'], $allowedImageTypes) && $_FILES['logoTienda']['size'] <= $maxSize)
-    {
-        $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
-    }
-    else
-    {
-        die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-    }
-
     if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
     {
         if(in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
@@ -65,7 +56,15 @@
 
     $ch = curl_init();
 
-    $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
+    if(in_array($logoTienda['type'], $allowedImageTypes) && $logoTienda['size'] <= $maxSize)
+    {
+        $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
+    }
+    else
+    {
+        curl_close($ch);
+        die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+    }
     
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateTienda");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

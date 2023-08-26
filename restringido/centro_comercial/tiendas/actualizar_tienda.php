@@ -45,6 +45,7 @@
     //UPDATE TIENDA
 
     $data = [
+        'idTienda' => $_GET['id'],
         'NombreTienda' => $_POST['nombreTienda'],
         'IdCentroComercial' => $_SESSION['idMall'],
         'rangoPrecio' => 0,
@@ -54,23 +55,23 @@
     
     $ch = curl_init();
 
-    if(isset($_FILES['logoTienda']))
+    if(isset($_FILES['logoTienda']) && $_FILES['logoTienda']['error'] == 0)
     {
         $logoTienda = $_FILES['logoTienda'];
-        if(in_array($_FILES['logoTienda']['type'], $allowedImageTypes) && $_FILES['logoTienda']['size'] <= $maxSize)
-    {
-        $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
+        if(in_array($logoTienda['type'], $allowedImageTypes) && $logoTienda['size'] <= $maxSize)
+        {
+            $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
+        }
+        else
+        {
+            curl_close($ch);
+            die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+        }
     }
-    else
-    {
-        die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-    }
-    }
-
     
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateTienda");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_TIMEOUT, 30);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -88,7 +89,7 @@
 
     if($httpStatusCode != 201)
     {
-        echo $httpStatusCode . ' create tienda';
+        echo $httpStatusCode . ' update tienda';
     }
 
     $dataTienda = json_decode($response, true);

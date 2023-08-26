@@ -83,8 +83,10 @@ function CategoriasSelect($categorias)
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
                         <input type="text" id="nombreTienda" name="nombreTienda">
                     </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    <div class="bttns">
+                        <div class="bttn" id="one">
+                            <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                        </div>
                     </div>
                 </div>
 

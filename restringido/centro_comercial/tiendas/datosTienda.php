@@ -6,9 +6,7 @@ function getDatosTienda($url)
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt(
-        $ch,
-        CURLOPT_HTTPHEADER,
+    curl_setopt($ch, CURLOPT_HTTPHEADER,
         array(
             'Authorization: Bearer ' . $_COOKIE['SessionToken']
         )
