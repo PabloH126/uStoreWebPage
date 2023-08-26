@@ -230,6 +230,7 @@
         if (!isset($idImagenes[$index]))
         {
             $idImagenes[$index] = 0;
+            echo $idImagenes[$index];
         }
 
         $ch = curl_init();
