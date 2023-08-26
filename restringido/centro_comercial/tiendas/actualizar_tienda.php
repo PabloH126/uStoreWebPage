@@ -5,12 +5,14 @@
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     $maxSize = 5 * 1024 * 1024; // 5 MB
     $imagenes = [];
+    $idImagenes = [];
 
     if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
     {
         if(in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
         {
-            $imagenes['imagen1'] = $_FILES['imagen1'];
+            $imagenes[1] = $_FILES['imagen1'];
+            $idImagenes[1] = $_POST['idImagen1'];
         }
         else
         {
@@ -22,7 +24,8 @@
     {
         if(in_array($_FILES['imagen2']['type'], $allowedImageTypes) && $_FILES['imagen2']['size'] <= $maxSize)
         {
-            $imagenes['imagen2'] = $_FILES['imagen2'];
+            $imagenes[2] = $_FILES['imagen2'];
+            $idImagenes[2] = $_POST['idImagen2'];
         }
         else
         {
@@ -34,7 +37,8 @@
     {
         if(in_array($_FILES['imagen3']['type'], $allowedImageTypes) && $_FILES['imagen3']['size'] <= $maxSize)
         {
-            $imagenes['imagen3'] = $_FILES['imagen3'];
+            $imagenes[3] = $_FILES['imagen3'];
+            $idImagenes[3] = $_POST['idImagen3'];
         }
         else
         {
@@ -115,8 +119,8 @@
     $jsonData = json_encode($arraysHorario);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Horarios/CreateHorario");
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Horarios/UpdateHorario");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -135,7 +139,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create horario';
+        echo $httpStatusCode . ' update horario';
     }
 
     curl_close($ch);
@@ -145,19 +149,21 @@
     //CREATE CATEGORIAS TIENDA
     
     $categorias = $_POST['categorias'];
+    $idCTs = $_POST['idCTs'];
 
     $arraysCategorias = array ();
 
-    foreach($categorias as $cat)
+    foreach($categorias as $index => $cat)
     {
-        $arraysCategorias[] = generateArrayCategorias($cat, $dataTienda);
+        $idCT = $idCTs[$index];
+        $arraysCategorias[] = generateArrayCategorias($cat, $idCT, $dataTienda);
     }
 
     $jsonData = json_encode($arraysCategorias);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/CreateCategoriaTienda");
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/UpdateCategoriasTienda");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -176,7 +182,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create categorias de tienda';
+        echo $httpStatusCode . ' update categorias de tienda';
     }
     
     curl_close($ch);
@@ -189,8 +195,8 @@
     $jsonData = json_encode($periodos);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/CreatePeriodos");
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/UpdatePeriodo");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -211,7 +217,7 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create periodos predeterminados';
+        echo $httpStatusCode . ' update periodos predeterminados';
     }
 //----------------------------------------------------------------------------------------//   
 
@@ -221,7 +227,7 @@
     
     $data = [];
 
-    foreach($imagenes as $key => $imagen)
+    foreach($imagenes as $index => $imagen)
     {
         $data = [
             'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
@@ -229,9 +235,9 @@
         
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenTienda?idTienda=" . $dataTienda['idTienda']);
+        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $dataTienda['idTienda'] . "&idImagenTienda=" . $idImagenes[$index]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Authorization: Bearer ' . $_COOKIE['SessionToken']
@@ -256,9 +262,10 @@
 //----------------------------------------------------------------------------------------//       
 
     //FUNCIONES
-    function generateArrayCategorias($cat, $dataTienda)
+    function generateArrayCategorias($cat, $idCT, $dataTienda)
     {
         return [
+            "idCT" => $idCT,
             "idTienda" => $dataTienda['idTienda'],
             "idCategoria" => $cat
         ];
@@ -276,6 +283,7 @@
             {
                 $apartadoPredeterminado = $numero . ' ' . $tiempo;
                 $periodos[] = [
+                    'idApartadoPredeterminado' => $_POST['idApartadoPredeterminadoPeriodo' . $i],
                     'apartadoPredeterminado' => $apartadoPredeterminado,
                     'idTienda' => $dataTienda['idTienda']
                 ];

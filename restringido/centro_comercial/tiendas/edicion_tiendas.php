@@ -49,6 +49,7 @@ function HorariosSelect($dia, $horarios)
 function PeriodosSelect($periodo, $periodosPredeterminados)
 {
     list($cantidad, $tiempo) = explode(' ', $periodosPredeterminados['apartadoPredeterminado'], 2);
+    $idApartadoPredeterminado = $periodosPredeterminados['idApartadoPredeterminado'];
 
     $selectedMinutos = ($tiempo === 'minutos') ? 'selected' : '';
     $selectedHoras = ($tiempo === 'horas') ? 'selected' : '';
@@ -62,14 +63,26 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
     echo '<option value="horas" ' . $selectedHoras . '>Horas</option>';
     echo '<option value="dias" ' . $selectedDias . '>Días</option>';
     echo '</select>';
+    echo '<input type="hidden" name="idApartadoPredeterminado' . $periodo . '" value="' . $idApartadoPredeterminado . '">';
     echo '</div>';
 }
 
 function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
     foreach ($categoriasDisponibles as $categoria) {
-        $isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
+        $key = array_search($categoria['idCategoria'], $categoriasTiendaId);
+        if($key !== false)
+        {
+            $isChecked = 'checked';
+            $idCT = $categoriasTiendaId[$key]['idCT'];
+        }
+        else
+        {
+            $isChecked = '';
+            $idCT = '';
+        }
         echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
+        echo '<input type="hidden" name="idCTs[]" value="' . $idCT . '">';
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
@@ -230,6 +243,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput1" >
                                     <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
+                                    <input type="hidden" value="<?php echo $imagenesTienda[0]['idImagenesTiendas'] ?>" name="idImagen1">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -240,6 +254,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput2" >
                                     <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
+                                    <input type="hidden" value="<?php echo $imagenesTienda[1]['idImagenesTiendas'] ?>" name="idImagen2">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -250,6 +265,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput3" >
                                     <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                    <input type="hidden" value="<?php echo $imagenesTienda[2]['idImagenesTiendas'] ?>" name="idImagen3">
                                 </div>
                             </div>
                         </div>
