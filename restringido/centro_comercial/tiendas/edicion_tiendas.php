@@ -78,6 +78,10 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
         echo '</div>';
     }
 }
+
+echo $imagenesTienda[0]['idImagenesTiendas'];
+echo $imagenesTienda[1]['idImagenesTiendas'];
+echo $imagenesTienda[2]['idImagenesTiendas'];
 ?>
 <!DOCTYPE html>
 <html>
