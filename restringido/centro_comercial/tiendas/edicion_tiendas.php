@@ -56,8 +56,8 @@ function PeriodosSelect($periodo)
 function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
     foreach ($categoriasDisponibles as $categoria) {
-        //$isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
-        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '">';
+        $isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
+        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
@@ -131,7 +131,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">
-                            <?php CategoriasSelect($categoriasDisponibles); ?>
+                            <?php CategoriasSelect($categoriasDisponibles, $categoriasTiendaId); ?>
                         </div>
                         <div class="notas">
                             <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
