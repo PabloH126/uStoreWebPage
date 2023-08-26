@@ -15,6 +15,14 @@
     margin-left: 70%;
 }
 
+.content .lista form .item #ult{
+    margin-left: 63%;
+}
+
+.content .lista form .item #send{
+    margin: 0;
+}
+
 @media only screen and (max-width: 1502px) {
     .content .lista form .item #one{
         margin-left: 85%;
