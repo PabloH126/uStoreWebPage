@@ -69,7 +69,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
         $isChecked = '';
         $categoriaTienda = null;
         
-        foreach ($categoriasTienda as $cat) {
+        foreach ($categoriasTienda as $cat => $value) {
+            echo $cat . ': ' . $value;
+            /*
             echo $cat['idCT'];
             if ($categoria['idCategoria'] == $cat['idCategoria'])
             {
@@ -87,6 +89,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
         if($categoriaTienda){
             echo '<input type="hidden" name="idCTs[]" value="' . $categoriaTienda['idCT'] . '">';
         }
+        */
     }
 }
 ?>
