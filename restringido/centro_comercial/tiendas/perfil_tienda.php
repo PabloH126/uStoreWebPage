@@ -179,7 +179,7 @@ include 'datosTienda.php';
             <a href="">Ver todos los productos</a>
         </div>
         <div class="edicionTienda">
-            <a href="edicion_tiendas.php"><i class='bx bx-pencil'></i></a>
+            <a href="edicion_tiendas.php?id=<?php echo $_GET['id']; ?>"><i class='bx bx-pencil'></i></a>
         </div>
     </div>
     <script src="js/slider.js"></script>
