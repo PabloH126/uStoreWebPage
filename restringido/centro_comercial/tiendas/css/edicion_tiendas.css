@@ -1,0 +1,13 @@
+.content .lista form .item .bttns{
+    width: 100;
+}
+
+.content .lista form .item #one{
+    margin-left: 81%;
+}
+
+@media only screen and (max-width: 1502px) {
+    .content .lista form .item #one{
+        margin-left: 85%;
+    }
+}

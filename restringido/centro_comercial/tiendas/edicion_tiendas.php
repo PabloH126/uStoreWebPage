@@ -135,6 +135,10 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
 
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                                <button type="button" class=""><i class='bx bx-trash'></i></button>
+                        </div>
+                        
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
