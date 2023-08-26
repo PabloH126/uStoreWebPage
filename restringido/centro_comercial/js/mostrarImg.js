@@ -10,31 +10,6 @@ const imagenMostrada1 = document.getElementById('imagenSelec1');
 const imagenMostrada2 = document.getElementById('imagenSelec2');
 const imagenMostrada3 = document.getElementById('imagenSelec3');
 
-/*Borrar imagenes*/
-const deleteIcons = document.querySelectorAll(".delete-icon");
-const imagenSelecArray = document.querySelectorAll(".imagen-selec");
-const fileInputs = document.querySelectorAll(".file-input");
-
-console.log(deleteIcons);
-console.log(imagenSelecArray);
-console.log(fileInputs);
-
-
-deleteIcons.forEach((deleteIcon, index) => {
-    deleteIcon.addEventListener("click", function() {
-        fileInputs[index].value = "";
-        imagenSelecArray[index].src = "";
-    });
-
-    fileInputs[index].addEventListener("change", function(event) {
-        const selectedFile = event.target.files[0];
-        if (selectedFile) {
-            const objectURL = URL.createObjectURL(selectedFile);
-            imagenSelecArray[index].src = objectURL;
-        }
-    });
-});
-
 imagenInput.addEventListener('change', (event) => {
     const imagenSeleccionada = event.target.files[0];
     
