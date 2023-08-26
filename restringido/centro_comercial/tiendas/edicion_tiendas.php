@@ -279,9 +279,9 @@ function CategoriasSelect($categorias)
             </form>
         </div>
     </div>
-    <script src="js/slider_formularios.js"></script>
-    <script src="js/mostrarImg.js"></script>
-    <script src="js/creacion_tiendas.js"></script>
+    <script src="../js/slider_formularios.js"></script>
+    <script src="../js/mostrarImg.js"></script>
+    <script src="../js/creacion_tiendas.js"></script>
 </body>
 
 </html>
