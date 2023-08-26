@@ -74,6 +74,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
         {
             $isChecked = 'checked';
             $key = array_search($categoria['idCategoria'], $categoriasTiendaId);
+            echo $key;
             $categoriaTienda = $categoriasTiendaId[$key];
         }
         else
