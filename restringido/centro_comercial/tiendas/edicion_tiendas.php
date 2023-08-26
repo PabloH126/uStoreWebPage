@@ -87,7 +87,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
         echo '</div>';
 
         echo '<input type="hidden" name="idCTs[]" value="' . $categoriaTienda['idCT'] . '">';
-        echo $categoriaTienda['idCT'];
     }
 }
 ?>
