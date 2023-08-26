@@ -162,6 +162,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         </div>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
                         </div>
@@ -201,6 +204,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         </div>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
                         </div>
@@ -252,6 +258,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         <span>* Cada imagen no debe superar los 5mb.</span>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
                         </div>
@@ -278,6 +287,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         </div>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back" id="ult">
                             <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
                         </div>
