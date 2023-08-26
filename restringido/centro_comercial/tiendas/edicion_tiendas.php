@@ -78,10 +78,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
             }
         }
 
-        echo '<br>' . $categoriaTienda['idCT'];
-        echo '<br>' . $categoriaTienda['idTienda'];
-        echo '<br>' . $categoriaTienda['idCategoria'];
-        /*
         echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
@@ -90,7 +86,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
         if($categoriaTienda){
             echo '<input type="hidden" name="idCTs[]" value="' . $categoriaTienda['idCT'] . '">';
         }
-        */
     }
 }
 ?>
