@@ -231,7 +231,7 @@
         
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $dataTienda['idTienda'] . "&idImagenTienda=" . $idImagenes[$index]);
+        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $_GET['id'] . "&idImagenTienda=" . $idImagenes[$index]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -262,7 +262,7 @@
     {
         return [
             "idCT" => $idCT,
-            "idTienda" => $dataTienda['idTienda'],
+            "idTienda" => $_GET['id'],
             "idCategoria" => $cat
         ];
     }
@@ -281,7 +281,7 @@
                 $periodos[] = [
                     'idApartadoPredeterminado' => $_POST['idApartadoPredeterminadoPeriodo' . $i],
                     'apartadoPredeterminado' => $apartadoPredeterminado,
-                    'idTienda' => $dataTienda['idTienda']
+                    'idTienda' => $_GET['id']
                 ];
             }
         } 
@@ -299,7 +299,7 @@
                 "dia" => $dia,
                 "horarioApertura" => $_POST[$dia . '_apertura'],
                 "horarioCierre" =>  $_POST[$dia . '_cierre'],
-                "idTienda" => $dataTienda['idTienda']
+                "idTienda" => $_GET['id']
             ];
         }
         else
@@ -308,7 +308,7 @@
                 "dia" => $dia,
                 "horarioApertura" => "00:00",
                 "horarioCierre" =>  "00:00",
-                "idTienda" => $dataTienda['idTienda']
+                "idTienda" => $_GET['id']
             ];
         }
     }
