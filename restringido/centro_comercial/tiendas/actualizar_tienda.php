@@ -13,6 +13,8 @@
         {
             $imagenes[0] = $_FILES['imagen1'];
             $idImagenes[0] = $_POST['idImagen1'];
+            echo $imagenes[0] . '<br>';
+            echo $idImagenes[0] . '<br>';
         }
         else
         {
@@ -26,6 +28,8 @@
         {
             $imagenes[1] = $_FILES['imagen2'];
             $idImagenes[1] = $_POST['idImagen2'];
+            echo $imagenes[1] . '<br>';
+            echo $idImagenes[1] . '<br>';
         }
         else
         {
@@ -39,6 +43,8 @@
         {
             $imagenes[2] = $_FILES['imagen3'];
             $idImagenes[2] = $_POST['idImagen3'];
+            echo $imagenes[2] . '<br>';
+            echo $idImagenes[2] . '<br>';
         }
         else
         {
