@@ -94,7 +94,7 @@
 
     $dataTienda = json_decode($response, true);
 
-    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall'];
+    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $_GET['id'];
 
     curl_close($ch);
 //----------------------------------------------------------------------------------------//   
@@ -133,7 +133,7 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 200)
+    if($httpStatusCode != 204)
     {
         echo $httpStatusCode . ' update horario';
     }
@@ -176,7 +176,7 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 200)
+    if($httpStatusCode != 204)
     {
         echo $httpStatusCode . ' update categorias de tienda';
     }
@@ -211,7 +211,7 @@
     
     curl_close($ch);
 
-    if($httpStatusCode != 200)
+    if($httpStatusCode != 204)
     {
         echo $httpStatusCode . ' update periodos predeterminados';
     }
@@ -247,7 +247,7 @@
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         }
 
-        if($httpStatusCode != 200)
+        if($httpStatusCode != 204)
         {
             echo $httpStatusCode . 'update imagenes tienda';
         }
