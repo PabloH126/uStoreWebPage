@@ -47,6 +47,7 @@ imagenInput3.addEventListener('change', (event) => {
     }
 });
 
+alert("yastoy");
 const deleteIcons = document.querySelectorAll('.delete-icon');
 
 deleteIcons.forEach((icon, index) => {

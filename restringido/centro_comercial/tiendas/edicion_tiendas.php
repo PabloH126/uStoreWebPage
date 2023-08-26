@@ -27,7 +27,10 @@ curl_close($ch);
 
 
 $categoriasTiendaId = array_column($categorias, 'idCategoria');
-echo $categoriasTiendaId;
+foreach ($categoriasTiendaId as $categorias) {
+    
+    # code...
+}
 
 //FUNCIONES DEL FORMULARIO
 
