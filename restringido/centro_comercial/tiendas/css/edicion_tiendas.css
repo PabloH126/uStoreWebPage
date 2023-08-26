@@ -31,4 +31,8 @@
     .content .lista form .item .back{
         margin-left: 76%;
     }
+
+    .content .lista form .item #ult{
+        margin-left: 72%;
+    }
 }
