@@ -147,7 +147,7 @@
     $categorias = $_POST['categorias'];
     $idCTs = $_POST['idCTs'];
     foreach ($idCTs as $idCT) {
-        echo $idCT;
+        echo $idCT . '<br>';
     }
     $arraysCategorias = array ();
 
