@@ -50,11 +50,7 @@
 
     $data = [
         'idTienda' => $_GET['id'],
-        'nombreTienda' => $_POST['nombreTienda'],
-        'idCentroComercial' => $_SESSION['idMall'],
-        'rangoPrecio' => 0,
-        'apartados' => 0,
-        'vistas' => 0
+        'nombreTienda' => $_POST['nombreTienda']
     ];
     
     $ch = curl_init();
@@ -91,7 +87,7 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 201)
+    if($httpStatusCode != 204)
     {
         echo $httpStatusCode . ' update tienda';
     }
