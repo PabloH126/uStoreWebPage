@@ -2,28 +2,6 @@
 session_start();
 require '../../security.php';
 include 'datosTienda.php';
-
-$zonaHoraria = new DateTimeZone('Etc/GMT+6');
-$fechaActual = new DateTime('now', $zonaHoraria);
-
-$formateo = new IntlDateFormatter(
-    'es_MX',
-    IntlDateFormatter::FULL,
-    IntlDateFormatter::FULL,
-    $zonaHoraria,
-    null,
-    'EEEE'
-);
-$dia = $formateo->format($fechaActual);
-$dia = mb_convert_case($dia, MB_CASE_TITLE, "UTF-8");
-
-$horarioDia = getHorarioDia($horarios, $dia);
-
-$horarioApertura = DateTime::createFromFormat('H:i', $horarioDia['horarioApertura'], $zonaHoraria);
-$horarioCierre = DateTime::createFromFormat('H:i', $horarioDia['horarioCierre'], $zonaHoraria);
-
-$margenCierre = clone $horarioCierre;
-$margenCierre->sub(new DateInterval('PT60M'));
 ?>
 <!DOCTYPE html>
 <html>
