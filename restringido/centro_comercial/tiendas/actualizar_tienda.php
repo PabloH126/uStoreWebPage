@@ -228,7 +228,10 @@
         $data = [
             'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
         ];
-        echo $index;
+        echo $index . '<br>';
+        echo $_POST['idImagen1'] . '<br>';
+        echo $_POST['idImagen2'] . '<br>';
+        echo $_POST['idImagen3'] . '<br>';
         echo $idImagenes[$index];
         $ch = curl_init();
 
