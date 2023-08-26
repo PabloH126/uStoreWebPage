@@ -65,13 +65,12 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
 
 function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
 {
-
-    echo $categoriasTienda;
     foreach ($categoriasDisponibles as $categoria) {
         $isChecked = '';
         $categoriaTienda = null;
         
         foreach ($categoriasTienda as $cat) {
+            echo $cat;
             if ($categoria['idCategoria'] == $cat['idCategoria'])
             {
                 $isChecked = 'checked';
