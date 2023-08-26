@@ -82,11 +82,12 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
         }
 
         echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
-        echo '<input type="hidden" name="idCTs[]" value="' . $categoriaTienda['idCT'] . '">';
-        echo $categoriaTienda['idCT'];
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
+
+        echo '<input type="hidden" name="idCTs[]" value="' . $categoriaTienda['idCT'] . '">';
+        echo $categoriaTienda['idCT'];
     }
 }
 ?>
