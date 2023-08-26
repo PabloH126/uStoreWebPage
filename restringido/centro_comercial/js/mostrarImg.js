@@ -47,3 +47,30 @@ imagenInput3.addEventListener('change', (event) => {
     }
 });
 
+const deleteIcons = document.querySelectorAll('.delete-icon');
+
+deleteIcons.forEach((icon, index) => {
+    icon.addEventListener('click', () => {
+        // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
+        switch (index) {
+            case 0:
+                imagenMostrada.src = '';
+                imagenInput.value = '';
+                break;
+            case 1:
+                imagenMostrada1.src = '';
+                imagenInput1.value = '';
+                break;
+            case 2:
+                imagenMostrada2.src = '';
+                imagenInput2.value = '';
+                break;
+            case 3:
+                imagenMostrada3.src = '';
+                imagenInput3.value = '';
+                break;
+            default:
+                break;
+        }
+    });
+});
