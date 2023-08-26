@@ -25,10 +25,6 @@ $categoriasDisponibles = json_decode($response, true);
 
 curl_close($ch);
 
-
-$categoriasTiendaId = array_column($categorias, 'idCategoria');
-
-
 //FUNCIONES DEL FORMULARIO
 
 function HorariosSelect($dia, $horarios)
@@ -67,13 +63,13 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
     echo '</div>';
 }
 
-function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
+function CategoriasSelect($categoriasDisponibles, $categoriasTienda)
 {
     foreach ($categoriasDisponibles as $categoria) {
         $isChecked = '';
         $categoriaTienda = null;
         
-        foreach ($categoriasTiendaId as $cat) {
+        foreach ($categoriasTienda as $cat) {
             if ($categoria['idCategoria'] == $cat['idCategoria'])
             {
                 $isChecked = 'checked';
@@ -173,7 +169,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">
-                            <?php CategoriasSelect($categoriasDisponibles, $categoriasTiendaId); ?>
+                            <?php CategoriasSelect($categoriasDisponibles, $categorias); ?>
                         </div>
                         <div class="notas">
                             <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
