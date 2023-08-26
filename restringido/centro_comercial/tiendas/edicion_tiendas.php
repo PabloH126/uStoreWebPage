@@ -31,13 +31,19 @@ $categoriasTiendaId = array_column($categorias, 'idCategoria');
 
 //FUNCIONES DEL FORMULARIO
 
-function HorariosSelect($dia)
+function HorariosSelect($dia, $horarios)
 {
-    echo '<tr>';
-    echo '<td>' . $dia . '</td>';
-    echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
-    echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
-    echo '</tr>';
+    foreach($horarios as $horario)
+    {
+        if($horario['dia'] === $dia)
+        {
+            echo '<tr>';
+            echo '<td>' . $dia . '</td>';
+            echo '<td><input type="time" name="' . $dia . '_apertura" value="' . $horario['horarioApertura'] . '"></td>';
+            echo '<td><input type="time" name="' . $dia . '_cierre" value="' . $horario['horarioCierre'] . '"></td>';
+            echo '</tr>';
+        }
+    }
 }
 
 function PeriodosSelect($periodo)
@@ -162,13 +168,13 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                             </thead>
                             <tbody>
                                 <?php
-                                HorariosSelect('Lunes');
-                                HorariosSelect('Martes');
-                                HorariosSelect('Miércoles');
-                                HorariosSelect('Jueves');
-                                HorariosSelect('Viernes');
-                                HorariosSelect('Sábado');
-                                HorariosSelect('Domingo');
+                                HorariosSelect('Lunes', $horarios);
+                                HorariosSelect('Martes', $horarios);
+                                HorariosSelect('Miércoles', $horarios);
+                                HorariosSelect('Jueves', $horarios);
+                                HorariosSelect('Viernes', $horarios);
+                                HorariosSelect('Sábado', $horarios);
+                                HorariosSelect('Domingo', $horarios);
                                 ?>
                             </tbody>
                         </table>
