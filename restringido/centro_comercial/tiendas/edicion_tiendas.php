@@ -82,7 +82,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 
 foreach ($imagenesTienda as $imagen) {
 
-    echo $imagen['idImagenesTiendas'];
+    echo $imagen['idImagenesTiendas'] . '<br>';
 }
 ?>
 <!DOCTYPE html>
