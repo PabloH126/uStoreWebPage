@@ -90,6 +90,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     <?php require("templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="css/creacion_tiendas.css">
     <link rel="stylesheet" href="css/edicion_tiendas.css">
+    <link rel="stylesheet" type="text/css" href="confirmacion_eliminacion.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
