@@ -88,9 +88,31 @@ function CategoriasSelect($categorias)
                     </div>
                 </div>
 
-                <!-- Logo de tienda-->
+                <!-- Categorias de tienda-->
                 <div class="item" id="item-2">
                     <p>2/6</p>
+                    <div class="categorias">
+                        <label><strong>Categorías de la tienda</strong></label>
+                        <div class="optionsC">
+                            <?php CategoriasSelect($categorias); ?>
+                        </div>
+                        <div class="notas">
+                            <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
+                        </div>
+                    </div>
+                    <div class="bttns">
+                        <div class="bttn back">
+                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo de tienda-->
+                <div class="item" id="item-3">
+                    <p>3/6</p>
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
@@ -104,32 +126,8 @@ function CategoriasSelect($categorias)
                             </div>
                         </div>
                     </div>
-
                     <div class="notas">
                         <span>* La imagen del logo no debe superar los 5mb.</span>
-                    </div>
-
-                    <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Categorias de tienda-->
-                <div class="item" id="item-3">
-                    <p>3/6</p>
-                    <div class="categorias">
-                        <label><strong>Categorías de la tienda</strong></label>
-                        <div class="optionsC">
-                            <?php CategoriasSelect($categorias); ?>
-                        </div>
-                        <div class="notas">
-                            <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
-                        </div>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">

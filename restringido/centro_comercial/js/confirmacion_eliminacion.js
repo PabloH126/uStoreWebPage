@@ -50,13 +50,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    function showNotification(message) {
+    function showNotification(message, url) {
         const notification = document.createElement("div");
         notification.classList.add("notification");
         notification.textContent = message;
         document.body.appendChild(notification);
         setTimeout(() => {
             notification.remove();
+            if (url)
+            {
+                window.location.href("")
+            }
         }, 3000);
     }
 });
