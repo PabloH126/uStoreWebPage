@@ -58,7 +58,7 @@
 				}
 			?>
 					<div class="item" id="agregar">
-						<a href=""><span class="material-symbols-outlined">add</span></a>
+						<a href="creacion_tiendas.php?id=<?php echo $_GET['id']; ?>"><span class="material-symbols-outlined">add</span></a>
 					</div>
 			<?php
 				}
