@@ -67,6 +67,7 @@ function CategoriasSelect($categorias)
     <?php require("../../templates/template.styles.php") ?>
     <?php require("../templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="../css/creacion_tiendas.css">
+    <link rel="stylesheet" href="css/creacion_tiendas.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -132,9 +133,9 @@ function CategoriasSelect($categorias)
                 <!-- Descripcion del producto-->
                 <div class="item" id="item-4">
                     <p>4/6</p>
-                    <div class="name">
+                    <div class="descripcion">
                         <label for="descripcionProducto"><strong>Descripcion del producto</strong></label>
-                        <input type="textbox" id="descripcionProducto" name="descripcionProducto">
+                        <textarea id="descripcionProducto" name="descripcionProducto">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">

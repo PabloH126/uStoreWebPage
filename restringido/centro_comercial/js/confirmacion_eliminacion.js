@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="modal-content">
                     <p>¿Estás seguro de que deseas eliminar esta tienda?</p>
                     <div class="modal-buttons">
-                        <button type="button" class="modal-accept" onclick="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/eliminarTienda.php">Aceptar</button>
+                        <button type="button" class="modal-accept">Aceptar</button>
                         <button type="button" class="modal-cancel">Cancelar</button>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             acceptButton.addEventListener("click", function() {
                 acceptButton.disabled = true;
                 cancelButton.disabled = true;
-                fetch('https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/eliminarTienda.php', {
+                fetch('../tiendas/eliminarTienda.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
