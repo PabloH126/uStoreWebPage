@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="modal-content">
                     <p>¿Estás seguro de que deseas eliminar esta tienda?</p>
                     <div class="modal-buttons">
-                        <button class="modal-accept">Aceptar</button>
-                        <button class="modal-cancel">Cancelar</button>
+                        <button type="button" class="modal-accept" onclick="eliminarTienda.php">Aceptar</button>
+                        <button type="button" class="modal-cancel">Cancelar</button>
                     </div>
                 </div>
             `;
@@ -43,5 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
         notification.classList.add("notification");
         notification.textContent = message;
         document.body.appendChild(notification);
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
     }
 });
