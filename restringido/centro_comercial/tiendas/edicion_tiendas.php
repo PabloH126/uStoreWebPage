@@ -141,7 +141,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                                <button type="button" class=""><i class='bx bx-trash'></i></button>
+                                <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
 
                         <div class="bttn back">

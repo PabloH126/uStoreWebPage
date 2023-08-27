@@ -225,15 +225,11 @@
         $data = [
             'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
         ];
-        echo '<br>' . $index . '<br>';
 
         if (!isset($idImagenes[$index]))
         {
             $idImagenes[$index] = "0";
-            echo 'Aqui entro al if ' . $idImagenes[$index] . '<br>';
         }
-
-        echo $idImagenes[$index] . '<br>';
 
         $ch = curl_init();
 
