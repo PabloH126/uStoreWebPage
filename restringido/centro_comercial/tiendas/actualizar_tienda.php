@@ -230,10 +230,10 @@
         if (!isset($idImagenes[$index]))
         {
             $idImagenes[$index] = "0";
-            echo $idImagenes[$index];
+            echo 'Aqui entro al if ' . $idImagenes[$index] . '<br>';
         }
 
-        echo $idImagenes[$index];
+        echo $idImagenes[$index] . '<br>';
 
         $ch = curl_init();
 
