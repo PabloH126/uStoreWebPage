@@ -31,16 +31,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
                 .then(response => response.text())
                 .then(data => {
-                    console.log("Tienda eliminada:");
-                modal.remove();
-                showNotification("Tienda eliminada exitosamente");
+                    modal.remove();
+                    showNotification("Tienda eliminada exitosamente", "https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=");
                 })
                 .then(
 
                 )
                 .catch(error => {
                     console.error('Error: ', error);
-                    showNotification("Hubo un error al eliminar la tienda");
+                    alert("Hubo un error al eliminar la tienda");
                 })
             });
 
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
             notification.remove();
             if (url)
             {
-                window.location.href("")
+                window.location.href = url;
             }
         }, 3000);
     }

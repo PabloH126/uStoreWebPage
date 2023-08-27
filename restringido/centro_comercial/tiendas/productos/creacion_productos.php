@@ -76,7 +76,8 @@ function CategoriasSelect($categorias)
         <h1>Creación de productos</h1>
         <div class="lista">
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
-                <!-- Nombre de tienda-->
+
+                <!-- Nombre del producto-->
                 <div class="item active" id="item-1">
                     <p>1/6</p>
                     <div class="name">
@@ -88,11 +89,11 @@ function CategoriasSelect($categorias)
                     </div>
                 </div>
 
-                <!-- Categorias de tienda-->
+                <!-- Categorias del producto-->
                 <div class="item" id="item-2">
                     <p>2/6</p>
                     <div class="categorias">
-                        <label><strong>Categorías de la tienda</strong></label>
+                        <label><strong>Categorías del producto</strong></label>
                         <div class="optionsC">
                             <?php CategoriasSelect($categorias); ?>
                         </div>
