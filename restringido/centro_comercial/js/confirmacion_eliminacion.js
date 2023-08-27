@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const cancelButton = modal.querySelector(".modal-cancel");
 
             acceptButton.addEventListener("click", function() {
+                
                 fetch('https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/eliminarTienda.php', {
                     method: 'POST',
                     headers: {

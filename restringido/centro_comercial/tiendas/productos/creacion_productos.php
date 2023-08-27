@@ -116,7 +116,8 @@ function CategoriasSelect($categorias)
                     <p>3/6</p>
                     <div class="name">
                         <label for="precioProducto"><strong>Precio del producto</strong></label>
-                        <input type="text" id="nombreProducto" name="nombreProducto">
+                        <label><strong>$</strong></label>
+                        <input type="number" id="precioProducto" name="precioProducto">
                     </div>
                     <div class="notas">
                         <span>* La imagen del logo no debe superar los 5mb.</span>
