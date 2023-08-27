@@ -29,10 +29,18 @@ document.addEventListener("DOMContentLoaded", function() {
                         'Content-Type': 'application/x-www-form-urlencoded',
                     }
                 })
-                .then(response => response.text())
+                .then(response => response.json())
                 .then(data => {
-                    modal.remove();
-                    showNotification("Tienda eliminada exitosamente", "https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=");
+                    if(data.status === 'success')
+                    {
+                        modal.remove();
+                        const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" + data.idMall;
+                        showNotification("Tienda eliminada exitosamente", url);
+                    }
+                    else
+                    {
+                        alert("Hubo un error al eliminar la tienda" + data.message);
+                    }
                 })
                 .then(
 

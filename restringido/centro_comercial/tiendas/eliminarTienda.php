@@ -19,10 +19,17 @@
 
     curl_close($ch);
 
+    $responseArray = array();
+
     if ($httpStatusCode != 204) {
-        echo $httpStatusCode;
+        $responseArray['status'] = 'error';
+        $responseArray['message'] = $httpStatusCode;
     }
-
-    header("Location: https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" . $_SESSION['idMall']);
-
+    else
+    {
+        $responseArray['status'] = 'success';
+        $responseArray['idMall'] = $_SESSION['idMall'];
+    }
+    
+    echo json_encode($responseArray);
 ?>

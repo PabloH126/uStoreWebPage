@@ -111,9 +111,9 @@ function CategoriasSelect($categorias)
                     </div>
                 </div>
 
-                <!-- Logo de tienda-->
+                <!--Precio del producto-->
                 <div class="item" id="item-3">
-                    <p>3/6</p>
+                    <p>4/6</p>
                     <div class="logoT">
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
