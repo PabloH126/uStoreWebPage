@@ -80,6 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (url) {
                 window.location.href = url;
             }
-        }, 3000);
+        }, 2500);
     }
 });

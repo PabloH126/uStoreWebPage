@@ -201,17 +201,12 @@ function CategoriasSelect($categorias)
                 <!-- Cantidad designados para apartar -->
                 <div class="item" id="item-6">
                     <p>6/6</p>
-                    <div class="apartados">
-                        <label><strong>Cantidad para apartados</strong></label>
-                        <div class="contentA">
-                            <?php
-                            PeriodosSelect('Periodo1');
-                            PeriodosSelect('Periodo2');
-                            PeriodosSelect('Periodo3');
-                            ?>
-                        </div>
+                    <div class="name">
+                        <label for="nombreProducto"><strong>Nombre del producto</strong></label>
+                        <input type="number" id="nombreProducto" name="nombreProducto">
+                    </div>
                         <div class="notas">
-                            <span>* Este apartado se refiere a la cantidad de este producto que estará disponible para apartar.</span>
+                            <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para apartar.</span>
                         </div>
                     </div>
                     <div class="bttns">
