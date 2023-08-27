@@ -116,7 +116,7 @@ function CategoriasSelect($categorias)
                     <p>3/6</p>
                     <div class="name">
                         <label for="precioProducto"><strong>Precio del producto</strong></label>
-                        <label><strong>$</strong></label>
+                        <strong>$</strong>
                         <input type="number" id="precioProducto" name="precioProducto">
                     </div>
                     <div class="notas">
