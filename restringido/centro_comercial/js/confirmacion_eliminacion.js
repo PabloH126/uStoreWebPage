@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const storeId = this.getAttribute("data-store-id");
             const modalOverlay = document.createElement("div");
             modalOverlay.classList.add("modal-overlay");
+            
             const modal = document.createElement("div");
             modal.classList.add("modal");
 
@@ -25,6 +26,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const acceptButton = modal.querySelector(".modal-accept");
             const cancelButton = modal.querySelector(".modal-cancel");
 
+            function closeModal() {
+                modalOverlay.remove();
+            }
+
             acceptButton.addEventListener("click", function() {
                 acceptButton.disabled = true;
                 cancelButton.disabled = true;
@@ -38,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(data => {
                     if(data.status === 'success')
                     {
-                        modalOverlay.remove();
+                        closeModal();
                         const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" + data.idMall;
                         showNotification("Tienda eliminada exitosamente", url);
                     }
@@ -47,9 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         alert("Hubo un error al eliminar la tienda" + data.message);
                     }
                 })
-                .then(
-
-                )
                 .catch(error => {
                     console.error('Error: ', error);
                     alert("Hubo un error al eliminar la tienda");
@@ -57,7 +59,13 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             cancelButton.addEventListener("click", function() {
-                modal.remove();
+                closeModal();
+            });
+
+            modalOverlay.addEventListener("click", function(event) {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
             });
         });
     });
@@ -69,8 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.appendChild(notification);
         setTimeout(() => {
             notification.remove();
-            if (url)
-            {
+            if (url) {
                 window.location.href = url;
             }
         }, 3000);
