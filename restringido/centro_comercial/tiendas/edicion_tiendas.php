@@ -114,8 +114,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                             <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
                         </div>
                     </div>
-
-                    
                 </div>
 
                 <!-- Logo de tienda-->
@@ -142,7 +140,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
                                 <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
-                                <div id="notification-container"></div>
                         </div>
 
                         <div class="bttn back">
@@ -327,6 +324,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
             </form>
         </div>
     </div>
+    <div id="notification-container"></div>
     <script src="../js/slider_formularios.js"></script>
     <script src="../js/mostrarImg.js"></script>
     <script src="../js/edicion_tiendas.js"></script>

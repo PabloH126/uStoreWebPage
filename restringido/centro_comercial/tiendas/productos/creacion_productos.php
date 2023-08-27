@@ -56,7 +56,7 @@ function CategoriasSelect($categorias)
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
     }
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,7 +64,7 @@ function CategoriasSelect($categorias)
 <head>
     <meta charset="utf-8">
     <title>Crear tienda</title>
-    <?php require("templates/template.styles.php") ?>
+    <?php require("../../templates/template.styles.php") ?>
     <?php require("tiendas/templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
