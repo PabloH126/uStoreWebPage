@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     deleteStoreButtons.forEach(button => {
         button.addEventListener("click", function() {
             const storeId = this.getAttribute("data-store-id");
+            const modalOverlay = document.createElement("div");
+            modalOverlay.classList.add("modal-overlay");
             const modal = document.createElement("div");
             modal.classList.add("modal");
 
@@ -11,13 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="modal-content">
                     <p>¿Estás seguro de que deseas eliminar esta tienda?</p>
                     <div class="modal-buttons">
-                        <button type="button" class="modal-accept">Aceptar</button>
-                        <button type="button" class="modal-cancel">Cancelar</button>
+                        <button class="modal-accept">Aceptar</button>
+                        <button class="modal-cancel">Cancelar</button>
                     </div>
                 </div>
             `;
 
-            document.body.appendChild(modal);
+            modalOverlay.appendChild(modal);
+            document.body.appendChild(modalOverlay);
 
             const acceptButton = modal.querySelector(".modal-accept");
             const cancelButton = modal.querySelector(".modal-cancel");
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(data => {
                     if(data.status === 'success')
                     {
-                        modal.remove();
+                        modalOverlay.remove();
                         const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" + data.idMall;
                         showNotification("Tienda eliminada exitosamente", url);
                     }
