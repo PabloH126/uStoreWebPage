@@ -11,9 +11,10 @@
 .content .lista form .item .cantidadApartar input{
     margin: 5% 0 1%;
     outline: none;
-    font-size: 1.5rem;
+    font-size: 1em;
     width: 100%;
     text-align: center;
+    padding: 9px;
 }
 
 .content .lista form .item .cantidadApartar .notas{
