@@ -20,6 +20,7 @@
     width: 400px;
     text-align: center;
     font-family: "Golos Text", sans-serif;
+    font-size: 2rem;
 }
 
 .modal-buttons {
@@ -37,9 +38,23 @@
 .modal-accept {
     background-color: #4caf50;
     color: white;
+    font-size: 2rem;
 }
 
 .modal-cancel {
     background-color: #f44336;
     color: white;
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 1502px) {
+    .modal {
+        font-size: 1rem;
+    }
+    .modal-accept{
+        font-size: 1rem;
+    }
+    .modal-cancel{
+        font-size: 1rem;
+    }
 }

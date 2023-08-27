@@ -2,7 +2,14 @@
     height: 244px;
     width: 100%;
     resize: none;
+    outline: none;
     font-size: 1.5rem;
     margin: 5% 0;
     font-family: 'Golos Text', sans-serif;
+}
+
+@media only screen and (max-width: 1502px) {
+    .content .lista form .item .descripcion textarea{
+        width: 485px;
+    }
 }

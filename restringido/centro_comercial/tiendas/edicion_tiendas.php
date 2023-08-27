@@ -110,7 +110,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                                <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn" id="one">
                             <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
@@ -141,7 +141,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                                <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
 
                         <div class="bttn back">
@@ -167,7 +167,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
@@ -209,7 +209,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
@@ -284,7 +284,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
@@ -313,7 +313,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn back" id="ult">
                             <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>

@@ -1,11 +1,13 @@
 .content {
     height: 88%;
     display: flow-root;
+    -webkit-display: flow-root
 }
 
 .content .contentT {
     height: 86%;
     margin: 1%;
+    -webkit-display: grid;
     display: grid;
     grid-template-columns: 57% 43%;
     gap: 1%;
