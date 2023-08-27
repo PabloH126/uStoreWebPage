@@ -79,6 +79,11 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
         echo '</div>';
     }
 }
+
+foreach ($imagenesTienda as $imagen) {
+
+    echo $imagen['idImagenesTiendas'];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -234,13 +239,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput1" >
                                     <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
-                                    <?php if (isset($imagenesTienda[0]['idImagenesTiendas']))
-                                    {
-                                    ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[0]['idImagenesTiendas']; ?>" name="idImagen1">
-                                    <?php
-                                    }
-                                    ?>
+                                    <input type="hidden" value="<?php echo $imagenesTienda[0]['idImagenesTiendas']; ?>" name="idImagen1">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -251,13 +250,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput2" >
                                     <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
-                                    <?php if (isset($imagenesTienda[1]['idImagenesTiendas']))
-                                    {
-                                    ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[1]['idImagenesTiendas']; ?>" name="idImagen1">
-                                    <?php
-                                    }
-                                    ?>
+                                    <input type="hidden" value="<?php echo $imagenesTienda[1]['idImagenesTiendas']; ?>" name="idImagen1">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -268,13 +261,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput3" >
                                     <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
-                                    <?php if (isset($imagenesTienda[2]['idImagenesTiendas']))
-                                    {
-                                    ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[2]['idImagenesTiendas']; ?>" name="idImagen1">
-                                    <?php
-                                    }
-                                    ?>
+                                    <input type="hidden" value="<?php echo $imagenesTienda[2]['idImagenesTiendas']; ?>" name="idImagen1">
                                 </div>
                             </div>
                         </div>
@@ -283,7 +270,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         <span>* Cada imagen no debe superar los 5mb.</span>
                     </div>
                     <div class="bttns">
-                        <div class="bttn" id="delete-store">
+                    <div class="bttn" id="delete-store">
                             <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn back">
@@ -313,7 +300,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                            <button type="button" class=""><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn back" id="ult">
                             <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
