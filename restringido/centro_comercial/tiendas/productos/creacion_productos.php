@@ -114,18 +114,9 @@ function CategoriasSelect($categorias)
                 <!--Precio del producto-->
                 <div class="item" id="item-3">
                     <p>3/6</p>
-                    <div class="logoT">
-                        <label><strong>Precio del producto</strong></label>
-                        <div class="contentL">
-                            <div class="box">
-                                <i class='bx bx-x delete-icon'></i>
-                                <img id="imagenSelec" alt="">
-                            </div>
-                            <div class="ip">
-                                <label for="logoTienda" id="labelL">
-                                <input type="file" class="file-input" id="logoTienda" name="logoTienda" accept="image/*">
-                            </div>
-                        </div>
+                    <div class="name">
+                        <label for="precioProducto"><strong>Precio del producto</strong></label>
+                        <input type="text" id="nombreProducto" name="nombreProducto">
                     </div>
                     <div class="notas">
                         <span>* La imagen del logo no debe superar los 5mb.</span>

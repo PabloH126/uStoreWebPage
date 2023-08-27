@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/DeleteTienda?id=" . $_SESSION['idTienda']);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
