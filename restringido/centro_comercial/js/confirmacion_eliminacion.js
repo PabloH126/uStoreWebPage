@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log("Tienda eliminada:", storeId);
                 // Cierra el modal
                 modal.remove();
+                // Mostrar notificación in-app
+                showNotification("Tienda eliminada exitosamente");
             });
 
             cancelButton.addEventListener("click", function() {
@@ -35,4 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
+
+    function showNotification(message) {
+        const notification = document.createElement("div");
+        notification.classList.add("notification");
+        notification.textContent = message;
+        document.body.appendChild(notification);
+    }
 });
