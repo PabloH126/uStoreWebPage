@@ -1,4 +1,4 @@
-.content .lista form .item .descripcion textarea{
+.content .lista form .item .descripcion textarea {
     height: 244px;
     width: 100%;
     resize: none;
@@ -8,7 +8,7 @@
     font-family: 'Golos Text', sans-serif;
 }
 
-.content .lista form .item .cantidadApartar input{
+.content .lista form .item .cantidadApartar input {
     margin: 5% 0 1%;
     outline: none;
     font-size: 1em;
@@ -17,12 +17,12 @@
     padding: 9px;
 }
 
-.content .lista form .item .cantidadApartar .notas{
+.content .lista form #item-6 {
     margin-bottom: 1%;
 }
 
 @media only screen and (max-width: 1502px) {
-    .content .lista form .item .descripcion textarea{
+    .content .lista form .item .descripcion textarea {
         width: 485px;
     }
 }
