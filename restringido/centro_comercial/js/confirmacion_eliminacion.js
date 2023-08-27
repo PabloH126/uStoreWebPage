@@ -23,16 +23,28 @@ document.addEventListener("DOMContentLoaded", function() {
             const cancelButton = modal.querySelector(".modal-cancel");
 
             acceptButton.addEventListener("click", function() {
-                // Aquí puedes hacer lo que necesites al confirmar la eliminación
-                console.log("Tienda eliminada:", storeId);
-                // Cierra el modal
+                fetch('https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/eliminarTienda.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    }
+                })
+                .then(response => response.text())
+                .then(data => {
+                    console.log("Tienda eliminada:");
                 modal.remove();
-                // Mostrar notificación in-app
                 showNotification("Tienda eliminada exitosamente");
+                })
+                .then(
+
+                )
+                .catch(error => {
+                    console.error('Error: ', error);
+                    showNotification("Hubo un error al eliminar la tienda");
+                })
             });
 
             cancelButton.addEventListener("click", function() {
-                // Cierra el modal sin hacer nada
                 modal.remove();
             });
         });

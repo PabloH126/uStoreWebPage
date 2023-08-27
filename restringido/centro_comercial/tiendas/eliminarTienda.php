@@ -23,6 +23,4 @@
         echo $httpStatusCode;
     }
 
-    header("Location: https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" . $_SESSION['idMall']);
-
 ?>

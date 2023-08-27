@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require '../../../security.php';
-/*
+
 //REQUEST DE LAS CATEGORIAS
 
 $ch = curl_init();
@@ -25,7 +25,7 @@ $categorias = json_decode($response, true);
 curl_close($ch);
 
 //FUNCIONES DEL FORMULARIO
-
+/*
 function HorariosSelect($dia)
 {
     echo '<tr>';
@@ -47,7 +47,7 @@ function PeriodosSelect($periodo)
     echo '</select>';
     echo '</div>';
 }
-
+*/
 function CategoriasSelect($categorias)
 {
     foreach ($categorias as $categoria) {
@@ -56,7 +56,7 @@ function CategoriasSelect($categorias)
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
     }
-}*/
+}
 ?>
 <!DOCTYPE html>
 <html>
