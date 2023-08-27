@@ -202,8 +202,8 @@ function CategoriasSelect($categorias)
                 <div class="item" id="item-6">
                     <p>6/6</p>
                     <div class="name">
-                        <label for="nombreProducto"><strong>Nombre del producto</strong></label>
-                        <input type="number" id="nombreProducto" name="nombreProducto">
+                        <label for="cantidadApartar"><strong>Cantidad para apartar</strong></label>
+                        <input type="number" id="cantidadApartar" name="cantidadApartar">
                     </div>
                         <div class="notas">
                             <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para apartar.</span>
