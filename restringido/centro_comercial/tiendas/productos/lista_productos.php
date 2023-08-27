@@ -1,10 +1,10 @@
-<?php 
+ <?php 
 	session_start();
 	require '../../../security.php';
 
 	$ch = curl_init();
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_GET['id']);
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/GetProductos?idTienda=" . $_GET['id']);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -20,9 +20,9 @@
 	}
 	
 	if ($httpStatusCode == 400) {
-		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+		$productosError = "Error al intentar recuperar los productos. Codigo de respuesta: " . $httpStatusCode;
 	}
-	$tiendas = json_decode($response, true);
+	$productos = json_decode($response, true);
 	curl_close($ch);
 	
 ?>
@@ -30,7 +30,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Selección de tienda</title>
+	<title>Selección de productos</title>
 	<?php require("../../templates/template.styles.php")?>
 	<?php require("../templates/template.secc_tiendas.php")?>
 	<link rel="stylesheet" type="text/css" href="../css/lista_tiendas.css">
@@ -41,18 +41,18 @@
 	<div class="content">
 		<div class="lista">
 			<?php 
-				if($tiendasError != null)
+				if($productosError != null)
 				{ ?>
-				<h3><?php echo $tiendasError;?></h3>
+				<h3><?php echo $productosError;?></h3>
 			<?php 
 				}
 				else
 				{ 
-				foreach ($tiendas as $tienda)
+				foreach ($productos as $producto)
 				{ ?>
 					<div class="item">
-						<a href="tiendas/perfil_tienda.php?id=<?php echo $tienda['idTienda']; ?>"><img width="60%" class="logo" src="<?php echo $tienda['logoTienda']; ?>"></a>
-						<strong class="nombre"><?php echo $tienda['nombreTienda'];?></strong>
+						<a href=""><img width="60%" class="logo" src="<?php echo 'imagen del producto'; ?>"></a>
+						<strong class="nombre"><?php echo $producto['nombreProducto'];?></strong>
 					</div>
 			<?php
 				}
