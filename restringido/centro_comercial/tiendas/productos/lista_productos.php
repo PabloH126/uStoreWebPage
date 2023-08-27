@@ -1,8 +1,6 @@
 <?php 
 	session_start();
-	require '../security.php';
-
-	$_SESSION['idMall'] = $_GET['id'];
+	require '../../../security.php';
 
 	$ch = curl_init();
 

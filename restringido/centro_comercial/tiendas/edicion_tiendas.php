@@ -108,7 +108,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
-                                <button type="button" class=""><i class='bx bx-trash'></i></button>
+                                <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn" id="one">
                             <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
@@ -329,6 +329,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     <script src="../js/slider_formularios.js"></script>
     <script src="../js/mostrarImg.js"></script>
     <script src="../js/edicion_tiendas.js"></script>
+    <script src="../js/confirmacion_eliminacion.js"></script>
 </body>
 
 </html>
