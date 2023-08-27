@@ -63,7 +63,7 @@ function CategoriasSelect($categorias)
 
 <head>
     <meta charset="utf-8">
-    <title>Crear tienda</title>
+    <title>Crear producto</title>
     <?php require("../../templates/template.styles.php") ?>
     <?php require("../templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="../css/creacion_tiendas.css">
@@ -117,10 +117,7 @@ function CategoriasSelect($categorias)
                     <div class="name">
                         <label for="precioProducto"><strong>Precio del producto</strong></label>
                         <strong>$</strong>
-                        <input type="number" id="precioProducto" name="precioProducto" oninput="validarDecimal(this)">
-                    </div>
-                    <div class="notas">
-                        <span>* La imagen del logo no debe superar los 5mb.</span>
+                        <input type="number" id="precioProducto" name="precioProducto" min="1" step="0.01">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -251,9 +248,7 @@ function CategoriasSelect($categorias)
         </div>
     </div>
     <script>
-        function validarDecimal(input) {
-    input.value = parseFloat(input.value).toFixed(2);
-}
+
 
     </script>
     <script src="../../js/slider_formularios.js"></script>
