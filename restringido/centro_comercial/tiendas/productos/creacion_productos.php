@@ -129,34 +129,12 @@ function CategoriasSelect($categorias)
                     </div>
                 </div>
 
-                <!-- Horario de tienda-->
+                <!-- Descripcion del producto-->
                 <div class="item" id="item-4">
                     <p>4/6</p>
-                    <div class="horarioT">
-                        <label><strong>Horario de la tienda</strong></label>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Día</th>
-                                    <th>Hora de apertura</th>
-                                    <th>Hora de cierre</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                HorariosSelect('Lunes');
-                                HorariosSelect('Martes');
-                                HorariosSelect('Miércoles');
-                                HorariosSelect('Jueves');
-                                HorariosSelect('Viernes');
-                                HorariosSelect('Sábado');
-                                HorariosSelect('Domingo');
-                                ?>
-                            </tbody>
-                        </table>
-                        <div class="notas">
-                            <span>* Si es día no laboral, dejar el día en 00:00 o en --:--.</span>
-                        </div>
+                    <div class="name">
+                        <label for="descripcionProducto"><strong>Descripcion del producto</strong></label>
+                        <input type="textbox" id="descripcionProducto" name="descripcionProducto">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
