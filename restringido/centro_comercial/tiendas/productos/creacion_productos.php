@@ -147,11 +147,11 @@ function CategoriasSelect($categorias)
                     </div>
                 </div>
 
-                <!-- Promociones de tienda -->
+                <!-- Imagenes de producto -->
                 <div class="item" id="item-5">
                     <p>5/6</p>
                     <div class="promociones">
-                        <label><strong>Banners de la tienda</strong></label>
+                        <label><strong>Imágenes del producto</strong></label>
                         <div class="imageP">
                             <div class="contentP">
                                 <div class="box">
@@ -198,11 +198,11 @@ function CategoriasSelect($categorias)
                     </div>
                 </div> 
 
-                <!-- Periodos de apartado de la tienda -->
+                <!-- Cantidad designados para apartar -->
                 <div class="item" id="item-6">
                     <p>6/6</p>
                     <div class="apartados">
-                        <label><strong>Periodos de apartado</strong></label>
+                        <label><strong>Cantidad para apartados</strong></label>
                         <div class="contentA">
                             <?php
                             PeriodosSelect('Periodo1');
@@ -211,7 +211,7 @@ function CategoriasSelect($categorias)
                             ?>
                         </div>
                         <div class="notas">
-                            <span>* Los campos en blanco y en "Tiempo", no se guardarán.</span>
+                            <span>* Este apartado se refiere a la cantidad de este producto que estará disponible para apartar.</span>
                         </div>
                     </div>
                     <div class="bttns">
