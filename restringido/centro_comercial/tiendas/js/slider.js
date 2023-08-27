@@ -6,7 +6,8 @@ const btnLeft = document.querySelector(".btn-left"),
       derecha = document.querySelector(".derecha");
 
 if(sliderImg.length === 3){
-    slider.style.setProperty("width", "67%");
+    izquierda.style.setProperty("height", "67%");
+    derecha.style.setProperty("height", "67%");
     slider.style.setProperty("width", "300%");
     sliderImg.forEach(img => {
         img.style.setProperty("width", "calc(100% / 3)");
