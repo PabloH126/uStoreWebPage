@@ -3,7 +3,7 @@ session_start();
 require '../../security.php';
 include 'datosTienda.php';
 $_SESSION['idTienda'] = $_GET['id'];
-echo $_SESSION;
+echo $_SESSION['idTienda'];
 ?>
 <!DOCTYPE html>
 <html>
