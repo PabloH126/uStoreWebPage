@@ -25,7 +25,7 @@ $categorias = json_decode($response, true);
 curl_close($ch);
 
 //FUNCIONES DEL FORMULARIO
-/*
+
 function HorariosSelect($dia)
 {
     echo '<tr>';
@@ -47,7 +47,7 @@ function PeriodosSelect($periodo)
     echo '</select>';
     echo '</div>';
 }
-*/
+
 function CategoriasSelect($categorias)
 {
     foreach ($categorias as $categoria) {
