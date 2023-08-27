@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="modal-content">
                     <p>¿Estás seguro de que deseas eliminar esta tienda?</p>
                     <div class="modal-buttons">
-                        <button type="button" class="modal-accept" onclick="eliminarTienda.php">Aceptar</button>
+                        <button type="button" class="modal-accept" onclick="header("Location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/eliminarTienda.php">Aceptar</button>
                         <button type="button" class="modal-cancel">Cancelar</button>
                     </div>
                 </div>
