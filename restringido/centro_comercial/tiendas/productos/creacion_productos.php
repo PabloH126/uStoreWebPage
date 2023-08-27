@@ -134,7 +134,7 @@ function CategoriasSelect($categorias)
                 <div class="item" id="item-4">
                     <p>4/6</p>
                     <div class="descripcion">
-                        <label for="descripcionProducto"><strong>Descripcion del producto</strong></label>
+                        <label for="descripcionProducto"><strong>Descripción del producto</strong></label>
                         <textarea id="descripcionProducto" name="descripcionProducto"></textarea>
                     </div>
                     <div class="bttns">
