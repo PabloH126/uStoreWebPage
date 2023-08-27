@@ -80,7 +80,7 @@ function CategoriasSelect($categorias)
                 <div class="item active" id="item-1">
                     <p>1/6</p>
                     <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
+                        <label for="nombreTienda"><strong>Nombre del producto</strong></label>
                         <input type="text" id="nombreTienda" name="nombreTienda">
                     </div>
                     <div class="bttn" id="one">
