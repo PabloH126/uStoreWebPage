@@ -117,7 +117,7 @@ function CategoriasSelect($categorias)
                     <div class="name">
                         <label for="precioProducto"><strong>Precio del producto</strong></label>
                         <strong>$</strong>
-                        <input type="number" id="precioProducto" name="precioProducto">
+                        <input type="number" id="precioProducto" name="precioProducto" oninput="validarDecimal(this)">
                     </div>
                     <div class="notas">
                         <span>* La imagen del logo no debe superar los 5mb.</span>
@@ -250,6 +250,12 @@ function CategoriasSelect($categorias)
             </form>
         </div>
     </div>
+    <script>
+        function validarDecimal(input) {
+    input.value = parseFloat(input.value).toFixed(2);
+}
+
+    </script>
     <script src="../../js/slider_formularios.js"></script>
     <script src="../../js/mostrarImg.js"></script>
     <script src="js/creacion_tiendas.js"></script>
