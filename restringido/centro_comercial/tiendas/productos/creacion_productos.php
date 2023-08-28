@@ -152,38 +152,42 @@ function CategoriasSelect($categorias)
                     <p>5/6</p>
                     <div class="promociones">
                         <label><strong>Imágenes del producto</strong></label>
-                        <div class="imageP">
-                            <div class="contentP">
-                                <div class="box">
-                                    <i class='bx bx-x delete-icon'></i>
-                                    <img src="" id="imagenSelec1" alt="">
+                        <div class="contentPP">
+                            
+                            <div class="imageP">
+                                <div class="contentP">
+                                    <div class="box">
+                                        <i class='bx bx-x delete-icon'></i>
+                                        <img src="" id="imagenSelec1" alt="">
+                                    </div>
+                                    <div class="ip">
+                                        <label for="fileInput1" >
+                                        <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
+                                    </div>
                                 </div>
-                                <div class="ip">
-                                    <label for="fileInput1" >
-                                    <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
+                                <div class="contentP">
+                                    <div class="box">
+                                        <i class='bx bx-x delete-icon'></i>
+                                        <img src="" id="imagenSelec2" alt="">
+                                    </div>
+                                    <div class="ip">
+                                        <label for="fileInput2" >
+                                        <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="contentP">
-                                <div class="box">
-                                    <i class='bx bx-x delete-icon'></i>
-                                    <img src="" id="imagenSelec2" alt="">
-                                </div>
-                                <div class="ip">
-                                    <label for="fileInput2" >
-                                    <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
-                                </div>
-                            </div>
-                            <div class="contentP">
-                                <div class="box">
-                                    <i class='bx bx-x delete-icon'></i>
-                                    <img src="" id="imagenSelec3" alt="">
-                                </div>
-                                <div class="ip">
-                                    <label for="fileInput3" >
-                                    <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                <div class="contentP">
+                                    <div class="box">
+                                        <i class='bx bx-x delete-icon'></i>
+                                        <img src="" id="imagenSelec3" alt="">
+                                    </div>
+                                    <div class="ip">
+                                        <label for="fileInput3" >
+                                        <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="notas">
                         <span>* Cada imagen no debe superar los 5mb.</span>
