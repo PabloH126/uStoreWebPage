@@ -10,15 +10,19 @@ const imagenMostrada1 = document.getElementById('imagenSelec1');
 const imagenMostrada2 = document.getElementById('imagenSelec2');
 const imagenMostrada3 = document.getElementById('imagenSelec3');
 
-imagenInput.addEventListener('change', (event) => {
-    const imagenSeleccionada = event.target.files[0];
-    
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada.src = imagenURL;
-    }
-});
 
+if (imagenInput && imagenMostrada)
+{
+    imagenInput.addEventListener('change', (event) => {
+        const imagenSeleccionada = event.target.files[0];
+        
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada.src = imagenURL;
+        }
+    });
+}
+ 
 imagenInput1.addEventListener('change', (event) => {
     console.log('Entró al evento');
     const imagenSeleccionada = event.target.files[0];
@@ -56,8 +60,11 @@ deleteIcons.forEach((icon, index) => {
         // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
         switch (index) {
             case 0:
-                imagenMostrada.src = '';
-                imagenInput.value = '';
+                if (imagenInput && imagenMostrada)
+                {
+                    imagenMostrada.src = '';
+                    imagenInput.value = '';
+                }
                 break;
             case 1:
                 imagenMostrada1.src = '';
