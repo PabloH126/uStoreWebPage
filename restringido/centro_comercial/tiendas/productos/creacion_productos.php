@@ -185,6 +185,28 @@ function CategoriasSelect($categorias)
                                         <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
                                     </div>
                                 </div>
+
+                                <div class="contentP" id="content-4">
+                                    <div class="box">
+                                        <i class='bx bx-x delete-icon'></i>
+                                        <img src="" id="imagenSelec3" alt="">
+                                    </div>
+                                    <div class="ip">
+                                        <label for="fileInput3" >
+                                        <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                    </div>
+                                </div>
+
+                                <div class="contentP" id="content-5">
+                                    <div class="box">
+                                        <i class='bx bx-x delete-icon'></i>
+                                        <img src="" id="imagenSelec3" alt="">
+                                    </div>
+                                    <div class="ip">
+                                        <label for="fileInput3" >
+                                        <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         

@@ -14,6 +14,12 @@
 }
 
 
+.content .lista form .item .promociones .contentPP #content-4,
+.content .lista form .item .promociones .contentPP #content-5{
+    display: none;
+}
+
+
 .content .lista form .item .cantidadApartar input {
     margin: 5% 0 1%;
     outline: none;
