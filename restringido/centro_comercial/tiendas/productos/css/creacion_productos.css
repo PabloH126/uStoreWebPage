@@ -8,6 +8,12 @@
     font-family: 'Golos Text', sans-serif;
 }
 
+.content .lista form .item .promociones .contentPP{
+    width: 100%;
+    overflow: hidden;
+}
+
+
 .content .lista form .item .cantidadApartar input {
     margin: 5% 0 1%;
     outline: none;
