@@ -11,6 +11,7 @@
 .content .lista form .item .promociones .contentPP{
     width: 100%;
     overflow: hidden;
+    height: 244px;
 }
 
 
@@ -36,5 +37,9 @@
 @media only screen and (max-width: 1502px) {
     .content .lista form .item .descripcion textarea {
         width: 485px;
+    }
+
+    .content .lista form .item .promociones .contentPP{
+        height: 191px;
     }
 }
