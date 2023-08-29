@@ -154,7 +154,7 @@ function CategoriasSelect($categorias)
                         <label><strong>Imágenes del producto</strong></label>
                         <div class="contentPP">
 
-                            <div class="imageP">
+                            <div class="imageP" id="imageP">
                                 <div class="contentP">
                                     <div class="box">
                                         <i class='bx bx-x delete-icon'></i>

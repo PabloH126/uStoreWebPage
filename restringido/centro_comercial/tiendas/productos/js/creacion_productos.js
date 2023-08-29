@@ -33,8 +33,23 @@ function nombreValidacion() {
     return true;
 }
 
+function precioValidacion() {
+    var precio = document.getElementById('precioProducto');
+    if(!precio || precio == )
+    {
+        return false;
+    }
+}
+
 function descripcionValidacion() {
-    var descripcion = document.querySelector('input[type="]')
+    var descripcion = document.getElementById('descripcionProducto');
+
+    if(!descripcion || !descripcion.value.trim())
+    {
+        return false;
+    }
+
+    return true;
 }
 
 function validacionSizeImagen(imagen, maxSize)

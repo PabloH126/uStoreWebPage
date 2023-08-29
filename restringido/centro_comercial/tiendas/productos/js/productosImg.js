@@ -3,6 +3,7 @@ const input2 = document.getElementById('fileInput2');
 const input3 = document.getElementById('fileInput3');
 const input4 = document.getElementById('fileInput4');
 const input5 = document.getElementById('fileInput5');
+const content = document.getElementById('imageP');
 
 input3.addEventListener('input', showInput4);
 input4.addEventListener('input', showInput5);
@@ -11,6 +12,7 @@ console.log("ora aqui x2");
 
 function showInput4() {
     if (input3.value.trim() !== '') {
+      content.style.grid-template-columns = 'repeat(3, 1fr)';
       input4.style.display = 'block';
       console.log("entro en el block c:");
     } else {
