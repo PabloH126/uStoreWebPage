@@ -64,13 +64,28 @@ function validacionSizeImagen(imagen, maxSize) {
     return true;
 }
 
+function validacionTypeImagen(imagen)
+{
+    var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    if (allowedTypes.indexOf(imagen.files[0].type) === -1) {
+        return false;
+    }
+
+    return true;
+}
+
 function imagenesValidacion() {
     const maxSize = 5 * 1024 * 1024;
     
     for (let i = 1; i <= 5; i++)
     {
         let img = document.getElementById("fileInput" + i);
-        if (img.files.legth && !validacionSizeImagen(img, maxSize))
+        if(img.files.length && !validacionTypeImagen(img))
+        {
+            alert(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+            return false;
+        }
+        else if (img.files.legth && !validacionSizeImagen(img, maxSize))
         {
             alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes`);
             return false;

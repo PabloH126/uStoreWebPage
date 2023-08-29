@@ -168,7 +168,7 @@
             }
             else
             {
-                die("Error las imagenes de producto:" . $nombreImagen . "no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+                die("Error las imagenes de producto:" . $nombreImagen . " no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
             }
         }
     }
