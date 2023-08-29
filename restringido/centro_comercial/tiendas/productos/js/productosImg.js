@@ -8,7 +8,7 @@ const contentPP = document.getElementById('contentPP');
 input3.addEventListener('input', showInput4);
 input4.addEventListener('input', showInput5);
 
-console.log("ora aqui ya");
+console.log("ora aqui ya 1");
 
 function showInput4() {
     if (input3.value.trim() !== '') {
@@ -23,6 +23,7 @@ function showInput4() {
   function showInput5() {
     if (input4.value.trim() !== '') {
         content.style.gridTemplateColumns = 'repeat(5, 1fr)';
+        contentPP.style.width = '60%';
         content5.style.display = 'block';
     } else {
         content5.style.display = 'none';
