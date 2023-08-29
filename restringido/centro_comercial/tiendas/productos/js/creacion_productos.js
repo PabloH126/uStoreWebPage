@@ -35,7 +35,9 @@ function nombreValidacion() {
 
 function precioValidacion() {
     var precio = document.querySelector('input[name="precioProducto"]');
-    if(!precio || precio.value <= 0)
+    var valorPrecio = Number(precio.value);
+
+    if(isNaN(valorPrecio) || valorPrecio < 0)
     {
         return false;
     }
@@ -81,8 +83,9 @@ function imagenesValidacion() {
 
 function cantidadApartarValidacion() {
     var apartado = document.querySelector('input[name="cantidadApartar"]');
+    var valorApartado = Number(apartado.value);
 
-    if(!apartado || apartado.value < 0)
+    if(isNaN(valorApartado) || valorApartado < 0)
     {
         return false;
     }
