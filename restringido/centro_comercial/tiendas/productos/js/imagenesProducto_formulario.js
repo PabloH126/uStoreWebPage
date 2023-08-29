@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await sendFormWitoutImages(mainForm, fileInputs);
             console.log(data);
 
-            if (data.statusProducto === 'success' && statusCatP === 'success')
+            if (data.statusProducto === 'success' && data.statusCatP === 'success')
             {
                 for (let input of fileInputs)
                 {
