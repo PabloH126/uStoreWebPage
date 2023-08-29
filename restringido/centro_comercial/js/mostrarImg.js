@@ -3,12 +3,16 @@ const imagenInput = document.getElementById('logoTienda');
 const imagenInput1 = document.getElementById('fileInput1');
 const imagenInput2 = document.getElementById('fileInput2');
 const imagenInput3 = document.getElementById('fileInput3');
+const imagenInput4 = document.getElementById('fileInput4');
+const imagenInput5 = document.getElementById('fileInput5');
 
 const imagenMostrada = document.getElementById('imagenSelec');
 
 const imagenMostrada1 = document.getElementById('imagenSelec1');
 const imagenMostrada2 = document.getElementById('imagenSelec2');
 const imagenMostrada3 = document.getElementById('imagenSelec3');
+const imagenMostrada4 = document.getElementById('imagenSelec4');
+const imagenMostrada5 = document.getElementById('imagenSelec5');
 
 
 if (imagenInput && imagenMostrada) {
@@ -50,6 +54,24 @@ imagenInput3.addEventListener('change', (event) => {
     }
 });
 
+imagenInput4.addEventListener('change', (event) => {
+    const imagenSeleccionada = event.target.files[0];
+
+    if (imagenSeleccionada) {
+        const imagenURL = URL.createObjectURL(imagenSeleccionada);
+        imagenMostrada4.src = imagenURL;
+    }
+});
+
+imagenInput5.addEventListener('change', (event) => {
+    const imagenSeleccionada = event.target.files[0];
+
+    if (imagenSeleccionada) {
+        const imagenURL = URL.createObjectURL(imagenSeleccionada);
+        imagenMostrada5.src = imagenURL;
+    }
+});
+
 
 const deleteIcons = document.querySelectorAll('.delete-icon');
 
@@ -77,7 +99,7 @@ deleteIcons.forEach((icon, index) => {
                 break;
             case 4:
                 imagenMostrada4.src = '';
-                imagenInput3.value = '';
+                imagenInput4.value = '';
                 break;
             case 5:
                 imagenMostrada5.src = '';
