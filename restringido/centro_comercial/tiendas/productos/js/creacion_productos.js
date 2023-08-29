@@ -52,5 +52,12 @@ document.querySelector("form").addEventListener("submit", function (e) {
     let img4 = document.getElementById("fileInput4");
     let img5 = document.getElementById("fileInput5");
 
-    if()
+    if(!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
+    {
+        alert("Se debe subir al menos 1 imagen del producto");
+        e.preventDefault();
+        return;
+    }
+
+    
 
