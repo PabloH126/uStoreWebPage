@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require '../../../security.php';
 
@@ -7,9 +7,12 @@ require '../../../security.php';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Authorization: Bearer ' . $_COOKIE['SessionToken']
-)
+curl_setopt(
+    $ch,
+    CURLOPT_HTTPHEADER,
+    array(
+        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+    )
 );
 
 $response = curl_exec($ch);
@@ -86,7 +89,8 @@ function CategoriasSelect($categorias)
                         <input type="text" id="nombreProducto" name="nombreProducto">
                     </div>
                     <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i
+                                class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
                     </div>
                 </div>
 
@@ -104,10 +108,12 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
+                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
+                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
                         </div>
                     </div>
                 </div>
@@ -122,10 +128,12 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
+                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
+                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
                         </div>
                     </div>
                 </div>
@@ -139,10 +147,12 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
+                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
+                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
                         </div>
                     </div>
                 </div>
@@ -152,7 +162,7 @@ function CategoriasSelect($categorias)
                     <p>5/6</p>
                     <div class="promociones">
                         <label><strong>Imágenes del producto</strong></label>
-                        <div class="contentPP">
+                        <div class="contentPP" id="contentPP">
 
                             <div class="imageP" id="imageP">
                                 <div class="contentP">
@@ -161,8 +171,9 @@ function CategoriasSelect($categorias)
                                         <img src="" id="imagenSelec1" alt="">
                                     </div>
                                     <div class="ip">
-                                        <label for="fileInput1" >
-                                        <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
+                                        <label for="fileInput1">
+                                            <input type="file" class="file-input" id="fileInput1" name="imagen1"
+                                                accept="image/*">
                                     </div>
                                 </div>
                                 <div class="contentP">
@@ -171,8 +182,9 @@ function CategoriasSelect($categorias)
                                         <img src="" id="imagenSelec2" alt="">
                                     </div>
                                     <div class="ip">
-                                        <label for="fileInput2" >
-                                        <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
+                                        <label for="fileInput2">
+                                            <input type="file" class="file-input" id="fileInput2" name="imagen2"
+                                                accept="image/*">
                                     </div>
                                 </div>
                                 <div class="contentP">
@@ -181,8 +193,9 @@ function CategoriasSelect($categorias)
                                         <img src="" id="imagenSelec3" alt="">
                                     </div>
                                     <div class="ip">
-                                        <label for="fileInput3" >
-                                        <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                        <label for="fileInput3">
+                                            <input type="file" class="file-input" id="fileInput3" name="imagen3"
+                                                accept="image/*">
                                     </div>
                                 </div>
 
@@ -192,8 +205,9 @@ function CategoriasSelect($categorias)
                                         <img src="" id="imagenSelec4" alt="">
                                     </div>
                                     <div class="ip">
-                                        <label for="fileInput4" >
-                                        <input type="file" class="file-input" id="fileInput4" name="imagen4" accept="image/*">
+                                        <label for="fileInput4">
+                                            <input type="file" class="file-input" id="fileInput4" name="imagen4"
+                                                accept="image/*">
                                     </div>
                                 </div>
 
@@ -203,26 +217,29 @@ function CategoriasSelect($categorias)
                                         <img src="" id="imagenSelec5" alt="">
                                     </div>
                                     <div class="ip">
-                                        <label for="fileInput5" >
-                                        <input type="file" class="file-input" id="fileInput5" name="imagen5" accept="image/*">
+                                        <label for="fileInput5">
+                                            <input type="file" class="file-input" id="fileInput5" name="imagen5"
+                                                accept="image/*">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="notas">
                         <span>* Cada imagen no debe superar los 5mb.</span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
+                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
+                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- Cantidad designados para apartar -->
                 <div class="item" id="item-6">
@@ -232,12 +249,14 @@ function CategoriasSelect($categorias)
                         <input type="number" id="cantidadApartar" name="cantidadApartar" min="0" step="1">
                     </div>
                     <div class="notas">
-                        <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para apartar.</span>
+                        <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para
+                            apartar.</span>
                         <span>En caso de que el producto este disponible para apartado, ingrese "0"</span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back" id="ult">
-                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
+                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
                         </div>
                         <div class="bttn" id="send">
                             <button type="submit">Guardar</button>
