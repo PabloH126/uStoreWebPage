@@ -54,8 +54,7 @@ function descripcionValidacion() {
     return true;
 }
 
-function validacionSizeImagen(imagen, maxSize)
-{
+function validacionSizeImagen(imagen, maxSize) {
     if(imagen.files[0].size > maxSize)
     {
         return false;
@@ -64,7 +63,21 @@ function validacionSizeImagen(imagen, maxSize)
     return true;
 }
 
-function imagenesValidacion() {}
+function imagenesValidacion() {
+    const maxSize = 5 * 1024 * 1024;
+    
+    for (let i = 1; i <= 5; i++)
+    {
+        let img = document.getElementById("fileInput" + i);
+        if (img.files.legth && !validacionSizeImagen(img, maxSize))
+        {
+            alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes`);
+            return false;
+        }
+    }
+
+    return true;
+}
 
 function cantidadApartarValidacion() {
     var apartado = document.getElementById('cantidadApartar');
@@ -78,8 +91,6 @@ function cantidadApartarValidacion() {
 }
 
 document.querySelector("form").addEventListener("submit", function (e) {
-    const maxSize = 5 * 1024 * 1024;
-
     let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
     let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
 
@@ -121,33 +132,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    if (img1.files.length && !validacionSizeImagen(img1, maxSize))
+    if(!imagenesValidacion())
     {
-        alert("La imagen 1 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-    if (img2.files.length && !validacionSizeImagen(img2, maxSize))
-    {
-        alert("La imagen 2 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-    if (img3.files.length && !validacionSizeImagen(img3, maxSize))
-    {
-        alert("La imagen 3 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-    if (img4.files.length && !validacionSizeImagen(img4, maxSize))
-    {
-        alert("La imagen 4 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-    if (img5.files.length && !validacionSizeImagen(img5, maxSize))
-    {
-        alert("La imagen 5 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
         e.preventDefault();
         return;
     }
