@@ -79,43 +79,20 @@ imagenInput3.addEventListener('change', (event) => {
 
 const deleteIcons = document.querySelectorAll('.delete-icon');
 
-deleteIcons.forEach((icon, index) => {
+deleteIcons.forEach((icon) => {
     icon.addEventListener('click', () => {
+        const inputId = icon.getAttribute('data-input-id');
+        const imgId = icon.getAttribute('data-img-id');
+
+        const inputElement = document.getElementById(inputId);
+        const imgElement = document.getElementById(imgId);
+
         // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
-        switch (index) {
-            case 0:
-                if (imagenInput && imagenMostrada) {
-                    imagenMostrada.src = '';
-                    imagenInput.value = '';
-                }
-                break;
-            case 1:{
-                imagenMostrada1.src = '';
-                imagenInput1.value = '';}
-                break;
-            case 2:{
-                imagenMostrada2.src = '';
-                imagenInput2.value = '';}
-                break;
-            case 3:{
-                imagenMostrada3.src = '';
-                imagenInput3.value = '';}
-                break;
-            case 4:
-                if(imagenInput4 && imagenMostrada4)
-                {
-                    imagenMostrada4.src = '';
-                    imagenInput4.value = '';
-                }
-                break;
-            case 5:
-                if(imagenInput5 && imagenMostrada5){
-                    imagenMostrada5.src = '';
-                    imagenInput5.value = '';
-                }
-                break;
-            default:
-                break;
+        if(inputElement && imgElement)
+        {
+            imgElement.src = '';
+            inputElement.value = '';
         }
+        
     });
 });

@@ -167,7 +167,7 @@ function CategoriasSelect($categorias)
                             <div class="imageP" id="imageP">
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon'></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1"></i>
                                         <img src="" id="imagenSelec1" alt="">
                                     </div>
                                     <div class="ip">
@@ -178,7 +178,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon'></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput2" data-img-id="imagenSelec2"></i>
                                         <img src="" id="imagenSelec2" alt="">
                                     </div>
                                     <div class="ip">
@@ -189,7 +189,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon'></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput3" data-img-id="imagenSelec3"></i>
                                         <img src="" id="imagenSelec3" alt="">
                                     </div>
                                     <div class="ip">
@@ -201,7 +201,7 @@ function CategoriasSelect($categorias)
 
                                 <div class="contentP" id="content-4">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon'></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput4" data-img-id="imagenSelec4"></i>
                                         <img src="" id="imagenSelec4" alt="">
                                     </div>
                                     <div class="ip">
@@ -213,7 +213,7 @@ function CategoriasSelect($categorias)
 
                                 <div class="contentP" id="content-5">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon'></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput5" data-img-id="imagenSelec5"></i>
                                         <img src="" id="imagenSelec5" alt="">
                                     </div>
                                     <div class="ip">
