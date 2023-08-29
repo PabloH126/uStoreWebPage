@@ -79,7 +79,7 @@ function CategoriasSelect($categorias)
     <div class="content">
         <h1>Creación de productos</h1>
         <div class="lista">
-            <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="envio_producto.php" method="post" enctype="multipart/form-data" class="form-tiendas">
 
                 <!-- Nombre del producto-->
                 <div class="item active" id="item-1">
