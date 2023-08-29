@@ -20,6 +20,8 @@
         "idTienda" => $_SESSION['idTienda']
     ];
 
+    $jsonData = json_encode($data);
+
     $ch = curl_init();
     
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/CreateProducto");
@@ -27,9 +29,11 @@
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_TIMEOUT, 30);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+        'Authorization: Bearer ' . $_COOKIE['SessionToken'],
+        'Content-Type: application/json',
+        'Content-Length: ' . strlen($jsonData)
     ));
     
     $response = curl_exec($ch);
