@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    $responseArray = [];
     //CREATE PRODUCTO
     
     $data = [
@@ -41,12 +41,17 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 201)
+    if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create producto <br>' . $response;
+        $responseArray['statusProducto'] = 'error';
+        $responseArray['messageProducto'] = $httpStatusCode . ' CREACION PRODUCTO <br>';
     }
-
-    $dataProducto = json_decode($response, true);
+    else
+    {
+        $_SESSION['idProducto'] = json_decode($response, true);
+        $responseArray['statusProducto'] = 'success';
+        $responseArray['messageProducto'] = $_SESSION['idProducto'];
+    }
 
     $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_productos.php?id=' . $_SESSION['idTienda'];
 
@@ -88,7 +93,13 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create categorias de producto';
+        $responseArray['statusCatP'] = 'error';
+        $responseArray['messageCatP'] = $httpStatusCode . 'CATEGORIAS PRODUCTO';
+    }
+    else
+    {
+        $responseArray['statusCatP'] = 'success';
+        $responseArray['urlSalida'] = $urlSalida;
     }
     
     curl_close($ch);

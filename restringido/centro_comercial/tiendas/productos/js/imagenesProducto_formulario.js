@@ -4,48 +4,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mainForm.addEventListener('submit' , async function(e) {
         e.preventDefault();
-        alert("Se entro al evento");
 
-        const response = await sendFormWitoutImages(mainForm, fileInputs);
-        console.log(response);
+        try {
+            const data = await sendFormWitoutImages(mainForm, fileInputs);
+            console.log(data);
 
-        for (let input of fileInputs)
-        {
-            if (input.files.length > 0) {
-                await sendImage(input, "../imagenesProducto.php");
+            if (data.statusProducto === 'success' && statusCatP === 'success')
+            {
+                for (let input of fileInputs)
+                {
+                    if (input.files.length > 0)
+                    {
+                        await sendImage(input, "../imagenesProducto.php");
+                    }
+                }
+                window.location.href = data.urlSalida;
             }
-        }
+            else
+            {
+                alert("Hubo un error al guardar el producto");
+            }
 
-        alert("formulario enviado con exito");
+        } catch (error) {
+            console.error('Error: ', error);
+            alert("Hubo un error al realizar la solicitud de creacion de producto");
+        }
+        
     })
 })
 
-function sendFormWitoutImages(form, fileInputs) {
-    return new Promise((resolve, reject) => {
-        const formData = new FormData(form);
+async function sendFormWitoutImages(form, fileInputs) {
+    const formData = new FormData(form);
 
-        fileInputs.forEach(input => {
-            formData.delete(input.name);
-        });
+    fileInputs.forEach(input => {
+        formData.delete(input.name);
+    });
 
-        const xhr = new XMLHttpRequest();
-        xhr.open(form.method, form.action);
-        xhr.onload = () => resolve(xhr.responseText);
-        xhr.onerror = () => reject(xhr.statusText);
-        xhr.send(formData);
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: formData
     })
-}
 
-function sendImage(input, url) {
-    return new Promise((resolve, reject) => {
-        const formData = new FormData();
-        formData.append(input.name, input.files[0]);
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', url);
-        xhr.onload = () => resolve(xhr.responseText);
-        xhr.onerror = () => reject(xhr.statusText);
-        xhr.send(formData);
-    })
+    return response.json();
+};
+
+async function sendImage(input, url) {
+    const formData = new FormData();
+    formData.append(input.name, input.files[0]);
+
+    const response = await fetch(url, {
+        method: 'POST',
+        body: formData
+    });
+    
+    const data = await response.json();
+
+    if (data.status !== 'success')
+    {
+        alert("No se pudieron guardar las imagenes");
+        throw new Error("Fallo al guardar imagenes de producto");
+    } 
 }
 

@@ -23,7 +23,7 @@ verificarImagen('imagen5', $_FILES['imagen5'], $imagenes);
         
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenTienda?idTienda=" . $dataProducto['idProductos']);
+        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/CreateImageProducto?idProducto=" . $_SESSION['idProducto']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -70,4 +70,6 @@ function verificarImagen($nombreImagen, $imagen, $imagenes)
         }
     }
 }
+
+unset($_SESSION['idProducto'])
 ?>
