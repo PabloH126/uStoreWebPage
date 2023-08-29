@@ -250,7 +250,7 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="notas">
                         <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para
-                            apartar.</span>
+                            apartar.<br></span>
                         <span>En caso de que el producto no esté disponible para apartado, ingrese "0"</span>
                     </div>
                     <div class="bttns">
