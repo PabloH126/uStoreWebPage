@@ -34,7 +34,7 @@ function nombreValidacion() {
 }
 
 function precioValidacion() {
-    var precio = document.getElementById('precioProducto');
+    var precio = document.querySelector('input[name="precioProducto"]');
     if(!precio)
     {
         return false;
