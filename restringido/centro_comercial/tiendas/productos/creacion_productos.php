@@ -227,7 +227,8 @@ function CategoriasSelect($categorias)
 
                     </div>
                     <div class="notas">
-                        <span>* Cada imagen no debe superar los 5mb.</span>
+                        <span>* Máximo 5 imágenes.<br>
+                        Cada imagen no debe superar los 5mb. </span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -274,6 +275,7 @@ function CategoriasSelect($categorias)
     <script src="../../js/mostrarImg.js"></script>
     <script src="js/productosImg.js"></script>
     <script src="js/creacion_productos.js"></script>
+    <script src="js/imagenesProducto_formulario.js"></script>
 </body>
 
 </html>

@@ -30,7 +30,7 @@ h1 {
 }
 
 .content .lista form .item.to-left {
-	margin-left: -96%;
+	margin-left: -98%;
 }
 
 .content .lista form .item p {
@@ -322,6 +322,10 @@ h1 {
 	.content .lista form .item{
 		margin-top: 0;
 		margin-bottom: 0;
+	}
+
+	.content .lista form .item.to-left {
+		margin-left: -96%;
 	}
 
 	.content .lista form .item p {
