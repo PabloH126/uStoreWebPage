@@ -189,22 +189,22 @@ function CategoriasSelect($categorias)
                                 <div class="contentP" id="content-4">
                                     <div class="box">
                                         <i class='bx bx-x delete-icon'></i>
-                                        <img src="" id="imagenSelec3" alt="">
+                                        <img src="" id="imagenSelec4" alt="">
                                     </div>
                                     <div class="ip">
-                                        <label for="fileInput3" >
-                                        <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                        <label for="fileInput4" >
+                                        <input type="file" class="file-input" id="fileInput4" name="imagen4" accept="image/*">
                                     </div>
                                 </div>
 
                                 <div class="contentP" id="content-5">
                                     <div class="box">
                                         <i class='bx bx-x delete-icon'></i>
-                                        <img src="" id="imagenSelec3" alt="">
+                                        <img src="" id="imagenSelec5" alt="">
                                     </div>
                                     <div class="ip">
-                                        <label for="fileInput3" >
-                                        <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                        <label for="fileInput5" >
+                                        <input type="file" class="file-input" id="fileInput5" name="imagen5" accept="image/*">
                                     </div>
                                 </div>
                             </div>
@@ -252,6 +252,7 @@ function CategoriasSelect($categorias)
     </script>
     <script src="../../js/slider_formularios.js"></script>
     <script src="../../js/mostrarImg.js"></script>
+    <script src="js/productosImg.js"></script>
     <script src="js/creacion_tiendas.js"></script>
 </body>
 

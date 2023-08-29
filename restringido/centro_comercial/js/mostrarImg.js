@@ -11,22 +11,21 @@ const imagenMostrada2 = document.getElementById('imagenSelec2');
 const imagenMostrada3 = document.getElementById('imagenSelec3');
 
 
-if (imagenInput && imagenMostrada)
-{
+if (imagenInput && imagenMostrada) {
     imagenInput.addEventListener('change', (event) => {
         const imagenSeleccionada = event.target.files[0];
-        
+
         if (imagenSeleccionada) {
             const imagenURL = URL.createObjectURL(imagenSeleccionada);
             imagenMostrada.src = imagenURL;
         }
     });
 }
- 
+
 imagenInput1.addEventListener('change', (event) => {
     console.log('Entró al evento');
     const imagenSeleccionada = event.target.files[0];
-    
+
     if (imagenSeleccionada) {
         const imagenURL = URL.createObjectURL(imagenSeleccionada);
         imagenMostrada1.src = imagenURL;
@@ -35,7 +34,7 @@ imagenInput1.addEventListener('change', (event) => {
 
 imagenInput2.addEventListener('change', (event) => {
     const imagenSeleccionada = event.target.files[0];
-    
+
     if (imagenSeleccionada) {
         const imagenURL = URL.createObjectURL(imagenSeleccionada);
         imagenMostrada2.src = imagenURL;
@@ -45,7 +44,7 @@ imagenInput2.addEventListener('change', (event) => {
 
 imagenInput3.addEventListener('change', (event) => {
     const imagenSeleccionada = event.target.files[0];
-    
+
     if (imagenSeleccionada) {
         const imagenURL = URL.createObjectURL(imagenSeleccionada);
         imagenMostrada3.src = imagenURL;
@@ -60,8 +59,7 @@ deleteIcons.forEach((icon, index) => {
         // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
         switch (index) {
             case 0:
-                if (imagenInput && imagenMostrada)
-                {
+                if (imagenInput && imagenMostrada) {
                     imagenMostrada.src = '';
                     imagenInput.value = '';
                 }
@@ -77,6 +75,14 @@ deleteIcons.forEach((icon, index) => {
             case 3:
                 imagenMostrada3.src = '';
                 imagenInput3.value = '';
+                break;
+            case 4:
+                imagenMostrada4.src = '';
+                imagenInput3.value = '';
+                break;
+            case 5:
+                imagenMostrada5.src = '';
+                imagenInput5.value = '';
                 break;
             default:
                 break;

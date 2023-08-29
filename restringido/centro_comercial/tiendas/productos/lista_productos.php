@@ -51,7 +51,7 @@
 				foreach ($productos as $producto)
 				{ ?>
 					<div class="item">
-						<a href=""><img width="60%" class="logo" src="<?php echo 'imagen del producto'; ?>"></a>
+						<a href=""><img width="60%" class="logo" src="<?php echo $producto['imageProducto']; ?>"></a>
 						<strong class="nombre"><?php echo $producto['nombreProducto'];?></strong>
 					</div>
 			<?php
