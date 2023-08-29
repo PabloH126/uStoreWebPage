@@ -36,7 +36,7 @@ function nombreValidacion() {
 function precioValidacion() {
     var precio = document.querySelector('input[name="precioProducto"]');
 
-    if(precio.value.trim() === "" || precio.value < 0)
+    if(precio.value.trim() === "" || precio.value < 0 || isNaN(Number(precio.value)))
     {
         return false;
     }
@@ -83,7 +83,7 @@ function imagenesValidacion() {
 function cantidadApartarValidacion() {
     var apartado = document.querySelector('input[name="cantidadApartar"]');
 
-    if(apartado.value.trim() === "" || apartado.value < 0)
+    if(apartado.value.trim() === "" || apartado.value < 0 || isNaN(Number(apartado.value)))
     {
         return false;
     }
