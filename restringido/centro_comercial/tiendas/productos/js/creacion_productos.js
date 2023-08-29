@@ -34,7 +34,7 @@ function nombreValidacion() {
 }
 
 function descripcionValidacion() {
-    
+    var descripcion = document.querySelector('input[type="]')
 }
 
 function validacionSizeImagen(imagen, maxSize)
@@ -50,6 +50,9 @@ function validacionSizeImagen(imagen, maxSize)
 document.querySelector("form").addEventListener("submit", function (e) {
     const maxSize = 5 * 1024 * 1024;
 
+    let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
+    let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
+
     let img1 = document.getElementById("fileInput1");
     let img2 = document.getElementById("fileInput2");
     let img3 = document.getElementById("fileInput3");
@@ -59,6 +62,12 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if (!nombreValidacion())
     {
         alert("Se debe ingresar un nombre de producto");
+    }
+
+    if (!checked) {
+        alert("Se debe seleccionar al menos una categoria");
+        e.preventDefault();
+        return;
     }
 
     if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
