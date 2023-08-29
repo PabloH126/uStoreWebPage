@@ -33,6 +33,10 @@ function nombreValidacion() {
     return true;
 }
 
+function descripcionValidacion() {
+    
+}
+
 function validacionSizeImagen(imagen, maxSize)
 {
     if(imagen.files[0].size > maxSize)
