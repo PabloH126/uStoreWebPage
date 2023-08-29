@@ -23,7 +23,6 @@ if (imagenInput && imagenMostrada) {
 }
 
 imagenInput1.addEventListener('change', (event) => {
-    console.log('Entró al evento');
     const imagenSeleccionada = event.target.files[0];
 
     if (imagenSeleccionada) {

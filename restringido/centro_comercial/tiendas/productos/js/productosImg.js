@@ -4,6 +4,8 @@ const input3 = document.getElementById('fileInput3');
 const input4 = document.getElementById('fileInput4');
 const input5 = document.getElementById('fileInput5');
 
+console.log("aqui toy");
+
 input3.addEventListener('input', showInput4);
 input4.addEventListener('input', showInput5);
 

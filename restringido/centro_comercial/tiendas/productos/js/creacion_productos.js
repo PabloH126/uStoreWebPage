@@ -51,13 +51,50 @@ document.querySelector("form").addEventListener("submit", function (e) {
     let img3 = document.getElementById("fileInput3");
     let img4 = document.getElementById("fileInput4");
     let img5 = document.getElementById("fileInput5");
+    
+    if (!nombreValidacion())
+    {
+        alert("Se debe ingresar un nombre de producto");
+    }
 
-    if(!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
+    if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
     {
         alert("Se debe subir al menos 1 imagen del producto");
         e.preventDefault();
         return;
     }
 
-    
+    if (img1.files.length && !validacionSizeImagen(img1, maxSize))
+    {
+        alert("La imagen 1 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+    if (img2.files.length && !validacionSizeImagen(img2, maxSize))
+    {
+        alert("La imagen 2 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+    if (img3.files.length && !validacionSizeImagen(img3, maxSize))
+    {
+        alert("La imagen 3 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+    if (img4.files.length && !validacionSizeImagen(img4, maxSize))
+    {
+        alert("La imagen 4 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+    if (img4.files.length && !validacionSizeImagen(img4, maxSize))
+    {
+        alert("La imagen 4 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
 
+    var submitButton = document.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    });
