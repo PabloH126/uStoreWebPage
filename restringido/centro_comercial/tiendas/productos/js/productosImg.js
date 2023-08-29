@@ -7,7 +7,7 @@ const content5 = document.getElementById('content-5');
 input3.addEventListener('input', showInput4);
 input4.addEventListener('input', showInput5);
 
-console.log("ora aqui x2 c: oa");
+console.log("ora aqui x3");
 
 function showInput4() {
     if (input3.value.trim() !== '') {
@@ -20,6 +20,7 @@ function showInput4() {
   
   function showInput5() {
     if (input4.value.trim() !== '') {
+        content.style.gridTemplateColumns = 'repeat(5, 1fr)';
         content5.style.display = 'block';
     } else {
         content5.style.display = 'none';

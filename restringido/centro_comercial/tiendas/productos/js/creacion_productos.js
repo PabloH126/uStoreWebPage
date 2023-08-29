@@ -54,10 +54,9 @@ function descripcionValidacion() {
     return true;
 }
 
-function cantidadApartarValidacion() {
-    var apartado = document.getElementById('cantidadApartar');
-
-    if(!apartado)
+function validacionSizeImagen(imagen, maxSize)
+{
+    if(imagen.files[0].size > maxSize)
     {
         return false;
     }
@@ -65,9 +64,12 @@ function cantidadApartarValidacion() {
     return true;
 }
 
-function validacionSizeImagen(imagen, maxSize)
-{
-    if(imagen.files[0].size > maxSize)
+function imagenesValidacion() {}
+
+function cantidadApartarValidacion() {
+    var apartado = document.getElementById('cantidadApartar');
+
+    if(!apartado)
     {
         return false;
     }

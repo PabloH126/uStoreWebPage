@@ -9,7 +9,7 @@
 }
 
 .content .lista form .item .promociones .contentPP{
-   /* width: 60%;*/
+    width: 60%;
     overflow: hidden;
 }
 
@@ -42,6 +42,6 @@
     }
 
     .content .lista form .item .promociones .contentPP{
-       /* height: 191px;*/
+        width: 75%;
     }
 }
