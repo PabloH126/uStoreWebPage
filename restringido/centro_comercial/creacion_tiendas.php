@@ -95,7 +95,7 @@ function CategoriasSelect($categorias)
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
                             <div class="box">
-                                <i class='bx bx-x delete-icon'></i>
+                                <i class='bx bx-x delete-icon' data-input-id="LogoTienda" data-img-id="imagenSelec"></i>
                                 <img id="imagenSelec" alt="">
                             </div>
                             <div class="ip">
