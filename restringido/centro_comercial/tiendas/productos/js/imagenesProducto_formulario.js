@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mainForm.addEventListener('submit' , async function(e) {
         e.preventDefault();
+        alert("Se entro al evento");
 
-        const response = await sendFormWitoutImages(mainForm);
+        const response = await sendFormWitoutImages(mainForm, fileInputs);
         console.log(response);
 
         for (let input of fileInputs)
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 })
 
-function sendFormWitoutImages(form) {
+function sendFormWitoutImages(form, fileInputs) {
     return new Promise((resolve, reject) => {
         const formData = new FormData(form);
 
