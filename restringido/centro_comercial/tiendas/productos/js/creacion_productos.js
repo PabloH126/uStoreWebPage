@@ -143,7 +143,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     if (!cantidadApartarValidacion())
     {
-        alert("Se debe ingresar una cantidad de unidades del producto para apartado, en caso de que el producto no este disponible para apartar ingrese 0");
+        alert("Se debe ingresar una cantidad válida de unidades del producto para apartado");
         e.preventDefault();
         return;
     }
