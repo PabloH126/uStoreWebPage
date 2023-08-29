@@ -35,7 +35,7 @@ function nombreValidacion() {
 
 function precioValidacion() {
     var precio = document.querySelector('input[name="precioProducto"]');
-    if(!precio)
+    if(!precio || precio.value <= 0)
     {
         return false;
     }
@@ -82,7 +82,7 @@ function imagenesValidacion() {
 function cantidadApartarValidacion() {
     var apartado = document.getElementById('cantidadApartar');
 
-    if(!apartado)
+    if(!apartado || apartado.value < 0)
     {
         return false;
     }
