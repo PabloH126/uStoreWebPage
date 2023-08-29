@@ -98,11 +98,23 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    if ()
+    if (!precioValidacion())
+    {
+        alert("Se debe ingresar un precio del producto");
+        e.preventDefault();
+        return;
+    }
+
+    if (!descripcionValidacion())
+    {
+        alert("Se debe ingresar una descripcion del producto");
+        e.preventDefault();
+        return;
+    }
 
     if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
     {
-        alert("Se debe subir al menos 1 imagen del producto");
+        alert("Se debe subir al menos una imagen del producto");
         e.preventDefault();
         return;
     }
@@ -134,6 +146,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if (img5.files.length && !validacionSizeImagen(img5, maxSize))
     {
         alert("La imagen 5 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
+        e.preventDefault();
+        return;
+    }
+
+    if (!cantidadApartarValidacion())
+    {
+        alert('Se debe ingresar una cantidad de unidades del producto para apartado, en caso de que el producto no este disponible para apartar, ingrese "0"');
         e.preventDefault();
         return;
     }
