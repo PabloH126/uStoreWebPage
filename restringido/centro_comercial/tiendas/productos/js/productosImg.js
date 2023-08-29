@@ -12,21 +12,21 @@ input4.addEventListener('input', showInput5);
 
 console.log('1');
 
+console.log('1', input1.value.trim());
+console.log('2', input2.value.trim());
+console.log('3', input3.value.trim());
+
 function showInput4() {
     if (input1.value.trim() !== '' && input2.value.trim() !== '' && input3.value.trim() !== '') {
         content.style.gridTemplateColumns = 'repeat(4, 1fr)';
         contentPP.style.width = '75%';
         content4.style.display = 'block';
-        console.log('1', input1.value.trim());
-        console.log('2', input2.value.trim());
-        console.log('3', input3.value.trim());
-
     } else {
         content4.style.display = 'none';
     }
-  }
-  
-  function showInput5() {
+}
+
+function showInput5() {
     if (input1.value.trim() !== '' && input2.value.trim() !== '' && input3.value.trim() !== '' && input4.value.trim() !== '') {
         content.style.gridTemplateColumns = 'repeat(5, 1fr)';
         contentPP.style.width = '60%';
@@ -34,4 +34,4 @@ function showInput4() {
     } else {
         content5.style.display = 'none';
     }
-  }
+}
