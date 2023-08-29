@@ -103,6 +103,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if (!nombreValidacion())
     {
         alert("Se debe ingresar un nombre de producto");
+        e.preventDefault();
+        return;
     }
 
     if (!checked) {
