@@ -8,11 +8,11 @@ const content = document.getElementById('imageP');
 input3.addEventListener('input', showInput4);
 input4.addEventListener('input', showInput5);
 
-console.log("ora aqui x2");
+console.log("ora aqui x2 c:");
 
 function showInput4() {
     if (input3.value.trim() !== '') {
-      content.style.grid-template-columns = 'repeat(3, 1fr)';
+        content.style.gridTemplateColumns = 'repeat(4, 1fr)';
       input4.style.display = 'block';
       console.log("entro en el block c:");
     } else {

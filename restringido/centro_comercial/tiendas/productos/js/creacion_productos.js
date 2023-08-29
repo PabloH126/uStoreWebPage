@@ -35,16 +35,29 @@ function nombreValidacion() {
 
 function precioValidacion() {
     var precio = document.getElementById('precioProducto');
-    if(!precio || precio == )
+    if(!precio)
     {
         return false;
     }
+
+    return true;
 }
 
 function descripcionValidacion() {
     var descripcion = document.getElementById('descripcionProducto');
 
     if(!descripcion || !descripcion.value.trim())
+    {
+        return false;
+    }
+
+    return true;
+}
+
+function cantidadApartarValidacion() {
+    var apartado = document.getElementById('cantidadApartar');
+
+    if(!apartado)
     {
         return false;
     }
@@ -85,6 +98,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
+    if ()
+
     if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
     {
         alert("Se debe subir al menos 1 imagen del producto");
@@ -116,13 +131,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
         return;
     }
-    if (img4.files.length && !validacionSizeImagen(img4, maxSize))
+    if (img5.files.length && !validacionSizeImagen(img5, maxSize))
     {
-        alert("La imagen 4 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
+        alert("La imagen 5 es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes");
         e.preventDefault();
         return;
     }
 
     var submitButton = document.querySelector('button[type="submit"]');
     submitButton.disabled = true;
-    });
+});
