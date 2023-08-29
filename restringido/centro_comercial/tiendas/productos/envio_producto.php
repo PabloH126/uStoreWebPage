@@ -22,7 +22,7 @@
 
     foreach ($data as $key => $value)
     {
-        echo $key . ' : ' . $value;
+        echo $key . ' : ' . $value . '<br>';
     }
     
     $jsonData = json_encode($data);
@@ -51,7 +51,7 @@
 
     if($httpStatusCode != 201)
     {
-        echo $httpStatusCode . ' create producto';
+        echo $httpStatusCode . ' create producto <br>' . $response;
     }
 
     $dataProducto = json_decode($response, true);
