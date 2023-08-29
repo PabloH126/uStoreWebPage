@@ -7,6 +7,8 @@ const content4 = document.getElementById('content-4');
 const content5 = document.getElementById('content-5');
 const contentPP = document.getElementById('contentPP');
 
+input1.addEventListener('input', showInput4);
+input2.addEventListener('input', showInput4);
 input3.addEventListener('input', showInput4);
 input4.addEventListener('input', showInput5);
 
