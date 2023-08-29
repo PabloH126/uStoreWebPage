@@ -89,17 +89,17 @@ deleteIcons.forEach((icon, index) => {
                     imagenInput.value = '';
                 }
                 break;
-            case 1:
+            case 1:{
                 imagenMostrada1.src = '';
-                imagenInput1.value = '';
+                imagenInput1.value = '';}
                 break;
-            case 2:
+            case 2:{
                 imagenMostrada2.src = '';
-                imagenInput2.value = '';
+                imagenInput2.value = '';}
                 break;
-            case 3:
+            case 3:{
                 imagenMostrada3.src = '';
-                imagenInput3.value = '';
+                imagenInput3.value = '';}
                 break;
             case 4:
                 if(imagenInput4 && imagenMostrada4)
