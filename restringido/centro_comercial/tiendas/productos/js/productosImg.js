@@ -10,6 +10,8 @@ const contentPP = document.getElementById('contentPP');
 input3.addEventListener('input', showInput4);
 input4.addEventListener('input', showInput5);
 
+console.log('1');
+
 function showInput4() {
     if (input1.value.trim() !== '' && input2.value.trim() !== '' && input3.value.trim() !== '') {
         content.style.gridTemplateColumns = 'repeat(4, 1fr)';
