@@ -20,6 +20,11 @@
         "idTienda" => $_SESSION['idTienda']
     ];
 
+    foreach ($data as $key => $value)
+    {
+        echo $key . ' : ' . $value;
+    }
+    
     $jsonData = json_encode($data);
 
     $ch = curl_init();
