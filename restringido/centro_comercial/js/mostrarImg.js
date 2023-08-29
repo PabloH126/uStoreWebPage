@@ -15,6 +15,7 @@ const imagenMostrada4 = document.getElementById('imagenSelec4');
 const imagenMostrada5 = document.getElementById('imagenSelec5');
 
 
+//LOGO DE TIENDA E IMAGENES EXTRA DE PRODUCTO
 if (imagenInput && imagenMostrada) {
     imagenInput.addEventListener('change', (event) => {
         const imagenSeleccionada = event.target.files[0];
@@ -25,7 +26,29 @@ if (imagenInput && imagenMostrada) {
         }
     });
 }
+if (imagenInput4 && imagenMostrada4) {
+    imagenInput4.addEventListener('change', (event) => {
+        const imagenSeleccionada = event.target.files[0];
 
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada4.src = imagenURL;
+        }
+    });
+}
+if (imagenInput5 && imagenMostrada5) {
+    imagenInput5.addEventListener('change', (event) => {
+        const imagenSeleccionada = event.target.files[0];
+
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada5.src = imagenURL;
+        }
+    });
+}
+
+
+//3 IMAGENES BANNER TIENDA/PRODUCTO
 imagenInput1.addEventListener('change', (event) => {
     const imagenSeleccionada = event.target.files[0];
 
@@ -54,25 +77,6 @@ imagenInput3.addEventListener('change', (event) => {
     }
 });
 
-imagenInput4.addEventListener('change', (event) => {
-    const imagenSeleccionada = event.target.files[0];
-
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada4.src = imagenURL;
-    }
-});
-
-imagenInput5.addEventListener('change', (event) => {
-    const imagenSeleccionada = event.target.files[0];
-
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada5.src = imagenURL;
-    }
-});
-
-
 const deleteIcons = document.querySelectorAll('.delete-icon');
 
 deleteIcons.forEach((icon, index) => {
@@ -98,12 +102,17 @@ deleteIcons.forEach((icon, index) => {
                 imagenInput3.value = '';
                 break;
             case 4:
-                imagenMostrada4.src = '';
-                imagenInput4.value = '';
+                if(imagenInput4 && imagenMostrada4)
+                {
+                    imagenMostrada4.src = '';
+                    imagenInput4.value = '';
+                }
                 break;
             case 5:
-                imagenMostrada5.src = '';
-                imagenInput5.value = '';
+                if(imagenInput5 && imagenMostrada5){
+                    imagenMostrada5.src = '';
+                    imagenInput5.value = '';
+                }
                 break;
             default:
                 break;
