@@ -83,7 +83,7 @@ function imagenesValidacion() {
 function cantidadApartarValidacion() {
     var apartado = document.querySelector('input[name="cantidadApartar"]');
 
-    if(apartadoapartado.value.trim() === "" || apartado.value < 0)
+    if(apartado.value.trim() === "" || apartado.value < 0)
     {
         return false;
     }
