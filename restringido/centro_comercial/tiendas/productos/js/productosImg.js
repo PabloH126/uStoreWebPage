@@ -17,6 +17,10 @@ function showInput4() {
         content.style.gridTemplateColumns = 'repeat(4, 1fr)';
         contentPP.style.width = '75%';
         content4.style.display = 'block';
+        console.log('1', input1.value.trim());
+        console.log('2', input2.value.trim());
+        console.log('3', input3.value.trim());
+
     } else {
         content4.style.display = 'none';
     }
