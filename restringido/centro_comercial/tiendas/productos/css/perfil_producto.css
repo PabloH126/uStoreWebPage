@@ -28,11 +28,6 @@
     height: 70%;
 }
 
-.slider-img img{
-    max-width: 100%;
-    object-fit: cover;
-}
-
 .text{
     font-size: 1.5rem;
     height: 13%;
