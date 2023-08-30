@@ -59,7 +59,8 @@ async function sendImage(input, url, idProducto) {
     
     alert("pasó el fetch");
     const data = await response.json();
-
+    alert("Pasó el json()");
+    console.log(data);
     if (data.statusImagenes !== 'success') {
         alert("No se pudieron guardar las imágenes, ERROR: " + data.statusImagenes);
     } 
