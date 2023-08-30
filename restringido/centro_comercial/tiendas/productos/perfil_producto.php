@@ -32,6 +32,9 @@ $_SESSION['idTienda'] = $_GET['id'];*/
                                 <?php /*echo $tiendas['nombreTienda'];*/ ?>
                             </h1>
                         </div>
+                        <div class="cali">
+                            <div class="estrellas">⭐⭐⭐⭐⭐</div><span>(100)</span>
+                        </div>
                         <div class="categorias">
                             <?php/*
                             foreach ($categorias as $cat) {
