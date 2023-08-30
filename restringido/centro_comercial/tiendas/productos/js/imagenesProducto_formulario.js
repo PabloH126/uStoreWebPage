@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
                         console.log(input.files.length);
-                        await sendImage(input, "../imagenesProducto.php", data.idProducto); // Pasar el idProducto
+                        await sendImage(input, "imagenesProducto.php", data.idProducto); // Pasar el idProducto
                     }
                 }
                 
