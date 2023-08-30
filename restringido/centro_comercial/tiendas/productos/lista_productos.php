@@ -34,6 +34,7 @@
 	<?php require("../../templates/template.styles.php")?>
 	<?php require("../templates/template.secc_tiendas.php")?>
 	<link rel="stylesheet" type="text/css" href="../css/lista_tiendas.css">
+	<link rel="stylesheet" type="text/css" href="../css/switch_stock.css">
 </head>
 <body>
 	<?php require("../../templates/template.menu.php")?>
@@ -54,8 +55,13 @@
 						<a href="perfil_producto.php?id=<?php echo $producto['idProductos']; ?>"><img width="60%" class="logo" src="<?php echo $producto['imageProducto']; ?>"></a>
 						<strong class="nombre"><?php echo $producto['nombreProducto'];?></strong>
 						<div class="switch">
-                        	<label class="switch-label">Activar/Desactivar</label>
-                        	<input type="checkbox" class="switch-input" data-producto-id="<?php echo $producto['idProductos']; ?>" <?php echo $producto['activo'] ? 'checked' : ''; ?>>
+							<label class="switch-label">
+					        	<input type="checkbox" class="switch-input" data-producto-id="<?php echo $producto['idProductos']; ?>" <?php echo $producto['stock'] > 0 ? 'checked' : ''; ?>>
+					    	    <span class="slider round"></span>
+						    </label>
+						    <span class="stock-status <?php echo $producto['stock'] > 0 ? 'stock-available' : 'stock-unavailable'; ?>">
+					    	    <?php echo $producto['stock'] > 0 ? 'Hay Stock' : 'Sin Stock'; ?>
+						    </span>
                     	</div>
 					</div>
 			<?php

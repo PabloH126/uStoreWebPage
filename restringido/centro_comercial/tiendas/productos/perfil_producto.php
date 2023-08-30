@@ -67,8 +67,8 @@ $_SESSION['idProducto'] = $_GET['id'];
                              <section class="slider-img">
                                  <img src="https://i.blogs.es/ebfd34/naruto-nuevos-episodios-estreno-septiembre-2023/840_560.jpeg <?php /*echo $imagen['imagenTienda'] */?>" alt="">
                              </section>
-                             <?php/*
-                         }*/
+                             <?php 
+                         /*}*/
                                 ?>
                         </div>
                         <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
