@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         } catch (error) {
             console.error('Error: ', error);
-            alert("Hubo un error al realizar la solicitud de creacion de producto");
+            alert("Hubo un error al realizar la solicitud de creacion de producto: " + error);
         }
         
     })
