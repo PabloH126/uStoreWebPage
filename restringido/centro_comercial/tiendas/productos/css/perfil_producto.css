@@ -62,7 +62,7 @@
 }
 
 .contents{
-    border: 1px black solid;
+    /*border: 1px black solid;*/
     width: 80%;
     height: 80%;
     margin: 1.5% 0 0 3%;
@@ -73,6 +73,8 @@
     width: 100%;
     resize: none;
     outline: none;
+    font-size: 1.3rem;
+    font-family: 'Golos Text', sans-serif;
 }
 
 @media only screen and (max-width: 1502px) {
