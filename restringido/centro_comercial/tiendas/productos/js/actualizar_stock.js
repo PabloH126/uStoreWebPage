@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     switchCheckbox.forEach(checkbox => {
         checkbox.addEventListener("change", function() {
             if (this.checked) {
-                updateStock
+                updateStock()
             }
         })
     })
@@ -13,8 +13,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function updateStock(idProducto, stock)
 {
-    fetch('actualizar_stock.php?idProducto=' + idProducto + '&stock=' + stock, {
+    const formData = new URLSearchParams();
+    formData.append('idProducto', idProducto);
+    formData.append('stock', stock);
+    fetch('actualizar_stock.php', {
         method: 'POST',
-        headers()
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
     });
 }
