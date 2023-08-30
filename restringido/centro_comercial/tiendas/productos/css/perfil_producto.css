@@ -42,3 +42,7 @@
 .text div{
     margin: 10px 0 0 27px;
 }
+
+.topD{
+    display: flex;
+}
