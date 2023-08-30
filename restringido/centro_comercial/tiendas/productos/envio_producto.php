@@ -4,7 +4,6 @@
 
     header('Content-Type: application/json');
     //CREATE PRODUCTO
-    
     $data = [
         "nombreProducto" => $_POST['nombreProducto'],
         "precioProducto" => $_POST['precioProducto'],
@@ -13,7 +12,7 @@
         "stock" => 0,
         "idTienda" => $_SESSION['idTienda']
     ];
-    
+
     $jsonData = json_encode($data);
 
     $ch = curl_init();
@@ -45,7 +44,7 @@
     }
     else
     {
-        $_SESSION['idProducto'] = json_decode($response, true);
+        $responseArray['idProducto'] = json_decode($response, true);
         $responseArray['statusProducto'] = 'success';
         $responseArray['messageProducto'] = $_SESSION['idProducto'];
     }
