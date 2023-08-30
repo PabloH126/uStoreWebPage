@@ -13,5 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function updateStock(idProducto, stock)
 {
-    fetch('https://ustoreapi.azurewebsites.net/api/Productos/CreateProducto?idProducto=' + idProducto + '&stock=')
+    fetch('actualizar_stock.php?idProducto=' + idProducto + '&stock=' + stock, {
+        method: 'POST',
+        headers()
+    });
 }
