@@ -49,6 +49,7 @@ async function sendImage(input, url, idProducto) {
     formData.append(input.name, input.files[0]);
     formData.append('idProducto', idProducto); // Agregar el idProducto al formData
     alert("ya entro al sendImage");
+    alert(idProducto);
     const response = await fetch(url, {
         method: 'POST',
         body: formData
