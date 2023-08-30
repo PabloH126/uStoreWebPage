@@ -35,6 +35,8 @@
 
 .icon {
     width: 20%;
+    display: grid;
+    align-items: center;
 }
 
 .icon,

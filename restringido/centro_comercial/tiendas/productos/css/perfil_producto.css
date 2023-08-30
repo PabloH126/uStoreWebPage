@@ -1,3 +1,12 @@
-.estrellas{
+.estrellas {
     display: inline-flex;
+}
+
+.name {
+    font-size: .77rem;
+}
+
+.cali {
+    font-size: 1.5em;
+    margin: -14px 0 2px;
 }
