@@ -52,12 +52,6 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-.stock-status {
-    margin-left: 10px;
-    color: #666;
-    transition: color .4s;
-}
-
 .stock-available {
     color: #4caf50; /* Color verde cuando hay stock */
 }
