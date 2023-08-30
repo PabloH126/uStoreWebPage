@@ -58,8 +58,12 @@
 
 @media only screen and (max-width: 1502px) {
     
+    .text{
+        font-size: 1.2rem;
+    }
+
     .text div{
-        margin: 5px 0 0 27px;
+        margin: 8px 0 0 27px;
     }
     
     .info{
