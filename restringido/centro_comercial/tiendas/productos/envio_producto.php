@@ -63,7 +63,7 @@
 
     foreach($categorias as $cat)
     {
-        $arraysCategorias[] = generateArrayCategorias($cat);
+        $arraysCategorias[] = generateArrayCategorias($cat, $responseArray);
     }
 
     $jsonData = json_encode($arraysCategorias);
@@ -104,10 +104,10 @@
 
 
     //FUNCIONES
-    function generateArrayCategorias($cat)
+    function generateArrayCategorias($cat, $responseArray)
     {
         return [
-            "idProductos" => $_SESSION['idProducto'],
+            "idProductos" => $responseArray['idProducto'],
             "idCategoria" => $cat
         ];
     }
