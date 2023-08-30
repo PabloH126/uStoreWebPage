@@ -1,11 +1,3 @@
-$(document).ready(function() {
-    $(".switch-input").change(function() {
-        var isChecked = $(this).prop("checked");
-        var stockStatus = isChecked ? "Hay Stock" : "Sin Stock";
-        $(this).closest(".stock-switch").find(".stock-status").text(stockStatus);
-    });
-});
-
 document.addEventListener("DOMContentLoaded", function() {
     const switchCheckbox = document.querySelectorAll(".switch-input");
     const stockStatus = document.querySelectorAll('.stock-status');
