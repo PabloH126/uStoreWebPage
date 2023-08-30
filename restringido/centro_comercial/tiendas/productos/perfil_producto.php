@@ -96,7 +96,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                         <div class="tit">
                             <h2>Descripción del producto</h2>
                         </div>
-                        <div class="coments">
+                        <div class="contents">
                             <div class="coment"></div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                         <div class="tit">
                             <h2>Comentarios</h2>
                         </div>
-                        <div class="comnts">
+                        <div class="contents">
                             <div class="coment"></div>
                         </div>
                     </div>

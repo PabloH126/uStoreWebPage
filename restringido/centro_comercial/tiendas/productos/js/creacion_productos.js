@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
+    const mainForm = document.querySelector('.form-tiendas');
+    const fileInputs = document.querySelectorAll('.file-input');
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -19,6 +21,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
+    });
+
+    mainForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        try {
+            const data = await sendFormWithoutImages(mainForm, fileInputs);
+
+            if (data.statusProducto === 'success' && data.statusCatP === 'success') {
+                for (let input of fileInputs) {
+                    if (input && input.files.length > 0) {
+                        await sendImage(input, "imagenesProducto.php", data.idProducto); // Pasar el idProducto
+                    }
+                }
+                
+                window.location.href = data.urlSalida;
+            } else {
+                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusProducto + ". Estatus de las categorias: " + data.statusCatP);
+            }
+
+        } catch (error) {
+            console.error('Error: ', error);
+            alert("Hubo un error al realizar la solicitud de creación de producto: " + error);
+        }
     });
 });
 
