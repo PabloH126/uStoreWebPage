@@ -44,5 +44,14 @@
 }
 
 .topD{
-    display: flex;
+    display: grid;
+    justify-items: end;
+    grid-template-columns: none;
+}
+
+.info{
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    font-weight: bold;
 }
