@@ -29,6 +29,8 @@ h1{
 }
 
 .content .lista .item .logo{
+	max-height: 150px;
+    object-fit: cover;
 	display: block;
 	border-radius: 20px;
 	margin: 10px auto 0;
