@@ -1,5 +1,6 @@
 <?php
 $imagenes = [];
+$responseArray = [];
 
 verificarImagen('imagen1', $_FILES['imagen1'], $imagenes);
 verificarImagen('imagen2', $_FILES['imagen2'], $imagenes);
@@ -41,7 +42,13 @@ verificarImagen('imagen5', $_FILES['imagen5'], $imagenes);
 
         if($httpStatusCode != 200)
         {
-            echo $httpStatusCode . 'create imagenes producto';
+            $responseArray['statusImagenes'] = 'error';
+            $responseArray['messageImagenes'] = $httpStatusCode . ' CREACION IMAGENES PRODUCTO <br>';
+        }
+        else
+        {
+            $responseArray['statusImagenes'] = 'success';
+            $responseArray['messageImagenes'] = $httpStatusCode . ' CREACION IMAGENES PRODUCTO <br>';
         }
 
         curl_close($ch);

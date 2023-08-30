@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (data.statusProducto === 'success' && data.statusCatP === 'success')
             {
-                /*for (let input of fileInputs)
+                for (let input of fileInputs)
                 {
                     if (input.files.length > 0)
                     {
                         await sendImage(input, "../imagenesProducto.php");
                     }
                 }
-                */
+                
                 window.location.href = data.urlSalida;
             }
             else
@@ -61,9 +61,9 @@ async function sendImage(input, url) {
     
     const data = await response.json();
 
-    if (data.status !== 'success')
+    if (data.statusImagenes !== 'success')
     {
-        alert("No se pudieron guardar las imagenes");
+        alert("No se pudieron guardar las imagenes, ERROR: " + data.statusImagenes);
         throw new Error("Fallo al guardar imagenes de producto");
     } 
 }
