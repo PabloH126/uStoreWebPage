@@ -11,13 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (data.statusProducto === 'success' && data.statusCatP === 'success')
             {
-                for (let input of fileInputs)
+                /*for (let input of fileInputs)
                 {
                     if (input.files.length > 0)
                     {
                         await sendImage(input, "../imagenesProducto.php");
                     }
                 }
+                */
                 window.location.href = data.urlSalida;
             }
             else
