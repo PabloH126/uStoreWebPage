@@ -4,27 +4,27 @@ document.addEventListener("DOMContentLoaded", function() {
     switchCheckbox.forEach((checkbox, index) => {
         const stockStatus = stocksStatus[index];
 
-        if(checkbox.value == "1")
-        {
-            stockStatus.classList.remove("stock-unavailable");
-            stockStatus.classList.add("stock-available");
-            stockStatus.textContent = "En Stock";
-        }
-        else
-        {
-            stockStatus.classList.remove("stock-available");
-            stockStatus.classList.add("stock-unavailable");
-            stockStatus.textContent = "Sin Stock";
-        }
         checkbox.addEventListener("change", function() {
             this.value = this.checked ? "1" : "0";
-            updateStock(this.dataset.productoId, this.value);
+            await updateStock(this.dataset.productoId, this.value, this);
+            if(checkbox.value == "1")
+            {
+                stockStatus.classList.remove("stock-unavailable");
+                stockStatus.classList.add("stock-available");
+                stockStatus.textContent = "En Stock";
+            }
+            else
+            {
+                stockStatus.classList.remove("stock-available");
+                stockStatus.classList.add("stock-unavailable");
+                stockStatus.textContent = "Sin Stock";
+            }
         });
     })
 
 });
 
-async function updateStock(idProducto, stock)
+async function updateStock(idProducto, stock, checkbox)
 {
     const formData = new URLSearchParams();
     formData.append('idProducto', idProducto);
