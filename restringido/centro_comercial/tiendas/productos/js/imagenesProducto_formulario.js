@@ -57,6 +57,7 @@ async function sendImage(input, url, idProducto) {
         body: formData
     });
     
+    console.log(response);
     alert("pasó el fetch");
     const data = response.json();
     alert("Pasó el json()");
