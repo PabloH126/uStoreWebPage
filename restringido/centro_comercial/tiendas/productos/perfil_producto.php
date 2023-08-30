@@ -24,7 +24,7 @@ $_SESSION['idTienda'] = $_GET['id'];*/
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src="<?php /*echo $tiendas['logoTienda']; */?>" alt="">
+                        <img src=" https://www.nintenderos.com/wp-content/uploads/2023/02/Naruto-confundido.jpg<?php /*echo $tiendas['logoTienda']; */?>" alt="">
                     </div>
                     <div class="nameCat">
                         <div class="name">
