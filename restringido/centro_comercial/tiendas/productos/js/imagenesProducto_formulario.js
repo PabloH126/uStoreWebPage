@@ -62,6 +62,5 @@ async function sendImage(input, url, idProducto) {
 
     if (data.statusImagenes !== 'success') {
         alert("No se pudieron guardar las imágenes, ERROR: " + data.statusImagenes);
-        throw new Error("Fallo al guardar imágenes de producto");
     } 
 }
