@@ -82,14 +82,13 @@ $_SESSION['idProducto'] = $_GET['id'];
                             <span>Disponible para apartar</span>
                             <span>(5)</span>
                         </div>
-                         
                     </div>
                 </div>
             </div>
             <div class="derecha">
                 <div class="topD">
                     <div class="info">
-
+                            veri mucho dinero
                     </div>
                 </div>
                 <div class="botD">
