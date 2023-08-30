@@ -24,29 +24,30 @@ $_SESSION['idTienda'] = $_GET['id'];*/
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src=" https://www.nintenderos.com/wp-content/uploads/2023/02/Naruto-confundido.jpg<?php /*echo $tiendas['logoTienda']; */?>" alt="">
+                        <img src=" https://www.nintenderos.com/wp-content/uploads/2023/02/Naruto-confundido.jpg<?php /*echo $tiendas['logoTienda']; */?>"
+                            alt="">
                     </div>
                     <div class="nameCat">
                         <div class="name">
                             <h1> Naruto
-                                <?php /*echo $tiendas['nombreTienda'];*/ ?>
+                                <?php /*echo $tiendas['nombreTienda'];*/?>
                             </h1>
                         </div>
                         <div class="cali">
                             <div class="estrellas">⭐⭐⭐⭐⭐</div><span>(100)</span>
                         </div>
                         <div class="categorias">
-                            <?php/*
-                            foreach ($categorias as $cat) {
+                            <?php /*
+                         foreach ($categorias as $cat) {*/
 
                                 ?>
-                                <div class="categoria">
-                                    <label>
-                                        <?php echo $cat['categoria1']; ?>
-                                    </label>
-                                </div>
-                                <?php
-                            }*/
+                            <div class="categoria">
+                                <label> oli
+                                    <?php /* echo $cat['categoria1']; */?>
+                                </label>
+                            </div>
+                            <?php /*
+                       }*/
                             ?>
                         </div>
                     </div>
@@ -59,15 +60,15 @@ $_SESSION['idTienda'] = $_GET['id'];*/
                     <div class="slider-container">
 
                         <div class="slider" id="slider">
-                            <?php/*
-                            foreach ($imagenesTienda as $imagen) {
+                            <? php /*
+                         foreach ($imagenesTienda as $imagen) {
+                             ?>
+                             <section class="slider-img">
+                                 <img src="<?php echo $imagen['imagenTienda'] ?>" alt="">
+                             </section>
+                             <?php
+                         }*/
                                 ?>
-                                <section class="slider-img">
-                                    <img src="<?php echo $imagen['imagenTienda'] ?>" alt="">
-                                </section>
-                                <?php
-                            }*/
-                            ?>
                         </div>
                         <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
                         <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
@@ -91,10 +92,12 @@ $_SESSION['idTienda'] = $_GET['id'];*/
             </div>
         </div>
         <div class="bttnProductos">
-            <a title="Ver todos los productos" href="productos/lista_productos.php?id=<?php echo $_GET['id']; ?>">Ver todos los productos</a>
+            <a title="Ver todos los productos" href="productos/lista_productos.php?id=<?php echo $_GET['id']; ?>">Ver
+                todos los productos</a>
         </div>
         <div class="edicionTienda">
-            <a title="Edición de tienda" href="edicion_tiendas.php?id=<?php echo $_GET['id']; ?>"><i class='bx bx-pencil'></i></a>
+            <a title="Edición de tienda" href="edicion_tiendas.php?id=<?php echo $_GET['id']; ?>"><i
+                    class='bx bx-pencil'></i></a>
         </div>
     </div>
     <script src="js/slider.js"></script>
