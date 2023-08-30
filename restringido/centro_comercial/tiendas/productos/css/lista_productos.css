@@ -1,4 +1,8 @@
-/*.stock-switch {
+.content .lista .item{
+    height: 248px;
+}
+
+.stock-switch {
     display: flex;
     align-items: center;
 }
@@ -41,7 +45,7 @@
 }
 
 input:checked + .slider {
-    background-color: #66bb6a; /* Color verde cuando hay stock 
+    background-color: #66bb6a; /* Color verde cuando hay stock */
 }
 
 input:checked + .slider:before {
@@ -55,10 +59,9 @@ input:checked + .slider:before {
 }
 
 .stock-available {
-    color: #4caf50; /* Color verde cuando hay stock 
+    color: #4caf50; /* Color verde cuando hay stock */
 }
 
 .stock-unavailable {
-    color: #f44336; /* Color rojo cuando no hay stock 
+    color: #f44336; /* Color rojo cuando no hay stock */
 }
-*/
