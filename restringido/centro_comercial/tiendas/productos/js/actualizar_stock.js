@@ -8,11 +8,21 @@ $(document).ready(function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const switchCheckbox = document.querySelectorAll(".switch-input");
-
+    const stockStatus = document.querySelectorAll('.stock-status');
     switchCheckbox.forEach(checkbox => {
         checkbox.addEventListener("change", function() {
             this.value = this.checked ? "1" : "0";
             updateStock(this.dataset.productoId, this.value);
+            if(this.value == "1")
+            {
+                stockStatus.classList.add('stock-available');
+                stockStatus.textContent('Hay Stock');
+            }
+            else
+            {
+                stockStatus.classList.add('stock-unavailable');
+                stockStatus.textContent('Sin Stock');
+            }
         });
     })
 
