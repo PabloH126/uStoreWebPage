@@ -4,27 +4,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switchCheckbox.forEach((checkbox, index) => {
         const stockStatus = stocksStatus[index];
 
-        checkbox.addEventListener("change", function() {
+        checkbox.addEventListener("change", async function() {
             this.value = this.checked ? "1" : "0";
-            await updateStock(this.dataset.productoId, this.value, this);
-            if(checkbox.value == "1")
-            {
-                stockStatus.classList.remove("stock-unavailable");
-                stockStatus.classList.add("stock-available");
-                stockStatus.textContent = "En Stock";
-            }
-            else
-            {
-                stockStatus.classList.remove("stock-available");
-                stockStatus.classList.add("stock-unavailable");
-                stockStatus.textContent = "Sin Stock";
-            }
+            await updateStock(this.dataset.productoId, this.value, this, stockStatus);
         });
     })
 
 });
 
-async function updateStock(idProducto, stock, checkbox)
+async function updateStock(idProducto, stock, checkbox, stockStatus)
 {
     const formData = new URLSearchParams();
     formData.append('idProducto', idProducto);
@@ -41,6 +29,18 @@ async function updateStock(idProducto, stock, checkbox)
         if(data.status === 'success')
         {
             showNotification(data.message);
+            if(checkbox.value == "1")
+            {
+                stockStatus.classList.remove("stock-unavailable");
+                stockStatus.classList.add("stock-available");
+                stockStatus.textContent = "En Stock";
+            }
+            else
+            {
+                stockStatus.classList.remove("stock-available");
+                stockStatus.classList.add("stock-unavailable");
+                stockStatus.textContent = "Sin Stock";
+            }
         }
         else
         {
