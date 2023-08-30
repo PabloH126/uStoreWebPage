@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
                 
-                window.location.href = data.urlSalida;
+                //window.location.href = data.urlSalida;
             } else {
                 alert("Hubo un error al guardar el producto <br>" + data.statusProducto + "<br>" + data.statusCatP);
             }
@@ -52,17 +52,17 @@ async function sendImage(input, url, idProducto) {
     alert("ya entro al sendImage");
     alert(idProducto);
 
-    const response = await fetch(url, {
+    const responseImagenes = await fetch(url, {
         method: 'POST',
         body: formData
     });
     
-    console.log(response);
+    console.log(responseImagenes);
     alert("pasó el fetch");
-    const data = response.json();
+    const dataImagenes = responseImagenes.json();
     alert("Pasó el json()");
-    console.log(data);
-    if (data.statusImagenes !== 'success') {
-        alert("No se pudieron guardar las imágenes, ERROR: " + data.statusImagenes);
+    console.log(dataImagenes);
+    if (dataImagenes.statusImagenes !== 'success') {
+        alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes);
     } 
 }
