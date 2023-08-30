@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
             updateStock(this.dataset.productoId, this.value);
             if(this.value == "1")
             {
-                stockStatus.classList.add('stock-available');
-                stockStatus.textContent('Hay Stock');
+                stockStatus.classList.add("stock-available");
+                stockStatus.textContent = "En Stock";
             }
             else
             {
-                stockStatus.classList.add('stock-unavailable');
-                stockStatus.textContent('Sin Stock');
+                stockStatus.classList.add("stock-unavailable");
+                stockStatus.textContent = "Sin Stock";
             }
         });
     })
