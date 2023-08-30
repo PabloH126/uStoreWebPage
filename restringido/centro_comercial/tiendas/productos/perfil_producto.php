@@ -28,7 +28,7 @@ $_SESSION['idTienda'] = $_GET['id'];*/
                     </div>
                     <div class="nameCat">
                         <div class="name">
-                            <h1>
+                            <h1> Naruto
                                 <?php /*echo $tiendas['nombreTienda'];*/ ?>
                             </h1>
                         </div>
