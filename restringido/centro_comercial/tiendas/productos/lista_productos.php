@@ -35,7 +35,6 @@
 	<?php require("../templates/template.secc_tiendas.php")?>
 	<link rel="stylesheet" type="text/css" href="../css/lista_tiendas.css">
 	<link rel="stylesheet" href="css/lista_productos.css">
-	<link rel="stylesheet" type="text/css" href="css/switch_stock.css">
 </head>
 <body>
 	<?php require("../../templates/template.menu.php")?>
