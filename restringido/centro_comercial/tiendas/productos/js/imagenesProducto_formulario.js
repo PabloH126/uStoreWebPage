@@ -7,20 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             const data = await sendFormWithoutImages(mainForm, fileInputs);
-            console.log(data);
 
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {
-                console.log(fileInputs);
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
-                        console.log(input.files.length);
                         await sendImage(input, "imagenesProducto.php", data.idProducto); // Pasar el idProducto
                     }
                 }
                 
-                //window.location.href = data.urlSalida;
+                window.location.href = data.urlSalida;
             } else {
-                alert("Hubo un error al guardar el producto <br>" + data.statusProducto + "<br>" + data.statusCatP);
+                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusProducto + ". Estatus de las categorias: " + data.statusCatP);
             }
 
         } catch (error) {
@@ -49,8 +46,6 @@ async function sendImage(input, url, idProducto) {
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idProducto', idProducto); // Agregar el idProducto al formData
-    alert("ya entro al sendImage");
-    alert(idProducto);
 
     const responseImagenes = await fetch(url, {
         method: 'POST',
@@ -63,11 +58,8 @@ async function sendImage(input, url, idProducto) {
         return;
     }
 
-    console.log('Response de imagenes: ' + responseImagenes);
-    alert("pasó el fetch");
     const dataImagenes = await responseImagenes.json();
-    alert("Pasó el json()");
-    console.log('Data del JSON:', dataImagenes);
+
     if (dataImagenes.statusImagenes !== 'success') {
         alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes);
     } 
