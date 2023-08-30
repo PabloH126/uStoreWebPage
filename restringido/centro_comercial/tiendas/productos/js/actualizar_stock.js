@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const switchCheckbox = document.querySelectorAll(".switch-input");
-    const stockStatus = document.querySelectorAll('.stock-status');
-    switchCheckbox.forEach(checkbox => {
+    const stocksStatus = document.querySelectorAll('.stock-status');
+    switchCheckbox.forEach((checkbox, index) => {
+        const stockStatus = stocksStatus[index];
+
         if(checkbox.value == "1")
         {
             stockStatus.classList.add("stock-available");
