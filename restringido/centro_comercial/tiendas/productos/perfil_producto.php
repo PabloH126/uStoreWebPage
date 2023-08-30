@@ -97,7 +97,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                             <h2>Descripción del producto</h2>
                         </div>
                         <div class="contents">
-                            <div class="coment"></div>
+                            <textarea readonly name="" id="" ></textarea>
                         </div>
                     </div>
                     <div class="comentarios">
