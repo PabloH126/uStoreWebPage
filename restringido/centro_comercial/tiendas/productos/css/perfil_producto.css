@@ -55,3 +55,14 @@
     font-size: 5rem;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 1502px) {
+    
+    .text div{
+        margin: 5px 0 0 27px;
+    }
+    
+    .info{
+        font-size: 3rem;
+    }
+}
