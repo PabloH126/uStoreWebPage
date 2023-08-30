@@ -34,7 +34,11 @@ async function updateStock(idProducto, stock)
     .then(data => {
         if(data.status === 'success')
         {
-            showNotification("")
+            showNotification(data.message);
+        }
+        else
+        {
+            alert('Hubo un error en la actualizacion de stock: ' + data.message);
         }
     })
     .catch(error => {
@@ -42,7 +46,7 @@ async function updateStock(idProducto, stock)
     });
 }
 
-function showNotification(message, url) {
+function showNotification(message) {
     const notification = document.createElement("div");
     notification.classList.add("notification");
     notification.textContent = message;
