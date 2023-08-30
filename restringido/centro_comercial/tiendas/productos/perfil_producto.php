@@ -13,6 +13,7 @@ $_SESSION['idTienda'] = $_GET['id'];*/
     <?php require("../../templates/template.styles.php") ?>
     <?php require("../templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" href="../css/perfil_tiendas.css">
+    <link rel="stylesheet" href="css/perfil_producto.css">
     <!-- ICONS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
