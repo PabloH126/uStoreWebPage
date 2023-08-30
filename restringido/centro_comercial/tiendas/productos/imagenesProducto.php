@@ -33,7 +33,7 @@ foreach($imagenes as $key => $imagen) {
     $response = curl_exec($ch);
     
     if ($response === false) {
-        echo 'Error: ' . curl_error($ch);
+        echo 'ErrorSoli: ' . curl_error($ch);
     } else {
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
