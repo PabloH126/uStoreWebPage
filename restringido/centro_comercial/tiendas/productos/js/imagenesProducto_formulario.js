@@ -58,7 +58,7 @@ async function sendImage(input, url, idProducto) {
     });
     
     alert("pasó el fetch");
-    const data = await response.json();
+    const data = response.json();
     alert("Pasó el json()");
     console.log(data);
     if (data.statusImagenes !== 'success') {
