@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {
                 for (let input of fileInputs) {
                     if (input.files.length > 0) {
+                        console.log(input);
                         await sendImage(input, "../imagenesProducto.php", data.idProducto); // Pasar el idProducto
                     }
                 }
