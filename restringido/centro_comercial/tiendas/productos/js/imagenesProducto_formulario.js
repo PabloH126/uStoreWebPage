@@ -57,6 +57,7 @@ async function sendImage(input, url, idProducto) {
         body: formData
     });
     
+    alert("pasó el fetch");
     const data = await response.json();
 
     if (data.statusImagenes !== 'success') {
