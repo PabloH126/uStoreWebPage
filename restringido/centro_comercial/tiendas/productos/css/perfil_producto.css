@@ -36,6 +36,7 @@
 .text{
     font-size: 1.5rem;
     height: 13%;
+    text-align: initial;
 }
 
 .text div{
