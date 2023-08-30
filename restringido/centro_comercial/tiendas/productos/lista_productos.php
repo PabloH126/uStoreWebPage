@@ -53,6 +53,10 @@
 					<div class="item">
 						<a href="perfil_producto.php?id=<?php echo $producto['idProductos']; ?>"><img width="60%" class="logo" src="<?php echo $producto['imageProducto']; ?>"></a>
 						<strong class="nombre"><?php echo $producto['nombreProducto'];?></strong>
+						<div class="switch">
+                        	<label class="switch-label">Activar/Desactivar</label>
+                        	<input type="checkbox" class="switch-input" data-producto-id="<?php echo $producto['idProductos']; ?>" <?php echo $producto['activo'] ? 'checked' : ''; ?>>
+                    	</div>
 					</div>
 			<?php
 				}

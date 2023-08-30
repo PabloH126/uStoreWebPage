@@ -78,10 +78,10 @@ $_SESSION['idProducto'] = $_GET['id'];
                         <div>
                             <span>En stock</span>
                         </div>
-                         <div>
+                        <div>
                             <span>Disponible para apartar</span>
                             <span>(5)</span>
-                         </div>
+                        </div>
                          
                     </div>
                 </div>
