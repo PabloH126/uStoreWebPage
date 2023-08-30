@@ -63,11 +63,11 @@ $_SESSION['idProducto'] = $_GET['id'];
                         <div class="slider" id="slider">
                             <? php /*
                          foreach ($imagenesTienda as $imagen) {
-                             ?>
+                             */?>
                              <section class="slider-img">
-                                 <img src="<?php echo $imagen['imagenTienda'] ?>" alt="">
+                                 <img src="https://i.blogs.es/ebfd34/naruto-nuevos-episodios-estreno-septiembre-2023/840_560.jpeg <?php /*echo $imagen['imagenTienda'] */?>" alt="">
                              </section>
-                             <?php
+                             <?php/*
                          }*/
                                 ?>
                         </div>
