@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             else
             {
-                alert("Hubo un error al guardar el producto");
+                alert("Hubo un error al guardar el producto <br>" + data.statusProducto + "<br>" + data.statusCatP);
             }
 
         } catch (error) {

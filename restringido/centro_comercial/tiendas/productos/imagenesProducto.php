@@ -56,7 +56,7 @@ function verificarImagen($nombreImagen, $imagen, $imagenes)
 {
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-    $maxSize = 5 * 1024 * 1024; // 5 MB
+    $maxSize = 800 * 1024; // 800kb
 
     if(isset($imagen) && $imagen['error'] == 0)
     {
@@ -71,5 +71,5 @@ function verificarImagen($nombreImagen, $imagen, $imagenes)
     }
 }
 
-unset($_SESSION['idProducto'])
+unset($_SESSION['idProducto']);
 ?>
