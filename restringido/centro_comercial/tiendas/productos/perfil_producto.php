@@ -1,8 +1,8 @@
 <?php
-/*session_start();
-require '../../security.php';
-/*include 'datosTienda.php';
-$_SESSION['idTienda'] = $_GET['id'];*/
+session_start();
+require '../../../security.php';
+//include 'datosTienda.php';
+$_SESSION['idProducto'] = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
