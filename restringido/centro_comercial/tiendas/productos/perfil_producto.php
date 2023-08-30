@@ -9,7 +9,7 @@ $_SESSION['idTienda'] = $_GET['id'];*/
 
 <head>
     <meta charset="utf-8">
-    <title>Perfil tienda</title>
+    <title>Perfil producto</title>
     <?php require("../../templates/template.styles.php") ?>
     <?php require("../templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" href="../css/perfil_tiendas.css">
