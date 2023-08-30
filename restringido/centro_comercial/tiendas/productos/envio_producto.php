@@ -1,6 +1,8 @@
 <?php
     session_start();
     $responseArray = [];
+
+    header('Content-Type: application/json');
     //CREATE PRODUCTO
     
     $data = [
@@ -11,11 +13,6 @@
         "stock" => 0,
         "idTienda" => $_SESSION['idTienda']
     ];
-
-    foreach ($data as $key => $value)
-    {
-        echo $key . ' : ' . $value . '<br>';
-    }
     
     $jsonData = json_encode($data);
 
@@ -103,7 +100,7 @@
     }
     
     curl_close($ch);
-
+    
 //----------------------------------------------------------------------------------------//       
 
 
@@ -111,9 +108,10 @@
     function generateArrayCategorias($cat, $dataProducto)
     {
         return [
-            "idProductos" => $dataProducto['idProductos'],
+            "idProductos" => $dataProducto,
             "idCategoria" => $cat
         ];
     }
 
+    echo json_encode($responseArray);
 ?>
