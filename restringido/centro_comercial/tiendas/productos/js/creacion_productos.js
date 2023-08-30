@@ -25,6 +25,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
     mainForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+        let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
+        let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
+
+        let img1 = document.getElementById("fileInput1");
+        let img2 = document.getElementById("fileInput2");
+        let img3 = document.getElementById("fileInput3");
+        let img4 = document.getElementById("fileInput4");
+        let img5 = document.getElementById("fileInput5");
+        
+        if (!nombreValidacion())
+        {
+            alert("Se debe ingresar un nombre de producto");
+            e.preventDefault();
+            return;
+        }
+
+        if (!checked) {
+            alert("Se debe seleccionar al menos una categoria");
+            e.preventDefault();
+            return;
+        }
+
+        if (!precioValidacion())
+        {
+            alert("Se debe ingresar un precio del producto");
+            e.preventDefault();
+            return;
+        }
+
+        if (!descripcionValidacion())
+        {
+            alert("Se debe ingresar una descripcion del producto");
+            e.preventDefault();
+            return;
+        }
+
+        if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
+        {
+            alert("Se debe subir al menos una imagen del producto");
+            e.preventDefault();
+            return;
+        }
+
+        if (!imagenesValidacion())
+        {
+            e.preventDefault();
+            return;
+        }
+
+        if (!cantidadApartarValidacion())
+        {
+            alert("Se debe ingresar una cantidad válida de unidades del producto para apartado");
+            e.preventDefault();
+            return;
+        }
+
+        var submitButton = document.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
 
         try {
             const data = await sendFormWithoutImages(mainForm, fileInputs);
@@ -46,67 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Hubo un error al realizar la solicitud de creación de producto: " + error);
         }
     });
-});
-
-document.querySelector("form").addEventListener("submit", function (e) {
-    let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
-    let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
-
-    let img1 = document.getElementById("fileInput1");
-    let img2 = document.getElementById("fileInput2");
-    let img3 = document.getElementById("fileInput3");
-    let img4 = document.getElementById("fileInput4");
-    let img5 = document.getElementById("fileInput5");
-    
-    if (!nombreValidacion())
-    {
-        alert("Se debe ingresar un nombre de producto");
-        e.preventDefault();
-        return;
-    }
-
-    if (!checked) {
-        alert("Se debe seleccionar al menos una categoria");
-        e.preventDefault();
-        return;
-    }
-
-    if (!precioValidacion())
-    {
-        alert("Se debe ingresar un precio del producto");
-        e.preventDefault();
-        return;
-    }
-
-    if (!descripcionValidacion())
-    {
-        alert("Se debe ingresar una descripcion del producto");
-        e.preventDefault();
-        return;
-    }
-
-    if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
-    {
-        alert("Se debe subir al menos una imagen del producto");
-        e.preventDefault();
-        return;
-    }
-
-    if(!imagenesValidacion())
-    {
-        e.preventDefault();
-        return;
-    }
-
-    if (!cantidadApartarValidacion())
-    {
-        alert("Se debe ingresar una cantidad válida de unidades del producto para apartado");
-        e.preventDefault();
-        return;
-    }
-
-    var submitButton = document.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
 });
 
 function nombreValidacion() {
@@ -192,35 +189,6 @@ function cantidadApartarValidacion() {
 
     return true;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const mainForm = document.querySelector('.form-tiendas');
-    const fileInputs = document.querySelectorAll('.file-input');
-
-    mainForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        try {
-            const data = await sendFormWithoutImages(mainForm, fileInputs);
-
-            if (data.statusProducto === 'success' && data.statusCatP === 'success') {
-                for (let input of fileInputs) {
-                    if (input && input.files.length > 0) {
-                        await sendImage(input, "imagenesProducto.php", data.idProducto); // Pasar el idProducto
-                    }
-                }
-                
-                window.location.href = data.urlSalida;
-            } else {
-                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusProducto + ". Estatus de las categorias: " + data.statusCatP);
-            }
-
-        } catch (error) {
-            console.error('Error: ', error);
-            alert("Hubo un error al realizar la solicitud de creación de producto: " + error);
-        }
-    });
-});
 
 async function sendFormWithoutImages(form, fileInputs) {
     const formData = new FormData(form);

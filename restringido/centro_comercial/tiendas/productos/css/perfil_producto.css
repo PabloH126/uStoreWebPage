@@ -56,7 +56,8 @@
     font-weight: bold;
 }
 
-.descripcion_producto{
+.descripcion_producto,
+.comentarios{
     height: 50%;
 }
 
