@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(data);
 
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {
+                console.log(fileInputs);
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
-                        console.log(input);
+                        console.log(input.files.length);
                         await sendImage(input, "../imagenesProducto.php", data.idProducto); // Pasar el idProducto
                     }
                 }
@@ -50,6 +51,7 @@ async function sendImage(input, url, idProducto) {
     formData.append('idProducto', idProducto); // Agregar el idProducto al formData
     alert("ya entro al sendImage");
     alert(idProducto);
+
     const response = await fetch(url, {
         method: 'POST',
         body: formData
