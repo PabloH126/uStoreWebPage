@@ -61,7 +61,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                     <div class="slider-container">
 
                         <div class="slider" id="slider">
-                            <? php /*
+                            <?php /*
                          foreach ($imagenesTienda as $imagen) {
                              */?>
                              <section class="slider-img">
