@@ -1,4 +1,5 @@
 <?php
+session_start();
 $imagenes = [];
 $responseArray = [];
 
