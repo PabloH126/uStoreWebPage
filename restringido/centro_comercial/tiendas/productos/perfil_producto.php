@@ -74,6 +74,16 @@ $_SESSION['idProducto'] = $_GET['id'];
                         <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
                         <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
                     </div>
+                    <div class="text">
+                        <div>
+                            <span>En stock</span>
+                        </div>
+                         <div>
+                            <span>Disponible para apartar</span>
+                            <span>(5)</span>
+                         </div>
+                         
+                    </div>
                 </div>
             </div>
             <div class="derecha">
