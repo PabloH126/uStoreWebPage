@@ -13,5 +13,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function updateStock(idProducto, stock)
 {
-    fetch('https://ustoreapi.azurewebsites.net/api/Productos/CreateProducto?idProducto')
+    fetch('https://ustoreapi.azurewebsites.net/api/Productos/CreateProducto?idProducto=' + idProducto + '&stock=')
 }
