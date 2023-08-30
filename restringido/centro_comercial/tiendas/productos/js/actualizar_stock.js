@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if(checkbox.value == "1")
         {
+            stockStatus.classList.remove("stock-unavailable");
             stockStatus.classList.add("stock-available");
             stockStatus.textContent = "En Stock";
         }
         else
         {
+            stockStatus.classList.remove("stock-available");
             stockStatus.classList.add("stock-unavailable");
             stockStatus.textContent = "Sin Stock";
         }

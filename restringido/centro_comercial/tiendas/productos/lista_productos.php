@@ -63,7 +63,9 @@
                     	        <input type="checkbox" class="switch-input" data-producto-id="<?php echo $producto['idProductos']; ?>" <?php echo $producto['stock'] > 0 ? 'checked' : ''; ?>>
                 	            <span class="slider round"></span>
             	            </label>
-        	                <span class="stock-status"></span>
+        	                <span class="stock-status <?php echo $producto['stock'] > 0 ? 'stock-available' : 'stock-unavailable'; ?>">
+    	                        <?php echo $producto['stock'] > 0 ? 'Hay Stock' : 'Sin Stock'; ?>
+	                        </span>
                     	</div>
 					</div>
 			<?php
