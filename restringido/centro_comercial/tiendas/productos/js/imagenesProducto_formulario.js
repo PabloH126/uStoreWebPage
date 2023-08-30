@@ -57,11 +57,17 @@ async function sendImage(input, url, idProducto) {
         body: formData
     });
     
+    if (!responseImagenes.ok)
+    {
+        console.error("Error en la respuesta de imagenes: ", responseImagenes.statusText);
+        return;
+    }
+
     console.log('Response de imagenes: ' + responseImagenes);
     alert("pasó el fetch");
-    const dataImagenes = responseImagenes.json();
+    const dataImagenes = await responseImagenes.json();
     alert("Pasó el json()");
-    console.log('Data del JSON: ' + dataImagenes.forEach());
+    console.log('Data del JSON:', dataImagenes);
     if (dataImagenes.statusImagenes !== 'success') {
         alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes);
     } 
