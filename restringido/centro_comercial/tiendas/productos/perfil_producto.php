@@ -93,8 +93,28 @@ $_SESSION['idProducto'] = $_GET['id'];
                             ?>
                         </div>
                         <div>
-                            <span>Disponible para apartar</span>
-                            <span>(<?php echo $producto['cantidadApartado']; ?>)</span>
+                            <?php 
+                            if ($producto['cantidadApartado'] > 5)
+                            {
+                            ?>
+                            <span style="color: green">Disponible para apartar</span>
+                            <span style="color: green">(<strong><?php echo $producto['cantidadApartado']; ?></strong> unidades)</span>
+                            <?php
+                            }
+                            else if ($producto['cantidadApartado'] <= 5 && $producto['cantidadApartado'] > 0)
+                            {
+                            ?>
+                            <span style="color: orange">Poca disponibilidad para apartar</span>
+                            <span>(<strong><?php echo $producto['cantidadApartado']; ?></strong> unidades)</span>
+                            <?php
+                            }
+                            else if ($producto['cantidadApartado'] == 0)
+                            {
+                            ?>
+                            <span style="color: red">Sin disponibilidad para apartar</span>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
