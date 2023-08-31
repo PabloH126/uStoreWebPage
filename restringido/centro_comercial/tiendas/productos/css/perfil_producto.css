@@ -5,6 +5,7 @@
 .icon{
     display: grid;
     align-items: center;
+    justify-items: center;
 }
 
 .estrellas {
@@ -31,6 +32,10 @@
 .slider-container{
     height: 70%;
     margin-left: 9%;
+}
+
+.slider-img img{
+    max-height: 413px;
 }
 
 .text{
