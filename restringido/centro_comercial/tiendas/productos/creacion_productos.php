@@ -229,7 +229,7 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="notas">
                         <span>* Máximo 5 imágenes.<br>
-                        Cada imagen no debe superar los 5mb. </span>
+                        Cada imagen no debe superar 1Mb. </span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">

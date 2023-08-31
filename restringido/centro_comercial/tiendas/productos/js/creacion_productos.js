@@ -172,7 +172,7 @@ function imagenesValidacion() {
         }
         else if (img.files.legth && !validacionSizeImagen(img, maxSize))
         {
-            alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese menos de 5 megabytes`);
+            alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
             return false;
         }
     }
