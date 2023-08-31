@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+
+const switchCheckbox = document.querySelectorAll(".switch-input");
+const stocksStatus = document.querySelectorAll('.stock-status');
+    switchCheckbox.forEach((checkbox, index) => {
+        const stockStatus = stocksStatus[index];
+
+        setStockStatus(checkbox, stockStatus);
+    })
+
 async function updateStock(idProducto, stock, checkbox, stockStatus)
 {
     const formData = new URLSearchParams();
