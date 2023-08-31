@@ -31,7 +31,7 @@ function getDatosProducto($url)
 
 
 
-$producto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos/GetProducto?id=" . $_GET['id']);
+$producto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos?id=" . $_GET['id']);
 $categorias = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasProducto?idProducto=" . $_GET['id']);
 $imagenesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos/GetImagenesProducto?idProducto=" . $_GET['id']);
 $calificacionesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesProducto?idProducto=" . $_GET['id']);
