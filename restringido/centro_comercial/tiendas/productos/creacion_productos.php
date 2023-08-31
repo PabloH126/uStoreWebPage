@@ -275,7 +275,6 @@ function CategoriasSelect($categorias)
     <script src="../../js/mostrarImg.js"></script>
     <script src="js/productosImg.js"></script>
     <script src="js/creacion_productos.js"></script>
-    <script src="js/imagenesProducto_formulario.js"></script>
 </body>
 
 </html>
