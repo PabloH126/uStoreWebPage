@@ -81,13 +81,13 @@ $_SESSION['idProducto'] = $_GET['id'];
                                 if($producto['stock'] == 0)
                                 {
                             ?>
-                            <span>Sin stock</span>
+                            <span style="color: red;">Sin stock</span>
                             <?php
                                 }
                                 else
                                 {
                             ?>
-                                <span>En stock</span>
+                                <span style="color: red;" >En stock</span>
                             <?php
                                 }
                             ?>
@@ -111,7 +111,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                             <h2>Descripción del producto</h2>
                         </div>
                         <div class="contents">
-                            <textarea readonly name="" id="" ><?php echo $producto['descripcion']; ?>
+                            <textarea readonly><?php echo $producto['descripcion']; ?>
                             </textarea>
                         </div>
                     </div>
