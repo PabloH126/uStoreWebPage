@@ -1,7 +1,8 @@
 <?php
 session_start();
 require '../../../security.php';
-//include 'datosTienda.php';
+include 'datosProducto.php';
+
 $_SESSION['idProducto'] = $_GET['id'];
 ?>
 <!DOCTYPE html>
@@ -25,30 +26,30 @@ $_SESSION['idProducto'] = $_GET['id'];
             <div class="izquierda">
                 <div class="topI">
                     <div class="icon">
-                        <img src=" https://www.nintenderos.com/wp-content/uploads/2023/02/Naruto-confundido.jpg<?php /*echo $tiendas['logoTienda']; */?>"
+                        <img src="<?php echo $producto['imageProducto']; ?>"
                             alt="">
                     </div>
                     <div class="nameCat">
                         <div class="name">
-                            <h1> Naruto
-                                <?php /*echo $tiendas['nombreTienda'];*/?>
+                            <h1>
+                                <?php echo $producto['nombreProducto']; ?>
                             </h1>
                         </div>
                         <div class="cali">
                             <div class="estrellas">⭐⭐⭐⭐⭐</div><span>(100)</span>
                         </div>
                         <div class="categorias">
-                            <?php /*
-                         foreach ($categorias as $cat) {*/
+                            <?php
+                         foreach ($categorias as $cat) {
 
                                 ?>
                             <div class="categoria">
-                                <label> oli
-                                    <?php /* echo $cat['categoria1']; */?>
+                                <label>
+                                    <?php echo $cat['categoria1']; ?>
                                 </label>
                             </div>
-                            <?php /*
-                       }*/
+                            <?php 
+                       }
                             ?>
                         </div>
                     </div>
@@ -61,14 +62,14 @@ $_SESSION['idProducto'] = $_GET['id'];
                     <div class="slider-container">
 
                         <div class="slider" id="slider">
-                            <?php /*
-                         foreach ($imagenesTienda as $imagen) {
-                             */?>
+                            <?php
+                        foreach ($imagenesProducto as $imagen) {
+                            ?>
                              <section class="slider-img">
-                                 <img src="https://i.blogs.es/ebfd34/naruto-nuevos-episodios-estreno-septiembre-2023/840_560.jpeg <?php /*echo $imagen['imagenTienda'] */?>" alt="">
+                                 <img src="<?php echo $imagen['imagenProducto']; ?>" alt="">
                              </section>
                              <?php 
-                         /*}*/
+                        }
                                 ?>
                         </div>
                         <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
@@ -76,11 +77,24 @@ $_SESSION['idProducto'] = $_GET['id'];
                     </div>
                     <div class="text">
                         <div>
-                            <span>En stock</span>
+                            <?php
+                                if($producto['stock'] == 0)
+                                {
+                            ?>
+                            <span>Sin stock</span>
+                            <?php
+                                }
+                                else
+                                {
+                            ?>
+                                <span>En stock</span>
+                            <?php
+                                }
+                            ?>
                         </div>
                         <div>
                             <span>Disponible para apartar</span>
-                            <span>(5)</span>
+                            <span>(<?php echo $producto['cantidadApartado']; ?>)</span>
                         </div>
                     </div>
                 </div>
@@ -88,7 +102,7 @@ $_SESSION['idProducto'] = $_GET['id'];
             <div class="derecha">
                 <div class="topD">
                     <div class="info">
-                            veri mucho dinero
+                            <?php echo $producto['precioProducto']; ?>
                     </div>
                 </div>
                 <div class="botD">
@@ -97,16 +111,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                             <h2>Descripción del producto</h2>
                         </div>
                         <div class="contents">
-                            <textarea readonly name="" id="" >oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
+                            <textarea readonly name="" id="" ><?php echo $producto['descripcion']; ?>
                             </textarea>
                         </div>
                     </div>
