@@ -1,7 +1,7 @@
 <?php
 session_start();
 require '../../../security.php';
-include 'datosProducto.php';
+require 'datosProducto.php';
 
 $_SESSION['idProducto'] = $_GET['id'];
 ?>

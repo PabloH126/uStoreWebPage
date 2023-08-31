@@ -33,13 +33,13 @@ async function updateStock(idProducto, stock, checkbox, stockStatus)
             {
                 stockStatus.classList.remove("stock-unavailable");
                 stockStatus.classList.add("stock-available");
-                stockStatus.textContent = "En Stock";
+                stockStatus.textContent = "En stock";
             }
             else
             {
                 stockStatus.classList.remove("stock-available");
                 stockStatus.classList.add("stock-unavailable");
-                stockStatus.textContent = "Sin Stock";
+                stockStatus.textContent = "Sin stock";
             }
         }
         else
