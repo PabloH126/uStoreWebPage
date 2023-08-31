@@ -56,7 +56,7 @@ foreach($imagenes as $key => $imagen) {
 function verificarImagen($nombreImagen, $imagen, &$imagenes) { // Nota: &$imagenes para modificar el array original
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-    $maxSize = 800 * 1024; // 800kb
+    $maxSize = 2 * 1024 * 1024; // 800kb
 
     if(isset($imagen) && $imagen['error'] == 0) {
         if(in_array($imagen['type'], $allowedImageTypes) && $imagen['size'] <= $maxSize) {
