@@ -27,24 +27,25 @@ $productos = json_decode($response, true);
 curl_close($ch);
 
 //---------------------------------------------------------UN PRODUCTO-------------------------------------------------------------//
-$producto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos?id=" . $_GET['id']);
-$categorias = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasProducto?idProducto=" . $_GET['id']);
-$imagenesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos/GetImagenesProducto?idProducto=" . $_GET['id']);
-$calificacionesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesProducto?idProducto=" . $_GET['id']);
+if($productos == null)
+{
+    $producto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos?id=" . $_GET['id']);
+    $categorias = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasProducto?idProducto=" . $_GET['id']);
+    $imagenesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos/GetImagenesProducto?idProducto=" . $_GET['id']);
+    $calificacionesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesProducto?idProducto=" . $_GET['id']);
 
 
-if (is_array($calificacionesProducto)) {
-    $suma = 0;
-    foreach ($calificacionesProducto as $calificacion) {
-        $suma += $calificacion['calificacion'];
+    if (is_array($calificacionesProducto)) {
+        $suma = 0;
+        foreach ($calificacionesProducto as $calificacion) {
+            $suma += $calificacion['calificacion'];
+        }
+
+        $promedio = $suma / count($calificacionesProducto);
+    } else {
+        $promedio = 0;
     }
-
-    $promedio = $suma / count($calificacionesProducto);
-} else {
-    $promedio = 0;
 }
-
-
 function getDatosProducto($url)
 {
     $ch = curl_init();
