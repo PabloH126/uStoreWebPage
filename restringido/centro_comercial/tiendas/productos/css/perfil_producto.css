@@ -89,6 +89,14 @@
 
 @media only screen and (max-width: 1502px) {
     
+    .contentT .izquierda .topI .icon img{
+        max-height: 126px;    
+    }
+
+    .slider-img img{
+        max-height: 316px;
+    }
+
     .text{
         font-size: 1.2rem;
     }
