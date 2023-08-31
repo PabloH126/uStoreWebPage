@@ -31,9 +31,6 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="0" />
 	<title>Selección de productos</title>
 	<?php require("../../templates/template.styles.php")?>
 	<?php require("../templates/template.secc_tiendas.php")?>
@@ -68,8 +65,8 @@
                 	            <span class="slider round"></span>
             	            </label>
         	                <span class="stock-status <?php echo $producto['stock'] > 0 ? 'stock-available' : 'stock-unavailable'; ?>">
-    							<?php echo $producto['stock'] > 0 ? 'En stock' : 'Sin stock'; ?>
-							</span>
+    	                        <?php echo $producto['stock'] > 0 ? 'En stock' : 'Sin stock'; ?>
+	                        </span>
                     	</div>
 					</div>
 			<?php
