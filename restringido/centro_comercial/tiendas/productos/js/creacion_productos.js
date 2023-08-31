@@ -170,7 +170,7 @@ function imagenesValidacion() {
             alert(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
             return false;
         }
-        else if (img.files.legth && !validacionSizeImagen(img, maxSize))
+        else if (img.files.length && !validacionSizeImagen(img, maxSize))
         {
             alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
             return false;
