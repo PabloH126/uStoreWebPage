@@ -9,13 +9,10 @@ h1 {
 
 .content .lista {
 	display: inline-block;
-	/*padding: 1% 2% 2%;*/
-
 }
 
 .content .lista form {
 	font-size: 2em;
-
 	display: flex;
 	align-items: flex-start;
 }
@@ -23,7 +20,6 @@ h1 {
 .content .lista form .item {
 	padding: 2%;
 	height: auto;
-
 	min-width: 93%;
 	opacity: 0;
 	transition: all .2s linear;
@@ -34,7 +30,7 @@ h1 {
 }
 
 .content .lista form .item.to-left {
-	margin-left: -96%;
+	margin-left: -98%;
 }
 
 .content .lista form .item p {
@@ -118,6 +114,7 @@ h1 {
 	display: grid;
 	align-items: center;
 	justify-items: center;
+	position: relative;
 }
 
 .content .lista form .item .logoT .contentL .box img {
@@ -231,6 +228,26 @@ h1 {
 	width: 251px;
 }
 
+/*logo y banners*/
+.content .lista form .item .logoT .contentL .box i,
+.content .lista form .item .promociones .imageP .contentP .box i {
+	font-size: 1.1rem;
+	position: absolute;
+	top: 5%;
+	left: 88%;
+	background-color: transparent;
+	color: #b3b3b3cf;
+	border-radius: 50%;
+	transition: 0.5s ease;
+}
+
+.content .lista form .item .logoT .contentL .box i:hover,
+.content .lista form .item .promociones .imageP .contentP .box i:hover{
+	background-color: #8989898c;
+	color: #fff;
+	cursor: pointer;
+} 
+
 .content .lista form .item .promociones .imageP .contentP .box img {
 	max-height: 161px;
 	max-width: 241px;
@@ -293,6 +310,10 @@ h1 {
 	h1 {
 		font-size: 3em;
 	}
+	
+	.content .lista{
+		margin: 0;;
+	}
 
 	.content .lista form {
 		font-size: 1em;
@@ -301,6 +322,10 @@ h1 {
 	.content .lista form .item{
 		margin-top: 0;
 		margin-bottom: 0;
+	}
+
+	.content .lista form .item.to-left {
+		margin-left: -96%;
 	}
 
 	.content .lista form .item p {

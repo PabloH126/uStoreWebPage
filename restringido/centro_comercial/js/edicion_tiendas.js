@@ -153,12 +153,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
         return;
     }
 
-    if (!logoTienda.files.length) {
-        alert("Se debe subir un logo de tienda");
-        e.preventDefault();
-        return;
-    }
-
     if(logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
     {
         alert("La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
@@ -184,12 +178,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     if(!validarHorariosCorrectos())
     {
-        e.preventDefault();
-        return;
-    }
-
-    if (!img1.files.length && !img2.files.length && !img3.files.length) {
-        alert("Se debe subir al menos una imagen para el banner de la tienda");
         e.preventDefault();
         return;
     }

@@ -1,6 +1,7 @@
 <?php
 session_start();
-require '../security.php';
+require '../../security.php';
+include 'datosTienda.php';
 
 //REQUEST DE LAS CATEGORIAS
 
@@ -20,38 +21,59 @@ if ($response === false) {
     $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
-$categorias = json_decode($response, true);
+$categoriasDisponibles = json_decode($response, true);
 
 curl_close($ch);
 
+
+$categoriasTiendaId = array_column($categorias, 'idCategoria');
+
+
 //FUNCIONES DEL FORMULARIO
 
-function HorariosSelect($dia)
+function HorariosSelect($dia, $horarios)
 {
-    echo '<tr>';
-    echo '<td>' . $dia . '</td>';
-    echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
-    echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
-    echo '</tr>';
+    foreach($horarios as $horario)
+    {
+        if($horario['dia'] === $dia)
+        {
+            echo '<tr>';
+            echo '<td>' . $dia . '</td>';
+            echo '<td><input type="time" name="' . $dia . '_apertura" value="' . $horario['horarioApertura'] . '"></td>';
+            echo '<td><input type="time" name="' . $dia . '_cierre" value="' . $horario['horarioCierre'] . '"></td>';
+            echo '</tr>';
+        }
+    }
 }
 
-function PeriodosSelect($periodo)
+function PeriodosSelect($periodo, $periodosPredeterminados)
 {
+    list($cantidad, $tiempo) = explode(' ', $periodosPredeterminados['apartadoPredeterminado'], 2);
+    $idApartadoPredeterminado = $periodosPredeterminados['idApartadoPredeterminado'];
+
+    $selectedMinutos = ($tiempo === 'minutos') ? 'selected' : '';
+    $selectedHoras = ($tiempo === 'horas') ? 'selected' : '';
+    $selectedDias = ($tiempo === 'dias') ? 'selected' : '';
+
     echo '<div class="apartadosT">';
-    echo '<input type="number" name="numero' . $periodo . '" min="1" step="1">';
+    echo '<input type="number" name="numero' . $periodo . '" min="1" step="1" value="' . $cantidad . '">';
     echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
     echo '<option value="">Tiempo</option>';
-    echo '<option value="minutos">Minutos</option>';
-    echo '<option value="horas">Horas</option>';
-    echo '<option value="dias">Días</option>';
+    echo '<option value="minutos" ' . $selectedMinutos . '>Minutos</option>';
+    echo '<option value="horas" ' . $selectedHoras . '>Horas</option>';
+    echo '<option value="dias" ' . $selectedDias . '>Días</option>';
     echo '</select>';
+    echo '<input type="hidden" name="idApartadoPredeterminado' . $periodo . '" value="' . $idApartadoPredeterminado . '">';
     echo '</div>';
 }
 
-function CategoriasSelect($categorias)
+function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
 {
-    foreach ($categorias as $categoria) {
-        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '">';
+    foreach ($categoriasDisponibles as $categoria) {
+        $isChecked = in_array($categoria['idCategoria'], $categoriasTiendaId) ? 'checked' : '';
+
+        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '" ' . $isChecked . '>';
+        
         echo '<div class="contentC">';
         echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
         echo '</div>';
@@ -63,28 +85,36 @@ function CategoriasSelect($categorias)
 
 <head>
     <meta charset="utf-8">
-    <title>Crear tienda</title>
-    <?php require("templates/template.styles.php") ?>
-    <?php require("tiendas/templates/template.secc_tiendas.php") ?>
-    <link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas.css">
+    <title>Edición de <?php echo $tiendas['nombreTienda']; ?></title>
+    <?php require("../templates/template.styles.php") ?>
+    <?php require("templates/template.secc_tiendas.php") ?>
+    <link rel="stylesheet" type="text/css" href="css/creacion_tiendas.css">
+    <link rel="stylesheet" href="css/edicion_tiendas.css">
+    <link rel="stylesheet" type="text/css" href="css/confirmacion_eliminacion.css"> 
+    <link rel="stylesheet" type="text/css" href="css/mensaje_eliminacion.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <?php require("templates/template.menu.php") ?>
+    <?php require("../templates/template.menu.php") ?>
     <div class="content">
-        <h1>Creación de tienda</h1>
+        <h1>Edición de tienda</h1>
         <div class="lista">
-            <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="actualizar_tienda.php?id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->
                 <div class="item active" id="item-1">
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" name="nombreTienda">
+                        <input type="text" id="nombreTienda" name="nombreTienda" value="<?php echo $tiendas['nombreTienda']; ?>" >
                     </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
+                        <div class="bttn" id="one">
+                            <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                        </div>
                     </div>
                 </div>
 
@@ -95,8 +125,8 @@ function CategoriasSelect($categorias)
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
                             <div class="box">
-                                <i class='bx bx-x delete-icon' data-input-id="logoTienda" data-img-id="imagenSelec"></i>
-                                <img id="imagenSelec" alt="">
+                                <i class='bx bx-x delete-icon'></i>
+                                <img id="imagenSelec" alt="" src="<?php echo $tiendas['logoTienda']; ?>">
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
@@ -110,6 +140,10 @@ function CategoriasSelect($categorias)
                     </div>
 
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
+
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
@@ -125,13 +159,16 @@ function CategoriasSelect($categorias)
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>
                         <div class="optionsC">
-                            <?php CategoriasSelect($categorias); ?>
+                            <?php CategoriasSelect($categoriasDisponibles, $categoriasTiendaId); ?>
                         </div>
                         <div class="notas">
                             <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
                         </div>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
                         </div>
@@ -156,13 +193,13 @@ function CategoriasSelect($categorias)
                             </thead>
                             <tbody>
                                 <?php
-                                HorariosSelect('Lunes');
-                                HorariosSelect('Martes');
-                                HorariosSelect('Miércoles');
-                                HorariosSelect('Jueves');
-                                HorariosSelect('Viernes');
-                                HorariosSelect('Sábado');
-                                HorariosSelect('Domingo');
+                                HorariosSelect('Lunes', $horarios);
+                                HorariosSelect('Martes', $horarios);
+                                HorariosSelect('Miércoles', $horarios);
+                                HorariosSelect('Jueves', $horarios);
+                                HorariosSelect('Viernes', $horarios);
+                                HorariosSelect('Sábado', $horarios);
+                                HorariosSelect('Domingo', $horarios);
                                 ?>
                             </tbody>
                         </table>
@@ -171,6 +208,9 @@ function CategoriasSelect($categorias)
                         </div>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
                         </div>
@@ -188,32 +228,53 @@ function CategoriasSelect($categorias)
                         <div class="imageP">
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1"></i>
-                                    <img src="" id="imagenSelec1" alt="">
+                                    <i class='bx bx-x delete-icon'></i>
+                                    <img src="<?php echo $imagenesTienda[0]['imagenTienda']; ?>" id="imagenSelec1" alt="">
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput1" >
                                     <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
+                                    <?php if (isset($imagenesTienda[0]['idImagenesTiendas']))
+                                    {
+                                    ?>
+                                        <input type="hidden" value="<?php echo $imagenesTienda[0]['idImagenesTiendas']; ?>" name="idImagen1">
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput2" data-img-id="imagenSelec2"></i>
-                                    <img src="" id="imagenSelec2" alt="">
+                                    <i class='bx bx-x delete-icon'></i>
+                                    <img src="<?php echo $imagenesTienda[1]['imagenTienda']; ?>" id="imagenSelec2" alt="">
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput2" >
                                     <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
+                                    <?php if (isset($imagenesTienda[1]['idImagenesTiendas']))
+                                    {
+                                    ?>
+                                        <input type="hidden" value="<?php echo $imagenesTienda[1]['idImagenesTiendas']; ?>" name="idImagen2">
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput3" data-img-id="imagenSelec3"></i>
-                                    <img src="" id="imagenSelec3" alt="">
+                                    <i class='bx bx-x delete-icon'></i>
+                                    <img src="<?php echo $imagenesTienda[2]['imagenTienda']; ?>" id="imagenSelec3" alt="">
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput3" >
                                     <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                    <?php if (isset($imagenesTienda[2]['idImagenesTiendas']))
+                                    {
+                                    ?>
+                                        <input type="hidden" value="<?php echo $imagenesTienda[2]['idImagenesTiendas']; ?>" name="idImagen3">
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -222,6 +283,9 @@ function CategoriasSelect($categorias)
                         <span>* Cada imagen no debe superar los 5mb.</span>
                     </div>
                     <div class="bttns">
+                    <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
                         </div>
@@ -238,9 +302,9 @@ function CategoriasSelect($categorias)
                         <label><strong>Periodos de apartado</strong></label>
                         <div class="contentA">
                             <?php
-                            PeriodosSelect('Periodo1');
-                            PeriodosSelect('Periodo2');
-                            PeriodosSelect('Periodo3');
+                            PeriodosSelect('Periodo1', $periodosPredeterminados[0]);
+                            PeriodosSelect('Periodo2', $periodosPredeterminados[1]);
+                            PeriodosSelect('Periodo3', $periodosPredeterminados[2]);
                             ?>
                         </div>
                         <div class="notas">
@@ -248,6 +312,9 @@ function CategoriasSelect($categorias)
                         </div>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class=""><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back" id="ult">
                             <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
                         </div>
@@ -259,9 +326,11 @@ function CategoriasSelect($categorias)
             </form>
         </div>
     </div>
-    <script src="js/slider_formularios.js"></script>
-    <script src="js/mostrarImg.js"></script>
-    <script src="js/creacion_tiendas.js"></script>
+    <div id="notification-container"></div>
+    <script src="../js/slider_formularios.js"></script>
+    <script src="../js/mostrarImg.js"></script>
+    <script src="../js/edicion_tiendas.js"></script>
+    <script src="../js/confirmacion_eliminacion.js"></script>
 </body>
 
 </html>

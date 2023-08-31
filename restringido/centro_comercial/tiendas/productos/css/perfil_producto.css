@@ -1,0 +1,111 @@
+.content .contentT{
+    height: 96%;
+}
+
+.icon{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.contentT .izquierda .topI .icon img{
+    max-height: 144px;
+}
+
+.estrellas {
+    display: inline-flex;
+}
+
+.name {
+    font-size: .77rem;
+}
+
+.cali {
+    font-size: 1.5em;
+    margin: -14px 0 2px;
+}
+
+.botI, .botD{
+    height: 81%;
+}
+
+.content .izquierda .botI .tit, .content .derecha .botD .tit{
+    height: 13%;
+}
+
+.slider-container{
+    height: 70%;
+    margin-left: 9%;
+}
+
+.slider-img img{
+    max-height: 413px;
+}
+
+.text{
+    font-size: 1.5rem;
+    height: 13%;
+    text-align: initial;
+}
+
+.text div{
+    margin: 10px 0 0 27px;
+}
+
+.topD{
+    display: grid;
+    justify-items: end;
+    grid-template-columns: none;
+}
+
+.info{
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.descripcion_producto,
+.comentarios{
+    height: 50%;
+}
+
+.contents{
+    /*border: 1px black solid;*/
+    width: 80%;
+    height: 80%;
+    margin: 1.5% 0 0 3%;
+}
+
+.contents textarea{
+    height: 100%;
+    width: 100%;
+    resize: none;
+    outline: none;
+    font-size: 1.3rem;
+    font-family: 'Golos Text', sans-serif;
+    border: none;
+}
+
+@media only screen and (max-width: 1502px) {
+    
+    .contentT .izquierda .topI .icon img{
+        max-height: 108px;    
+    }
+
+    .slider-img img{
+        max-height: 316px;
+    }
+
+    .text{
+        font-size: 1.2rem;
+    }
+
+    .text div{
+        margin: 8px 0 0 27px;
+    }
+    
+    .info{
+        font-size: 3rem;
+    }
+}

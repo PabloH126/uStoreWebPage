@@ -5,12 +5,14 @@
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     $maxSize = 5 * 1024 * 1024; // 5 MB
     $imagenes = [];
+    $idImagenes = [];
 
     if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
     {
         if(in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
         {
-            $imagenes['imagen1'] = $_FILES['imagen1'];
+            $imagenes[0] = $_FILES['imagen1'];
+            $idImagenes[0] = $_POST['idImagen1'];
         }
         else
         {
@@ -22,7 +24,8 @@
     {
         if(in_array($_FILES['imagen2']['type'], $allowedImageTypes) && $_FILES['imagen2']['size'] <= $maxSize)
         {
-            $imagenes['imagen2'] = $_FILES['imagen2'];
+            $imagenes[1] = $_FILES['imagen2'];
+            $idImagenes[1] = $_POST['idImagen2'];
         }
         else
         {
@@ -34,7 +37,8 @@
     {
         if(in_array($_FILES['imagen3']['type'], $allowedImageTypes) && $_FILES['imagen3']['size'] <= $maxSize)
         {
-            $imagenes['imagen3'] = $_FILES['imagen3'];
+            $imagenes[2] = $_FILES['imagen3'];
+            $idImagenes[2] = $_POST['idImagen3'];
         }
         else
         {
@@ -42,33 +46,32 @@
         }
     }
 
-    //CREATE TIENDA
+    //UPDATE TIENDA
 
     $data = [
-        'NombreTienda' => $_POST['nombreTienda'],
-        'IdCentroComercial' => $_SESSION['idMall'],
-        'rangoPrecio' => 0,
-        'apartados' => 0,
-        'vistas' => 0
+        'idTienda' => $_GET['id'],
+        'nombreTienda' => $_POST['nombreTienda']
     ];
     
-    $logoTienda = $_FILES['logoTienda'];
-
     $ch = curl_init();
 
-    if(in_array($logoTienda['type'], $allowedImageTypes) && $logoTienda['size'] <= $maxSize)
+    if(isset($_FILES['logoTienda']) && $_FILES['logoTienda']['error'] == 0)
     {
-        $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
-    }
-    else
-    {
-        curl_close($ch);
-        die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+        $logoTienda = $_FILES['logoTienda'];
+        if(in_array($logoTienda['type'], $allowedImageTypes) && $logoTienda['size'] <= $maxSize)
+        {
+            $data['logoTienda'] = curl_file_create($logoTienda['tmp_name'], $logoTienda['type'], $logoTienda['name']);
+        }
+        else
+        {
+            curl_close($ch);
+            die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+        }
     }
     
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateTienda");
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateTienda");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_TIMEOUT, 30);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -84,14 +87,14 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 201)
+    if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' create tienda';
+        echo $httpStatusCode . ' update tienda';
     }
 
     $dataTienda = json_decode($response, true);
 
-    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall'];
+    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $_GET['id'];
 
     curl_close($ch);
 //----------------------------------------------------------------------------------------//   
@@ -100,20 +103,20 @@
     //CREATE HORARIO
 
     $arraysHorario = array(
-        generateArrayHorario('Lunes', $dataTienda),
-        generateArrayHorario('Martes', $dataTienda),
-        generateArrayHorario('Miércoles', $dataTienda),
-        generateArrayHorario('Jueves', $dataTienda),
-        generateArrayHorario('Viernes', $dataTienda),
-        generateArrayHorario('Sábado', $dataTienda),
-        generateArrayHorario('Domingo', $dataTienda)
+        generateArrayHorario('Lunes'),
+        generateArrayHorario('Martes'),
+        generateArrayHorario('Miércoles'),
+        generateArrayHorario('Jueves'),
+        generateArrayHorario('Viernes'),
+        generateArrayHorario('Sábado'),
+        generateArrayHorario('Domingo')
     );
 
     $jsonData = json_encode($arraysHorario);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Horarios/CreateHorario");
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Horarios/UpdateHorario");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -130,9 +133,9 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 200)
+    if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' create horario';
+        echo $httpStatusCode . ' update horario';
     }
 
     curl_close($ch);
@@ -145,16 +148,15 @@
 
     $arraysCategorias = array ();
 
-    foreach($categorias as $cat)
+    foreach($categorias as $index => $cat)
     {
-        $arraysCategorias[] = generateArrayCategorias($cat, $dataTienda);
+        $arraysCategorias[] = generateArrayCategorias($cat);
     }
-
     $jsonData = json_encode($arraysCategorias);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/CreateCategoriaTienda");
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/UpdateCategoriasTienda");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -171,9 +173,9 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 200)
+    if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' create categorias de tienda';
+        echo $httpStatusCode . ' update categorias de tienda';
     }
     
     curl_close($ch);
@@ -186,8 +188,8 @@
     $jsonData = json_encode($periodos);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/CreatePeriodos");
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/UpdatePeriodo");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -206,9 +208,9 @@
     
     curl_close($ch);
 
-    if($httpStatusCode != 200)
+    if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' create periodos predeterminados';
+        echo $httpStatusCode . ' update periodos predeterminados';
     }
 //----------------------------------------------------------------------------------------//   
 
@@ -218,17 +220,22 @@
     
     $data = [];
 
-    foreach($imagenes as $key => $imagen)
+    foreach($imagenes as $index => $imagen)
     {
         $data = [
             'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
         ];
-        
+
+        if (!isset($idImagenes[$index]))
+        {
+            $idImagenes[$index] = "0";
+        }
+
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenTienda?idTienda=" . $dataTienda['idTienda']);
+        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $_GET['id'] . "&idImagenTienda=" . $idImagenes[$index]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Authorization: Bearer ' . $_COOKIE['SessionToken']
@@ -242,9 +249,9 @@
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         }
 
-        if($httpStatusCode != 200)
+        if($httpStatusCode != 204)
         {
-            echo $httpStatusCode . 'create imagenes tienda';
+            echo $httpStatusCode . 'update imagenes tienda';
         }
 
         curl_close($ch);
@@ -253,10 +260,10 @@
 //----------------------------------------------------------------------------------------//       
 
     //FUNCIONES
-    function generateArrayCategorias($cat, $dataTienda)
+    function generateArrayCategorias($cat)
     {
         return [
-            "idTienda" => $dataTienda['idTienda'],
+            "idTienda" => $_GET['id'],
             "idCategoria" => $cat
         ];
     }
@@ -273,8 +280,9 @@
             {
                 $apartadoPredeterminado = $numero . ' ' . $tiempo;
                 $periodos[] = [
+                    'idApartadoPredeterminado' => $_POST['idApartadoPredeterminadoPeriodo' . $i],
                     'apartadoPredeterminado' => $apartadoPredeterminado,
-                    'idTienda' => $dataTienda['idTienda']
+                    'idTienda' => $_GET['id']
                 ];
             }
         } 
@@ -282,7 +290,7 @@
         return $periodos;
     }
 
-    function generateArrayHorario($dia, $dataTienda)
+    function generateArrayHorario($dia)
     {
         if(((isset($_POST[$dia . '_apertura']) && $_POST[$dia . '_apertura'] != "") 
             && (isset($_POST[$dia . '_cierre']) && $_POST[$dia . '_cierre'] != "")
@@ -292,7 +300,7 @@
                 "dia" => $dia,
                 "horarioApertura" => $_POST[$dia . '_apertura'],
                 "horarioCierre" =>  $_POST[$dia . '_cierre'],
-                "idTienda" => $dataTienda['idTienda']
+                "idTienda" => $_GET['id']
             ];
         }
         else
@@ -301,7 +309,7 @@
                 "dia" => $dia,
                 "horarioApertura" => "00:00",
                 "horarioCierre" =>  "00:00",
-                "idTienda" => $dataTienda['idTienda']
+                "idTienda" => $_GET['id']
             ];
         }
     }

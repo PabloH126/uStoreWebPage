@@ -11,7 +11,7 @@ header .content .final .bottn{
 	align-items: center;
 	justify-content: center;
 	display: flex;
-	height: 92%;
+	height: 100%;
 }
 
 header .content .final #ultimo:hover,
@@ -24,8 +24,8 @@ header .content .final .bottn:hover{
 header .content .final #ultimo{
 	justify-content: right;
 	padding: 0 20px 0 0;
-	width: 94px;
-	margin-left: 47%;
+	width: 126px;
+	margin-left: 28%;
 }
 
 header .content .final #ultimo img:hover,
@@ -50,6 +50,13 @@ header .content .final #ultimo a{
 }
 
 /*diseño responsivo*/
+@media only screen and (max-width: 1920px){
+	header .content .final #ultimo,
+	header .content .final .bottn{
+		height: 88%;
+	}
+}
+
 @media only screen and (max-width: 1502px){
 
 	header .content .final #ultimo,
@@ -58,6 +65,7 @@ header .content .final #ultimo a{
 	}
 
 	header .content .final #ultimo{
+		width: 94px;
 		margin-left: 25%;
 	}
 }
