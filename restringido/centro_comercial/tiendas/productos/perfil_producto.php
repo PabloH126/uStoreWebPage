@@ -102,7 +102,7 @@ $_SESSION['idProducto'] = $_GET['id'];
             <div class="derecha">
                 <div class="topD">
                     <div class="info">
-                            <?php echo $producto['precioProducto']; ?>
+                            $<?php echo $producto['precioProducto']; ?>
                     </div>
                 </div>
                 <div class="botD">
