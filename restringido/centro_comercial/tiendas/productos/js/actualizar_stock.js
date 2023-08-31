@@ -1,18 +1,20 @@
-document.addEventListener("pageshow", function() {
-    const switchCheckbox = document.querySelectorAll(".switch-input");
-    const stocksStatus = document.querySelectorAll('.stock-status');
-    switchCheckbox.forEach((checkbox, index) => {
-        const stockStatus = stocksStatus[index];
-
-        setStockStatus(checkbox, stockStatus);
-
-        checkbox.addEventListener("change", async function() {
-            this.value = this.checked ? "1" : "0";
-            await updateStock(this.dataset.productoId, this.value, this, stockStatus);
-        });
-    })
+document.addEventListener("DOMContentLoaded", function() {
+    
 
 });
+
+const switchCheckbox = document.querySelectorAll(".switch-input");
+const stocksStatus = document.querySelectorAll('.stock-status');
+switchCheckbox.forEach((checkbox, index) => {
+    const stockStatus = stocksStatus[index];
+
+    setStockStatus(checkbox, stockStatus);
+
+    checkbox.addEventListener("change", async function() {
+        this.value = this.checked ? "1" : "0";
+        await updateStock(this.dataset.productoId, this.value, this, stockStatus);
+    });
+})
 
 async function updateStock(idProducto, stock, checkbox, stockStatus)
 {
