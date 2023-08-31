@@ -88,12 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const data = await sendFormWithoutImages(mainForm, fileInputs);
 
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {
+                showNotification("Cargando imagenes...");
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
                         await sendImage(input, "imagenesProducto.php", data.idProducto); // Pasar el idProducto
                     }
                 }
-                
+                showNotification("Producto creado");
                 window.location.href = data.urlSalida;
             } else {
                 alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusProducto + ". Estatus de las categorias: " + data.statusCatP);
@@ -159,7 +160,7 @@ function validacionTypeImagen(imagen)
 }
 
 function imagenesValidacion() {
-    const maxSize = 5 * 1024 * 1024;
+    const maxSize = 1 * 1024 * 1024;
     
     for (let i = 1; i <= 5; i++)
     {
@@ -226,4 +227,14 @@ async function sendImage(input, url, idProducto) {
     if (dataImagenes.statusImagenes !== 'success') {
         alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes);
     } 
+}
+
+function showNotification(message) {
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 2500);
 }
