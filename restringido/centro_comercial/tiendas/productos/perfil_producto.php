@@ -87,7 +87,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                                 else
                                 {
                             ?>
-                                <span style="color: red;" >En stock</span>
+                                <span style="color: green;" >En stock</span>
                             <?php
                                 }
                             ?>
