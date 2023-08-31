@@ -98,7 +98,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                             {
                             ?>
                             <span style="color: green">Disponible para apartar</span>
-                            <span style="color: green">(<strong><?php echo $producto['cantidadApartado']; ?></strong> unidades)</span>
+                            <span>(<strong><?php echo $producto['cantidadApartado']; ?></strong> unidades)</span>
                             <?php
                             }
                             else if ($producto['cantidadApartado'] <= 5 && $producto['cantidadApartado'] > 0)
