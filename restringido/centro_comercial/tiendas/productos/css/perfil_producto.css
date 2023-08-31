@@ -8,6 +8,10 @@
     justify-items: center;
 }
 
+.icon img{
+    max-height: 144px;
+}
+
 .estrellas {
     display: inline-flex;
 }
