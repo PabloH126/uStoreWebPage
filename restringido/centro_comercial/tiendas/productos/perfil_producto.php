@@ -152,7 +152,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                     class='bx bx-pencil'></i></a>
         </div>
     </div>
-    <script src="../js/slider.js"></script>
+    <script src="js/slider_productos.js"></script>
 </body>
 
 </html>

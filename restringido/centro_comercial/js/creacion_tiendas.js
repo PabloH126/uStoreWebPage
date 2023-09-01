@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
+    const mainForm = document.querySelector('.form-tiendas');
+    const fileInputs = document.querySelectorAll('.file-input');
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -19,6 +21,100 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
+    });
+
+    mainForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
+        let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
+
+        let logoTienda = document.getElementById("logoTienda");
+        let img1 = document.getElementById("fileInput1");
+        let img2 = document.getElementById("fileInput2");
+        let img3 = document.getElementById("fileInput3");
+        
+        if (!nombreValidacion())
+        {
+            alert("Se debe ingresar un nombre de la tienda");
+            e.preventDefault();
+            return;
+        }
+
+        if (!logoTienda.files.length) 
+        {
+            alert("Se debe subir un logo de tienda");
+            e.preventDefault();
+            return;
+        }
+
+        if (!checked) 
+        {
+            alert("Se debe seleccionar al menos una categoria para la tienda");
+            e.preventDefault();
+            return;
+        }
+
+        if(!horariosConfigurados())
+        {
+            alert("Se debe configurar al menos un horario");
+            e.preventDefault();
+            return;
+        }
+
+        if(!validarHorariosCorrectos())
+        {
+            e.preventDefault();
+            return;
+        }
+
+        if (!img1.files.length && !img2.files.length && !img3.files.length) {
+            alert("Se debe subir al menos una imagen para el banner de la tienda");
+            e.preventDefault();
+            return;
+        }
+
+        if (!imagenesValidacion(logoTienda))
+        {
+            e.preventDefault();
+            return;
+        }
+
+        if(!periodosConfigurados())
+        {
+            alert("Se debe configurar al menos un periodo de apartado predeterminado");
+            e.preventDefault();
+            return;
+        }
+
+        if(!validacionPeriodos())
+        {
+            e.preventDefault();
+            return;
+        }
+
+        var submitButton = document.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+
+        try {
+            const data = await sendFormWithoutImages(mainForm, fileInputs);
+
+            if (data.statusTienda === 'success' && data.statusCatT === 'success') {
+                showNotification("Cargando imagenes...");
+                for (let input of fileInputs) {
+                    if (input && input.files.length > 0) {
+                        await sendImage(input, "imagenesTienda.php", data.idTienda); // Pasar el idTienda
+                    }
+                }
+                showNotification("Tienda creada");
+                window.location.href = data.urlSalida;
+            } else {
+                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusTienda + ". Estatus de las categorias: " + data.statusCatT);
+            }
+
+        } catch (error) {
+            console.error('Error: ', error);
+            alert("Hubo un error al realizar la solicitud de creación de producto: " + error);
+        }
     });
 });
 
@@ -127,8 +223,7 @@ function validacionPeriodos() {
     return true;
 }
 
-function validacionSizeImagen(imagen, maxSize)
-{
+function validacionSizeImagen(imagen, maxSize) {
     if(imagen.files[0].size > maxSize)
     {
         return false;
@@ -137,97 +232,92 @@ function validacionSizeImagen(imagen, maxSize)
     return true;
 }
 
-document.querySelector("form").addEventListener("submit", function (e) {
-    const maxSize = 5 * 1024 * 1024;
+function validacionTypeImagen(imagen)
+{
+    var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    if (allowedTypes.indexOf(imagen.files[0].type) === -1) {
+        return false;
+    }
 
-    let img1 = document.getElementById("fileInput1");
-    let img2 = document.getElementById("fileInput2");
-    let img3 = document.getElementById("fileInput3");
+    return true;
+}
 
-    let logoTienda = document.getElementById("logoTienda");
+function imagenesValidacion(logoTienda) {
+    const maxSize = 1 * 1024 * 1024;
 
-    if(!nombreValidacion())
+    if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
     {
-        alert("Por favor ingresa un nombre para la tienda");
-        e.preventDefault();
-        return;
+        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        return false;
     }
-
-    if (!logoTienda.files.length) {
-        alert("Se debe subir un logo de tienda");
-        e.preventDefault();
-        return;
-    }
-
-    if(logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
+    else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
     {
-        alert("La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
+        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+        return false;
     }
-
-    let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
-    let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
-
-    if (!checked) {
-        alert("Se debe seleccionar al menos una categoria");
-        e.preventDefault();
-        return;
-    }
-
-    if(!horariosConfigurados())
+    
+    for (let i = 1; i <= 3; i++)
     {
-        alert("Se debe configurar al menos un horario");
-        e.preventDefault();
-        return;
+        let img = document.getElementById("fileInput" + i);
+        if(img.files.length && !validacionTypeImagen(img))
+        {
+            alert(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+            return false;
+        }
+        else if (img.files.length && !validacionSizeImagen(img, maxSize))
+        {
+            alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+            return false;
+        }
     }
 
-    if(!validarHorariosCorrectos())
+    return true;
+}
+
+async function sendFormWithoutImages(form, fileInputs) {
+    const formData = new FormData(form);
+
+    fileInputs.forEach(input => {
+        formData.delete(input.name);
+    });
+
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: formData
+    });
+
+    return response.json();
+}
+
+async function sendImage(input, url, idTienda) {
+    const formData = new FormData();
+    formData.append(input.name, input.files[0]);
+    formData.append('idTienda', idTienda); // Agregar el idTienda al formData
+
+    const responseImagenes = await fetch(url, {
+        method: 'POST',
+        body: formData
+    });
+    
+    if (!responseImagenes.ok)
     {
-        e.preventDefault();
+        console.error("Error en la respuesta de imagenes: ", responseImagenes.statusText);
         return;
     }
 
-    if (!img1.files.length && !img2.files.length && !img3.files.length) {
-        alert("Se debe subir al menos una imagen para el banner de la tienda");
-        e.preventDefault();
-        return;
-    }
+    const dataImagenes = await responseImagenes.json();
 
-    if(img1.files.length && !validacionSizeImagen(img1, maxSize))
-    {
-        alert("La imagen 1 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
+    if (dataImagenes.statusImagenes !== 'success') {
+        alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes + " " + dataImagenes.messageImagenes);
+    } 
+}
 
-    if(img2.files.length && !validacionSizeImagen(img2, maxSize))
-    {
-        alert("La imagen 2 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-
-    if(img3.files.length && !validacionSizeImagen(img3, maxSize))
-    {
-        alert("La imagen 3 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-
-    if(!periodosConfigurados())
-    {
-        alert("Se debe configurar al menos un periodo de apartado predeterminado");
-        e.preventDefault();
-        return;
-    }
-
-    if(!validacionPeriodos())
-    {
-        e.preventDefault();
-        return;
-    }
-
-    var submitButton = document.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-});
+function showNotification(message) {
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 2500);
+}

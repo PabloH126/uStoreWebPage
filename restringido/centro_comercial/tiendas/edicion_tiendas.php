@@ -136,7 +136,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
 
                     <div class="notas">
-                        <span>* La imagen del logo no debe superar los 5mb.</span>
+                        <span>* El peso de la imagen del logo no debe superar 1 megabyte.</span>
                     </div>
 
                     <div class="bttns">
@@ -280,7 +280,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         </div>
                     </div>
                     <div class="notas">
-                        <span>* Cada imagen no debe superar los 5mb.</span>
+                        <span>* El peso de cada imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
                     <div class="bttn" id="delete-store">
