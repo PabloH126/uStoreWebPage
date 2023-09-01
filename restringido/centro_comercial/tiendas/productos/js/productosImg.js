@@ -8,8 +8,11 @@ const content5 = document.getElementById('content-5');
 const contentPP = document.getElementById('contentPP');
 
 input1.addEventListener('input', showInput4);
+input1.addEventListener('input', showInput5);
 input2.addEventListener('input', showInput4);
+input2.addEventListener('input', showInput5);
 input3.addEventListener('input', showInput4);
+input3.addEventListener('input', showInput5);
 input4.addEventListener('input', showInput5);
 
 function showInput4() {
@@ -23,7 +26,7 @@ function showInput4() {
 }
 
 function showInput5() {
-    if (input1.value.trim() && input2.value.trim() && input3.value.trim() && input4.value.trim()) {
+    if (input4.value.trim()) {
         content.style.gridTemplateColumns = 'repeat(5, 1fr)';
         contentPP.style.width = '60%';
         content5.style.display = 'block';
