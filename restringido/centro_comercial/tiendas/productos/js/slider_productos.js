@@ -7,11 +7,15 @@ const btnLeft = document.querySelector(".btn-left"),
 
 
 if((sliderImg.length === 4)){
+    slider.style.setProperty("width", "500%");
+    sliderImg.forEach(img => {
+        img.style.setProperty("width", "calc(100% / 5)");
+    });
+} else if((sliderImg.length === 4)){
     slider.style.setProperty("width", "400%");
     sliderImg.forEach(img => {
         img.style.setProperty("width", "calc(100% / 4)");
     });
-
 }else if(sliderImg.length === 3){
     izquierda.style.setProperty("height", "67%");
     derecha.style.setProperty("height", "67%");
