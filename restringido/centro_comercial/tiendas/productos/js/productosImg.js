@@ -23,7 +23,7 @@ function showInput4() {
 }
 
 function showInput5() {
-    if (input4.value.trim()) {
+    if (input1.value.trim() && input2.value.trim() && input3.value.trim() && input4.value.trim()) {
         content.style.gridTemplateColumns = 'repeat(5, 1fr)';
         contentPP.style.width = '60%';
         content5.style.display = 'block';

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.file-input');
+    let currentNotification
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -99,12 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const data = await sendFormWithoutImages(mainForm, fileInputs);
 
             if (data.statusTienda === 'success' && data.statusCatT === 'success') {
-                showNotification("Cargando imagenes...");
+                showNotification("Cargando imagenes...", currentNotification);
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
                         await sendImage(input, "imagenesTienda.php", data.idTienda); // Pasar el idTienda
                     }
                 }
+                hideNotification(currentNotification);
                 showNotification("Tienda creada");
                 window.location.href = data.urlSalida;
             } else {
@@ -312,12 +314,22 @@ async function sendImage(input, url, idTienda) {
     } 
 }
 
-function showNotification(message) {
+function showNotification(message, currentNotification) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
     const notification = document.createElement("div");
     notification.classList.add("notification");
     notification.textContent = message;
     document.body.appendChild(notification);
-    setTimeout(() => {
-        notification.remove();
-    }, 2500);
+    
+    currentNotification = notification;
+}
+
+function hideNotification(currentNotification) {
+    if (currentNotification) {
+        currentNotification.remove();
+        currentNotification = null;
+    }
 }
