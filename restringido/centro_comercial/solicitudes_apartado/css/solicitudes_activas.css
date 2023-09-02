@@ -5,7 +5,8 @@
 }
 
 .title .bttn_solicitudes_apartado{
-
+    position: fixed;
+    right: 7%;
 }
 
 .title #bttn_solicitudes_apartado{
