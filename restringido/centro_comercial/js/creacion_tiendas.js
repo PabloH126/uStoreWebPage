@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             switch (currentStep) {
                 case 1:
                     isValid = validacionPaso1();
+                    return;
                     break;
                 /*case 2:
                     isValid = validateStep2();
