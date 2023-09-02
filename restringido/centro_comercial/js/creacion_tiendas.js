@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let dots = ".".repeat(dotCount);
             let espacios = " ".repeat(7 - dotCount);
 
-            submitButton.textContent = spaces + dots;
+            submitButton.textContent = espacios + dots;
             if (dotCount >= 3) {
                 dotCount = 1;
             } else {
