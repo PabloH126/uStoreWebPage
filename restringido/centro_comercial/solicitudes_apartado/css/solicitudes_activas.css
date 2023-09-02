@@ -28,7 +28,7 @@
 
 .content .lista .item{
     height: auto;
-    display: inline-flex;
+    grid-template-columns: repeat(8, 1fr);
 }
 
 .content .notas{
