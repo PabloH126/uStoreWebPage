@@ -287,7 +287,7 @@ async function sendFormWithoutImages(form, fileInputs) {
         method: form.method,
         body: formData
     });
-
+    alert('ya paso el fetch');
     return response.json();
 }
 
