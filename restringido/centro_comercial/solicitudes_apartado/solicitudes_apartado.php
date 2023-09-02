@@ -40,7 +40,7 @@
     <?php require("../templates/template.menu.php")?>
 
 	<div class="content">
-		<div>
+		<div class="title">
 			<h1>Solicitudes de apartado</h1>
 			<a href="" id="bttn_soli">Solicitudes de apartado</a>
 		</div>
