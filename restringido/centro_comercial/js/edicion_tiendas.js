@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.location.href = data.urlSalida;
                 }, 2500);
             } else {
-                alert("Hubo un error al guardar la tienda. Estatus de la tienda: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos);
+                alert("Hubo un error al guardar la tienda. Estatus de la tienda: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos + data.messagePeriodos);
                 return;
             }
 

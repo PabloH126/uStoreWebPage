@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             const currentStep = parseInt(button.getAttribute('data-item'));
-            let isValid = true;
+            let isValid = false;
 
             // Realiza la validación correspondiente al paso actual
             switch (currentStep) {
