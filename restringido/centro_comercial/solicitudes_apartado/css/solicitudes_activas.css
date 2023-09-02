@@ -22,7 +22,9 @@
 @media only screen and (max-width: 1502px){
 
     .title .bttn_solicitudes_apartado{
-        right: 3%;
+        font-size: 1rem;
+        right: 2%;
+        padding: 1%;
     }
 
     h1{
