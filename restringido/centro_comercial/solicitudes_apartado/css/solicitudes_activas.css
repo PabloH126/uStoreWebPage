@@ -1,12 +1,10 @@
-
-
-.content .title{
+.content .title {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.content .title .bttn_cambio_seccion{
+.content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
     position: fixed;
     right: 7%;
@@ -17,55 +15,55 @@
     text-decoration: none;
     color: black;
     transition: 0.5s linear;
-} 
+}
 
-.content .title .bttn_cambio_seccion:hover{
+.content .title .bttn_cambio_seccion:hover {
     background-color: #007096;
     color: white;
 }
 
-.content .lista{
+.content .lista {
     grid-template-columns: none;
     width: auto;
 }
 
-.content .lista .item{
+.content .lista .item {
     height: auto;
     grid-template-columns: 13% 33% 9% 9% 9% 9% 9% 9%;
     align-items: center;
     font-size: 1.3rem;
 }
 
-.content .lista .item p{
+.content .lista .item p {
     padding: 5%;
 }
 
-.content .lista #encabezado p{
+.content .lista #encabezado p {
     font-weight: bold;
     font-size: 1.4rem;
 }
 
-.content .notas{
+.content .nota {
     font-size: 1rem;
-	color: #6c6c6c;
+    color: #6c6c6c;
 }
 
-@media only screen and (max-width: 1502px){
+@media only screen and (max-width: 1502px) {
 
-    .content .title h1{
+    .content .title h1 {
         font-size: 4.8rem;
         margin: 25px 35px 7px;
     }
 
-    .content .title .bttn_cambio_seccion{
+    .content .title .bttn_cambio_seccion {
         font-size: 1rem;
         right: 2%;
         padding: 1%;
     }
 
-    .content .lista .item p{
+    .content .lista .item p {
         font-size: 1.2rem;
     }
 
-    
+
 }
