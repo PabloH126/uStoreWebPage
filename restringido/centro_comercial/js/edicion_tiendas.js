@@ -42,13 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (!logoTienda.files.length) 
-        {
-            alert("Se debe subir un logo de tienda");
-            e.preventDefault();
-            return;
-        }
-
         if (!checked) 
         {
             alert("Se debe seleccionar al menos una categoria para la tienda");
@@ -65,12 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if(!validarHorariosCorrectos())
         {
-            e.preventDefault();
-            return;
-        }
-
-        if (!img1.files.length && !img2.files.length && !img3.files.length) {
-            alert("Se debe subir al menos una imagen para el banner de la tienda");
             e.preventDefault();
             return;
         }

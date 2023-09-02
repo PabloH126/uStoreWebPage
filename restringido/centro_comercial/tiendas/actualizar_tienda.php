@@ -1,11 +1,11 @@
 <?php
     session_start();
-
+    $responseArray = [];
+    header('Content-Type: application/json');
+    
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     $maxSize = 5 * 1024 * 1024; // 5 MB
-    $imagenes = [];
-    $idImagenes = [];
 
     if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
     {

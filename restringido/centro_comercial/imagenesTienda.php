@@ -1,5 +1,6 @@
 <?php
 session_start();
+$imagenes = [];
 verificarImagen('imagen1', $_FILES['imagen1'], $imagenes);
 verificarImagen('imagen2', $_FILES['imagen2'], $imagenes);
 verificarImagen('imagen3', $_FILES['imagen3'], $imagenes);
@@ -8,11 +9,29 @@ $idTienda = $_POST['idTienda']; // Recuperar el idTienda desde el formulario
 
 //CREATE IMAGENES BANNER TIENDA
 
-    
-$data = [];
 
 foreach($imagenes as $key => $imagen)
 {
+    
+}
+
+//FUNCIONES
+
+function verificarImagen($nombreImagen, $imagen, &$imagenes) { // Nota: &$imagenes para modificar el array original
+    //Validación de imagenes
+    $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    $maxSize = 1 * 1024 * 1024; // 1 megabyte
+
+    if(isset($imagen) && $imagen['error'] == 0) {
+        if(in_array($imagen['type'], $allowedImageTypes) && $imagen['size'] <= $maxSize) {
+            $imagenes[$nombreImagen] = $imagen;
+        } else {
+            die("Error las imagenes de producto:" . $nombreImagen . " no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+        }
+    }
+}
+
+function mandarImagenApi($idTienda, $imagen) {
     $data = [
         'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
     ];
@@ -30,35 +49,26 @@ foreach($imagenes as $key => $imagen)
     $response = curl_exec($ch);
     
     if ($response === false) {
-        echo 'ErrorSoli: ' . curl_error($ch);
+        return [
+            'status' => 'error',
+            'message' => 'Error en la solicitud cURL: ' . curl_error($ch)
+        ];
     } else {
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 200) {
-        $responseArray['statusImagenes'] = 'error';
-        $responseArray['messageImagenes'] = $httpStatusCode . ' CREACION IMAGENES TIENDA <br>';
-    } else {
-        $responseArray['statusImagenes'] = 'success';
-        $responseArray['messageImagenes'] = $httpStatusCode . ' CREACION IMAGENES TIENDA <br>';
-    }
-
     curl_close($ch);
-}
 
-//FUNCIONES
-
-function verificarImagen($nombreImagen, $imagen, &$imagenes) { // Nota: &$imagenes para modificar el array original
-    //Validación de imagenes
-    $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-    $maxSize = 1 * 1024 * 1024; // 1 megabyte
-
-    if(isset($imagen) && $imagen['error'] == 0) {
-        if(in_array($imagen['type'], $allowedImageTypes) && $imagen['size'] <= $maxSize) {
-            $imagenes[$nombreImagen] = $imagen;
-        } else {
-            die("Error las imagenes de producto:" . $nombreImagen . " no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-        }
+    if($httpStatusCode != 200) {
+        return [
+            'status' => 'error',
+            'message' => $httpStatusCode . ' en CREACION IMAGENES TIENDA'
+        ];
+    } else {
+        return [
+            'status' => 'success',
+            'message' => $httpStatusCode . ' en CREACION IMAGENES TIENDA'
+        ];
     }
 }
 
