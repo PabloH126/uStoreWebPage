@@ -102,7 +102,7 @@ function CategoriasSelect($categorias)
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
-                                <input type="file" class="file-input" id="logoTienda" name="logoTienda" accept="image/*">
+                                <input type="file" class="file-input fileLogoTienda" id="logoTienda" name="logoTienda" accept="image/*">
                             </div>
                         </div>
                     </div>
@@ -195,7 +195,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput1" >
-                                    <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput1" name="imagen1" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -205,7 +205,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput2" >
-                                    <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput2" name="imagen2" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -215,7 +215,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput3" >
-                                    <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput3" name="imagen3" accept="image/*">
                                 </div>
                             </div>
                         </div>

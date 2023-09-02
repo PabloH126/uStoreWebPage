@@ -42,7 +42,7 @@
 	<div class="content">
 		<div>
 			<h1>Solicitudes de apartado</h1>
-			<a href="" id></a>
+			<a href="" id="bttn_soli">Solicitudes de apartado</a>
 		</div>
 	holi
 	</div>

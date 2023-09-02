@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
-    const fileInputs = document.querySelectorAll('.file-input');
+    const fileInputs = document.querySelectorAll('.fileInputBanner');
     let currentNotification;
 
     checkboxes.forEach(function (checkbox) {
