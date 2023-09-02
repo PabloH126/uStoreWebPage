@@ -111,11 +111,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = data.urlSalida;
             } else {
                 alert("Hubo un error al guardar la tienda. Estatus de la tienda: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos);
+                return;
             }
 
         } catch (error) {
             console.error('Error: ', error);
             alert("Hubo un error al realizar la solicitud de creación la tienda: " + error);
+            return;
         }
     });
 });
@@ -295,7 +297,7 @@ async function sendImage(input, url, idTienda) {
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idTienda', idTienda); // Agregar el idTienda al formData
-
+    alert(idTienda);
     const responseImagenes = await fetch(url, {
         method: 'POST',
         body: formData
