@@ -33,6 +33,7 @@
     height: auto;
     grid-template-columns: 13% 33% 9% 9% 9% 9% 9% 9%;
     align-items: center;
+    font-size: 1.3rem;
 }
 
 .content .lista .item p{
