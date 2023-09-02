@@ -5,7 +5,7 @@
     
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-    $maxSize = 5 * 1024 * 1024; // 5 MB
+    $maxSize = 1 * 1024 * 1024; // 5 MB
 
     //UPDATE TIENDA
 

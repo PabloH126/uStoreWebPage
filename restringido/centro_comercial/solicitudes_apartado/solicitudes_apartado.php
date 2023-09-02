@@ -60,7 +60,7 @@
 
 				<div class="item">
 					<img src="https://i.blogs.es/c2d211/minato/1366_2000.jpeg" alt="un minato">
-					<p><label>Personalizado c:</label>
+					<p><label>Personalizado</label>
 						Oaaaaaaaaaaaaaaaaaaaaaaa</p>
 					<p>$1000.00</p>
 					<p>2 dias</p>
