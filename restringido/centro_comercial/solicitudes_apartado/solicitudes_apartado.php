@@ -42,9 +42,7 @@
 	<div class="content">
 		<div class="title">
 			<h1>Solicitudes de apartado</h1>
-			
-				<a href="" class="bttn_solicitudes_apartado">Solicitudes de apartado</a>
-			
+			<a href="" class="bttn_solicitudes_apartado">Solicitudes de apartado</a>
 		</div>
 
 		<div>
