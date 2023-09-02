@@ -109,10 +109,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
                 hideNotification();
-                showNotification("Tienda creada");
+                
                 setTimeout(() => {
-                    hideNotification();
+                    showNotification("Tienda creada");
+                    setTimeout(() => {
+                        hideNotification();
+                    }, 2500);
                 }, 2500);
+                
                 window.location.href = data.urlSalida;
             } else {
                 alert("Hubo un error al guardar la tienda. Estatus de la tienda: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos);
