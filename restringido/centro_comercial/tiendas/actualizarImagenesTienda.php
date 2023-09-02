@@ -61,7 +61,7 @@ function mandarImagenApi($idTienda, $imagen, $idImagen) {
 
     curl_close($ch);
 
-    if($httpStatusCode != 200) {
+    if($httpStatusCode != 204) {
         return [
             'statusImagenes' => 'error',
             'messageImagenes' => $httpStatusCode . ' en CREACION IMAGENES TIENDA'

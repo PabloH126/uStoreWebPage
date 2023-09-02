@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.fileInputBanner');
     const nextButtons = document.querySelectorAll('.bttn-next');
+
+    // Agrega un evento de clic a cada botón "bttn-next"
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             const currentStep = parseInt(button.getAttribute('data-item'));
@@ -382,7 +384,6 @@ function validacionPaso1() {
     const nombreTienda = document.getElementById("nombreTienda").value;
     if (!nombreTienda.trim()) {
         alert("Se debe ingresar un nombre de la tienda");
-        return;
         return false;
     }
     return true;
