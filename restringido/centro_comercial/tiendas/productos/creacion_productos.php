@@ -70,7 +70,8 @@ function CategoriasSelect($categorias)
     <?php require("../../templates/template.styles.php") ?>
     <?php require("../templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="../css/creacion_tiendas.css">
-    <link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
     <link rel="stylesheet" href="css/creacion_productos.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -168,7 +169,8 @@ function CategoriasSelect($categorias)
                             <div class="imageP" id="imageP">
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput1"
+                                            data-img-id="imagenSelec1"></i>
                                         <img src="" id="imagenSelec1" alt="">
                                     </div>
                                     <div class="ip">
@@ -179,7 +181,8 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput2" data-img-id="imagenSelec2"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput2"
+                                            data-img-id="imagenSelec2"></i>
                                         <img src="" id="imagenSelec2" alt="">
                                     </div>
                                     <div class="ip">
@@ -190,7 +193,8 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput3" data-img-id="imagenSelec3"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput3"
+                                            data-img-id="imagenSelec3"></i>
                                         <img src="" id="imagenSelec3" alt="">
                                     </div>
                                     <div class="ip">
@@ -202,7 +206,8 @@ function CategoriasSelect($categorias)
 
                                 <div class="contentP" id="content-4">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput4" data-img-id="imagenSelec4"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput4"
+                                            data-img-id="imagenSelec4"></i>
                                         <img src="" id="imagenSelec4" alt="">
                                     </div>
                                     <div class="ip">
@@ -214,7 +219,8 @@ function CategoriasSelect($categorias)
 
                                 <div class="contentP" id="content-5">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput5" data-img-id="imagenSelec5"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput5"
+                                            data-img-id="imagenSelec5"></i>
                                         <img src="" id="imagenSelec5" alt="">
                                     </div>
                                     <div class="ip">
@@ -229,7 +235,7 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="notas">
                         <span>* Máximo 5 imágenes.<br>
-                        Cada imagen no debe superar 1Mb. </span>
+                            Cada imagen no debe superar 1Mb. </span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -268,10 +274,6 @@ function CategoriasSelect($categorias)
             </form>
         </div>
     </div>
-    <script>
-
-
-    </script>
     <script src="../../js/slider_formularios.js"></script>
     <script src="../../js/mostrarImg.js"></script>
     <script src="js/productosImg.js"></script>

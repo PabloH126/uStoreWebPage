@@ -45,6 +45,8 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
+    $dataTienda = json_decode($response, true);
+
    if($httpStatusCode != 201)
     {
         $responseArray['statusTienda'] = 'error';
@@ -52,12 +54,9 @@
     }
     else
     {
-        $responseArray['idTienda'] = json_decode($response, true);
+        $responseArray['idTienda'] = $dataTienda['idTienda'];
         $responseArray['statusTienda'] = 'success';
-        $responseArray['messageTienda'] = $_SESSION['idTienda'];
     }
-
-    $dataTienda = json_decode($response, true);
 
     $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall'];
 
@@ -100,7 +99,13 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create horario';
+        $responseArray['statusHorarios'] = 'error';
+        $responseArray['messageHorarios'] = $httpStatusCode . ' CREACION HORARIO <br>';
+    }
+    else
+    {
+        $responseArray['statusHorarios'] = 'success';
+        $responseArray['messageHorarios'] = $httpStatusCode . ' CREACION HORARIO <br>';
     }
 
     curl_close($ch);
@@ -146,8 +151,7 @@
     }
     else
     {
-        $responseArray['statusCatP'] = 'success';
-        $responseArray['urlSalida'] = $urlSalida;
+        $responseArray['statusCatT'] = 'success';
     }
     
     curl_close($ch);
@@ -182,7 +186,13 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create periodos predeterminados';
+        $responseArray['statusPeriodos'] = 'error';
+        $responseArray['messagePeriodos'] = $httpStatusCode . ' CREACION Periodos predeterminados <br>';
+    }
+    else
+    {
+        $responseArray['statusPeriodos'] = 'success';
+        $responseArray['urlSalida'] = $urlSalida;
     }
 //----------------------------------------------------------------------------------------//       
 
@@ -241,6 +251,5 @@
     }
 //----------------------------------------------------------------------------------------//  
 
-    header('Location: ' . $urlSalida);
-    exit;
+    echo json_encode($responseArray);
 ?>

@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             const data = await sendFormWithoutImages(mainForm, fileInputs);
 
-            if (data.statusTienda === 'success' && data.statusCatT === 'success') {
+            if (data.statusTienda === 'success' && data.statusHorarios === 'success' && data.statusCatT === 'success' && data.statusPeriodos === 'success') {
                 showNotification("Cargando imagenes...", currentNotification);
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 showNotification("Tienda creada");
                 window.location.href = data.urlSalida;
             } else {
-                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusTienda + ". Estatus de las categorias: " + data.statusCatT);
+                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos);
             }
 
         } catch (error) {
