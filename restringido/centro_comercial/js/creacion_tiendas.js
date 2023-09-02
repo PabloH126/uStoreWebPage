@@ -97,10 +97,11 @@ document.addEventListener('DOMContentLoaded', function () {
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
         submitButton.textContent = "cargando";
-        
-        try {
-            const data = await sendFormWithoutImages(mainForm, fileInputs);
 
+        try {
+            showNotification("Cargando tienda...");
+            const data = await sendFormWithoutImages(mainForm, fileInputs);
+            hideNotification();
             if (data.statusTienda === 'success' && data.statusHorarios === 'success' && data.statusCatT === 'success' && data.statusPeriodos === 'success') {
                 showNotification("Cargando imagenes...");
                 
