@@ -4,8 +4,13 @@
     justify-content: center;
 }
 
+.title .bttn_solicitudes_apartado{
+
+}
+
 .title #bttn_solicitudes_apartado{
-    
+    text-decoration: none;
+    color: black;
 }
 
 @media only screen and (max-width: 1502px){
