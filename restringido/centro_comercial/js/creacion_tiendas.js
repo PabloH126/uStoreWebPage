@@ -110,12 +110,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 showNotification("Tienda creada");
                 window.location.href = data.urlSalida;
             } else {
-                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos);
+                alert("Hubo un error al guardar la tienda. Estatus de la tienda: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos);
             }
 
         } catch (error) {
             console.error('Error: ', error);
-            alert("Hubo un error al realizar la solicitud de creación de producto: " + error);
+            alert("Hubo un error al realizar la solicitud de creación la tienda: " + error);
         }
     });
 });
