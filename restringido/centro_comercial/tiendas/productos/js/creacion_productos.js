@@ -1,3 +1,5 @@
+let currentNotification;
+
 document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
@@ -83,10 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
+        submitButton.textContent = "cargando...";
 
         try {
+            showNotification("Cargando producto...");
             const data = await sendFormWithoutImages(mainForm, fileInputs);
-
+            hideNotification();
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {
                 showNotification("Cargando imagenes...");
                 for (let input of fileInputs) {
@@ -94,8 +98,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         await sendImage(input, "imagenesProducto.php", data.idProducto); // Pasar el idProducto
                     }
                 }
+                hideNotification();
+                
                 showNotification("Producto creado");
-                window.location.href = data.urlSalida;
+                setTimeout(() => {
+                    hideNotification();
+                    window.location.href = data.urlSalida;
+                }, 2500);
             } else {
                 alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusProducto + ". Estatus de las categorias: " + data.statusCatP);
             }
@@ -230,11 +239,22 @@ async function sendImage(input, url, idProducto) {
 }
 
 function showNotification(message) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
     const notification = document.createElement("div");
     notification.classList.add("notification");
     notification.textContent = message;
     document.body.appendChild(notification);
-    setTimeout(() => {
-        notification.remove();
-    }, 2500);
+    
+    currentNotification = notification;
+}
+
+function hideNotification() {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
+    currentNotification = null;
 }

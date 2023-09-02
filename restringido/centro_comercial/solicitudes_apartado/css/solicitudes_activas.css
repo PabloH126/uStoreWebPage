@@ -5,8 +5,14 @@
 }
 
 .title .bttn_solicitudes_apartado{
+    font-size: 1.3rem;
     position: fixed;
     right: 7%;
+    background-color: white;
+    border-radius: 13px;
+    padding: 16px 31px;
+    1% 2%
+    box-shadow: 4px 5px 10px 2px #dfdfdf;
 }
 
 .title #bttn_solicitudes_apartado{

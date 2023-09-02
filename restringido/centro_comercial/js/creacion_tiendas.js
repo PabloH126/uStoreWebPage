@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
-        submitButton.textContent = "cargando";
+        submitButton.textContent = "cargando...";
 
         try {
             showNotification("Cargando tienda...");
