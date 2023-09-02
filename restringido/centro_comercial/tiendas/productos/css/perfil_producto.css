@@ -14,11 +14,11 @@
 
 .estrellas{
     display: inline-flex;
-    color: #ffc83d;
 }
 
 .estrellas i{
     margin: 0 2px;
+    color: #ffc83d;
 }
 
 .name {
