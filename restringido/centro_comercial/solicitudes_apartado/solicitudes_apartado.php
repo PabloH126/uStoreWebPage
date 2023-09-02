@@ -41,7 +41,7 @@
 
 	<div class="content">
 		<div>
-
+			<h1>Solicitudes de apartado</h1>
 		</div>
 	holi
 	</div>
