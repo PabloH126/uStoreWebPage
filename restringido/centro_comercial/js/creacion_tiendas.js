@@ -318,7 +318,7 @@ async function sendImage(input, url, idTienda) {
     }
 
     const dataImagenes = await responseImagenes.json();
-
+    console.log(dataImagenes);
     if (dataImagenes.statusImagenes !== 'success') {
         alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes + " " + dataImagenes.messageImagenes);
     } 

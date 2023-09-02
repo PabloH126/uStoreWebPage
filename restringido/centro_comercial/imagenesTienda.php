@@ -9,7 +9,7 @@ $idTienda = $_POST['idTienda']; // Recuperar el idTienda desde el formulario
 
 //CREATE IMAGENES BANNER TIENDA
 
-
+$responseArray = [];
 foreach($imagenes as $key => $imagen)
 {
     $responseArray = mandarImagenApi($idTienda, $imagen, $imagenes);
