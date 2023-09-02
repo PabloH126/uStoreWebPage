@@ -45,10 +45,16 @@
 			<div class="bttn_solicitudes_apartado">
 				<a href="" id="bttn_solicitudes_apartado">Solicitudes de apartado</a>
 			</div>
-			
 		</div>
-	holi
+
+		<div>
+			<div class="lista">
+				<div class="item">
+					Imagen del producto
+				</div>
+			</div>
+			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
+		</div>
 	</div>
-	
 </body>
 </html>
