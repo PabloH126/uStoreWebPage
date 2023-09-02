@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Realiza la validación correspondiente al paso actual
             switch (currentStep) {
                 case 1:
-                    isValid = validateStep1();
+                    isValid = validacionPaso1();
                     break;
                 case 2:
                     isValid = validateStep2();
