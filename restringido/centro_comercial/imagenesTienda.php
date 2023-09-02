@@ -17,7 +17,7 @@ foreach($imagenes as $key => $imagen)
 
 //FUNCIONES
 
-function verificarImagen($nombreImagen, $imagen, $imagenes) {
+function verificarImagen($nombreImagen, $imagen, &$imagenes) {
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     $maxSize = 1 * 1024 * 1024; // 1 megabyte
