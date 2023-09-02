@@ -100,15 +100,15 @@ $_SESSION['idTienda'] = $_GET['id'];
                                 }
                                 else if($rangoPrecio < 1000)
                                 {
-                                    echo '<div></div>';
+                                    echo '<div>💲</div>';
                                 }
                                 else if($rangoPrecio >= 1000 && $rangoPrecio < 5000)
                                 {
-                                    echo '<div>$$</div>';
+                                    echo '<div>💲💲</div>';
                                 }
                                 else if($rangoPrecio >= 5000)
                                 {
-                                    echo '<div>$$$</div>';
+                                    echo '<div>💲💲💲</div>';
                                 }
                             ?>
                         </div>
