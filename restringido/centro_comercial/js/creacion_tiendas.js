@@ -12,27 +12,27 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             const currentStep = parseInt(button.getAttribute('data-item'));
             let isValid = false;
-
+    
             // Realiza la validación correspondiente al paso actual
             switch (currentStep) {
                 case 1:
-                    isValid = validacionPaso1();
+                    isValid = validateStep1();
                     break;
                 case 2:
                     isValid = validateStep2();
                     break;
                 // Agrega casos para los otros pasos del formulario
-
+    
                 default:
                     isValid = true; // Si no hay validación específica, se considera válido
                     break;
             }
-
+    
             // Si la validación no pasa, detén la navegación al siguiente paso
             if (!isValid) {
                 return;
             }
-
+    
             // Si la validación pasa, continúa a la siguiente página
             const nextStep = parseInt(button.getAttribute('data-to_item'));
             showStep(nextStep); // Función que muestra el siguiente paso del formulario
@@ -380,7 +380,10 @@ function hideNotification() {
     currentNotification = null;
 }
 
-function validacionPaso1() {
+function validateStep1() {
+    // Realiza la validación de la primera sección aquí
+    // Si la validación no pasa, muestra un mensaje de error y devuelve false
+    // Si la validación pasa, devuelve true
     const nombreTienda = document.getElementById("nombreTienda").value;
     if (!nombreTienda.trim()) {
         alert("Se debe ingresar un nombre de la tienda");
