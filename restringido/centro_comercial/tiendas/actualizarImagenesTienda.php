@@ -2,9 +2,9 @@
 session_start();
 $imagenes = [];
 $idImagenes = [];
-verificarImagen('imagen1', $_FILES['imagen1'], $imagenes);
-verificarImagen('imagen2', $_FILES['imagen2'], $imagenes);
-verificarImagen('imagen3', $_FILES['imagen3'], $imagenes);
+verificarImagen(0, $_FILES['imagen1'], $_POST['idImagen1'], $imagenes, $idImagenes);
+verificarImagen(1, $_FILES['imagen2'], $_POST['idImagen1'], $imagenes, $idImagenes);
+verificarImagen(2, $_FILES['imagen3'], $_POST['idImagen1'], $imagenes, $idImagenes);
 
 $idTienda = $_POST['idTienda']; // Recuperar el idTienda desde el formulario
 
@@ -33,16 +33,21 @@ function verificarImagen($index, $imagen, $idImagen, &$imagenes, &$idImagenes) {
     }
 }
 
-function mandarImagenApi($idTienda, $imagen) {
+function mandarImagenApi($idTienda, $imagen, $index, $idImagenes) {
     $data = [
         'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
     ];
-    
+
+    if (!isset($idImagenes[$index]))
+    {
+        $idImagenes[$index] = "0";
+    }
+
     $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenTienda?idTienda=" . $idTienda);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $idTienda . "&idImagenTienda=" . $idImagenes[$index]);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Authorization: Bearer ' . $_COOKIE['SessionToken']

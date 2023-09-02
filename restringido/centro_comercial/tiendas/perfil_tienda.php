@@ -98,19 +98,19 @@ $_SESSION['idTienda'] = $_GET['id'];
                                 }
                                 else if($rangoPrecio < 1000)
                                 {
-                                    echo "<span><i style='color: green;' class='bx bx-dollar'></i></span>";
+                                    echo "<span><i style='font-size: 3rem' class='bx bx-dollar'></i></span>";
                                 }
                                 else if($rangoPrecio >= 1000 && $rangoPrecio < 5000)
                                 {
-                                    echo "<span><i style='color: green;' class='bx bx-dollar'></i>
-                                                <i style='color: green;' class='bx bx-dollar'></i>
+                                    echo "<span><i style='font-size: 2.3rem' class='bx bx-dollar'></i>
+                                                <i style='font-size: 2.3rem' class='bx bx-dollar'></i>
                                     </span>";
                                 }
                                 else if($rangoPrecio >= 5000)
                                 {
-                                    echo "<span><i style='color: green;' class='bx bx-dollar'></i>
-                                                <i style='color: green;' class='bx bx-dollar'></i>
-                                                <i style='color: green;' class='bx bx-dollar'></i>
+                                    echo "<span><i style='font-size: 2.3rem' class='bx bx-dollar'></i>
+                                                <i style='font-size: 2.3rem'' class='bx bx-dollar'></i>
+                                                <i style='font-size: 2.3rem' class='bx bx-dollar'></i>
                                     </span>";
                                 }
                             ?>

@@ -197,52 +197,6 @@
         $responseArray['urlSalida'] = $urlSalida;
     }
 //----------------------------------------------------------------------------------------//   
-
-
-    //CREATE IMAGENES BANNER TIENDA
-    
-    
-    $data = [];
-
-    foreach($imagenes as $index => $imagen)
-    {
-        $data = [
-            'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
-        ];
-
-        if (!isset($idImagenes[$index]))
-        {
-            $idImagenes[$index] = "0";
-        }
-
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $_GET['id'] . "&idImagenTienda=" . $idImagenes[$index]);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer ' . $_COOKIE['SessionToken']
-        ));
-        
-        $response = curl_exec($ch);
-        
-        if ($response === false) {
-            echo 'Error: ' . curl_error($ch);
-        } else {
-            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        }
-
-        if($httpStatusCode != 204)
-        {
-            echo $httpStatusCode . 'update imagenes tienda';
-        }
-
-        curl_close($ch);
-    }
-
-//----------------------------------------------------------------------------------------//       
-
     //FUNCIONES
     function generateArrayCategorias($cat)
     {

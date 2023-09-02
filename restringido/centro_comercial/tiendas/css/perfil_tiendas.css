@@ -105,6 +105,11 @@
     font-size: 2em;
 }
 
+.derecha .topD .info .precio span i{
+    color: green;
+    font-weight: bold;
+}
+
 .derecha .topD .info .horario:hover #submenu_horario {
     -webkit-display: flex;
     display: flex;
