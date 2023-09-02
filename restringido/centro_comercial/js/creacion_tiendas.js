@@ -28,8 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Si la validación no pasa, detén la navegación al siguiente paso
-            if (!isValid) {
+            if (isValid == false) {
                 return;
+            }
+            else 
+            {
+                alert("pasamos a la siguiente seccion");
             }
 
             // Si la validación pasa, continúa a la siguiente página
