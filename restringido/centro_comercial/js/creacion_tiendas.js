@@ -7,13 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const fileInputs = document.querySelectorAll('.fileInputBanner');
     const nextButtons = document.querySelectorAll('.bttn-next');
 
-    // Agrega un evento de clic a cada botón "bttn-next"
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             const currentStep = parseInt(button.getAttribute('data-item'));
-            let isValid = false;
-    
+
             // Realiza la validación correspondiente al paso actual
+            let isValid = false;
             switch (currentStep) {
                 case 1:
                     isValid = validateStep1();
@@ -22,17 +21,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = validateStep2();
                     break;
                 // Agrega casos para los otros pasos del formulario
-    
+
                 default:
                     isValid = true; // Si no hay validación específica, se considera válido
                     break;
             }
-    
+
             // Si la validación no pasa, detén la navegación al siguiente paso
             if (!isValid) {
                 return;
             }
-    
+
             // Si la validación pasa, continúa a la siguiente página
             const nextStep = parseInt(button.getAttribute('data-to_item'));
             showStep(nextStep); // Función que muestra el siguiente paso del formulario
