@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
-    const fileInputs = document.querySelectorAll('.file-input');
+    const fileInputs = document.querySelectorAll('.file-input:not(:first-child');
     let currentNotification;
 
     checkboxes.forEach(function (checkbox) {
@@ -282,12 +282,12 @@ async function sendFormWithoutImages(form, fileInputs) {
     fileInputs.forEach(input => {
         formData.delete(input.name);
     });
-    alert('Ya paso el form sin imagenes');
+    
     const response = await fetch(form.action, {
         method: form.method,
         body: formData
     });
-    alert('ya paso el fetch');
+   
     return response.json();
 }
 

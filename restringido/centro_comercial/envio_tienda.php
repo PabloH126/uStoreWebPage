@@ -3,6 +3,10 @@
     $responseArray = [];
     header('Content-Type: application/json');
 
+    //Validación de imagenes
+    $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    $maxSize = 1 * 1024 * 1024; // 1 megabyte
+
     //CREATE TIENDA
 
     $data = [
