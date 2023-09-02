@@ -47,7 +47,7 @@
 
 		<div>
 			<div class="lista">
-				<div class="item">
+				<div class="item" id="encabezado">
 					<p>Imagen del producto</p>
 					<p>Nombre del producto</p>
 					<p>Precio del producto</p>

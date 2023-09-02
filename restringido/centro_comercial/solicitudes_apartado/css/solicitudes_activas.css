@@ -35,7 +35,7 @@
     align-items: center;
 }
 
-.content .lista .item p{
+.content .lista #encabezado p{
     font-weight: bold;
     font-size: 1.4rem;
     padding: 7% 5%;
