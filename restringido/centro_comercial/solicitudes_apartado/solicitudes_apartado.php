@@ -65,7 +65,7 @@
 					<p>2 dias</p>
 					<p>200/300</p>
 					<p>2</p>
-					<p>Si</p>
+					<p><i style="color: green;" class='bx bxs-check-circle'></i></p>
 					<p>No</p>
 				</div>
 			</div>
