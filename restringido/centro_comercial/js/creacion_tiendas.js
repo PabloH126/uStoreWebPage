@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.disabled = true;
         submitButton.textContent = 'cargando...';
         submitButton.style.fontSize = '20px';
-
+        /*
         try {
             showNotification("Creando tienda...");
             const data = await sendFormWithoutImages(mainForm, fileInputs);
@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Hubo un error al realizar la solicitud de creación la tienda: " + error);
             return;
         }
+        */
     });
 });
 
