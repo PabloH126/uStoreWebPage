@@ -42,6 +42,12 @@
 
 .content .lista .item p {
     padding: 5%;
+    display: grid;
+}
+
+.content .lista .item p label{
+    font-size: 1rem;
+    color: #007096;
 }
 
 .content .lista .item p i{

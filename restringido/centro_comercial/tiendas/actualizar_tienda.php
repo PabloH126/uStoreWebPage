@@ -7,45 +7,6 @@
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     $maxSize = 5 * 1024 * 1024; // 5 MB
 
-    if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
-        {
-            $imagenes[0] = $_FILES['imagen1'];
-            $idImagenes[0] = $_POST['idImagen1'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 1 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-        }
-    }
-
-    if(isset($_FILES['imagen2']) && $_FILES['imagen2']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen2']['type'], $allowedImageTypes) && $_FILES['imagen2']['size'] <= $maxSize)
-        {
-            $imagenes[1] = $_FILES['imagen2'];
-            $idImagenes[1] = $_POST['idImagen2'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 2 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-        }
-    }
-
-    if(isset($_FILES['imagen3']) && $_FILES['imagen3']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen3']['type'], $allowedImageTypes) && $_FILES['imagen3']['size'] <= $maxSize)
-        {
-            $imagenes[2] = $_FILES['imagen3'];
-            $idImagenes[2] = $_POST['idImagen3'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 3 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido");
-        }
-    }
-
     //UPDATE TIENDA
 
     $data = [

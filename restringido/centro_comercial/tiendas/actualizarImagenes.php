@@ -18,7 +18,7 @@ foreach($imagenes as $key => $imagen)
 
 //FUNCIONES
 
-function verificarImagen($index, $imagen, &$imagenes, &$idImagenes) {
+function verificarImagen($index, $imagen, $idImagen, &$imagenes, &$idImagenes) {
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     $maxSize = 1 * 1024 * 1024; // 1 megabyte
@@ -26,7 +26,7 @@ function verificarImagen($index, $imagen, &$imagenes, &$idImagenes) {
     if(isset($imagen) && $imagen['error'] == 0) {
         if(in_array($imagen['type'], $allowedImageTypes) && $imagen['size'] <= $maxSize) {
             $imagenes[$index] = $imagen;
-            $idImagenes[$index] = 
+            $idImagenes[$index] = $idImagen;
         } else {
             die("Error en las imagenes de producto: La imagen " . $index . " no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
         }
