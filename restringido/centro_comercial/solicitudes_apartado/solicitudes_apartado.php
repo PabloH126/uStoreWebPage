@@ -38,6 +38,13 @@
 </head>
 <body>
     <?php require("../templates/template.menu.php")?>
-holi
+
+	<div class="content">
+		<div>
+
+		</div>
+	holi
+	</div>
+	
 </body>
 </html>

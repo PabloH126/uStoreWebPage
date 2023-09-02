@@ -282,7 +282,7 @@ async function sendFormWithoutImages(form, fileInputs) {
     fileInputs.forEach(input => {
         formData.delete(input.name);
     });
-
+    alert('Ya paso el form sin imagenes');
     const response = await fetch(form.action, {
         method: form.method,
         body: formData
