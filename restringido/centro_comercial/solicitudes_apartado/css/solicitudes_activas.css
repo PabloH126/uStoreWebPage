@@ -1,12 +1,12 @@
 
 
-.title{
+.content .title{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.title .bttn_solicitudes_apartado{
+.content .title .bttn_solicitudes_apartado{
     font-size: 1.3rem;
     position: fixed;
     right: 7%;
@@ -16,22 +16,22 @@
     box-shadow: 4px 5px 10px 2px #dfdfdf;
 }
 
-.title #bttn_solicitudes_apartado{
+.content .title #bttn_solicitudes_apartado{
     text-decoration: none;
     color: black;
 }
 
-.lista{
+.content .lista{
     grid-template-columns: none;
     width: auto;
 }
 
-.item{
+.content .lista .item{
     margin: 0;
     height: auto;
 }
 
-.notas{
+.content .notas{
     font-size: 1rem;
 	color: #6c6c6c;
 }
