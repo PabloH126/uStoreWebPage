@@ -305,7 +305,7 @@ async function sendImage(input, url, idTienda) {
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idTienda', idTienda); // Agregar el idTienda al formData
-    
+    alert(idTienda);
     const responseImagenes = await fetch(url, {
         method: 'POST',
         body: formData
@@ -319,6 +319,7 @@ async function sendImage(input, url, idTienda) {
 
     const dataImagenes = await responseImagenes.json();
     console.log(dataImagenes);
+    alert(dataImagenes);
     if (dataImagenes.statusImagenes !== 'success') {
         alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes + " " + dataImagenes.messageImagenes);
     } 
