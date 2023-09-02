@@ -96,7 +96,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
-        submitButton.style.display = 'none';
+        
+        let dotCount = 1;
+
+        let dotInterval = setInterval(function() {
+            if (dotCount > 3) {
+                dotCount = 1;
+                submitButton.textContent = ".";
+            } else {
+                submitButton.textContent = ".".repeat(dotCount);
+                dotCount++;
+            }
+        }, 250);
         /*
         try {
             showNotification("Creando tienda...");
