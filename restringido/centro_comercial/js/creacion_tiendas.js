@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
         submitButton.textContent = 'cargando...';
-        submitButton.style.fontSize = '10px';
-        
+        submitButton.style.fontSize = '20px';
+
         try {
             showNotification("Creando tienda...");
             const data = await sendFormWithoutImages(mainForm, fileInputs);
