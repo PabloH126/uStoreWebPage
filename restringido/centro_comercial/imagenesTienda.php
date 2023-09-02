@@ -12,12 +12,12 @@ $idTienda = $_POST['idTienda']; // Recuperar el idTienda desde el formulario
 
 foreach($imagenes as $key => $imagen)
 {
-    
+    $responseArray = mandarImagenApi($idTienda, $imagen, $imagenes);
 }
 
 //FUNCIONES
 
-function verificarImagen($nombreImagen, $imagen, &$imagenes) { // Nota: &$imagenes para modificar el array original
+function verificarImagen($nombreImagen, $imagen, $imagenes) {
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     $maxSize = 1 * 1024 * 1024; // 1 megabyte
