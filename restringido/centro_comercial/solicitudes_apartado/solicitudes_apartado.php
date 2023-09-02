@@ -66,7 +66,7 @@
 					<p>200/300</p>
 					<p>2</p>
 					<p><i style="color: green;" class='bx bxs-check-circle'></i></p>
-					<p><i style="color: red;" class='bx bxs-x-circle'></i></p>
+					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
