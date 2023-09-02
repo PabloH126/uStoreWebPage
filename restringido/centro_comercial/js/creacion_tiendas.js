@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(() => {
                     hideNotification();
                 }, 2500);
-                //window.location.href = data.urlSalida;
+                window.location.href = data.urlSalida;
             } else {
                 alert("Hubo un error al guardar la tienda. Estatus de la tienda: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos);
                 return;
@@ -302,7 +302,7 @@ async function sendImage(input, url, idTienda) {
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idTienda', idTienda); // Agregar el idTienda al formData
-    alert(idTienda + ' sendImage');
+    
     const responseImagenes = await fetch(url, {
         method: 'POST',
         body: formData
@@ -337,6 +337,7 @@ function showNotification(message) {
 function hideNotification() {
     if (currentNotification) {
         currentNotification.remove();
-        currentNotification = null;
     }
+
+    currentNotification = null;
 }
