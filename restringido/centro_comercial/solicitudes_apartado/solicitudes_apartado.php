@@ -63,7 +63,7 @@
 					<p>Oaaaaaaaaaaaaaaaaaaaaaaa</p>
 					<p>$1000.00</p>
 					<p>2 dias</p>
-					<p>200/3</p>
+					<p>200/300</p>
 					<p>2</p>
 					<p>Si</p>
 					<p>No</p>
