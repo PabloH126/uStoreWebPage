@@ -16,10 +16,12 @@
     box-shadow: 4px 5px 10px 2px #dfdfdf;
     text-decoration: none;
     color: black;
+    transition: 0.5s ease-in-out;
 } 
 
 .content .title .bttn_cambio_seccion:hover{
-
+    background-color: #007096;
+    color: white;
 }
 
 .content .lista{
