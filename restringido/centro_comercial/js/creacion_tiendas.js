@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
         
         let dotInterval = setInterval(function() {
             let dots = ".".repeat(dotCount);
-            let espacios = " ".repeat(7 - dotCount);
+            let espacios = "&nbsp;".repeat(7 - dotCount);
 
-            submitButton.textContent = espacios + dots;
+            submitButton.innerHTML = espacios + dots;
             if (dotCount >= 3) {
                 dotCount = 1;
             } else {
