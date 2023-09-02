@@ -23,18 +23,21 @@
     display: flex;
 }
 
+.icon {
+    width: 20%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
 .contentT .izquierda .topI .icon img {
     max-height: 100%;
-    max-width: 100%;
+    max-width: 90%;
 }
 
 .topI,
 .topD {
     height: 20%;
-}
-
-.icon {
-    width: 20%;
 }
 
 .icon,
