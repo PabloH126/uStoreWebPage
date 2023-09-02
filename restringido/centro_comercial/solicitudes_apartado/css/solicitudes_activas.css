@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.content .title .bttn_solicitudes_apartado{
+.content .title .bttn_cambio_seccion{
     font-size: 1.3rem;
     position: fixed;
     right: 7%;
@@ -18,7 +18,7 @@
     color: black;
 } 
 
-.content .title .bttn_solicitudes_apartado:hover{
+.content .title .bttn_cambio_seccion:hover{
 
 }
 
