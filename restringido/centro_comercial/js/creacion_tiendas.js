@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.disabled = true;
         
         let dotCount = 1;
-        let caracterInvisible = "";
+        let caracterInvisible = "&nbsp;";
         let dotInterval = setInterval(function() {
             if (dotCount > 3) {
                 dotCount = 1;
