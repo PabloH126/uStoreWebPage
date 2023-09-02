@@ -34,6 +34,7 @@
     <meta charset="utf-8">
 	<title>Solicitudes de apartado</title>
     <?php require("../templates/template.styles.php")?>
+	<?php require("templates/template.secc_apartados.php")?>
 </head>
 <body>
     <?php require("../templates/template.menu.php")?>
