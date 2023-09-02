@@ -14,7 +14,7 @@
     box-shadow: 4px 5px 10px 2px #dfdfdf;
     text-decoration: none;
     color: black;
-    transition: 0.5s linear;
+    transition: 0.3s linear;
 }
 
 .content .title .bttn_cambio_seccion:hover {
