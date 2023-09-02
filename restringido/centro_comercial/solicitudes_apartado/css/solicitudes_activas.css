@@ -31,7 +31,13 @@
     height: auto;
     grid-template-columns: 13% 33% 9% 9% 9% 9% 9% 9%;
     align-items: center;
+    justify-items: center;
     font-size: 1.3rem;
+}
+
+.content .lista .item img{
+    max-height: 93%;
+    max-width: 61%;
 }
 
 .content .lista .item p {
