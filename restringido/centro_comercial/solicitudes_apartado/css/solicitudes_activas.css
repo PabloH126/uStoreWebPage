@@ -28,6 +28,7 @@
 
 .content .lista .item{
     height: auto;
+    display: inline-flex;
 }
 
 .content .notas{

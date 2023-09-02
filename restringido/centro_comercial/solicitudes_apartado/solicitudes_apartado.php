@@ -50,7 +50,14 @@
 		<div>
 			<div class="lista">
 				<div class="item">
-					Imagen del producto
+					<p>Imagen del producto</p>
+					<p>Nombre del producto</p>
+					<p>Precio del producto</p>
+					<p>Tiempo de apartado</p>
+					<p>Ratio de usuario <sup>*</sup></p>
+					<p>Unidades</p>
+					<p>Aceptar</p>
+					<p>Denegar</p>
 				</div>
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
