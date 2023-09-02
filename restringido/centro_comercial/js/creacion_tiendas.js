@@ -382,6 +382,7 @@ function validacionPaso1() {
     const nombreTienda = document.getElementById("nombreTienda").value;
     if (!nombreTienda.trim()) {
         alert("Se debe ingresar un nombre de la tienda");
+        return;
         return false;
     }
     return true;
