@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
-        submitButton.style.backgroundColor = gray;
+        submitButton.style.backgroundColor = "gray";
         /*
         try {
             showNotification("Creando tienda...");
