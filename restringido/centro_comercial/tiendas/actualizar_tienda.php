@@ -2,6 +2,14 @@
     session_start();
     $responseArray = [];
     header('Content-Type: application/json');
+
+    $categorias = $_POST['categorias'];
+    if (count($categorias) > 8)
+    {
+        $responseArray['statusCatT'] = 'error';
+        $responseArray['messageCatT'] = 'Hay más de 8 categorias seleccionadas';
+        echo json_encode($responseArray);
+    }
     
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
@@ -116,8 +124,6 @@
 
 
     //UPDATE CATEGORIAS TIENDA
-    
-    $categorias = $_POST['categorias'];
 
     $arraysCategorias = array ();
 
