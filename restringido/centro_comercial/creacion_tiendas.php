@@ -67,7 +67,6 @@ function CategoriasSelect($categorias)
     <?php require("templates/template.styles.php") ?>
     <?php require("tiendas/templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css"
         href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
 </head>
