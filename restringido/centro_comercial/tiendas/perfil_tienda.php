@@ -96,19 +96,19 @@ $_SESSION['idTienda'] = $_GET['id'];
                             <?php
                                 if($rangoPrecio <= 0)
                                 {
-                                    echo 'No hay productos';
+                                    echo '<span style="color: red">No hay productos</span>';
                                 }
                                 else if($rangoPrecio < 1000)
                                 {
-                                    echo '<div>💲</div>';
+                                    echo '<span>💲</span>';
                                 }
                                 else if($rangoPrecio >= 1000 && $rangoPrecio < 5000)
                                 {
-                                    echo '<div>💲💲</div>';
+                                    echo '<span>💲💲</span>';
                                 }
                                 else if($rangoPrecio >= 5000)
                                 {
-                                    echo '<div>💲💲💲</div>';
+                                    echo '<span>💲💲💲</span>';
                                 }
                             ?>
                         </div>
