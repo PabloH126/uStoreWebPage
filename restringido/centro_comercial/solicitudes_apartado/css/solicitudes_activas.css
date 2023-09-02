@@ -1,3 +1,5 @@
+
+
 .title{
     display: flex;
     align-items: center;
@@ -17,6 +19,21 @@
 .title #bttn_solicitudes_apartado{
     text-decoration: none;
     color: black;
+}
+
+.lista{
+    grid-template-columns: none;
+    width: auto;
+}
+
+.item{
+    margin: 0;
+    height: auto;
+}
+
+.notas{
+    font-size: 1rem;
+	color: #6c6c6c;
 }
 
 @media only screen and (max-width: 1502px){
