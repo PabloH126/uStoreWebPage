@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
-                        await sendImage(input, "imagenesTienda.php", data.idTienda); // Pasar el idTienda
+                        await sendImage(input, "actualizarImagenesTienda.php", data.idTienda); // Pasar el idTienda
                     }
                 }
                 hideNotification();

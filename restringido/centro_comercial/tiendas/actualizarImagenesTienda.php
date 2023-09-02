@@ -3,8 +3,8 @@ session_start();
 $imagenes = [];
 $idImagenes = [];
 verificarImagen(0, $_FILES['imagen1'], $_POST['idImagen1'], $imagenes, $idImagenes);
-verificarImagen(1, $_FILES['imagen2'], $_POST['idImagen1'], $imagenes, $idImagenes);
-verificarImagen(2, $_FILES['imagen3'], $_POST['idImagen1'], $imagenes, $idImagenes);
+verificarImagen(1, $_FILES['imagen2'], $_POST['idImagen2'], $imagenes, $idImagenes);
+verificarImagen(2, $_FILES['imagen3'], $_POST['idImagen3'], $imagenes, $idImagenes);
 
 $idTienda = $_POST['idTienda']; // Recuperar el idTienda desde el formulario
 

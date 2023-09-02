@@ -34,7 +34,13 @@ $_SESSION['idProducto'] = $_GET['id'];
                             </h1>
                         </div>
                         <div class="cali">
-                            <div class="estrellas">⭐⭐⭐⭐⭐</div><span>(100)</span>
+                            <div class="estrellas">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div><span>(100)</span>
                         </div>
                         <div class="categorias">
                             <?php
