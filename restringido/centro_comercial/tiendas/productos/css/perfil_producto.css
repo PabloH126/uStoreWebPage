@@ -11,6 +11,14 @@
 .contentT .izquierda .topI .icon img{
     max-height: 144px;
 }
+.name {
+    font-size: .77rem;
+}
+
+.cali {
+    font-size: 1.5em;
+    margin: -8px 0 0;
+}
 
 .estrellas{
     display: inline-flex;
@@ -19,15 +27,6 @@
 .estrellas i{
     margin: 0 2px;
     color: #ffc83d;
-}
-
-.name {
-    font-size: .77rem;
-}
-
-.cali {
-    font-size: 1.5em;
-    margin: -8px 0 0;
 }
 
 .botI, .botD{
