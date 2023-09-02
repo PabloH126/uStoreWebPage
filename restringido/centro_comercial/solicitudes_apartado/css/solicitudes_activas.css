@@ -31,18 +31,17 @@
 
 .content .lista .item{
     height: auto;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: 13% 33% 9% 9% 9% 9% 9% 9%;
     align-items: center;
 }
 
 .content .lista .item p{
-    padding: 7% 0;
+    padding: 5%;
 }
 
 .content .lista #encabezado p{
     font-weight: bold;
     font-size: 1.4rem;
-    padding: 7% 5%;
 }
 
 .content .notas{

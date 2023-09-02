@@ -96,20 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
-        
-        let dotCount = 1;
-        
-        let dotInterval = setInterval(function() {
-            let dots = ".".repeat(dotCount);
-            let espacios = "&nbsp;".repeat(7 - dotCount);
-
-            submitButton.innerHTML = espacios + dots;
-            if (dotCount >= 3) {
-                dotCount = 1;
-            } else {
-                dotCount++;
-            }
-        }, 250);
+        submitButton.style.backgroundColor = gray;
         /*
         try {
             showNotification("Creando tienda...");
