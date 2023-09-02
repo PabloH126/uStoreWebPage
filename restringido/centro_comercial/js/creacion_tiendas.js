@@ -5,6 +5,35 @@ document.addEventListener('DOMContentLoaded', function () {
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.fileInputBanner');
+    const nextButtons = document.querySelectorAll('.bttn-next');
+
+    nextButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const currentStep = parseInt(button.getAttribute('data-item'));
+            let isValid = false;
+
+            switch (currentStep) {
+                case 1:
+                    isValid = validateStep1();
+                    break;
+                /*case 2:
+                    isValid = validateStep2();
+                    break;*/
+                // Agrega casos para los otros pasos del formulario
+
+                default:
+                    isValid = true;
+                    break;
+            }
+
+            if (!isValid) {
+                return;
+            }
+
+            const nextStep = parseInt(button.getAttribute('data-to_item'));
+            showStep(nextStep);
+        });
+    });
     
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -345,4 +374,13 @@ function hideNotification() {
     }
 
     currentNotification = null;
+}
+
+function validacionPaso1() {
+    const nombreTienda = document.getElementById("nombreTienda").value;
+    if (!nombreTienda.trim()) {
+        alert("Se debe ingresar un nombre de la tienda");
+        return false;
+    }
+    return true;
 }
