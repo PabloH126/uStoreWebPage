@@ -29,6 +29,13 @@
 .content .lista .item{
     height: auto;
     grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+}
+
+.content .lista .item p{
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: 7% 5%;
 }
 
 .content .notas{
