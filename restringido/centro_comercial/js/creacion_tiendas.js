@@ -98,13 +98,13 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.disabled = true;
         
         let dotCount = 1;
-
+        let caracterInvisible = "";
         let dotInterval = setInterval(function() {
             if (dotCount > 3) {
                 dotCount = 1;
-                submitButton.textContent = ".";
+                submitButton.textContent = caracterInvisible.repeat(3) + "." + caracterInvisible.repeat(3);
             } else {
-                submitButton.textContent = ".".repeat(dotCount);
+                submitButton.textContent = caracterInvisible.repeat(2) + ".".repeat(dotCount) + caracterInvisible.repeat(2);
                 dotCount++;
             }
         }, 250);
