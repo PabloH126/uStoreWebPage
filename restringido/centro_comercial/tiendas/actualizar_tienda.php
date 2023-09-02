@@ -5,10 +5,10 @@
     
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-    $maxSize = 1 * 1024 * 1024; // 5 MB
+    $maxSize = 1 * 1024 * 1024; // 1 MB
 
     //UPDATE TIENDA
-
+    $idTienda = $_POST['idTienda'];
     $data = [
         'idTienda' => $_GET['id'],
         'nombreTienda' => $_POST['nombreTienda']
@@ -50,7 +50,13 @@
 
     if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' update tienda';
+        $responseArray['statusTienda'] = 'error';
+        $responseArray['messageTienda'] = $httpStatusCode . ' ACTUALIZAR Tienda <br>';
+    }
+    else
+    {
+        $responseArray['idTienda'] = $idTienda;
+        $responseArray['statusTienda'] = 'success';
     }
 
     $dataTienda = json_decode($response, true);
@@ -61,7 +67,7 @@
 //----------------------------------------------------------------------------------------//   
 
 
-    //CREATE HORARIO
+    //UPDATE HORARIO
 
     $arraysHorario = array(
         generateArrayHorario('Lunes'),
@@ -96,14 +102,20 @@
 
     if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' update horario';
+        $responseArray['statusHorarios'] = 'error';
+        $responseArray['messageHorarios'] = $httpStatusCode . ' ACTUALIZACION HORARIO <br>';
+    }
+    else
+    {
+        $responseArray['statusHorarios'] = 'success';
+        $responseArray['messageHorarios'] = $httpStatusCode . ' ACTUALIZACION HORARIO <br>';
     }
 
     curl_close($ch);
 //----------------------------------------------------------------------------------------// 
 
 
-    //CREATE CATEGORIAS TIENDA
+    //UPDATE CATEGORIAS TIENDA
     
     $categorias = $_POST['categorias'];
 
@@ -136,7 +148,12 @@
 
     if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' update categorias de tienda';
+        $responseArray['statusCatT'] = 'error';
+        $responseArray['messageCatT'] = $httpStatusCode . 'CATEGORIAS TIENDA';
+    }
+    else
+    {
+        $responseArray['statusCatT'] = 'success';
     }
     
     curl_close($ch);
@@ -171,7 +188,13 @@
 
     if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' update periodos predeterminados';
+        $responseArray['statusPeriodos'] = 'error';
+        $responseArray['messagePeriodos'] = $httpStatusCode . ' ACTUALIZACION Periodos predeterminados <br>';
+    }
+    else
+    {
+        $responseArray['statusPeriodos'] = 'success';
+        $responseArray['urlSalida'] = $urlSalida;
     }
 //----------------------------------------------------------------------------------------//   
 

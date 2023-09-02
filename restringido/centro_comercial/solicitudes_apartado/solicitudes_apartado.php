@@ -42,7 +42,7 @@
 	<div class="content">
 		<div class="title">
 			<h1>Solicitudes de apartado</h1>
-			<a href="" class="bttn_cambio_seccion">Ver solicitudes activas</a>
+			<a href="solicitudes_activas.php" class="bttn_cambio_seccion">Ver solicitudes activas</a>
 		</div>
 
 		<div>
