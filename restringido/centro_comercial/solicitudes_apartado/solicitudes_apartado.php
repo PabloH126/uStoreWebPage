@@ -36,6 +36,7 @@
     <?php require("../templates/template.styles.php")?>
 </head>
 <body>
+    <?php require("../templates/template.menu.php")?>
 holi
 </body>
 </html>
