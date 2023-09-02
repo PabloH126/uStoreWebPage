@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Agrega casos para los otros pasos del formulario
 
                 default:
-                    isValid = true;
+                    isValid = false;
                     break;
             }
 
