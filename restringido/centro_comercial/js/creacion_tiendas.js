@@ -96,8 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
-        submitButton.textContent = 'cargando...';
-        submitButton.style.fontSize = '20px';
+        submitButton.style.display = 'none';
         /*
         try {
             showNotification("Creando tienda...");
