@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (data.statusTienda === 'success' && data.statusHorarios === 'success' && data.statusCatT === 'success' && data.statusPeriodos === 'success') {
                 showNotification("Cargando imagenes...");
-                alert(data.idTienda);
+                
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
                         await sendImage(input, "imagenesTienda.php", data.idTienda); // Pasar el idTienda
