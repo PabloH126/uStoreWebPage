@@ -1,10 +1,11 @@
+let currentNotification;
+
 document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.fileInputBanner');
-    let currentNotification;
-
+    
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
             var counter = document.querySelectorAll('.optionsC input[type="checkbox"]:checked').length;
@@ -100,15 +101,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const data = await sendFormWithoutImages(mainForm, fileInputs);
 
             if (data.statusTienda === 'success' && data.statusHorarios === 'success' && data.statusCatT === 'success' && data.statusPeriodos === 'success') {
-                showNotification("Cargando imagenes...", currentNotification);
+                showNotification("Cargando imagenes...");
                 alert(data.idTienda);
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
                         await sendImage(input, "imagenesTienda.php", data.idTienda); // Pasar el idTienda
                     }
                 }
-                hideNotification(currentNotification);
-                showNotification("Tienda creada", currentNotification);
+                hideNotification();
+                showNotification("Tienda creada");
                 setTimeout(() => {
                     hideNotification();
                 }, 2500);
@@ -320,7 +321,7 @@ async function sendImage(input, url, idTienda) {
     } 
 }
 
-function showNotification(message, currentNotification) {
+function showNotification(message) {
     if (currentNotification) {
         currentNotification.remove();
     }
@@ -333,7 +334,7 @@ function showNotification(message, currentNotification) {
     currentNotification = notification;
 }
 
-function hideNotification(currentNotification) {
+function hideNotification() {
     if (currentNotification) {
         currentNotification.remove();
         currentNotification = null;
