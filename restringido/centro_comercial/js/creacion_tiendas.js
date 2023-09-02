@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
         submitButton.style.backgroundColor = "gray";
-        /*
+        
         try {
             showNotification("Creando tienda...");
             const data = await sendFormWithoutImages(mainForm, fileInputs);
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Hubo un error al realizar la solicitud de creación la tienda: " + error);
             return;
         }
-        */
+        
     });
 });
 

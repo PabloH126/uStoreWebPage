@@ -59,14 +59,14 @@
 				</div>
 
 				<div class="item">
-					<p>Imagen del producto</p>
-					<p>Nombre del producto</p>
-					<p>Precio del producto</p>
-					<p>Tiempo de apartado</p>
-					<p>Ratio de usuario*</p>
-					<p>Unidades</p>
-					<p>Aceptar</p>
-					<p>Denegar</p>
+					<p>Imagen</p>
+					<p>Oaaaaaaaaaaaaaaaaaaaaaaa</p>
+					<p>$1000.00</p>
+					<p>2 dias</p>
+					<p>200/3</p>
+					<p>2</p>
+					<p>Si</p>
+					<p>No</p>
 				</div>
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
