@@ -12,7 +12,7 @@ $idTienda = $_POST['idTienda']; // Recuperar el idTienda desde el formulario
 $responseArray = [];
 foreach($imagenes as $key => $imagen)
 {
-    $responseArray = mandarImagenApi($idTienda, $imagen, $imagenes);
+    $responseArray = mandarImagenApi($idTienda, $imagen);
 }
 
 //FUNCIONES
