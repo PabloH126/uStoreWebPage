@@ -50,8 +50,8 @@ function mandarImagenApi($idTienda, $imagen) {
     
     if ($response === false) {
         return [
-            'status' => 'error',
-            'message' => 'Error en la solicitud cURL: ' . curl_error($ch)
+            'statusImagenes' => 'error',
+            'messageImagenes' => 'Error en la solicitud cURL: ' . curl_error($ch)
         ];
     } else {
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -61,13 +61,13 @@ function mandarImagenApi($idTienda, $imagen) {
 
     if($httpStatusCode != 200) {
         return [
-            'status' => 'error',
-            'message' => $httpStatusCode . ' en CREACION IMAGENES TIENDA'
+            'statusImagenes' => 'error',
+            'messageImagenes' => $httpStatusCode . ' en CREACION IMAGENES TIENDA'
         ];
     } else {
         return [
-            'status' => 'success',
-            'message' => $httpStatusCode . ' en CREACION IMAGENES TIENDA'
+            'statusImagenes' => 'success',
+            'messageImagenes' => $httpStatusCode . ' en CREACION IMAGENES TIENDA'
         ];
     }
 }
