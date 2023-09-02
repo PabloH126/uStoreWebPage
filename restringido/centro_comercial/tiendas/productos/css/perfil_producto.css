@@ -12,9 +12,13 @@
     max-height: 144px;
 }
 
-.estrellas {
+.estrellas{
     display: inline-flex;
-    color: yellow;
+    color: #ffc83d;
+}
+
+.estrellas i{
+    margin: 0 2px;
 }
 
 .name {

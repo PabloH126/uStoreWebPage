@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.fileInputBanner');
-    
+    const idImagenes = document.querySelectorAll('.idImagenes');
+
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
             var counter = document.querySelectorAll('.optionsC input[type="checkbox"]:checked').length;
@@ -94,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 for (let input of fileInputs) {
                     if (input && input.files.length > 0) {
-                        await sendImage(input, "actualizarImagenesTienda.php", data.idTienda); // Pasar el idTienda
+                        await sendImage(input, "actualizarImagenesTienda.php", data.idTienda, idImagenes); // Pasar el idTienda
                     }
                 }
                 hideNotification();
