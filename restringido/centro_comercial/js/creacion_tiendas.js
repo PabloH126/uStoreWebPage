@@ -6,32 +6,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.fileInputBanner');
     const nextButtons = document.querySelectorAll('.bttn-next');
-
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             const currentStep = parseInt(button.getAttribute('data-item'));
-            let isValid = false;
+            let isValid = true;
 
+            // Realiza la validación correspondiente al paso actual
             switch (currentStep) {
                 case 1:
-                    isValid = validacionPaso1();
+                    isValid = validateStep1();
                     break;
-                /*case 2:
+                case 2:
                     isValid = validateStep2();
-                    break;*/
+                    break;
                 // Agrega casos para los otros pasos del formulario
 
                 default:
-                    isValid = false;
+                    isValid = true; // Si no hay validación específica, se considera válido
                     break;
             }
 
+            // Si la validación no pasa, detén la navegación al siguiente paso
             if (!isValid) {
                 return;
             }
 
+            // Si la validación pasa, continúa a la siguiente página
             const nextStep = parseInt(button.getAttribute('data-to_item'));
-            showStep(nextStep);
+            showStep(nextStep); // Función que muestra el siguiente paso del formulario
         });
     });
     
