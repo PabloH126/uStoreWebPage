@@ -9,6 +9,7 @@
         $responseArray['statusCatT'] = 'error';
         $responseArray['messageCatT'] = 'Hay más de 8 categorias seleccionadas';
         echo json_encode($responseArray);
+        exit;
     }
     
     //Validación de imagenes
@@ -224,7 +225,7 @@
             {
                 $apartadoPredeterminado = $numero . ' ' . $tiempo;
                 $periodos[] = [
-                    'idApartadoPredeterminado' => $_POST['idApartadoPredeterminadoPeriodo' . $i],
+                    'idApartadoPredeterminado' => isset($_POST['idApartadoPredeterminadoPeriodo' . $i]) ? $_POST['idApartadoPredeterminadoPeriodo' . $i] : "0",
                     'apartadoPredeterminado' => $apartadoPredeterminado,
                     'idTienda' => $_GET['id']
                 ];
