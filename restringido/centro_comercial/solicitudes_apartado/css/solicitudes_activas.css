@@ -14,12 +14,13 @@
     border-radius: 13px;
     padding: 1% 2%;
     box-shadow: 4px 5px 10px 2px #dfdfdf;
-}
-
-.content .title #bttn_solicitudes_apartado{
     text-decoration: none;
     color: black;
 }
+
+
+.content .title #bttn_solicitudes_apartado{
+}    
 
 .content .lista{
     grid-template-columns: none;
