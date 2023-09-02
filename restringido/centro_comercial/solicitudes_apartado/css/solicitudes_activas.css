@@ -61,7 +61,8 @@
         padding: 1%;
     }
 
-    .content .lista .item p {
+    .content .lista .item p,
+    .content .lista #encabezado p{
         font-size: 1.2rem;
     }
 
