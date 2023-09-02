@@ -8,7 +8,7 @@
     $maxSize = 1 * 1024 * 1024; // 1 MB
 
     //UPDATE TIENDA
-    $idTienda = $_POST['idTienda'];
+    $idTienda = $_GET['idTienda'];
     $data = [
         'idTienda' => $_GET['id'],
         'nombreTienda' => $_POST['nombreTienda']

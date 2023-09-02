@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.fileInputBanner');
     const idImagenes = document.querySelectorAll('.idImagenes');
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    const idTienda = params.get('id');
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -93,9 +96,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.statusTienda === 'success' && data.statusHorarios === 'success' && data.statusCatT === 'success' && data.statusPeriodos === 'success') {
                 showNotification("Verificando imagenes...");
                 
-                for (let input of fileInputs) {
-                    if (input && input.files.length > 0) {
-                        await sendImage(input, "actualizarImagenesTienda.php", data.idTienda, idImagenes); // Pasar el idTienda
+                for (let i = 0; i < fileInputs.length; i++) {
+                    if (fileInputs[i] && fileInputs[i].files.length > 0) {
+                        let idImagen = idImagenes[i];
+                        await sendImage(input, "actualizarImagenesTienda.php", idTienda, idImagen); // Pasar el idTienda
                     }
                 }
                 hideNotification();
@@ -289,10 +293,11 @@ async function sendFormWithoutImages(form, fileInputs) {
     return response.json();
 }
 
-async function sendImage(input, url, idTienda) {
+async function sendImage(input, url, idTienda, idImagen) {
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idTienda', idTienda); // Agregar el idTienda al formData
+    formData.append(idImagen.name, idImagen.value); // Agregar el idImagen al formData
 
     const responseImagenes = await fetch(url, {
         method: 'POST',

@@ -8,12 +8,12 @@ verificarImagen(2, $_FILES['imagen3'], $_POST['idImagen3'], $imagenes, $idImagen
 
 $idTienda = $_POST['idTienda']; // Recuperar el idTienda desde el formulario
 
-//CREATE IMAGENES BANNER TIENDA
+//UPDATE IMAGENES BANNER TIENDA
 
 $responseArray = [];
-foreach($imagenes as $key => $imagen)
+foreach($imagenes as $index => $imagen)
 {
-    $responseArray = mandarImagenApi($idTienda, $imagen);
+    $responseArray = mandarImagenApi($idTienda, $imagen, $idImagenes[$index]);
 }
 
 //FUNCIONES
@@ -33,19 +33,14 @@ function verificarImagen($index, $imagen, $idImagen, &$imagenes, &$idImagenes) {
     }
 }
 
-function mandarImagenApi($idTienda, $imagen, $index, $idImagenes) {
+function mandarImagenApi($idTienda, $imagen, $idImagen) {
     $data = [
         'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
     ];
 
-    if (!isset($idImagenes[$index]))
-    {
-        $idImagenes[$index] = "0";
-    }
-
     $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $idTienda . "&idImagenTienda=" . $idImagenes[$index]);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $idTienda . "&idImagenTienda=" . $idImagen);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);

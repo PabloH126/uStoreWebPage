@@ -236,7 +236,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                     <?php if (isset($imagenesTienda[0]['idImagenesTiendas']))
                                     {
                                     ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[0]['idImagenesTiendas']; ?>" name="idImagen1" class="idImagenes">
+                                        <input type="hidden" value="<?php echo isset($imagenesTienda[0]['idImagenesTiendas']) ? $imagenesTienda[0]['idImagenesTiendas'] : "0"; ?>" name="idImagen1" class="idImagenes">
                                     <?php
                                     }
                                     ?>
@@ -253,7 +253,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                     <?php if (isset($imagenesTienda[1]['idImagenesTiendas']))
                                     {
                                     ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[1]['idImagenesTiendas']; ?>" name="idImagen2" class="idImagenes">
+                                        <input type="hidden" value="<?php echo isset($imagenesTienda[1]['idImagenesTiendas']) ? $imagenesTienda[1]['idImagenesTiendas'] : "0"; ?>" name="idImagen2" class="idImagenes">
                                     <?php
                                     }
                                     ?>
@@ -270,7 +270,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                     <?php if (isset($imagenesTienda[2]['idImagenesTiendas']))
                                     {
                                     ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[2]['idImagenesTiendas']; ?>" name="idImagen3" class="idImagenes">
+                                        <input type="hidden" value="<?php echo isset($imagenesTienda[1]['idImagenesTiendas']) ? $imagenesTienda[2]['idImagenesTiendas'] : "0"; ?>" name="idImagen3" class="idImagenes">
                                     <?php
                                     }
                                     ?>
