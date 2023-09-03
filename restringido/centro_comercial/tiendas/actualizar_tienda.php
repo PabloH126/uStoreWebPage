@@ -3,7 +3,7 @@
     $responseArray = [];
     header('Content-Type: application/json');
 
-    $responseArray['statusPeriodos'] = $_GET['id'];
+    $responseArray['statusTienda'] = $_GET['id'];
     echo json_encode($responseArray);
     exit;
 
