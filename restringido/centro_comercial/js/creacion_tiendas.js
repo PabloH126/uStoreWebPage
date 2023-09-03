@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (event) {
-            const currentStep = parseInt(button.getAttribute('data-item'));
+
+            let element = event.target; //detectar donde se hace click
+            let isButtonNext = element.classList.contains('bttn-next');
+            let isButtonBack = element.classList.contains('bttn-back');
 
             // Realiza la validación correspondiente al paso actual
             let isValid = false;
@@ -30,17 +33,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Si la validación no pasa, detén la navegación al siguiente paso
             if (isValid == false) {
-                event.preventDefault();
                 return;
             }
             else 
             {
-                alert("pasamos a la siguiente seccion");
+                if (isButtonNext || isButtonBack) {
+                    //si fue seleccionado el bttn-next o el bttn-back
+                    let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                    let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                    currentStep.classList.remove('active');
+                    jumpStep.classList.add('active');
+                    if (isButtonNext) {
+                        currentStep.classList.add('to-left');
+                        progressOptions[element.dataset.to_step - 1].classList.add('active');
+                    } else {
+                        jumpStep.classList.remove('to-left');
+                    }
+                }
             }
-
-            // Si la validación pasa, continúa a la siguiente página
-            const nextStep = parseInt(button.getAttribute('data-to_item'));
-            showStep(nextStep); // Función que muestra el siguiente paso del formulario
         });
     });
     
