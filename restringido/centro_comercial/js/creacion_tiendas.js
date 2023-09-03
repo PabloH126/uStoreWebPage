@@ -6,6 +6,42 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.fileInputBanner');
     const nextButtons = document.querySelectorAll('.bttn-next');
+
+    nextButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const currentStep = parseInt(button.getAttribute('data-item'));
+
+            // Realiza la validación correspondiente al paso actual
+            let isValid = false;
+            switch (currentStep) {
+                case 1:
+                    isValid = validateStep1();
+                    break;
+                case 2:
+                    isValid = validateStep2();
+                    break;
+                // Agrega casos para los otros pasos del formulario
+
+                default:
+                    isValid = true; // Si no hay validación específica, se considera válido
+                    break;
+            }
+
+            // Si la validación no pasa, detén la navegación al siguiente paso
+            if (isValid == false) {
+                button.preventDefault();
+                return;
+            }
+            else 
+            {
+                alert("pasamos a la siguiente seccion");
+            }
+
+            // Si la validación pasa, continúa a la siguiente página
+            const nextStep = parseInt(button.getAttribute('data-to_item'));
+            showStep(nextStep); // Función que muestra el siguiente paso del formulario
+        });
+    });
     
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -24,40 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
-    });
-
-    nextButtons.addEventListener('click', function(e) {
-        let element = e.target; //detectar donde se hace click
-        let isButtonNext = element.classList.contains('bttn-next');
-        let isButtonBack = element.classList.contains('bttn-back');
-        let currentStep = parseInt(element.getAttribute('data-item'));
-        // Realiza la validación correspondiente al paso actual
-        let isValid = false;
-        switch (currentStep) {
-            case 1:
-                isValid = nombreValidacion();
-                alert(isValid);
-                break;
-            case 2:
-                isValid = validateStep2();
-                break;
-            // Agrega casos para los otros pasos del formulario
-
-            default:
-                isValid = true; // Si no hay validación específica, se considera válido
-                break;
-        }
-
-        // Si la validación no pasa, detén la navegación al siguiente paso
-        if (isValid == false) {
-            preventDefault();
-            alert("no se pudo");
-            return;
-        }
-        else 
-        {
-           alert("chi chenol");
-        }
     });
 
     mainForm.addEventListener('submit', async function(e) {
@@ -380,4 +382,16 @@ function hideNotification() {
     }
 
     currentNotification = null;
+}
+
+function validateStep1() {
+    // Realiza la validación de la primera sección aquí
+    // Si la validación no pasa, muestra un mensaje de error y devuelve false
+    // Si la validación pasa, devuelve true
+    const nombreTienda = document.getElementById("nombreTienda").value;
+    if (!nombreTienda.trim()) {
+        alert("Se debe ingresar un nombre de la tienda");
+        return false;
+    }
+    return true;
 }
