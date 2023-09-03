@@ -8,17 +8,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButtons = document.querySelectorAll('.bttn-next');
 
     nextButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
             const currentStep = parseInt(button.getAttribute('data-item'));
 
             // Realiza la validación correspondiente al paso actual
             let isValid = false;
             switch (currentStep) {
                 case 1:
-                    isValid = validateStep1();
+                    isValid = nombreValidacion();
                     break;
                 case 2:
-                    isValid = validateStep2();
+                    isValid = logoValidacion();
                     break;
                 // Agrega casos para los otros pasos del formulario
 
@@ -29,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Si la validación no pasa, detén la navegación al siguiente paso
             if (isValid == false) {
-                button.preventDefault();
+                alert("no se pudo");
+                e.target.preventDefault();
                 return;
             }
             else 
@@ -286,6 +290,28 @@ function validacionTypeImagen(imagen)
 {
     var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     if (allowedTypes.indexOf(imagen.files[0].type) === -1) {
+        return false;
+    }
+
+    return true;
+}
+
+function logoValidacion(logoTienda) {
+    const maxSize = 1 * 1024 * 1024;
+    
+    if (!logoTienda.files.length) 
+    {
+        alert("Se debe subir un logo de tienda");
+        return false;
+    }
+    else if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
+    {
+        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        return false;
+    }
+    else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
+    {
+        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
         return false;
     }
 
