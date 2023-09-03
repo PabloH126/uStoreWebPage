@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButtons = document.querySelectorAll('.bttn-next');
 
     nextButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (event) {
             const currentStep = parseInt(button.getAttribute('data-item'));
 
             // Realiza la validación correspondiente al paso actual
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Si la validación no pasa, detén la navegación al siguiente paso
             if (isValid == false) {
-                button.preventDefault();
+                event.preventDefault();
                 return;
             }
             else 
