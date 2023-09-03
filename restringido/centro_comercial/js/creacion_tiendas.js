@@ -491,6 +491,9 @@ function validacionHorarios() {
 }
 
 function validacionBanner() {
+    let img1 = document.getElementById("fileInput1");
+    let img2 = document.getElementById("fileInput2");
+    let img3 = document.getElementById("fileInput3");
     let logoTienda = document.getElementById("logoTienda");
     if (!img1.files.length && !img2.files.length && !img3.files.length) {
         alert("Se debe subir al menos una imagen para el banner de la tienda");
