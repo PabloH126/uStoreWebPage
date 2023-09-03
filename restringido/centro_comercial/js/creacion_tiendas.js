@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const fileInputs = document.querySelectorAll('.fileInputBanner');
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
+    const buttons = document.querySelectorAll('.bttn-next, .bttn-back');
 
-    nextButtons.forEach(function (button) {
+    buttons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
             if (e.target !== button) return;
@@ -16,15 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
             let element = e.target; //detectar donde se hace click
             let isButtonNext = element.classList.contains('bttn-next');
             let isButtonBack = element.classList.contains('bttn-back');
-            let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
-            let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+            let currentStep = element.getAttribute('data-item');
+            const currentStepParse = parseInt(button.getAttribute('data-item'));
+            let jumpStep = button.getAttribute('data-to_item')
             currentStep.classList.remove('active');
             jumpStep.classList.add('active');
 
             if(isButtonNext)
             {
-                const currentStepParse = parseInt(button.getAttribute('data-item'));
-
                 // Realiza la validación correspondiente al paso actual
                 let isValid = false;
                 switch (currentStepParse) {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     progressOptions[element.dataset.to_step - 1].classList.add('active');
                 }
             }
-            else
+            else if (isButtonBack)
             {
                 jumpStep.classList.remove('to-left');
             }
