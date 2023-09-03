@@ -110,7 +110,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.location.href = data.urlSalida;
                 }, 2500);
             } else {
-                alert("Hubo un error al guardar la tienda. Estatus de la tienda: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos + data.messagePeriodos);
+                if(!data.statusTienda)
+                {
+                    alert("Hubo un error al guardar la tienda: " + data.messageCatT);
+                }
+                else
+                {
+                    alert("Hubo un error al guardar la tienda. Estatus de la tienda " + data.statusTienda + ": " + data.messageTienda + ". Estatus de los horarios " + data.statusHorarios + ": " + data.messageHorarios + ". Estatus de las categorias " + data.statusCatT + ": " + data.messageCatT + ". Estatus de los periodos " + data.statusPeriodos + ": " + data.messagePeriodos);
+                }
+                submitButton.disabled = false;
+                submitButton.backgroundColor = "#007096";
                 return;
             }
 
