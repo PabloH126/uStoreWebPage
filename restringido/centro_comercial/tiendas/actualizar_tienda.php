@@ -3,6 +3,10 @@
     $responseArray = [];
     header('Content-Type: application/json');
 
+    $responseArray['statusPeriodos'] = $_GET['id'];
+    echo json_encode($responseArray);
+    exit;
+
     $categorias = $_POST['categorias'];
     if (count($categorias) > 8)
     {
