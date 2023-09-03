@@ -68,8 +68,6 @@
         $responseArray['statusTienda'] = 'success';
     }
 
-    $dataTienda = json_decode($response, true);
-
     $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $_GET['id'];
 
     curl_close($ch);
@@ -161,6 +159,7 @@
     else
     {
         $responseArray['statusCatT'] = 'success';
+        $responseArray['messageCatT'] = $httpStatusCode . 'CATEGORIAS TIENDA';
     }
     
     curl_close($ch);
@@ -168,7 +167,7 @@
 
 
     //CREATE PERIODOS PREDETERMINADOS TIENDA
-    $periodos = generateArrayPeriodosPredeterminados($dataTienda);
+    $periodos = generateArrayPeriodosPredeterminados();
 
     $jsonData = json_encode($periodos);
 
@@ -196,12 +195,13 @@
     if($httpStatusCode != 204)
     {
         $responseArray['statusPeriodos'] = 'error';
-        $responseArray['messagePeriodos'] = $httpStatusCode . ' ACTUALIZACION Periodos predeterminados <br>';
+        $responseArray['messagePeriodos'] = $httpStatusCode . ' ACTUALIZACION Periodos predeterminados';
     }
     else
     {
         $responseArray['statusPeriodos'] = 'success';
         $responseArray['urlSalida'] = $urlSalida;
+        $responseArray['messagePeriodos'] = $httpStatusCode . ' ACTUALIZACION Periodos predeterminados';
     }
 //----------------------------------------------------------------------------------------//   
     //FUNCIONES
@@ -213,7 +213,7 @@
         ];
     }
 
-    function generateArrayPeriodosPredeterminados($dataTienda)
+    function generateArrayPeriodosPredeterminados()
     {
         $periodos = [];
         for($i = 1; $i <= 3; $i++)

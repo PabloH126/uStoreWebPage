@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Si la validación no pasa, detén la navegación al siguiente paso
             if (isValid == false) {
+                button.preventDefault();
                 return;
             }
             else 
