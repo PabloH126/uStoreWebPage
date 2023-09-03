@@ -225,7 +225,7 @@
             {
                 $apartadoPredeterminado = $numero . ' ' . $tiempo;
                 $periodos[] = [
-                    'idApartadoPredeterminado' => isset($_POST['idApartadoPredeterminadoPeriodo' . $i]) ? $_POST['idApartadoPredeterminadoPeriodo' . $i] : 0,
+                    'idApartadoPredeterminado' => $_POST['idApartadoPredeterminadoPeriodo' . $i],
                     'apartadoPredeterminado' => $apartadoPredeterminado,
                     'idTienda' => (int) $_GET['id']
                 ];

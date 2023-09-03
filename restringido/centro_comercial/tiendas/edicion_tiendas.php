@@ -63,7 +63,7 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
     echo '<option value="horas" ' . $selectedHoras . '>Horas</option>';
     echo '<option value="dias" ' . $selectedDias . '>Días</option>';
     echo '</select>';
-    echo '<input type="hidden" name="idApartadoPredeterminado' . $periodo . '" value="' . $idApartadoPredeterminado . '">';
+    echo '<input type="hidden" name="idApartadoPredeterminado' . $periodo . '" value="' . isset($idApartadoPredeterminado) ? $idApartadoPredeterminado : 0 . '">';
     echo '</div>';
 }
 
