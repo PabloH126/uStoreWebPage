@@ -8,18 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
     const buttons = document.querySelectorAll('.bttn-next, .bttn-back');
-
+    console.log(buttons);
     buttons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
             if (e.target !== button) return;
 
             let element = e.target; //detectar donde se hace click
+            console.log(element);
             let isButtonNext = element.classList.contains('bttn-next');
             let isButtonBack = element.classList.contains('bttn-back');
             let currentStep = element.getAttribute('data-item');
             const currentStepParse = parseInt(button.getAttribute('data-item'));
-            let jumpStep = button.getAttribute('data-to_item')
+            let jumpStep = element.getAttribute('data-to_item')
             currentStep.classList.remove('active');
             jumpStep.classList.add('active');
 
