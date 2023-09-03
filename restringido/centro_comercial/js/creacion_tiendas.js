@@ -24,6 +24,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 case 2:
                     isValid = logoValidacion();
                     break;
+                case 3:
+                    isValid = validacionCategorias();
+                    break;
+                case 4:
+                    isValid = validacionHorarios();
+                    break;
+                case 5:
+                    isValid = validacionBanner();
+                    break;
+                case 6:
+                    isValid = validacionCompletaPeriodos();
+                    break;
                 // Agrega casos para los otros pasos del formulario
 
                 default:
@@ -453,13 +465,54 @@ function hideNotification() {
     currentNotification = null;
 }
 
-function validateStep1() {
-    // Realiza la validación de la primera sección aquí
-    // Si la validación no pasa, muestra un mensaje de error y devuelve false
-    // Si la validación pasa, devuelve true
-    const nombreTienda = document.getElementById("nombreTienda").value;
-    if (!nombreTienda.trim()) {
-        alert("Se debe ingresar un nombre de la tienda");
+function validacionCategorias() {
+    let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
+    let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
+    if (!checked) 
+    {
+        alert("Se debe seleccionar al menos una categoria para la tienda");
+        return false;
+    }
+    return true;
+}
+
+function validacionHorarios() {
+    if(!horariosConfigurados())
+    {
+        alert("Se debe configurar al menos un horario");
+        return false;
+    }
+
+    else if(!validarHorariosCorrectos())
+    {
+        return false;
+    }
+    return true;
+}
+
+function validacionBanner() {
+    let logoTienda = document.getElementById("logoTienda");
+    if (!img1.files.length && !img2.files.length && !img3.files.length) {
+        alert("Se debe subir al menos una imagen para el banner de la tienda");
+        return false;
+    }
+
+    if (!imagenesValidacion(logoTienda))
+    {
+        return false;
+    }
+    return true;
+}
+
+function validacionCompletaPeriodos() {
+    if(!periodosConfigurados())
+    {
+        alert("Se debe configurar al menos un periodo de apartado predeterminado");
+        return false;
+    }
+
+    if(!validacionPeriodos())
+    {
         return false;
     }
     return true;
