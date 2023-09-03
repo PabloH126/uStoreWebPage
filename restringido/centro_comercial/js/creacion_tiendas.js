@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if(isButtonNext)
             {
-                const currentStep = parseInt(button.getAttribute('data-item'));
+                const currentStepParse = parseInt(button.getAttribute('data-item'));
 
                 // Realiza la validación correspondiente al paso actual
                 let isValid = false;
-                switch (currentStep) {
+                switch (currentStepParse) {
                     case 1:
                         isValid = nombreValidacion();
                         break;
