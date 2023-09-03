@@ -49,8 +49,14 @@ function HorariosSelect($dia, $horarios)
 function PeriodosSelect($periodo, $periodosPredeterminados)
 {
     list($cantidad, $tiempo) = explode(' ', $periodosPredeterminados['apartadoPredeterminado'], 2);
-    $idApartadoPredeterminado = $periodosPredeterminados['idApartadoPredeterminado'];
 
+    $idApartadoPredeterminado = 0;
+
+    if(isset($periodosPredeterminados['idApartadoPredeterminado']))
+    {
+        $idApartadoPredeterminado = $periodosPredeterminados['idApartadoPredeterminado'];
+    }
+    
     $selectedMinutos = ($tiempo === 'minutos') ? 'selected' : '';
     $selectedHoras = ($tiempo === 'horas') ? 'selected' : '';
     $selectedDias = ($tiempo === 'dias') ? 'selected' : '';
@@ -63,7 +69,7 @@ function PeriodosSelect($periodo, $periodosPredeterminados)
     echo '<option value="horas" ' . $selectedHoras . '>Horas</option>';
     echo '<option value="dias" ' . $selectedDias . '>Días</option>';
     echo '</select>';
-    echo '<input type="hidden" name="idApartadoPredeterminado' . $periodo . '" value="' . isset($idApartadoPredeterminado) ? $idApartadoPredeterminado : 0 . '">';
+    echo '<input type="hidden" name="idApartadoPredeterminado' . $periodo . '" value="' . $idApartadoPredeterminado . '">';
     echo '</div>';
 }
 
