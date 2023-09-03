@@ -6,61 +6,58 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.fileInputBanner');
     const nextButtons = document.querySelectorAll('.bttn-next');
+    const backButtons = document.querySelectorAll('.bttn-back');
 
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
             if (e.target !== button) return;
 
-            const currentStep = parseInt(button.getAttribute('data-item'));
+            let element = e.target; //detectar donde se hace click
+            let isButtonNext = element.classList.contains('bttn-next');
+            let isButtonBack = element.classList.contains('bttn-back');
+            let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+            let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+            currentStep.classList.remove('active');
+            jumpStep.classList.add('active');
 
-            // Realiza la validación correspondiente al paso actual
-            let isValid = false;
-            switch (currentStep) {
-                case 1:
-                    isValid = nombreValidacion();
-                    break;
-                case 2:
-                    isValid = logoValidacion();
-                    break;
-                // Agrega casos para los otros pasos del formulario
-
-                default:
-                    isValid = true; // Si no hay validación específica, se considera válido
-                    break;
-            }
-
-            // Si la validación no pasa, detén la navegación al siguiente paso
-            if (isValid == false) {
-                alert("no se pudo");
-                e.target.preventDefault();
-                return;
-            }
-            else 
+            if(isButtonNext)
             {
-                alert("pasamos a la siguiente seccion");
-                let element = e.target; //detectar donde se hace click
-                let isButtonNext = element.classList.contains('bttn-next');
-                let isButtonBack = element.classList.contains('bttn-back');
+                const currentStep = parseInt(button.getAttribute('data-item'));
 
-                if (isButtonNext || isButtonBack) {
-                    //si fue seleccionado el bttn-next o el bttn-back
-                    let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
-                    let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
-                    currentStep.classList.remove('active');
-                    jumpStep.classList.add('active');
-                    if (isButtonNext) {
-                        currentStep.classList.add('to-left');
-                        progressOptions[element.dataset.to_step - 1].classList.add('active');
-                    } else {
-                        jumpStep.classList.remove('to-left');
-                    }
+                // Realiza la validación correspondiente al paso actual
+                let isValid = false;
+                switch (currentStep) {
+                    case 1:
+                        isValid = nombreValidacion();
+                        break;
+                    case 2:
+                        isValid = logoValidacion();
+                        break;
+                    // Agrega casos para los otros pasos del formulario
+
+                    default:
+                        isValid = true; // Si no hay validación específica, se considera válido
+                        break;
+                }
+
+                // Si la validación no pasa, detén la navegación al siguiente paso
+                if (isValid == false) {
+                    alert("no se pudo");
+                    e.target.preventDefault();
+                    return;
+                }
+                else 
+                {
+                    alert("pasamos a la siguiente seccion");
+                    currentStep.classList.add('to-left');
+                    progressOptions[element.dataset.to_step - 1].classList.add('active');
                 }
             }
-
-            // Si la validación pasa, continúa a la siguiente página
-            const nextStep = parseInt(button.getAttribute('data-to_item'));
-            showStep(nextStep); // Función que muestra el siguiente paso del formulario
+            else
+            {
+                jumpStep.classList.remove('to-left');
+            }
         });
     });
     
@@ -316,7 +313,7 @@ function validacionTypeImagen(imagen)
 function logoValidacion() {
     const maxSize = 1 * 1024 * 1024;
     let logoTienda = document.getElementById("logoTienda");
-    
+
     if (!logoTienda.files.length) 
     {
         alert("Se debe subir un logo de tienda");
