@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert("Hubo un error al guardar la tienda. Estatus de la tienda " + data.statusTienda + ": " + data.messageTienda + ". Estatus de los horarios " + data.statusHorarios + ": " + data.messageHorarios + ". Estatus de las categorias " + data.statusCatT + ": " + data.messageCatT + ". Estatus de los periodos " + data.statusPeriodos + ": " + data.messagePeriodos);
                 }
                 submitButton.disabled = false;
-                submitButton.backgroundColor = "#007096";
+                submitButton.style.backgroundColor = "#007096";
                 return;
             }
 
