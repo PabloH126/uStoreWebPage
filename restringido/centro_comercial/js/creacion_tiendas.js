@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    mainForm.addEventListener('click', function(e) {
+    nextButtons.addEventListener('click', function(e) {
         let element = e.target; //detectar donde se hace click
         let isButtonNext = element.classList.contains('bttn-next');
         let isButtonBack = element.classList.contains('bttn-back');
