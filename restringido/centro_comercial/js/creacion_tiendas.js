@@ -313,8 +313,9 @@ function validacionTypeImagen(imagen)
     return true;
 }
 
-function logoValidacion(logoTienda) {
+function logoValidacion() {
     const maxSize = 1 * 1024 * 1024;
+    let logoTienda = document.getElementById("logoTienda");
     
     if (!logoTienda.files.length) 
     {
