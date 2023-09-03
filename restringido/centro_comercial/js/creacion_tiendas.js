@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let element = e.target; //detectar donde se hace click
         let isButtonNext = element.classList.contains('bttn-next');
         let isButtonBack = element.classList.contains('bttn-back');
-        let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+        let currentStep = parseInt(element.getAttribute('data-item'));
         // Realiza la validación correspondiente al paso actual
         let isValid = false;
         switch (currentStep) {
