@@ -29,28 +29,6 @@ curl_close($ch);
 
 //FUNCIONES DEL FORMULARIO
 
-function HorariosSelect($dia)
-{
-    echo '<tr>';
-    echo '<td>' . $dia . '</td>';
-    echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
-    echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
-    echo '</tr>';
-}
-
-function PeriodosSelect($periodo)
-{
-    echo '<div class="apartadosT">';
-    echo '<input type="number" name="numero' . $periodo . '" min="1" step="1">';
-    echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
-    echo '<option value="">Tiempo</option>';
-    echo '<option value="minutos">Minutos</option>';
-    echo '<option value="horas">Horas</option>';
-    echo '<option value="dias">Días</option>';
-    echo '</select>';
-    echo '</div>';
-}
-
 function CategoriasSelect($categorias)
 {
     foreach ($categorias as $categoria) {
