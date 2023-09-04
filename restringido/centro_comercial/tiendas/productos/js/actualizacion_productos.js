@@ -379,7 +379,7 @@ function validacionImagenesProducto() {
     let img3 = document.getElementById("fileInput3");
     let img4 = document.getElementById("fileInput4");
     let img5 = document.getElementById("fileInput5");
-    if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length) {
+    if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0 && img4.files.length > 0 && img5.files.length > 0) {
         alert("Se debe subir al menos una imagen del producto");
         return false;
     }
