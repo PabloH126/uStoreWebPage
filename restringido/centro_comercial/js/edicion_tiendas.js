@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (!img1.files.length && !img2.files.length && !img3.files.length) {
+        if (!img1.files.length && !img2.files.length && !img3.files.length && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0) {
             alert("Se debe subir al menos una imagen para el banner de la tienda");
             e.preventDefault();
             return;
@@ -504,7 +504,7 @@ function validacionBanner() {
     let img2 = document.getElementById("fileInput2");
     let img3 = document.getElementById("fileInput3");
     let logoTienda = document.getElementById("logoTienda");
-    if (!img1.files.length && !img2.files.length && !img3.files.length) {
+    if (!img1.files.length && !img2.files.length && !img3.files.length && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0) {
         alert("Se debe subir al menos una imagen para el banner de la tienda");
         return false;
     }
