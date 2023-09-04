@@ -152,7 +152,7 @@ $_SESSION['idProducto'] = $_GET['id'];
             </div>
         </div>
         <div class="edicionTienda">
-            <a title="Edición de tienda" href="edicion_tiendas.php?id=<?php echo $_GET['id']; ?>"><i
+            <a title="Edición de producto" href="edicion_productos.php?id=<?php echo $_GET['id']; ?>"><i
                     class='bx bx-pencil'></i></a>
         </div>
     </div>
