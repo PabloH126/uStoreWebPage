@@ -64,7 +64,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
     <div class="content">
         <h1>Edición de productos</h1>
         <div class="lista">
-            <form action="actualizar_producto.php" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="actualizar_producto.php?id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data" class="form-tiendas">
 
                 <!-- Nombre del producto-->
                 <div class="item active" id="item-1">

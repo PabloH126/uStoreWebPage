@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.file-input');
+    const idImagenes = document.querySelectorAll('.idImagenes');
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    const idProducto = params.get('id');
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -86,27 +90,37 @@ document.addEventListener('DOMContentLoaded', function () {
             hideNotification();
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {
                 showNotification("Verificando imagenes...");
-                for (let input of fileInputs) {
-                    if (input && input.files.length > 0) {
-                        await sendImage(input, "imagenesProducto.php", data.idProducto); // Pasar el idProducto
+                for (let i = 0; i < fileInputs.length; i++) {
+                    if (fileInputs[i] && fileInputs[i].files.length > 0) {
+                        let idImagen = idImagenes[i];
+                        await sendImage(fileInputs[i], "actualizarImagenesProducto.php", idProducto, idImagen); // Pasar el idProducto
                     }
                 }
                 hideNotification();
                 
-                showNotification("Producto creado");
+                showNotification("Producto actualizado");
                 setTimeout(() => {
                     hideNotification();
                     window.location.href = data.urlSalida;
                 }, 2500);
             } else {
-                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusProducto + ". Estatus de las categorias: " + data.statusCatP);
+                if(!data.statusProducto)
+                {
+                    alert("Hubo un error al guardar el producto: " + data.messageCatP);
+                }
+                else
+                {
+                    alert("Hubo un error al guardar el producto. Estatus del producto " +data.statusProducto + ": " + data.messageProducto + ". Estatus de las categorias " + data.statusCatP + ": " + data.messageCatP);
+                }
+                submitButton.disabled = false;
+                submitButton.style.backgroundColor = "#007096";
+                return;
             }
 
         } catch (error) {
             console.error('Error: ', error);
             alert("Hubo un error al realizar la solicitud de creación de producto: " + error);
-            submitButton.disabled = false;
-            submitButton.style.backgroundColor = "#007096";
+            return;
         }
     });
 });
@@ -210,11 +224,14 @@ async function sendFormWithoutImages(form, fileInputs) {
     return response.json();
 }
 
-async function sendImage(input, url, idProducto) {
+async function sendImage(input, url, idProducto, idImagen) {
+    alert('ya entro al sendImage');
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idProducto', idProducto); // Agregar el idProducto al formData
-
+    formData.append(idImagen.name, idImagen.value);
+    alert(idImagen.name + " " + idImagen.value);
+    alert(idProducto);
     const responseImagenes = await fetch(url, {
         method: 'POST',
         body: formData
@@ -227,6 +244,7 @@ async function sendImage(input, url, idProducto) {
     }
 
     const dataImagenes = await responseImagenes.json();
+    console.log(dataImagenes);
 
     if (dataImagenes.statusImagenes !== 'success') {
         alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes);
