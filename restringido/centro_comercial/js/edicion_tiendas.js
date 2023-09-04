@@ -10,6 +10,100 @@ document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams(url.search);
     const idTienda = params.get('id');
 
+    nextButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
+            const currentStep = parseInt(button.getAttribute('data-item'));
+
+            // Realiza la validación correspondiente al paso actual
+            let isValid = false;
+            switch (currentStep) {
+                case 1:
+                    isValid = nombreValidacion();
+                    break;
+                case 2:
+                    isValid = logoValidacion();
+                    break;
+                case 3:
+                    isValid = validacionCategorias();
+                    break;
+                case 4:
+                    isValid = validacionHorarios();
+                    break;
+                case 5:
+                    isValid = validacionBanner();
+                    break;
+                case 6:
+                    isValid = validacionCompletaPeriodos();
+                    break;
+                // Agrega casos para los otros pasos del formulario
+
+                default:
+                    isValid = true; // Si no hay validación específica, se considera válido
+                    break;
+            }
+
+            // Si la validación no pasa, detén la navegación al siguiente paso
+            if (isValid == false) {
+                alert("no se pudo");
+                e.target.preventDefault();
+                return;
+            }
+            else 
+            {
+                alert("pasamos a la siguiente seccion");
+                let element = e.target; //detectar donde se hace click
+                let isButtonNext = element.classList.contains('bttn-next');
+                let isButtonBack = element.classList.contains('bttn-back');
+
+                if (isButtonNext || isButtonBack) {
+                    //si fue seleccionado el bttn-next o el bttn-back
+                    let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                    let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                    currentStep.classList.remove('active');
+                    jumpStep.classList.add('active');
+                    if (isButtonNext) {
+                        currentStep.classList.add('to-left');
+                        progressOptions[element.dataset.to_step - 1].classList.add('active');
+                    } else {
+                        jumpStep.classList.remove('to-left');
+                    }
+                }
+            }
+
+            // Si la validación pasa, continúa a la siguiente página
+            const nextStep = parseInt(button.getAttribute('data-to_item'));
+            showStep(nextStep); // Función que muestra el siguiente paso del formulario
+        });
+    });
+
+    backButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
+            let element = e.target; //detectar donde se hace click
+            let isButtonNext = element.classList.contains('bttn-next');
+            let isButtonBack = element.classList.contains('bttn-back');
+
+            if (isButtonNext || isButtonBack) {
+                //si fue seleccionado el bttn-next o el bttn-back
+                let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                currentStep.classList.remove('active');
+                jumpStep.classList.add('active');
+                if (isButtonNext) {
+                    currentStep.classList.add('to-left');
+                    progressOptions[element.dataset.to_step - 1].classList.add('active');
+                } else {
+                    jumpStep.classList.remove('to-left');
+                }
+            }
+        });
+    });
+
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
             var counter = document.querySelectorAll('.optionsC input[type="checkbox"]:checked').length;
@@ -348,4 +442,60 @@ function hideNotification() {
     }
 
     currentNotification = null;
+}
+
+function validacionCategorias() {
+    let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
+    let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
+    if (!checked) 
+    {
+        alert("Se debe seleccionar al menos una categoria para la tienda");
+        return false;
+    }
+    return true;
+}
+
+function validacionHorarios() {
+    if(!horariosConfigurados())
+    {
+        alert("Se debe configurar al menos un horario");
+        return false;
+    }
+
+    else if(!validarHorariosCorrectos())
+    {
+        return false;
+    }
+    return true;
+}
+
+function validacionBanner() {
+    let img1 = document.getElementById("fileInput1");
+    let img2 = document.getElementById("fileInput2");
+    let img3 = document.getElementById("fileInput3");
+    let logoTienda = document.getElementById("logoTienda");
+    if (!img1.files.length && !img2.files.length && !img3.files.length) {
+        alert("Se debe subir al menos una imagen para el banner de la tienda");
+        return false;
+    }
+
+    if (!imagenesValidacion(logoTienda))
+    {
+        return false;
+    }
+    return true;
+}
+
+function validacionCompletaPeriodos() {
+    if(!periodosConfigurados())
+    {
+        alert("Se debe configurar al menos un periodo de apartado predeterminado");
+        return false;
+    }
+
+    if(!validacionPeriodos())
+    {
+        return false;
+    }
+    return true;
 }

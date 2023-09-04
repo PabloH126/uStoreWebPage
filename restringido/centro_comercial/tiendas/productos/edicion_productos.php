@@ -64,7 +64,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
     <div class="content">
         <h1>Edición de productos</h1>
         <div class="lista">
-            <form action="envio_producto.php" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="actualizar_producto.php" method="post" enctype="multipart/form-data" class="form-tiendas">
 
                 <!-- Nombre del producto-->
                 <div class="item active" id="item-1">
@@ -289,7 +289,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
     <script src="../../js/slider_formularios.js"></script>
     <script src="../../js/mostrarImg.js"></script>
     <script src="js/productosImg.js"></script>
-    <script src="js/creacion_productos.js"></script>
+    <script src="js/actualizacion_productos.js"></script>
 </body>
 
 </html>
