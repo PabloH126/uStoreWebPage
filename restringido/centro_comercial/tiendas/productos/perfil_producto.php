@@ -25,7 +25,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                 <div class="topI">
                     <div class="icon">
                         <img src="<?php echo $producto['imageProducto']; ?>"
-                            alt="">
+                            alt="" ts=<?php echo time(); ?>>
                     </div>
                     <div class="nameCat">
                         <div class="name">
@@ -70,7 +70,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                         foreach ($imagenesProducto as $imagen) {
                             ?>
                              <section class="slider-img">
-                                 <img src="<?php echo $imagen['imagenProducto']; ?>" alt="">
+                                 <img src="<?php echo $imagen['imagenProducto']; ?>" alt="" ts=<?php echo time(); ?>>
                              </section>
                              <?php 
                         }
