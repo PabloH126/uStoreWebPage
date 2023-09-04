@@ -15,12 +15,20 @@ if(imagenSelec4.src && imagenSelec4.src.trim() !== '')
     contentPP.style.width = '75%';
     content4.style.display = 'block';
 }
+else
+{
+    content4.style.display = 'none';
+}
 
 if(imagenSelec5.src && imagenSelec5.src.trim() !== '')
 {
     content.style.gridTemplateColumns = 'repeat(5, 1fr)';
     contentPP.style.width = '60%';
     content5.style.display = 'block';
+}
+else
+{
+    content5.style.display = 'none';
 }
 
 input1.addEventListener('input', showInput4);
