@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         content.style.gridTemplateColumns = 'repeat(4, 1fr)';
         contentPP.style.width = '75%';
         content4.style.display = 'block';
+    }
 
-        if(imagenSelec5.src && imagenSelec5.src.trim() !== '')
-        {
-            content.style.gridTemplateColumns = 'repeat(5, 1fr)';
-            contentPP.style.width = '60%';
-            content5.style.display = 'block';
-        }
+    if(imagenSelec5.src && imagenSelec5.src.trim() !== '')
+    {
+        content.style.gridTemplateColumns = 'repeat(5, 1fr)';
+        contentPP.style.width = '60%';
+        content5.style.display = 'block';
     }
 });
 
