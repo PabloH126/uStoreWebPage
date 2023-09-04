@@ -223,7 +223,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                         ?>
                                     </div>
                                 </div>
-                                <?php echo $imagenesProducto[4]['imagenProducto']; ?>
+                                <?php echo isset($imagenesProducto[4]['imagenProducto']) ? $imagenesProducto[4]['imagenProducto'] : "no hay imagen"; ?>
                                 <div class="contentP" id="content-5">
                                     <div class="box">
                                         <i class='bx bx-x delete-icon' data-input-id="fileInput5" data-img-id="imagenSelec5"></i>
