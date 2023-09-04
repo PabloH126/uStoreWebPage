@@ -358,57 +358,36 @@ function validacionTypeImagen(imagen)
     return true;
 }
 
-function logoValidacion() {
-    const maxSize = 1 * 1024 * 1024;
-    let logoTienda = document.getElementById("logoTienda");
-    if (!logoTienda.files.length) 
-    {
-        alert("Se debe subir un logo de tienda");
-        return false;
-    }
-    else if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
-    {
-        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
-        return false;
-    }
-    else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
-    {
-        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
-        return false;
-    }
-
-    return true;
-}
-
 function imagenesValidacion(logoTienda) {
     const maxSize = 1 * 1024 * 1024;
 
-    if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
-    {
-        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
-        return false;
-    }
-    else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
-    {
-        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
-        return false;
-    }
-    
-    for (let i = 1; i <= 3; i++)
-    {
-        let img = document.getElementById("fileInput" + i);
-        if(img.files.length && !validacionTypeImagen(img))
+    if (logoTienda.files.length > 0) {
+        if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
         {
-            alert(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+            alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
             return false;
         }
-        else if (img.files.length && !validacionSizeImagen(img, maxSize))
+        else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
         {
-            alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+            alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
             return false;
         }
+        
+        for (let i = 1; i <= 3; i++)
+        {
+            let img = document.getElementById("fileInput" + i);
+            if(img.files.length && !validacionTypeImagen(img))
+            {
+                alert(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+                return false;
+            }
+            else if (img.files.length && !validacionSizeImagen(img, maxSize))
+            {
+                alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+                return false;
+            }
+        }
     }
-
     return true;
 }
 
