@@ -14,6 +14,7 @@
 
     //UPDATE PRODUCTO
     $data = [
+        "idProductos" => $_GET['id'],
         "nombreProducto" => $_POST['nombreProducto'],
         "precioProducto" => $_POST['precioProducto'],
         "cantidadApartado" => $_POST['cantidadApartar'],
@@ -112,7 +113,7 @@
     function generateArrayCategorias($cat, $responseArray)
     {
         return [
-            "idProductos" => $responseArray['idProducto'],
+            "idProductos" => $_GET['id'],
             "idCategoria" => $cat
         ];
     }
