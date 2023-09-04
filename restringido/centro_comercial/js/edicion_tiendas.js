@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     const idTienda = params.get('id');
+    const nextButtons = document.querySelectorAll('.bttn-next');
+    const backButtons = document.querySelectorAll('.bttn-back');
 
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
