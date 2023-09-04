@@ -247,7 +247,7 @@ async function sendImage(input, url, idProducto, idImagen) {
     console.log(dataImagenes);
 
     if (dataImagenes.statusImagenes !== 'success') {
-        alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes);
+        alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes + ": " + dataImagenes.messageImagenes);
     } 
 }
 
