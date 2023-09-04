@@ -239,6 +239,7 @@ function nombreValidacion() {
 
     if(!nombre || !nombre.value.trim())
     {
+        alert("Se debe ingresar un nombre de la tienda");
         return false;
     }
 

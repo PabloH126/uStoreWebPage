@@ -35,7 +35,7 @@ function verificarImagen($index, $imagen, $idImagen, &$imagenes, &$idImagenes) {
     }
 }
 
-function mandarImagenApi($idTienda, $imagen, $idImagen) {
+function mandarImagenApi($idProducto, $imagen, $idImagen) {
     $data = [
         'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
     ];
