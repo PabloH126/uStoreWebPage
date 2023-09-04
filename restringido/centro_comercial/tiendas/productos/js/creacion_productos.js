@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
-        submitButton.textContent = "cargando.";
+        submitButton.style.backgroundColor = "gray";
 
         try {
             showNotification("Cargando producto...");
@@ -112,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (error) {
             console.error('Error: ', error);
             alert("Hubo un error al realizar la solicitud de creación de producto: " + error);
+            submitButton.disabled = false;
+            submitButton.style.backgroundColor = "#007096";
         }
     });
 });

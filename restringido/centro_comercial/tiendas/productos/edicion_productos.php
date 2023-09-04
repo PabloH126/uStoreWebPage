@@ -128,7 +128,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                     <p>4/6</p>
                     <div class="descripcion">
                         <label for="descripcionProducto"><strong>Descripción del producto</strong></label>
-                        <textarea id="descripcionProducto" name="descripcionProducto" value="<?php echo $producto['descripcion']; ?>"></textarea>
+                        <textarea id="descripcionProducto" name="descripcionProducto"><?php echo $producto['descripcion']; ?></textarea>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">

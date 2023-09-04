@@ -9,14 +9,13 @@ const contentPP = document.getElementById('contentPP');
 const imagenSelec4 = document.getElementById('imagenSelec4');
 const imagenSelec5 = document.getElementById('imagenSelec5');
 
-if(imagenSelec4.src)
+if(imagenSelec4.src  && imagenSelec4.src.trim() !== '')
 {
     showInput4();
-}
-
-if(imagenSelec5.src)
-{
-    showInput5();
+    if(imagenSelec5.src && imagenSelec5.src.trim() !== '')
+    {
+        showInput5();
+    }
 }
 
 input1.addEventListener('input', showInput4);
