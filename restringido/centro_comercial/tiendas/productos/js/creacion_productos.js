@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.file-input');
+    const nextButtons = document.querySelectorAll('.bttn-next');
+    const backButtons = document.querySelectorAll('.bttn-back');
+
 
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
