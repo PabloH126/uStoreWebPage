@@ -360,7 +360,7 @@ function validacionTypeImagen(imagen)
 function logoValidacion() {
     const maxSize = 1 * 1024 * 1024;
     let logoTienda = document.getElementById("logoTienda");
-    if (!logoTienda.files.length) 
+    if (!logoTienda.files.length && logoTienda.files.length > 0) 
     {
         alert("Se debe subir un logo de tienda");
         return false;
