@@ -208,7 +208,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                 <div class="contentP" id="content-4">
                                     <div class="box">
                                         <i class='bx bx-x delete-icon' data-input-id="fileInput4" data-img-id="imagenSelec4"></i>
-                                        <img src="<?php echo $imagenesProducto[3]['imagenProducto']; ?>" id="imagenSelec4" alt="">
+                                        <img src="<?php echo isset($imagenesProducto[3]['imagenProducto']) ? $imagenesProducto[3]['imagenProducto'] : ''; ?>" id="imagenSelec4" alt="">
                                     </div>
                                     <div class="ip">
                                         <label for="fileInput4">
@@ -223,11 +223,10 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                         ?>
                                     </div>
                                 </div>
-                                <?php echo isset($imagenesProducto[4]['imagenProducto']) ? $imagenesProducto[4]['imagenProducto'] : "no hay imagen"; ?>
                                 <div class="contentP" id="content-5">
                                     <div class="box">
                                         <i class='bx bx-x delete-icon' data-input-id="fileInput5" data-img-id="imagenSelec5"></i>
-                                        <img src="<?php echo $imagenesProducto[4]['imagenProducto']; ?>" id="imagenSelec5" alt="">
+                                        <img src="<?php echo isset($imagenesProducto[4]['imagenProducto']) ? $imagenesProducto[4]['imagenProducto'] : ''; ?>" id="imagenSelec5" alt="">
                                     </div>
                                     <div class="ip">
                                         <label for="fileInput5">
