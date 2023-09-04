@@ -5,8 +5,8 @@ $idImagenes = [];
 verificarImagen(0, $_FILES['imagen1'], $_POST['idImagen1'], $imagenes, $idImagenes);
 verificarImagen(1, $_FILES['imagen2'], $_POST['idImagen2'], $imagenes, $idImagenes);
 verificarImagen(2, $_FILES['imagen3'], $_POST['idImagen3'], $imagenes, $idImagenes);
-verificarImagen(4, $_FILES['imagen4'], $_POST['idImagen4'], $imagenes, $idImagenes);
-verificarImagen(5, $_FILES['imagen5'], $_POST['idImagen5'], $imagenes, $idImagenes);
+verificarImagen(3, $_FILES['imagen4'], $_POST['idImagen4'], $imagenes, $idImagenes);
+verificarImagen(4, $_FILES['imagen5'], $_POST['idImagen5'], $imagenes, $idImagenes);
 
 $idProducto = $_POST['idProducto']; // Recuperar el idProducto desde el formulario
 
@@ -42,7 +42,7 @@ function mandarImagenApi($idTienda, $imagen, $idImagen) {
 
     $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $idTienda . "&idImagenTienda=" . $idImagen);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/UpdateImagenProducto?idProducto=" . $idProducto . "&idImagenProducto=" . $idImagen);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
