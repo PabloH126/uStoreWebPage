@@ -9,6 +9,12 @@ const contentPP = document.getElementById('contentPP');
 const imagenSelec4 = document.getElementById('imagenSelec4');
 const imagenSelec5 = document.getElementById('imagenSelec5');
 
+document.addEventListener('DOMContentLoaded', function() {
+    if(imagenSelec4.src)
+    {
+        alert(imagenSelec4.src);
+    }
+});
 input1.addEventListener('input', showInput4);
 input1.addEventListener('input', showInput5);
 input2.addEventListener('input', showInput4);
