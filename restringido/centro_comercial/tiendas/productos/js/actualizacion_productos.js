@@ -225,13 +225,11 @@ async function sendFormWithoutImages(form, fileInputs) {
 }
 
 async function sendImage(input, url, idProducto, idImagen) {
-    alert('ya entro al sendImage');
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idProducto', idProducto); // Agregar el idProducto al formData
     formData.append(idImagen.name, idImagen.value);
-    alert(idImagen.name + " " + idImagen.value);
-    alert(idProducto);
+    
     const responseImagenes = await fetch(url, {
         method: 'POST',
         body: formData
