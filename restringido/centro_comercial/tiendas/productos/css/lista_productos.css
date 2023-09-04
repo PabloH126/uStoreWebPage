@@ -8,17 +8,16 @@
 }
 
 .switch-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 10px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
 .switch-input {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
