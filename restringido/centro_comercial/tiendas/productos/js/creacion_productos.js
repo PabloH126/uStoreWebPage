@@ -6,6 +6,111 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.file-input');
 
+    nextButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
+            const currentStep = parseInt(button.getAttribute('data-item'));
+
+            let isValid = false;
+            switch (currentStep) {
+                case 1:
+                    isValid = nombreValidacion();
+                    break;
+                case 2:
+                    isValid = validacionCategorias();
+                    break;
+                case 3:
+                    isValid = precioValidacion();
+                    break;
+                case 4:
+                    isValid = descripcionValidacion();
+                    break;
+                case 5:
+                    isValid = validacionImagenesProducto();
+                    break;
+                case 6:
+                    isValid = cantidadApartarValidacion();
+                    break;
+
+                default:
+                    isValid = true;
+                    break;
+            }
+
+            if (isValid == false) {
+                e.target.preventDefault();
+                return;
+            }
+            else 
+            {
+                let element = e.target;
+                let isButtonNext = element.classList.contains('bttn-next');
+                let isButtonBack = element.classList.contains('bttn-back');
+
+                if (isButtonNext || isButtonBack) {
+                    let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                    let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                    currentStep.classList.remove('active');
+                    jumpStep.classList.add('active');
+                    if (isButtonNext) {
+                        currentStep.classList.add('to-left');
+                        progressOptions[element.dataset.to_step - 1].classList.add('active');
+                    } else {
+                        jumpStep.classList.remove('to-left');
+                    }
+                }
+            }
+
+            const nextStep = parseInt(button.getAttribute('data-to_item'));
+            showStep(nextStep);
+        });
+    });
+
+    backButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
+            let element = e.target; 
+            let isButtonNext = element.classList.contains('bttn-next');
+            let isButtonBack = element.classList.contains('bttn-back');
+
+            if (isButtonNext || isButtonBack) {
+                let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                currentStep.classList.remove('active');
+                jumpStep.classList.add('active');
+                if (isButtonNext) {
+                    currentStep.classList.add('to-left');
+                    progressOptions[element.dataset.to_step - 1].classList.add('active');
+                } else {
+                    jumpStep.classList.remove('to-left');
+                }
+            }
+        });
+    });
+    
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            var counter = document.querySelectorAll('.optionsC input[type="checkbox"]:checked').length;
+
+            if (counter >= maxSelect) {
+                checkboxes.forEach(function (c) {
+                    if (!c.checked) {
+                        c.disabled = true;
+                    }
+                });
+            }
+            else {
+                checkboxes.forEach(function (c) {
+                    c.disabled = false;
+                });
+            }
+        });
+    });
+
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
             var counter = document.querySelectorAll('.optionsC input[type="checkbox"]:checked').length;
@@ -123,6 +228,7 @@ function nombreValidacion() {
 
     if(!nombre || !nombre.value.trim())
     {
+        alert("Se debe ingresar un nombre de producto");
         return false;
     }
 
@@ -134,6 +240,7 @@ function precioValidacion() {
 
     if(precio.value.trim() === "" || precio.value < 0 || isNaN(Number(precio.value)))
     {
+        alert("Se debe ingresar un precio del producto");
         return false;
     }
 
@@ -145,6 +252,7 @@ function descripcionValidacion() {
 
     if(!descripcion || !descripcion.value.trim())
     {
+        alert("Se debe ingresar una descripcion del producto");
         return false;
     }
 
@@ -196,6 +304,7 @@ function cantidadApartarValidacion() {
 
     if(apartado.value.trim() === "" || apartado.value < 0 || isNaN(Number(apartado.value)))
     {
+        alert("Se debe ingresar una cantidad válida de unidades del producto para apartado");
         return false;
     }
 
@@ -259,4 +368,34 @@ function hideNotification() {
     }
 
     currentNotification = null;
+}
+
+function validacionCategorias() {
+    let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
+    let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
+    if (!checked) 
+    {
+        alert("Se debe seleccionar al menos una categoria para el producto");
+        return false;
+    }
+    return true;
+}
+
+
+function validacionImagenesProducto() {
+    let img1 = document.getElementById("fileInput1");
+    let img2 = document.getElementById("fileInput2");
+    let img3 = document.getElementById("fileInput3");
+    let img4 = document.getElementById("fileInput4");
+    let img5 = document.getElementById("fileInput5");
+    if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length) {
+        alert("Se debe subir al menos una imagen del producto");
+        return false;
+    }
+
+    if (!imagenesValidacion())
+    {
+        return false;
+    }
+    return true;
 }
