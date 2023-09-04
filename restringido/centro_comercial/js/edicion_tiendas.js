@@ -142,6 +142,13 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        if (!logoTienda.files.length) 
+        {
+            alert("Se debe subir un logo de tienda");
+            e.preventDefault();
+            return;
+        }
+
         if (!checked) 
         {
             alert("Se debe seleccionar al menos una categoria para la tienda");
@@ -345,6 +352,28 @@ function validacionTypeImagen(imagen)
 {
     var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
     if (allowedTypes.indexOf(imagen.files[0].type) === -1) {
+        return false;
+    }
+
+    return true;
+}
+
+function logoValidacion() {
+    const maxSize = 1 * 1024 * 1024;
+    let logoTienda = document.getElementById("logoTienda");
+    if (!logoTienda.files.length) 
+    {
+        alert("Se debe subir un logo de tienda");
+        return false;
+    }
+    else if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
+    {
+        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        return false;
+    }
+    else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
+    {
+        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
         return false;
     }
 
