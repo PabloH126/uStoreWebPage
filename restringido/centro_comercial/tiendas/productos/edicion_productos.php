@@ -223,12 +223,11 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                         ?>
                                     </div>
                                 </div>
-
+                                <?php echo $imagenesProducto[4]['imagenProducto']; ?>
                                 <div class="contentP" id="content-5">
                                     <div class="box">
                                         <i class='bx bx-x delete-icon' data-input-id="fileInput5" data-img-id="imagenSelec5"></i>
                                         <img src="<?php echo $imagenesProducto[4]['imagenProducto']; ?>" id="imagenSelec5" alt="">
-                                        <?php echo $imagenesProducto[4]['imagenProducto']; ?>
                                     </div>
                                     <div class="ip">
                                         <label for="fileInput5">
