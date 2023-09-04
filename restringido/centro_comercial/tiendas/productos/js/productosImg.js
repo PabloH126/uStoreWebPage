@@ -15,31 +15,30 @@ document.addEventListener('DOMContentLoaded', function() {
         content.style.gridTemplateColumns = 'repeat(4, 1fr)';
         contentPP.style.width = '75%';
         content4.style.display = 'block';
+
+        if(imagenSelec5.src && imagenSelec5.src !== window.location.href)
+        {
+            content.style.gridTemplateColumns = 'repeat(5, 1fr)';
+            contentPP.style.width = '60%';
+            content5.style.display = 'block';
+        }
+        else
+        {
+            content5.style.display = 'none';
+        }
     }
     else
     {
         content4.style.display = 'none';
-    }
-
-    if(imagenSelec5.src && imagenSelec5.src !== window.location.href)
-    {
-        content.style.gridTemplateColumns = 'repeat(5, 1fr)';
-        contentPP.style.width = '60%';
-        content5.style.display = 'block';
-    }
-    else
-    {
-        content5.style.display = 'none';
+        input1.addEventListener('input', showInput4);
+        input1.addEventListener('input', showInput5);
+        input2.addEventListener('input', showInput4);
+        input2.addEventListener('input', showInput5);
+        input3.addEventListener('input', showInput4);
+        input3.addEventListener('input', showInput5);
+        input4.addEventListener('input', showInput5);
     }
 });
-
-input1.addEventListener('input', showInput4);
-input1.addEventListener('input', showInput5);
-input2.addEventListener('input', showInput4);
-input2.addEventListener('input', showInput5);
-input3.addEventListener('input', showInput4);
-input3.addEventListener('input', showInput5);
-input4.addEventListener('input', showInput5);
 
 function showInput4() {
     if (input1.value.trim() && input2.value.trim() && input3.value.trim()) {
