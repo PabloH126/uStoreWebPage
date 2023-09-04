@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (!logoTienda.files.length) 
+        if (!logoTienda.files.length && logoTienda.files.length > 0) 
         {
             alert("Se debe subir un logo de tienda");
             e.preventDefault();
