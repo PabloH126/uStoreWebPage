@@ -51,7 +51,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
 
 <head>
     <meta charset="utf-8">
-    <title>Crear producto</title>
+    <title>Edición <?php echo $producto['nombreProducto']; ?></title>
     <?php require("../../templates/template.styles.php") ?>
     <?php require("../templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="../css/creacion_tiendas.css">
@@ -62,7 +62,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
 <body>
     <?php require("../../templates/template.menu.php") ?>
     <div class="content">
-        <h1>Creación de productos</h1>
+        <h1>Edición de productos</h1>
         <div class="lista">
             <form action="envio_producto.php" method="post" enctype="multipart/form-data" class="form-tiendas">
 
