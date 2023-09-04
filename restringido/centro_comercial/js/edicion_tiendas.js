@@ -253,7 +253,7 @@ function horariosConfigurados() {
         let apertura  = document.querySelector(`input[name="${dia}_apertura"]`).value;
         let cierre  = document.querySelector(`input[name="${dia}_cierre"]`).value;
 
-        if(apertura || cierre)
+        if((apertura || cierre) && (apertura !== "00:00" || cierre !== "00:00"))
         {
             return true;
         }
