@@ -73,14 +73,18 @@ i.bx.bx-store-alt {
 
 @media only screen and (max-width: 1502px) {
 
+    i.bx.bx-store-alt {
+        font-size: 2.5rem;
+        left: 7%;
+    }
     .content .title h1 {
-        font-size: 4.8rem;
+        font-size: 4.3rem;
         margin: 25px 35px 7px;
     }
 
     .content .title .bttn_cambio_seccion {
         font-size: 1rem;
-        right: 2%;
+        right: 2.35%;
         padding: 1%;
     }
 
