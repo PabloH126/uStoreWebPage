@@ -55,6 +55,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
     <?php require("../../templates/template.styles.php") ?>
     <?php require("../templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="../css/creacion_tiendas.css">
+    <link rel="stylesheet" href="../css/edicion_tiendas.css">
     <link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
     <link rel="stylesheet" href="css/creacion_productos.css">
 </head>
@@ -120,6 +121,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                         <input type="number" id="precioProducto" name="precioProducto" min="1" step="0.01" value="<?php echo $producto['precioProducto']; ?>">
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i
                                     class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
@@ -139,6 +143,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                         <textarea id="descripcionProducto" name="descripcionProducto"><?php echo $producto['descripcion']; ?></textarea>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i
                                     class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
@@ -258,6 +265,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                         Cada imagen no debe superar 1Mb. </span>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i
                                     class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
@@ -282,6 +292,9 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                         <span>En caso de que el producto no esté disponible para apartado, ingrese "0".</span>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back" id="ult">
                             <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i
                                     class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
