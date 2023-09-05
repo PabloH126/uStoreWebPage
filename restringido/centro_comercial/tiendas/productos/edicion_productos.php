@@ -73,9 +73,14 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                         <label for="nombreProducto"><strong>Nombre del producto</strong></label>
                         <input type="text" id="nombreProducto" name="nombreProducto" value="<?php echo $producto['nombreProducto']; ?>">
                     </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i
-                                class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    <div>
+                        <div class="bttn" id="delete-store">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
+                        <div class="bttn" id="one">
+                            <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                        </div>
                     </div>
                 </div>
 
@@ -290,6 +295,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
     <script src="../../js/mostrarImg.js"></script>
     <script src="js/productosImg.js"></script>
     <script src="js/actualizacion_productos.js"></script>
+    <script src="../../js/confirmacion_eliminacion.js"></script>
 </body>
 
 </html>
