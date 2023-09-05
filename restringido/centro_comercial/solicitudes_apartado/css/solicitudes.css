@@ -79,7 +79,7 @@ i.bx.bx-store-alt {
     }
     .content .title h1 {
         font-size: 4.3rem;
-        margin: 25px 35px 7px;
+        margin: 25px 35px;
     }
 
     .content .title .bttn_cambio_seccion {
@@ -93,5 +93,7 @@ i.bx.bx-store-alt {
         font-size: 1.2rem;
     }
 
-
+    .content .lista .item {
+    margin: 0 32px 32px;
+    }
 }
