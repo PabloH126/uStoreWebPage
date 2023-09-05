@@ -16,7 +16,25 @@ i.bx.bx-store-alt:hover:before{
 }
 
 i.bx.bx-store-alt:hover{
+    position: absolute;
+    width: 319px;
+    z-index: 1;
+    top: 15%;
+    left: 68.8%;
+    
+    
+    height: auto;
 
+    -webkit-display: flex;
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 4px 5px 10px 2px #dfdfdf;
+    padding: 10px;
+    align-items: center;
 }
 
 .content .title .bttn_cambio_seccion {
