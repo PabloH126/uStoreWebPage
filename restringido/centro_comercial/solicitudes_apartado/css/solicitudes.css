@@ -15,6 +15,12 @@ i.bx.bx-store-alt:hover:before{
     content: "\eebd";
 }
 
+i.bx.bx-store-alt:hover .sub-menu{
+    -webkit-display: flex;
+    display: flex;
+    flex-direction: column;
+}
+
 .sub-menu{
     position: absolute;
     width: 9%;
@@ -22,12 +28,10 @@ i.bx.bx-store-alt:hover:before{
     top: 18%;
     left: 10.2%;
     
-    
     height: auto;
+    -webkit-display: none;
+    display: none;
 
-    -webkit-display: flex;
-    display: flex;
-    flex-direction: column;
 
     background-color: white;
     border-radius: 20px;
