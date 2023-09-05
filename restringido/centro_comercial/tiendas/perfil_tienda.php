@@ -159,7 +159,7 @@ $_SESSION['idTienda'] = $_GET['id'];
                                 ?>
                                             <span>
                                                 <strong><?php echo $horario['dia']; ?></strong>
-                                                <p style="color: green"><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></p>
+                                                <p><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></p>
                                             </span>
                                 <?php
                                     }
