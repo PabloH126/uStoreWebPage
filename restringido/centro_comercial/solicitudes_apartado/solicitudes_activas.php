@@ -33,6 +33,7 @@
 	<title>Solicitudes de apartado</title>
     <?php require("../templates/template.styles.php")?>
 	<?php require("templates/template.secc_apartados.php")?>
+	<link rel="stylesheet" href="css/solicitudes_activas.css">
 </head>
 <body>
     <?php require("../templates/template.menu.php")?>
