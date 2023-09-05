@@ -11,7 +11,7 @@ i.bx.bx-store-alt {
     color: #007096;
 }
 
-i.bx.bx-store-alt:hover{
+i.bx.bx-store-alt:hover:before{
     content: "\eebd";
 }
 
