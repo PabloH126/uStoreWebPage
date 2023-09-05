@@ -46,10 +46,11 @@ i.bx.bx-store-alt:hover:before{
 .content .title .menu-option{
     width: 100%;
     padding: 2px;
+    user-select: none;
 }
 
 .content .title .menu-option:hover{
-    background-color: #007096;
+    background-color: #5f0096;
 }
 
 .content .title .menu-option:hover a{
