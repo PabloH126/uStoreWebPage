@@ -39,7 +39,7 @@
 
 	<div class="content">
 		<div class="title">
-			<i class='bx bx-store-alt' id="menu-icon" data-my-content="\eebd" data-toggle="menu"></i>
+			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{

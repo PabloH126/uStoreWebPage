@@ -16,7 +16,11 @@ i.bx.bx-store-alt {
     color: #007096;
 }
 
-i.bx.bx-store-alt:hover:before{
+#menu-icon:hover:before{
+    content: "\eebd";
+}
+
+#menu-icon.active:before{
     content: "\eebd";
 }
 
@@ -50,7 +54,7 @@ i.bx.bx-store-alt:hover:before{
 }
 
 .content .title .menu-option:hover{
-    background-color: rgb(150, 55, 0);
+    background-color: pink;
 }
 
 .content .title .menu-option:hover a{
