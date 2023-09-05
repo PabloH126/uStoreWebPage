@@ -18,10 +18,12 @@ i.bx.bx-store-alt {
 
 #menu-icon:hover:before{
     content: "\eebd";
+    cursor: pointer;
 }
 
 #menu-icon.active:before{
     content: "\eebd";
+    cursor: pointer;
 }
 
 #sub-menu.active{
