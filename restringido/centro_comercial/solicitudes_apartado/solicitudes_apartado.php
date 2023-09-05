@@ -41,7 +41,7 @@
 
 	<div class="content">
 		<div class="title">
-			<i class='bx bx-store-alt'></i>
+			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			<div id="sub-menu">
 				<span>tienda 1</span>
 				<span>tienda 2</span>
@@ -79,5 +79,6 @@
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
 		</div>
 	</div>
+	<script src="js/menu_desplegable.js"></script>
 </body>
 </html>
