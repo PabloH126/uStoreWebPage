@@ -15,14 +15,14 @@ i.bx.bx-store-alt:hover:before{
     content: "\eebd";
 }
 
-i.bx.bx-store-alt:hover:before + .sub-menu{
+i.bx.bx-store-alt:hover:before + #sub-menu{
     -webkit-display: flex;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.sub-menu{
+#sub-menu{
     position: absolute;
     width: 9%;
     z-index: 1;

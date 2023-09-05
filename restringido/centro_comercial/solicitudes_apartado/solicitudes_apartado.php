@@ -42,7 +42,7 @@
 	<div class="content">
 		<div class="title">
 			<i class='bx bx-store-alt'></i>
-			<div class="sub-menu">
+			<div id="sub-menu">
 				<span>tienda 1</span>
 				<span>tienda 2</span>
 				<span>tienda 3</span>
