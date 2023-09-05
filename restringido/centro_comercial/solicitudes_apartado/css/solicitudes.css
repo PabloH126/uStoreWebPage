@@ -49,7 +49,11 @@ i.bx.bx-store-alt:hover:before{
 }
 
 .content .title .menu-option:hover{
-    background-color: #f0f0f0;
+    background-color: #007096;
+}
+
+.content .title .menu-option:hover a{
+    color: white;
 }
 
 .content .title .bttn_cambio_seccion {
