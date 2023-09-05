@@ -46,6 +46,7 @@
 		</div>
 
 		<div>
+			<i class='bx bx-store-alt'></i>
 			<div class="lista">
 				<div class="item" id="encabezado">
 					<p>Imagen del producto</p>
