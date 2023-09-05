@@ -4,6 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     menuIcon.addEventListener('click', function (e) {
         menuDesp.classList.toggle("active");
-        menuIcon.style.setProperty("content", "\u{eebd}");
+        menuIcon.style.setProperty("content", "attr(data-my-content)");
     });
 })
