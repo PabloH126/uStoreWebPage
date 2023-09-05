@@ -43,6 +43,10 @@ i.bx.bx-store-alt:hover:before{
     padding: 10px;
 }
 
+.content .title #submenu .menu-option{
+    width: 100%;
+}
+
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
     position: fixed;
