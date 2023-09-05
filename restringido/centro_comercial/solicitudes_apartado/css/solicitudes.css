@@ -11,6 +11,10 @@ i.bx.bx-store-alt {
     color: #007096;
 }
 
+i.bx.bx-store-alt:hover{
+
+}
+
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
     position: fixed;
@@ -94,6 +98,6 @@ i.bx.bx-store-alt {
     }
 
     .content .lista .item {
-    margin: 0 32px 32px;
+        margin: 0 32px 32px;
     }
 }

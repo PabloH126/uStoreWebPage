@@ -42,6 +42,7 @@
 	<div class="content">
 		<div class="title">
 			<i class='bx bx-store-alt'></i>
+			<i class='bx bxs-store-alt' ></i>
 			<h1>Solicitudes de apartado</h1>
 			<a href="solicitudes_activas.php" class="bttn_cambio_seccion">Ver solicitudes activas</a>
 		</div>
