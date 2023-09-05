@@ -5,16 +5,16 @@
 }
 
 i.bx.bx-store-alt {
-    display: flex;
     font-size: 2.5rem;
-    margin: 0 64px;
+    position: fixed;
+    left: 8.1%;
     color: #007096;
 }
 
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
     position: fixed;
-    right: 7%;
+    right: 4%;
     background-color: white;
     border-radius: 13px;
     padding: 1% 2%;
