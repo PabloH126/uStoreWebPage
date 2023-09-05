@@ -1,12 +1,10 @@
 <?php 
-/*	session_start();
-	require '../security.php';
-
-	$_SESSION['idMall'] = $_GET['id'];
+	session_start();
+	require '../../security.php';
 
 	$ch = curl_init();
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_GET['id']);
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -26,7 +24,7 @@
 	}
 	$tiendas = json_decode($response, true);
 	curl_close($ch);
-	*/
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,9 +41,11 @@
 		<div class="title">
 			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			<div id="sub-menu">
-				<span>tienda 1</span>
-				<span>tienda 2</span>
-				<span>tienda 3</span>
+				<?php foreach ($tiendas as $tienda)
+				{
+					echo '<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
+				};
+				?>
 			</div>
 			<h1>Solicitudes de apartado</h1>
 			<a href="solicitudes_activas.php" class="bttn_cambio_seccion">Ver solicitudes activas</a>
