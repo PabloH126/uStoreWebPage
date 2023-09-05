@@ -4,6 +4,13 @@
     justify-content: center;
 }
 
+i.bx.bx-store-alt {
+    display: flex;
+    font-size: 2.5rem;
+    margin: 0 64px;
+    color: #007096;
+}
+
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
     position: fixed;
