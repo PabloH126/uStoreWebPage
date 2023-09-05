@@ -43,7 +43,7 @@
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{
-					echo '<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
+					echo '<a style="text-align: left" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
 				};
 				?>
 			</div>
