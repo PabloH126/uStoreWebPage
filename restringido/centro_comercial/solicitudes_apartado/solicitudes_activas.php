@@ -62,11 +62,10 @@
 					<p>Imagen del producto</p>
 					<p>Nombre del producto</p>
 					<p>Precio del producto</p>
-					<p>Tiempo de apartado</p>
-					<p>Ratio de usuario*</p>
 					<p>Unidades</p>
-					<p>Aceptar</p>
-					<p>Denegar</p>
+					<p>Tiempo de vencimiento</p>
+					<p>Recogió</p>
+					<p>Borrar</p>
 				</div>
 
 				<div class="item">
@@ -74,14 +73,12 @@
 					<p><label>Personalizado</label>
 						Oaaaaaaaaaaaaaaaaaaaaaaa</p>
 					<p>$1000.00</p>
-					<p>2 dias</p>
-					<p>200/300</p>
-					<p>2</p>
+					<p>1</p>
+					<p>1 dia</p>
 					<p><i style="color: green;" class='bx bxs-check-circle'></i></p>
 					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
 			</div>
-			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
 		</div>
 	</div>
 	<script src="js/menu_desplegable.js"></script>
