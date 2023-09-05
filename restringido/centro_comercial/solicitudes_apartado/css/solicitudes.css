@@ -29,7 +29,7 @@ i.bx.bx-store-alt:hover:before{
 
 #sub-menu{
     position: absolute;
-    width: 9%;
+    width: auto;
     z-index: 1;
     top: 18%;
     left: 10.6%;
@@ -40,11 +40,16 @@ i.bx.bx-store-alt:hover:before{
     border-radius: 20px;
     text-align: center;
     box-shadow: 4px 5px 10px 2px #dfdfdf;
-    padding: 10px;
+    padding: 10px 15px;
 }
 
-.content .title #submenu .menu-option{
+.content .title .menu-option{
     width: 100%;
+    padding: 2px;
+}
+
+.content .title .menu-option:hover{
+    background-color: #f0f0f0;
 }
 
 .content .title .bttn_cambio_seccion {
