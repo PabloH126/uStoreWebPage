@@ -45,17 +45,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     if(data.status === 'success')
                     {
                         closeModal();
-                        const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" + data.idMall;
-                        showNotification("Tienda eliminada exitosamente", url);
+                        const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/productos/lista_productos.php?id=" + data.idTienda;
+                        showNotification("Producto eliminado exitosamente", url);
                     }
                     else
                     {
-                        alert("Hubo un error al eliminar la tienda" + data.message);
+                        alert("Hubo un error al eliminar el producto: " + data.message);
                     }
                 })
                 .catch(error => {
                     console.error('Error: ', error);
-                    alert("Hubo un error al eliminar la tienda");
+                    alert("Hubo un error al eliminar el producto");
                 })
             });
 
@@ -82,5 +82,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 window.location.href = url;
             }
         }, 2500);
+    }
+
+    function showNotification(message) {
+        if (currentNotification) {
+            currentNotification.remove();
+        }
+    
+        const notification = document.createElement("div");
+        notification.classList.add("notification");
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        currentNotification = notification;
+    }
+    
+    function hideNotification() {
+        if (currentNotification) {
+            currentNotification.remove();
+        }
+    
+        currentNotification = null;
     }
 });
