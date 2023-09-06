@@ -42,7 +42,7 @@
 		<div class="space-publication">
             <div class="header-publication">
                 <img src="" alt="">
-                
+                <label class="name"></label>
             </div>
             <div class="body-publication">
                 <p></p>
