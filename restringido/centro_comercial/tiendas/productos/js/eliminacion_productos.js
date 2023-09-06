@@ -48,7 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     {
                         closeModal();
                         const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/productos/lista_productos.php?id=" + data.idTienda;
+                        hideNotification();
                         showNotification("Producto eliminado exitosamente");
+                        setTimeout(() => {
+                            hideNotification();
+                            window.location.href = url;
+                        }, 2500);
                     }
                     else
                     {
