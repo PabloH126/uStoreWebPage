@@ -2,11 +2,12 @@
     text-align: left;
 }
 
+.content .content-ofertas{
+    width: 97%;
+}
+
 .content .space-publication{
     border: 2px solid grey;
-    width: 97%;
-    margin: auto;
-    padding: 19px 0;
 }
 
 hr {
