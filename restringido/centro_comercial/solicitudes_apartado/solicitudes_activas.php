@@ -74,7 +74,7 @@
 						Oaaaaaaaaaaaaaaaaaaaaaaa</p>
 					<p>$1000.00</p>
 					<p>1</p>
-					<p>1 dia</p>
+					<p>Vencido</p>
 					<p><i style="color: green;" class='bx bxs-check-circle'></i></p>
 					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
