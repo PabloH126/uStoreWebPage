@@ -1,3 +1,4 @@
+let currentNotification;
 document.addEventListener("DOMContentLoaded", function() {
     const deleteStoreButtons = document.querySelectorAll(".delete-store-btn");
 
@@ -33,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
             acceptButton.addEventListener("click", function() {
                 acceptButton.disabled = true;
                 cancelButton.disabled = true;
+                acceptButton.style.backgroundColor = "gray";
+
+                showNotification('Eliminando tienda...');
                 fetch('../tiendas/eliminarTienda.php', {
                     method: 'POST',
                     headers: {
@@ -45,7 +49,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     {
                         closeModal();
                         const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" + data.idMall;
-                        showNotification("Tienda eliminada exitosamente", url);
+                        hideNotification();
+                        showNotification("Tienda eliminada exitosamente");
+                        setTimeout(() => {
+                            hideNotification();
+                            window.location.href = url;
+                        }, 2500);
                     }
                     else
                     {
@@ -70,16 +79,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    function showNotification(message, url) {
+    function showNotification(message) {
+        if (currentNotification) {
+            currentNotification.remove();
+        }
+    
         const notification = document.createElement("div");
         notification.classList.add("notification");
         notification.textContent = message;
         document.body.appendChild(notification);
-        setTimeout(() => {
-            notification.remove();
-            if (url) {
-                window.location.href = url;
-            }
-        }, 2500);
+        
+        currentNotification = notification;
+    }
+    
+    function hideNotification() {
+        if (currentNotification) {
+            currentNotification.remove();
+        }
+    
+        currentNotification = null;
     }
 });

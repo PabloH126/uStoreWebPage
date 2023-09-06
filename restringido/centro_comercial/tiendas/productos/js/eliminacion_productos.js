@@ -1,3 +1,4 @@
+let currentNotification;
 document.addEventListener("DOMContentLoaded", function() {
     const deleteStoreButtons = document.querySelectorAll(".delete-store-btn");
 
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             acceptButton.addEventListener("click", function() {
                 acceptButton.disabled = true;
                 cancelButton.disabled = true;
-                submitButton.style.backgroundColor = "gray";
+                acceptButton.style.backgroundColor = "gray";
 
                 showNotification('Eliminando producto...');
                 fetch('../eliminar_producto.php', {
