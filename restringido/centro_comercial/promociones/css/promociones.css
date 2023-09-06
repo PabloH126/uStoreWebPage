@@ -1,0 +1,11 @@
+.space-publication{
+    border: 2px solid grey;
+}
+
+.space-publication .header-publication{
+    border: 2px solid rgb(109, 6, 6);
+}
+
+.space-publication .body-publication{
+    border: 2px solid rgb(109, 6, 6);
+}
