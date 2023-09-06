@@ -15,7 +15,7 @@
 				<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/solicitudes_select.png"></a>
 			</div>
 			<div class="bottn" id="ofertas" title="Publicación de promociones">
-				<a href="../promociones/promociones.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/ofertas_select.png"></a>
+				<a href="promociones/promociones.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/ofertas_select.png"></a>
 			</div>
 			<div class="bottn" id="tendencias" title="Tendencias de venta">
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tendencias_select.png"></a>
