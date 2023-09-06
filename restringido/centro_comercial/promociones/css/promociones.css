@@ -9,6 +9,11 @@
     padding: 19px 0;
 }
 
+hr {
+    border: 0;
+    border-bottom: 1px solid #6666663d;
+}
+
 .content .space-publication img{
     width: 90px;
 }
