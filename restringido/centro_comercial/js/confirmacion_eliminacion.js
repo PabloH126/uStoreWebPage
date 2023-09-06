@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             modal.innerHTML = `
                 <div class="modal-content">
-                    <p>¿Estás seguro de que deseas eliminar esta tienda?</p>
+                    <p>¿Estás seguro de que deseas eliminar esta tienda? También se eliminarán todos los productos asociados a ella.</p>
                     <div class="modal-buttons">
                         <button class="modal-accept">Aceptar</button>
                         <button class="modal-cancel">Cancelar</button>
