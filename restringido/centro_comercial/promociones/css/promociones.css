@@ -4,10 +4,12 @@
 
 .content .content-ofertas{
     width: 97%;
+    margin: 20px auto;
 }
 
 .content .space-publication{
     border: 2px solid grey;
+    margin-bottom: 14px;
 }
 
 hr {

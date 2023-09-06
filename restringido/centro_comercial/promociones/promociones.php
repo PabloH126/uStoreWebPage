@@ -42,6 +42,7 @@ require '../../security.php';
 
 	<div class="content">
         <div class="content-ofertas">
+            
             <div class="space-publication">
                 <div class="header-publication">
                     <img src="https://i.blogs.es/c2d211/minato/840_560.jpeg" alt="mi poderosisimo minato">
