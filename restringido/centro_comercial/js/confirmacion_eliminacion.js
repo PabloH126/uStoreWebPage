@@ -1,4 +1,3 @@
-let currentNotification;
 document.addEventListener("DOMContentLoaded", function() {
     const deleteStoreButtons = document.querySelectorAll(".delete-store-btn");
 
