@@ -1,7 +1,7 @@
  <?php 
 	session_start();
 	require '../../../security.php';
-	var_dump($_SESSION);;
+	var_dump($_SESSION);
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/GetProductos?idTienda=" . $_GET['id']);
