@@ -52,7 +52,7 @@ require '../../security.php';
 					alt="otro poderosisimo minato como no">
 			</div>
 		</div>
-        
+        <hr>
 		<div class="space-publication">
 			<div class="header-publication">
 				<img src="https://i.blogs.es/c2d211/minato/840_560.jpeg" alt="mi poderosisimo minato">

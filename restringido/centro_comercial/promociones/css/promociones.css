@@ -5,7 +5,8 @@
 .content .space-publication{
     border: 2px solid grey;
     width: 97%;
-    margin: 19px auto;
+    margin: auto;
+    padding: 19px 0;
 }
 
 .content .space-publication img{
