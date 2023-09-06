@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if(data.status === 'success')
                     {
                         closeModal();
-                        const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/productos/lista_productos.php?id=" + data.idTienda;
+                        const url = "lista_productos.php?id=" + data.idTienda;
                         hideNotification();
                         showNotification("Producto eliminado exitosamente");
                         setTimeout(() => {
