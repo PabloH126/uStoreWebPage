@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 acceptButton.style.backgroundColor = "gray";
 
                 showNotification('Eliminando producto...');
-                fetch('../eliminar_producto.php', {
+                fetch('eliminar_producto.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
