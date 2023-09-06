@@ -2,7 +2,7 @@
 session_start();
 require '../../../security.php';
 require 'datosProducto.php';
-
+var_dump($_SESSION);
 $_SESSION['idProducto'] = $_GET['id'];
 ?>
 <!DOCTYPE html>
