@@ -1,6 +1,6 @@
-<?php 
-	session_start();
-	require '../../security.php';
+<?php
+session_start();
+require '../../security.php';
 /*
 	$ch = curl_init();
 
@@ -28,28 +28,44 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 	<title>Solicitudes de apartado</title>
-    <?php require("../templates/template.styles.php")?>
-	<?php require("templates/template.secc_promociones.php")?>
-    <link rel="stylesheet" href="css/promociones.css">
+	<?php require("../templates/template.styles.php") ?>
+	<?php require("templates/template.secc_promociones.php") ?>
+	<link rel="stylesheet" href="css/promociones.css">
 </head>
+
 <body>
-    <?php require("../templates/template.menu.php")?>
+	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
 		<div class="space-publication">
-            <div class="header-publication">
-                <img src="https://i.blogs.es/c2d211/minato/840_560.jpeg" alt="mi poderosisimo minato">
-                <label class="name">mi poderosisimo minato como no</label>
-            </div>
-            <div class="body-publication">
-                <p>mi poderosisimo minato ❤ </p>
-                <img src="https://tierragamer.com/wp-content/uploads/2023/07/MinatoRasenganTierraGamer.png" alt="otro poderosisimo minato como no">
-            </div>
-        </div>
+			<div class="header-publication">
+				<img src="https://i.blogs.es/c2d211/minato/840_560.jpeg" alt="mi poderosisimo minato">
+				<label class="name">mi poderosisimo minato como no</label>
+			</div>
+			<div class="body-publication">
+				<p>mi poderosisimo minato ❤ </p>
+				<img src="https://tierragamer.com/wp-content/uploads/2023/07/MinatoRasenganTierraGamer.png"
+					alt="otro poderosisimo minato como no">
+			</div>
+		</div>
+        
+		<div class="space-publication">
+			<div class="header-publication">
+				<img src="https://i.blogs.es/c2d211/minato/840_560.jpeg" alt="mi poderosisimo minato">
+				<label class="name">mi poderosisimo minato como no</label>
+			</div>
+			<div class="body-publication">
+				<p>mi poderosisimo minato ❤ </p>
+				<img src="https://tierragamer.com/wp-content/uploads/2023/07/MinatoRasenganTierraGamer.png"
+					alt="otro poderosisimo minato como no">
+			</div>
+		</div>
 	</div>
-	
+
 </body>
+
 </html>

@@ -2,8 +2,14 @@
     text-align: left;
 }
 
-.space-publication{
+.content .space-publication{
     border: 2px solid grey;
+    width: 97%;
+    margin: 19px auto;
+}
+
+.content .space-publication img{
+    width: 90px;
 }
 
 .space-publication .header-publication{
