@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 acceptButton.disabled = true;
                 cancelButton.disabled = true;
                 submitButton.style.backgroundColor = "gray";
+
+                showNotification('Eliminando producto...');
                 fetch('../eliminar_producto.php', {
                     method: 'POST',
                     headers: {
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     {
                         closeModal();
                         const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/productos/lista_productos.php?id=" + data.idTienda;
-                        showNotification("Producto eliminado exitosamente", url);
+                        showNotification("Producto eliminado exitosamente");
                     }
                     else
                     {
@@ -70,19 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
-
-    function showNotification(message, url) {
-        const notification = document.createElement("div");
-        notification.classList.add("notification");
-        notification.textContent = message;
-        document.body.appendChild(notification);
-        setTimeout(() => {
-            notification.remove();
-            if (url) {
-                window.location.href = url;
-            }
-        }, 2500);
-    }
 
     function showNotification(message) {
         if (currentNotification) {
