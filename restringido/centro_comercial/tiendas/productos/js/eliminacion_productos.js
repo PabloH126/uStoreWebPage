@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             modal.innerHTML = `
                 <div class="modal-content">
-                    <p>¿Estás seguro de que deseas eliminar esta tienda?</p>
-                    <p>También se eliminarán todos los productos asociados a ella.</p>
+                    <p>¿Estás seguro de que deseas eliminar este producto?</p>
                     <div class="modal-buttons">
                         <button class="modal-accept">Aceptar</button>
                         <button class="modal-cancel">Cancelar</button>
@@ -36,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 cancelButton.disabled = true;
                 acceptButton.style.backgroundColor = "gray";
 
-                showNotification('Eliminando tienda...');
-                fetch('../tiendas/eliminarTienda.php', {
+                showNotification('Eliminando producto...');
+                fetch('eliminar_producto.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
@@ -48,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     if(data.status === 'success')
                     {
                         closeModal();
-                        const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=" + data.idMall;
+                        const url = "https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/productos/lista_productos.php?id=" + data.idTienda;
                         hideNotification();
-                        showNotification("Tienda eliminada exitosamente");
+                        showNotification("Producto eliminado exitosamente");
                         setTimeout(() => {
                             hideNotification();
                             window.location.href = url;
@@ -58,12 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     else
                     {
-                        alert("Hubo un error al eliminar la tienda" + data.message);
+                        alert("Hubo un error al eliminar el producto: " + data.message);
                     }
                 })
                 .catch(error => {
                     console.error('Error: ', error);
-                    alert("Hubo un error al eliminar la tienda");
+                    alert("Hubo un error al eliminar el producto");
                 })
             });
 

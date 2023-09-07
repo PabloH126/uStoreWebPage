@@ -1,0 +1,13 @@
+.content .title .bttn_cambio_seccion{
+    background-color: #007096;
+    color: white;
+}
+
+.content .title .bttn_cambio_seccion:hover {
+    background-color: white;
+    color: black;
+}
+
+.content .lista .item{
+    grid-template-columns: 13% 34% 10% 9% 12% 11% 11%
+}

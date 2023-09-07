@@ -1,0 +1,30 @@
+.content{
+    text-align: left;
+}
+
+.content .content-ofertas{
+    width: 97%;
+    margin: 20px auto;
+}
+
+.content .space-publication{
+    border: 2px solid grey;
+    margin-bottom: 14px;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid #6666663d;
+}
+
+.content .space-publication img{
+    width: 90px;
+}
+
+.space-publication .header-publication{
+    border: 2px solid rgb(109, 6, 6);
+}
+
+.space-publication .body-publication{
+    border: 2px solid rgb(109, 6, 6);
+}

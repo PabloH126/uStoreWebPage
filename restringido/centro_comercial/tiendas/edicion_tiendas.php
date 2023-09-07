@@ -49,8 +49,14 @@ function HorariosSelect($dia, $horarios)
 function PeriodosSelect($periodo, $periodosPredeterminados)
 {
     list($cantidad, $tiempo) = explode(' ', $periodosPredeterminados['apartadoPredeterminado'], 2);
-    $idApartadoPredeterminado = $periodosPredeterminados['idApartadoPredeterminado'];
 
+    $idApartadoPredeterminado = 0;
+
+    if(isset($periodosPredeterminados['idApartadoPredeterminado']))
+    {
+        $idApartadoPredeterminado = $periodosPredeterminados['idApartadoPredeterminado'];
+    }
+    
     $selectedMinutos = ($tiempo === 'minutos') ? 'selected' : '';
     $selectedHoras = ($tiempo === 'horas') ? 'selected' : '';
     $selectedDias = ($tiempo === 'dias') ? 'selected' : '';
@@ -92,7 +98,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     <link rel="stylesheet" href="css/edicion_tiendas.css">
     <link rel="stylesheet" type="text/css" href="css/confirmacion_eliminacion.css"> 
     <link rel="stylesheet" type="text/css" href="css/mensaje_eliminacion.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -113,7 +118,8 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                             <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn" id="one">
-                            <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                            <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i 
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
                         </div>
                     </div>
                 </div>
@@ -136,14 +142,13 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                     </div>
 
                     <div class="notas">
-                        <span>* La imagen del logo no debe superar los 5mb.</span>
+                        <span>* El peso de la imagen del logo no debe superar 1 megabyte.</span>
                     </div>
 
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
                             <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
-
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
@@ -233,11 +238,11 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput1" >
-                                    <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput1" name="imagen1" accept="image/*">
                                     <?php if (isset($imagenesTienda[0]['idImagenesTiendas']))
                                     {
                                     ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[0]['idImagenesTiendas']; ?>" name="idImagen1">
+                                        <input type="hidden" value="<?php echo isset($imagenesTienda[0]['idImagenesTiendas']) ? $imagenesTienda[0]['idImagenesTiendas'] : "0"; ?>" name="idImagen1" class="idImagenes">
                                     <?php
                                     }
                                     ?>
@@ -250,11 +255,11 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput2" >
-                                    <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput2" name="imagen2" accept="image/*">
                                     <?php if (isset($imagenesTienda[1]['idImagenesTiendas']))
                                     {
                                     ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[1]['idImagenesTiendas']; ?>" name="idImagen2">
+                                        <input type="hidden" value="<?php echo isset($imagenesTienda[1]['idImagenesTiendas']) ? $imagenesTienda[1]['idImagenesTiendas'] : "0"; ?>" name="idImagen2" class="idImagenes">
                                     <?php
                                     }
                                     ?>
@@ -267,11 +272,11 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput3" >
-                                    <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput3" name="imagen3" accept="image/*">
                                     <?php if (isset($imagenesTienda[2]['idImagenesTiendas']))
                                     {
                                     ?>
-                                        <input type="hidden" value="<?php echo $imagenesTienda[2]['idImagenesTiendas']; ?>" name="idImagen3">
+                                        <input type="hidden" value="<?php echo isset($imagenesTienda[1]['idImagenesTiendas']) ? $imagenesTienda[2]['idImagenesTiendas'] : "0"; ?>" name="idImagen3" class="idImagenes">
                                     <?php
                                     }
                                     ?>
@@ -280,7 +285,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         </div>
                     </div>
                     <div class="notas">
-                        <span>* Cada imagen no debe superar los 5mb.</span>
+                        <span>* El peso de cada imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
                     <div class="bttn" id="delete-store">

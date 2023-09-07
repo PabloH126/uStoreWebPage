@@ -6,6 +6,8 @@
 .content .lista .item{
 	height: 210px;
 	width: 250px;
+	grid-template-rows: 80% 20%;
+	align-items: center;
 }
 
 .content .lista #agregar{

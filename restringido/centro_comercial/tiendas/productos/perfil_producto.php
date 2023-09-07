@@ -2,7 +2,7 @@
 session_start();
 require '../../../security.php';
 require 'datosProducto.php';
-
+var_dump($_SESSION);
 $_SESSION['idProducto'] = $_GET['id'];
 ?>
 <!DOCTYPE html>
@@ -15,8 +15,6 @@ $_SESSION['idProducto'] = $_GET['id'];
     <?php require("../templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" href="../css/perfil_tiendas.css">
     <link rel="stylesheet" href="css/perfil_producto.css">
-    <!-- ICONS -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -27,7 +25,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                 <div class="topI">
                     <div class="icon">
                         <img src="<?php echo $producto['imageProducto']; ?>"
-                            alt="">
+                            alt="" ts=<?php echo time(); ?>>
                     </div>
                     <div class="nameCat">
                         <div class="name">
@@ -36,7 +34,13 @@ $_SESSION['idProducto'] = $_GET['id'];
                             </h1>
                         </div>
                         <div class="cali">
-                            <div class="estrellas">⭐⭐⭐⭐⭐</div><span>(100)</span>
+                            <div class="estrellas">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div><span>(100)</span>
                         </div>
                         <div class="categorias">
                             <?php
@@ -66,7 +70,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                         foreach ($imagenesProducto as $imagen) {
                             ?>
                              <section class="slider-img">
-                                 <img src="<?php echo $imagen['imagenProducto']; ?>" alt="">
+                                 <img src="<?php echo $imagen['imagenProducto']; ?>" alt="" ts=<?php echo time(); ?>>
                              </section>
                              <?php 
                         }
@@ -148,11 +152,11 @@ $_SESSION['idProducto'] = $_GET['id'];
             </div>
         </div>
         <div class="edicionTienda">
-            <a title="Edición de tienda" href="edicion_tiendas.php?id=<?php echo $_GET['id']; ?>"><i
+            <a title="Edición de producto" href="edicion_productos.php?id=<?php echo $_GET['id']; ?>"><i
                     class='bx bx-pencil'></i></a>
         </div>
     </div>
-    <script src="../js/slider.js"></script>
+    <script src="js/slider_productos.js"></script>
 </body>
 
 </html>

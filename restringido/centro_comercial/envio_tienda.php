@@ -1,46 +1,11 @@
 <?php
     session_start();
+    $responseArray = [];
+    header('Content-Type: application/json');
 
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-    $maxSize = 5 * 1024 * 1024; // 5 MB
-    $imagenes = [];
-
-    if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
-        {
-            $imagenes['imagen1'] = $_FILES['imagen1'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 1 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-        }
-    }
-
-    if(isset($_FILES['imagen2']) && $_FILES['imagen2']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen2']['type'], $allowedImageTypes) && $_FILES['imagen2']['size'] <= $maxSize)
-        {
-            $imagenes['imagen2'] = $_FILES['imagen2'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 2 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-        }
-    }
-
-    if(isset($_FILES['imagen3']) && $_FILES['imagen3']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen3']['type'], $allowedImageTypes) && $_FILES['imagen3']['size'] <= $maxSize)
-        {
-            $imagenes['imagen3'] = $_FILES['imagen3'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 3 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido");
-        }
-    }
+    $maxSize = 1 * 1024 * 1024; // 1 megabyte
 
     //CREATE TIENDA
 
@@ -63,7 +28,7 @@
     else
     {
         curl_close($ch);
-        die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+        die("Error: Logo de tienda no válido. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
     }
     
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateTienda");
@@ -84,12 +49,18 @@
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    if($httpStatusCode != 201)
-    {
-        echo $httpStatusCode . ' create tienda';
-    }
-
     $dataTienda = json_decode($response, true);
+
+   if($httpStatusCode != 201)
+    {
+        $responseArray['statusTienda'] = 'error';
+        $responseArray['messageTienda'] = $httpStatusCode . ' CREACION Tienda <br>';
+    }
+    else
+    {
+        $responseArray['idTienda'] = $dataTienda['idTienda'];
+        $responseArray['statusTienda'] = 'success';
+    }
 
     $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall'];
 
@@ -132,7 +103,13 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create horario';
+        $responseArray['statusHorarios'] = 'error';
+        $responseArray['messageHorarios'] = $httpStatusCode . ' CREACION HORARIO <br>';
+    }
+    else
+    {
+        $responseArray['statusHorarios'] = 'success';
+        $responseArray['messageHorarios'] = $httpStatusCode . ' CREACION HORARIO <br>';
     }
 
     curl_close($ch);
@@ -173,7 +150,12 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create categorias de tienda';
+        $responseArray['statusCatT'] = 'error';
+        $responseArray['messageCatT'] = $httpStatusCode . 'CATEGORIAS TIENDA';
+    }
+    else
+    {
+        $responseArray['statusCatT'] = 'success';
     }
     
     curl_close($ch);
@@ -208,48 +190,14 @@
 
     if($httpStatusCode != 200)
     {
-        echo $httpStatusCode . ' create periodos predeterminados';
+        $responseArray['statusPeriodos'] = 'error';
+        $responseArray['messagePeriodos'] = $httpStatusCode . ' CREACION Periodos predeterminados <br>';
     }
-//----------------------------------------------------------------------------------------//   
-
-
-    //CREATE IMAGENES BANNER TIENDA
-    
-    
-    $data = [];
-
-    foreach($imagenes as $key => $imagen)
+    else
     {
-        $data = [
-            'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
-        ];
-        
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/CreateImagenTienda?idTienda=" . $dataTienda['idTienda']);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer ' . $_COOKIE['SessionToken']
-        ));
-        
-        $response = curl_exec($ch);
-        
-        if ($response === false) {
-            echo 'Error: ' . curl_error($ch);
-        } else {
-            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        }
-
-        if($httpStatusCode != 200)
-        {
-            echo $httpStatusCode . 'create imagenes tienda';
-        }
-
-        curl_close($ch);
+        $responseArray['statusPeriodos'] = 'success';
+        $responseArray['urlSalida'] = $urlSalida;
     }
-
 //----------------------------------------------------------------------------------------//       
 
     //FUNCIONES
@@ -307,6 +255,5 @@
     }
 //----------------------------------------------------------------------------------------//  
 
-    header('Location: ' . $urlSalida);
-    exit;
+    echo json_encode($responseArray);
 ?>

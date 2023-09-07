@@ -1,0 +1,151 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.content .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+i.bx.bx-store-alt {
+    font-size: 3rem;
+    position: fixed;
+    left: 8%;
+    color: #007096;
+}
+
+#menu-icon:hover:before{
+    content: "\eebd";
+    cursor: pointer;
+}
+
+#menu-icon.active:before{
+    content: "\eebd";
+    cursor: pointer;
+}
+
+#sub-menu.active{
+    -webkit-display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sub-menu{
+    position: absolute;
+    width: auto;
+    z-index: 1;
+    top: 18%;
+    left: 10.6%;
+    height: auto;
+    -webkit-display: none;
+    display: none;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 4px 5px 10px 2px #dfdfdf;
+    padding: 10px 15px;
+}
+
+.content .title .menu-option{
+    width: 100%;
+    padding: 2px;
+    user-select: none;
+}
+
+.content .title .menu-option:hover{
+    background-color: #007096;
+}
+
+.content .title .menu-option:hover a{
+    color: white;
+}
+
+.content .title .bttn_cambio_seccion {
+    font-size: 1.3rem;
+    position: fixed;
+    right: 3.35%;
+    background-color: white;
+    border-radius: 13px;
+    padding: 1% 2%;
+    box-shadow: 4px 5px 10px 2px #dfdfdf;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s linear;
+}
+
+.content .title .bttn_cambio_seccion:hover {
+    background-color: #007096;
+    color: white;
+}
+
+.content .lista {
+    grid-template-columns: none;
+    width: auto;
+}
+
+.content .lista .item {
+    height: auto;
+    grid-template-columns: 13% 33% 9% 9% 9% 9% 9% 9%;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.3rem;
+}
+
+.content .lista .item img{
+    max-height: 85%;
+    max-width: 61%;
+}
+
+.content .lista .item p {
+    padding: 5%;
+    display: grid;
+}
+
+.content .lista .item p label{
+    font-size: 1rem;
+    color: #007096;
+}
+
+.content .lista .item p i{
+    font-size: 3rem;
+}
+
+.content .lista #encabezado p {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.content .nota {
+    font-size: 1rem;
+    color: #6c6c6c;
+}
+
+@media only screen and (max-width: 1502px) {
+
+    i.bx.bx-store-alt {
+        font-size: 2.5rem;
+        left: 7%;
+    }
+    .content .title h1 {
+        font-size: 4.3rem;
+        margin: 25px 35px;
+    }
+
+    .content .title .bttn_cambio_seccion {
+        font-size: 1rem;
+        right: 2.35%;
+        padding: 1%;
+    }
+
+    .content .lista .item p,
+    .content .lista #encabezado p{
+        font-size: 1.2rem;
+    }
+
+    .content .lista .item {
+        margin: 0 32px 32px;
+    }
+}

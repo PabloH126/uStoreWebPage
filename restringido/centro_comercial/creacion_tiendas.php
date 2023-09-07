@@ -67,7 +67,8 @@ function CategoriasSelect($categorias)
     <?php require("templates/template.styles.php") ?>
     <?php require("tiendas/templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" type="text/css" href="tiendas/css/creacion_tiendas.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css"
+        href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
 </head>
 
 <body>
@@ -100,13 +101,13 @@ function CategoriasSelect($categorias)
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
-                                <input type="file" class="file-input" id="logoTienda" name="logoTienda" accept="image/*">
+                                <input type="file" class="file-input fileLogoTienda" id="logoTienda" name="logoTienda" accept="image/*">
                             </div>
                         </div>
                     </div>
 
                     <div class="notas">
-                        <span>* La imagen del logo no debe superar los 5mb.</span>
+                        <span>* El peso de la imagen del logo no debe superar 1 megabyte.</span>
                     </div>
 
                     <div class="bttns">
@@ -193,7 +194,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput1" >
-                                    <input type="file" class="file-input" id="fileInput1" name="imagen1" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput1" name="imagen1" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -203,7 +204,7 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput2" >
-                                    <input type="file" class="file-input" id="fileInput2" name="imagen2" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput2" name="imagen2" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -213,13 +214,13 @@ function CategoriasSelect($categorias)
                                 </div>
                                 <div class="ip">
                                     <label for="fileInput3" >
-                                    <input type="file" class="file-input" id="fileInput3" name="imagen3" accept="image/*">
+                                    <input type="file" class="file-input fileInputBanner" id="fileInput3" name="imagen3" accept="image/*">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="notas">
-                        <span>* Cada imagen no debe superar los 5mb.</span>
+                        <span>* El peso de cada imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -259,9 +260,9 @@ function CategoriasSelect($categorias)
             </form>
         </div>
     </div>
-    <script src="js/slider_formularios.js"></script>
     <script src="js/mostrarImg.js"></script>
     <script src="js/creacion_tiendas.js"></script>
+    <!--<script src="js/slider_formularios.js"></script>-->
 </body>
 
 </html>

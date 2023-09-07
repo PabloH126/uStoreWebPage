@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var maxSelect = 8;
     const mainForm = document.querySelector('.form-tiendas');
     const fileInputs = document.querySelectorAll('.file-input');
+    const idImagenes = document.querySelectorAll('.idImagenes');
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    const idProducto = params.get('id');
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
 
@@ -94,25 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    
-    checkboxes.forEach(function (checkbox) {
-        checkbox.addEventListener('change', function () {
-            var counter = document.querySelectorAll('.optionsC input[type="checkbox"]:checked').length;
-
-            if (counter >= maxSelect) {
-                checkboxes.forEach(function (c) {
-                    if (!c.checked) {
-                        c.disabled = true;
-                    }
-                });
-            }
-            else {
-                checkboxes.forEach(function (c) {
-                    c.disabled = false;
-                });
-            }
-        });
-    });
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -171,7 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length)
+        if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length 
+            && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0 && img4.files.length > 0 && img5.files.length > 0)
         {
             alert("Se debe subir al menos una imagen del producto");
             e.preventDefault();
@@ -196,32 +182,42 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.style.backgroundColor = "gray";
 
         try {
-            showNotification("Cargando producto...");
+            showNotification("Actualizando producto...");
             const data = await sendFormWithoutImages(mainForm, fileInputs);
             hideNotification();
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {
-                showNotification("Cargando imagenes...");
-                for (let input of fileInputs) {
-                    if (input && input.files.length > 0) {
-                        await sendImage(input, "imagenesProducto.php", data.idProducto); // Pasar el idProducto
+                showNotification("Verificando imagenes...");
+                for (let i = 0; i < fileInputs.length; i++) {
+                    if (fileInputs[i] && fileInputs[i].files.length > 0) {
+                        let idImagen = idImagenes[i];
+                        await sendImage(fileInputs[i], "actualizarImagenesProducto.php", idProducto, idImagen); // Pasar el idProducto
                     }
                 }
                 hideNotification();
                 
-                showNotification("Producto creado");
+                showNotification("Producto actualizado");
                 setTimeout(() => {
                     hideNotification();
                     window.location.href = data.urlSalida;
                 }, 2500);
             } else {
-                alert("Hubo un error al guardar el producto. Estatus del producto: " + data.statusProducto + ". Estatus de las categorias: " + data.statusCatP);
+                if(!data.statusProducto)
+                {
+                    alert("Hubo un error al guardar el producto: " + data.messageCatP);
+                }
+                else
+                {
+                    alert("Hubo un error al guardar el producto. Estatus del producto " +data.statusProducto + ": " + data.messageProducto + ". Estatus de las categorias " + data.statusCatP + ": " + data.messageCatP);
+                }
+                submitButton.disabled = false;
+                submitButton.style.backgroundColor = "#007096";
+                return;
             }
 
         } catch (error) {
             console.error('Error: ', error);
             alert("Hubo un error al realizar la solicitud de creación de producto: " + error);
-            submitButton.disabled = false;
-            submitButton.style.backgroundColor = "#007096";
+            return;
         }
     });
 });
@@ -328,11 +324,12 @@ async function sendFormWithoutImages(form, fileInputs) {
     return response.json();
 }
 
-async function sendImage(input, url, idProducto) {
+async function sendImage(input, url, idProducto, idImagen) {
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idProducto', idProducto); // Agregar el idProducto al formData
-
+    formData.append(idImagen.name, idImagen.value);
+    
     const responseImagenes = await fetch(url, {
         method: 'POST',
         body: formData
@@ -345,9 +342,10 @@ async function sendImage(input, url, idProducto) {
     }
 
     const dataImagenes = await responseImagenes.json();
+    console.log(dataImagenes);
 
     if (dataImagenes.statusImagenes !== 'success') {
-        alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes);
+        alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes + ": " + dataImagenes.messageImagenes);
     } 
 }
 
@@ -383,14 +381,14 @@ function validacionCategorias() {
     return true;
 }
 
-
 function validacionImagenesProducto() {
     let img1 = document.getElementById("fileInput1");
     let img2 = document.getElementById("fileInput2");
     let img3 = document.getElementById("fileInput3");
     let img4 = document.getElementById("fileInput4");
     let img5 = document.getElementById("fileInput5");
-    if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length) {
+    if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length 
+        && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0 && img4.files.length > 0 && img5.files.length > 0) {
         alert("Se debe subir al menos una imagen del producto");
         return false;
     }

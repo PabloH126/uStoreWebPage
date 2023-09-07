@@ -1,53 +1,23 @@
 <?php
     session_start();
+    $responseArray = [];
+    header('Content-Type: application/json');
 
+    $categorias = $_POST['categorias'];
+    if (count($categorias) > 8)
+    {
+        $responseArray['statusCatT'] = 'error';
+        $responseArray['messageCatT'] = 'Hay más de 8 categorias seleccionadas';
+        echo json_encode($responseArray);
+        exit;
+    }
+    
     //Validación de imagenes
     $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-    $maxSize = 5 * 1024 * 1024; // 5 MB
-    $imagenes = [];
-    $idImagenes = [];
-
-    if(isset($_FILES['imagen1']) && $_FILES['imagen1']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen1']['type'], $allowedImageTypes) && $_FILES['imagen1']['size'] <= $maxSize)
-        {
-            $imagenes[0] = $_FILES['imagen1'];
-            $idImagenes[0] = $_POST['idImagen1'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 1 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-        }
-    }
-
-    if(isset($_FILES['imagen2']) && $_FILES['imagen2']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen2']['type'], $allowedImageTypes) && $_FILES['imagen2']['size'] <= $maxSize)
-        {
-            $imagenes[1] = $_FILES['imagen2'];
-            $idImagenes[1] = $_POST['idImagen2'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 2 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
-        }
-    }
-
-    if(isset($_FILES['imagen3']) && $_FILES['imagen3']['error'] == 0)
-    {
-        if(in_array($_FILES['imagen3']['type'], $allowedImageTypes) && $_FILES['imagen3']['size'] <= $maxSize)
-        {
-            $imagenes[2] = $_FILES['imagen3'];
-            $idImagenes[2] = $_POST['idImagen3'];
-        }
-        else
-        {
-            die("Error las imagenes de promociones: Imagen 3 no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere los 5 MB de tamaño máximo y/o sea de un tipo de imagen válido");
-        }
-    }
+    $maxSize = 1 * 1024 * 1024; // 1 MB
 
     //UPDATE TIENDA
-
+    $idTienda = $_GET['idTienda'];
     $data = [
         'idTienda' => $_GET['id'],
         'nombreTienda' => $_POST['nombreTienda']
@@ -89,10 +59,14 @@
 
     if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' update tienda';
+        $responseArray['statusTienda'] = 'error';
+        $responseArray['messageTienda'] = $httpStatusCode . ' ACTUALIZAR Tienda <br>';
     }
-
-    $dataTienda = json_decode($response, true);
+    else
+    {
+        $responseArray['idTienda'] = $idTienda;
+        $responseArray['statusTienda'] = 'success';
+    }
 
     $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $_GET['id'];
 
@@ -100,7 +74,7 @@
 //----------------------------------------------------------------------------------------//   
 
 
-    //CREATE HORARIO
+    //UPDATE HORARIO
 
     $arraysHorario = array(
         generateArrayHorario('Lunes'),
@@ -135,16 +109,20 @@
 
     if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' update horario';
+        $responseArray['statusHorarios'] = 'error';
+        $responseArray['messageHorarios'] = $httpStatusCode . ' ACTUALIZACION HORARIO <br>';
+    }
+    else
+    {
+        $responseArray['statusHorarios'] = 'success';
+        $responseArray['messageHorarios'] = $httpStatusCode . ' ACTUALIZACION HORARIO <br>';
     }
 
     curl_close($ch);
 //----------------------------------------------------------------------------------------// 
 
 
-    //CREATE CATEGORIAS TIENDA
-    
-    $categorias = $_POST['categorias'];
+    //UPDATE CATEGORIAS TIENDA
 
     $arraysCategorias = array ();
 
@@ -175,7 +153,13 @@
 
     if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' update categorias de tienda';
+        $responseArray['statusCatT'] = 'error';
+        $responseArray['messageCatT'] = $httpStatusCode . 'CATEGORIAS TIENDA';
+    }
+    else
+    {
+        $responseArray['statusCatT'] = 'success';
+        $responseArray['messageCatT'] = $httpStatusCode . 'CATEGORIAS TIENDA';
     }
     
     curl_close($ch);
@@ -183,7 +167,7 @@
 
 
     //CREATE PERIODOS PREDETERMINADOS TIENDA
-    $periodos = generateArrayPeriodosPredeterminados($dataTienda);
+    $periodos = generateArrayPeriodosPredeterminados();
 
     $jsonData = json_encode($periodos);
 
@@ -210,55 +194,16 @@
 
     if($httpStatusCode != 204)
     {
-        echo $httpStatusCode . ' update periodos predeterminados';
+        $responseArray['statusPeriodos'] = 'error';
+        $responseArray['messagePeriodos'] = $httpStatusCode . ' ACTUALIZACION Periodos predeterminados';
+    }
+    else
+    {
+        $responseArray['statusPeriodos'] = 'success';
+        $responseArray['urlSalida'] = $urlSalida;
+        $responseArray['messagePeriodos'] = $httpStatusCode . ' ACTUALIZACION Periodos predeterminados';
     }
 //----------------------------------------------------------------------------------------//   
-
-
-    //CREATE IMAGENES BANNER TIENDA
-    
-    
-    $data = [];
-
-    foreach($imagenes as $index => $imagen)
-    {
-        $data = [
-            'imagen' => curl_file_create($imagen['tmp_name'], $imagen['type'], $imagen['name'])
-        ];
-
-        if (!isset($idImagenes[$index]))
-        {
-            $idImagenes[$index] = "0";
-        }
-
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/UpdateImagenTienda?idTienda=" . $_GET['id'] . "&idImagenTienda=" . $idImagenes[$index]);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer ' . $_COOKIE['SessionToken']
-        ));
-        
-        $response = curl_exec($ch);
-        
-        if ($response === false) {
-            echo 'Error: ' . curl_error($ch);
-        } else {
-            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        }
-
-        if($httpStatusCode != 204)
-        {
-            echo $httpStatusCode . 'update imagenes tienda';
-        }
-
-        curl_close($ch);
-    }
-
-//----------------------------------------------------------------------------------------//       
-
     //FUNCIONES
     function generateArrayCategorias($cat)
     {
@@ -268,7 +213,7 @@
         ];
     }
 
-    function generateArrayPeriodosPredeterminados($dataTienda)
+    function generateArrayPeriodosPredeterminados()
     {
         $periodos = [];
         for($i = 1; $i <= 3; $i++)
@@ -282,7 +227,7 @@
                 $periodos[] = [
                     'idApartadoPredeterminado' => $_POST['idApartadoPredeterminadoPeriodo' . $i],
                     'apartadoPredeterminado' => $apartadoPredeterminado,
-                    'idTienda' => $_GET['id']
+                    'idTienda' => (int) $_GET['id']
                 ];
             }
         } 
@@ -315,6 +260,5 @@
     }
 //----------------------------------------------------------------------------------------//  
 
-    header('Location: ' . $urlSalida);
-    exit;
+    echo json_encode($responseArray);
 ?>

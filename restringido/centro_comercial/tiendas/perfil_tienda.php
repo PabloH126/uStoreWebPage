@@ -3,6 +3,7 @@ session_start();
 require '../../security.php';
 include 'datosTienda.php';
 $_SESSION['idTienda'] = $_GET['id'];
+var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,8 +14,6 @@ $_SESSION['idTienda'] = $_GET['id'];
     <?php require("../templates/template.styles.php") ?>
     <?php require("templates/template.secc_tiendas.php") ?>
     <link rel="stylesheet" href="css/perfil_tiendas.css">
-    <!-- ICONS -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -96,19 +95,24 @@ $_SESSION['idTienda'] = $_GET['id'];
                             <?php
                                 if($rangoPrecio <= 0)
                                 {
-                                    echo 'No hay productos';
+                                    echo '<span style="color: red">No hay productos</span>';
                                 }
                                 else if($rangoPrecio < 1000)
                                 {
-                                    echo '<div>$</div>';
+                                    echo "<span><i style='font-size: 3rem' class='bx bx-dollar'></i></span>";
                                 }
                                 else if($rangoPrecio >= 1000 && $rangoPrecio < 5000)
                                 {
-                                    echo '<div>$$</div>';
+                                    echo "<span><i style='font-size: 2.3rem' class='bx bx-dollar'></i>
+                                                <i style='font-size: 2.3rem' class='bx bx-dollar'></i>
+                                    </span>";
                                 }
                                 else if($rangoPrecio >= 5000)
                                 {
-                                    echo '<div>$$$</div>';
+                                    echo "<span><i style='font-size: 2.3rem' class='bx bx-dollar'></i>
+                                                <i style='font-size: 2.3rem'' class='bx bx-dollar'></i>
+                                                <i style='font-size: 2.3rem' class='bx bx-dollar'></i>
+                                    </span>";
                                 }
                             ?>
                         </div>
@@ -156,7 +160,7 @@ $_SESSION['idTienda'] = $_GET['id'];
                                 ?>
                                             <span>
                                                 <strong><?php echo $horario['dia']; ?></strong>
-                                                <p style="color: green"><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></p>
+                                                <p><?php echo $horario['horarioApertura'] . ' - ' . $horario['horarioCierre']; ?></p>
                                             </span>
                                 <?php
                                     }

@@ -1,6 +1,102 @@
+let currentNotification;
+
 document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
+    const mainForm = document.querySelector('.form-tiendas');
+    const fileInputs = document.querySelectorAll('.fileInputBanner');
+    const idImagenes = document.querySelectorAll('.idImagenes');
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    const idTienda = params.get('id');
+    const nextButtons = document.querySelectorAll('.bttn-next');
+    const backButtons = document.querySelectorAll('.bttn-back');
+
+    nextButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
+            const currentStep = parseInt(button.getAttribute('data-item'));
+
+            let isValid = false;
+            switch (currentStep) {
+                case 1:
+                    isValid = nombreValidacion();
+                    break;
+                case 2:
+                    isValid = logoValidacion();
+                    break;
+                case 3:
+                    isValid = validacionCategorias();
+                    break;
+                case 4:
+                    isValid = validacionHorarios();
+                    break;
+                case 5:
+                    isValid = validacionBanner();
+                    break;
+                case 6:
+                    isValid = validacionCompletaPeriodos();
+                    break;
+
+                default:
+                    isValid = true;
+                    break;
+            }
+
+            if (isValid == false) {
+                e.target.preventDefault();
+                return;
+            }
+            else 
+            {
+                let element = e.target;
+                let isButtonNext = element.classList.contains('bttn-next');
+                let isButtonBack = element.classList.contains('bttn-back');
+
+                if (isButtonNext || isButtonBack) {
+                    let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                    let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                    currentStep.classList.remove('active');
+                    jumpStep.classList.add('active');
+                    if (isButtonNext) {
+                        currentStep.classList.add('to-left');
+                        progressOptions[element.dataset.to_step - 1].classList.add('active');
+                    } else {
+                        jumpStep.classList.remove('to-left');
+                    }
+                }
+            }
+
+            const nextStep = parseInt(button.getAttribute('data-to_item'));
+            showStep(nextStep);
+        });
+    });
+
+    backButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
+            let element = e.target; 
+            let isButtonNext = element.classList.contains('bttn-next');
+            let isButtonBack = element.classList.contains('bttn-back');
+
+            if (isButtonNext || isButtonBack) {
+                let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                currentStep.classList.remove('active');
+                jumpStep.classList.add('active');
+                if (isButtonNext) {
+                    currentStep.classList.add('to-left');
+                    progressOptions[element.dataset.to_step - 1].classList.add('active');
+                } else {
+                    jumpStep.classList.remove('to-left');
+                }
+            }
+        });
+    });
 
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', function () {
@@ -20,6 +116,120 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    mainForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
+        let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
+
+        let logoTienda = document.getElementById("logoTienda");
+        let img1 = document.getElementById("fileInput1");
+        let img2 = document.getElementById("fileInput2");
+        let img3 = document.getElementById("fileInput3");
+        
+        if (!nombreValidacion())
+        {
+            alert("Se debe ingresar un nombre de la tienda");
+            e.preventDefault();
+            return;
+        }
+
+        if (!logoTienda.files.length && logoTienda.files.length > 0) 
+        {
+            alert("Se debe subir un logo de tienda");
+            e.preventDefault();
+            return;
+        }
+
+        if (!checked) 
+        {
+            alert("Se debe seleccionar al menos una categoria para la tienda");
+            e.preventDefault();
+            return;
+        }
+
+        if(!horariosConfigurados())
+        {
+            alert("Se debe configurar al menos un horario");
+            e.preventDefault();
+            return;
+        }
+
+        if(!validarHorariosCorrectos())
+        {
+            e.preventDefault();
+            return;
+        }
+
+        if (!img1.files.length && !img2.files.length && !img3.files.length && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0) {
+            alert("Se debe subir al menos una imagen para el banner de la tienda");
+            e.preventDefault();
+            return;
+        }
+
+        if (!imagenesValidacion(logoTienda))
+        {
+            e.preventDefault();
+            return;
+        }
+
+        if(!periodosConfigurados())
+        {
+            alert("Se debe configurar al menos un periodo de apartado predeterminado");
+            e.preventDefault();
+            return;
+        }
+
+        if(!validacionPeriodos())
+        {
+            e.preventDefault();
+            return;
+        }
+
+        var submitButton = document.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.style.backgroundColor = "gray";
+        
+        try {
+            showNotification("Actualizando tienda...");
+            const data = await sendFormWithoutImages(mainForm, fileInputs);
+            hideNotification();
+            if (data.statusTienda === 'success' && data.statusHorarios === 'success' && data.statusCatT === 'success' && data.statusPeriodos === 'success') {
+                showNotification("Verificando imagenes...");
+                
+                for (let i = 0; i < fileInputs.length; i++) {
+                    if (fileInputs[i] && fileInputs[i].files.length > 0) {
+                        let idImagen = idImagenes[i];
+                        await sendImage(fileInputs[i], "actualizarImagenesTienda.php", idTienda, idImagen); // Pasar el idTienda
+                    }
+                }
+                hideNotification();
+                
+                showNotification("Tienda actualizada");
+                setTimeout(() => {
+                    hideNotification();
+                    window.location.href = data.urlSalida;
+                }, 2500);
+            } else {
+                if(!data.statusTienda)
+                {
+                    alert("Hubo un error al guardar la tienda: " + data.messageCatT);
+                }
+                else
+                {
+                    alert("Hubo un error al guardar la tienda. Estatus de la tienda " + data.statusTienda + ": " + data.messageTienda + ". Estatus de los horarios " + data.statusHorarios + ": " + data.messageHorarios + ". Estatus de las categorias " + data.statusCatT + ": " + data.messageCatT + ". Estatus de los periodos " + data.statusPeriodos + ": " + data.messagePeriodos);
+                }
+                submitButton.disabled = false;
+                submitButton.style.backgroundColor = "#007096";
+                return;
+            }
+
+        } catch (error) {
+            console.error('Error: ', error);
+            alert("Hubo un error al realizar la solicitud de creación la tienda: " + error);
+            return;
+        }
+    });
 });
 
 function nombreValidacion() {
@@ -27,6 +237,7 @@ function nombreValidacion() {
 
     if(!nombre || !nombre.value.trim())
     {
+        alert("Se debe ingresar un nombre de la tienda");
         return false;
     }
 
@@ -42,7 +253,7 @@ function horariosConfigurados() {
         let apertura  = document.querySelector(`input[name="${dia}_apertura"]`).value;
         let cierre  = document.querySelector(`input[name="${dia}_cierre"]`).value;
 
-        if(apertura || cierre)
+        if((apertura || cierre) && (apertura !== "00:00" || cierre !== "00:00"))
         {
             return true;
         }
@@ -127,8 +338,7 @@ function validacionPeriodos() {
     return true;
 }
 
-function validacionSizeImagen(imagen, maxSize)
-{
+function validacionSizeImagen(imagen, maxSize) {
     if(imagen.files[0].size > maxSize)
     {
         return false;
@@ -137,85 +347,185 @@ function validacionSizeImagen(imagen, maxSize)
     return true;
 }
 
-document.querySelector("form").addEventListener("submit", function (e) {
-    const maxSize = 5 * 1024 * 1024;
+function validacionTypeImagen(imagen)
+{
+    var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    if (allowedTypes.indexOf(imagen.files[0].type) === -1) {
+        return false;
+    }
 
-    let img1 = document.getElementById("fileInput1");
-    let img2 = document.getElementById("fileInput2");
-    let img3 = document.getElementById("fileInput3");
+    return true;
+}
 
+function logoValidacion() {
+    const maxSize = 1 * 1024 * 1024;
     let logoTienda = document.getElementById("logoTienda");
-
-    if(!nombreValidacion())
+    if (!logoTienda.files.length && logoTienda.files.length > 0) 
     {
-        alert("Por favor ingresa un nombre para la tienda");
-        e.preventDefault();
+        alert("Se debe subir un logo de tienda");
+        return false;
+    }
+    else if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
+    {
+        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        return false;
+    }
+    else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
+    {
+        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+        return false;
+    }
+
+    return true;
+}
+
+function imagenesValidacion(logoTienda) {
+    const maxSize = 1 * 1024 * 1024;
+
+    if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
+    {
+        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        return false;
+    }
+    else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
+    {
+        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+        return false;
+    }
+    
+    for (let i = 1; i <= 3; i++)
+    {
+        let img = document.getElementById("fileInput" + i);
+        if(img.files.length && !validacionTypeImagen(img))
+        {
+            alert(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+            return false;
+        }
+        else if (img.files.length && !validacionSizeImagen(img, maxSize))
+        {
+            alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+            return false;
+        }
+    }
+
+    return true;
+}
+
+async function sendFormWithoutImages(form, fileInputs) {
+    const formData = new FormData(form);
+
+    fileInputs.forEach(input => {
+        formData.delete(input.name);
+    });
+    
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: formData
+    });
+   
+    return response.json();
+}
+
+async function sendImage(input, url, idTienda, idImagen) {
+    alert('ya entro al sendImage');
+    const formData = new FormData();
+    formData.append(input.name, input.files[0]);
+    formData.append('idTienda', idTienda); // Agregar el idTienda al formData
+    formData.append(idImagen.name, idImagen.value); // Agregar el idImagen al formData
+    alert(idImagen.name + " " + idImagen.value);
+    alert(idTienda);
+    const responseImagenes = await fetch(url, {
+        method: 'POST',
+        body: formData
+    });
+    alert("ya entro al fetch");
+    if (!responseImagenes.ok)
+    {
+        console.error("Error en la respuesta de imagenes: ", responseImagenes.statusText);
         return;
     }
 
-    if(logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
-    {
-        alert("La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
+    const dataImagenes = await responseImagenes.json();
+    console.log(dataImagenes);
+    
+    if (dataImagenes.statusImagenes !== 'success') {
+        alert("No se pudieron guardar las imágenes, ERROR: " + dataImagenes.statusImagenes + " " + dataImagenes.messageImagenes);
+    } 
+}
+
+function showNotification(message) {
+    if (currentNotification) {
+        currentNotification.remove();
     }
 
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    currentNotification = notification;
+}
+
+function hideNotification() {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
+    currentNotification = null;
+}
+
+function validacionCategorias() {
     let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
     let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
-
-    if (!checked) {
-        alert("Se debe seleccionar al menos una categoria");
-        e.preventDefault();
-        return;
+    if (!checked) 
+    {
+        alert("Se debe seleccionar al menos una categoria para la tienda");
+        return false;
     }
+    return true;
+}
 
+function validacionHorarios() {
     if(!horariosConfigurados())
     {
         alert("Se debe configurar al menos un horario");
-        e.preventDefault();
-        return;
+        return false;
     }
 
-    if(!validarHorariosCorrectos())
+    else if(!validarHorariosCorrectos())
     {
-        e.preventDefault();
-        return;
+        return false;
+    }
+    return true;
+}
+
+function validacionBanner() {
+    let img1 = document.getElementById("fileInput1");
+    let img2 = document.getElementById("fileInput2");
+    let img3 = document.getElementById("fileInput3");
+    let logoTienda = document.getElementById("logoTienda");
+    if (!img1.files.length && !img2.files.length && !img3.files.length && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0) {
+        alert("Se debe subir al menos una imagen para el banner de la tienda");
+        return false;
     }
 
-    if(img1.files.length && !validacionSizeImagen(img1, maxSize))
+    if (!imagenesValidacion(logoTienda))
     {
-        alert("La imagen 1 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
+        return false;
     }
+    return true;
+}
 
-    if(img2.files.length && !validacionSizeImagen(img2, maxSize))
-    {
-        alert("La imagen 2 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-
-    if(img3.files.length && !validacionSizeImagen(img3, maxSize))
-    {
-        alert("La imagen 3 del banner es demasiado pesada, por favor sube una imagen de menos de 5 megabytes");
-        e.preventDefault();
-        return;
-    }
-
+function validacionCompletaPeriodos() {
     if(!periodosConfigurados())
     {
         alert("Se debe configurar al menos un periodo de apartado predeterminado");
-        e.preventDefault();
-        return;
+        return false;
     }
 
     if(!validacionPeriodos())
     {
-        e.preventDefault();
-        return;
+        return false;
     }
-
-    var submitButton = document.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-});
+    return true;
+}
