@@ -49,7 +49,7 @@
 		}
 		else if ($httpStatusCode == 404)
 		{
-			$messageSolicitud = json_decode($response, true);
+			$messageSolicitud = $response;
 		}
 		$solicitudes = json_decode($response, true);
 		curl_close($ch);
@@ -102,7 +102,7 @@
 		<div>
 			<div class="lista">
 				<?php
-				/*
+				
 				if (isset($solicitudesError))
 				{
 					echo $solicitudesError;
@@ -138,7 +138,7 @@
 				</div>
 				<?php
 				}
-				*/
+				
 				?>
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
