@@ -1,6 +1,6 @@
  <?php 
 	session_start();
-	require '../../../security.php';
+	require '../../security.php';
 	$_SESSION['PRUEBA'] = 1;
 	var_dump($_SESSION);
 	$ch = curl_init();
@@ -58,7 +58,7 @@
 				foreach ($productos as $producto)
 				{ ?>
 					<div class="item">
-						<a href="perfil_producto.php?id=<?php echo $producto['idProductos']; ?>"><img width="60%" class="logo" src="<?php echo $producto['imageProducto']; ?>" ts=<?php echo time(); ?>></a>
+						<a href="productos/perfil_producto.php?id=<?php echo $producto['idProductos']; ?>"><img width="60%" class="logo" src="<?php echo $producto['imageProducto']; ?>" ts=<?php echo time(); ?>></a>
 						<strong class="nombre"><?php echo $producto['nombreProducto'];?></strong>
 						<div class="switch">
 							<label class="switch-label">
