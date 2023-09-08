@@ -116,7 +116,7 @@
 				}
 				else if (isset($messageSolicitud))
 				{
-					echo $messageSolicitud;
+					echo '<span>' .  $messageSolicitud . '</span>';;
 				}
 				else
 				{
