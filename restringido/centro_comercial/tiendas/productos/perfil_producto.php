@@ -2,9 +2,7 @@
 session_start();
 require '../../../security.php';
 require 'datosProducto.php';
-include 'datos_session_productos.php';
 var_dump($_SESSION);
-echo $idTienda . ' ' . $idMall . ' ' . $idUser;
 $_SESSION['idProducto'] = $_GET['id'];
 ?>
 <!DOCTYPE html>
