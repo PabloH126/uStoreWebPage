@@ -4,9 +4,6 @@
 	$_SESSION['PRUEBA'] = 1;
 	var_dump($_SESSION);
 
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/GetProductos?idTienda=" . $_GET['id']);
@@ -86,5 +83,10 @@
 		</div>
 	</div>
 
+	<?php
+		ini_set('display_errors', 1);
+		ini_set('display_startup_errors', 1);
+		error_reporting(E_ALL);
+	?>
 </body>
 </html>
