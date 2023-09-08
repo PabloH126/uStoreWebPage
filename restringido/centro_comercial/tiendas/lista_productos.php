@@ -47,7 +47,7 @@
 	
 </head>
 <body>
-	<?php require("../../templates/template.menu.php")?>
+	<?php require("../templates/template.menu.php")?>
 
 	<div class="content">
 		<div class="lista">
