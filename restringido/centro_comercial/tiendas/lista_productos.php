@@ -52,7 +52,7 @@
 	<div class="content">
 		<div class="lista">
 			<?php 
-				if($productosError != null)
+				if(isset($productosError))
 				{ ?>
 				<h3><?php echo $productosError;?></h3>
 			<?php 
