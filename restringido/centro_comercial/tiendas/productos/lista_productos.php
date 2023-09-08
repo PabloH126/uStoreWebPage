@@ -1,5 +1,4 @@
  <?php 
-	session_start();
 	require '../../../security.php';
 	$_SESSION['PRUEBA'] = 1;
 	var_dump($_SESSION);
