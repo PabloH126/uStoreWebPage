@@ -102,6 +102,7 @@
 		<div>
 			<div class="lista">
 				<?php
+				/*
 				if (isset($solicitudesError))
 				{
 					echo $solicitudesError;
@@ -137,6 +138,7 @@
 				</div>
 				<?php
 				}
+				*/
 				?>
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
