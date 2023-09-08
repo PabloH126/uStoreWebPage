@@ -158,7 +158,8 @@ i.bx.bx-store-alt {
 @media only screen and (max-width: 1502px) {
 
     #background-animated{
-        w
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
     #background-animated,
