@@ -14,6 +14,10 @@ i.bx.bx-store-alt {
     position: fixed;
     left: 8%;
     color: #007096;
+    /*---*/
+    background: #f0f0f0;
+    border-radius: 50%;
+
 }
 
 #menu-icon:hover:before{
