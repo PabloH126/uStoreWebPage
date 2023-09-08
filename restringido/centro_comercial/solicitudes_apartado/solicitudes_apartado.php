@@ -59,7 +59,7 @@
 			{
 		?>
 		<div>
-			<span>Seleccione una tienda</span>
+			<span id="span-seleccion-tienda">Seleccione una tienda</span>
 		</div>
 		<?php
 			}
