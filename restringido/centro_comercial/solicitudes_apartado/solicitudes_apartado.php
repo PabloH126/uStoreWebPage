@@ -54,7 +54,18 @@
 			<h1>Solicitudes de apartado</h1>
 			<a href="solicitudes_activas.php" class="bttn_cambio_seccion">Ver solicitudes activas</a>
 		</div>
-
+		<?php
+			if (!isset($_GET['id']))
+			{
+		?>
+		<div>
+			<span>Seleccione una tienda</span>
+		</div>
+		<?php
+			}
+			else
+			{
+		?>
 		<div>
 			<div class="lista">
 				<div class="item" id="encabezado">
@@ -82,6 +93,9 @@
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
 		</div>
+		<?php
+			}
+		?>
 	</div>
 	<script src="js/menu_desplegable.js"></script>
 </body>
