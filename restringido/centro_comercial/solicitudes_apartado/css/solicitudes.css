@@ -82,7 +82,11 @@ i.bx.bx-store-alt {
 }
 
 .content #span-seleccion-tienda{
-    font-size: 5em;
+    font-size: 5rem;
+    color: #00000014;
+    font-weight: bold;
+    margin-top: 21vh;
+    display: block;
 }
 
 .content .lista {
