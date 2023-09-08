@@ -1,9 +1,9 @@
  <?php 
 	session_start();
 	require '../../../security.php';
-	$_SESSION['PRUEBA'] = 1;
+	include 'datos_session_productos.php';
 	var_dump($_SESSION);
-
+ 	echo $idTienda . ' ' . $idMall . ' ' . $idUser;
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/GetProductos?idTienda=" . $_GET['id']);
