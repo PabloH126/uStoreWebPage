@@ -58,8 +58,7 @@
 			if (!isset($_GET['id']))
 			{
 		?>
-		<div class="span-seleccion-tienda">
-			<i class='bx bx-up-arrow-alt'></i>
+		<div>
 			<span id="span-seleccion-tienda">Seleccione una tienda</span>
 		</div>
 		<?php
