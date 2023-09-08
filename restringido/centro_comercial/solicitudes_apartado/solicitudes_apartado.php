@@ -70,7 +70,14 @@
 
 	<div class="content">
 		<div class="title">
+		<?php
+			if (!isset($_GET['id']))
+			{
+		?>
 			<div id="background-animated"></div>
+		<?php 
+			} 
+		?>
 			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			
 			<div id="sub-menu">
@@ -113,6 +120,8 @@
 				}
 				else
 				{
+					foreach ($solicitudes as $solicitud)
+					{
 				?>
 				<div class="item" id="encabezado">
 					<p>Imagen del producto</p>
@@ -137,13 +146,13 @@
 					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
 				<?php
-				}
-				
-				?>
+					}
+				?> 
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
 		</div>
 		<?php
+				}
 			}
 		?>
 	</div>
