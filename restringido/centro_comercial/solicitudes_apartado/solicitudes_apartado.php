@@ -39,7 +39,9 @@
 
 	<div class="content">
 		<div class="title">
+			<div id="background-animated"></div>
 			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+			
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{

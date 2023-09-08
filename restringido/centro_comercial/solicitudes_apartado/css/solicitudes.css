@@ -9,6 +9,7 @@ a{
     justify-content: center;
 }
 
+#background-animated,
 i.bx.bx-store-alt {
     font-size: 3rem;
     position: fixed;
@@ -17,14 +18,13 @@ i.bx.bx-store-alt {
     /*---*/
     background: #f0f0f0;
     border-radius: 50%;
-    animation:blur-out-expand 0.4s linear both
+    animation: background-expand 0.4s linear both
 
 }
 
-
-@keyframes blur-out-expand{
-    0%{transform:scale(1);filter:blur(.01px);} 
-    100%{transform:scale(2);filter:blur(12px);opacity:0}
+@keyframes background-expand{
+    0%{transform:scale(1);} 
+    100%{transform:scale(2);}
 }
 
 #menu-icon:hover:before{
