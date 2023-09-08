@@ -37,8 +37,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Selección de productos</title>
-	<?php require("../../templates/template.styles.php")?>
-	<?php require("../templates/template.secc_tiendas.php")?>
+	<?php require("../templates/template.styles.php")?>
+	<?php require("templates/template.secc_tiendas.php")?>
 	<link rel="stylesheet" type="text/css" href="../css/lista_tiendas.css">
 	<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
 	<link rel="stylesheet" href="css/lista_productos.css">
