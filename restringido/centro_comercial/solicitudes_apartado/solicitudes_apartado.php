@@ -112,7 +112,7 @@
 				
 				if (isset($solicitudesError))
 				{
-					echo $solicitudesError;
+					echo '<span>' .  $solicitudesError . '</span>';
 				}
 				else if (isset($messageSolicitud))
 				{
