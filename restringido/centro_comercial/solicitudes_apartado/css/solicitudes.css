@@ -14,7 +14,7 @@ a {
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
-    animation: background-expand 1s linear both
+    animation: background-expand 1s linear infinite;
 }
 
 #background-animated,
@@ -35,7 +35,7 @@ i.bx.bx-store-alt {
     }
 
     100% {
-        filter: blur(12px);
+        filter: blur(10px);
         opacity: 0;
     }
 }
