@@ -29,7 +29,7 @@
 	{
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudes?idTienda=" . $_GET['id']);
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $_GET['id']);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -51,9 +51,10 @@
 		{
 			$messageSolicitud = $response;
 		}
-		$solicitudes = json_decode($response, true);
+		$data = json_decode($response, true);
+		$solicitudes = $data['solicitudes'];
+		$productos = $data['productos'];
 		curl_close($ch);
-		echo $httpStatusCode;
 	}
 	
 ?>
@@ -116,12 +117,16 @@
 				}
 				else if (isset($messageSolicitud))
 				{
-					echo '<span id="span-seleccion-tienda">' .  $messageSolicitud . '</span>';;
+					echo '<span id="span-seleccion-tienda">' .  $messageSolicitud . '</span>';
 				}
 				else
 				{
 					foreach ($solicitudes as $solicitud)
 					{
+						foreach ($productos as $producto)
+						{
+							if($solicitud['idProductos'] == $producto['idProductos'])
+							{
 				?>
 				<div class="item" id="encabezado">
 					<p>Imagen del producto</p>
@@ -135,17 +140,19 @@
 				</div>
 
 				<div class="item">
-					<img src="https://i.blogs.es/c2d211/minato/1366_2000.jpeg" alt="un minato">
-					<p><label>Personalizado</label>
-						Oaaaaaaaaaaaaaaaaaaaaaaa</p>
-					<p>$1000.00</p>
-					<p>2 dias</p>
-					<p>200/300</p>
-					<p>2</p>
+					<img src="<?php echo $producto['imageProducto'];?>" alt="">
+					<p><label><?php echo $producto['personalizado'] == true ? 'Personalizado' : '';?></label>
+					<?php echo $producto['nombreProducto']?></p>
+					<p><?php echo $producto['precioProducto']?></p>
+					<p><?php echo $solicitud['periodoApartado']?></p>
+					<p><?php echo $solicitud['ratioUsuario']?></p>
+					<p><?php echo $solicitud['unidadesProducto']?></p>
 					<p><i style="color: green;" class='bx bxs-check-circle'></i></p>
 					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
 				<?php
+							}
+						}
 					}
 				?> 
 			</div>

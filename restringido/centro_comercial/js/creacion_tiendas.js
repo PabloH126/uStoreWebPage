@@ -224,7 +224,7 @@ function nombreValidacion() {
 
     if(!nombre || !nombre.value.trim())
     {
-        alert("Se debe ingresar un nombre de la tienda");
+        showNotification("Se debe ingresar un nombre de la tienda");
         return false;
     }
 
@@ -513,3 +513,19 @@ function validacionCompletaPeriodos() {
     }
     return true;
 }
+
+function showNotification(message) {
+    // Si ya hay una notificación, quítala antes de mostrar una nueva
+    hideNotification();
+
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    // Establece un temporizador para ocultar automáticamente la notificación después de un tiempo
+    setTimeout(() => {
+        hideNotification();
+    }, 2500); // Cambia el tiempo de acuerdo a tus necesidades
+}
+
