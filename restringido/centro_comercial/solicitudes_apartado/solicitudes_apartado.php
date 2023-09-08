@@ -24,6 +24,37 @@
 	}
 	$tiendas = json_decode($response, true);
 	curl_close($ch);
+
+	if (isset($_GET['id']))
+	{
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudes?idTienda=" . $_SESSION['idTienda']);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_COOKIE['SessionToken']
+		));
+		
+		$response = curl_exec($ch);
+		
+		if ($response === false) {
+			echo 'Error: ' . curl_error($ch);
+		} else {
+			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		}
+		
+		if ($httpStatusCode == 400) {
+			$solicitudesError = "Error al intentar recuperar las solicitudes. Codigo de respuesta: " . $httpStatusCode;
+		}
+		else if ($httpStatusCode == 404)
+		{
+			$messageSolicitud = json_decode($response, true);
+		}
+
+		$solicitudes = json_decode($response, true);
+		curl_close($ch);
+	}
 	
 ?>
 <!DOCTYPE html>
@@ -70,6 +101,18 @@
 		?>
 		<div>
 			<div class="lista">
+				<?php
+				if (isset($solicitudesError))
+				{
+					echo $solicitudesError;
+				}
+				else if (isset($messageSolicitud))
+				{
+					echo $messageSolicitud;
+				}
+				else
+				{
+				?>
 				<div class="item" id="encabezado">
 					<p>Imagen del producto</p>
 					<p>Nombre del producto</p>
@@ -92,6 +135,9 @@
 					<p><i style="color: green;" class='bx bxs-check-circle'></i></p>
 					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
+				<?php
+				}
+				?>
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
 		</div>
