@@ -9,6 +9,11 @@ a{
     justify-content: center;
 }
 
+#background-animated{
+    background: #f0f0f0;
+    border-radius: 50%;
+}
+
 #background-animated,
 i.bx.bx-store-alt {
     font-size: 3rem;
@@ -16,8 +21,7 @@ i.bx.bx-store-alt {
     left: 8%;
     color: #007096;
     /*---*/
-    background: #f0f0f0;
-    border-radius: 50%;
+
     animation: background-expand 0.4s linear both
 
 }
