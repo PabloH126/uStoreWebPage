@@ -51,9 +51,9 @@
 		{
 			$messageSolicitud = json_decode($response, true);
 		}
-		echo $solicitudes;
 		$solicitudes = json_decode($response, true);
 		curl_close($ch);
+		echo $solicitudes;
 	}
 	
 ?>

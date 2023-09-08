@@ -1,4 +1,4 @@
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -9,12 +9,12 @@ a{
     justify-content: center;
 }
 
-#background-animated{
+#background-animated {
     background: #f0f0f0;
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
-    animation: background-expand 0.4s linear both
+    animation: background-expand 1s linear both
 }
 
 #background-animated,
@@ -25,35 +25,39 @@ i.bx.bx-store-alt {
     color: #007096;
 }
 
-@keyframes background-expand{
-    0%{transform:scale(1);} 
-    90%{
-        transform:scale(2);
+@keyframes background-expand {
+    0% {
+        transform: scale(1);
     }
-    100%{
-        filter:blur(12px);
-        opacity:0;
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        filter: blur(12px);
+        opacity: 0;
     }
 }
 
-#menu-icon:hover:before{
+#menu-icon:hover:before {
     content: "\eebd";
     cursor: pointer;
 }
 
-#menu-icon.active:before{
+#menu-icon.active:before {
     content: "\eebd";
     cursor: pointer;
 }
 
-#sub-menu.active{
+#sub-menu.active {
     -webkit-display: flex;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#sub-menu{
+#sub-menu {
     position: absolute;
     width: auto;
     z-index: 1;
@@ -69,17 +73,17 @@ i.bx.bx-store-alt {
     padding: 10px 15px;
 }
 
-.content .title .menu-option{
+.content .title .menu-option {
     width: 100%;
     padding: 2px;
     user-select: none;
 }
 
-.content .title .menu-option:hover{
+.content .title .menu-option:hover {
     background-color: #007096;
 }
 
-.content .title .menu-option:hover a{
+.content .title .menu-option:hover a {
     color: white;
 }
 
@@ -101,7 +105,7 @@ i.bx.bx-store-alt {
     color: white;
 }
 
-#span-seleccion-tienda{
+#span-seleccion-tienda {
     font-size: 5rem;
     color: #0000001f;
     font-weight: bold;
@@ -122,7 +126,7 @@ i.bx.bx-store-alt {
     font-size: 1.3rem;
 }
 
-.content .lista .item img{
+.content .lista .item img {
     max-height: 85%;
     max-width: 61%;
 }
@@ -132,12 +136,12 @@ i.bx.bx-store-alt {
     display: grid;
 }
 
-.content .lista .item p label{
+.content .lista .item p label {
     font-size: 1rem;
     color: #007096;
 }
 
-.content .lista .item p i{
+.content .lista .item p i {
     font-size: 3rem;
 }
 
@@ -157,6 +161,7 @@ i.bx.bx-store-alt {
         font-size: 2.5rem;
         left: 7%;
     }
+
     .content .title h1 {
         font-size: 4.3rem;
         margin: 25px 35px;
@@ -169,7 +174,7 @@ i.bx.bx-store-alt {
     }
 
     .content .lista .item p,
-    .content .lista #encabezado p{
+    .content .lista #encabezado p {
         font-size: 1.2rem;
     }
 
