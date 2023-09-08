@@ -1,13 +1,13 @@
 <?php
     session_start();
-    $idTienda = 'holi';//$_SESSION['idTienda'];
+    $idTienda = $_SESSION['idTienda'];
     $idMall = $_SESSION['idMall'];
     $idUser = $_SESSION['id'];
     var_dump($_SESSION);
 
     $ch = curl_init();
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/GetProductos?idTienda=" . $_GET['id']);
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Productos/GetProductos?idTienda=" . $idTienda);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
