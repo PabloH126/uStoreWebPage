@@ -87,7 +87,7 @@ deleteIcons.forEach((icon) => {
         const imgIdElement = document.getElementById(imgGuardadaId);
         const inputElement = document.getElementById(inputId);
         const imgElement = document.getElementById(imgId);
-
+        icon.disabled = true;
         // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
         if(inputElement && imgElement)
         {
@@ -104,8 +104,6 @@ deleteIcons.forEach((icon) => {
                     if(data.status === 'success')
                     {
                         showNotification('Imagen eliminada con exito');
-                        imgElement.src = '';
-                        inputElement.value = '';
                         setTimeout(() => {
                             hideNotification();
                         }, 1500);
@@ -120,6 +118,9 @@ deleteIcons.forEach((icon) => {
                     showNotificationError("Error al intentar eliminar la imagen.");
                 });
             }
+
+            imgElement.src = '';
+            inputElement.value = '';
         }
         
     });
