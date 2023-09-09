@@ -273,12 +273,12 @@ function validarHorariosCorrectos()
 
         if(apertura && !cierre)
         {
-            alert(`Por favor ingresa la hora de cierre del ${dia}`)
+            showNotificationError(`Por favor ingresa la hora de cierre del ${dia}`)
             return false;
         }
         else if(!apertura && cierre)
         {
-            alert(`Por favor ingresa la hora de apertura de ${dia}`)
+            showNotificationError(`Por favor ingresa la hora de apertura de ${dia}`)
             return false;
         }
         else if(!apertura && !cierre)
@@ -294,7 +294,7 @@ function validarHorariosCorrectos()
 
         if(tiempoApertura > tiempoCierre)
         {
-            alert(`Por favor ingresa un horario válido para el día ${dia}.`);
+            showNotificationError(`Por favor ingresa un horario válido para el día ${dia}.`);
             return false;
         }
     }
@@ -330,7 +330,7 @@ function validacionPeriodos() {
 
         if((!numero && tiempo !== "") || (numero && tiempo === ""))
         {
-            alert(`Por favor ingresa un periodo de apartado predeterminado válido para el ${periodo}`);
+            showNotificationError(`Por favor ingresa un periodo de apartado predeterminado válido para el ${periodo}`);
             return false;
         }
     }
@@ -362,17 +362,17 @@ function logoValidacion() {
     let logoTienda = document.getElementById("logoTienda");
     if (!logoTienda.files.length && logoTienda.files.length > 0) 
     {
-        alert("Se debe subir un logo de tienda");
+        showNotificationError("Se debe subir un logo de tienda");
         return false;
     }
     else if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
     {
-        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        showNotificationError(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
         return false;
     }
     else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
     {
-        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+        showNotificationError(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
         return false;
     }
 
@@ -384,12 +384,12 @@ function imagenesValidacion(logoTienda) {
 
     if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
     {
-        alert(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        showNotificationError(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
         return false;
     }
     else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
     {
-        alert(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+        showNotificationError(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
         return false;
     }
     
@@ -398,12 +398,12 @@ function imagenesValidacion(logoTienda) {
         let img = document.getElementById("fileInput" + i);
         if(img.files.length && !validacionTypeImagen(img))
         {
-            alert(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+            showNotificationError(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
             return false;
         }
         else if (img.files.length && !validacionSizeImagen(img, maxSize))
         {
-            alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+            showNotificationError(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
             return false;
         }
     }
@@ -479,7 +479,7 @@ function validacionCategorias() {
     let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
     if (!checked) 
     {
-        alert("Se debe seleccionar al menos una categoria para la tienda");
+        showNotificationError("Se debe seleccionar al menos una categoria para la tienda");
         return false;
     }
     return true;
@@ -488,7 +488,7 @@ function validacionCategorias() {
 function validacionHorarios() {
     if(!horariosConfigurados())
     {
-        alert("Se debe configurar al menos un horario");
+        showNotificationError("Se debe configurar al menos un horario");
         return false;
     }
 
@@ -505,7 +505,7 @@ function validacionBanner() {
     let img3 = document.getElementById("fileInput3");
     let logoTienda = document.getElementById("logoTienda");
     if (!img1.files.length && !img2.files.length && !img3.files.length && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0) {
-        alert("Se debe subir al menos una imagen para el banner de la tienda");
+        showNotificationError("Se debe subir al menos una imagen para el banner de la tienda");
         return false;
     }
 
@@ -519,7 +519,7 @@ function validacionBanner() {
 function validacionCompletaPeriodos() {
     if(!periodosConfigurados())
     {
-        alert("Se debe configurar al menos un periodo de apartado predeterminado");
+        showNotificationError("Se debe configurar al menos un periodo de apartado predeterminado");
         return false;
     }
 
