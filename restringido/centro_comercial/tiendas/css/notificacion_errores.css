@@ -30,6 +30,6 @@
         transform: translateX(0);
     }
     to {
-        transform: translateX(100%); /* Asegura que la notificación se desplace fuera de la pantalla */
+        transform: translateX(110%); /* Asegura que la notificación se desplace fuera de la pantalla */
     }
 }
