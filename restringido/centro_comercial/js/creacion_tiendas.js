@@ -525,7 +525,10 @@ function showNotification(message) {
 
     // Establece un temporizador para ocultar automáticamente la notificación después de un tiempo
     setTimeout(() => {
-        hideNotification();
-    }, 2500); // Cambia el tiempo de acuerdo a tus necesidades
+        notification.classList.add("hide");
+        setTimeout(() => {
+            notification.remove();
+        }, 500); // Retira la notificación después de la animación de desvanecimiento
+    }, 5000); // Oculta la notificación después de 5 segundos
 }
 
