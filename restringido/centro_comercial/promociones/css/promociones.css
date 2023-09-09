@@ -45,3 +45,8 @@ hr {
 .space-publication .body-publication{
     border: 2px solid rgb(109, 6, 6);
 }
+
+.space-publication .body-publication{
+    width: 80%;
+    margin: 2% auto 0;
+}
