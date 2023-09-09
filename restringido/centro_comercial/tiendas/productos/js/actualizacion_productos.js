@@ -227,7 +227,7 @@ function nombreValidacion() {
 
     if(!nombre || !nombre.value.trim())
     {
-        alert("Se debe ingresar un nombre de producto");
+        showNotificationError("Se debe ingresar un nombre de producto");
         return false;
     }
 
@@ -239,7 +239,7 @@ function precioValidacion() {
 
     if(precio.value.trim() === "" || precio.value < 0 || isNaN(Number(precio.value)))
     {
-        alert("Se debe ingresar un precio del producto");
+        showNotificationError("Se debe ingresar un precio del producto");
         return false;
     }
 
@@ -251,7 +251,7 @@ function descripcionValidacion() {
 
     if(!descripcion || !descripcion.value.trim())
     {
-        alert("Se debe ingresar una descripcion del producto");
+        showNotificationError("Se debe ingresar una descripcion del producto");
         return false;
     }
 
@@ -285,12 +285,12 @@ function imagenesValidacion() {
         let img = document.getElementById("fileInput" + i);
         if(img.files.length && !validacionTypeImagen(img))
         {
-            alert(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+            showNotificationError(`La imagen ${i} no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
             return false;
         }
         else if (img.files.length && !validacionSizeImagen(img, maxSize))
         {
-            alert(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+            showNotificationError(`La imagen ${i} es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
             return false;
         }
     }
@@ -375,7 +375,7 @@ function validacionCategorias() {
     let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
     if (!checked) 
     {
-        alert("Se debe seleccionar al menos una categoria para el producto");
+        showNotificationError("Se debe seleccionar al menos una categoria para el producto");
         return false;
     }
     return true;
@@ -389,7 +389,7 @@ function validacionImagenesProducto() {
     let img5 = document.getElementById("fileInput5");
     if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length 
         && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0 && img4.files.length > 0 && img5.files.length > 0) {
-        alert("Se debe subir al menos una imagen del producto");
+        showNotificationError("Se debe subir al menos una imagen del producto");
         return false;
     }
 
@@ -398,4 +398,22 @@ function validacionImagenesProducto() {
         return false;
     }
     return true;
+}
+
+function showNotificationError(message) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+    const notification = document.createElement("div");
+    notification.classList.add("notificationError");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    currentNotification = notification;
+    setTimeout(() => {
+        notification.classList.add("notificationErrorHide");
+        setTimeout(() => {
+            hideNotification();
+        }, 550);
+    }, 2500);
 }
