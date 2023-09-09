@@ -303,6 +303,7 @@ function cantidadApartarValidacion() {
 
     if(apartado.value.trim() === "" || apartado.value < 0 || isNaN(Number(apartado.value)))
     {
+        showNotificationError("Se debe ingresar una cantidad válida de unidades del producto para apartado");
         return false;
     }
 
