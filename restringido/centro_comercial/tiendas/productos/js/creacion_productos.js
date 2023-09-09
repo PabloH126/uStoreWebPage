@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!cantidadApartarValidacion())
         {
-            alert("Se debe ingresar una cantidad válida de unidades del producto para apartado");
+            showNotificationError("Se debe ingresar una cantidad válida de unidades del producto para apartado");
             e.preventDefault();
             return;
         }
