@@ -132,7 +132,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         <label><strong>Logo de la tienda</strong></label>
                         <div class="contentL">
                             <div class="box">
-                                <i class='bx bx-x delete-icon' data-input-id="logoTienda" data-img-id="imagenSelec" data-imgG-id="logoTienda"></i>
+                                <i class='bx bx-x delete-icon' data-input-id="logoTienda" data-img-id="imagenSelec"></i>
                                 <img id="imagenSelec" alt="" src="<?php echo $tiendas['logoTienda']; ?>">
                             </div>
                             <div class="ip">
