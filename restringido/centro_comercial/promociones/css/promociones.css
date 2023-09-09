@@ -53,6 +53,7 @@ hr {
 
 .space-publication .body-publication img{
     margin: auto;
-    max-height: 50vh;
+    max-height: 46vh;
     max-width: 50%;
+    max-width: 3%;
 }
