@@ -51,6 +51,10 @@ hr {
     flex-direction: column;
 }
 
+.space-publication .body-publication p{
+    font-size: 2vh;
+}
+
 .space-publication .body-publication img{
     margin: auto;
     max-height: 46vh;
