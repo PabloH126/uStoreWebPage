@@ -18,11 +18,17 @@ hr {
 }
 
 .content .space-publication img{
-    width: 90px;
+    max-height: 100%;
 }
 
 .space-publication .header-publication{
     border: 2px solid rgb(109, 6, 6);
+}
+
+.header-publication img{
+    height: 8vh;
+    display: flex;
+    max-width: 6%;
 }
 
 .space-publication .body-publication{

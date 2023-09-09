@@ -31,7 +31,7 @@ require '../../security.php';
 
 <head>
 	<meta charset="utf-8">
-	<title>Solicitudes de apartado</title>
+	<title>Publicación de promociones</title>
 	<?php require("../templates/template.styles.php") ?>
 	<?php require("templates/template.secc_promociones.php") ?>
 	<link rel="stylesheet" href="css/promociones.css">
