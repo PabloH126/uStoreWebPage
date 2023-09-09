@@ -54,3 +54,9 @@ hr {
     display: flex;
     flex-direction: column;
 }
+
+.space-publication .body-publication img{
+    margin: auto;
+    max-height: 50vh;
+    max-width: 50%;
+}
