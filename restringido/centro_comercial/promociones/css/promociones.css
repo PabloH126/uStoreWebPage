@@ -8,7 +8,7 @@
 }
 
 .content .space-publication{
-    border: 2px solid grey;
+    /*border: 2px solid grey;*/
     margin-bottom: 14px;
 }
 
@@ -23,7 +23,7 @@ hr {
 }
 
 .space-publication .header-publication{
-    border: 2px solid rgb(109, 6, 6);
+    /*border: 2px solid rgb(109, 6, 6);*/
 }
 
 .header-publication{
@@ -39,6 +39,7 @@ hr {
 .header-publication .name{
     font-size: 5vh;
     font-weight: bold;
+    margin-left: 0.5%;
 }
 
 .space-publication .body-publication{

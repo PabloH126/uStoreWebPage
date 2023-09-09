@@ -1,4 +1,4 @@
-.notification {
+.notificationError {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -22,8 +22,10 @@
 }
 
 @keyframes fadeOut {
+    from {
+        transform: translateX(0);
+    }
     to {
-        opacity: 0;
         transform: translateX(100%); /* Asegura que la notificación se desplace fuera de la pantalla */
     }
 }
