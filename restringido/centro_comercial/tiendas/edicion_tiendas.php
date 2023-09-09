@@ -251,7 +251,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                             </div>
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1"></i>
+                                    <i class='bx bx-x delete-icon' data-input-id="fileInput2" data-img-id="imagenSelec2"></i>
                                     <img src="<?php echo $imagenesTienda[1]['imagenTienda']; ?>" id="imagenSelec2" alt="">
                                 </div>
                                 <div class="ip">
@@ -268,7 +268,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                             </div>
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1"></i>
+                                    <i class='bx bx-x delete-icon' data-input-id="fileInput3" data-img-id="imagenSelec3"></i>
                                     <img src="<?php echo $imagenesTienda[2]['imagenTienda']; ?>" id="imagenSelec3" alt="">
                                 </div>
                                 <div class="ip">
