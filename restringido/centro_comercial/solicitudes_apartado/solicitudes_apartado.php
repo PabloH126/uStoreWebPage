@@ -55,8 +55,6 @@
 		$solicitudes = $data['solicitudes'];
 		$productos = $data['productos'];
 		curl_close($ch);
-		echo $httpStatusCode;
-		echo $response;
 	}
 	
 ?>
