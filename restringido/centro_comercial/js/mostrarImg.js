@@ -104,8 +104,7 @@ deleteIcons.forEach((icon) => {
                     if(data.status === 'success')
                     {
                         showNotification('Imagen eliminada con exito');
-                        imgIdElement = null;
-                        imgIdElement.value = null;
+                        imgIdElement.value = "0";
                         setTimeout(() => {
                             hideNotification();
                         }, 1500);
