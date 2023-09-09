@@ -515,12 +515,16 @@ function validacionCompletaPeriodos() {
 }
 
 function showNotificationError(message) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
     // Si ya hay una notificación, quítala antes de mostrar una nueva
     const notification = document.createElement("div");
     notification.classList.add("notificationError");
     notification.textContent = message;
     document.body.appendChild(notification);
-
+    
+    currentNotification = notification;
     // Establece un temporizador para ocultar automáticamente la notificación después de un tiempo
     setTimeout(() => {
         notification.classList.add("notificationErrorHide");
