@@ -67,6 +67,11 @@ require '../../security.php';
                 </div>
             </div>
         </div>
+		<div class="crear-publicacion">
+			<a title="Crear publicacion" href="">
+				<span class="material-symbols-outlined">add</span>
+			</a>
+		</div>	
 	</div>
 </body>
 
