@@ -1,22 +1,23 @@
-html, body{
+html,
+body {
     overflow-x: hidden;
 }
 
-header{
+header {
     position: sticky;
     top: 0;
 }
 
-.content{
+.content {
     text-align: left;
 }
 
-.content .content-ofertas{
+.content .content-ofertas {
     width: 97%;
     margin: 20px auto;
 }
 
-.content .space-publication{
+.content .space-publication {
     margin-bottom: 14px;
 }
 
@@ -27,54 +28,54 @@ hr {
     margin: auto;
 }
 
-.content .space-publication img{
+.content .space-publication img {
     max-height: 100%;
     max-width: 6%;
 }
 
-.header-publication{
+.header-publication {
     height: 8vh;
     display: flex;
     align-items: center;
     margin-top: 12px;
 }
 
-.header-publication img{
+.header-publication img {
     max-width: 6%;
 }
 
-.header-publication .name{
+.header-publication .name {
     font-size: 5vh;
     font-weight: bold;
     margin-left: 0.5%;
 }
 
-.space-publication .body-publication{
+.space-publication .body-publication {
     width: 86%;
     margin: 1.2% auto 0;
     display: flex;
     flex-direction: column;
 }
 
-.space-publication .body-publication p{
+.space-publication .body-publication p {
     font-size: 2vh;
 }
 
-.space-publication .body-publication img{
+.space-publication .body-publication img {
     margin: auto;
     max-height: 46vh;
     max-width: 50%;
     margin-top: 3%;
 }
 
-.content .crear-publicacion{
+.content .crear-publicacion {
     position: absolute;
-    right: 5%;
-    bottom: 7%;
-    
+    right: 5vw;
+    bottom: 4vh;
+
 }
 
-.content .crear-publicacion span{
+.content .crear-publicacion span {
     background: #007096;
     color: white;
     padding: 20%;

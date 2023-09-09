@@ -246,10 +246,10 @@ a{
 
 .edicionTienda{
     position: absolute;
-    right: 5%;
-    bottom: 7%;
+    right: 5vw;
+    bottom: 4vh;
     color: white;
-    font-size: 2.8em;
+    font-size: 5.5vh;
 }
 
 .edicionTienda i{
@@ -291,11 +291,4 @@ a{
     .bttnProductos a {
         font-size: 1.3em;
     }
-
-    .edicionTienda{
-        right: 3%;
-        bottom: 4%;
-        font-size: 2em;
-    }
-
 }
