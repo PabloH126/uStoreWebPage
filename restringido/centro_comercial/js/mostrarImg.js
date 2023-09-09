@@ -94,7 +94,7 @@ deleteIcons.forEach((icon) => {
             if(imgIdElement && imgIdElement.value !== "0")
             {
                 const formData = new FormData();
-                formData.append(idImagen, imgIdElement.value);
+                formData.append("idImagen", imgIdElement.value);
                 fetch('../tiendas/eliminar_imagen_tienda.php', {
                     method: 'POST',
                     body: formData
@@ -115,6 +115,10 @@ deleteIcons.forEach((icon) => {
                         showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
                     }
                 })
+                .catch(error => {
+                    console.error("Hubo un error con la petición fetch:", error);
+                    showNotificationError("Error al intentar eliminar la imagen.");
+                });
             }
         }
         
