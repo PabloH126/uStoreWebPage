@@ -98,6 +98,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     <link rel="stylesheet" href="css/edicion_tiendas.css">
     <link rel="stylesheet" type="text/css" href="css/confirmacion_eliminacion.css"> 
     <link rel="stylesheet" type="text/css" href="css/mensaje_eliminacion.css">
+    <link rel="stylesheet" type="text/css" href="css/notificacion_errores.css">
 </head>
 
 <body>
