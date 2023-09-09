@@ -260,7 +260,7 @@ function validarHorariosCorrectos()
 
         if(apertura && !cierre)
         {
-            showNotificationError(`Se debe ingresar un nombre de la tienda ${dia}`);
+            showNotificationError(`Por favor ingresa la hora de cierre de ${dia}`);
             return false;
         }
         else if(!apertura && cierre)
