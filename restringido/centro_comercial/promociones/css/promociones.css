@@ -25,9 +25,12 @@ hr {
     border: 2px solid rgb(109, 6, 6);
 }
 
-.header-publication img{
+.header-publication{
     height: 8vh;
     display: flex;
+}
+
+.header-publication img{
     max-width: 6%;
 }
 
