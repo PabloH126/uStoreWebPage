@@ -83,79 +83,16 @@ deleteIcons.forEach((icon) => {
     icon.addEventListener('click', () => {
         const inputId = icon.getAttribute('data-input-id');
         const imgId = icon.getAttribute('data-img-id');
-        const imgGuardadaId = icon.getAttribute('data-imgG-id');
-        const imgIdElement = document.getElementById(imgGuardadaId);
+
         const inputElement = document.getElementById(inputId);
         const imgElement = document.getElementById(imgId);
 
         // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
         if(inputElement && imgElement)
         {
-            if(imgIdElement && imgIdElement.value !== "0")
-            {
-                const formData = new FormData();
-                formData.append(idImagen, imgIdElement.value);
-                fetch('../tiendas/eliminar_imagen_tienda.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if(data.status === 'success')
-                    {
-                        showNotification('Imagen eliminada con exito');
-                        imgElement.src = '';
-                        inputElement.value = '';
-                        setTimeout(() => {
-                            hideNotification();
-                        }, 1500);
-                    }
-                    else
-                    {
-                        showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
-                    }
-                })
-            }
+            imgElement.src = '';
+            inputElement.value = '';
         }
         
     });
 });
-
-function showNotification(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    const notification = document.createElement("div");
-    notification.classList.add("notification");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    
-    currentNotification = notification;
-}
-
-function hideNotification() {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    currentNotification = null;
-}
-
-function showNotificationError(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-    const notification = document.createElement("div");
-    notification.classList.add("notificationError");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    currentNotification = notification;
-    setTimeout(() => {
-        notification.classList.add("notificationErrorHide");
-        setTimeout(() => {
-            hideNotification();
-        }, 550);
-    }, 2500);
-}
