@@ -29,10 +29,16 @@ hr {
 .header-publication{
     height: 8vh;
     display: flex;
+    align-items: center;
 }
 
 .header-publication img{
     max-width: 6%;
+}
+
+.header-publication .name{
+    font-size: 5vh;
+    font-weight: bold;
 }
 
 .space-publication .body-publication{
