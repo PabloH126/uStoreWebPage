@@ -51,6 +51,7 @@ function CategoriasSelect($categorias)
     <link rel="stylesheet" type="text/css"
         href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
     <link rel="stylesheet" href="css/creacion_productos.css">
+    <link rel="stylesheet" type="text/css" href="../css/notificacion_errores.css">
 </head>
 
 <body>
