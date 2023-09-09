@@ -529,6 +529,6 @@ function showNotificationError(message) {
     setTimeout(() => {
         notification.classList.add("notificationErrorHide");
     }, 2500);
-    hideNotification(); // Oculta la notificación después de 5 segundos
+    // Oculta la notificación después de 5 segundos
 }
 
