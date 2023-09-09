@@ -36,6 +36,7 @@ hr {
     height: 8vh;
     display: flex;
     align-items: center;
+    margin-top: 12px;
 }
 
 .header-publication img{
