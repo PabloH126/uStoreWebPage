@@ -19,6 +19,7 @@ hr {
 
 .content .space-publication img{
     max-height: 100%;
+    max-width: 6%;
 }
 
 .space-publication .header-publication{
