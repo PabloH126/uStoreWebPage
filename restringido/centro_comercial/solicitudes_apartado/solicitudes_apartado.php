@@ -114,10 +114,12 @@
 				
 				if (isset($solicitudesError))
 				{
+					echo $solicitudesError;
 					echo '<span id="span-seleccion-tienda">' .  $solicitudesError . '</span>';
 				}
 				else if (isset($messageSolicitud))
 				{
+					echo $messageSolicitud;
 					echo '<span id="span-seleccion-tienda">' .  $messageSolicitud . '</span>';
 				}
 				else
