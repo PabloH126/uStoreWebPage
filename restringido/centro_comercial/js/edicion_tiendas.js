@@ -492,19 +492,16 @@ async function sendFormWithoutImages(form, fileInputs) {
 }
 
 async function sendImage(input, url, idTienda, idImagen) {
-    alert('ya entro al sendImage');
     console.log(idImagen);
     const formData = new FormData();
     formData.append(input.name, input.files[0]);
     formData.append('idTienda', idTienda); // Agregar el idTienda al formData
     formData.append(idImagen.name, idImagen.value); // Agregar el idImagen al formData
-    alert(idImagen.name + " " + idImagen.value);
-    alert(idTienda);
+
     const responseImagenes = await fetch(url, {
         method: 'POST',
         body: formData
     });
-    alert("ya entro al fetch");
     if (!responseImagenes.ok)
     {
         console.error("Error en la respuesta de imagenes: ", responseImagenes.statusText);
