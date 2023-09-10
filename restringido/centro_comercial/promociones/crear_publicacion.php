@@ -89,8 +89,8 @@ function CategoriasSelect($categorias)
                 </div>
 
                 <!-- Promociones de tienda -->
-                <div class="item" id="item-5">
-                    <p>5/6</p>
+                <div class="item" id="item-2">
+                    <p>2/6</p>
                     <div class="promociones">
                         <label><strong>Banners de la tienda</strong></label>
                         <div class="imageP">
