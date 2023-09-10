@@ -82,9 +82,12 @@ function CategoriasSelect($categorias)
                 <div class="item active" id="item-1">
                     <p>1/3</p>
                     <div class="name">
-                        <label for="precioProducto"><strong>Precio del producto</strong></label>
-                        <strong>$</strong>
-                        <input type="number" id="precioProducto" name="precioProducto" min="1" step="0.01">
+                        <label><strong>Selección de tienda</strong></label>
+                        <select>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select>
                     </div>
                     <div class="bttn" id="one">
                         <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i
