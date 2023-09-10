@@ -579,7 +579,7 @@ function validacionBanner() {
 
     let logoTienda = document.getElementById("logoTienda");
 
-    if (!img1.files.length && !img2.files.length && !img3.files.length && imgId1.value == "0" && imgId2 == "0" && imgId3 == "0") {
+    if (!img1.files.length && !img2.files.length && !img3.files.length && imgId1.value == "0" && imgId2.value == "0" && imgId3.value == "0") {
         showNotificationError("Se debe subir al menos una imagen para el banner de la tienda");
         return false;
     }
