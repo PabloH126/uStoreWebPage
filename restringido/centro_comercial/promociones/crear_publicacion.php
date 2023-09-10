@@ -67,7 +67,7 @@ function CategoriasSelect($categorias)
     <title>Crear publicación</title>
     <?php require("../templates/template.styles.php") ?>
 	<?php require("templates/template.secc_promociones.php") ?>
-    <link rel="stylesheet" href="css/crear_publicacion.css">
+    <link rel="stylesheet" href="../css/formularios_creacion.css">
 </head>
 
 <body>
