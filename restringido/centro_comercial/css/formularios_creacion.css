@@ -72,8 +72,8 @@ h1 {
 }
 
 .content .lista form .item .back {
-	margin-right: 5%;
-	margin-left: 188%;
+	margin-right: 1vw;
+	margin-left: 56vw;
 }
 
 .content .lista form .item #next {
@@ -307,7 +307,7 @@ h1 {
 }
 
 .content .lista form .item #ult {
-	margin-left: 133%;
+	margin-left: 51vw;
 }
 
 .content .lista form .item #send button {
@@ -371,11 +371,6 @@ h1 {
 		margin-left: 91%;
 	}
 
-	.content .lista form .item .back {
-		margin-right: 5%;
-		margin-left: 249%;
-	}
-
 	.content .lista form .item .categorias .optionsC .contentC {
 		font-size: 1.3rem;
 	}
@@ -398,10 +393,6 @@ h1 {
 	.content .lista form .item .promociones .imageP .contentP .ip label::before {
 		padding: 7px 12px;
 		margin: 10px;
-	}
-
-	.content .lista form .item #ult {
-		margin-left: 200%;
 	}
 
 	.content .lista form .item .apartados .contentA .apartadosT input[type="number"],

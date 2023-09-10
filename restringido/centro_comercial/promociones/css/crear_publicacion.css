@@ -9,3 +9,11 @@
 .content .lista form .item .promociones .imageP .contentP .ip label::before{
     width: 13vw;
 }
+
+.content .lista form .item #ult{
+    margin-left: 51vw;
+}
+
+.content .lista form .item #ult{
+    margin-left: 1vw;
+}
