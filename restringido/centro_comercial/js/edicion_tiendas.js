@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             setTimeout(() => {
                                 hideNotification();
                             }, 1500);
+                            window.location.hash = "#item-5";
+                            window.location.reload();
                         }
                         else
                         {
