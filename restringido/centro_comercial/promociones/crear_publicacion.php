@@ -71,7 +71,7 @@ function CategoriasSelect($categorias)
 </head>
 
 <body>
-    <?php require("templates/template.menu.php") ?>
+    <?php require("../templates/template.menu.php") ?>
     <div class="content">
         <h1>Creación de tienda</h1>
         <div class="lista">
