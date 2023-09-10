@@ -2,10 +2,6 @@ h1 {
 	margin: 20px 0 15px 0;
 }
 
-option:hover{
-	background: #007096;
-}
-
 .content {
 	overflow: hidden;
 	overflow-x: hidden;
@@ -19,6 +15,11 @@ option:hover{
 	font-size: 2em;
 	display: flex;
 	align-items: flex-start;
+}
+
+.content .lista form .item option{
+	color: white;
+	background-color: #007096;
 }
 
 .content .lista form .item {
