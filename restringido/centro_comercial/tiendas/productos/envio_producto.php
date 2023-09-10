@@ -49,7 +49,7 @@
         $responseArray['messageProducto'] = $_SESSION['idProducto'];
     }
 
-    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/productos/lista_productos.php?id=' . $_SESSION['idTienda'];
+    $urlSalida = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/productos/datos_session_productos.php';
 
     curl_close($ch);
 //----------------------------------------------------------------------------------------// 
