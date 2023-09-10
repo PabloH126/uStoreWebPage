@@ -302,6 +302,7 @@ h1 {
     outline: none;
     font-size: 1.5rem;
     margin: 5% 0;
+	padding: 5px;
     font-family: 'Golos Text', sans-serif;
 }
 

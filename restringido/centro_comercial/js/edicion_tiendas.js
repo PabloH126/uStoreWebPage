@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const deleteIcons = document.querySelectorAll('.delete-icon');
 
     deleteIcons.forEach((icon) => {
-        icon.addEventListener('click', () => {
+        icon.addEventListener('click', (e) => {
+            e.stopPropagation();
             const inputId = icon.getAttribute('data-input-id');
             const imgId = icon.getAttribute('data-img-id');
             const imgGuardadaId = icon.getAttribute('data-imgG-id');
@@ -58,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             setTimeout(() => {
                                 hideNotification();
                             }, 1500);
+                            window.location.reload(true);
                             window.location.hash = "#item-5";
-                            window.location.reload();
                         }
                         else
                         {
