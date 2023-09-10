@@ -79,7 +79,7 @@ function CategoriasSelect($categorias)
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
 
                 <!-- Seleccion de la tienda -->
-                <div class="item" id="item-1">
+                <div class="item active" id="item-1">
                     <p>1/3</p>
                     <div class="name">
                         <label for="precioProducto"><strong>Precio del producto</strong></label>
@@ -93,7 +93,7 @@ function CategoriasSelect($categorias)
                 </div>
 
                 <!-- Contenido de la publicacion-->
-                <div class="item active" id="item-1">
+                <div class="item" id="item-1">
                     <p>2/3</p>
                     <div class="descripcion">
                         <label for="descripcionProducto"><strong>Contenido de la publicación</strong></label>
