@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         {
                             showNotification('Imagen eliminada con exito');
                             imgIdElement.value = "0";
-                            alert(imgIdElement.value);
+                            
                             console.log(imgIdElement);
                             setTimeout(() => {
                                 hideNotification();
