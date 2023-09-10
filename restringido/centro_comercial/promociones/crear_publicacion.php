@@ -73,7 +73,7 @@ function CategoriasSelect($categorias)
 <body>
     <?php require("../templates/template.menu.php") ?>
     <div class="content">
-        <h1>Creación de tienda</h1>
+        <h1>Crear publicación</h1>
         <div class="lista">
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->
