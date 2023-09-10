@@ -29,57 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const deleteIcons = document.querySelectorAll('.delete-icon');
 
-    deleteIcons.forEach((icon) => {
-        icon.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const inputId = icon.getAttribute('data-input-id');
-            const imgId = icon.getAttribute('data-img-id');
-            const imgGuardadaId = icon.getAttribute('data-imgG-id');
-            const imgIdElement = document.getElementById(imgGuardadaId);
-            const inputElement = document.getElementById(inputId);
-            const imgElement = document.getElementById(imgId);
-            icon.disabled = true;
-            // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
-            if(inputElement && imgElement)
-            {
-                if(imgIdElement && imgIdElement.value !== "0")
-                {
-                    const formData = new FormData();
-                    formData.append("idImagen", imgIdElement.value);
-                    fetch('../tiendas/eliminar_imagen_tienda.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if(data.status === 'success')
-                        {
-                            showNotification('Imagen eliminada con exito');
-                            imgIdElement.value = "0";
-                            setTimeout(() => {
-                                hideNotification();
-                            }, 1500);
-                            window.location.reload();
-                            window.location.hash = "#item-5";
-                        }
-                        else
-                        {
-                            showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Hubo un error con la petición fetch:", error);
-                        showNotificationError("Error al intentar eliminar la imagen.");
-                    });
-                }
-
-                imgElement.src = '';
-                inputElement.value = '';
-            }
-            
-        });
-    });
-
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -139,6 +88,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const nextStep = parseInt(button.getAttribute('data-to_item'));
             showStep(nextStep);
+        });
+    });
+
+    deleteIcons.forEach((icon) => {
+        icon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const inputId = icon.getAttribute('data-input-id');
+            const imgId = icon.getAttribute('data-img-id');
+            const imgGuardadaId = icon.getAttribute('data-imgG-id');
+            const imgIdElement = document.getElementById(imgGuardadaId);
+            const inputElement = document.getElementById(inputId);
+            const imgElement = document.getElementById(imgId);
+            icon.disabled = true;
+            // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
+            if(inputElement && imgElement)
+            {
+                if(imgIdElement && imgIdElement.value !== "0")
+                {
+                    const formData = new FormData();
+                    formData.append("idImagen", imgIdElement.value);
+                    fetch('../tiendas/eliminar_imagen_tienda.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if(data.status === 'success')
+                        {
+                            showNotification('Imagen eliminada con exito');
+                            imgIdElement.value = "0";
+                            alert(imgIdElement.value);
+                            console.log(imgIdElement);
+                            setTimeout(() => {
+                                hideNotification();
+                            }, 1500);
+                            window.location.reload(true);
+                            window.location.hash = "#item-5";
+                        }
+                        else
+                        {
+                            showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Hubo un error con la petición fetch:", error);
+                        showNotificationError("Error al intentar eliminar la imagen.");
+                    });
+                }
+
+                imgElement.src = '';
+                inputElement.value = '';
+            }
+            
         });
     });
 
