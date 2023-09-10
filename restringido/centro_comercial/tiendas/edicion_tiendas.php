@@ -262,7 +262,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput3" >
                                     <input type="file" class="file-input fileInputBanner" id="fileInput3" name="imagen3" accept="image/*">
-                                    <input type="hidden" id="idImagen3" value="<?php echo isset($imagenesTienda[1]['idImagenesTiendas']) ? $imagenesTienda[2]['idImagenesTiendas'] : "0"; ?>" name="idImagen3" class="idImagenes">
+                                    <input type="hidden" id="idImagen3" value="<?php echo isset($imagenesTienda[2]['idImagenesTiendas']) ? $imagenesTienda[2]['idImagenesTiendas'] : "0"; ?>" name="idImagen3" class="idImagenes">
                                 </div>
                             </div>
                         </div>
