@@ -93,7 +93,7 @@ function CategoriasSelect($categorias)
                 </div>
 
                 <!-- Contenido de la publicacion-->
-                <div class="item" id="item-1">
+                <div class="item" id="item-2">
                     <p>2/3</p>
                     <div class="descripcion">
                         <label for="descripcionProducto"><strong>Contenido de la publicación</strong></label>
@@ -112,7 +112,7 @@ function CategoriasSelect($categorias)
                 </div>
 
                 <!-- Imagen o imagenes de la publicacion -->
-                <div class="item" id="item-2">
+                <div class="item" id="item-3">
                     <p>2/2</p>
                     <div class="logoT">
                         <label><strong>Imagen de la publicación</strong></label>
