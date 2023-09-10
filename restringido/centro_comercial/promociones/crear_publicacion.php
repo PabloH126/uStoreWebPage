@@ -82,7 +82,7 @@ function CategoriasSelect($categorias)
                     <p>1/2</p>
                     <div class="descripcion">
                         <label for="descripcionProducto"><strong>Contenido de la publicación</strong></label>
-                        <textarea id="descripcionProducto" name="descripcionProducto"></textarea>
+                        <textarea maxlength="300" id="descripcionProducto" name="descripcionProducto"></textarea>
                     </div>
                     <div class="bttn" id="one">
                         <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
