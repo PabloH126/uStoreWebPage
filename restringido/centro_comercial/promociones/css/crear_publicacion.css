@@ -1,13 +1,7 @@
-.content{
+.content {
     height: 87vh;
 }
 
-/*
-
-.content .lista form .item .promociones .imageP{
-    display: block;
-}
-
-.content .lista form .item .promociones .imageP .contentP .ip label::before{
+.content .lista form .item .logoT .contentL .ip label::before {
     width: 13vw;
-}*/
+}
