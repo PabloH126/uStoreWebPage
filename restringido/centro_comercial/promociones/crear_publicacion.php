@@ -76,11 +76,12 @@ function CategoriasSelect($categorias)
         <h1>Crear publicación</h1>
         <div class="lista">
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
-                <!-- Nombre de tienda-->
+                
+            <!-- Contenido de la publicacion-->
                 <div class="item active" id="item-1">
                     <p>1/2</p>
                     <div class="descripcion">
-                        <label for="descripcionProducto"><strong>Descripción del producto</strong></label>
+                        <label for="descripcionProducto"><strong>Contenido de la publicación</strong></label>
                         <textarea id="descripcionProducto" name="descripcionProducto"></textarea>
                     </div>
                     <div class="bttn" id="one">
@@ -88,11 +89,11 @@ function CategoriasSelect($categorias)
                     </div>
                 </div>
 
-                <!-- Promociones de tienda -->
+                <!-- Imagen o imagenes de la publicacion -->
                 <div class="item" id="item-2">
                     <p>2/2</p>
                     <div class="promociones">
-                        <label><strong>Banners de la tienda</strong></label>
+                        <label><strong>Imágenes de la publicación</strong></label>
                         <div class="imageP">
                             <div class="contentP">
                                 <div class="box">
@@ -134,7 +135,7 @@ function CategoriasSelect($categorias)
                             <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
                         <div class="bttn" id="send">
-                            <button type="submit">Guardar</button>
+                            <button type="submit">Publicar</button>
                         </div>
                     </div>
                 </div> 
