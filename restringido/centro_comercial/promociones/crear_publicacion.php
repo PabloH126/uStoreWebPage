@@ -108,7 +108,7 @@ function CategoriasSelect($categorias)
                         </div>
                     </div>
                     <div class="notas">
-                        <span>* El peso de cada imagen no debe superar 1 megabyte.</span>
+                        <span>* El peso de la imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back" id="ult">
