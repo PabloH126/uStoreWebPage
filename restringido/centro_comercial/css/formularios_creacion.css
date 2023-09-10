@@ -17,11 +17,6 @@ h1 {
 	align-items: flex-start;
 }
 
-.content .lista form .item option{
-	color: white;
-	background-color: #007096;
-}
-
 .content .lista form .item {
 	padding: 2%;
 	height: auto;
