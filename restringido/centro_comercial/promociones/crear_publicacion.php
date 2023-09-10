@@ -93,20 +93,18 @@ function CategoriasSelect($categorias)
                 <!-- Imagen o imagenes de la publicacion -->
                 <div class="item" id="item-2">
                     <p>2/2</p>
-                    <div class="promociones">
-                        <label><strong>Imagen de la publicación</strong></label>
-                        <div class="imageP">
-                            <div class="contentP">
-                                <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1"></i>
-                                    <img src="" id="imagenSelec1" alt="">
-                                </div>
-                                <div class="ip">
-                                    <label for="fileInput1" >
-                                    <input type="file" class="file-input fileInputBanner" id="fileInput1" name="imagen1" accept="image/*">
-                                </div>
+                    <div class="logoT">
+                        <label><strong>Logo de la tienda</strong></label>
+                        <div class="contentL">
+                            <div class="box">
+                                <i class='bx bx-x delete-icon' data-input-id="logoTienda" data-img-id="imagenSelec"></i>
+                                <img id="imagenSelec" alt="">
                             </div>
-                        </div>
+                            <div class="ip">
+                                <label for="logoTienda" id="labelL">
+                                <input type="file" class="file-input fileLogoTienda" id="logoTienda" name="logoTienda" accept="image/*">
+                            </div>
+                        </div> 
                     </div>
                     <div class="notas">
                         <span>* El peso de la imagen no debe superar 1 megabyte.</span>

@@ -104,7 +104,7 @@ function CategoriasSelect($categorias)
                                 <label for="logoTienda" id="labelL">
                                 <input type="file" class="file-input fileLogoTienda" id="logoTienda" name="logoTienda" accept="image/*">
                             </div>
-                        </div>
+                        </div> 
                     </div>
 
                     <div class="notas">
