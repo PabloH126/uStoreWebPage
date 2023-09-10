@@ -87,63 +87,66 @@ function CategoriasSelect($categorias)
                             <option value="">1</option>
                             <option value="">2</option>
                             <option value="">3</option>
-                        </select>
-                    </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i
-                                class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
-                    </div>
-                </div>
-
-                <!-- Contenido de la publicacion-->
-                <div class="item" id="item-2">
-                    <p>2/3</p>
-                    <div class="descripcion">
-                        <label for="descripcionProducto"><strong>Contenido de la publicación</strong></label>
-                        <textarea maxlength="300" id="descripcionProducto" name="descripcionProducto"></textarea>
-                    </div>
-                    <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i
-                                    class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i
-                                    class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imagen o imagenes de la publicacion -->
-                <div class="item" id="item-3">
-                    <p>3/3</p>
-                    <div class="logoT">
-                        <label><strong>Imagen de la publicación</strong></label>
-                        <div class="contentL">
-                            <div class="box">
-                                <i class='bx bx-x delete-icon' data-input-id="logoTienda" data-img-id="imagenSelec"></i>
-                                <img id="imagenSelec" alt="">
+                            <div class="bttn" id="one">
+                                <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i
+                                        class='bx bx-right-arrow-alt bttn-next' data-item="1"
+                                        data-to_item="2"></i></button>
                             </div>
-                            <div class="ip">
-                                <label for="logoTienda" id="labelL">
-                                <input type="file" class="file-input fileLogoTienda" id="logoTienda"
-                                        name="logoTienda" accept="image/*">
+                    </div>
+
+                    <!-- Contenido de la publicacion-->
+                    <div class="item" id="item-2">
+                        <p>2/3</p>
+                        <div class="descripcion">
+                            <label for="descripcionProducto"><strong>Contenido de la publicación</strong></label>
+                            <textarea maxlength="300" id="descripcionProducto" name="descripcionProducto"></textarea>
+                        </div>
+                        <div class="bttns">
+                            <div class="bttn back">
+                                <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i
+                                        class='bx bx-left-arrow-alt bttn-back' data-item="2"
+                                        data-to_item="1"></i></button>
+                            </div>
+                            <div class="bttn" id="next">
+                                <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i
+                                        class='bx bx-right-arrow-alt bttn-next' data-item="2"
+                                        data-to_item="3"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div class="notas">
-                        <span>* El peso de la imagen no debe superar 1 megabyte.</span>
-                    </div>
-                    <div class="bttns">
-                        <div class="bttn back" id="ult">
-                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i
-                                    class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
+
+                    <!-- Imagen o imagenes de la publicacion -->
+                    <div class="item" id="item-3">
+                        <p>3/3</p>
+                        <div class="logoT">
+                            <label><strong>Imagen de la publicación</strong></label>
+                            <div class="contentL">
+                                <div class="box">
+                                    <i class='bx bx-x delete-icon' data-input-id="logoTienda"
+                                        data-img-id="imagenSelec"></i>
+                                    <img id="imagenSelec" alt="">
+                                </div>
+                                <div class="ip">
+                                    <label for="logoTienda" id="labelL">
+                                        <input type="file" class="file-input fileLogoTienda" id="logoTienda"
+                                            name="logoTienda" accept="image/*">
+                                </div>
+                            </div>
                         </div>
-                        <div class="bttn" id="send">
-                            <button type="submit">Publicar</button>
+                        <div class="notas">
+                            <span>* El peso de la imagen no debe superar 1 megabyte.</span>
+                        </div>
+                        <div class="bttns">
+                            <div class="bttn back" id="ult">
+                                <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i
+                                        class='bx bx-left-arrow-alt bttn-back' data-item="3"
+                                        data-to_item="2"></i></button>
+                            </div>
+                            <div class="bttn" id="send">
+                                <button type="submit">Publicar</button>
+                            </div>
                         </div>
                     </div>
-                </div>
             </form>
         </div>
     </div>
