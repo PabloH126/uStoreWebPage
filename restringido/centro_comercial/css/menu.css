@@ -1,4 +1,4 @@
-header .content .final{
+header .content .final {
 	display: grid;
 	-webkit-display: grid;
 	width: 64%;
@@ -7,21 +7,21 @@ header .content .final{
 }
 
 header .content .final #ultimo,
-header .content .final .bottn{
+header .content .final .bottn {
 	align-items: center;
 	justify-content: center;
 	display: flex;
-	height: 100%;
+	height: 12vh;
 }
 
 header .content .final #ultimo:hover,
-header .content .final .bottn:hover{
+header .content .final .bottn:hover {
 	background: white;
 	transition-duration: 0.5s;
 	-webkit-transition-duration: 0.5s;
 }
 
-header .content .final #ultimo{
+header .content .final #ultimo {
 	justify-content: right;
 	padding: 0 20px 0 0;
 	width: 126px;
@@ -29,42 +29,31 @@ header .content .final #ultimo{
 }
 
 header .content .final #ultimo img:hover,
-header .content .final .bottn img:hover{
+header .content .final .bottn img:hover {
 	filter: none;
 	transition-duration: 0.5s;
 	-webkit-transition-duration: 0.5s;
 }
 
 header .content .final #ultimo img,
-header .content .final .bottn img{
+header .content .final .bottn img {
 	filter: saturate(0) brightness(3);
 }
 
 
-header .content .final a{
+header .content .final a {
 	height: 60%;
 }
 
-header .content .final #ultimo a{
+header .content .final #ultimo a {
 	height: 70%;
 }
 
 /*diseño responsivo*/
-@media only screen and (max-width: 1920px){
-	header .content .final #ultimo,
-	header .content .final .bottn{
-		height: 88%;
-	}
-}
 
-@media only screen and (max-width: 1502px){
+@media only screen and (max-width: 1502px) {
 
-	header .content .final #ultimo,
-	header .content .final .bottn{
-		height: 59%;
-	}
-
-	header .content .final #ultimo{
+	header .content .final #ultimo {
 		width: 94px;
 		margin-left: 25%;
 	}
