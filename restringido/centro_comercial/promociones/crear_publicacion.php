@@ -76,7 +76,7 @@ function CategoriasSelect($categorias)
     <div class="content">
         <h1>Crear publicación</h1>
         <div class="lista">
-            <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="" method="post" enctype="multipart/form-data" class="form-tiendas">
 
                 <!-- Seleccion de la tienda -->
                 <div class="item active" id="item-1">
