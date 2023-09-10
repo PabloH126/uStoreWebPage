@@ -177,7 +177,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                         <label for="fileInput1">
                                             <input type="file" class="file-input" id="fileInput1" name="imagen1"
                                                 accept="image/*">
-                                            <input type="hidden" value="<?php echo isset($imagenesProducto[0]['idImagenesProductos']) ? $imagenesProducto[0]['idImagenesProductos'] : "0"; ?>" name="idImagen1" class="idImagenes">
+                                            <input type="hidden" id="idImagen1" value="<?php echo isset($imagenesProducto[0]['idImagenesProductos']) ? $imagenesProducto[0]['idImagenesProductos'] : "0"; ?>" name="idImagen1" class="idImagenes">
                                     </div>
                                 </div>
                                 <div class="contentP">
@@ -189,7 +189,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                         <label for="fileInput2">
                                             <input type="file" class="file-input" id="fileInput2" name="imagen2"
                                                 accept="image/*">
-                                            <input type="hidden" value="<?php echo isset($imagenesProducto[1]['idImagenesProductos']) ? $imagenesProducto[1]['idImagenesProductos'] : "0"; ?>" name="idImagen2" class="idImagenes">
+                                            <input type="hidden" id="idImagen2" value="<?php echo isset($imagenesProducto[1]['idImagenesProductos']) ? $imagenesProducto[1]['idImagenesProductos'] : "0"; ?>" name="idImagen2" class="idImagenes">
                                     </div>
                                 </div>
                                 <div class="contentP">
@@ -201,7 +201,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                         <label for="fileInput3">
                                             <input type="file" class="file-input" id="fileInput3" name="imagen3"
                                                 accept="image/*">
-                                            <input type="hidden" value="<?php echo isset($imagenesProducto[2]['idImagenesProductos']) ? $imagenesProducto[2]['idImagenesProductos'] : "0"; ?>" name="idImagen3" class="idImagenes">
+                                            <input type="hidden" id="idImagen3" value="<?php echo isset($imagenesProducto[2]['idImagenesProductos']) ? $imagenesProducto[2]['idImagenesProductos'] : "0"; ?>" name="idImagen3" class="idImagenes">
                                     </div>
                                 </div>
 
@@ -214,7 +214,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                         <label for="fileInput4">
                                             <input type="file" class="file-input" id="fileInput4" name="imagen4"
                                                 accept="image/*">
-                                            <input type="hidden" value="<?php echo isset($imagenesProducto[3]['idImagenesProductos']) ? $imagenesProducto[3]['idImagenesProductos'] : "0"; ?>" name="idImagen4" class="idImagenes">
+                                            <input type="hidden" id="idImagen4" value="<?php echo isset($imagenesProducto[3]['idImagenesProductos']) ? $imagenesProducto[3]['idImagenesProductos'] : "0"; ?>" name="idImagen4" class="idImagenes">
                                     </div>
                                 </div>
                                 <div class="contentP" id="content-5">
@@ -226,7 +226,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                         <label for="fileInput5">
                                             <input type="file" class="file-input" id="fileInput5" name="imagen5"
                                                 accept="image/*">
-                                            <input type="hidden" value="<?php echo isset($imagenesProducto[4]['idImagenesProductos']) ? $imagenesProducto[4]['idImagenesProductos'] : "0"; ?>" name="idImagen5" class="idImagenes">
+                                            <input type="hidden" id="idImagen5" value="<?php echo isset($imagenesProducto[4]['idImagenesProductos']) ? $imagenesProducto[4]['idImagenesProductos'] : "0"; ?>" name="idImagen5" class="idImagenes">
                                     </div>
                                 </div>
                             </div>

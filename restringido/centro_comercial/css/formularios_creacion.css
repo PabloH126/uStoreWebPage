@@ -332,7 +332,7 @@ h1 {
 
 	.content .lista form .item{
 		margin-top: 0;
-		margin-bottom: 0;
+		/*margin-bottom: 0;*/
 	}
 
 	.content .lista form .item.to-left {
