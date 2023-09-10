@@ -78,7 +78,7 @@ function CategoriasSelect($categorias)
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->
                 <div class="item active" id="item-1">
-                    <p>1/6</p>
+                    <p>1/2</p>
                     <div class="descripcion">
                         <label for="descripcionProducto"><strong>Descripción del producto</strong></label>
                         <textarea id="descripcionProducto" name="descripcionProducto"></textarea>
@@ -90,7 +90,7 @@ function CategoriasSelect($categorias)
 
                 <!-- Promociones de tienda -->
                 <div class="item" id="item-2">
-                    <p>2/6</p>
+                    <p>2/2</p>
                     <div class="promociones">
                         <label><strong>Banners de la tienda</strong></label>
                         <div class="imageP">

@@ -47,7 +47,7 @@ function CategoriasSelect($categorias)
     <title>Crear producto</title>
     <?php require("../../templates/template.styles.php") ?>
     <?php require("../templates/template.secc_tiendas.php") ?>
-    <link rel="stylesheet" type="text/css" href="../css/creacion_tiendas.css">
+    <link rel="stylesheet" type="text/css" href="../../css/creacion_tiendas.css">
     <link rel="stylesheet" type="text/css"
         href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
     <link rel="stylesheet" href="css/creacion_productos.css">
