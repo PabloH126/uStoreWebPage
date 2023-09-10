@@ -281,7 +281,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
         </div>
     </div>
     <script src="../../js/slider_formularios.js"></script>
-    <script src="../../js/mostrarImg.js"></script>
+    <!--<script src="../../js/mostrarImg.js"></script>-->
     <script src="js/productosImg.js"></script>
     <script src="js/actualizacion_productos.js"></script>
     <script src="js/eliminacion_productos.js"></script>

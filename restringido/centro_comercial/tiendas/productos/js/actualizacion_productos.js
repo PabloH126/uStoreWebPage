@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     const formData = new FormData();
                     formData.append("idImagen", imgIdElement.value);
-                    fetch('../tiendas/eliminar_imagen_tienda.php', {
+                    fetch('../eliminar_imagen_producto.php', {
                         method: 'POST',
                         body: formData
                     })
