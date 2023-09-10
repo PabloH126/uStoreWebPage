@@ -83,7 +83,7 @@ function CategoriasSelect($categorias)
                     <p>1/3</p>
                     <div class="name">
                         <label><strong>Selección de tienda</strong></label>
-                        <select>
+                        <select id="seleccion_tienda">
                             <option value="">1</option>
                             <option value="">2</option>
                             <option value="">3</option>
