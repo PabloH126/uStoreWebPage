@@ -79,104 +79,12 @@ function CategoriasSelect($categorias)
                 <!-- Nombre de tienda-->
                 <div class="item active" id="item-1">
                     <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" name="nombreTienda">
+                    <div class="descripcion">
+                        <label for="descripcionProducto"><strong>Descripción del producto</strong></label>
+                        <textarea id="descripcionProducto" name="descripcionProducto"></textarea>
                     </div>
                     <div class="bttn" id="one">
                         <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
-                    </div>
-                </div>
-
-                <!-- Logo de tienda-->
-                <div class="item" id="item-2">
-                    <p>2/6</p>
-                    <div class="logoT">
-                        <label><strong>Logo de la tienda</strong></label>
-                        <div class="contentL">
-                            <div class="box">
-                                <i class='bx bx-x delete-icon' data-input-id="logoTienda" data-img-id="imagenSelec"></i>
-                                <img id="imagenSelec" alt="">
-                            </div>
-                            <div class="ip">
-                                <label for="logoTienda" id="labelL">
-                                <input type="file" class="file-input fileLogoTienda" id="logoTienda" name="logoTienda" accept="image/*">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="notas">
-                        <span>* El peso de la imagen del logo no debe superar 1 megabyte.</span>
-                    </div>
-
-                    <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Categorias de tienda-->
-                <div class="item" id="item-3">
-                    <p>3/6</p>
-                    <div class="categorias">
-                        <label><strong>Categorías de la tienda</strong></label>
-                        <div class="optionsC">
-                            <?php CategoriasSelect($categorias); ?>
-                        </div>
-                        <div class="notas">
-                            <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
-                        </div>
-                    </div>
-                    <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Horario de tienda-->
-                <div class="item" id="item-4">
-                    <p>4/6</p>
-                    <div class="horarioT">
-                        <label><strong>Horario de la tienda</strong></label>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Día</th>
-                                    <th>Hora de apertura</th>
-                                    <th>Hora de cierre</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                HorariosSelect('Lunes');
-                                HorariosSelect('Martes');
-                                HorariosSelect('Miércoles');
-                                HorariosSelect('Jueves');
-                                HorariosSelect('Viernes');
-                                HorariosSelect('Sábado');
-                                HorariosSelect('Domingo');
-                                ?>
-                            </tbody>
-                        </table>
-                        <div class="notas">
-                            <span>* Si es día no laboral, dejar el día en 00:00 o en --:--.</span>
-                        </div>
-                    </div>
-                    <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
-                        </div>
                     </div>
                 </div>
 
@@ -222,46 +130,21 @@ function CategoriasSelect($categorias)
                         <span>* El peso de cada imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
-                        </div>
-                    </div>
-                </div> 
-
-                <!-- Periodos de apartado de la tienda -->
-                <div class="item" id="item-6">
-                    <p>6/6</p>
-                    <div class="apartados">
-                        <label><strong>Periodos de apartado</strong></label>
-                        <div class="contentA">
-                            <?php
-                            PeriodosSelect('Periodo1');
-                            PeriodosSelect('Periodo2');
-                            PeriodosSelect('Periodo3');
-                            ?>
-                        </div>
-                        <div class="notas">
-                            <span>* Los campos en blanco y en "Tiempo", no se guardarán.</span>
-                        </div>
-                    </div>
-                    <div class="bttns">
                         <div class="bttn back" id="ult">
-                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
+                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
                         <div class="bttn" id="send">
                             <button type="submit">Guardar</button>
                         </div>
                     </div>
-                </div>
+                </div> 
+
             </form>
         </div>
     </div>
     <script src="js/mostrarImg.js"></script>
     <script src="js/creacion_tiendas.js"></script>
-    <!--<script src="js/slider_formularios.js"></script>-->
+    <script src="../js/slider_formularios.js"></script>
 </body>
 
 </html>
