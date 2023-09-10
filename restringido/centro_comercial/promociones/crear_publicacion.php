@@ -93,7 +93,7 @@ function CategoriasSelect($categorias)
                 <div class="item" id="item-2">
                     <p>2/2</p>
                     <div class="promociones">
-                        <label><strong>Imágenes de la publicación</strong></label>
+                        <label><strong>Imagen de la publicación</strong></label>
                         <div class="imageP">
                             <div class="contentP">
                                 <div class="box">
