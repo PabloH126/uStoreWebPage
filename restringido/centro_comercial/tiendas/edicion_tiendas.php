@@ -94,7 +94,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     <title>Edición de <?php echo $tiendas['nombreTienda']; ?></title>
     <?php require("../templates/template.styles.php") ?>
     <?php require("templates/template.secc_tiendas.php") ?>
-    <link rel="stylesheet" type="text/css" href="../css/creacion_tiendas.css">
+    <link rel="stylesheet" type="text/css" href="../css/formularios_creacion.css">
     <link rel="stylesheet" href="css/edicion_tiendas.css">
     <link rel="stylesheet" type="text/css" href="css/confirmacion_eliminacion.css"> 
     <link rel="stylesheet" type="text/css" href="css/mensaje_eliminacion.css">
