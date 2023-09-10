@@ -1,3 +1,7 @@
+.content{
+    height: 87vh;
+}
+
 .content .lista form .item .promociones .imageP{
     display: block;
 }

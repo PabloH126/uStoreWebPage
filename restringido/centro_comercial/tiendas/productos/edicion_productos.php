@@ -170,7 +170,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                             <div class="imageP" id="imageP">
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1" data-imgG-id="idImagen1"></i>
                                         <img src="<?php echo $imagenesProducto[0]['imagenProducto']; ?>" id="imagenSelec1" alt="">
                                     </div>
                                     <div class="ip">
@@ -182,7 +182,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                 </div>
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput2" data-img-id="imagenSelec2"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput2" data-img-id="imagenSelec2" data-imgG-id="idImagen2"></i>
                                         <img src="<?php echo $imagenesProducto[1]['imagenProducto']; ?>" id="imagenSelec2" alt="">
                                     </div>
                                     <div class="ip">
@@ -194,7 +194,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                 </div>
                                 <div class="contentP">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput3" data-img-id="imagenSelec3"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput3" data-img-id="imagenSelec3" data-imgG-id="idImagen3"></i>
                                         <img src="<?php echo $imagenesProducto[2]['imagenProducto']; ?>" id="imagenSelec3" alt="">
                                     </div>
                                     <div class="ip">
@@ -207,7 +207,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
 
                                 <div class="contentP" id="content-4">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput4" data-img-id="imagenSelec4"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput4" data-img-id="imagenSelec4" data-imgG-id="idImagen4"></i>
                                         <img src="<?php echo isset($imagenesProducto[3]['imagenProducto']) ? $imagenesProducto[3]['imagenProducto'] : ''; ?>" id="imagenSelec4" alt="">
                                     </div>
                                     <div class="ip">
@@ -219,7 +219,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                 </div>
                                 <div class="contentP" id="content-5">
                                     <div class="box">
-                                        <i class='bx bx-x delete-icon' data-input-id="fileInput5" data-img-id="imagenSelec5"></i>
+                                        <i class='bx bx-x delete-icon' data-input-id="fileInput5" data-img-id="imagenSelec5" data-imgG-id="idImagen5"></i>
                                         <img src="<?php echo isset($imagenesProducto[4]['imagenProducto']) ? $imagenesProducto[4]['imagenProducto'] : ''; ?>" id="imagenSelec5" alt="">
                                     </div>
                                     <div class="ip">
