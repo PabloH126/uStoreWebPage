@@ -1,0 +1,7 @@
+.content .lista form .item .promociones .imageP{
+    display: block;
+}
+
+.content .lista form .item .promociones .imageP .contentP .ip label::before{
+    width: 14vw;
+}

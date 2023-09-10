@@ -451,12 +451,22 @@ function validacionCategorias() {
 
 function validacionImagenesProducto() {
     let img1 = document.getElementById("fileInput1");
+    let imgId1 = document.getElementById("idImagen1");
+
     let img2 = document.getElementById("fileInput2");
+    let imgId2 = document.getElementById("idImagen2");
+
     let img3 = document.getElementById("fileInput3");
+    let imgId3 = document.getElementById("idImagen3");
+
     let img4 = document.getElementById("fileInput4");
+    let imgId4 = document.getElementById("idImagen4");
+
     let img5 = document.getElementById("fileInput5");
+    let imgId5 = document.getElementById("idImagen5");
+
     if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length 
-        && img1.files.length > 0 && img2.files.length > 0 && img3.files.length > 0 && img4.files.length > 0 && img5.files.length > 0) {
+        && imgId1.value == "0" && imgId2.value == "0" && imgId3.value == "0" && imgId4.value == "0" && imgId5.value =="0") {
         showNotificationError("Se debe subir al menos una imagen del producto");
         return false;
     }
@@ -485,3 +495,65 @@ function showNotificationError(message) {
         }, 550);
     }, 2500);
 }
+
+//LOGO DE TIENDA E IMAGENES EXTRA DE PRODUCTO
+if (imagenInput && imagenMostrada) {
+    imagenInput.addEventListener('change', (event) => {
+        const imagenSeleccionada = event.target.files[0];
+
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada.src = imagenURL;
+        }
+    });
+}
+if (imagenInput4 && imagenMostrada4) {
+    imagenInput4.addEventListener('change', (event) => {
+        const imagenSeleccionada = event.target.files[0];
+
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada4.src = imagenURL;
+        }
+    });
+}
+if (imagenInput5 && imagenMostrada5) {
+    imagenInput5.addEventListener('change', (event) => {
+        const imagenSeleccionada = event.target.files[0];
+
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada5.src = imagenURL;
+        }
+    });
+}
+
+
+//3 IMAGENES BANNER TIENDA/PRODUCTO
+imagenInput1.addEventListener('change', (event) => {
+    const imagenSeleccionada = event.target.files[0];
+
+    if (imagenSeleccionada) {
+        const imagenURL = URL.createObjectURL(imagenSeleccionada);
+        imagenMostrada1.src = imagenURL;
+    }
+});
+
+imagenInput2.addEventListener('change', (event) => {
+    const imagenSeleccionada = event.target.files[0];
+
+    if (imagenSeleccionada) {
+        const imagenURL = URL.createObjectURL(imagenSeleccionada);
+        imagenMostrada2.src = imagenURL;
+    }
+});
+
+
+imagenInput3.addEventListener('change', (event) => {
+    const imagenSeleccionada = event.target.files[0];
+
+    if (imagenSeleccionada) {
+        const imagenURL = URL.createObjectURL(imagenSeleccionada);
+        imagenMostrada3.src = imagenURL;
+    }
+});

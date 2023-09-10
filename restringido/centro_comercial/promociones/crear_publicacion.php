@@ -68,6 +68,7 @@ function CategoriasSelect($categorias)
     <?php require("../templates/template.styles.php") ?>
 	<?php require("templates/template.secc_promociones.php") ?>
     <link rel="stylesheet" href="../css/formularios_creacion.css">
+    <link rel="stylesheet" href="css/crear_publicacion.css">
 </head>
 
 <body>
