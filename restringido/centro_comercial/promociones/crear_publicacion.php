@@ -113,7 +113,7 @@ function CategoriasSelect($categorias)
 
                 <!-- Imagen o imagenes de la publicacion -->
                 <div class="item" id="item-3">
-                    <p>2/2</p>
+                    <p>3/3</p>
                     <div class="logoT">
                         <label><strong>Imagen de la publicación</strong></label>
                         <div class="contentL">
@@ -123,7 +123,7 @@ function CategoriasSelect($categorias)
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
-                                    <input type="file" class="file-input fileLogoTienda" id="logoTienda"
+                                <input type="file" class="file-input fileLogoTienda" id="logoTienda"
                                         name="logoTienda" accept="image/*">
                             </div>
                         </div>
