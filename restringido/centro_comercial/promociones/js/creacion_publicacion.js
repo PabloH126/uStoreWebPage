@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function descripcionValidacion() {
-    var descripcion = document.getElementById('descripcionPublicacion');
+    var descripcion = document.getElementById('descripcionProducto');
 
     if(!descripcion || !descripcion.value.trim())
     {
