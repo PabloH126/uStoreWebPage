@@ -10,7 +10,7 @@ $data = [
     'idCentroComercial' => $_SESSION['idMall']
 ];
 
-if(isset($_FILES['logoTienda']))
+if(isset($_FILES['logoTienda']) && $_FILES['logoTienda']['error'] == 0)
 {
     $imagenPublicacion = $_FILES['logoTienda'];
 
