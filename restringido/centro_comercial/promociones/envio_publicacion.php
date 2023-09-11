@@ -10,7 +10,7 @@ $data = [
     'idCentroComercial' => $_SESSION['idMall']
 ];
 
-$imagenPublicacion = $_FILES['imagenPublicacion'];
+$imagenPublicacion = $_FILES['logoTienda'];
 
 if(in_array($imagenPublicacion['type'], $allowedImageTypes) && $imagenPublicacion['size'] <= $maxSize)
 {
@@ -47,7 +47,7 @@ curl_close($ch);
 
 if($httpStatusCode != 201)
 {
-    echo $httpStatusCode;
+    echo $httpStatusCode . ' ' . $response . ' ' . $dataPublicacion;
 }
 else
 {

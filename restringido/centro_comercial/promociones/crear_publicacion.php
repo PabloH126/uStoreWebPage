@@ -99,7 +99,7 @@ $ch = curl_init();
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
                                     <input type="file" class="file-input fileLogoTienda" id="logoTienda"
-                                        name="imagenPublicacion" accept="image/*">
+                                        name="logoTienda" accept="image/*">
                             </div>
                         </div>
                     </div>
