@@ -15,24 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
             let isValid = false;
             switch (currentStep) {
                 case 1:
-                    isValid = nombreValidacion();
+                    isValid = descripcionValidacion();
                     break;
                 case 2:
                     isValid = logoValidacion();
                     break;
-                case 3:
-                    isValid = validacionCategorias();
-                    break;
-                case 4:
-                    isValid = validacionHorarios();
-                    break;
-                case 5:
-                    isValid = validacionBanner();
-                    break;
-                case 6:
-                    isValid = validacionCompletaPeriodos();
-                    break;
-
                 default:
                     isValid = true;
                     break;
@@ -114,61 +101,16 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         let logoTienda = document.getElementById("logoTienda");
         
-        if (!nombreValidacion())
+        if (!descripcionValidacion())
         {
-            alert("Se debe ingresar un nombre de la tienda");
+            alert("Se debe ingresar una descripción de la publicación");
             e.preventDefault();
             return;
         }
 
         if (!logoTienda.files.length) 
         {
-            alert("Se debe subir un logo de tienda");
-            e.preventDefault();
-            return;
-        }
-
-        if (!checked) 
-        {
-            alert("Se debe seleccionar al menos una categoria para la tienda");
-            e.preventDefault();
-            return;
-        }
-
-        if(!horariosConfigurados())
-        {
-            alert("Se debe configurar al menos un horario");
-            e.preventDefault();
-            return;
-        }
-
-        if(!validarHorariosCorrectos())
-        {
-            e.preventDefault();
-            return;
-        }
-
-        if (!img1.files.length && !img2.files.length && !img3.files.length) {
-            alert("Se debe subir al menos una imagen para el banner de la tienda");
-            e.preventDefault();
-            return;
-        }
-
-        if (!imagenesValidacion(logoTienda))
-        {
-            e.preventDefault();
-            return;
-        }
-
-        if(!periodosConfigurados())
-        {
-            alert("Se debe configurar al menos un periodo de apartado predeterminado");
-            e.preventDefault();
-            return;
-        }
-
-        if(!validacionPeriodos())
-        {
+            alert("Se debe subir una imagen para la publicación");
             e.preventDefault();
             return;
         }
@@ -178,3 +120,74 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.style.backgroundColor = "gray";
     });
 });
+
+function descripcionValidacion() {
+    var descripcion = document.getElementById('descripcionProducto');
+
+    if(!descripcion || !descripcion.value.trim())
+    {
+        showNotificationError("Se debe ingresar una descripcion del producto");
+        return false;
+    }
+
+    return true;
+}
+
+function validacionSizeImagen(imagen, maxSize) {
+    if(imagen.files[0].size > maxSize)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+function validacionTypeImagen(imagen)
+{
+    var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    if (allowedTypes.indexOf(imagen.files[0].type) === -1) {
+        return false;
+    }
+
+    return true;
+}
+
+function logoValidacion() {
+    const maxSize = 1 * 1024 * 1024;
+    let logoTienda = document.getElementById("logoTienda");
+    if (!logoTienda.files.length) 
+    {
+        showNotificationError("Se debe subir un logo de tienda");
+        return false;
+    }
+    else if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
+    {
+        showNotificationError(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        return false;
+    }
+    else if (logoTienda.files.length && !validacionSizeImagen(logoTienda, maxSize))
+    {
+        showNotificationError(`La imagen del logo de la tienda es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+        return false;
+    }
+
+    return true;
+}
+
+function showNotificationError(message) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+    const notification = document.createElement("div");
+    notification.classList.add("notificationError");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    currentNotification = notification;
+    setTimeout(() => {
+        notification.classList.add("notificationErrorHide");
+        setTimeout(() => {
+            hideNotification();
+        }, 550);
+    }, 2500);
+}

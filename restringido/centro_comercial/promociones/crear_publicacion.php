@@ -34,6 +34,7 @@ $ch = curl_init();
     <?php require("templates/template.secc_promociones.php") ?>
     <link rel="stylesheet" href="../css/formularios_creacion.css">
     <link rel="stylesheet" href="css/crear_publicacion.css">
+    <link rel="stylesheet" type="text/css" href="../tiendas/css/notificacion_errores.css">
 </head>
 
 <body>
@@ -120,8 +121,9 @@ $ch = curl_init();
             </form>
         </div>
     </div>
-    <script src="js/mostrarImg.js"></script>
+    <script src="../js/mostrarImg.js"></script>
     <script src="../js/slider_formularios.js"></script>
+    <script src="js/creacion_publicacion.js"></script>
 </body>
 
 </html>
