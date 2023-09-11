@@ -112,13 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     mainForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        let checkboxSelected = document.querySelectorAll('input[type="checkbox"]');
-        let checked = Array.from(checkboxSelected).some(checkbox => checkbox.checked);
-
         let logoTienda = document.getElementById("logoTienda");
-        let img1 = document.getElementById("fileInput1");
-        let img2 = document.getElementById("fileInput2");
-        let img3 = document.getElementById("fileInput3");
         
         if (!nombreValidacion())
         {
@@ -182,36 +176,5 @@ document.addEventListener('DOMContentLoaded', function () {
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
         submitButton.style.backgroundColor = "gray";
-        
-        try {
-            showNotification("Creando tienda...");
-            const data = await sendFormWithoutImages(mainForm, fileInputs);
-            hideNotification();
-            if (data.statusTienda === 'success' && data.statusHorarios === 'success' && data.statusCatT === 'success' && data.statusPeriodos === 'success') {
-                showNotification("Cargando imagenes...");
-                
-                for (let input of fileInputs) {
-                    if (input && input.files.length > 0) {
-                        await sendImage(input, "imagenesTienda.php", data.idTienda); // Pasar el idTienda
-                    }
-                }
-                hideNotification();
-                
-                showNotification("Tienda creada");
-                setTimeout(() => {
-                    hideNotification();
-                    window.location.href = data.urlSalida;
-                }, 2500);
-            } else {
-                alert("Hubo un error al guardar la tienda. Estatus de la tienda: " + data.statusTienda + ". Estatus de los horarios: " + data.statusHorarios + ". Estatus de las categorias: " + data.statusCatT + ". Estatus de los periodos: " + data.statusPeriodos);
-                return;
-            }
-
-        } catch (error) {
-            console.error('Error: ', error);
-            alert("Hubo un error al realizar la solicitud de creación la tienda: " + error);
-            return;
-        }
-        
     });
 });
