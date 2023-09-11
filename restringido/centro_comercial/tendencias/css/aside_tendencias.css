@@ -1,5 +1,8 @@
-aside{
+aside {
+    position: fixed;
     float: left;
-    width: 300px;
+    width: 166px;
+    height: 88vh;
+    top: 12vh;
     background-color: blue;
 }
