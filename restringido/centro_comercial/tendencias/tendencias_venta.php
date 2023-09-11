@@ -80,7 +80,7 @@ require '../../security.php';
 
 				<li class="list_item">
                     <div class="list_button list_button--click">
-						<i class='bx bxs-time-five'></i>
+						<i class='bx bxs-category' ></i>
                         <p>Tiempo</p>
                         <i class='bx bx-chevron-right'></i>
                     </div>
