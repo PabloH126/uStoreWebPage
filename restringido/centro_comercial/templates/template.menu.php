@@ -18,7 +18,7 @@
 				<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/promociones/promociones.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/ofertas_select.png"></a>
 			</div>
 			<div class="bottn" id="tendencias" title="Tendencias de venta">
-				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tendencias_select.png"></a>
+				<a href="../tendencias/tendencias_venta.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tendencias_select.png"></a>
 			</div>
 			<div class="bottn" id="chat" title="Chats">
 				<a href=""><img src="https://ustoredata.blob.core.windows.net/webpage/nav/chat_select.png"></a>
