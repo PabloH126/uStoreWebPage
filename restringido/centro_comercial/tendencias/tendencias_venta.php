@@ -51,7 +51,7 @@ require '../../security.php';
                     <div class="list_button list_button--click">
                         <!--imagen bonita de referencia-->
                         <p>Grafica de</p>
-                        <!--flecha a un ladito pa abrir-->
+                        <i class='bx bxs-right-arrow'></i>
                     </div>
 
                     <ul class="list_show">

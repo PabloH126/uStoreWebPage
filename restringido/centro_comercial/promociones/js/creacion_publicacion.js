@@ -89,13 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (!logoTienda.files.length) 
-        {
-            alert("Se debe subir una imagen para la publicación");
-            e.preventDefault();
-            return;
-        }
-
         if (!imagenesValidacion(logoTienda))
         {
             e.preventDefault();
@@ -142,12 +135,8 @@ function validacionTypeImagen(imagen)
 function logoValidacion() {
     const maxSize = 1 * 1024 * 1024;
     let logoTienda = document.getElementById("logoTienda");
-    if (!logoTienda.files.length) 
-    {
-        showNotificationError("Se debe subir un logo de tienda");
-        return false;
-    }
-    else if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
+
+    if(logoTienda.files.length && !validacionTypeImagen(logoTienda))
     {
         showNotificationError(`La imagen del logo de la tienda no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
         return false;
