@@ -1,6 +1,6 @@
-<?php 
-	session_start();
-	require '../../security.php';
+<?php
+session_start();
+require '../../security.php';
 /*
 	$ch = curl_init();
 
@@ -24,32 +24,39 @@
 	}
 	$tiendas = json_decode($response, true);
 	curl_close($ch);*/
-	
+
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 	<title>Tendencias de venta</title>
-    <?php require("../templates/template.styles.php")?>
-	<?php require("templates/template.secc_tendencias_venta.php")?>
+	<?php require("../templates/template.styles.php") ?>
+	<?php require("templates/template.secc_tendencias_venta.php") ?>
 </head>
+
 <body>
-    <?php require("../templates/template.menu.php")?>
+	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
 		<div class="title">
 			<h1>Tendencias de venta</h1>
 		</div>
 
-        <aside>
+		<aside>
+			Graficas de
 
-        </aside>
-         
+			Tipo de graficas
+
+			Tiempo
+		</aside>
+
 		<div>
-			
+
 		</div>
 	</div>
 	<script src="js/menu_desplegable.js"></script>
 </body>
+
 </html>
