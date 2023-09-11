@@ -1,63 +1,28 @@
 <?php
 session_start();
 require '../../security.php';
-/*
-//REQUEST DE LAS CATEGORIAS
-
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Authorization: Bearer ' . $_COOKIE['SessionToken']
-)
-);
 
-$response = curl_exec($ch);
-
-if ($response === false) {
-    echo 'Error: ' . curl_error($ch);
-} else {
-    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-}
-
-$categorias = json_decode($response, true);
-
-curl_close($ch);
-
-//FUNCIONES DEL FORMULARIO
-
-function HorariosSelect($dia)
-{
-    echo '<tr>';
-    echo '<td>' . $dia . '</td>';
-    echo '<td><input type="time" name="' . $dia . '_apertura"></td>';
-    echo '<td><input type="time" name="' . $dia . '_cierre"></td>';
-    echo '</tr>';
-}
-
-function PeriodosSelect($periodo)
-{
-    echo '<div class="apartadosT">';
-    echo '<input type="number" name="numero' . $periodo . '" min="1" step="1">';
-    echo '<select name="tiempo' . $periodo . '" id="tiempo' . $periodo . '">';
-    echo '<option value="">Tiempo</option>';
-    echo '<option value="minutos">Minutos</option>';
-    echo '<option value="horas">Horas</option>';
-    echo '<option value="dias">Días</option>';
-    echo '</select>';
-    echo '</div>';
-}
-
-function CategoriasSelect($categorias)
-{
-    foreach ($categorias as $categoria) {
-        echo '<input type="checkbox" id="' . $categoria['categoria1'] . '" name="categorias[]" value="' . $categoria['idCategoria'] . '">';
-        echo '<div class="contentC">';
-        echo '<label for="' . $categoria['categoria1'] . '">' . $categoria['categoria1'] . '</label>';
-        echo '</div>';
-    }
-}
-***/
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Authorization: Bearer ' . $_COOKIE['SessionToken']
+	));
+	
+	$response = curl_exec($ch);
+	
+	if ($response === false) {
+		echo 'Error: ' . curl_error($ch);
+	} else {
+		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	}
+	
+	if ($httpStatusCode == 400) {
+		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+	}
+	$tiendas = json_decode($response, true);
+	curl_close($ch);
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,17 +41,21 @@ function CategoriasSelect($categorias)
     <div class="content">
         <h1>Crear publicación</h1>
         <div class="lista">
-            <form action="" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="envio_publicacion.php" method="post" enctype="multipart/form-data" class="form-tiendas">
 
                 <!-- Seleccion de la tienda -->
                 <div class="item active" id="item-1">
                     <p>1/3</p>
                     <div class="name">
                         <label><strong>Selección de tienda</strong></label>
-                        <select id="seleccion_tienda">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
+                        <select id="seleccion_tienda" name="idTienda">
+                            <?php
+                            foreach ($tiendas as $tienda) {
+                            ?>
+                            <option value="<?php echo $tienda['idTienda']; ?>"><?php echo $tienda['nombreTienda']; ?></option>
+                            <?php
+                            }
+                            ?>
                         </select>
                     </div>
                     <div class="bttn" id="one">
@@ -130,7 +99,7 @@ function CategoriasSelect($categorias)
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
                                     <input type="file" class="file-input fileLogoTienda" id="logoTienda"
-                                        name="logoTienda" accept="image/*">
+                                        name="imagenPublicacion" accept="image/*">
                             </div>
                         </div>
                     </div>
