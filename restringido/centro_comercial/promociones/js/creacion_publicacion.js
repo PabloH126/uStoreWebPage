@@ -100,6 +100,12 @@ document.addEventListener('DOMContentLoaded', function () {
     mainForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         let logoTienda = document.getElementById("logoTienda");
+
+        if (!tiendaValidacion()){
+            alert("Se debe de seleccionar una tienda");
+            e.preventDefault();
+            return;
+        }
         
         if (!descripcionValidacion())
         {
@@ -120,6 +126,17 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.style.backgroundColor = "gray";
     });
 });
+
+function tiendaValidacion() {
+    const seleccionTienda = document.getElementById('seleccion_tienda');
+    const selectedValue = seleccionTienda.value;
+
+    if (selectedValue === '') {
+        showNotificationError("Se debe de seleccionar una tienda")
+        return false;
+    }
+    return true;
+}
 
 function descripcionValidacion() {
     var descripcion = document.getElementById('descripcionProducto');
