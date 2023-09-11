@@ -39,10 +39,13 @@
 
 	<div class="content">
 		<div class="title">
-			<h1>Solicitudes activas</h1>
-			
+			<h1>Tendencias de venta</h1>
 		</div>
 
+        <aside>
+
+        </aside>
+         
 		<div>
 			
 		</div>
