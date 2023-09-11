@@ -45,7 +45,7 @@ require '../../security.php';
 		</div>
 
 		<aside>
-            <ul>
+            <ul class="list">
                 
                 <li class="list_item">
                     <div class="list_button list_button--click">
