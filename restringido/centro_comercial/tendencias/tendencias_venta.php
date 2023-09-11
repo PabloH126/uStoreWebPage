@@ -49,15 +49,47 @@ require '../../security.php';
                 
                 <li class="list_item">
                     <div class="list_button list_button--click">
-                        <!--imagen bonita de referencia-->
-                        <p>Grafica de</p>
-                        <i class='bx bxs-right-arrow'></i>
+                        <span class="material-symbols-outlined">bar_chart</span>
+                        <p>Grafica</p>
+                        <i class='bx bx-chevron-right'></i>
                     </div>
 
                     <ul class="list_show">
                         <li class="list_inside">
                             <p>Tiendas</p>
                             <p>Productos</p>
+                        </li>
+                    </ul>
+                </li>
+
+				<li class="list_item">
+                    <div class="list_button list_button--click">
+						<i class='bx bx-category'></i>
+                        <p>Categorías</p>
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+
+                    <ul class="list_show">
+                        <li class="list_inside">
+                            <p>Categoria 1</p>
+                            <p>Categoria 2</p>
+							<p>Categoria 2</p>
+                        </li>
+                    </ul>
+                </li>
+
+				<li class="list_item">
+                    <div class="list_button list_button--click">
+						<i class='bx bx-category'></i>
+                        <p>Tiempo</p>
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+
+                    <ul class="list_show">
+                        <li class="list_inside">
+                            <p>Semanal</p>
+                            <p>Quincenal</p>
+							<p>Mensual</p>
                         </li>
                     </ul>
                 </li>
