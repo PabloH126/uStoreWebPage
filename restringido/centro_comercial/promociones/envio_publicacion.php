@@ -48,7 +48,7 @@ $dataPublicacion = json_decode($response, true);
 
 curl_close($ch);
 
-if($httpStatusCode != 201)
+if($httpStatusCode != 201 && $httpStatusCode != 200)
 {
     echo $httpStatusCode . ' ' . $response . ' ' . $dataPublicacion;
 }

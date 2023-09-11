@@ -53,8 +53,15 @@ require '../../security.php';
                 </div>
                 <div class="body-publication">
                     <p><?php echo $publicacion['contenido']; ?></p>
+					<?php
+					if(isset($publicacion['imagen']))
+					{
+					?>
                     <img src="<?php echo $publicacion['imagen']; ?>"
                         alt="imagenPublicacion">
+					<?php
+					}
+					?>
                 </div>
             </div>
             <hr>
