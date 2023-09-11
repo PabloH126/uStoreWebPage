@@ -45,11 +45,24 @@ require '../../security.php';
 		</div>
 
 		<aside>
-			Graficas de
+            <ul>
+                
+                <li class="list_item">
+                    <div class="list_button list_button--click">
+                        <!--imagen bonita de referencia-->
+                        <p>Grafica de</p>
+                        <!--flecha a un ladito pa abrir-->
+                    </div>
 
-			Tipo de graficas
-
-			Tiempo
+                    <ul class="list_show">
+                        <li class="list_inside">
+                            <p>Tiendas</p>
+                            <p>Productos</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+			
 		</aside>
 
 		<div>

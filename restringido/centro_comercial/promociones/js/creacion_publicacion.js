@@ -77,29 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    
-    checkboxes.forEach(function (checkbox) {
-        checkbox.addEventListener('change', function () {
-            var counter = document.querySelectorAll('.optionsC input[type="checkbox"]:checked').length;
-
-            if (counter >= maxSelect) {
-                checkboxes.forEach(function (c) {
-                    if (!c.checked) {
-                        c.disabled = true;
-                    }
-                });
-            }
-            else {
-                checkboxes.forEach(function (c) {
-                    c.disabled = false;
-                });
-            }
-        });
-    });
 
     mainForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         let logoTienda = document.getElementById("logoTienda");
+        
         if (!descripcionValidacion())
         {
             alert("Se debe ingresar una descripción de la publicación");
@@ -127,11 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function descripcionValidacion() {
-    var descripcion = document.getElementById('descripcionProducto');
+    var descripcion = document.getElementById('descripcionPublicacion');
 
     if(!descripcion || !descripcion.value.trim())
     {
-        showNotificationError("Se debe ingresar una descripcion del producto");
+        showNotificationError("Se debe ingresar una descripción de la publicación");
         return false;
     }
 
