@@ -10,16 +10,19 @@ $data = [
     'idCentroComercial' => $_SESSION['idMall']
 ];
 
-$imagenPublicacion = $_FILES['logoTienda'];
+if(isset($_FILES['logoTienda']))
+{
+    $imagenPublicacion = $_FILES['logoTienda'];
 
-if(in_array($imagenPublicacion['type'], $allowedImageTypes) && $imagenPublicacion['size'] <= $maxSize)
-{
-    $data['imagen'] = curl_file_create($imagenPublicacion['tmp_name'], $imagenPublicacion['type'], $imagenPublicacion['name']);
-}
-else
-{
-    curl_close($ch);
-    die("Error: Imagen de publicacion no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+    if(in_array($imagenPublicacion['type'], $allowedImageTypes) && $imagenPublicacion['size'] <= $maxSize)
+    {
+        $data['imagen'] = curl_file_create($imagenPublicacion['tmp_name'], $imagenPublicacion['type'], $imagenPublicacion['name']);
+    }
+    else
+    {
+        curl_close($ch);
+        die("Error: Imagen de publicacion no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
+    }
 }
 
 $ch = curl_init();
