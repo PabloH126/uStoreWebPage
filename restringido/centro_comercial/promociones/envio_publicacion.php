@@ -5,7 +5,7 @@ $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
 $maxSize = 1 * 1024 * 1024; // 1 megabyte
 
 $data = [
-    'contenido' => $_POST['nombreTienda'],
+    'contenido' => $_POST['descripcionProducto'],
     'idTienda' => $_POST['idTienda'],
     'idCentroComercial' => $_SESSION['idMall']
 ];
