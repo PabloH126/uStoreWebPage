@@ -46,6 +46,19 @@ aside .p{
     transform: rotate(90deg);
 }
 
+.list_show{
+    width: 80%;
+    margin-left: auto;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+    text-align: left;
+}
+
+.list_show .p{
+    padding-left: 15%;
+}
+
 aside .list .list_item .list_button .row{
     margin-left: auto;
     transition: transform .3s;
@@ -62,15 +75,7 @@ label input:checked + .p,
     color: #007096;
 }
 
-.list_show{
-    width: 80%;
-    margin-left: auto;
-    list-style: none;
-    transition: height .4s;
-    height: 0;
-    text-align: left;
+.list_inside label{
+    cursor: pointer;
 }
 
-.list_show .p{
-    padding-left: 15%;
-}
