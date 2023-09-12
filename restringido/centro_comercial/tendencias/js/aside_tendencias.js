@@ -20,10 +20,28 @@ listElements.forEach(listElement => {
     })
 });
 
-let bttns = document.querySelectorAll('.bttnp');
+let graficaBttns = document.querySelectorAll('.list_item:nth-child(1) .bttnp');
+let tiempoBttns = document.querySelectorAll('.list_item:nth-child(3) .bttnp');
 
-bttns.forEach(bttn => {
-    bttn.addEventListener('click', ()=> {
+graficaBttns.forEach(bttn => {
+    bttn.addEventListener('click', () => {
+        graficaButtons.forEach(otherBttn => {
+            if (otherBttn !== bttn) {
+                otherBttn.classList.remove('selected');
+            }
+        });
         bttn.classList.toggle('selected');
-    })
+    });
+});
+
+
+tiempoButtons.forEach(bttn => {
+    bttn.addEventListener('click', () => {
+        tiempoButtons.forEach(otherBttn => {
+            if (otherBttn !== bttn) {
+                otherBttn.classList.remove('selected');
+            }
+        });
+        bttn.classList.toggle('selected');
+    });
 });
