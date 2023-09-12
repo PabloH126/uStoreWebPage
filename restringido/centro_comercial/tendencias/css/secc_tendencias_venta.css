@@ -5,3 +5,12 @@ header .content .final #tendencias{
 header .content .final #tendencias img{
 	filter: none;
 }
+
+/*content*/
+
+.title{
+	position: fixed;
+    display: grid;
+    width: 88%;
+    right: 0;
+}
