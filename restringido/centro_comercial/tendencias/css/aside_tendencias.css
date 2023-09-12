@@ -37,8 +37,13 @@ aside p{
     padding: 13px 0;
 }
 
+.arrow .row{
+    transform: rotate(90deg);
+}
+
 aside .list .list_item .list_button .row{
     margin-left: auto;
+    transition: transform .3s;
 }
 
 .list_inside p:hover{
