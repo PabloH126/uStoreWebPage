@@ -36,6 +36,7 @@ button.p{
     all: inherit;
 }
 
+button.p,
 aside .p{
     display: block;
     padding: 13px 0;
