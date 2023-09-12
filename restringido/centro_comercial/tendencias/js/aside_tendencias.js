@@ -11,6 +11,11 @@ listElements.forEach(listElement => {
         //y muestra el submenu
         let height = 0;
         let menu = listElement.nextElementSibling;
-        console.log(menu);
+        
+        if(menu.clientHeight == 0){
+            height = menu.scrollHeight;
+        }
+
+        menu.style.height = height+"px";
     })
 });
