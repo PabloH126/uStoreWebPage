@@ -50,7 +50,7 @@ require '../../security.php';
                 <li class="list_item">
                     <div class="list_button list_button--click">
                         <span class="material-symbols-outlined">bar_chart</span>
-                        <p>Grafica</p>
+                        <p>Gráfica</p>
                         <i class='bx bx-chevron-right row'></i>
                     </div>
 
