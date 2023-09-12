@@ -74,11 +74,10 @@ require '../../security.php';
 							<form action="">
 								<label for="categoria1"><input id="categoria1" type="checkbox"><p>Categoria 1</p></label>
 								<label for="categoria2"><input id="categoria2" type="checkbox"><p>Categoria 2</p></label>
+								<label for="categoria3"><input id="categoria3" type="checkbox"><p>Categoria 3</p></label>
+								<label for="categoria4"><input id="categoria4" type="checkbox"><p>Categoria 4</p></label>
+								<label for="categoria5"><input id="categoria5" type="checkbox"><p>Categoria 5</p></label>
 							</form>
-							
-                            <p>Categoria 1</p>
-                            <p>Categoria 2</p>
-							<p>Categoria 2</p>
                         </li>
                     </ul>
                 </li>

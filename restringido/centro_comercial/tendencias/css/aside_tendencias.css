@@ -50,7 +50,7 @@ aside .list .list_item .list_button .row{
     display: none;
 }
 
-.list_inside label input:checked + p,
+label input:checked + p,
 .list_inside p:hover{
     background-color: white;
     color: #007096;
