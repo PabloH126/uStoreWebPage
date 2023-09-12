@@ -32,6 +32,10 @@ aside .list .list_item .list_button{
     margin: 0 auto;
 }
 
+button.p{
+    all: inherit;
+}
+
 aside .p{
     display: block;
     padding: 13px 0;
