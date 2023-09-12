@@ -20,7 +20,7 @@ listElements.forEach(listElement => {
     })
 });
 
-let bttns = document.querySelectorAll('.bttnp');
+let bttns = document.getElementsByClassName("bttnp");
     
 bttns.addEventListener("click", function() {
     if (bttns.classList.contains("normal")) {
