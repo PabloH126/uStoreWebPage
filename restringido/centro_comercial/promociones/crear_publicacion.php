@@ -122,8 +122,6 @@ $ch = curl_init();
             </form>
         </div>
     </div>
-    <!--<script src="../js/mostrarImg.js"></script>-->
-    <!--<script src="../js/slider_formularios.js"></script>-->
     <script src="js/creacion_publicacion.js"></script>
 </body>
 

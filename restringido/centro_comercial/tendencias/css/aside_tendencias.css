@@ -26,7 +26,7 @@ aside .list .list_item .list_button{
     display: flex;
     align-items: center;
     gap: 1em;
-    width: 70%;
+    width: 85%;
     margin: 0 auto;
 }
 
