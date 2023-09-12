@@ -23,19 +23,7 @@ listElements.forEach(listElement => {
 let bttns = document.querySelectorAll('.bttnp');
 
 bttns.forEach(bttn => {
-    
     bttn.addEventListener('click', ()=> {
-
         bttn.classList.toggle('selected');
     })
 });
-
-/*
- if (bttns.classList.contains("normal")) {
-        bttns.classList.remove("normal");
-        bttns.classList.add("selected");
-    } else {
-        bttns.classList.remove("selected");
-        bttns.classList.add("normal");
-    }
-*/

@@ -91,9 +91,9 @@ require '../../security.php';
 
                     <ul class="list_show">
                         <li class="list_inside">
-                            <p class="p">Semanal</p>
-                            <p class="p">Quincenal</p>
-							<p class="p">Mensual</p>
+							<button class="bttnp p normal">Semanal</button>
+							<button class="bttnp p normal">Quincenal</button>
+							<button class="bttnp p normal">Mensual</button>
                         </li>
                     </ul>
                 </li>
