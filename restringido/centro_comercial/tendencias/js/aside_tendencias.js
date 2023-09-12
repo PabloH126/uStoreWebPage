@@ -20,15 +20,22 @@ listElements.forEach(listElement => {
     })
 });
 
-let bttns = document.getElementsByClassName("bttnp");
+let bttns = document.querySelectorAll('.bttnp');
+
+bttns.forEach(bttn => {
     
-bttns.addEventListener("click", function() {
-    if (bttns.classList.contains("normal")) {
+    bttn.addEventListener('click', ()=> {
+
+        bttn.classList.toggle('selected');
+    })
+});
+
+/*
+ if (bttns.classList.contains("normal")) {
         bttns.classList.remove("normal");
         bttns.classList.add("selected");
     } else {
         bttns.classList.remove("selected");
         bttns.classList.add("normal");
     }
-});
-
+*/
