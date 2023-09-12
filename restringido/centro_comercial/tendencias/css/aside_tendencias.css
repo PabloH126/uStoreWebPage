@@ -12,6 +12,11 @@ aside .list{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: flex-start;
     color: white;
+}
+
+aside .list .list_item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
 }
