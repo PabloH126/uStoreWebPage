@@ -56,8 +56,8 @@ require '../../security.php';
 
                     <ul class="list_show">
                         <li class="list_inside">
-							<button><p>Tiendas</p></button>
-							<button><p>Productos</p></button>
+							<button class="p"><p>Tiendas</p></button>
+							<button class="p"><p>Productos</p></button>
                         </li>
                     </ul>
                 </li>
@@ -72,11 +72,11 @@ require '../../security.php';
                     <ul class="list_show">
                         <li class="list_inside">
 							<form action="">
-								<label for="categoria1"><input id="categoria1" type="checkbox"><p>Categoria 1</p></label>
-								<label for="categoria2"><input id="categoria2" type="checkbox"><p>Categoria 2</p></label>
-								<label for="categoria3"><input id="categoria3" type="checkbox"><p>Categoria 3</p></label>
-								<label for="categoria4"><input id="categoria4" type="checkbox"><p>Categoria 4</p></label>
-								<label for="categoria5"><input id="categoria5" type="checkbox"><p>Categoria 5</p></label>
+								<label for="categoria1"><input id="categoria1" type="checkbox"><p class="p">Categoria 1</p></label>
+								<label for="categoria2"><input id="categoria2" type="checkbox"><p class="p">Categoria 2</p></label>
+								<label for="categoria3"><input id="categoria3" type="checkbox"><p class="p">Categoria 3</p></label>
+								<label for="categoria4"><input id="categoria4" type="checkbox"><p class="p">Categoria 4</p></label>
+								<label for="categoria5"><input id="categoria5" type="checkbox"><p class="p">Categoria 5</p></label>
 							</form>
                         </li>
                     </ul>
@@ -91,9 +91,9 @@ require '../../security.php';
 
                     <ul class="list_show">
                         <li class="list_inside">
-                            <p>Semanal</p>
-                            <p>Quincenal</p>
-							<p>Mensual</p>
+                            <p class="p">Semanal</p>
+                            <p class="p">Quincenal</p>
+							<p class="p">Mensual</p>
                         </li>
                     </ul>
                 </li>

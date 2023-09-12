@@ -32,7 +32,7 @@ aside .list .list_item .list_button{
     margin: 0 auto;
 }
 
-aside p{
+aside .p{
     display: block;
     padding: 13px 0;
 }
@@ -50,8 +50,8 @@ aside .list .list_item .list_button .row{
     display: none;
 }
 
-label input:checked + p,
-.list_inside p:hover{
+label input:checked + .p,
+.list_inside .p:hover{
     background-color: white;
     color: #007096;
 }
@@ -65,6 +65,6 @@ label input:checked + p,
     text-align: left;
 }
 
-.list_show p{
+.list_show .p{
     padding-left: 15%;
 }
