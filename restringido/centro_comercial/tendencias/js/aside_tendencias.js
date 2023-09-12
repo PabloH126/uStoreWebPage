@@ -22,13 +22,13 @@ listElements.forEach(listElement => {
 
 let bttns = document.querySelectorAll('.bttnp');
     
-miBoton.addEventListener("click", function() {
-    if (miBoton.classList.contains("normal")) {
-        miBoton.classList.remove("normal");
-        miBoton.classList.add("selected");
+bttns.addEventListener("click", function() {
+    if (bttns.classList.contains("normal")) {
+        bttns.classList.remove("normal");
+        bttns.classList.add("selected");
     } else {
-        miBoton.classList.remove("selected");
-        miBoton.classList.add("normal");
+        bttns.classList.remove("selected");
+        bttns.classList.add("normal");
     }
-    });
+});
 
