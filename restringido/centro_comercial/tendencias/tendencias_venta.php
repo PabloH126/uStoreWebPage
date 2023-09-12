@@ -74,7 +74,6 @@ require '../../security.php';
 							<form action="">
 								<label for="categoria1"><input id="categoria1" type="checkbox"><p>Categoria 1</p></label>
 								<label for="categoria2"><input id="categoria2" type="checkbox"><p>Categoria 2</p></label>
-								
 							</form>
 							
                             <p>Categoria 1</p>
