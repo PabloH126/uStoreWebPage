@@ -42,4 +42,5 @@ aside .list .list_item .list_button .row{
 
 .list_inside p:hover{
     background-color: white;
+    color: #007096;
 }
