@@ -51,7 +51,7 @@ require '../../security.php';
                     <div class="list_button list_button--click">
                         <span class="material-symbols-outlined">bar_chart</span>
                         <p>Grafica</p>
-                        <i class='bx bx-chevron-right'></i>
+                        <i class='bx bx-chevron-right row'></i>
                     </div>
 
                     <ul class="list_show">
@@ -66,7 +66,7 @@ require '../../security.php';
                     <div class="list_button list_button--click">
 						<i class='bx bxs-category' ></i>
                         <p>Categorías</p>
-                        <i class='bx bx-chevron-right'></i>
+                        <i class='bx bx-chevron-right row'></i>
                     </div>
 
                     <ul class="list_show">
@@ -82,7 +82,7 @@ require '../../security.php';
                     <div class="list_button list_button--click">
 						<i class='bx bxs-time-five'></i>
                         <p>Tiempo</p>
-                        <i class='bx bx-chevron-right'></i>
+                        <i class='bx bx-chevron-right row'></i>
                     </div>
 
                     <ul class="list_show">

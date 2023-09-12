@@ -19,4 +19,17 @@ aside .list .list_item{
     list-style: none;
     width: 100%;
     text-align: center;
+    cursor: pointer;
+}
+
+aside .list .list_item .list_button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+aside .list .list_item .list_button .row{
+    margin-left: auto;
 }
