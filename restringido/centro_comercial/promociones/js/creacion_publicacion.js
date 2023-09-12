@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (isValid == false) {
-                e.target.preventDefault();
                 return;
             }
             else 
@@ -200,4 +199,12 @@ function showNotificationError(message) {
             hideNotification();
         }, 550);
     }, 2500);
+}
+
+function hideNotification() {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
+    currentNotification = null;
 }
