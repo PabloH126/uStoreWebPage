@@ -19,3 +19,16 @@ listElements.forEach(listElement => {
         menu.style.height = height+"px";
     })
 });
+
+let bttns = document.querySelectorAll('.bttnp');
+    
+miBoton.addEventListener("click", function() {
+    if (miBoton.classList.contains("normal")) {
+        miBoton.classList.remove("normal");
+        miBoton.classList.add("selected");
+    } else {
+        miBoton.classList.remove("selected");
+        miBoton.classList.add("normal");
+    }
+    });
+
