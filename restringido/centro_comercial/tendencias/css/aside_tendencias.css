@@ -34,6 +34,7 @@ aside .list .list_item .list_button{
 
 button.p{
     all: inherit;
+    width: 100%;
 }
 
 aside .p{
