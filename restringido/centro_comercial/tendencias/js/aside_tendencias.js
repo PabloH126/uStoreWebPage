@@ -25,7 +25,7 @@ let tiempoBttns = document.querySelectorAll('.list_item:nth-child(3) .bttnp');
 
 graficaBttns.forEach(bttn => {
     bttn.addEventListener('click', () => {
-        graficaButtons.forEach(otherBttn => {
+        graficaBttns.forEach(otherBttn => {
             if (otherBttn !== bttn) {
                 otherBttn.classList.remove('selected');
             }
@@ -35,9 +35,9 @@ graficaBttns.forEach(bttn => {
 });
 
 
-tiempoButtons.forEach(bttn => {
+tiempoBttns.forEach(bttn => {
     bttn.addEventListener('click', () => {
-        tiempoButtons.forEach(otherBttn => {
+        tiempoBttns.forEach(otherBttn => {
             if (otherBttn !== bttn) {
                 otherBttn.classList.remove('selected');
             }
