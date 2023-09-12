@@ -1,4 +1,6 @@
 let currentNotification;
+const imagenInput = document.getElementById('logoTienda');
+const imagenMostrada = document.getElementById('imagenSelec');
 
 document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
@@ -14,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let isValid = false;
             switch (currentStep) {
+                case 1: 
+                    isValid = tiendasValidacion();
+                    break; 
                 case 2:
                     isValid = descripcionValidacion();
                     break;
@@ -100,6 +105,29 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.style.backgroundColor = "gray";
     });
 });
+
+if(imagenInput && imagenMostrada)
+{
+    imagenInput.addEventListener('change', (e) => {
+        const imagenSeleccionada = e.target.files[0];
+
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada.src = imagenURL;
+        }
+    });
+}
+
+function tiendasValidacion() {
+    var tiendasSelect = document.getElementById('seleccion_tienda');
+
+    if(!tiendasSelect.value)
+    {
+        showNotificationError("Se debe seleccionar una tienda para hacer la publicacion");
+        return false;
+    }
+    return true;
+}
 
 function descripcionValidacion() {
     var descripcion = document.getElementById('descripcionProducto');

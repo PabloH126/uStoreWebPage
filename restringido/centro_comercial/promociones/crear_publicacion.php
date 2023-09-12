@@ -50,6 +50,7 @@ $ch = curl_init();
                     <div class="name">
                         <label><strong>Selección de tienda</strong></label>
                         <select id="seleccion_tienda" name="idTienda">
+                            <option value="">Tiendas</option>
                             <?php
                             foreach ($tiendas as $tienda) {
                             ?>
@@ -121,7 +122,7 @@ $ch = curl_init();
             </form>
         </div>
     </div>
-    <script src="../js/mostrarImg.js"></script>
+    <!--<script src="../js/mostrarImg.js"></script>-->
     <!--<script src="../js/slider_formularios.js"></script>-->
     <script src="js/creacion_publicacion.js"></script>
 </body>
