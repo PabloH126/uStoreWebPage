@@ -56,8 +56,8 @@ require '../../security.php';
 
                     <ul class="list_show">
                         <li class="list_inside">
-                            <p>Tiendas</p>
-                            <p>Productos</p>
+							<button><p>Tiendas</p></button>
+							<button><p>Productos</p></button>
                         </li>
                     </ul>
                 </li>
