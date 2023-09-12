@@ -83,8 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     mainForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
         if (!tiendasValidacion())
         {
             alert("Se debe seleccionar una tienda");
