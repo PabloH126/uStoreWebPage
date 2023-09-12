@@ -101,7 +101,7 @@ require '../../security.php';
 
 		</div>
 	</div>
-	<script src="js/menu_desplegable.js"></script>
+	<script src="js/aside_tendencias.js"></script>
 </body>
 
 </html>
