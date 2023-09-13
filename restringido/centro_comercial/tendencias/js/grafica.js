@@ -52,6 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("downloadPDF").addEventListener("click", function() {
         var grafica = document.getElementById('grafica');
 
-        html2canvas(grafica).then(function(grafica))
+        html2canvas(grafica).then(function(grafica) {
+            var imgData = grafica.toDataURL('image/png');
+            var pdf = new jsPDF({
+                orientation: 'landscape',
+                unit: 'mm',
+                format: [grafica.width, grafica.height]
+            });
+            pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+            pdf.save('grafica.pdf');
+        });
     });
 });
