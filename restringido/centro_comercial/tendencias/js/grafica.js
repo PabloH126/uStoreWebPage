@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var grafica = document.getElementById('grafica');
     
         html2canvas(grafica, {
-            scale: 4
+            scale: 1
         }).then(function(grafica) {
             var imgData = grafica.toDataURL('image/png');
             var pdf = new window.jspdf.jsPDF({
