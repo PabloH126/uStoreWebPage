@@ -22,14 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             animation: {
-                duration: 5000,
+                duration: 1000,
                 easing: 'easeOutBounce',
                 onProgress: function(animation) {
 
                 },
-                onComplete: function(animation) {
-                    alert("Se completo la animacion");
-                }
             }
         }
     });
