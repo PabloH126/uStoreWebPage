@@ -103,7 +103,7 @@ require '../../security.php';
 			<canvas id="grafica"></canvas>
 
 			<div class="crear-publicacion">
-				<a title="Crear publicación" href="crear_publicacion.php">
+				<a title="Descargar" href="crear_publicacion.php">
 					<i class='bx bxs-download'></i>
 				</a>
 			</div>	
