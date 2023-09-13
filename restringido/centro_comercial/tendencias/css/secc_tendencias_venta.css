@@ -54,8 +54,8 @@ header .content .final #tendencias img {
 }
 
 .title #sub-menu {
-    top: 10vh;
-    left: 70vw;
+    top: 9vh;
+    left: 72vw;
 }
 
 .body #sub-menu2 {
@@ -72,6 +72,11 @@ header .content .final #tendencias img {
 }
 
 @media only screen and (max-width: 1440px) {
+
+    .title #sub-menu {
+        top: 10vh;
+        left: 70vw;
+    }
 
     .body #sub-menu2 {
         top: 49vh;
