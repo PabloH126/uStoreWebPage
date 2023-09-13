@@ -46,7 +46,7 @@ header .content .final #tendencias img{
 
 .body #sub-menu {
     top: 49vh;
-    left: 72vw;
+    left: 74vw;
 	display: block;
 	padding: 10px 12px;
 }
@@ -55,11 +55,8 @@ header .content .final #tendencias img{
     margin: 0px 15px;
 }
 
-@media only screen and (max-width: 1600px){    
-    
+@media only screen and (max-width: 1920px){       
     .body #sub-menu {
-        top: 49vh;
-        left: 74vw;
+        left: 72vw;
     }
-
 }
