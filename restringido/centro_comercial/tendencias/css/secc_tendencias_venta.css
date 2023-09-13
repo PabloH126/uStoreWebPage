@@ -73,7 +73,6 @@ header .content .final #tendencias img {
 
 @media only screen and (max-width: 1440px) {
 
-    .title #sub-menu,
     .body #sub-menu2 {
         top: 49vh;
         left: 74vw;
