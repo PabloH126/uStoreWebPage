@@ -113,11 +113,11 @@ require '../../security.php';
 
 			<div class="crear-publicacion">				
 				<a title="Descargar">
-					<i class='bx bxs-download' id="menu-icon"></i>
+					<i class='bx bxs-download' id="menu-icon2"></i>
 				</a>
 			</div>	
 			
-			<div id="sub-menu">
+			<div id="sub-menu2">
 				<div class="menu-option"><a id="downloadPDF">PDF</a></div>
 				<div class="menu-option"><a id="downloadImage">PNG</a></div>
 			</div>

@@ -25,6 +25,7 @@ header .content .final #tendencias img{
 .icon-filter {
     color: #007096;
     font-size: 3rem;
+    cursor: pointer;
 }
 
 .body{
@@ -38,7 +39,6 @@ header .content .final #tendencias img{
     right: 5vw;
     bottom: 4vh;
     cursor: pointer;
-
 }
 
 .crear-publicacion i {
