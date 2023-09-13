@@ -5,6 +5,13 @@ for (let index = 0; index < 50; index++) {
     ventas[index] = Math.floor(Math.random() * 1000) + 1000;
 }
 
+ventas.map((value, index) => ({ value, index }))
+      .sort((a, b) => a.value - b.value)
+      .forEach((sortedItem, index) => {
+          ventas[index] = sortedItem.value;
+          meses[index] = meses[sortedItem.index];
+      });
+
 document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('grafica').getContext('2d');
     var grafica = new Chart(ctx, {

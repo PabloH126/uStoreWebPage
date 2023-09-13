@@ -104,7 +104,7 @@ require '../../security.php';
 
 			<div class="crear-publicacion">
 				<a title="Crear publicación" href="crear_publicacion.php">
-					<span class="material-symbols-outlined">add</span>
+					<i class='bx bxs-download'></i>
 				</a>
 			</div>	
 		</div>
