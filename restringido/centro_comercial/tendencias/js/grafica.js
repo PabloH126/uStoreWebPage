@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var grafica = document.getElementById('grafica');
         var image = grafica.toDataURL("image/png").replace("image/png", "image/octet-stream");
         this.href = image;
-        this.download = 'grafica.png';
+        this.download = 'Tendencias_venta.png';
     });
 
     document.getElementById("downloadPDF").addEventListener("click", function() {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 format: 'a4'
             });
             pdf.addImage(imgData, 'PNG', 0, 0, grafica.width, grafica.height);
-            pdf.save('grafica.pdf');
+            pdf.save('Tendencias_venta.pdf');
         });
     });
 });
