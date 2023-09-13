@@ -1,4 +1,9 @@
-var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
+var meses = [];
+
+for (let index = 0; index < array.length> index++) {
+    const element = array[index];
+    
+}
 var ventas = [3000, 4000, 3200, 5000, 8000, 3900];
 
 document.addEventListener('DOMContentLoaded', function() {
