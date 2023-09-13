@@ -25,14 +25,14 @@ header .content .final #tendencias img{
     top: 30%;
 }
 
-.content .crear-publicacion {
+.crear-publicacion {
     position: absolute;
     right: 5vw;
     bottom: 4vh;
 
 }
 
-.content .crear-publicacion span {
+.crear-publicacion span {
     background: #007096;
     color: white;
     padding: 20%;
@@ -40,6 +40,6 @@ header .content .final #tendencias img{
     font-size: 2.8em;
 }
 
-.content .crear-publicacion span:hover{
+.crear-publicacion span:hover{
     background: #016283;
 }
