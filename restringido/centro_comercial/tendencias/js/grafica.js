@@ -41,4 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    document.getElementById("downloadImage").addEventListener("click", function() {
+        var grafica = document.getElementById('grafica');
+        var image = grafica.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        this.href = image;
+        this.download = 'grafica.png';
+    });
+
+    document.getElementById("downloadPDF").addEventListener("click", function() {
+        var grafica = document.getElementById('grafica');
+
+        html2canvas(grafica).then(function(grafica))
+    });
 });

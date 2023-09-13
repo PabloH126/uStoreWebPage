@@ -43,3 +43,9 @@ header .content .final #tendencias img{
 .crear-publicacion i:hover{
     background: #016283;
 }
+
+#sub-menu{
+	top: 77%;
+	left: 81%;
+	display: block;
+}
