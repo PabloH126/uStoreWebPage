@@ -7,7 +7,7 @@ header .content .final #tendencias img{
 }
 
 /*content*/
-
+.body,
 .title{
 	position: fixed;
     display: grid;

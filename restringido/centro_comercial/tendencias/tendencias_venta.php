@@ -99,7 +99,7 @@ require '../../security.php';
                 </li>
             </ul>
 		</aside>
-		<div>
+		<div class="body">
 			<canvas id="grafica"></canvas>
 		</div>
 	</div>
