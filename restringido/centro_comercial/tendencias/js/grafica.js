@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
             newWidth = pdfHeight * aspectRatio;
         }
 
+        let xOffset = (pdfWidth - newWidth) / 2;
+        let yOffset = (pdfHeight - newHeight) / 2;
+
         html2canvas(grafica, {
             scale: 2
         }).then(function(grafica) {

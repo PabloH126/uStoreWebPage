@@ -163,6 +163,6 @@
 			}
 		?>
 	</div>
-	<script src="js/menu_desplegable.js"></script>
+	<script src="../js/menu_desplegable.js"></script>
 </body>
 </html>
