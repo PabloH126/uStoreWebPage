@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         html2canvas(grafica).then(function(grafica) {
             var imgData = grafica.toDataURL('image/png');
-            var pdf = new jsPDF({
+            var pdf = new window.jspdf.jsPDF({
                 orientation: 'landscape',
                 unit: 'mm',
                 format: [grafica.width, grafica.height]
