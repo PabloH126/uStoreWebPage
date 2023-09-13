@@ -18,3 +18,7 @@ header .content .final #tendencias img{
 .title h1{
 	font-size: 8vh;
 }
+
+.body{
+	max-width: 80%;
+}
