@@ -51,13 +51,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById("downloadPDF").addEventListener("click", function() {
         var grafica = document.getElementById('grafica');
+        var pdfWidth = 210;
+        var pdfHeight = 297;
+        var aspectRatio = grafica.width/grafica.height;
 
-        html2canvas(grafica).then(function(grafica) {
+        html2canvas(grafica, {
+            scale: 2
+        }).then(function(grafica) {
             var imgData = grafica.toDataURL('image/png');
             var pdf = new window.jspdf.jsPDF({
                 orientation: 'landscape',
                 unit: 'mm',
-                format: [grafica.width, grafica.height]
+                format: 'a4'
             });
             pdf.addImage(imgData, 'PNG', 0, 0, grafica.width, grafica.height);
             pdf.save('grafica.pdf');
