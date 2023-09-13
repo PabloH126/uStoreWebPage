@@ -50,3 +50,12 @@ header .content .final #tendencias img{
 	display: block;
 	padding: 10px 30px;
 }
+
+@media only screen and (max-width: 1600px){    
+    
+    .body #sub-menu {
+        top: 49vh;
+        left: 74vw;
+    }
+
+}
