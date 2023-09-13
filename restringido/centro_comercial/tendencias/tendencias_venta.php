@@ -103,14 +103,14 @@ require '../../security.php';
 			<canvas id="grafica"></canvas>
 
 			<div class="crear-publicacion">				
-				<a title="Descargar" href="crear_publicacion.php">
+				<a title="Descargar">
 					<i class='bx bxs-download'></i>
 				</a>
 			</div>	
 			
 			<div id="sub-menu">
 				<div class="menu-option"><a id="downloadPDF">PDF</a></div>
-				<div class="menu-option"><a id="downloadImage">Imagen c:</a></div>
+				<div class="menu-option"><a id="downloadImage">PNG</a></div>
 			</div>
 			
 		</div>

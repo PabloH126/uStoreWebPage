@@ -44,8 +44,8 @@ header .content .final #tendencias img{
     background: #016283;
 }
 
-#sub-menu{
-	top: 77%;
+.boby #sub-menu {
+	top: 77%; 
 	left: 81%;
 	display: block;
 }
