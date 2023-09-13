@@ -51,21 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById("downloadPDF").addEventListener("click", function() {
         var grafica = document.getElementById('grafica');
-        const pdfWidth = 297;
-        const pdfHeight = 210;
-        let aspectRatio = grafica.width/grafica.height;
-        let newWidth = pdfWidth;
-        let newHeight = pdfHeight / aspectRatio;
-
-        if(newHeight > pdfHeight)
-        {
-            newHeight = pdfHeight;
-            newWidth = pdfHeight * aspectRatio;
-        }
-
-        let xOffset = (pdfWidth - newWidth) / 2;
-        let yOffset = (pdfHeight - newHeight) / 2;
-
+    
         html2canvas(grafica, {
             scale: 4
         }).then(function(grafica) {
@@ -73,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
             var pdf = new window.jspdf.jsPDF({
                 orientation: 'landscape',
                 unit: 'mm',
-                format: 'a4'
+                format: [grafica.width, grafica.height]
             });
-            pdf.addImage(imgData, 'PNG', xOffset, yOffset, newWidth, newHeight);
+            pdf.addImage(imgData, 'PNG', 0, 0, grafica.width, grafica.height);
             pdf.save('Tendencias_venta.pdf');
         });
     });
