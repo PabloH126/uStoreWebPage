@@ -20,5 +20,7 @@ header .content .final #tendencias img{
 }
 
 .body{
-	max-width: 80%;
+	max-height: 71%;
+    max-width: 80%;
+    top: 25%;
 }
