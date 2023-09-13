@@ -1,14 +1,14 @@
-header .content .final #tendencias{
-	background: white;
+header .content .final #tendencias {
+    background: white;
 }
 
-header .content .final #tendencias img{
-	filter: none;
+header .content .final #tendencias img {
+    filter: none;
 }
 
 /*content*/
 .body,
-.title{
+.title {
     position: fixed;
     display: grid;
     grid-template-columns: 93.5% 0%;
@@ -18,8 +18,8 @@ header .content .final #tendencias img{
     justify-items: center;
 }
 
-.title h1{
-	font-size: 8vh;
+.title h1 {
+    font-size: 8vh;
 }
 
 .icon-filter {
@@ -28,8 +28,8 @@ header .content .final #tendencias img{
     cursor: pointer;
 }
 
-.body{
-	max-height: 66%;
+.body {
+    max-height: 66%;
     top: 30%;
     grid-template-columns: none;
 }
@@ -49,11 +49,11 @@ header .content .final #tendencias img{
     font-size: 2.5rem;
 }
 
-.crear-publicacion i:hover{
+.crear-publicacion i:hover {
     background: #016283;
 }
 
-.body #sub-menu{
+.title #sub-menu {
     top: 10vh;
     left: 70vw;
 }
@@ -61,7 +61,7 @@ header .content .final #tendencias img{
 .body #sub-menu2 {
     top: 52vh;
     left: 76vw;
-	padding: 10px 12px;
+    padding: 10px 12px;
 }
 
 .body #sub-menu .menu-option a,
@@ -71,9 +71,10 @@ header .content .final #tendencias img{
     color: inherit;
 }
 
-@media only screen and (max-width: 1440px){       
+@media only screen and (max-width: 1440px) {
+
     .body #sub-menu,
-    .body #sub-menu2 {        
+    .body #sub-menu2 {
         top: 49vh;
         left: 74vw;
     }
