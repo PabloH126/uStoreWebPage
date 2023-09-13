@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 unit: 'mm',
                 format: 'a4'
             });
-            pdf.addImage(imgData, 'PNG', 0, 0, newWidth, newHeight);
+            pdf.addImage(imgData, 'PNG', xOffset, yOffset, newWidth, newHeight);
             pdf.save('Tendencias_venta.pdf');
         });
     });
