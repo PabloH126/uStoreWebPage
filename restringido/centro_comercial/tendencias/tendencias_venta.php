@@ -101,6 +101,12 @@ require '../../security.php';
 		</aside>
 		<div class="body">
 			<canvas id="grafica"></canvas>
+
+			<div class="crear-publicacion">
+				<a title="Crear publicación" href="crear_publicacion.php">
+					<span class="material-symbols-outlined">add</span>
+				</a>
+			</div>	
 		</div>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -1,8 +1,8 @@
 var meses = [];
 var ventas = [];
 for (let index = 0; index < 50; index++) {
-    meses[index] = 'uwu';
-    ventas[index] = index + 1000;
+    meses[index] = 'uwu' + index;
+    ventas[index] = Math.floor(Math.random() * 1000) + 1000;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
