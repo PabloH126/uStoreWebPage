@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById("downloadPDF").addEventListener("click", function() {
         var grafica = document.getElementById('grafica');
-        const pdfWidth = 210;
-        const pdfHeight = 297;
+        const pdfWidth = 297;
+        const pdfHeight = 210;
         let aspectRatio = grafica.width/grafica.height;
         let newWidth = pdfWidth;
         let newHeight = pdfHeight / aspectRatio;
