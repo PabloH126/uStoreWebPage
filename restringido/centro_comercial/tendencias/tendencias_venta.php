@@ -104,7 +104,7 @@ require '../../security.php';
 
 			<div class="crear-publicacion">				
 				<a title="Descargar">
-					<i class='bx bxs-download'></i>
+					<i class='bx bxs-download' id="menu-icon"></i>
 				</a>
 			</div>	
 			
