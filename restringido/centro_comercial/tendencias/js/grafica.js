@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var pdf = new window.jspdf.jsPDF({
                 orientation: 'landscape',
                 unit: 'mm',
-                format: 'a4'
+                format: [pdfWidth, pdfHeight]
             });
             pdf.addImage(imgData, 'PNG', 0, 0, grafica.width, grafica.height);
             pdf.save('Tendencias_venta.pdf');
