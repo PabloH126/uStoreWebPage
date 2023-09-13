@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             animation: {
-                duration: 1000,
+                duration: 5000,
                 easing: 'easeOutBounce',
                 onProgress: function(animation) {
 
                 },
                 onComplete: function(animation) {
-
+                    alert("Se completo la animacion");
                 }
             }
         }
