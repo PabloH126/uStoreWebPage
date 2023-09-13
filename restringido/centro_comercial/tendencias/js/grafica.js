@@ -53,15 +53,15 @@ document.addEventListener('DOMContentLoaded', function() {
         var grafica = document.getElementById('grafica');
     
         html2canvas(grafica, {
-            scale: 0.3
+            scale: 1
         }).then(function(grafica) {
             var imgData = grafica.toDataURL('image/png');
             var pdf = new window.jspdf.jsPDF({
                 orientation: 'landscape',
                 unit: 'mm',
-                format: [grafica.width, grafica.height]
+                format: [grafica.width * 0.4, grafica.height * 0.4]
             });
-            pdf.addImage(imgData, 'PNG', 0, 0, grafica.width, grafica.height);
+            pdf.addImage(imgData, 'PNG', 0, 0, grafica.width * 0.4, grafica.height * 0.4);
             pdf.save('Tendencias_venta.pdf');
         });
     });
