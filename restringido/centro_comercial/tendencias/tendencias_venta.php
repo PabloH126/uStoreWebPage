@@ -98,14 +98,14 @@ require '../../security.php';
                     </ul>
                 </li>
             </ul>
-			
 		</aside>
-
 		<div>
-
+			<canvas id="grafica"></canvas>
 		</div>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="js/aside_tendencias.js"></script>
+	<script src="js/grafica.js"></script>
 </body>
 
 </html>
