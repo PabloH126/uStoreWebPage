@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 unit: 'mm',
                 format: [grafica.width, grafica.height]
             });
-            pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+            pdf.addImage(imgData, 'PNG', 0, 0, grafica.width, grafica.height);
             pdf.save('grafica.pdf');
         });
     });
