@@ -1,3 +1,4 @@
+#sub-menu.active,
 #sub-menu.active {
     -webkit-display: flex;
     display: flex;
@@ -5,7 +6,8 @@
     align-items: center;
 }
 
-#sub-menu {
+#sub-menu,
+#sub-menu2 {
     position: absolute;
     width: auto;
     z-index: 1;
@@ -21,17 +23,20 @@
     padding: 10px 15px;
 }
 
-#sub-menu .menu-option {
+#sub-menu .menu-option,
+#sub-menu2 .menu-option  {
     width: 100%;
     padding: 2px;
     user-select: none;
     cursor: pointer;
 }
 
-#sub-menu .menu-option:hover {
+#sub-menu .menu-option:hover,
+#sub-menu2 .menu-option:hover {
     background-color: #007096;
 }
 
-#sub-menu .menu-option:hover a {
+#sub-menu .menu-option:hover a,
+#sub-menu2 .menu-option:hover a {
     color: white;
 }
