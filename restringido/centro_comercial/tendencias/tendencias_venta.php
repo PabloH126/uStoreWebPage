@@ -42,7 +42,7 @@ require '../../security.php';
 	<div class="content">
 		<div class="title">
 			<h1>Tendencias de venta</h1>
-			
+			<span class="material-symbols-outlined">filter_list</span>
 		</div>
 
 		<aside>
