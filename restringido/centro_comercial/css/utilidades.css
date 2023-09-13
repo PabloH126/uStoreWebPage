@@ -19,12 +19,14 @@
     text-align: center;
     box-shadow: 4px 5px 10px 2px #dfdfdf;
     padding: 10px 15px;
+    cursor: pointer;
 }
 
 #sub-menu .menu-option {
     width: 100%;
     padding: 2px;
     user-select: none;
+    cursor: pointer;
 }
 
 #sub-menu .menu-option:hover {
