@@ -1,10 +1,9 @@
 var meses = [];
-
-for (let index = 0; index < array.length> index++) {
-    const element = array[index];
-    
+var ventas = [];
+for (let index = 0; index < 150; index++) {
+    meses[index] = 'uwu';
+    ventas[index] = index + 1000;
 }
-var ventas = [3000, 4000, 3200, 5000, 8000, 3900];
 
 document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('grafica').getContext('2d');
