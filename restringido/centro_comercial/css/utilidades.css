@@ -21,16 +21,16 @@
     padding: 10px 15px;
 }
 
-.content .title .menu-option {
+#sub-menu .menu-option {
     width: 100%;
     padding: 2px;
     user-select: none;
 }
 
-.content .title .menu-option:hover {
+#sub-menu .menu-option:hover {
     background-color: #007096;
 }
 
-.content .title .menu-option:hover a {
+#sub-menu .menu-option:hover a {
     color: white;
 }
