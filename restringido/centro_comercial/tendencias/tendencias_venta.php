@@ -115,7 +115,7 @@ require '../../security.php';
 			
 		</div>
 	</div>
-
+	<?php require("templates/template.scripts_tendencias.php") ?>
 </body>
 
 </html>
