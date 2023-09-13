@@ -8,7 +8,7 @@ for (let index = 0; index < 150; index++) {
 document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('grafica').getContext('2d');
     var grafica = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: meses,
             datasets:  [{
