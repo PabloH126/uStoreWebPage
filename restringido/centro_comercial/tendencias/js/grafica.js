@@ -4,7 +4,7 @@ var ventas = [3000, 4000, 3200, 5000, 8000, 3900];
 document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('grafica').getContext('2d');
     var grafica = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: meses,
             datasets:  [{
