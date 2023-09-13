@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             animation: {
-                duration: 1000,
-                easing: 'easeOutBounce',
+                duration: 1500,
+                easing: 'easeInOutQuad',
                 onProgress: function(animation) {
 
                 },
