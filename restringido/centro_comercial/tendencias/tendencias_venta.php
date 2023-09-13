@@ -46,6 +46,10 @@ require '../../security.php';
 			</div>
 			<div>
 				<span class="material-symbols-outlined" id="icon-filter">filter_list</span>
+				<div id="sub-menu">
+					<div class="menu-option"><a id="MayorMenor">Mayor a Menor</a></div>
+					<div class="menu-option"><a id="downloadImage">Nombre: A-Z / Z-A </a></div>
+				</div>
 			</div>
 		</div>
 
