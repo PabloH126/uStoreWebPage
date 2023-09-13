@@ -45,8 +45,8 @@ header .content .final #tendencias img{
 }
 
 .body #sub-menu {
-	top: 77%; 
-	left: 81%;
+    top: 49vh;
+    left: 72vw;
 	display: block;
 	padding: 10px 30px;
 }
