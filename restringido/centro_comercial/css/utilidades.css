@@ -1,4 +1,5 @@
-#sub-menu.active{
+#sub-menu.active,
+#sub-menu2.active{
     -webkit-display: flex;
     display: flex;
     flex-direction: column;
