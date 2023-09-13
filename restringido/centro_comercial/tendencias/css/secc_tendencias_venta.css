@@ -10,11 +10,12 @@ header .content .final #tendencias img{
 .body,
 .title{
     position: fixed;
-    display: flex;
+    display: grid;
+    grid-template-columns: 87% 0%;
     width: 88%;
     right: 0;
-    justify-content: center;
     align-items: center;
+    justify-items: center;
 }
 
 .title h1{
@@ -29,6 +30,7 @@ header .content .final #tendencias img{
 .body{
 	max-height: 66%;
     top: 30%;
+    grid-template-columns: none;
 }
 
 .crear-publicacion {
