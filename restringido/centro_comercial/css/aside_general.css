@@ -1,0 +1,80 @@
+aside {
+    position: fixed;
+    float: left;
+    width: 12vw;
+    height: 88vh;
+    top: 12vh;
+    background: #007096;
+}
+
+aside .list{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 2.5vh;
+}
+
+aside .list .list_item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+aside .list .list_item .list_button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 90%;
+    margin: 0 auto;
+}
+
+button.p{
+    all: inherit;
+    width: 100%;
+}
+
+aside .p{
+    display: block;
+    padding: 13px 0;
+}
+
+.arrow .row{
+    transform: rotate(90deg);
+}
+
+.list_show{
+    width: 80%;
+    margin-left: auto;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+    text-align: left;
+}
+
+.list_show .p{
+    padding-left: 15%;
+}
+
+aside .list .list_item .list_button .row{
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list_inside input{
+    display: none;
+}
+
+.list_inside .selected,
+label input:checked + .p,
+.list_inside .p:hover{
+    background-color: white;
+    color: #007096;
+}
+
+.list_inside label{
+    cursor: pointer;
+}

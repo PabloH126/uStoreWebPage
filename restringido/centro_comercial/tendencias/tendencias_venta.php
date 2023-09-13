@@ -108,6 +108,7 @@ require '../../security.php';
                 </li>
             </ul>
 		</aside>
+
 		<div class="body">
 			<canvas id="grafica"></canvas>
 

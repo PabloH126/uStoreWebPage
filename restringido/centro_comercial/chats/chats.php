@@ -39,9 +39,10 @@ require '../../security.php';
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
-		
+        <?php require("templates/template.aside_chats.php") ?>
+
 	</div>
-	<?php require("templates/template.scripts_tendencias.php") ?>
+	
 </body>
 
 </html>
