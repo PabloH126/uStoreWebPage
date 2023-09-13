@@ -1,0 +1,36 @@
+#sub-menu.active {
+    -webkit-display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sub-menu {
+    position: absolute;
+    width: auto;
+    z-index: 1;
+    top: 18%;
+    left: 10.6%;
+    height: auto;
+    -webkit-display: none;
+    display: none;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 4px 5px 10px 2px #dfdfdf;
+    padding: 10px 15px;
+}
+
+.content .title .menu-option {
+    width: 100%;
+    padding: 2px;
+    user-select: none;
+}
+
+.content .title .menu-option:hover {
+    background-color: #007096;
+}
+
+.content .title .menu-option:hover a {
+    color: white;
+}
