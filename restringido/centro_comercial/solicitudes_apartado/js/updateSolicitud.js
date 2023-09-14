@@ -25,8 +25,8 @@ async function UpdateSolicitud(status, idSolicitud)
         body: formData
     })
     .then(response => response.json())
-    .then(console.log(response))
     .then(data => {
+        console.log(data);
         if(data.status === 'success')
         {
             window.location.reload();
