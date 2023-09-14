@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 async function UpdateSolicitud(status, idSolicitud)
 {
+    console.log(status);
+    console.log(idSolicitud);
     const formData = new FormData();
     formData.append('statusSolicitud', status);
     formData.append('idSolicitud', idSolicitud);

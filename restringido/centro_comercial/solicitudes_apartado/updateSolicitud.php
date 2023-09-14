@@ -5,12 +5,14 @@ header('Content-Type: application/json');
 
 if (!isset($_POST['statusSolicitud']) || $_POST['statusSolicitud'] !== "activa" || $_POST['statusSolicitud'] !== "rechazada" || $_POST['statusSolicitud'] !== "completada")
 {
+    $responseArray['status'] = 'error';
     $responseArray['message'] = "el estatus no ha sido especificado o no es valido";
     echo json_encode($responseArray);
     exit;
 }
 else if (!isset($_POST['idSolicitud']))
 {
+    $responseArray['status'] = 'error';
     $responseArray['message'] = "el id de la solicitud no ha sido especificado";
     echo json_encode($responseArray);
     exit;
