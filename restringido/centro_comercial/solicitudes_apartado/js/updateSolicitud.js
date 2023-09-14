@@ -25,6 +25,7 @@ async function UpdateSolicitud(status, idSolicitud)
         body: formData
     })
     .then(response => response.json())
+    .then(console.log(response))
     .then(data => {
         if(data.status === 'success')
         {
