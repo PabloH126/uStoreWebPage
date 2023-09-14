@@ -30,7 +30,7 @@ require '../../security.php';
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Tendencias de venta</title>
+	<title>Chats</title>
 	<?php require("../templates/template.styles.php") ?>
 	<?php require("templates/template.secc_chats.php") ?>
 </head>
