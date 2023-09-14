@@ -51,9 +51,7 @@
 		{
 			$messageSolicitud = $response;
 		}
-		$data = json_decode($response, true);
-		$solicitudes = $data['solicitudes'];
-		$productos = $data['productos'];
+		$solicitudes = json_decode($response, true);
 		curl_close($ch);
 	}
 	
@@ -123,10 +121,6 @@
 				{
 					foreach ($solicitudes as $solicitud)
 					{
-						foreach ($productos as $producto)
-						{
-							if($solicitud['idProductos'] == $producto['idProductos'])
-							{
 				?>
 				<div class="item" id="encabezado">
 					<p>Imagen del producto</p>
@@ -140,10 +134,10 @@
 				</div>
 
 				<div class="item">
-					<img src="<?php echo $producto['imageProducto'];?>" alt="">
+					<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
 					<p><label><?php echo $solicitud['personalizado'] == true ? 'Personalizado' : '';?></label>
-					<?php echo $producto['nombreProducto']?></p>
-					<p><?php echo $producto['precioProducto']?></p>
+					<?php echo $solicitud['nombreProducto']?></p>
+					<p><?php echo $solicitud['precioProducto']?></p>
 					<p><?php echo $solicitud['periodoApartado']?></p>
 					<p><?php echo $solicitud['ratioUsuario']?></p>
 					<p><?php echo $solicitud['unidadesProducto']?></p>
@@ -151,8 +145,6 @@
 					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
 				<?php
-							}
-						}
 					}
 				?> 
 			</div>
