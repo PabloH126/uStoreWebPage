@@ -17,7 +17,7 @@ async function UpdateSolicitud(status, idSolicitud)
     const formData = new FormData();
     formData.append('statusSolicitud', status);
     formData.append('idSolicitud', idSolicitud);
-    await fetch("../updateSolicitud.php", {
+    await fetch("updateSolicitud.php", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -57,4 +57,12 @@ function showNotificationError(message) {
             hideNotification();
         }, 550);
     }, 2500);
+}
+
+function hideNotification() {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
+    currentNotification = null;
 }
