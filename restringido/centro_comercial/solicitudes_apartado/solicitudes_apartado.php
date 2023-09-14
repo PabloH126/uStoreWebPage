@@ -63,6 +63,7 @@
 	<title>Solicitudes de apartado</title>
     <?php require("../templates/template.styles.php")?>
 	<?php require("templates/template.secc_apartados.php")?>
+	<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/notificacion_errores.css">
 </head>
 <body>
     <?php require("../templates/template.menu.php")?>
