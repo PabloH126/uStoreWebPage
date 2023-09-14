@@ -1,3 +1,4 @@
+let currentNotification;
 document.addEventListener("DOMContentLoaded", function() {
     const btnAprobar = document.getElementById("aprobar");
     const btnRechazar = document.getElementById("rechazar");
