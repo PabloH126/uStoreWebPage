@@ -141,7 +141,7 @@
 
 				<div class="item">
 					<img src="<?php echo $producto['imageProducto'];?>" alt="">
-					<p><label><?php echo $producto['personalizado'] == true ? 'Personalizado' : '';?></label>
+					<p><label><?php echo $producto['personalizado'] == false ? 'Personalizado' : '';?></label>
 					<?php echo $producto['nombreProducto']?></p>
 					<p><?php echo $producto['precioProducto']?></p>
 					<p><?php echo $solicitud['periodoApartado']?></p>
