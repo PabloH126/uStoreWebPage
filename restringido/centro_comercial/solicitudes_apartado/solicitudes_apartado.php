@@ -123,10 +123,6 @@
 				{
 					foreach ($solicitudes as $solicitud)
 					{
-						foreach ($productos as $producto)
-						{
-							if($solicitud['idProductos'] == $producto['idProductos'])
-							{
 				?>
 				<div class="item" id="encabezado">
 					<p>Imagen del producto</p>
@@ -141,7 +137,7 @@
 
 				<div class="item">
 					<img src="<?php echo $producto['imageProducto'];?>" alt="">
-					<p><label><?php echo $producto['personalizado'] == false ? 'Personalizado' : '';?></label>
+					<p><label><?php echo $producto['personalizado'] == "true" ? 'Personalizado' : '';?></label>
 					<?php echo $producto['nombreProducto']?></p>
 					<p><?php echo $producto['precioProducto']?></p>
 					<p><?php echo $solicitud['periodoApartado']?></p>
@@ -151,8 +147,6 @@
 					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
 				<?php
-							}
-						}
 					}
 				?> 
 			</div>
