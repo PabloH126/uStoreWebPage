@@ -137,12 +137,12 @@
 					<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
 					<p><label><?php echo $solicitud['personalizado'] == true ? 'Personalizado' : '';?></label>
 					<?php echo $solicitud['nombreProducto']?></p>
-					<p><?php echo $solicitud['precioProducto']?></p>
+					<p>$<?php echo $solicitud['precioProducto']?></p>
 					<p><?php echo $solicitud['periodoApartado']?></p>
 					<p><?php echo $solicitud['ratioUsuario']?></p>
 					<p><?php echo $solicitud['unidadesProducto']?></p>
-					<p><i style="color: green;" class='bx bxs-check-circle'></i></p>
-					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
+					<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle'></i></p>
+					<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle'></i></p>
 				</div>
 				<?php
 					}
