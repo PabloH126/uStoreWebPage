@@ -156,5 +156,6 @@
 		?>
 	</div>
 	<script src="../js/menu_desplegable.js"></script>
+	<script src="js/updateSolicitud.js"></script>
 </body>
 </html>
