@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     btnRechazar.forEach(btn => {
-        btn.addEventListener("click", function(e) {
+        btn.addEventListener("click", function () {
             UpdateSolicitud('rechazada', btn.dataset.solicitudId);
         })
     })
@@ -25,9 +25,6 @@ async function UpdateSolicitud(status, idSolicitud)
     formData.append('idSolicitud', idSolicitud);
     await fetch("updateSolicitud.php", {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
         body: formData
     })
     .then(response => response.json())
