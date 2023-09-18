@@ -12,6 +12,11 @@ header {
     text-align: left;
 }
 
+#background-animated, 
+i.bx.bx-store-alt{
+    left: 3%;
+}
+
 #select-store{
     display: flex;
     height: 7vh;
