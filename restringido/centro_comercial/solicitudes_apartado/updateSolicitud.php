@@ -17,7 +17,7 @@ else if (!isset($_POST['idSolicitud']))
     echo json_encode($responseArray);
     exit;
 }
-*/
+
 $data = [
     'idSolicitud' => $_POST['idSolicitud'],
     'statusSolicitud' => $_POST['statusSolicitud']
@@ -55,7 +55,7 @@ else
 {
     $responseArray['status'] = 'success';
 }
-
+*/
 echo json_encode($responseArray);
 exit;
 ?>
