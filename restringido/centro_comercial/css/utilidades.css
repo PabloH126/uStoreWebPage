@@ -1,3 +1,47 @@
+/*---*/
+#background-animated {
+    background: #e5e5e5;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    animation: background-expand 1s linear infinite;
+}
+
+#background-animated,
+i.bx.bx-store-alt {
+    font-size: 3rem;
+    position: fixed;
+    left: 8%;
+    color: #007096;
+}
+
+@keyframes background-expand {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        filter: blur(10px);
+        opacity: 0;
+    }
+}
+
+#menu-icon:hover:before {
+    content: "\eebd";
+    cursor: pointer;
+}
+
+#menu-icon.active:before {
+    content: "\eebd";
+    cursor: pointer;
+}
+
+/*--*/
+
 #sub-menu.active,
 #sub-menu2.active{
     -webkit-display: flex;

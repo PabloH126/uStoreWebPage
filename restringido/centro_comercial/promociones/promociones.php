@@ -41,6 +41,23 @@ require '../../security.php';
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
+		<div>
+			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+			
+			<div id="sub-menu">
+				<?php foreach ($tiendas as $tienda)
+				{
+					echo '
+					<div class="menu-option">
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
+					</div>
+					';
+				};
+				?>
+			</div>
+		</div>
+
+
         <div class="content-ofertas">
             <?php
 			foreach($publicaciones as $publicacion)
