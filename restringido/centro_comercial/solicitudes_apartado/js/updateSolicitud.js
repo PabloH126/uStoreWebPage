@@ -1,7 +1,7 @@
 let currentNotification;
 document.addEventListener("DOMContentLoaded", function() {
-    const btnAprobar = document.querySelectorAll("aprobar");
-    const btnRechazar = document.querySelectorAll("rechazar");
+    const btnAprobar = document.querySelectorAll(".aprobar");
+    const btnRechazar = document.querySelectorAll(".rechazar");
 
     btnAprobar.forEach(btn => {
         btn.addEventListener("click", function () {
