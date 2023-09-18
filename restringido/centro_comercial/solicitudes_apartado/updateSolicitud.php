@@ -3,7 +3,7 @@ session_start();
 $responseArray = [];
 header('Content-Type: application/json');
 
-if (!isset($_POST['statusSolicitud']) || ($_POST['statusSolicitud'] !== "activa" && $_POST['statusSolicitud'] !== "rechazada" && $_POST['statusSolicitud'] !== "completada"))
+if (!isset($_POST['statusSolicitud']) || ($_POST['statusSolicitud'] != "activa" && $_POST['statusSolicitud'] != "rechazada" && $_POST['statusSolicitud'] != "completada"))
 {
     $responseArray['status'] = 'error';
     $responseArray['message'] = "el estatus no ha sido especificado o no es valido";
