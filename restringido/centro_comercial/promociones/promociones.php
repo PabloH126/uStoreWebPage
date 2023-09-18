@@ -41,7 +41,7 @@ require '../../security.php';
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
-		<div>
+		<div id="select-store">
 			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			
 			<div id="sub-menu">

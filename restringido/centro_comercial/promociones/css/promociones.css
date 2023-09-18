@@ -12,6 +12,13 @@ header {
     text-align: left;
 }
 
+#select-store{
+    display: flex;
+    height: 7vh;
+    align-items: center;
+    margin: 1% 0 0 0;
+}
+
 .content .content-ofertas {
     width: 97%;
     margin: 20px auto;
