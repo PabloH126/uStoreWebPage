@@ -55,7 +55,7 @@ else
 {
     $responseArray['status'] = 'success';
 }
-$responseArray['message'] = $httpStatusCode . ' ACTUALIZAR Solicitud';
+
 echo json_encode($responseArray);
 exit;
 ?>
