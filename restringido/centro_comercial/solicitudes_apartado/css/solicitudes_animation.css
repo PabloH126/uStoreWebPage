@@ -1,0 +1,33 @@
+.item {
+    position: relative;
+    transition: transform 0.3s ease-out;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+@keyframes bounceRight
+{
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 50px);
+    }
+
+    20% {
+        transform: translate3d(-20px, 0, 50px);
+    }
+
+    50% {
+        transform: translate3d(10px, 0, 50px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(2000px, 0, 50px);
+    }
+}
+
+.bounceRight {
+    animation-name: bounceRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}

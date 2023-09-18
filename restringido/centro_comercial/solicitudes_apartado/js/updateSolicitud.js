@@ -5,21 +5,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     btnAprobar.forEach(btn => {
         btn.addEventListener("click", function () {
-            UpdateSolicitud('activa', btn.dataset.solicitudId);
+            UpdateSolicitud('activa', btn.dataset.solicitudId, this.closest('.item'));
         });
     })
 
     btnRechazar.forEach(btn => {
         btn.addEventListener("click", function () {
-            UpdateSolicitud('rechazada', btn.dataset.solicitudId);
+            UpdateSolicitud('rechazada', btn.dataset.solicitudId, this.closest('.item'));
         })
     })
 });
 
-async function UpdateSolicitud(status, idSolicitud)
+async function UpdateSolicitud(status, idSolicitud, elementClicked)
 {
-    console.log(status);
-    console.log(idSolicitud);
     const formData = new FormData();
     formData.append('statusSolicitud', status);
     formData.append('idSolicitud', idSolicitud);
@@ -32,7 +30,11 @@ async function UpdateSolicitud(status, idSolicitud)
         console.log(data);
         if(data.status === 'success')
         {
-            window.location.reload();
+            //window.location.reload();
+            elementClicked.classList.add('bounceRight');
+            elementClicked.addEventListener('animationend', () => {
+                elementClicked.remove();
+            })
         }
         else
         {
