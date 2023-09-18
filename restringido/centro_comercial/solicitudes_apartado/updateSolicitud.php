@@ -2,7 +2,7 @@
 session_start();
 $responseArray = [];
 header('Content-Type: application/json');
-
+$responseArray['message'] = $_POST['statusSolicitud'];
 if (!isset($_POST['statusSolicitud']) || ($_POST['statusSolicitud'] != "activa" && $_POST['statusSolicitud'] != "rechazada" && $_POST['statusSolicitud'] != "completada"))
 {
     $responseArray['status'] = 'error';
