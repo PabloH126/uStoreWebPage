@@ -1,15 +1,18 @@
 let currentNotification;
 document.addEventListener("DOMContentLoaded", function() {
-    const btnAprobar = document.getElementById("aprobar");
-    const btnRechazar = document.getElementById("rechazar");
+    const btnAprobar = document.querySelectorAll("aprobar");
+    const btnRechazar = document.querySelectorAll("rechazar");
 
-    btnAprobar.addEventListener("click", function (e) {
-        alert (e.target.dataset.solicitudId);
-        UpdateSolicitud('activa', e.target.dataset.solicitudId);
-    });
+    btnAprobar.forEach(btn => {
+        btn.addEventListener("click", function () {
+            UpdateSolicitud('activa', btn.dataset.solicitudId);
+        });
+    })
 
-    btnRechazar.addEventListener("click", function(e) {
-        UpdateSolicitud('rechazada', this.dataset.solicitudId);
+    btnRechazar.forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            UpdateSolicitud('rechazada', btn.dataset.solicitudId);
+        })
     })
 });
 
