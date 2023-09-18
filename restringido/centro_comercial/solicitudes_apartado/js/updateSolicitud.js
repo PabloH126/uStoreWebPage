@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnRechazar = document.getElementById("rechazar");
 
     btnAprobar.addEventListener("click", function (e) {
-        UpdateSolicitud('activa', this.dataset.solicitudId);
+        alert (e.target.dataset.solicitudId);
+        UpdateSolicitud('activa', e.target.dataset.solicitudId);
     });
 
     btnRechazar.addEventListener("click", function(e) {

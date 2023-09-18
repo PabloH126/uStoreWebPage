@@ -120,8 +120,6 @@
 				}
 				else
 				{
-					foreach ($solicitudes as $solicitud)
-					{
 				?>
 						<div class="item" id="encabezado">
 							<p>Imagen del producto</p>
@@ -133,7 +131,10 @@
 							<p>Aceptar</p>
 							<p>Denegar</p>
 						</div>
-
+				<?php
+					foreach ($solicitudes as $solicitud)
+					{
+				?>
 						<div class="item">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
 							<p><label><?php echo $solicitud['personalizado'] == true ? 'Personalizado' : '';?></label>
