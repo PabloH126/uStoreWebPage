@@ -134,7 +134,7 @@
 					foreach ($solicitudes as $solicitud)
 					{
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d H:i:s.u', $solicitud['fechaVencimiento'], new DateTimeZone('UTC'));
-						echo $tiempoVencimiento;
+						//$tiempoVencimiento->setTimezone(new DateTimeZone('America/Belize'));
 				?>
 						<div class="item">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
@@ -142,7 +142,7 @@
 							<?php echo $solicitud['nombreProducto']?></p>
 							<p>$<?php echo $solicitud['precioProducto']?></p>
 							<p><?php echo $solicitud['unidadesProducto']?></p>
-							<p><?php echo $solicitud['fechaVencimiento']?></p>
+							<p><?php echo $tiempoVencimiento;//$solicitud['fechaVencimiento']?></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
 						</div>
