@@ -21,3 +21,9 @@ i.bx.bx-store-alt {
 .content .lista .item{
     grid-template-columns: 13% 34% 10% 9% 12% 11% 11%
 }
+
+@media only screen and (max-width: 1502px) {
+    div#background-animated {
+        left: 3%;
+    }
+}
