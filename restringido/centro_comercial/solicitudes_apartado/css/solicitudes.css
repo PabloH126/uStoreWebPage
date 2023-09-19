@@ -111,11 +111,10 @@ div#background-animated {
     #background-animated,
     i.bx.bx-store-alt {
         font-size: 2.5rem;
-        left: 7%;
     }
 
     div#background-animated {
-        left: 2%;
+        left: 6.4vw;
     }
 
     .content .title h1 {
