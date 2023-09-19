@@ -23,7 +23,7 @@ a {
 
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
-    position: fixed;
+    position: absolute;
     right: 3.35%;
     background-color: white;
     border-radius: 13px;
