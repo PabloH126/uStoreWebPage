@@ -130,8 +130,10 @@
 							<p>Borrar</p>
 						</div>
 				<?php
+					$tiempoActual = new DateTime('now', new DateTimeZone('Etc/GMT+6'));
 					foreach ($solicitudes as $solicitud)
 					{
+						$tiempoVencimiento = new DateTime($solicitud['fechaVencimiento'])
 				?>
 						<div class="item">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
@@ -139,7 +141,7 @@
 							<?php echo $solicitud['nombreProducto']?></p>
 							<p>$<?php echo $solicitud['precioProducto']?></p>
 							<p><?php echo $solicitud['unidadesProducto']?></p>
-							<p><?php echo $solicitud['unidadesProducto']?></p>
+							<p><?php echo $solicitud['fechaVencimiento']?></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
 						</div>
