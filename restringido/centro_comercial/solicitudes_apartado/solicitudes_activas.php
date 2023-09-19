@@ -139,7 +139,7 @@
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
 						$tiempoVencimiento->setTimezone(new DateTimeZone('America/Belize'));
 						$intervaloVencimiento = $tiempoActual->diff($tiempoVencimiento);
-						echo $intervaloVencimiento->format('%a:%H:%i:%s');
+						echo $intervaloVencimiento->format('%a dias, %H horas, %i minutos y %s segundos');
 						$errors = DateTime::getLastErrors();
 						if ($errors['warning_count'] > 0 || $errors['error_count'] > 0) {
 							print_r($errors);
