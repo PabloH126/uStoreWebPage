@@ -9,6 +9,18 @@ a {
     justify-content: center;
 }
 
+.menu-option div{
+    background-color: #d55656;
+    margin: 0 0 0 6px;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.menu-option p{
+    font-size: 12px;
+}
+
+
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
     position: fixed;
@@ -41,7 +53,7 @@ a {
 }
 
 .content .lista .item img {
-    max-height: 85%;
+    max-height: 85px;
     max-width: 61%;
 }
 
