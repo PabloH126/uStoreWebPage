@@ -13,6 +13,12 @@ a {
     justify-content: space-around;
 }
 
+div#background-animated{
+    position: absolute;
+    left: 4%;
+    z-index: -1000;
+}
+
 .menu-option div{
     background-color: #d55656;
     margin: 0 0 0 6px;
