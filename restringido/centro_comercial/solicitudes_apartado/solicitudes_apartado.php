@@ -88,9 +88,7 @@
 					echo '
 					<div class="menu-option">
 						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
-						<div>
-							<p>100</p>
-						</div>
+						<p>99+</p>
 					</div>
 					';
 				};

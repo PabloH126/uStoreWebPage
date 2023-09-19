@@ -18,11 +18,24 @@ div#background-animated {
     z-index: -1000;
 }
 
-.menu-option div {
+.menu-option p{
     background-color: #d55656;
     margin: 0 0 0 6px;
     border-radius: 50%;
     padding: 6px;
+
+    font-size: 12px;
+    width: 28px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+
 }
 
 .content .title .bttn_cambio_seccion {
