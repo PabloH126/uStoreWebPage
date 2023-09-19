@@ -80,6 +80,7 @@ div#background-animated{
 
 .content .lista .item p i {
     font-size: 3rem;
+    cursor: pointer;
 }
 
 .content .lista #encabezado p {
