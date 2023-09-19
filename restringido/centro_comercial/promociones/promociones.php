@@ -126,6 +126,7 @@ if (isset($_GET['id']))
 			</a>
 		</div>	
 	</div>
+	<script src="../js/menu_desplegable.js"></script>
 </body>
 
 </html>

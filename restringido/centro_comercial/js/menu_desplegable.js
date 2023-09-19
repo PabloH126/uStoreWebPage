@@ -1,13 +1,3 @@
-/*document.addEventListener('DOMContentLoaded', function () {
-    let menuDesp = document.getElementById('sub-menu');
-    let menuIcon = document.getElementById('menu-icon');
-    
-    menuIcon.addEventListener('click', function (e) {
-        menuDesp.classList.toggle("active");
-        menuIcon.classList.toggle("active");
-    });
-})*/
-
 document.addEventListener('DOMContentLoaded', function () {
     let menuIcon1 = document.getElementById('menu-icon');
     let menuIcon2 = document.getElementById('menu-icon2');
