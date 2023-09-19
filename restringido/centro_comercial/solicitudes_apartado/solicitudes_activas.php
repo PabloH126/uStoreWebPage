@@ -140,10 +140,22 @@
 						$tiempoVencimiento->setTimezone(new DateTimeZone('America/Belize'));
 						$intervaloVencimiento = $tiempoActual->diff($tiempoVencimiento);
 						echo $intervaloVencimiento->format('%a dias, %H horas, %i minutos y %s segundos');
-						$errors = DateTime::getLastErrors();
-						if ($errors['warning_count'] > 0 || $errors['error_count'] > 0) {
-							print_r($errors);
+						switch ($intervaloVencimiento)
+						{
+							case $intervaloVencimiento->days > 0:
+								$intervaloVencimiento = $intervaloVencimiento->format('%a:%H:%i:%s');
+								break;
+							case $intervaloVencimiento->h > 0:
+								$intervaloVencimiento = $intervaloVencimiento->format('%H:%i:%s');
+								break;
+							case $intervaloVencimiento->i > 0:
+								$intervaloVencimiento = $intervaloVencimiento->format('%i:%s');
+								break;
+							case $intervaloVencimiento->s > 0:
+								$intervaloVencimiento = $intervaloVencimiento->format('%s');
+							
 						}
+
 				?>
 						<div class="item">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
@@ -151,7 +163,7 @@
 							<?php echo $solicitud['nombreProducto']?></p>
 							<p>$<?php echo $solicitud['precioProducto']?></p>
 							<p><?php echo $solicitud['unidadesProducto']?></p>
-							<p><?php echo $tiempoVencimiento->format('Y-m-d H:i:s');//$solicitud['fechaVencimiento']?></p>
+							<p><?php $intervaloVencimiento;//$solicitud['fechaVencimiento']?></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
 						</div>
