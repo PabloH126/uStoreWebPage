@@ -14,12 +14,12 @@ header {
 
 #background-animated, 
 i.bx.bx-store-alt{
-    left: 3%;
+    position: inherit;
+    margin-left: 4%;
 }
 
 #select-store{
     display: flex;
-    height: 7vh;
     align-items: center;
     margin: 1% 0 0 0;
 }
