@@ -86,6 +86,7 @@ i.bx.bx-store-alt {
     user-select: none;
     cursor: pointer;
     display: flex;
+    align-items: center;
 }
 
 #sub-menu .menu-option:hover,
