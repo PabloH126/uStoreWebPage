@@ -1,16 +1,8 @@
-#content-menu-icon,
-#content-cambio-secc {
-    width: 17.7vw;
-}
-
 .content .title {
-    display: flex;
+    margin: 0 64px;
+    display: grid;
+    grid-template-columns: 0.4fr 2fr 0.5fr;
     align-items: center;
-    /*
-    justify-content: center;
-    */
-
-    justify-content: space-around;
 }
 
 div#background-animated {
@@ -21,16 +13,15 @@ div#background-animated {
 
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
-    position: inherit;
     background-color: white;
     border-radius: 13px;
-    padding: 1% 2%;
     padding: 2vh 2vw;
     box-shadow: 4px 5px 10px 2px #dfdfdf;
     text-decoration: none;
     color: black;
     transition: 0.3s linear;
     height: 6.5vh;
+    display: block;
 }
 
 .content .title .bttn_cambio_seccion:hover {
@@ -83,8 +74,8 @@ div#background-animated {
 
 @media only screen and (max-width: 1502px) {
 
-    #content-menu-icon {
-        width: 12.5vw;
+    .content .title {
+        margin: 0 32px;
     }
 
     #background-animated {
@@ -108,8 +99,7 @@ div#background-animated {
 
     .content .title .bttn_cambio_seccion {
         font-size: 1rem;
-        right: 2.35%;
-        padding: 1%;
+        padding: 6%;
     }
 
     .content .lista .item p,
