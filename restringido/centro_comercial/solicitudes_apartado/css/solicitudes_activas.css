@@ -27,6 +27,10 @@ i.bx.bx-store-alt {
 }
 
 @media only screen and (max-width: 1502px) {
+    #content-menu-icon {
+        width: 13.2vw;
+    }
+    
     div#background-animated {
         left: 4.5vw;
     }
