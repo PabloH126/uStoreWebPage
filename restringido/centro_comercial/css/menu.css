@@ -3,6 +3,11 @@
     color: #007096;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 header .content .final {
 	display: grid;
 	-webkit-display: grid;
