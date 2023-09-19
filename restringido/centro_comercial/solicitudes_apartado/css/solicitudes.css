@@ -3,6 +3,10 @@ a {
     color: black;
 }
 
+#content-menu-icon{
+    width: 13.2vw;
+}
+
 .content .title {
     display: flex;
     align-items: center;
