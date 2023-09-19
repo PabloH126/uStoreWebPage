@@ -70,16 +70,17 @@
 
 	<div class="content">
 		<div class="title">
-		<?php
-			if (!isset($_GET['id']))
-			{
-		?>
-			<div id="background-animated"></div>
-		<?php 
-			} 
-		?>
+		
 			<div id="content-menu-icon">
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+				<?php
+					if (!isset($_GET['id']))
+					{
+				?>
+					<div id="background-animated"></div>
+				<?php 
+					} 
+				?>
 			</div>
 			
 			<div id="sub-menu">
