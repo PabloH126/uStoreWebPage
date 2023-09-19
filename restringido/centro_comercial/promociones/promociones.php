@@ -42,6 +42,8 @@ require '../../security.php';
 
 	<div class="content">
 		<div id="select-store">
+			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+			
 			<?php
 				if (!isset($_GET['id']))
 				{
@@ -50,8 +52,6 @@ require '../../security.php';
 			<?php 
 				} 
 			?>
-
-			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)

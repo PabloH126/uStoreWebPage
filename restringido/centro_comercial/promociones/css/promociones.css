@@ -18,6 +18,11 @@ i.bx.bx-store-alt{
     margin-left: 3%;
 }
 
+#background-animated{
+    position: absolute;
+    left: 0%;
+}
+
 #sub-menu{
     top: 15%;
     left: 5.6%;
