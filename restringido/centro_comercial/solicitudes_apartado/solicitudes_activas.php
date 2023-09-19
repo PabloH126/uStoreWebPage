@@ -199,7 +199,7 @@
 			}
 		}
 
-		const interval =setInterval(updateTimer, 1000);
+		const interval = setInterval(updateTimer, 1000);
 		updateTimer();
 	</script>
 </body>
