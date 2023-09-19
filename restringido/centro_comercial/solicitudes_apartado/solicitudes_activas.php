@@ -137,27 +137,8 @@
 						//
 						$simpleFecha = substr($solicitud['fechaVencimiento'], 0, 19);
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
-						$tiempoVencimiento->setTimezone(new DateTimeZone('America/Belize'));
-						$intervaloVencimiento = $tiempoActual->diff($tiempoVencimiento);
-						$segundosRestantes = $intervaloVencimiento->s
-										   + $intervaloVencimiento->i * 60
-										   + $intervaloVencimiento->h * 3600
-									       + $intervaloVencimiento->days * 86400;
-						switch ($intervaloVencimiento)
-						{
-							case $intervaloVencimiento->days > 0:
-								$intervaloVencimiento = $intervaloVencimiento->format('%a:%H:%i:%s');
-								break;
-							case $intervaloVencimiento->h > 0:
-								$intervaloVencimiento = $intervaloVencimiento->format('%H:%i:%s');
-								break;
-							case $intervaloVencimiento->i > 0:
-								$intervaloVencimiento = $intervaloVencimiento->format('%i:%s');
-								break;
-							case $intervaloVencimiento->s > 0:
-								$intervaloVencimiento = $intervaloVencimiento->format('%s');
-							
-						}
+						$tiempoVencimiento->setTimezone(new DateTimeZone('Etc/GMT+6'));
+						$tiempoVencimiento = $tiempoVencimiento->format('Y-m-d H:i:s');
 
 				?>
 						<div class="item">
@@ -166,7 +147,7 @@
 							<?php echo $solicitud['nombreProducto']?></p>
 							<p>$<?php echo $solicitud['precioProducto']?></p>
 							<p><?php echo $solicitud['unidadesProducto']?></p>
-							<p id="timer"></p>
+							<p><?php echo $intervaloVencimiento;?></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
 						</div>
@@ -183,24 +164,5 @@
 	</div>
 	<script src="../js/menu_desplegable.js"></script>
 	<script src="js/updateSolicitud.js"></script>
-	<script>
-		function updateTimer() {
-			var segundosRestantes = <?php echo $segundosRestantes; ?>;
-			const days = Math.floor(segundosRestantes / 86400);
-			const hours = Math.floor((segundosRestantes % 86400) / 3600);
-			const minutes = Math.floor((segundosRestantes % 3600) / 60);
-			const seconds = segundosRestantes % 60;
-
-			document.getElementById('timer').textContent = `${days}d:${hours}h:${minutes}m:${seconds}s`;
-			if (segundosRestantes > 0) {
-				segundosRestantes--;
-			} else {
-				clearInterval(interval);
-			}
-		}
-
-		const interval = setInterval(updateTimer, 1000);
-		updateTimer();
-	</script>
 </body>
 </html>
