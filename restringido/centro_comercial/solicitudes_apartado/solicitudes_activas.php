@@ -134,11 +134,11 @@
 					foreach ($solicitudes as $solicitud)
 					{
 						//$tiempoVencimiento = DateTime::createFromFormat('Y-m-d H:i:s.v', $solicitud['fechaVencimiento'], new DateTimeZone('UTC'));
-						//$tiempoVencimiento->setTimezone(new DateTimeZone('America/Belize'));
+						//
 						$simpleFecha = substr($solicitud['fechaVencimiento'], 0, 19);
 						echo $simpleFecha;
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha);
-
+						$tiempoVencimiento->setTimezone(new DateTimeZone('Etc/GMT+6'));
 						$errors = DateTime::getLastErrors();
 						if ($errors['warning_count'] > 0 || $errors['error_count'] > 0) {
 							print_r($errors);
