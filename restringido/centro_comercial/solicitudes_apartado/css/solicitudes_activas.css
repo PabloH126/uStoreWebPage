@@ -1,9 +1,3 @@
-
-
-div#background-animated{
-    left: 10.4vw;
-}
-
 .content .title .bttn_cambio_seccion{
     background-color: #007096;
     color: white;
@@ -21,9 +15,5 @@ div#background-animated{
 @media only screen and (max-width: 1502px) {
     #content-menu-icon {
         width: 13.2vw;
-    }
-
-    div#background-animated {
-        left: 7.3vw;
     }
 }
