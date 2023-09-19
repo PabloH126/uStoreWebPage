@@ -134,7 +134,7 @@
 					foreach ($solicitudes as $solicitud)
 					{
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d H:i:s.u', $solicitud['fechaVencimiento'], new DateTimeZone('UTC'));
-						$tiempoVencimiento->setTimezone(new DateTimeZone('Etc/GMT+6'));
+						$tiempoVencimiento->setTimezone(new DateTimeZone('America/Belize'));
 				?>
 						<div class="item">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
