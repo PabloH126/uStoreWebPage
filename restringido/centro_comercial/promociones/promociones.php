@@ -45,7 +45,7 @@ if (isset($_GET['id']))
 	}
 	
 	if ($httpStatusCode == 400) {
-		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+		$publicacionesError = "Error al intentar recuperar las publicaciones. Codigo de respuesta: " . $httpStatusCode;
 	}
 	$publicaciones = json_decode($response, true);
 	curl_close($ch);
@@ -83,14 +83,34 @@ if (isset($_GET['id']))
 				{
 					echo '
 					<div class="menu-option">
-						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/promociones/promociones.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
 					</div>
 					';
 				};
 				?>
 			</div>
+			<h1>Publicaciones de tienda</h1>
 		</div>
-
+		<?php
+			if (!isset($_GET['id']))
+			{
+		?>
+		<div>
+			<span id="span-seleccion-tienda">Seleccione una tienda</span>
+		</div>
+		<?php
+			}
+			else if(isset($publicacionesError))
+			{
+		?>
+		<div>
+			<span><?php echo $publicacionesError; ?></span>
+		</div>
+		<?php
+			}
+			else
+			{
+		?>
 
         <div class="content-ofertas">
             <?php
@@ -120,6 +140,7 @@ if (isset($_GET['id']))
 			}
 			?>
         </div>
+		<?php } ?>
 		<div class="crear-publicacion">
 			<a title="Crear publicación" href="crear_publicacion.php">
 				<span class="material-symbols-outlined">add</span>
