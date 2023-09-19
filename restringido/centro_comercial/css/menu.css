@@ -8,6 +8,11 @@ body {
     overflow-x: hidden;
 }
 
+header {
+    position: sticky;
+    top: 0;
+}
+
 header .content .final {
 	display: grid;
 	-webkit-display: grid;
