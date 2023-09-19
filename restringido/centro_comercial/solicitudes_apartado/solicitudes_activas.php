@@ -24,6 +24,36 @@
 	}
 	$tiendas = json_decode($response, true);
 	curl_close($ch);
+
+	if (isset($_GET['id']))
+	{
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesActivas?idTienda=" . $_GET['id']);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_COOKIE['SessionToken']
+		));
+		
+		$response = curl_exec($ch);
+		
+		if ($response === false) {
+			echo 'Error: ' . curl_error($ch);
+		} else {
+			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		}
+		
+		if ($httpStatusCode == 400) {
+			$solicitudesError = "Error al intentar recuperar las solicitudes. Codigo de respuesta: " . $httpStatusCode;
+		}
+		else if ($httpStatusCode == 404)
+		{
+			$messageSolicitud = $response;
+		}
+		$solicitudes = json_decode($response, true);
+		curl_close($ch);
+	}
 	
 ?>
 <!DOCTYPE html>
@@ -63,32 +93,68 @@
 			<h1>Solicitudes activas</h1>
 			<a href="solicitudes_apartado.php" class="bttn_cambio_seccion">Solicitudes de apartado</a>
 		</div>
-
+		<?php
+			if (!isset($_GET['id']))
+			{
+		?>
+		<div>
+			<span id="span-seleccion-tienda">Seleccione una tienda</span>
+		</div>
+		<?php
+			}
+			else
+			{
+		?>
 		<div>
 			<div class="lista">
-				<div class="item" id="encabezado">
-					<p>Imagen del producto</p>
-					<p>Nombre del producto</p>
-					<p>Precio del producto</p>
-					<p>Unidades</p>
-					<p>Tiempo de vencimiento</p>
-					<p>Recogió</p>
-					<p>Borrar</p>
-				</div>
-
-				<div class="item">
-					<img src="https://i.blogs.es/c2d211/minato/1366_2000.jpeg" alt="un minato">
-					<p><label>Personalizado</label>
-						Oaaaaaaaaaaaaaaaaaaaaaaa</p>
-					<p>$1000.00</p>
-					<p>1</p>
-					<p>Vencido</p>
-					<p><i style="color: green;" class='bx bxs-check-circle'></i></p>
-					<p><i style="color: #d30303;" class='bx bxs-x-circle'></i></p>
-				</div>
+				<?php
+				
+				if (isset($solicitudesError))
+				{
+					echo '<span id="span-seleccion-tienda">' .  $solicitudesError . '</span>';
+				}
+				else if (isset($messageSolicitud))
+				{
+					echo '<span id="span-seleccion-tienda">' .  $messageSolicitud . '</span>';
+				}
+				else
+				{
+				?>
+						<div class="item" id="encabezado">
+							<p>Imagen del producto</p>
+							<p>Nombre del producto</p>
+							<p>Precio del producto</p>
+							<p>Unidades</p>
+							<p>Tiempo de vencimiento</p>
+							<p>Recogió</p>
+							<p>Borrar</p>
+						</div>
+				<?php
+					foreach ($solicitudes as $solicitud)
+					{
+				?>
+						<div class="item">
+							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
+							<p><label><?php echo $solicitud['personalizado'] == true ? 'Personalizado' : '';?></label>
+							<?php echo $solicitud['nombreProducto']?></p>
+							<p>$<?php echo $solicitud['precioProducto']?></p>
+							<p><?php echo $solicitud['unidadesProducto']?></p>
+							<p><?php echo $solicitud['unidadesProducto']?></p>
+							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar'></i></p>
+							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
+						</div>
+				<?php
+					}
+				?> 
 			</div>
+			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
 		</div>
+		<?php
+				}
+			}
+		?>
 	</div>
 	<script src="../js/menu_desplegable.js"></script>
+	<script src="js/updateSolicitud.js"></script>
 </body>
 </html>

@@ -42,6 +42,15 @@ require '../../security.php';
 
 	<div class="content">
 		<div id="select-store">
+			<?php
+				if (!isset($_GET['id']))
+				{
+			?>
+				<div id="background-animated"></div>
+			<?php 
+				} 
+			?>
+
 			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			
 			<div id="sub-menu">

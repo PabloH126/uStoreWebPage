@@ -1,4 +1,4 @@
-/*---*/
+
 #background-animated {
     background: #e5e5e5;
     border-radius: 50%;
@@ -39,8 +39,6 @@ i.bx.bx-store-alt {
     content: "\eebd";
     cursor: pointer;
 }
-
-/*--*/
 
 #sub-menu.active,
 #sub-menu2.active{
@@ -83,4 +81,12 @@ i.bx.bx-store-alt {
 #sub-menu .menu-option:hover a,
 #sub-menu2 .menu-option:hover a {
     color: white;
+}
+
+#span-seleccion-tienda {
+    font-size: 5rem;
+    color: #0000001f;
+    font-weight: bold;
+    margin-top: 21vh;
+    display: block;
 }

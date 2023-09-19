@@ -9,8 +9,6 @@ a {
     justify-content: center;
 }
 
-/***/
-
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
     position: fixed;
@@ -27,14 +25,6 @@ a {
 .content .title .bttn_cambio_seccion:hover {
     background-color: #007096;
     color: white;
-}
-
-#span-seleccion-tienda {
-    font-size: 5rem;
-    color: #0000001f;
-    font-weight: bold;
-    margin-top: 21vh;
-    display: block;
 }
 
 .content .lista {
