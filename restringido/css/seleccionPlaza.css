@@ -1,3 +1,8 @@
+*::selection {
+    background: aliceblue;
+    color: #007096;
+}
+
 .content{
 	font-family: 'Golos Text', sans-serif;
 	text-align: center;
