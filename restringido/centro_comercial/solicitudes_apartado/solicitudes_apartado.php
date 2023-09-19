@@ -78,7 +78,9 @@
 		<?php 
 			} 
 		?>
-			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+			<div id="content-menu-icon">
+				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+			</div>
 			
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
