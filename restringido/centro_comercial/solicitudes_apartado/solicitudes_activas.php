@@ -40,6 +40,14 @@
 
 	<div class="content">
 		<div class="title">
+		<?php
+			if (!isset($_GET['id']))
+			{
+		?>
+			<div id="background-animated"></div>
+		<?php 
+			} 
+		?>
 			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
