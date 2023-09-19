@@ -135,7 +135,8 @@
 					{
 						//$tiempoVencimiento = DateTime::createFromFormat('Y-m-d H:i:s.v', $solicitud['fechaVencimiento'], new DateTimeZone('UTC'));
 						//$tiempoVencimiento->setTimezone(new DateTimeZone('America/Belize'));
-						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d H:i:s.v', $solicitud['fechaVencimiento'], new DateTimeZone('UTC'));
+						$simpleFecha = substr($solicitud['fechaVencimiento'], 0, 19);
+						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d H:i:s.v', $simpleFecha);
 
 						$errors = DateTime::getLastErrors();
 						if ($errors['warning_count'] > 0 || $errors['error_count'] > 0) {

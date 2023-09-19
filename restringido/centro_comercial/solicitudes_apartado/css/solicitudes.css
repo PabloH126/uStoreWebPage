@@ -105,6 +105,10 @@ div#background-animated{
         left: 7%;
     }
 
+    div#background-animated{
+        left: 2%;
+    }
+
     .content .title h1 {
         font-size: 4.3rem;
         margin: 25px 35px;
