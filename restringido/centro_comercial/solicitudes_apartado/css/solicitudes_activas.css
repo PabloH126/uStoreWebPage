@@ -3,12 +3,6 @@
 div#background-animated{
     left: 10.4vw;
 }
-/*
-#background-animated,
-i.bx.bx-store-alt {
-    margin: 0px 10% 0 3%
-}*/
-
 
 .content .title .bttn_cambio_seccion{
     background-color: #007096;
@@ -30,6 +24,6 @@ i.bx.bx-store-alt {
     }
 
     div#background-animated {
-        left: 8.5vw;
+        left: 7.3vw;
     }
 }

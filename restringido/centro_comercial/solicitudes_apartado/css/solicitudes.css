@@ -8,6 +8,7 @@
 div#background-animated {
     position: absolute;
     left: 8.7vw;
+    top: 18vh;
     z-index: -1000;
 }
 
