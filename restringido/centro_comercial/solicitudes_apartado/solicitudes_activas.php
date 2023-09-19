@@ -125,7 +125,7 @@
 							<p>Nombre del producto</p>
 							<p>Precio del producto</p>
 							<p>Unidades</p>
-							<p>Tiempo de vencimiento</p>
+							<p>Tiempo restante</p>
 							<p>Recogió</p>
 							<p>Borrar</p>
 						</div>
