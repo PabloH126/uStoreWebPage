@@ -21,16 +21,16 @@ div#background-animated {
 
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
-    /*position: absolute;*/
     position: inherit;
-    right: 3.35%;
     background-color: white;
     border-radius: 13px;
     padding: 1% 2%;
+    padding: 2vh 2vw;
     box-shadow: 4px 5px 10px 2px #dfdfdf;
     text-decoration: none;
     color: black;
     transition: 0.3s linear;
+    height: 6.5vh;
 }
 
 .content .title .bttn_cambio_seccion:hover {
