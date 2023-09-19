@@ -1,3 +1,12 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-option p {
+    font-size: 12px;
+}
+
 
 #background-animated {
     background: #e5e5e5;

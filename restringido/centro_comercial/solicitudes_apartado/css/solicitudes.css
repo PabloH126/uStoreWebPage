@@ -1,8 +1,3 @@
-a {
-    text-decoration: none;
-    color: black;
-}
-
 #content-menu-icon {
     width: 12.7vw;
 }
@@ -29,11 +24,6 @@ div#background-animated {
     border-radius: 50%;
     padding: 6px;
 }
-
-.menu-option p {
-    font-size: 12px;
-}
-
 
 .content .title .bttn_cambio_seccion {
     font-size: 1.3rem;
