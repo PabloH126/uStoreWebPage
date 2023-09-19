@@ -4,7 +4,7 @@ a {
 }
 
 #content-menu-icon{
-    width: 13.2vw;
+    width: 11.6vw;
 }
 
 .content .title {
@@ -99,6 +99,10 @@ div#background-animated{
 
 @media only screen and (max-width: 1502px) {
 
+    #content-menu-icon{
+        width: 13.2vw;
+    }
+    
     #background-animated{
         width: 2.5rem;
         height: 2.5rem;
