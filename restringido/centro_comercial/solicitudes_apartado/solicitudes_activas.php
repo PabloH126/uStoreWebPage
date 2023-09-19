@@ -136,12 +136,10 @@
 						//$tiempoVencimiento = DateTime::createFromFormat('Y-m-d H:i:s.v', $solicitud['fechaVencimiento'], new DateTimeZone('UTC'));
 						//
 						$simpleFecha = substr($solicitud['fechaVencimiento'], 0, 19);
-						echo $simpleFecha;
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
 						$tiempoVencimiento->setTimezone(new DateTimeZone('America/Belize'));
 						$intervaloVencimiento = $tiempoActual->diff($tiempoVencimiento);
-						echo $intervaloVencimiento->format('%a:%H:%i:%s') . ' ';
-						echo $tiempoVencimiento->format('Y-m-d H:i:s');
+						echo $intervaloVencimiento->format('%a:%H:%i:%s');
 						$errors = DateTime::getLastErrors();
 						if ($errors['warning_count'] > 0 || $errors['error_count'] > 0) {
 							print_r($errors);
