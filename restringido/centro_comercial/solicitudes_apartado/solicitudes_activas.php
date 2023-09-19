@@ -166,7 +166,7 @@
 							<?php echo $solicitud['nombreProducto']?></p>
 							<p>$<?php echo $solicitud['precioProducto']?></p>
 							<p><?php echo $solicitud['unidadesProducto']?></p>
-							<p id="timer"><?php echo $intervaloVencimiento;?></p>
+							<p id="timer"></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
 						</div>
