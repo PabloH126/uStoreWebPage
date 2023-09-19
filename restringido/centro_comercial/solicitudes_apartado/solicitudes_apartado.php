@@ -95,7 +95,10 @@
 				?>
 			</div>
 			<h1>Solicitudes de apartado</h1>
-			<a href="solicitudes_activas.php" class="bttn_cambio_seccion">Ver solicitudes activas</a>
+			<div id="content-cambio-secc">
+				<a href="solicitudes_activas.php" class="bttn_cambio_seccion">Ver solicitudes activas</a>
+			</div>
+			
 		</div>
 		<?php
 			if (!isset($_GET['id']))
