@@ -70,17 +70,18 @@
 
 	<div class="content">
 		<div class="title">
-		<?php
-			if (!isset($_GET['id']))
-			{
-		?>
-			<div id="background-animated"></div>
-		<?php 
-			} 
-		?>
 			<div id="content-menu-icon">
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+				<?php
+					if (!isset($_GET['id']))
+					{
+				?>
+					<div id="background-animated"></div>
+				<?php 
+					} 
+				?>
 			</div>
+
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{
@@ -93,7 +94,9 @@
 				?>
 			</div>
 			<h1>Solicitudes activas</h1>
-			<a href="solicitudes_apartado.php" class="bttn_cambio_seccion">Solicitudes de apartado</a>
+			<div id="content-cambio-secc">
+				<a href="solicitudes_apartado.php" class="bttn_cambio_seccion">Solicitudes de apartado</a>
+			</div>
 		</div>
 		<?php
 			if (!isset($_GET['id']))
