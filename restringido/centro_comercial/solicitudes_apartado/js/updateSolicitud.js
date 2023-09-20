@@ -1,7 +1,8 @@
 let currentNotification;
 
-const btnAprobar = document.querySelectorAll(".aprobar");
-const btnRechazar = document.querySelectorAll(".rechazar");
+const solicitudesContainer = document.getElementById("lista");
+/*const btnAprobar = document.querySelectorAll(".aprobar");
+const btnRechazar = document.querySelectorAll(".rechazar");*/
 
 const urlParams = new URLSearchParams(window.location.search);
 const idTienda = urlParams.get('id');
@@ -11,14 +12,13 @@ const connection = new signalR.HubConnectionBuilder()
     .build();
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
-    const solicitudesContainer = document.getElementById("lista");
     solicitudes.forEach(solicitud => {
         console.log(solicitud);
         const solicitudHTML = generateSolicitudHTML(solicitud);
         console.log(solicitudHTML);
         solicitudesContainer.innerHTML += solicitudHTML;
-        btnAprobar = document.querySelectorAll(".aprobar");
-        btnRechazar = document.querySelectorAll(".rechazar");
+        /*btnAprobar = document.querySelectorAll(".aprobar");
+        btnRechazar = document.querySelectorAll(".rechazar");*/
     });
 });
 
@@ -38,7 +38,14 @@ connection.start()
     });
 console.log('entro al js');
 
-
+solicitudesContainer.addEventListener("click", function(e) {
+    if (e.target.classList.contains("aprobar")) {
+        UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.item'));
+    } else if (e.target.classList.contains("rechazar")) {
+        UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.item'));
+    }
+});
+/*
 btnAprobar.forEach(btn => {
     btn.addEventListener("click", function () {
         UpdateSolicitud('activa', btn.dataset.solicitudId, this.closest('.item'));
@@ -50,7 +57,7 @@ btnRechazar.forEach(btn => {
         UpdateSolicitud('rechazada', btn.dataset.solicitudId, this.closest('.item'));
     })
 })
-
+*/
 async function UpdateSolicitud(status, idSolicitud, elementClicked)
 {
     const formData = new FormData();
@@ -110,7 +117,7 @@ function hideNotification() {
 
 function generateSolicitudHTML(solicitud) {
     return `
-        <div class="item">
+        <div class="item bounceLeft">
             <img src="${solicitud.imageProducto}" alt="">
             <p><label>${solicitud.personalizado ? 'Personalizado' : ''}</label>
                 ${solicitud.nombreProducto}
