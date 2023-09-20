@@ -68,24 +68,25 @@ if (isset($_GET['id']))
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
-		<div id="select-store">
-			<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
-			
-			<?php
-				if (!isset($_GET['id']))
-				{
-			?>
-				<div id="background-animated"></div>
-			<?php 
-				} 
-			?>
-			
+		<div class="title">
+			<div id="content-menu-icon">
+				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+				<?php
+					if (!isset($_GET['id']))
+					{
+				?>
+					<div id="background-animated"></div>
+				<?php 
+					} 
+				?>
+			</div>
+
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{
 					echo '
 					<div class="menu-option">
-						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/promociones/promociones.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_activas.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
 					</div>
 					';
 				};
