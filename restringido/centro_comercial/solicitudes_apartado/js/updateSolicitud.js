@@ -41,7 +41,7 @@ solicitudesContainer.addEventListener("click", function(e) {
     } else if (e.target.classList.contains("rechazar")) {
         UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.item'));
     }
-    let item = this.querySelectorAll('item');
+    let item = this.querySelectorAll('solicitudesItem');
     if(!item)
     {
         solicitudesContainer.innerHTML += spanSolicitudes;

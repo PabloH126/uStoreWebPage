@@ -142,7 +142,7 @@
 					foreach ($solicitudes as $solicitud)
 					{
 				?>
-						<div class="item">
+						<div class="item solicitudesItem">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
 							<p><label><?php echo $solicitud['personalizado'] == true ? 'Personalizado' : '';?></label>
 							<?php echo $solicitud['nombreProducto']?></p>
