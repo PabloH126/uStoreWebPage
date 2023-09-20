@@ -3,6 +3,13 @@ a {
     color: black;
 }
 
+.title {
+    margin: 0 64px;
+    display: grid;
+    grid-template-columns: 0.4fr 2fr 0.5fr;
+    align-items: center;
+}
+
 .menu-option p {
     position: relative;
     right: 0px;
