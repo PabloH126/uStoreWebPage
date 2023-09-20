@@ -26,8 +26,35 @@
     }
 }
 
+@keyframes bounceLeft
+{
+    0% {
+        opacity: 0;
+        transform: translate3d(-2000px, 0, 50px);
+    }
+
+    20% {
+        transform: translate3d(-10px, 0, 50px);
+    }
+
+    50% {
+        transform: translate3d(20px, 0, 50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 50px);
+    }
+}
+
 .bounceRight {
     animation-name: bounceRight;
-    animation-duration: 1s;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.bounceLeft {
+    animation-name: bounceLeft;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
 }
