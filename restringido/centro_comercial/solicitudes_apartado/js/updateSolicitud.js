@@ -73,6 +73,7 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
         if(data.status === 'success')
         {
             //window.location.reload();
+            elementClicked.classList.remove('bounceLeft');
             elementClicked.classList.add('bounceRight');
             elementClicked.addEventListener('animationend', () => {
                 elementClicked.remove();
