@@ -1,5 +1,5 @@
 const connection = new signalR.HubConnectionBuilder()
-    .withUrl("/apartadosHub")
+    .withUrl("https://ustoreapi.azurewebsites.net/apartadosHub")
     .build();
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
