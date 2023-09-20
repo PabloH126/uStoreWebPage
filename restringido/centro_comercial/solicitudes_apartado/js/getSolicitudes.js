@@ -3,8 +3,10 @@ const connection = new signalR.HubConnectionBuilder()
     .build();
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
+    console.log('ya entro al on');
     solicitudes.forEach(solicitud =>{
         console.log(solicitud);
+        console.log('ola');
     });
 });
 
