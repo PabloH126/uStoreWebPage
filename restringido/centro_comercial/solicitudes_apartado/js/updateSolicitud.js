@@ -14,7 +14,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
         const solicitudHTML = generateSolicitudHTML(solicitud);
         
-        spanSolicitudes.style.display = "none";
+        //spanSolicitudes.style.display = "none";
         solicitudesContainer.innerHTML += solicitudHTML;
     });
 });
