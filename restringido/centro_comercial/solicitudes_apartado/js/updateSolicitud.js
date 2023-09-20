@@ -12,10 +12,10 @@ const connection = new signalR.HubConnectionBuilder()
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
-        const solicitudHTML = generateSolicitudHTML(solicitud);
+        const solicitudElement = createSolicitudElement(solicitud);
         
         //spanSolicitudes.style.display = "none";
-        solicitudesContainer.innerHTML += solicitudHTML;
+        solicitudesContainer.appendChild(solicitudElement);
     });
 });
 
@@ -100,21 +100,56 @@ function hideNotification() {
     currentNotification = null;
 }
 
-function generateSolicitudHTML(solicitud) {
-    return `
-        <div class="item bounceLeft solicitudesItem">
-            <img src="${solicitud.imageProducto}" alt="">
-            <p><label>${solicitud.personalizado ? 'Personalizado' : ''}</label>
-                ${solicitud.nombreProducto}
-            </p>
-            <p>$${solicitud.precioProducto}</p>
-            <p>${solicitud.periodoApartado}</p>
-            <p>${solicitud.ratioUsuario}</p>
-            <p>${solicitud.unidadesProducto}</p>
-            <p><i id="aprobar" data-solicitud-id="${solicitud.idSolicitud}" style="color: green;" class='bx bxs-check-circle aprobar'></i></p>
-            <p><i id="rechazar" data-solicitud-id="${solicitud.idSolicitud}" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
-        </div>
-    `;
+function createSolicitudElement(solicitud) {
+    const div = document.createElement("div");
+    div.className = "item bounceLeft solicitudesItem";
+
+    const img = document.createElement("img");
+    img.src = solicitud.imageProducto;
+    div.appendChild(img);
+
+    let p = document.createElement("p");
+    const label = document.createElement("label");
+    label.textContent = solicitud.personalizado ? 'Personalizado' : '';
+    p.appendChild(label);
+    p.appendChild(document.createTextNode(` ${solicitud.nombreProducto}`));
+    div.appendChild(p);
+
+    p = document.createElement("p");
+    p.textContent = `$${solicitud.precioProducto}`;
+    div.appendChild(p);
+
+    p = document.createElement("p");
+    p.textContent = solicitud.periodoApartado;
+    div.appendChild(p);
+
+    p = document.createElement("p");
+    p.textContent = solicitud.ratioUsuario;
+    div.appendChild(p);
+
+    p = document.createElement("p");
+    p.textContent = solicitud.unidadesProducto;
+    div.appendChild(p);
+
+    p = document.createElement("p");
+    const iconAprobar = document.createElement("i");
+    iconAprobar.id = "aprobar";
+    iconAprobar.dataset.solicitudId = solicitud.idSolicitud;
+    iconAprobar.className = "bx bxs-check-circle aprobar";
+    iconAprobar.style.color = "green";
+    p.appendChild(iconAprobar);
+    div.appendChild(p);
+
+    p = document.createElement("p");
+    const iconRechazar = document.createElement("i");
+    iconRechazar.id = "rechazar";
+    iconRechazar.dataset.solicitudId = solicitud.idSolicitud;
+    iconRechazar.className = "bx bxs-x-circle rechazar";
+    iconRechazar.style.color = "#d30303";
+    p.appendChild(iconRechazar);
+    div.appendChild(p);
+
+    return div;
 }
 
 function checkSolicitudes() {
