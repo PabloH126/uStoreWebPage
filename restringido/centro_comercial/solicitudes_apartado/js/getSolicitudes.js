@@ -19,9 +19,12 @@ connection.start()
     .then(() => {
         console.log('Conexion con SignalR exitosa');
         connection.invoke("JoinGroupTienda")
-        .catch(err => {
-            console.error('Hubo un error al entrar a JoinGroupTienda', err);
-        });
+            .then(() => {
+                console.log('Conexion con JoinGroupTienda exitosa');
+            })
+            .catch(err => {
+                console.error('Hubo un error al entrar a JoinGroupTienda', err);
+            });
     })
     .catch(err => {
         console.error('Error al conectarse con SignalR', err);
