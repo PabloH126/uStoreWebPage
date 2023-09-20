@@ -158,14 +158,12 @@
 						</div>
 				<?php
 					}
+				}
+			}
 				?> 
 			</div>
 			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
 		</div>
-		<?php
-				}
-			}
-		?>
 	</div>
 	<script src="../js/menu_desplegable.js"></script>
 	<script src="js/updateSolicitud.js"></script>
