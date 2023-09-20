@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const idTienda = urlParams.get('id');
 
 const connection = new signalR.HubConnectionBuilder()
-    .withUrl("https://ustoreapi.azurewebsites.net/apartadosHub")
+    .withUrl(`https://ustoreapi.azurewebsites.net/apartadosHub?idTienda=${idTienda}`)
     .build();
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
