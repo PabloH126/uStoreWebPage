@@ -37,9 +37,9 @@ console.log('entro al js');
 
 solicitudesContainer.addEventListener("click", function(e) {
     if (e.target.classList.contains("aprobar")) {
-        UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.item'));
+        UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     } else if (e.target.classList.contains("rechazar")) {
-        UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.item'));
+        UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     }
     
     checkSolicitudes();
@@ -104,7 +104,7 @@ function hideNotification() {
 
 function generateSolicitudHTML(solicitud) {
     return `
-        <div class="item bounceLeft">
+        <div class="item bounceLeft solicitudesItem">
             <img src="${solicitud.imageProducto}" alt="">
             <p><label>${solicitud.personalizado ? 'Personalizado' : ''}</label>
                 ${solicitud.nombreProducto}
