@@ -12,6 +12,8 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
         const solicitudHTML = generateSolicitudHTML(solicitud);
         console.log(solicitudHTML);
         solicitudesContainer.innerHTML += solicitudHTML;
+        btnAprobar = document.querySelectorAll(".aprobar");
+        btnRechazar = document.querySelectorAll(".rechazar");
     });
 });
 
