@@ -112,6 +112,15 @@
 		?>
 		<div>
 			<div class="lista">
+				<div class="item" id="encabezado">
+					<p>Imagen del producto</p>
+					<p>Nombre del producto</p>
+					<p>Precio del producto</p>
+					<p>Unidades</p>
+					<p>Tiempo restante</p>
+					<p>Recogió</p>
+					<p>Borrar</p>
+				</div>
 				<?php
 				
 				if (isset($solicitudesError))
@@ -125,15 +134,6 @@
 				else
 				{
 				?>
-						<div class="item" id="encabezado">
-							<p>Imagen del producto</p>
-							<p>Nombre del producto</p>
-							<p>Precio del producto</p>
-							<p>Unidades</p>
-							<p>Tiempo restante</p>
-							<p>Recogió</p>
-							<p>Borrar</p>
-						</div>
 				<?php
 					$tiempoActual = new DateTime('now', new DateTimeZone('Etc/GMT+6'));
 					foreach ($solicitudes as $solicitud)

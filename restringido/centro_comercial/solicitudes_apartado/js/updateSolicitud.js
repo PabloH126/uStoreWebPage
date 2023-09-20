@@ -6,6 +6,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const idTienda = urlParams.get('id');
 const spanSolicitudes = document.getElementById('span-seleccion-tienda');
 
+document.addEventListener("DOMContentLoaded", function () {
+    checkSolicitudes();
+});
+
 const connection = new signalR.HubConnectionBuilder()
     .withUrl(`https://ustoreapi.azurewebsites.net/apartadosHub?idTienda=${idTienda}`)
     .build();
@@ -14,7 +18,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
         const solicitudElement = createSolicitudElement(solicitud);
         
-        //spanSolicitudes.style.display = "none";
+        spanSolicitudes.style.display = "none";
         solicitudesContainer.appendChild(solicitudElement);
     });
 });
@@ -41,6 +45,8 @@ solicitudesContainer.addEventListener("click", function(e) {
     } else if (e.target.classList.contains("rechazar")) {
         UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     }
+
+    checkSolicitudes();
 });
 
 async function UpdateSolicitud(status, idSolicitud, elementClicked)
