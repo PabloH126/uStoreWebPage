@@ -1,3 +1,6 @@
+const urlParams = new URLSearchParams(window.location.search);
+const idTienda = urlParams.get('id');
+
 const connection = new signalR.HubConnectionBuilder()
     .withUrl("https://ustoreapi.azurewebsites.net/apartadosHub")
     .build();
@@ -15,6 +18,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
 connection.start()
     .then(() => {
         console.log('Conexion con SignalR exitosa');
+        connection.invoke("JoinGroupTienda", idTienda);
     })
     .catch(err => {
         console.error('Error al conectarse con SignalR', err);
