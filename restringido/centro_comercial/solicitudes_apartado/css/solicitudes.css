@@ -16,6 +16,10 @@
     color: white;
 }
 
+#number_notification{
+
+}
+
 .content .lista {
     grid-template-columns: none;
     width: auto;

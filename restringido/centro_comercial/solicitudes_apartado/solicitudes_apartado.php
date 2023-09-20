@@ -73,6 +73,7 @@
 		
 			<div id="content-menu-icon">
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+				<div><p class="notifications_store" id="#number_notification"></p></div>
 				<?php
 					if (!isset($_GET['id']))
 					{
@@ -89,7 +90,7 @@
 					echo '
 					<div class="menu-option">
 						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
-						<p>99+</p>
+						<p class="notifications_store">99+</p>
 					</div>
 					';
 				};
