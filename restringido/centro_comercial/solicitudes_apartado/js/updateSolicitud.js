@@ -16,6 +16,8 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
         
         spanSolicitudes.style.display = "none";
         solicitudesContainer.innerHTML += solicitudHTML;
+
+        checkSolicitudes();
     });
 });
 
@@ -121,7 +123,7 @@ function generateSolicitudHTML(solicitud) {
 
 function checkSolicitudes() {
     let solicitudesItem = solicitudesContainer.querySelector('.solicitudesItem');
-    let item = document.querySelector('.item');
+    let item = document.getElementById('encabezado');
     if (!solicitudesItem) {
         item.style.display = "none";
         spanSolicitudes.style.display = "";
