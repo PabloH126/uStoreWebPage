@@ -73,7 +73,9 @@
 		
 			<div id="content-menu-icon">
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
-				<div><p class="notifications_store" id="#number_notification">99+</p></div>
+				<div class="content_number_notification">
+					<p class="notifications_store" id="#number_notification">99+</p>
+				</div>
 				<?php
 					if (!isset($_GET['id']))
 					{
