@@ -18,7 +18,10 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
 connection.start()
     .then(() => {
         console.log('Conexion con SignalR exitosa');
-        connection.invoke("JoinGroupTienda", idTienda);
+        connection.invoke("JoinGroupTienda", idTienda)
+        .catch(err => {
+            console.error('Hubo un error al entrar a JoinGroupTienda', err);
+        });
     })
     .catch(err => {
         console.error('Error al conectarse con SignalR', err);
