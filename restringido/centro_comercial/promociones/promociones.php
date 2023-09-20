@@ -60,6 +60,8 @@ if (isset($_GET['id']))
 	<?php require("../templates/template.styles.php") ?>
 	<?php require("templates/template.secc_promociones.php") ?>
 	<link rel="stylesheet" href="css/promociones.css">
+
+	
 </head>
 
 <body>
