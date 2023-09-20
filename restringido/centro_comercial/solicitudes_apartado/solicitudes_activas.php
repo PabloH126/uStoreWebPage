@@ -116,7 +116,7 @@
 					<p>Imagen del producto</p>
 					<p>Nombre del producto</p>
 					<p>Precio del producto</p>
-					<p>Unidades</p>
+					<p>UnidadesP</p>
 					<p>Tiempo restante</p>
 					<p>Recogió</p>
 					<p>Borrar</p>
