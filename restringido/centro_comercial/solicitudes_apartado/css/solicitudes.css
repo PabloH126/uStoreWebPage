@@ -1,3 +1,8 @@
+.title {
+    grid-template-columns: 0.1fr 2fr 0.1fr;
+    justify-items: center;
+}
+
 div#background-animated {
     position: absolute;
     left: 8.7vw;
