@@ -165,7 +165,7 @@
 		?>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.10/signalr.min.js"></script>
-	<script src="js/getSolicitudes.js"></script>
+	<!--<script src="js/getSolicitudes.js"></script>-->
 	<script src="../js/menu_desplegable.js"></script>
 	<script src="js/updateSolicitud.js"></script>
 </body>
