@@ -3,10 +3,10 @@ const connection = new signalR.HubConnectionBuilder()
     .build();
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
-    console.log('ya entro al on');
+    const solicitudesContainer = document.querySelector('lista');
     solicitudes.forEach(solicitud =>{
-        console.log(solicitud);
-        console.log('ola');
+        const solicitudHTML = generateSolicitudHTML(solicitud);
+        solicitudesContainer.innerHTML += solicitudHTML;
     });
 });
 
@@ -18,3 +18,20 @@ connection.start()
         console.error('Error al conectarse con SignalR', err);
     });
 console.log('entro al js');
+
+function generateSolicitudHTML(solicitud) {
+    return `
+        <div class="item">
+            <img src="${solicitud.imageProducto}" alt="">
+            <p><label>${solicitud.personalizado ? 'Personalizado' : ''}</label>
+                ${solicitud.nombreProducto}
+            </p>
+            <p>$${solicitud.precioProducto}</p>
+            <p>${solicitud.periodoApartado}</p>
+            <p>${solicitud.ratioUsuario}</p>
+            <p>${solicitud.unidadesProducto}</p>
+            <p><i id="aprobar" data-solicitud-id="${solicitud.idSolicitud}" style="color: green;" class='bx bxs-check-circle aprobar'></i></p>
+            <p><i id="rechazar" data-solicitud-id="${solicitud.idSolicitud}" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
+        </div>
+    `;
+}
