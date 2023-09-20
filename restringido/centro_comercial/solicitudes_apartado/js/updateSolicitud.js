@@ -14,7 +14,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
         const solicitudHTML = generateSolicitudHTML(solicitud);
         
-        spanSolicitudes.remove();
+        spanSolicitudes.style.display = "none";
         solicitudesContainer.innerHTML += solicitudHTML;
     });
 });
@@ -41,13 +41,8 @@ solicitudesContainer.addEventListener("click", function(e) {
     } else if (e.target.classList.contains("rechazar")) {
         UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.item'));
     }
-    let solicitudesItem = document.querySelectorAll('solicitudesItem');
-    let item = document.querySelectorAll('item');
-    if(!solicitudesItem)
-    {
-        item.remove();
-        solicitudesContainer.innerHTML += spanSolicitudes;
-    }
+    
+    checkSolicitudes();
 });
 
 async function UpdateSolicitud(status, idSolicitud, elementClicked)
@@ -122,4 +117,13 @@ function generateSolicitudHTML(solicitud) {
             <p><i id="rechazar" data-solicitud-id="${solicitud.idSolicitud}" style="color: #d30303;" class='bx bxs-x-circle rechazar'></i></p>
         </div>
     `;
+}
+
+function checkSolicitudes() {
+    let solicitudesItem = solicitudesContainer.querySelector('.solicitudesItem');
+    let item = document.querySelector('.item');
+    if (!solicitudesItem) {
+        item.style.display = "none";
+        spanSolicitudes.style.display = "";
+    }
 }
