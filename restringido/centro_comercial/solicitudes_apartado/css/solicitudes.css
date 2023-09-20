@@ -79,7 +79,7 @@ div#background-animated {
         margin: 0 32px;
     }
 
-    #background-animated {
+    div#background-animated {
         width: 2.5rem;
         height: 2.5rem;
         left: 7vw;
