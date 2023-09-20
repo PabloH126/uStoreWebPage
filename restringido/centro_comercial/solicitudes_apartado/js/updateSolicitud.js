@@ -165,4 +165,8 @@ function checkSolicitudes() {
         item.style.display = "none";
         spanSolicitudes.style.display = "";
     }
+    else
+    {
+        item.style.display = "";
+    }
 }
