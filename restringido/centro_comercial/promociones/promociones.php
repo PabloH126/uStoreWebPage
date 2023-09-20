@@ -68,7 +68,7 @@ if (isset($_GET['id']))
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
-		<div class="title">
+		<div class="title-options">
 			<div id="content-menu-icon">
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 				<?php
@@ -86,7 +86,7 @@ if (isset($_GET['id']))
 				{
 					echo '
 					<div class="menu-option">
-						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_activas.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/promociones/promociones.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
 					</div>
 					';
 				};

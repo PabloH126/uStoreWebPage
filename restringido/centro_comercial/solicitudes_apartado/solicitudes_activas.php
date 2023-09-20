@@ -69,7 +69,7 @@
     <?php require("../templates/template.menu.php")?>
 
 	<div class="content">
-		<div class="title">
+		<div class="title-options">
 			<div id="content-menu-icon">
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 				<?php
