@@ -15,3 +15,4 @@ connection.start()
     .catch(err => {
         console.error('Error al conectarse con SignalR', err);
     });
+console.log('entro al js');
