@@ -1,11 +1,10 @@
 let currentNotification;
 
 const solicitudesContainer = document.getElementById("lista");
-/*const btnAprobar = document.querySelectorAll(".aprobar");
-const btnRechazar = document.querySelectorAll(".rechazar");*/
 
 const urlParams = new URLSearchParams(window.location.search);
 const idTienda = urlParams.get('id');
+const spanSolicitudes = document.getElementById('span-seleccion-tienda');
 
 const connection = new signalR.HubConnectionBuilder()
     .withUrl(`https://ustoreapi.azurewebsites.net/apartadosHub?idTienda=${idTienda}`)
@@ -13,12 +12,10 @@ const connection = new signalR.HubConnectionBuilder()
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
-        console.log(solicitud);
         const solicitudHTML = generateSolicitudHTML(solicitud);
-        console.log(solicitudHTML);
+        
+        solicitudesContainer.innerHTML -= spanSolicitudes;
         solicitudesContainer.innerHTML += solicitudHTML;
-        /*btnAprobar = document.querySelectorAll(".aprobar");
-        btnRechazar = document.querySelectorAll(".rechazar");*/
     });
 });
 
@@ -44,20 +41,13 @@ solicitudesContainer.addEventListener("click", function(e) {
     } else if (e.target.classList.contains("rechazar")) {
         UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.item'));
     }
+    let item = this.querySelectorAll('item');
+    if(!item)
+    {
+        solicitudesContainer.innerHTML += spanSolicitudes;
+    }
 });
-/*
-btnAprobar.forEach(btn => {
-    btn.addEventListener("click", function () {
-        UpdateSolicitud('activa', btn.dataset.solicitudId, this.closest('.item'));
-    });
-})
 
-btnRechazar.forEach(btn => {
-    btn.addEventListener("click", function () {
-        UpdateSolicitud('rechazada', btn.dataset.solicitudId, this.closest('.item'));
-    })
-})
-*/
 async function UpdateSolicitud(status, idSolicitud, elementClicked)
 {
     const formData = new FormData();
@@ -72,7 +62,6 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
         console.log(data);
         if(data.status === 'success')
         {
-            //window.location.reload();
             elementClicked.classList.remove('bounceLeft');
             elementClicked.classList.add('bounceRight');
             elementClicked.addEventListener('animationend', () => {
