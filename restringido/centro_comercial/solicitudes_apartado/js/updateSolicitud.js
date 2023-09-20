@@ -41,9 +41,11 @@ solicitudesContainer.addEventListener("click", function(e) {
     } else if (e.target.classList.contains("rechazar")) {
         UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.item'));
     }
-    let item = this.querySelectorAll('solicitudesItem');
-    if(!item)
+    let solicitudesItem = document.querySelectorAll('solicitudesItem');
+    let item = document.querySelectorAll('item');
+    if(!solicitudesItem)
     {
+        solicitudesContainer.innerHTML -= item;
         solicitudesContainer.innerHTML += spanSolicitudes;
     }
 });
