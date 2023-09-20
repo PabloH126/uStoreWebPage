@@ -1,4 +1,4 @@
-.content .title-options .bttn_cambio_seccion {
+.bttn_cambio_seccion {
     font-size: 1.3rem;
     background-color: white;
     border-radius: 13px;
@@ -11,7 +11,7 @@
     display: block;
 }
 
-.content .title-options .bttn_cambio_seccion:hover {
+.bttn_cambio_seccion:hover {
     background-color: #007096;
     color: white;
 }
