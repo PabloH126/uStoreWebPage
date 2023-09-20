@@ -1,4 +1,4 @@
-.content .title .bttn_cambio_seccion {
+.content .title-options .bttn_cambio_seccion {
     font-size: 1.3rem;
     background-color: white;
     border-radius: 13px;
@@ -11,7 +11,7 @@
     display: block;
 }
 
-.content .title .bttn_cambio_seccion:hover {
+.content .title-options .bttn_cambio_seccion:hover {
     background-color: #007096;
     color: white;
 }
@@ -61,7 +61,7 @@
 
 @media only screen and (max-width: 1502px) {
 
-    .content .title {
+    .content .title-options {
         margin: 0 32px;
     }
 
@@ -76,12 +76,12 @@
         font-size: 2.5rem;
     }
 
-    .content .title h1 {
+    .content .title-options h1 {
         font-size: 4.3rem;
         margin: 25px 35px;
     }
 
-    .content .title .bttn_cambio_seccion {
+    .content .title-options .bttn_cambio_seccion {
         font-size: 1rem;
         padding: 6%;
     }
