@@ -14,7 +14,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
         const solicitudHTML = generateSolicitudHTML(solicitud);
         
-        solicitudesContainer.innerHTML -= spanSolicitudes;
+        spanSolicitudes.remove();
         solicitudesContainer.innerHTML += solicitudHTML;
     });
 });
@@ -45,7 +45,7 @@ solicitudesContainer.addEventListener("click", function(e) {
     let item = document.querySelectorAll('item');
     if(!solicitudesItem)
     {
-        solicitudesContainer.innerHTML -= item;
+        item.remove();
         solicitudesContainer.innerHTML += spanSolicitudes;
     }
 });
