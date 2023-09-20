@@ -114,7 +114,7 @@
 			{
 		?>
 		<div>
-			<div class="lista">
+			<div class="lista" id="lista">
 				<?php
 				
 				if (isset($solicitudesError))

@@ -3,9 +3,11 @@ const connection = new signalR.HubConnectionBuilder()
     .build();
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
-    const solicitudesContainer = document.querySelector('lista');
-    solicitudes.forEach(solicitud =>{
+    const solicitudesContainer = document.getElementById("lista");
+    solicitudes.forEach(solicitud => {
+        console.log(solicitud);
         const solicitudHTML = generateSolicitudHTML(solicitud);
+        console.log(solicitudHTML);
         solicitudesContainer.innerHTML += solicitudHTML;
     });
 });
