@@ -16,8 +16,6 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
         
         spanSolicitudes.style.display = "none";
         solicitudesContainer.innerHTML += solicitudHTML;
-
-        checkSolicitudes();
     });
 });
 
