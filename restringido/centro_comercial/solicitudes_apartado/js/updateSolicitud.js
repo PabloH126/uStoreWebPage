@@ -1,20 +1,19 @@
 let currentNotification;
-document.addEventListener("DOMContentLoaded", function() {
-    const btnAprobar = document.querySelectorAll(".aprobar");
-    const btnRechazar = document.querySelectorAll(".rechazar");
 
-    btnAprobar.forEach(btn => {
-        btn.addEventListener("click", function () {
-            UpdateSolicitud('activa', btn.dataset.solicitudId, this.closest('.item'));
-        });
-    })
+const btnAprobar = document.querySelectorAll(".aprobar");
+const btnRechazar = document.querySelectorAll(".rechazar");
 
-    btnRechazar.forEach(btn => {
-        btn.addEventListener("click", function () {
-            UpdateSolicitud('rechazada', btn.dataset.solicitudId, this.closest('.item'));
-        })
+btnAprobar.forEach(btn => {
+    btn.addEventListener("click", function () {
+        UpdateSolicitud('activa', btn.dataset.solicitudId, this.closest('.item'));
+    });
+})
+
+btnRechazar.forEach(btn => {
+    btn.addEventListener("click", function () {
+        UpdateSolicitud('rechazada', btn.dataset.solicitudId, this.closest('.item'));
     })
-});
+})
 
 async function UpdateSolicitud(status, idSolicitud, elementClicked)
 {
