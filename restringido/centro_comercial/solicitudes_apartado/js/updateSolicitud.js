@@ -41,8 +41,6 @@ solicitudesContainer.addEventListener("click", function(e) {
     } else if (e.target.classList.contains("rechazar")) {
         UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     }
-    
-    checkSolicitudes();
 });
 
 async function UpdateSolicitud(status, idSolicitud, elementClicked)
