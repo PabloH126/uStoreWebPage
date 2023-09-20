@@ -1,3 +1,8 @@
+.title {
+    grid-template-columns: 0.1fr 2fr 0.1fr;
+    justify-items: center;
+}
+
 .content {
     text-align: left;
 }
