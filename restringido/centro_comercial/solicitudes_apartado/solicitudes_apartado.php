@@ -76,6 +76,7 @@
 				<div class="content_number_notification">
 					<p class="notifications_store" id="#number_notification">99+</p>
 				</div>
+
 				<?php
 					if (!isset($_GET['id']))
 					{

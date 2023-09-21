@@ -5,6 +5,7 @@ const solicitudesContainer = document.getElementById("lista");
 const urlParams = new URLSearchParams(window.location.search);
 const idTienda = urlParams.get('id');
 const spanSolicitudes = document.getElementById('span-seleccion-tienda');
+const item = document.getElementById('encabezado');
 
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
@@ -17,7 +18,7 @@ const connection = new signalR.HubConnectionBuilder()
 connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
         const solicitudElement = createSolicitudElement(solicitud);
-        
+        item.style.display = "";
         spanSolicitudes.style.display = "none";
         solicitudesContainer.appendChild(solicitudElement);
     });
@@ -160,7 +161,6 @@ function createSolicitudElement(solicitud) {
 
 function checkSolicitudes() {
     let solicitudesItem = solicitudesContainer.querySelector('.solicitudesItem');
-    let item = document.getElementById('encabezado');
     if (!solicitudesItem) {
         item.style.display = "none";
         spanSolicitudes.style.display = "";
