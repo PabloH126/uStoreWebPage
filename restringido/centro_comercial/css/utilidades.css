@@ -12,6 +12,8 @@ a {
 
 .content-background-animated{
     width: 0px;
+    position: relative;
+    z-index: -1000;
 }
 
 #background-animated {
