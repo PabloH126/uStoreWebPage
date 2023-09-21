@@ -100,7 +100,7 @@
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 				
 				<?php
-				if ($numeroSolicitudes > 0)
+				if (count($numeroSolicitudes) > 0)
 				{
 					echo '<div class="content_number_notification">';
 					echo '<div class="notifications_store"><p id="number_notification">' . count($numeroSolicitudes) . '</p></div>';
