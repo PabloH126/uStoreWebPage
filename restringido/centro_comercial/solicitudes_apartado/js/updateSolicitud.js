@@ -6,6 +6,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const idTienda = urlParams.get('id');
 const spanSolicitudes = document.getElementById('span-seleccion-tienda');
 const item = document.getElementById('encabezado');
+const nota = document.querySelector('.nota');
 
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
@@ -19,6 +20,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
         const solicitudElement = createSolicitudElement(solicitud);
         item.style.display = "";
+        nota.style.display = "";
         spanSolicitudes.style.display = "none";
         solicitudesContainer.appendChild(solicitudElement);
     });
@@ -163,10 +165,12 @@ function checkSolicitudes() {
     let solicitudesItem = solicitudesContainer.querySelector('.solicitudesItem');
     if (!solicitudesItem) {
         item.style.display = "none";
+        nota.style.display = "none";
         spanSolicitudes.style.display = "";
     }
     else
     {
         item.style.display = "";
+        nota.style.display = "";
     }
 }
