@@ -24,6 +24,7 @@ header .content .final {
 
 header .content .final #ultimo,
 header .content .final .bottn {
+	transition-duration: 0.5s;
 	align-items: center;
 	justify-content: center;
 	display: flex;
