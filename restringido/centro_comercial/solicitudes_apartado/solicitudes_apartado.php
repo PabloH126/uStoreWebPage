@@ -99,19 +99,26 @@
 				<?php require("../templates/template.background_animated.php") ?>
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 				<div class="content_number_notification">
-					<div class="notifications_store"><p id="number_notification">99+</p></div>
+					<div class="notifications_store"><p id="number_notification"><?php echo count($numeroSolicitudes); ?></p></div>
 				</div>
 			</div>
 			
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{
-					echo '
-					<div class="menu-option">
-						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
-						<p class="notifications_store">' . count($numeroSolicitudes) . '</p>
-					</div>
-					';
+					foreach ($numeroSolicitudes as $numeroSoli)
+					{
+						if ($numeroSoli['idTienda'] == $tienda['idTienda'])
+						{
+							echo '
+							<div class="menu-option">
+								<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
+								<p class="notifications_store">' .  . '</p>
+							</div>
+							';
+						}
+					}
+
 				};
 				?>
 			</div>
