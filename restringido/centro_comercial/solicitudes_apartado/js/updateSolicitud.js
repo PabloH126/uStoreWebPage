@@ -19,13 +19,13 @@ const connection = new signalR.HubConnectionBuilder()
 connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
         console.log(solicitud);
-        const solicitudElement = createSolicitudElement(solicitud);
+        let solicitudElement = createSolicitudElement(solicitud);
         console.log(solicitudElement);
         item.style.display = "";
         nota.style.display = "";
         spanSolicitudes.style.display = "none";
         solicitudesContainer.appendChild(solicitudElement);
-        solicitudesContainer.offsetHeight;
+        console.log(solicitudesContainer);
     });
 });
 
