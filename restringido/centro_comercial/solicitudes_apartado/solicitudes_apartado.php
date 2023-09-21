@@ -97,7 +97,7 @@
 		
 			<div id="content-menu-icon">
 				<?php require("../templates/template.background_animated.php") ?>
-				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
+				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
 				
 				<?php
 				if (count($numeroSolicitudes) > 0)

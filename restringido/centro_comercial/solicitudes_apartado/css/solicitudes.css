@@ -16,7 +16,6 @@
     color: white;
 }
 
-
 .content_number_notification {
     width: 0px;
 }
@@ -67,7 +66,7 @@
     font-size: 1.4rem;
 }
 
-.bttn_solicitudes{
+.bttn_solicitudes {
     transform: scale(1);
     transition-duration: 0.5s;
 }
@@ -83,17 +82,51 @@
 }
 
 @keyframes bounce_shake {
-    0% {transform: scale(1, 1) translateY(0);}
-    10% {transform: scale(1.1, .9) translateY(0);}
-    30% {transform: scale(.9, 1.1) translateY(-5px);}
-    32% {transform: scale(1.2) translateY(-5px);}
-    35%, 40% {transform: scale(1.2) translateY(-5px) rotate(-20deg)}
-    45%, 50% {transform: scale(1.2) translateY(-5px) rotate(20deg)}
-    60% {transform: scale(1.05, .95) translateY(0);}
-    70% {transform: scale(1.05, .95) translateY(0);}
-    80% {transform: scale(1, 1) translateY(-3px);}
-    95% {transform: scale(1, 1) translateY(0);}
-    100% {transform: scale(1, 1) translateY(0);}
+    0% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    10% {
+        transform: scale(1.1, .9) translateY(0);
+    }
+
+    30% {
+        transform: scale(.9, 1.1) translateY(-5px);
+    }
+
+    32% {
+        transform: scale(1.2) translateY(-5px);
+    }
+
+    35%,
+    40% {
+        transform: scale(1.2) translateY(-5px) rotate(-20deg)
+    }
+
+    45%,
+    50% {
+        transform: scale(1.2) translateY(-5px) rotate(20deg)
+    }
+
+    60% {
+        transform: scale(1.05, .95) translateY(0);
+    }
+
+    70% {
+        transform: scale(1.05, .95) translateY(0);
+    }
+
+    80% {
+        transform: scale(1, 1) translateY(-3px);
+    }
+
+    95% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
 }
 
 @media only screen and (max-width: 1502px) {
