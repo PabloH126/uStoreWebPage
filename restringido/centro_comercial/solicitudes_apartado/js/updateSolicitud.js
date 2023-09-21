@@ -174,5 +174,6 @@ function checkSolicitudes() {
     {
         item.style.display = "";
         nota.style.display = "";
+        spanSolicitudes.style.display = "none";
     }
 }
