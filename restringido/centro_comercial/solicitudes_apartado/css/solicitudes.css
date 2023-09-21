@@ -25,6 +25,10 @@
     width: 0px;
 }
 
+.notifications_store{
+    margin: 0 0 0 -15px;
+}
+
 #number_notification{
 
 }
