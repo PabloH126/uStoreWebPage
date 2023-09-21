@@ -10,7 +10,12 @@ a {
     align-items: center;
 }
 
-.content-background-animated{
+#content-menu-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.content-background-animated {
     width: 0px;
     position: relative;
     z-index: -1000;

@@ -106,6 +106,7 @@
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{
+					$found = false;
 					foreach ($numeroSolicitudes as $numeroSoli)
 					{
 						if ($numeroSoli['idTienda'] == $tienda['idTienda'])
@@ -116,6 +117,7 @@
 								<p class="notifications_store">' .  . '</p>
 							</div>
 							';
+							$found
 						}
 					}
 

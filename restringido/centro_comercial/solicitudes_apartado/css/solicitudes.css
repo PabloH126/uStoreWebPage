@@ -16,10 +16,6 @@
     color: white;
 }
 
-#content-menu-icon {
-    display: flex;
-    justify-content: center;
-}
 
 .content_number_notification {
     width: 0px;
