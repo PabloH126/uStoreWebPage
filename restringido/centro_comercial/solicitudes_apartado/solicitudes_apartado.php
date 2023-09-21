@@ -74,7 +74,7 @@
 			<div id="content-menu-icon">
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 				<div class="content_number_notification">
-					<p class="notifications_store" id="#number_notification">99+</p>
+					<p class="notifications_store" id="number_notification">99+</p>
 				</div>
 
 				<?php
