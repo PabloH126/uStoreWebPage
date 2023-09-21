@@ -70,8 +70,8 @@ if (isset($_GET['id']))
 	<div class="content">
 		<div class="title-options">
 			<div id="content-menu-icon">
-				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 				<?php require("../templates/template.background_animated.php") ?>
+				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 			</div>
 
 			<div id="sub-menu">
