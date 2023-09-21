@@ -30,21 +30,15 @@
 }
 
 #number_notification{
-    animation: bounce_number 1s linear infinite;
+    animation: hithere 1s linear infinite;
 }
 
-@keyframes bounce_number {
-    0% {
-
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-
-    100% {
-
-    }
+@keyframes hithere {
+    30% { transform: scale(1.2); }
+    40%, 60% { transform: rotate(-20deg) scale(1.2); }
+    50% { transform: rotate(20deg) scale(1.2); }
+    70% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 .content .lista {
