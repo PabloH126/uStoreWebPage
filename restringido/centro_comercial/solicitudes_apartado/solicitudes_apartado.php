@@ -129,16 +129,16 @@
 					<p>Aceptar</p>
 					<p>Denegar</p>
 				</div>
+				<span id="span-seleccion-tienda">No hay solicitudes pendientes en esta tienda</span>
 				<?php
-				
 				if (isset($solicitudesError))
 				{
 					echo '<span id="span-seleccion-tienda">' .  $solicitudesError . '</span>';
 				}
-				else if (isset($messageSolicitud))
+				/*else if (isset($messageSolicitud))
 				{
 					echo '<span id="span-seleccion-tienda">' .  $messageSolicitud . '</span>';
-				}
+				}*/
 				else
 				{
 				?>
