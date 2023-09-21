@@ -27,14 +27,15 @@ a {
 }
 
 #background-animated {
-    position: absolute;
+    /*position: absolute;
     left: 8.7vw;
-    top: 18vh;
+    top: 18vh;*/
     z-index: -1000;
     background: #e5e5e5;
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
+    margin: 0 0 0 -3em;
     animation: background-expand 1s linear infinite;
 }
 
@@ -70,7 +71,7 @@ i.bx.bx-store-alt {
 }
 
 #sub-menu.active,
-#sub-menu2.active{
+#sub-menu2.active {
     -webkit-display: flex;
     display: flex;
     flex-direction: column;
@@ -95,7 +96,7 @@ i.bx.bx-store-alt {
 }
 
 #sub-menu .menu-option,
-#sub-menu2 .menu-option  {
+#sub-menu2 .menu-option {
     width: 100%;
     padding: 2px;
     user-select: none;
