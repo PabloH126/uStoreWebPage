@@ -30,7 +30,22 @@
 }
 
 #number_notification{
+    animation: bounce_number 1s linear infinite;
+}
 
+@keyframes bounce_number {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        filter: blur(10px);
+        opacity: 0;
+    }
 }
 
 .content .lista {
