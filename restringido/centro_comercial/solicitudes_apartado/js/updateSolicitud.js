@@ -18,6 +18,7 @@ const connection = new signalR.HubConnectionBuilder()
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
+        console.log(solicitud);
         const solicitudElement = createSolicitudElement(solicitud);
         item.style.display = "";
         nota.style.display = "";
