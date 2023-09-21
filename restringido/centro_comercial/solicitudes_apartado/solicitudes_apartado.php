@@ -106,20 +106,24 @@
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{
-					$found = false;
+					echo '<div class="menu-option">
+							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
+
+					$count = 0;
 					foreach ($numeroSolicitudes as $numeroSoli)
 					{
 						if ($numeroSoli['idTienda'] == $tienda['idTienda'])
 						{
-							echo '
-							<div class="menu-option">
-								<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
-								<p class="notifications_store">' .  . '</p>
-							</div>
-							';
-							$found
+							$count++;
 						}
 					}
+
+					if($count > 0)
+					{
+						echo '<p class="notifications_store">' . $count . '</p>';
+					}
+
+					echo '</div>';
 
 				};
 				?>
