@@ -20,6 +20,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
         console.log(solicitud);
         const solicitudElement = createSolicitudElement(solicitud);
+        console.log(solicitudElement);
         item.style.display = "";
         nota.style.display = "";
         spanSolicitudes.style.display = "none";
