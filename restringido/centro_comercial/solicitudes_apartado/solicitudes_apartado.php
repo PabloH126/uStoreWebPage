@@ -103,7 +103,7 @@
 				if ($numeroSolicitudes > 0)
 				{
 					echo '<div class="content_number_notification">';
-					echo '<div class="notifications_store"><p id="number_notification"><?php echo count($numeroSolicitudes); ?></p></div>';
+					echo '<div class="notifications_store"><p id="number_notification">' . count($numeroSolicitudes) . '</p></div>';
 					echo '</div>';
 				}
 				?>
