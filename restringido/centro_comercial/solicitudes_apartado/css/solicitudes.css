@@ -96,12 +96,6 @@
         margin: 0 32px;
     }
 
-    div#background-animated {
-        width: 2.5rem;
-        height: 2.5rem;
-        left: 7vw;
-    }
-
     #background-animated,
     i.bx.bx-store-alt {
         font-size: 2.5rem;
