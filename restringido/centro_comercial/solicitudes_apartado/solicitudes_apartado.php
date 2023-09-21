@@ -99,7 +99,12 @@
 				<?php require("../templates/template.background_animated.php") ?>
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 				<div class="content_number_notification">
-					<div class="notifications_store"><p id="number_notification"><?php echo count($numeroSolicitudes); ?></p></div>
+					<?php
+					if ($numeroSolicitudes > 0)
+					{
+						echo '<div class="notifications_store"><p id="number_notification"><?php echo count($numeroSolicitudes); ?></p></div>';
+					}
+					?>
 				</div>
 			</div>
 			
