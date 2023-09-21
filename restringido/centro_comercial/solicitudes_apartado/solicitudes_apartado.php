@@ -44,9 +44,9 @@
 	}
 	
 	if ($httpStatusCode == 400) {
-		$numeroSolicitudes = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+		$numeroSolicitudesError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
 	}
-	$tiendas = json_decode($response, true);
+	$numeroSolicitudes = json_decode($response, true);
 	curl_close($ch);
 
 	if (isset($_GET['id']))
