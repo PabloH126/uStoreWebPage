@@ -109,8 +109,7 @@
 					echo '
 					<div class="menu-option">
 						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
-						<p class="notifications_store">' . //count($numeroSolicitudes)
-						100 . '</p>
+						<p class="notifications_store">' . count($numeroSolicitudes) . '</p>
 					</div>
 					';
 				};
