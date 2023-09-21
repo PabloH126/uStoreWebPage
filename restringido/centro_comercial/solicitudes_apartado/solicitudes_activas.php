@@ -155,7 +155,6 @@
 			}
 				?> 
 			</div>
-			<div class="nota">*Ratio de usuario - Número de apartados exitosos/Total de apartados que ha solicitado</div>
 		</div>
 	</div>
 	<script src="../js/menu_desplegable.js"></script>
