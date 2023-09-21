@@ -71,16 +71,7 @@ if (isset($_GET['id']))
 		<div class="title-options">
 			<div id="content-menu-icon">
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
-				<?php
-					if (!isset($_GET['id']))
-					{
-				?>
-				<div class="content-background-animated">
-					<div id="background-animated"></div>
-				</div>
-				<?php 
-					} 
-				?>
+				<?php require("../templates/template.background_animated.php") ?>
 			</div>
 
 			<div id="sub-menu">

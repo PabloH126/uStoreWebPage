@@ -72,21 +72,11 @@
 		<div class="title-options">
 		
 			<div id="content-menu-icon">
+				<?php require("../templates/template.background_animated.php") ?>
 				<i class='bx bx-store-alt' id="menu-icon" data-toggle="menu"></i>
 				<div class="content_number_notification">
 					<div class="notifications_store"><p id="number_notification">99+</p></div>
 				</div>
-
-				<?php
-					if (!isset($_GET['id']))
-					{
-				?>
-				<div class="content-background-animated">
-					<div id="background-animated"></div>
-				</div>
-				<?php 
-					} 
-				?>
 			</div>
 			
 			<div id="sub-menu">
