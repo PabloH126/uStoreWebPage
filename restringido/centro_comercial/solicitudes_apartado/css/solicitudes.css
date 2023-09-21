@@ -30,10 +30,10 @@
 }
 
 #number_notification{
-    animation: hithere 1s linear infinite;
+    animation: shake 1s linear infinite;
 }
-
-@keyframes hithere {
+/*shake*/
+@keyframes shake {
     30% { transform: scale(1.2); }
     40%, 60% { transform: rotate(-20deg) scale(1.2); }
     50% { transform: rotate(20deg) scale(1.2); }

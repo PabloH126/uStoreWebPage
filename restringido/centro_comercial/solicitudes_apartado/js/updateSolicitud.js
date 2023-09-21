@@ -24,6 +24,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
         nota.style.display = "";
         spanSolicitudes.style.display = "none";
         solicitudesContainer.appendChild(solicitudElement);
+        solicitudesContainer.offsetHeight;
     });
 });
 
