@@ -86,7 +86,21 @@
 				};
 				?>
 			</div>
-			<h1>Solicitudes activas</h1>
+			<div id="titles_page">
+				<h1>Solicitudes de apartado</h1>
+				<h3>
+					<?php 
+						foreach($tiendas as $tienda)
+						{
+							if($tienda['idTienda'] == $_GET['id'])
+							{
+								echo $tienda['nombreTienda'];
+								break;
+							}
+						}
+					?>
+				</h3>
+			</div>
 			<div id="content-cambio-secc">
 				<a href="solicitudes_apartado.php" class="bttn_cambio_seccion">Solicitudes de apartado</a>
 			</div>

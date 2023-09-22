@@ -137,7 +137,18 @@
 			</div>
 			<div id="titles_page">
 				<h1>Solicitudes de apartado</h1>
-				<h3>- tienda c: -</h3>
+				<h3>
+					<?php 
+						foreach($tiendas as $tienda)
+						{
+							if($tienda['idTienda'] == $_GET['id'])
+							{
+								echo $tienda['nombreTienda'];
+								break;
+							}
+						}
+					?>
+				</h3>
 			</div>
 			
 			<div id="content-cambio-secc">
