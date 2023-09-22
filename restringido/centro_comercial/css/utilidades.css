@@ -133,3 +133,10 @@ i.bx.bx-store-alt {
     display: block;
     text-align: center;
 }
+
+@media only screen and (max-width: 1502px) {
+    .notifications_store{
+        width: 23px;
+        height: 23px;
+    }
+}

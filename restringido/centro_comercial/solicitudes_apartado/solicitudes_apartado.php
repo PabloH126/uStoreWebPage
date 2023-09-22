@@ -135,7 +135,11 @@
 				};
 				?>
 			</div>
-			<h1>Solicitudes de apartado</h1>
+			<div id="titles_page">
+				<h1>Solicitudes de apartado</h1>
+				<h3>- tienda c: -</h3>
+			</div>
+			
 			<div id="content-cambio-secc">
 				<a href="solicitudes_activas.php" class="bttn_cambio_seccion">Ver solicitudes activas</a>
 			</div>
