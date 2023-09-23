@@ -56,6 +56,7 @@ connection.start()
         connection.invoke("SendUpdateNotificaciones")
             .then(() => {
                 console.log('Conexion con updateNotificacionesSolicitudes');
+                console.log(data);
             })
             .catch(err => {
                 console.error('Hubo un error al entrar a updateNotificacionesSolicitudes', err);
