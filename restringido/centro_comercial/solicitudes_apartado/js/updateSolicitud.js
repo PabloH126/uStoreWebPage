@@ -38,9 +38,13 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
 });
 
 connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
-    for (var [idTienda, numSoli] of Object.entries(notificaciones)) {
+    /*for (var [idTienda, numSoli] of Object.entries(notificaciones)) {
         console.log("IdTienda: " + idTienda + ", numero de solicitudes: " + numSoli);
-    }  
+    }*/
+    
+    notificaciones.forEach(notificacion => {
+        console.log(notificacion);
+    });
 })
 
 connection.start()
