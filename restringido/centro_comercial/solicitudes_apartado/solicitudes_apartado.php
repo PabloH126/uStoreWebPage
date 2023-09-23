@@ -100,12 +100,15 @@
 				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
 				
 				<?php
-				if (count($numeroSolicitudes) > 0)
+				$sumaSolicitudes;
+				foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
 				{
-					echo '<div class="content_number_notification">';
-					echo '<div class="notifications_store"><p id="number_notification">' . count($numeroSolicitudes) . '</p></div>';
-					echo '</div>';
+					$sumaSolicitudes += $numeroSoli;
 				}
+
+					echo '<div class="content_number_notification">';
+					echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
+					echo '</div>';
 				?>
 				
 			</div>
@@ -116,18 +119,12 @@
 					echo '<div class="menu-option">
 							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
 
-					$count = 0;
-					foreach ($numeroSolicitudes as $numeroSoli)
+					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
 					{
-						if ($numeroSoli['idTienda'] == $tienda['idTienda'])
+						if ($idTienda == $tienda['idTienda'] && $numeroSoli > 0)
 						{
-							$count++;
+							echo '<p class="notifications_store">' . $numeroSoli . '</p>';
 						}
-					}
-
-					if($count > 0)
-					{
-						echo '<p class="notifications_store">' . $count . '</p>';
 					}
 
 					echo '</div>';
