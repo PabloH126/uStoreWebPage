@@ -7,13 +7,27 @@
             <button class="options_aside">Gerentes</button>
         </div>
 
+        <!--  /// -->
+
+      <div class="cajabuscar">
+        <form method="get" id="buscarform">
+          <fieldset>
+            <input type="text" id="s" value="" placeholder="Buscar"  />
+            <input class="button" type="submit" value="" />
+            <i class="search"></i>
+          </fieldset>
+        </form>
+      </div>
+
+<!--
         <div class="search-aside-chat">
             <form>
                 <!--<label for="buscador"><i class='bx bx-search'></i></label>-->
-                <input type="search" id="buscador"></input>
+              <!--  <input type="search" id="buscador"></input>
             </form>
         </div>
       </div>
+-->
 
       <div class="body-aside">
 
