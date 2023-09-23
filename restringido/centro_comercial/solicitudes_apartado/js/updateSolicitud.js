@@ -30,9 +30,12 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
 });
 
 connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
-    for (var idTienda in notificaciones)
+    for (var [idTienda, numSoli] of Object.entries(diccionario)) {
+        console.log()
+    }
     {
-        var numeroSoli = 
+        var numeroSoli = notificaciones[idTienda];
+        console.log()
     }   
 })
 

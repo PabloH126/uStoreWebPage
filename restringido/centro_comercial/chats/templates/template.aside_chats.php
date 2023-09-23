@@ -5,6 +5,7 @@
           <div>
             <label>Usuarios</label>
           </div>
+          <hr>
           <div>
             <label>Gerentes</label>
           </div>
