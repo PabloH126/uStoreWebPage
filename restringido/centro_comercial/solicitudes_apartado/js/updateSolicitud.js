@@ -30,10 +30,10 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
 });
 
 connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
-    notificaciones.forEach(notificacion => {
-        console.log(notificacion.)
-        console.log(notificacion.valor)
-    })
+    for (var idTienda in notificaciones)
+    {
+        var numeroSoli = 
+    }   
 })
 
 connection.start()

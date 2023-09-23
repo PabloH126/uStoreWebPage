@@ -1,7 +1,7 @@
 <aside>
     <ul class="list">
       <div class="header-aside">
-        <div class="aside-optionschat-">
+        <div class="aside-options-chat">
           <div>
             <label>Usuarios</label>
           </div>

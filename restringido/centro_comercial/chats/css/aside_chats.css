@@ -1,4 +1,8 @@
 aside .list{
-    justify-content: none;
-    flex-direction: none;
+    justify-content: initial;
+}
+
+.aside-options-chat{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
