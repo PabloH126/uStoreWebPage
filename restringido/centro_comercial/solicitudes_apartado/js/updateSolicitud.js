@@ -65,6 +65,10 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
     }
 });
 
+connection.on("NameGroup", function (nombre) {
+    console.log(nombre);
+})
+
 solicitudesContainer.addEventListener("click", function(e) {
     if (e.target.classList.contains("aprobar")) {
         UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));

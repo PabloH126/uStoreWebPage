@@ -66,7 +66,6 @@ hr{
     width: 100%;
     position: relative;
 }
-#buscarform fieldset { float: left }
 
 #buscarform .search {
     font-size: 20px;
@@ -86,13 +85,10 @@ hr{
 #s {
     width: 100%;
     background-color: #fff;
-    float: left;
     padding: 8px 0;
     text-indent: 10px;
     color: #555555;
     border: 1px solid #fff; 
-    box-sizing: border-box;
-    height: 42px;
 }
 
 .button{
