@@ -13,7 +13,7 @@
         <form method="get" id="buscarform">
             <input type="text" id="s" value="" placeholder="Buscar"  />
             <input class="button" type="submit" value="" />
-            <i class="search"></i>
+            <i class='bx bx-search search'>
         </form>
       </div>
 
