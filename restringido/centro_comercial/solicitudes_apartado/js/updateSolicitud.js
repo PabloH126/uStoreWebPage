@@ -8,6 +8,10 @@ const spanSolicitudes = document.getElementById('span-seleccion-tienda');
 const item = document.getElementById('encabezado');
 const nota = document.querySelector('.nota');
 
+const token = document.cookie
+    .split("; "
+    .find())
+
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
 });

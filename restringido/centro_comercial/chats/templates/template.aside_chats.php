@@ -1,12 +1,12 @@
 <aside>
     <ul class="list">
-      <div class="header-aside">
-        <div class="aside-options-chat">
-          <div>
+      <div class="header_aside">
+        <div class="aside_options_chat">
+          <div class="options_aside">
             <label>Usuarios</label>
           </div>
           <hr>
-          <div>
+          <div class="options_aside">
             <label>Gerentes</label>
           </div>
         </div>

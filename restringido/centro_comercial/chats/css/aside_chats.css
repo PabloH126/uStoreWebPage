@@ -2,12 +2,15 @@ aside .list{
     justify-content: initial;
 }
 
-.header-aside{
+.header_aside{
     display: block;
-    padding: 15px 0;
 }
 
-.aside-options-chat{
+.aside_options_chat{
     display: flex;
-    justify-content: spa;
+    justify-content: space-evenly;
+}
+
+.options_aside{
+    margin: 15px 0;
 }
