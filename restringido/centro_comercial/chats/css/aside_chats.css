@@ -20,6 +20,11 @@ aside .list{
 .options_aside{
     padding: 13px 0;
     width: 48%;
+    background: none;
+    border: none;
+    font-family: 'Golos Text', sans-serif;
+    font-size: inherit;
+    color: white;
 }
 
 .options_aside:hover{
