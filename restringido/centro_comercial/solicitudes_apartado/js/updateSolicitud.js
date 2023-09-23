@@ -9,9 +9,9 @@ const item = document.getElementById('encabezado');
 const nota = document.querySelector('.nota');
 
 const token = document.cookie
-    .split("; "
+    .split("; ")
     .find(p => p.startsWith("SessionToken="))
-    ?.split("=")[1]);
+    ?.split("=")[1];
 
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const connection = new signalR.HubConnectionBuilder()
     .withUrl(`https://ustoreapi.azurewebsites.net/apartadosHub?idTienda=${idTienda}`, {
-        accessToken()
+        accessTokenFactory: () => token
     })
     .build();
 
