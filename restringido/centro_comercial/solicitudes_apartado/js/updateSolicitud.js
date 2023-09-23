@@ -29,6 +29,13 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
     });
 });
 
+connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
+    notificaciones.forEach(notificacion => {
+        console.log(notificacion.)
+        console.log(notificacion.valor)
+    })
+})
+
 connection.start()
     .then(() => {
         console.log('Conexion con SignalR exitosa');
