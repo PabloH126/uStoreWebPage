@@ -15,35 +15,35 @@ const token = document.cookie
 
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
+});
 
-    const connection = new signalR.HubConnectionBuilder()
+const connection = new signalR.HubConnectionBuilder()
     .withUrl(`https://ustoreapi.azurewebsites.net/apartadosHub?idTienda=${idTienda}`, {
         accessTokenFactory: () => token
     })
     .build();
 
-    connection.start()
-        .then(() => {
-            console.log('Conexion con SignalR exitosa');
-            connection.invoke("JoinGroupTienda")
-                .then(() => {
-                    console.log('Conexion con JoinGroupTienda exitosa');
-                })
-                .catch(err => {
-                    console.error('Hubo un error al entrar a JoinGroupTienda', err);
-                });
-            connection.invoke("SendUpdateNotificaciones")
-                .then(() => {
-                    console.log('Conexion con updateNotificacionesSolicitudes');
-                })
-                .catch(err => {
-                    console.error('Hubo un error al entrar a updateNotificacionesSolicitudes', err);
-                })
-        })
-        .catch(err => {
-            console.error('Error al conectarse con SignalR', err);
-        });
-});
+connection.start()
+    .then(() => {
+        console.log('Conexion con SignalR exitosa');
+        connection.invoke("JoinGroupTienda")
+            .then(() => {
+                console.log('Conexion con JoinGroupTienda exitosa');
+            })
+            .catch(err => {
+                console.error('Hubo un error al entrar a JoinGroupTienda', err);
+            });
+        connection.invoke("SendUpdateNotificaciones")
+            .then(() => {
+                console.log('Conexion con updateNotificacionesSolicitudes');
+            })
+            .catch(err => {
+                console.error('Hubo un error al entrar a updateNotificacionesSolicitudes', err);
+            })
+    })
+    .catch(err => {
+        console.error('Error al conectarse con SignalR', err);
+    });
 
 connection.on("RecieveSolicitudes", function (solicitudes) {
     solicitudes.forEach(solicitud => {
