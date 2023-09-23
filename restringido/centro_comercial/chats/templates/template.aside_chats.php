@@ -9,7 +9,8 @@
 
         <div class="search-aside-chat">
             <form>
-                <input type="text"><i class='bx bx-search'></i></input>
+                <label for="buscador"><i class='bx bx-search'></i></label>
+                <input type="text" id="buscador"></input>
             </form>
         </div>
       </div>
