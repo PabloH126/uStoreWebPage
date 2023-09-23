@@ -13,8 +13,13 @@ aside .list{
 }
 
 .options_aside{
-    margin: 15px 0;
-    width: 100%;
+    padding: 15px 0;
+    width: 48%;
+}
+
+.options_aside:hover{
+    background-color: white;
+    color: #007096;
 }
 
 hr{
