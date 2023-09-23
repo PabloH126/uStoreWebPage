@@ -13,7 +13,6 @@ const token = document.cookie
     .find(p => p.startsWith("SessionToken="))
     ?.split("=")[1];
 
-console.log("Token: ", token);
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
 });
@@ -23,29 +22,6 @@ const connection = new signalR.HubConnectionBuilder()
         accessTokenFactory: () => token
     })
     .build();
-
-connection.on("RecieveSolicitudes", function (solicitudes) {
-    solicitudes.forEach(solicitud => {
-        console.log(solicitud);
-        let solicitudElement = createSolicitudElement(solicitud);
-        console.log(solicitudElement);
-        item.style.display = "";
-        nota.style.display = "";
-        spanSolicitudes.style.display = "none";
-        solicitudesContainer.appendChild(solicitudElement);
-        console.log(solicitudesContainer);
-    });
-});
-
-connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
-    /*for (var [idTienda, numSoli] of Object.entries(notificaciones)) {
-        console.log("IdTienda: " + idTienda + ", numero de solicitudes: " + numSoli);
-    }*/
-    
-    notificaciones.forEach(notificacion => {
-        console.log(notificacion);
-    });
-})
 
 connection.start()
     .then(() => {
@@ -68,7 +44,25 @@ connection.start()
     .catch(err => {
         console.error('Error al conectarse con SignalR', err);
     });
-console.log('entro al js');
+
+connection.on("RecieveSolicitudes", function (solicitudes) {
+    solicitudes.forEach(solicitud => {
+        console.log(solicitud);
+        let solicitudElement = createSolicitudElement(solicitud);
+        console.log(solicitudElement);
+        item.style.display = "";
+        nota.style.display = "";
+        spanSolicitudes.style.display = "none";
+        solicitudesContainer.appendChild(solicitudElement);
+        console.log(solicitudesContainer);
+    });
+});
+
+connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
+    for (var [idTienda, numSoli] of Object.entries(notificaciones)) {
+        console.log("IdTienda: " + idTienda + ", numero de solicitudes: " + numSoli);
+    }
+});
 
 solicitudesContainer.addEventListener("click", function(e) {
     if (e.target.classList.contains("aprobar")) {
