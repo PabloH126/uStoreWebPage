@@ -29,6 +29,10 @@ aside .list{
     -webkit-transition-duration: 0.5s;
 }
 
+.options_aside:hover label{
+    font-weight: bold;
+}
+
 hr{
     height: 38px;
     margin: 0;
