@@ -45,6 +45,13 @@ connection.start()
             .catch(err => {
                 console.error('Hubo un error al entrar a JoinGroupTienda', err);
             });
+        connection.invoke("SendUpdateNotificaciones")
+            .then(() => {
+                console.log('Conexion con updateNotificacionesSolicitudes');
+            })
+            .catch(err => {
+                console.error('Hubo un error al entrar a updateNotificacionesSolicitudes', err);
+            })
     })
     .catch(err => {
         console.error('Error al conectarse con SignalR', err);
