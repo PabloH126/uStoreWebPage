@@ -10,14 +10,17 @@ const nota = document.querySelector('.nota');
 
 const token = document.cookie
     .split("; "
-    .find())
+    .find(p => p.startsWith("SessionToken="))
+    ?.split("=")[1]);
 
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
 });
 
 const connection = new signalR.HubConnectionBuilder()
-    .withUrl(`https://ustoreapi.azurewebsites.net/apartadosHub?idTienda=${idTienda}`)
+    .withUrl(`https://ustoreapi.azurewebsites.net/apartadosHub?idTienda=${idTienda}`, {
+        accessToken()
+    })
     .build();
 
 connection.on("RecieveSolicitudes", function (solicitudes) {

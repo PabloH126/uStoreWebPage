@@ -14,3 +14,10 @@ aside .list{
 .options_aside{
     margin: 15px 0;
 }
+
+hr{
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    width: 0;
+}
