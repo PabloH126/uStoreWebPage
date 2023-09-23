@@ -58,6 +58,7 @@ hr{
     width: 100%;
     max-width: 453px;
     margin-bottom: 25px;
+    margin-top: 5px;
     display: inline-block;
     text-align: left;
 }
@@ -90,6 +91,7 @@ hr{
     color: #555555;
     border: 1px solid #fff; 
     outline: none;
+    border-radius: 5px;
 }
 
 .button{
