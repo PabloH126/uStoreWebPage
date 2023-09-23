@@ -3,15 +3,17 @@
       <div class="header_aside">
         <div class="aside_options_chat">
           <div class="options_aside">
-            <label>Usuarios</label>
+            <button>Usuarios</button>
           </div>
           <hr>
           <div class="options_aside">
-            <label>Gerentes</label>
+            <button>Gerentes</button>
           </div>
         </div>
 
-        <div class="search-aside-chat"></div>
+        <div class="search-aside-chat">
+
+        </div>
       </div>
 
       <div class="body-aside">
