@@ -20,6 +20,8 @@ aside .list{
 .options_aside:hover{
     background-color: white;
     color: #007096;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
 }
 
 hr{
