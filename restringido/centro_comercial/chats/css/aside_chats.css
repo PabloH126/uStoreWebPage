@@ -31,12 +31,9 @@ aside .list{
     background-color: white;
     color: #007096;
     border-radius: 2px;
+    font-weight: bold;
     transition-duration: 0.5s;
     -webkit-transition-duration: 0.5s;
-}
-
-.options_aside:hover button{
-    font-weight: bold;
 }
 
 hr{
