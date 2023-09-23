@@ -2,6 +2,11 @@ aside .list{
     justify-content: initial;
 }
 
+.header-aside{
+    display: block;
+    padding: 15px 0;
+}
+
 .aside-options-chat{
     display: grid;
     grid-template-columns: 1fr 1fr;
