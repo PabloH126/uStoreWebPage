@@ -13,7 +13,7 @@ const token = document.cookie
     .find(p => p.startsWith("SessionToken="))
     ?.split("=")[1];
 
-console.log(token);
+
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
 });
