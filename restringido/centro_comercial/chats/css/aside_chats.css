@@ -1,3 +1,7 @@
+aside{
+    width: 20vw;
+}
+
 aside .list{
     justify-content: initial;
 }
