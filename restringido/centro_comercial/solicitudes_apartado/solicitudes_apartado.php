@@ -100,15 +100,18 @@
 				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
 				
 				<?php
-				$sumaSolicitudes;
-				foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
-				{
-					$sumaSolicitudes += $numeroSoli;
-				}
+					$sumaSolicitudes;
+					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
+					{
+						$sumaSolicitudes += $numeroSoli;
+					}
 
-					echo '<div class="content_number_notification">';
-					echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
-					echo '</div>';
+					if( $sumaSolicitudes > 0)
+					{
+						echo '<div class="content_number_notification">';
+						echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
+						echo '</div>';
+					}
 				?>
 				
 			</div>
