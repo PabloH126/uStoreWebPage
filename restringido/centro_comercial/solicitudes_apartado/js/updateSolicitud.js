@@ -59,6 +59,7 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
 });
 
 connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
+    console.log(notificaciones);
     for (var [idTienda, numSoli] of Object.entries(notificaciones)) {
         console.log("IdTienda: " + idTienda + ", numero de solicitudes: " + numSoli);
     }
