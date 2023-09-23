@@ -66,7 +66,7 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
 });
 
 connection.on("NameGroup", function (nombre) {
-    console.log(nombre);
+    console.log("Nombre del grupo: ", nombre);
 })
 
 solicitudesContainer.addEventListener("click", function(e) {
