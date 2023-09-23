@@ -35,7 +35,7 @@ aside .list{
     -webkit-transition-duration: 0.5s;
 }
 
-.options_aside:hover label{
+.options_aside:hover button{
     font-weight: bold;
 }
 
