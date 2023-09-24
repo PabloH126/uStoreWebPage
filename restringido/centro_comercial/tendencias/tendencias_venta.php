@@ -121,8 +121,8 @@ curl_close($ch);
 				<div class="menu-option"><a id="downloadPDF">PDF</a></div>
 				<div class="menu-option"><a id="downloadImage">PNG</a></div>
 			</div>
-			<span id="span-seleccion-tienda">Selecciona una opcion de filtro</span>
 		</div>
+		<span id="span-seleccion-tienda">Selecciona una opcion de filtro</span>
 	</div>
 	<?php require("templates/template.scripts_tendencias.php") ?>
 </body>
