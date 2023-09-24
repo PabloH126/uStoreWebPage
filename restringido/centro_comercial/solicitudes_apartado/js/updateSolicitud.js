@@ -19,7 +19,7 @@ const token = document.cookie
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
     notificacionesTienda.forEach(notificacion => {
-        if (parseInt(notificacion.textContent) > 0)
+        if (notificacion.textContent != "0")
         {
             notificacion.style.display = "";
         }
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             notificacion.style.display = "none";
         }
     });
-    if (parseInt(notificacionesTotal.textContent) > 0)
+    if (notificacionesTotal.textContent != "0")
     {
         contentNumberNotificacion.style.display = "";
     }
