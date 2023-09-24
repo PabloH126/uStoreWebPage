@@ -136,6 +136,10 @@ hr {
     font-weight: bold;
 }
 
+.message_preview {
+    font-size: 0.9rem;
+}
+
 .contacto.select {
     background-color: white;
     border-radius: 6px;
