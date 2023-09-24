@@ -21,7 +21,7 @@
     <div class="body-aside">
       <div class="contacto">
         <div class="contact_profile_img">
-          <img src="" alt="">
+          <img src="https://pm1.aminoapps.com/6366/c7a03a8c95506cbdf63b62e7999376336463723e_00.jpg" alt="Imagen de perfil del contacto">
         </div>
         <div class="contact_info">
           <div class="contact_name"></div>
