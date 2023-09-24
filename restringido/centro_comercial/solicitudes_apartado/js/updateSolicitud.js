@@ -10,6 +10,7 @@ const nota = document.querySelector('.nota');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 const contentNumberNotificacion = document.querySelector('.content_number_notification');
+let solicitudesItem = document.querySelectorAll('.solicitudesItem');
 
 const token = document.cookie
     .split("; ")
