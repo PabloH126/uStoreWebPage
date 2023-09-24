@@ -42,7 +42,23 @@ require '../../security.php';
         <?php require("templates/template.aside_chats.php") ?>
 		<div class="chat-area">
 			<div class="mssg-area"></div>
-			<div class="text-area"></div>
+			<div class="text-area">
+				<form action="">
+					<div>
+						<label for=""><i class='bx bx-plus-circle'></i></label>
+						<input type="file">
+					</div>
+					
+					<div>
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+					</div>
+
+					<div>
+						<label for=""><i class='bx bx-send bx-flip-vertical' ></i></label>
+						<input type="submit">
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 	
