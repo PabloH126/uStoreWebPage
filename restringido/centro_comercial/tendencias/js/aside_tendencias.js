@@ -5,6 +5,7 @@ listElements.forEach(listElement => {
     if (listElement.classList.contains('categorias')) {
         // Para elementos con la clase "categorias", establece una altura específica
         listElement.addEventListener('click', () => {
+            console.log("click");
             listElement.classList.toggle('arrow');
             let menu = listElement.nextElementSibling;
             menu.style.height = '37vh'; // Establece la altura específica
