@@ -69,7 +69,7 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
         console.log("IdTienda: " + idTienda + ", numero de solicitudes: " + numSoli);
         numNotificaciones += numSoli;
         
-        /*for (let i = 0; i < notificacionesTienda.length; i++)
+        for (let i = 0; i < notificacionesTienda.length; i++)
         {
             let idTiendaDiv = notificacionesTienda[i].closest('.menu-option').dataset.tiendaId;
             if (parseInt(idTienda) === parseInt(idTiendaDiv))
@@ -77,7 +77,7 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
                 notificacionesTienda[i].textContent = numSoli;
                 break;
             }
-        }*/
+        }
     }
     notificacionesTotal.textContent = numNotificaciones;
 });
