@@ -115,16 +115,14 @@ connection.on("NameGroup", function (nombre) {
 solicitudesContainer.addEventListener("click", function(e) {
     let btnAprobar = e.target.closest('.solicitudesItem').querySelector('.aprobar');
     let btnRechazar = e.target.closest('.solicitudesItem').querySelector('.rechazar');
-
-    btnAprobar.style.display = "none";
-    btnRechazar.style.display = "none";
-    
-    console.log(btnAprobar);
-    console.log(btnRechazar);
     
     if (e.target.classList.contains("aprobar")) {
+        btnAprobar.style.display = "none";
+        btnRechazar.style.display = "none";
         UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     } else if (e.target.classList.contains("rechazar")) {
+        btnAprobar.style.display = "none";
+        btnRechazar.style.display = "none";
         UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     }
 });
