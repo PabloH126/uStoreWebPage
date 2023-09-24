@@ -72,6 +72,7 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
         for (let i = 0; i < notificacionesTienda.length; i++)
         {
             let menuOption = notificacionesTienda[i].closest('.menu-option');
+            console.log("Menu option: ", menuOption);
             let idTiendaDiv = menuOption.dataset.tiendaId;
             if (parseInt(idTiendaDictionary) === parseInt(idTiendaDiv))
             {
@@ -83,7 +84,6 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
                     p.classList.add('numero_solicitudes_tienda');
                     p.textContent = numSoli;
                     console.log(p);
-                    console.log(menuOption);
                     menuOption.appendChild(p);
                 }
                 else

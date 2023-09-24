@@ -98,3 +98,10 @@ hr{
     z-index: 10;
     vertical-align: top;
 }
+
+/* body aside */
+
+.contact_profile_img img{
+    width: 10px;
+    height: 10px;
+}
