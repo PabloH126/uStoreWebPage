@@ -84,7 +84,6 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
     console.log(notificacionesTotal);
     console.log(notificacionesTienda);
     let numNotificaciones = 0;
-    let submenu = document.getElementById('sub-menu');
 
     for (var [idTiendaDictionary, numSoli] of Object.entries(notificaciones)) {
         console.log("IdTienda: " + idTiendaDictionary + ", numero de solicitudes: " + numSoli);
@@ -102,8 +101,11 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
             }
         }
     }
-    contentNumberNotificacion.style.display = "";
-    notificacionesTotal.textContent = numNotificaciones;
+    if (numNotificaciones > 0)
+    {
+        contentNumberNotificacion.style.display = "";
+        notificacionesTotal.textContent = numNotificaciones;
+    }
 });
 
 connection.on("NameGroup", function (nombre) {
