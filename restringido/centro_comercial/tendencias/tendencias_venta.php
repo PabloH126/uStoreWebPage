@@ -70,7 +70,7 @@ curl_close($ch);
                 </li>
 
 				<li class="list_item">
-                    <div class="list_button list_button--click">
+                    <div class="list_button list_button--click categorias">
 						<i class='bx bxs-category' ></i>
                         <p>Categorías</p>
                         <i class='bx bx-chevron-right row'></i>

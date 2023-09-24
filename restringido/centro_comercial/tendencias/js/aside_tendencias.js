@@ -17,6 +17,12 @@ listElements.forEach(listElement => {
         }
 
         menu.style.height = height+"px";
+
+        if (listElement.classList.contains('categorias')) {
+            menu.style.height = 37+"vh";
+        }
+
+        
     })
 });
 
