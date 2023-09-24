@@ -109,6 +109,8 @@ curl_close($ch);
 		</aside>
 
 		<div class="body">
+
+			<span id="span-seleccion-tienda">Selecciona una opcion de filtro</span>
 			<canvas id="grafica"></canvas>
 
 			<div class="crear-publicacion" id="btnCrearPubli">				
