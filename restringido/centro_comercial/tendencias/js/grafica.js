@@ -1,11 +1,10 @@
+let canva = document.getElementById('grafica');
+let filterList = document.getElementById('filterList');
+let btnCrearPubli = document.getElementById('btnCrearPubli');
+
 document.addEventListener('DOMContentLoaded', function() {
-    var canva = document.getElementById('grafica');
     canva.style.display = "none";
-
-    var filterList = document.getElementById('filterList');
-    filterList.style.display = "none";
-
-    var btnCrearPubli = document.getElementById('btnCrearPubli');
+    filterList.style.display = "none"; 
     btnCrearPubli.style.display = "none";
 
     var ctx = document.getElementById('grafica').getContext('2d');
@@ -39,13 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.bttnp').forEach(btn => {
         btn.addEventListener('click', function() {
-            actualizarGrafica(grafica, canva);
+            actualizarGrafica(grafica);
         });
     });
     
     document.querySelectorAll("input[name='categorias[]']").forEach(cat => {
         cat.addEventListener('click', function() {
-            actualizarGrafica(grafica, canva);
+            actualizarGrafica(grafica);
         });
     });
 
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function actualizarGrafica(grafica, canva)
+function actualizarGrafica(grafica)
 {
 
     var meses = [];
@@ -94,7 +93,12 @@ function actualizarGrafica(grafica, canva)
     grafica.data.labels = meses;
     grafica.data.datasets[0].data = ventas;
     grafica.update();
-    canva.style.display = "";
+    ActivarGrafica();
 }
 
-function ActivarGrafica(canva, filterList, btnCrearPubli)
+function ActivarGrafica()
+{
+    canva.style.display = "";
+    filterList.style.display = "";
+    btnCrearPubli.style.display = "";
+}
