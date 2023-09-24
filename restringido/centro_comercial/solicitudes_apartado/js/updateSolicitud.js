@@ -96,9 +96,7 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
             let idTiendaDiv = menuOption.dataset.tiendaId;
             if (parseInt(idTiendaDictionary) === parseInt(idTiendaDiv))
             {
-                notificacionesTienda[i].remove()
-                let notificacion = generateNotificacionStore(numSoli);
-                menuOption.appendChild(notificacion);
+                notificacionesTienda[i].textContent = numSoli;
                 break;
             }
         }
