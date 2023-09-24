@@ -10,6 +10,7 @@ const nota = document.querySelector('.nota');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 const contentNumberNotificacion = document.querySelector('.content_number_notification');
+let btnClicked = false;
 
 const token = document.cookie
     .split("; ")
@@ -113,9 +114,12 @@ connection.on("NameGroup", function (nombre) {
 })
 
 solicitudesContainer.addEventListener("click", function(e) {
-    let cancelBtn = e.target.closest('.bttn_solicitudes');
-    cancelBtn.disabled = true;
-    e.target.disabled = true;
+    if(btnClicked)
+    {
+        return;
+    }
+
+    btnClicked = true;
 
     if (e.target.classList.contains("aprobar")) {
         UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
@@ -165,16 +169,19 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
                         break;
                     }
                 }
+                btnClicked = false;
             })
         }
         else
         {
             showNotificationError("Se produjo un error al cambiar la solicitud: ", data.message);
+            btnClicked = false;
         }
     })
     .catch(error => {
         console.error("Hubo un error con la petición fetch:", error);
         showNotificationError("Error al mandar la peticion de cambio de la solicitud.");
+        btnClicked = false;
     });
 }
 
