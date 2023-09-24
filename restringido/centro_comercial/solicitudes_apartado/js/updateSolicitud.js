@@ -10,6 +10,7 @@ const nota = document.querySelector('.nota');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 const contentNumberNotificacion = document.querySelector('.content_number_notification');
+
 const token = document.cookie
     .split("; ")
     .find(p => p.startsWith("SessionToken="))
@@ -103,6 +104,11 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
                 break;
             }
         }
+    }
+
+    if(notificacionesTotal)
+    {
+        let contentNumber
     }
     notificacionesTotal.textContent = numNotificaciones;
 });
