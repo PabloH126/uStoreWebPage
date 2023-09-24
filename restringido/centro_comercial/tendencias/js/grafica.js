@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var canva = document.getElementById('grafica');
+    canva.style.display = "none";
     var ctx = document.getElementById('grafica').getContext('2d');
     var grafica = new Chart(ctx, {
         type: 'line',
@@ -30,13 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.bttnp').forEach(btn => {
         btn.addEventListener('click', function() {
-            actualizarGrafica(grafica);
+            actualizarGrafica(grafica, canva);
         });
     });
     
     document.querySelectorAll("input[name='categorias[]']").forEach(cat => {
         cat.addEventListener('click', function() {
-            actualizarGrafica(grafica);
+            actualizarGrafica(grafica, canva);
         });
     });
 
@@ -65,9 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function actualizarGrafica(grafica)
+function actualizarGrafica(grafica, canva)
 {
-    
+
     var meses = [];
     var ventas = [];
     for (let index = 0; index < 50; index++) {
@@ -85,4 +87,5 @@ function actualizarGrafica(grafica)
     grafica.data.labels = meses;
     grafica.data.datasets[0].data = ventas;
     grafica.update();
+    canva.style.display = "";
 }
