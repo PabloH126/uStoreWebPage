@@ -114,6 +114,8 @@ connection.on("NameGroup", function (nombre) {
 
 solicitudesContainer.addEventListener("click", function(e) {
     e.target.style.display = "none";
+    let sndBtn = (e.target.classList.contains("aprobar") ? e.target.closest('rechazar') : e.target.closest('aprobar'));
+    sndBtn.style.display = "none";
     if (e.target.classList.contains("aprobar")) {
         UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     } else if (e.target.classList.contains("rechazar")) {
