@@ -5,10 +5,18 @@ listElements.forEach(listElement => {
     if (listElement.classList.contains('categorias')) {
         // Para elementos con la clase "categorias", establece una altura específica
         listElement.addEventListener('click', () => {
-            console.log("click");
             listElement.classList.toggle('arrow');
+            let height = 0;
             let menu = listElement.nextElementSibling;
-            menu.style.height = '37vh'; // Establece la altura específica
+            if (menu.style.height === '37vh') {
+                console.log("0");
+                // Si la altura actual es 37vh, establece la altura a 0
+                menu.style.height = '0';
+            } else {
+                // De lo contrario, establece la altura a 37vh
+                menu.style.height = '37vh';
+                console.log("37");
+            }
         });
     } else {
         // Para otros elementos, utiliza la lógica predeterminada
