@@ -122,4 +122,7 @@ hr{
 .contact_info{
     width: 75%;
     text-align: initial;
+    display: grid;
+    align-items: center;
+    padding: 2px 7px;
 }
