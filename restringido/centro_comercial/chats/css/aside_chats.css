@@ -55,7 +55,7 @@ hr{
 
 
 .cajabuscar {
-    width: 97%;
+    width: 100%;
     max-width: 453px;
     margin-bottom: 25px;
     margin-top: 5px;
@@ -65,12 +65,13 @@ hr{
 
 #buscarform {
     width: 100%;
-    position: relative;
+    display: grid;
+    grid-template-columns: 93% 0px 0px;
 }
 
 #buscarform .search {
-    font-size: 20px;
-    top: 0px;
+    font-size: 25px;
+    /*top: 0px;
     color: #FFF;
     background: #33BCF2;
     position: absolute;
@@ -79,7 +80,9 @@ hr{
     padding: 9px;
     height: 24px;
     width: 24px;
-    text-align: center;
+    text-align: center;*/
+
+    color: #007096;
 }
 #buscarform fieldset { width: 100% }
 
@@ -95,11 +98,11 @@ hr{
 }
 
 .button{
-    right: 0;
-    top: 0;
+    /*right: 0;
+    top: 0;*/
     padding: 9px 0;
     float: right;
-    border: 0;
+    /*border: 0;*/
     width: 33px;
     height: 33px;
     cursor: pointer;
@@ -109,7 +112,7 @@ hr{
     transition: all 0.25s linear;
     background: transparent;
     z-index: 10;
-    position: absolute;
+    /*position: absolute;*/
     border: 0;
     vertical-align: top;
 }
