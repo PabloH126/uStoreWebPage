@@ -71,10 +71,23 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
         
         for (let i = 0; i < notificacionesTienda.length; i++)
         {
-            let idTiendaDiv = notificacionesTienda[i].closest('.menu-option').dataset.tiendaId;
+            let menuOption = notificacionesTienda[i].closest('.menu-option');
+            let idTiendaDiv = menuOption.dataset.tiendaId;
             if (parseInt(idTiendaDictionary) === parseInt(idTiendaDiv))
             {
-                notificacionesTienda[i].textContent = numSoli;
+                if (!notificacionesTienda[i])
+                {
+                    let p = document.createElement("p");
+                    p.classList.add('notifications_store');
+                    p.classList.add('numero_solicitudes_tienda');
+                    p.textContent = numSoli;
+
+                    menuOption.appendChild(p);
+                }
+                else
+                {
+                    notificacionesTienda[i].textContent = numSoli;
+                }
                 break;
             }
         }
