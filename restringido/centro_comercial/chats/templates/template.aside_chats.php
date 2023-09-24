@@ -24,8 +24,8 @@
           <img src="https://pm1.aminoapps.com/6366/c7a03a8c95506cbdf63b62e7999376336463723e_00.jpg" alt="Imagen de perfil del contacto">
         </div>
         <div class="contact_info">
-          <div class="contact_name"></div>
-          <div class="message_preview"></div>
+          <div class="contact_name">Minato chiquito c:</div>
+          <div class="message_preview">holiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
         </div>
       </div>
     </div>
