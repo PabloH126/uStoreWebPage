@@ -1,29 +1,25 @@
 <?php
 session_start();
 require '../../security.php';
-/*
-	$ch = curl_init();
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Authorization: Bearer ' . $_COOKIE['SessionToken']
+)
+);
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	));
-	
-	$response = curl_exec($ch);
-	
-	if ($response === false) {
-		echo 'Error: ' . curl_error($ch);
-	} else {
-		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	}
-	
-	if ($httpStatusCode == 400) {
-		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
-	}
-	$tiendas = json_decode($response, true);
-	curl_close($ch);*/
+$response = curl_exec($ch);
+
+if ($response === false) {
+    echo 'Error: ' . curl_error($ch);
+} else {
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+}
+
+$categorias = json_decode($response, true);
+
+curl_close($ch);
 
 ?>
 <!DOCTYPE html>
@@ -83,11 +79,12 @@ require '../../security.php';
                     <ul class="list_show">
                         <li class="list_inside">
 							<form action="">
-								<label for="categoria1"><input id="categoria1" type="checkbox"><p class="p">Categoria 1</p></label>
-								<label for="categoria2"><input id="categoria2" type="checkbox"><p class="p">Categoria 2</p></label>
-								<label for="categoria3"><input id="categoria3" type="checkbox"><p class="p">Categoria 3</p></label>
-								<label for="categoria4"><input id="categoria4" type="checkbox"><p class="p">Categoria 4</p></label>
-								<label for="categoria5"><input id="categoria5" type="checkbox"><p class="p">Categoria 5</p></label>
+								<?php
+								foreach($categorias as $categoria)
+								{
+									echo '<label for="' . $categoria['categoria1'] . '"><input id="' . $categoria['categoria1'] . '" type="checkbox" name="categorias[]" value="' . $categoria['idCategoria'] . '"><p class="p">' . $categoria['categoria1'] . '</p></label>';
+								}
+								?>
 							</form>
                         </li>
                     </ul>
