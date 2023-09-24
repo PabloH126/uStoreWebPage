@@ -2,10 +2,6 @@ let listElements = document.querySelectorAll('.list_button--click');
 
 listElements.forEach(listElement => {
 
-    if (listElement.classList.contains('categorias')) {
-        menu.style.height = 37+"vh";
-    }
-
     //al dar click
     listElement.addEventListener('click', ()=>{
         
@@ -22,6 +18,9 @@ listElements.forEach(listElement => {
 
         menu.style.height = height+"px";
         
+        if (listElement.classList.contains('categorias')) {
+            menu.style.height = 37+"vh";
+        }
     })
 });
 
