@@ -110,6 +110,10 @@ hr {
     margin: 9px 0px;
 }
 
+.contacto:hover {
+    background: #ffffff38;
+}
+
 .contact_profile_img {
     width: 25%;
     height: 50px;

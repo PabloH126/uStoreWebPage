@@ -48,7 +48,9 @@ require '../../security.php';
 				<span class="material-symbols-outlined icon-filter" id="menu-icon">filter_list</span>
 				<div id="sub-menu">
 					<div class="menu-option"><a id="MayorMenor">Mayor a Menor</a></div>
-					<div class="menu-option"><a id="kk">Nombre: A-Z / Z-A </a></div>
+					<div class="menu-option"><a id="MenorMayor">Menor a Mayor</a></div>
+					<div class="menu-option"><a id="A-Z">Nombre: A-Z</a></div>
+					<div class="menu-option"><a id="Z-A">Nombre: Z-A</a></div>
 				</div>
 			</div>
 		</div>
