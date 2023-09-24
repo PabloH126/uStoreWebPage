@@ -97,6 +97,7 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
             if (parseInt(idTiendaDictionary) === parseInt(idTiendaDiv))
             {
                 notificacionesTienda[i].textContent = numSoli;
+                notificacionesTienda[i].style.display = "";
                 break;
             }
         }
@@ -262,14 +263,4 @@ function checkSolicitudes() {
         nota.style.display = "";
         spanSolicitudes.style.display = "none";
     }
-}
-
-function generateNotificacionStore(numSoli)
-{
-    let notificationsStore = document.createElement("p");
-    notificationsStore.classList.add("notifications_store");
-    notificationsStore.classList.add("numero_solicitudes_tienda");
-    notificationsStore.textContent = numSoli;
-
-    return notificationsStore;
 }

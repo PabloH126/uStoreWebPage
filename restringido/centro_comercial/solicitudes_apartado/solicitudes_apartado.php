@@ -119,14 +119,16 @@
 					echo '<div class="menu-option" data-tienda-id="' . $tienda['idTienda'] . '">
 							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
 
+					$numeroSolicitud = 0;
 					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
 					{
 						if ($idTienda == $tienda['idTienda'])
 						{
-							echo '<p class="notifications_store numero_solicitudes_tienda">' . $numeroSoli . '</p>';
+							$numeroSolicitud = $numeroSoli;
+							break;
 						}
 					}
-
+					echo '<p class="notifications_store numero_solicitudes_tienda">' . $numeroSolicitud . '</p>';
 					echo '</div>';
 
 				};
