@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     document.querySelectorAll("input[name='categorias[]']").forEach(cat => {
-        btn.addEventListener('click', actualizarGrafica(grafica));
+        cat.addEventListener('click', actualizarGrafica(grafica));
     });
 
     document.getElementById("downloadImage").addEventListener("click", function() {
