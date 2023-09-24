@@ -88,13 +88,11 @@ hr{
 
 .button{
     padding: 9px 0;
-    float: right;
     width: 33px;
     height: 33px;
     cursor: pointer;
     text-align: center;
-    padding-top: 10px;
-    color: transparent;
+    color: white;
     transition: all 0.25s linear;
     background: transparent;
     z-index: 10;

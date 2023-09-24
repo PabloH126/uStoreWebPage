@@ -62,15 +62,24 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
     console.log(notificaciones);
     let notificacionesTotal = document.getElementById('number_notification');
     let notificacionesTienda = document.querySelectorAll('.notifications_store');
-    let numNotificaciones;
+    let numNotificaciones = 0;
     for (var [idTienda, numSoli] of Object.entries(notificaciones)) {
         console.log("IdTienda: " + idTienda + ", numero de solicitudes: " + numSoli);
         numNotificaciones += numSoli;
+        
+        for (let i = 0; i < notificacionesTienda.length; i++)
+        {
+            var idTiendaDiv = element.closest('.menu-option').dataset.tiendaId;
+            if (parseInt(idTienda) === parseInt(idTiendaDiv))
+            {
+                element.textContent = numSoli;
+            }
+        }
+        notificacionesTienda.forEach(function (element) {
+            
+        })
     }
-
     notificacionesTotal.textContent = numNotificaciones;
-
-
 });
 
 connection.on("NameGroup", function (nombre) {

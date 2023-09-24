@@ -100,7 +100,7 @@
 				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
 				
 				<?php
-					$sumaSolicitudes;
+					$sumaSolicitudes = 0;
 					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
 					{
 						$sumaSolicitudes += $numeroSoli;
