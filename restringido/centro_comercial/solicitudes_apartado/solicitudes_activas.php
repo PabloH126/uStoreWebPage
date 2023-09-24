@@ -128,7 +128,7 @@
 					<p>Recogió</p>
 					<p>Borrar</p>
 				</div>
-				<span id="span-seleccion-tienda">No hay solicitudes pendientes en esta tienda</span>
+				<span id="span-seleccion-tienda">No hay solicitudes pendientes en esta tiendaasd</span>
 				<?php
 				if (isset($solicitudesError))
 				{
