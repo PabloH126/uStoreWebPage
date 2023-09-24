@@ -169,7 +169,6 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
                         break;
                     }
                 }
-                btnClicked = false;
             })
         }
         else
