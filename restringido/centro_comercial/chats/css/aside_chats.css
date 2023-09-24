@@ -67,6 +67,9 @@ hr{
     width: 100%;
     display: grid;
     grid-template-columns: 93% 0px 0px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
 #buscarform .search {
