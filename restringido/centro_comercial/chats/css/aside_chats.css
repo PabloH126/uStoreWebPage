@@ -103,6 +103,14 @@ hr {
 
 /* body aside */
 
+.body-aside {
+    overflow: auto;
+}
+
+.body-aside::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
 .contacto {
     display: flex;
     height: 8vh;
