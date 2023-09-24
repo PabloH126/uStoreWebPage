@@ -114,7 +114,10 @@ connection.on("NameGroup", function (nombre) {
 })
 
 solicitudesContainer.addEventListener("click", function(e) {
-
+    if(btnClicked)
+    {
+        return;
+    }
 
     btnClicked = true;
 
@@ -174,6 +177,9 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
             showNotificationError("Se produjo un error al cambiar la solicitud: ", data.message);
             btnClicked = false;
         }
+    })
+    .then(() => {
+        btnClicked = false;
     })
     .catch(error => {
         console.error("Hubo un error con la petición fetch:", error);
