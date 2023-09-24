@@ -114,12 +114,20 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
                 elementClicked.remove();
                 checkSolicitudes();
                 notificacionesTotal.textContent = parseInt(notificacionesTotal.textContent) - 1;
+                if(parseInt(notificacionesTotal.textContent) <= 0)
+                {
+                    notificacionesTotal.remove();
+                }
                 for (let i = 0; i < notificacionesTienda.length; i++)
                 {
                     let idTiendaDiv = notificacionesTienda[i].closest('.menu-option').dataset.tiendaId;
                     if (parseInt(idTienda) === parseInt(idTiendaDiv))
                     {
                         notificacionesTienda[i].textContent = parseInt(notificacionesTienda[i].textContent) - 1;
+                        if(parseInt(notificacionesTienda[i].textContent) <= 0)
+                        {
+                            notificacionesTienda[i].remove();
+                        }
                         break;
                     }
                 }
