@@ -40,7 +40,7 @@ curl_close($ch);
 			<div>
 				<h1>Tendencias de venta</h1>
 			</div>
-			<div>
+			<div id="filterList">
 				<span class="material-symbols-outlined icon-filter" id="menu-icon">filter_list</span>
 				<div id="sub-menu">
 					<div class="menu-option"><a id="MayorMenor">Mayor a Menor</a></div>
@@ -111,7 +111,7 @@ curl_close($ch);
 		<div class="body">
 			<canvas id="grafica"></canvas>
 
-			<div class="crear-publicacion">				
+			<div class="crear-publicacion" id="btnCrearPubli">				
 				<a title="Descargar">
 					<i class='bx bxs-download' id="menu-icon2"></i>
 				</a>

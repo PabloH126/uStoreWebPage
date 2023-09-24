@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var canva = document.getElementById('grafica');
     canva.style.display = "none";
+
+    var filterList = document.getElementById('filterList');
+    filterList.style.display = "none";
+
+    var btnCrearPubli = document.getElementById('btnCrearPubli');
+    btnCrearPubli.style.display = "none";
+
     var ctx = document.getElementById('grafica').getContext('2d');
     var grafica = new Chart(ctx, {
         type: 'line',
@@ -89,3 +96,5 @@ function actualizarGrafica(grafica, canva)
     grafica.update();
     canva.style.display = "";
 }
+
+function ActivarGrafica(canva, filterList, btnCrearPubli)
