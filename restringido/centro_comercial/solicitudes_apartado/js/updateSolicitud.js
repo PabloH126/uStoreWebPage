@@ -108,7 +108,10 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
 
     if(notificacionesTotal)
     {
-        let contentNumber
+        let contentNumber = document.createElement('div');
+        contentNumber.className = 'content_number_notification';
+        let notificacionStore = document.
+
     }
     notificacionesTotal.textContent = numNotificaciones;
 });
