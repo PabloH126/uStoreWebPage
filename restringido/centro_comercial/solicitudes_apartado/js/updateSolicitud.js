@@ -96,11 +96,10 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
             let idTiendaDiv = menuOption.dataset.tiendaId;
             if (parseInt(idTiendaDictionary) === parseInt(idTiendaDiv))
             {
-                    if (numSoli > 0)
-                    {
-                        notificacionesTienda[i].textContent = numSoli;
-                    }
-                    break;
+                notificacionesTienda[i].remove()
+                let notificacion = generateNotificacionStore(numSoli);
+                menuOption.appendChild(notificacion);
+                break;
             }
         }
     }
@@ -265,4 +264,14 @@ function checkSolicitudes() {
         nota.style.display = "";
         spanSolicitudes.style.display = "none";
     }
+}
+
+function generateNotificacionStore(numSoli)
+{
+    let notificationsStore = document.createElement("p");
+    notificationsStore.classList.add("notifications_store");
+    notificationsStore.classList.add("numero_solicitudes_tienda");
+    notificationsStore.textContent = numSoli;
+
+    return notificationsStore;
 }
