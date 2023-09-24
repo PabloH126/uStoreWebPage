@@ -116,8 +116,8 @@ solicitudesContainer.addEventListener("click", function(e) {
     let btnAprobar = e.target.closest('.solicitudesItem').querySelector('.aprobar');
     let btnRechazar = e.target.closest('.solicitudesItem').querySelector('.rechazar');
 
-    btnAprobar.classList.add('disabled');
-    btnRechazar.classList.add('disabled');
+    btnAprobar.style.display = "none";
+    btnRechazar.style.display = "none";
     
     console.log(btnAprobar);
     console.log(btnRechazar);

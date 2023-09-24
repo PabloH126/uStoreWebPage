@@ -89,11 +89,6 @@ h3{
     color: #6c6c6c;
 }
 
-.disabled {
-    display: none;
-    pointer-events: none;
-}
-
 @keyframes bounce_shake {
     0% {
         transform: scale(1, 1) translateY(0);
