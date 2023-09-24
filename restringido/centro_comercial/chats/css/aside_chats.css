@@ -104,6 +104,7 @@ hr{
 .contacto{
     display: flex;
     height: 8vh;
+    cursor: pointer;
 }
 
 .contact_profile_img{
