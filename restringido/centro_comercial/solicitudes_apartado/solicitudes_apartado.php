@@ -126,7 +126,7 @@
 					{
 						if ($idTienda == $tienda['idTienda'] && $numeroSoli > 0)
 						{
-							echo '<p class="notifications_store">' . $numeroSoli . '</p>';
+							echo '<p class="notifications_store numero_solicitudes_tienda">' . $numeroSoli . '</p>';
 						}
 					}
 
