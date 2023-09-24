@@ -88,6 +88,7 @@ hr{
 
 .button{
     padding: 9px 0;
+    border: none;
     width: 33px;
     height: 33px;
     cursor: pointer;

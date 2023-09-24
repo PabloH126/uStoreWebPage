@@ -69,10 +69,10 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
         
         for (let i = 0; i < notificacionesTienda.length; i++)
         {
-            var idTiendaDiv = element.closest('.menu-option').dataset.tiendaId;
+            var idTiendaDiv = notificacionesTienda[i].closest('.menu-option').dataset.tiendaId;
             if (parseInt(idTienda) === parseInt(idTiendaDiv))
             {
-                element.textContent = numSoli;
+                notificacionesTienda[i].textContent = numSoli;
             }
         }
         notificacionesTienda.forEach(function (element) {
