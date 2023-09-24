@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data: {
             labels: [],
             datasets:  [{
-                label: 'Ventas',
+                label: 'Usuarios que solicitaron apartado',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 data: [],

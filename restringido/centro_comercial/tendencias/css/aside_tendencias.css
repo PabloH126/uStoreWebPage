@@ -1,4 +1,6 @@
 
 #categorias{
     height: 37vh;
+    overflow: auto;
+    width: 0;
 }
