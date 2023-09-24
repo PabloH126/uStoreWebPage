@@ -206,8 +206,8 @@
 							<p><?php echo $solicitud['periodoApartado']?></p>
 							<p><?php echo $solicitud['ratioUsuario']?></p>
 							<p><?php echo $solicitud['unidadesProducto']?></p>
-							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar bttn_solicitudes'></i></p>
-							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar bttn_solicitudes'></i></p>
+							<button id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>"><i style="color: green;" class='bx bxs-check-circle aprobar bttn_solicitudes'></i></button>
+							<button id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>"><i style="color: #d30303;" class='bx bxs-x-circle rechazar bttn_solicitudes'></i></button>
 						</div>
 				<?php
 					}
