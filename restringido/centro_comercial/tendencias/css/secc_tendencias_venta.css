@@ -8,13 +8,13 @@ header .content .final #tendencias img {
 
 /*content*/
 
+.title{
+    display: grid;
+}
+
 .body,
 .title {
-    /*position: fixed;
-    display: grid;*/
     grid-template-columns: 93.5% 0%;
-    /*width: 88%;
-    right: 0;*/
     align-items: center;
     justify-items: center;
 }
