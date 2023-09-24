@@ -7,8 +7,6 @@
           <button class="options_aside">Gerentes</button>
       </div>
 
-      <!--  /// -->
-
       <div class="cajabuscar">
         <form method="get" id="buscarform">
             <input type="text" id="s" value="" placeholder="Buscar"  />
@@ -19,7 +17,7 @@
     </div>
 
     <div class="body-aside">
-      <div class="contacto">
+      <div class="contacto select">
         <div class="contact_profile_img">
           <img src="https://pm1.aminoapps.com/6366/c7a03a8c95506cbdf63b62e7999376336463723e_00.jpg" alt="Imagen de perfil del contacto">
         </div>
