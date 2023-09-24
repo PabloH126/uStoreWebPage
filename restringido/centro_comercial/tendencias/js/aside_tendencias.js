@@ -1,6 +1,30 @@
 let listElements = document.querySelectorAll('.list_button--click');
 
 listElements.forEach(listElement => {
+    // Verifica si el elemento tiene la clase "categorias"
+    if (listElement.classList.contains('categorias')) {
+        // Para elementos con la clase "categorias", establece una altura específica
+        listElement.addEventListener('click', () => {
+            listElement.classList.toggle('arrow');
+            let menu = listElement.nextElementSibling;
+            menu.style.height = '37vh'; // Establece la altura específica
+        });
+    } else {
+        // Para otros elementos, utiliza la lógica predeterminada
+        listElement.addEventListener('click', () => {
+            listElement.classList.toggle('arrow');
+            let height = 0;
+            let menu = listElement.nextElementSibling;
+            if (menu.clientHeight == 0) {
+                height = menu.scrollHeight;
+            }
+            menu.style.height = height + "px";
+        });
+    }
+});
+
+/*
+listElements.forEach(listElement => {
 
     //al dar click
     listElement.addEventListener('click', ()=>{
@@ -22,7 +46,7 @@ listElements.forEach(listElement => {
             menu.style.height = 37+"vh";
         }
     })
-});
+});*/
 
 let graficaBttns = document.querySelectorAll('.list_item:nth-child(1) .bttnp');
 let tiempoBttns = document.querySelectorAll('.list_item:nth-child(3) .bttnp');
