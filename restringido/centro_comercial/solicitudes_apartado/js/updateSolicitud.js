@@ -9,7 +9,7 @@ const item = document.getElementById('encabezado');
 const nota = document.querySelector('.nota');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
-
+const contentNumberNotificacion = docuemnt.querySelector('.content_number_notification');
 const token = document.cookie
     .split("; ")
     .find(p => p.startsWith("SessionToken="))
@@ -116,7 +116,7 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
                 notificacionesTotal.textContent = parseInt(notificacionesTotal.textContent) - 1;
                 if(parseInt(notificacionesTotal.textContent) <= 0)
                 {
-                    notificacionesTotal.remove();
+                    contentNumberNotificacion.remove();
                 }
                 for (let i = 0; i < notificacionesTienda.length; i++)
                 {
