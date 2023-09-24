@@ -119,6 +119,9 @@ solicitudesContainer.addEventListener("click", function(e) {
     btnAprobar.classList.add('disabled');
     btnRechazar.classList.add('disabled');
     
+    console.log(btnAprobar);
+    console.log(btnRechazar);
+    
     if (e.target.classList.contains("aprobar")) {
         UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     } else if (e.target.classList.contains("rechazar")) {
