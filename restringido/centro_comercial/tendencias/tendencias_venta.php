@@ -76,7 +76,7 @@ curl_close($ch);
                         <i class='bx bx-chevron-right row'></i>
                     </div>
 
-                    <ul class="list_show">
+                    <ul class="list_show" id="categorias">
                         <li class="list_inside">
 							<form action="">
 								<?php

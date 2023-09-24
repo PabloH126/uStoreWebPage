@@ -42,18 +42,17 @@
           <img src="https://i.blogs.es/6d63e9/minato-namikaze/1366_521.jpeg" alt="Imagen de perfil del contacto">
         </div>
         <div class="contact_info">
-          <div class="contact_name">Nombre del usuario</div>
+          <div class="contact_name">Asuna</div>
           <div class="message_preview">Previsualizacion del mensaje</div>
         </div>
       </div>
 
       <div class="contacto">
         <div class="contact_profile_img">
-          <img src="https://i.blogs.es/6d63e9/minato-namikaze/1366_521.jpeg" alt="Imagen de perfil del contacto">
+          <img src="https://images.alphacoders.com/131/thumb-1920-1316829.png" alt="Imagen de perfil del contacto">
         </div>
         <div class="contact_info">
           <div class="contact_name">Nombre del usuario</div>
-          <div class="message_preview">Previsualizacion del mensaje</div>
         </div>
       </div>
 

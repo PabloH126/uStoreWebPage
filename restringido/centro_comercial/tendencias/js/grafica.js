@@ -1,28 +1,14 @@
-var meses = [];
-var ventas = [];
-for (let index = 0; index < 50; index++) {
-    meses[index] = 'uwu' + index;
-    ventas[index] = Math.floor(Math.random() * 1000) + 1000;
-}
-
-ventas.map((value, index) => ({ value, index }))
-      .sort((a, b) => a.value - b.value)
-      .forEach((sortedItem, index) => {
-          ventas[index] = sortedItem.value;
-          meses[index] = meses[sortedItem.index];
-      });
-
 document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('grafica').getContext('2d');
     var grafica = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: meses,
+            labels: [],
             datasets:  [{
                 label: 'Ventas',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
-                data: ventas,
+                data: [],
                 borderWidth: 1
             }]
         },
@@ -40,6 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
             }
         }
+    });
+
+    document.querySelectorAll('.bttnp').forEach(btn => {
+        btn.addEventListener('click', actualizarGrafica());
+    });
+    
+    document.querySelectorAll("input[name='categorias[]']").forEach(cat => {
+        btn.addEventListener('click', actualizarGrafica());
     });
 
     document.getElementById("downloadImage").addEventListener("click", function() {
@@ -66,3 +60,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function actualizarGrafica(grafica)
+{
+    var meses = [];
+    var ventas = [];
+    for (let index = 0; index < 50; index++) {
+        meses[index] = 'uwu' + index;
+        ventas[index] = Math.floor(Math.random() * 1000) + 1000;
+    }
+
+    ventas.map((value, index) => ({ value, index }))
+        .sort((a, b) => a.value - b.value)
+        .forEach((sortedItem, index) => {
+            ventas[index] = sortedItem.value;
+            meses[index] = meses[sortedItem.index];
+        });
+
+    grafica.data.labels = meses;
+    grafica.data.datasets[0].data = ventas;
+    grafica.update();
+}
