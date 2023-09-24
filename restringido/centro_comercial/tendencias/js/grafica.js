@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function actualizarGrafica(grafica)
 {
+    
     var meses = [];
     var ventas = [];
     for (let index = 0; index < 50; index++) {
