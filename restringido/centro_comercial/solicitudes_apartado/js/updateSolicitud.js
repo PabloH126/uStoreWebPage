@@ -10,7 +10,6 @@ const nota = document.querySelector('.nota');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 const contentNumberNotificacion = document.querySelector('.content_number_notification');
-let solicitudesItem = document.querySelectorAll('.solicitudesItem');
 
 const token = document.cookie
     .split("; ")
@@ -114,10 +113,6 @@ connection.on("NameGroup", function (nombre) {
 })
 
 solicitudesContainer.addEventListener("click", function(e) {
-    let aprobarBtn = e.target.closest('#aprobar');
-    let rechazarBtn = e.target.closest('#rechazar');
-    aprobarBtn.disabled = true;
-    rechazarBtn.disabled = true;
     if (e.target.classList.contains("aprobar")) {
         UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     } else if (e.target.classList.contains("rechazar")) {
