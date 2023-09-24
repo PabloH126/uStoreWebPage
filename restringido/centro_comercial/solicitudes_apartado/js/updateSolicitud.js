@@ -114,10 +114,7 @@ connection.on("NameGroup", function (nombre) {
 })
 
 solicitudesContainer.addEventListener("click", function(e) {
-    if(btnClicked)
-    {
-        return;
-    }
+
 
     btnClicked = true;
 
