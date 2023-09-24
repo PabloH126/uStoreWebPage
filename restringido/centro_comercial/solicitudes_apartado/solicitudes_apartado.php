@@ -106,7 +106,7 @@
 						$sumaSolicitudes += $numeroSoli;
 					}
 
-					echo '<div class="content_number_notification" ' . $sumaSolicitudes == 0 ? 'style="display: none"' : '' . '>';
+					echo '<div class="content_number_notification" ' . ($sumaSolicitudes == 0 ? 'style="display: none"' : '') . '>';
 					echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
 					echo '</div>';
 				?>
@@ -129,7 +129,7 @@
 						}
 					}
 
-					echo '<p class="notifications_store numero_solicitudes_tienda" ' . $numeroSolicitud == 0 ? 'style="display: none"' : '' . '>' . $numeroSolicitud . '</p>';
+					echo '<p class="notifications_store numero_solicitudes_tienda" ' . ($numeroSolicitud == 0 ? 'style="display: none"' : '') . '>' . $numeroSolicitud . '</p>';
 					
 					echo '</div>';
 
@@ -222,6 +222,6 @@
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.10/signalr.min.js"></script>
 	<script src="../js/menu_desplegable.js"></script>
-	<!--<script src="js/updateSolicitud.js"></script>-->
+	<script src="js/updateSolicitud.js"></script>
 </body>
 </html>
