@@ -106,8 +106,8 @@
 						$sumaSolicitudes += $numeroSoli;
 					}
 
-					echo '<div class="content_number_notification">';
-					echo '<div class="notifications_store" ' . $sumaSolicitudes == 0 ? 'style="display: none"' : '' . '><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
+					echo '<div class="content_number_notification" ' . $sumaSolicitudes == 0 ? 'style="display: none"' : '' . '>';
+					echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
 					echo '</div>';
 				?>
 				
