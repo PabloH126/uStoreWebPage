@@ -94,7 +94,7 @@ hr{
     cursor: pointer;
     text-align: center;
     color: white;
-    transition: all 0.25s linear;
+    transition: all 0.1s linear;
     background: transparent;
     z-index: 10;
     vertical-align: top;
