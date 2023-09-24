@@ -42,17 +42,8 @@ hr{
     padding: 0;
     width: 0;
 }
-/*
-.search-aside-chat #buscador {
-    display: none;
-}
 
-.search-aside-chat label{
-
-}*/
-
-/* **** */
-
+/* Buscador */
 
 .cajabuscar {
     width: 100%;
@@ -74,17 +65,6 @@ hr{
 
 #buscarform .search {
     font-size: 25px;
-    /*top: 0px;
-    color: #FFF;
-    background: #33BCF2;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 9px;
-    height: 24px;
-    width: 24px;
-    text-align: center;*/
-
     color: #007096;
     
 }
@@ -107,21 +87,16 @@ hr{
 }
 
 .button{
-    /*right: 0;
-    top: 0;*/
     padding: 9px 0;
     float: right;
-    /*border: 0;*/
     width: 33px;
     height: 33px;
     cursor: pointer;
     text-align: center;
     padding-top: 10px;
-    color: #a4a4a4;
+    color: transparent;
     transition: all 0.25s linear;
     background: transparent;
     z-index: 10;
-    /*position: absolute;*/
-    border: 0;
     vertical-align: top;
 }

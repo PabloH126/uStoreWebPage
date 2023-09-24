@@ -119,7 +119,7 @@
 			<div id="sub-menu">
 				<?php foreach ($tiendas as $tienda)
 				{
-					echo '<div class="menu-option">
+					echo '<div class="menu-option" data-tienda-id="' . $tienda['idTienda'] . '">
 							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
 
 					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
