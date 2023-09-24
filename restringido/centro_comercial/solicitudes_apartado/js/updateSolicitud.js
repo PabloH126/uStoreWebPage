@@ -113,6 +113,10 @@ connection.on("NameGroup", function (nombre) {
 })
 
 solicitudesContainer.addEventListener("click", function(e) {
+    let cancelBtn = e.target.closest('.bttn_solicitudes');
+    cancelBtn.disabled = true;
+    e.target.disabled = true;
+
     if (e.target.classList.contains("aprobar")) {
         UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     } else if (e.target.classList.contains("rechazar")) {
@@ -152,11 +156,11 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
                         notificacionesTienda[i].textContent = parseInt(notificacionesTienda[i].textContent) - 1;
                         if(parseInt(notificacionesTienda[i].textContent) > 0)
                         {
-                            notificacionesTienda[i].style.display = "none";
+                            notificacionesTienda[i].style.display = "";
                         }
                         else
                         {
-                            notificacionesTienda[i].style.display = "";
+                            notificacionesTienda[i].style.display = "none";
                         }
                         break;
                     }
