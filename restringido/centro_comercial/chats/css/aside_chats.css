@@ -101,7 +101,19 @@ hr{
 
 /* body aside */
 
+.contacto{
+    display: flex;
+}
+
+.contact_profile_img{
+    width: 20%;
+}
+
 .contact_profile_img img{
     width: 10px;
     height: 10px;
+}
+
+.contact_info{
+    width: 80%;
 }

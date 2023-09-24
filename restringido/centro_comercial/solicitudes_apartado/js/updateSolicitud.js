@@ -65,6 +65,8 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
     console.log(notificacionesTotal);
     console.log(notificacionesTienda);
     let numNotificaciones = 0;
+    let submenu = document.getElementById('sub-menu');
+
     for (var [idTiendaDictionary, numSoli] of Object.entries(notificaciones)) {
         console.log("IdTienda: " + idTiendaDictionary + ", numero de solicitudes: " + numSoli);
         numNotificaciones += numSoli;
@@ -73,7 +75,11 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
         {
             if (!notificacionesTienda[i])
             {
-                
+                <div class="menu-option" data-tienda-id="' . $tienda['idTienda'] . '"></div>
+                let menuOption = document.createElement('div');
+                menuOption.classList.add('menu-option');
+                menuOption.dataset.tiendaId = idTiendaDictionary
+
             }
             let menuOption = notificacionesTienda[i].closest('.menu-option');
             console.log("Menu option: ", menuOption);
