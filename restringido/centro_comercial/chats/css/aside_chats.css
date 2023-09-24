@@ -25,6 +25,7 @@ aside .list{
     font-family: 'Golos Text', sans-serif;
     font-size: inherit;
     color: white;
+    cursor: pointer;
 }
 
 .options_aside:hover{
