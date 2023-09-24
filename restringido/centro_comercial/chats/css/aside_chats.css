@@ -67,7 +67,6 @@ hr {
 #buscarform .search {
     font-size: 25px;
     color: #007096;
-
 }
 
 #buscarform fieldset {
@@ -144,6 +143,6 @@ hr {
     background-color: white;
     border-radius: 6px;
     color: black;
-    box-shadow: -5px 5px 10px 2px #1c4b5a;
-    box-shadow: -5px 5px 10px 2px #1c4b5a;
+    box-shadow: -5px 3px 10px 2px #1c4b5a;
+    box-shadow: -5px 3px 10px 2px #1c4b5a;
 }
