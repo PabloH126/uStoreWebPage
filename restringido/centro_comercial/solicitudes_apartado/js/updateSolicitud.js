@@ -18,6 +18,24 @@ const token = document.cookie
 
 document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
+    notificacionesTienda.forEach(notificacion => {
+        if (parseInt(notificacion.textContent) <= 0)
+        {
+            notificacion.style.display = "none";
+        }
+        else
+        {
+            notificacion.style.display = "";
+        }
+    });
+    if (parseInt(notificacionesTotal) <= 0)
+    {
+        contentNumberNotificacion.style.display = "none";
+    }
+    else
+    {
+        contentNumberNotificacion.style.display = "";
+    }
 });
 
 const connection = new signalR.HubConnectionBuilder()
@@ -74,34 +92,15 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
         
         for (let i = 0; i < notificacionesTienda.length; i++)
         {
-            if (!notificacionesTienda[i])
-            {
-                <div class="menu-option" data-tienda-id="' . $tienda['idTienda'] . '"></div>
-                let menuOption = document.createElement('div');
-                menuOption.classList.add('menu-option');
-                menuOption.dataset.tiendaId = idTiendaDictionary
-
-            }
             let menuOption = notificacionesTienda[i].closest('.menu-option');
-            console.log("Menu option: ", menuOption);
             let idTiendaDiv = menuOption.dataset.tiendaId;
             if (parseInt(idTiendaDictionary) === parseInt(idTiendaDiv))
             {
-                console.log(notificacionesTienda[i]);
-                if (!notificacionesTienda[i])
-                {
-                    let p = document.createElement("p");
-                    p.classList.add('notifications_store');
-                    p.classList.add('numero_solicitudes_tienda');
-                    p.textContent = numSoli;
-                    console.log(p);
-                    menuOption.appendChild(p);
-                }
-                else
-                {
-                    notificacionesTienda[i].textContent = numSoli;
-                }
-                break;
+                    if (numSoli > 0)
+                    {
+                        notificacionesTienda[i].textContent = numSoli;
+                    }
+                    break;
             }
         }
     }
@@ -151,9 +150,13 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
                     if (parseInt(idTienda) === parseInt(idTiendaDiv))
                     {
                         notificacionesTienda[i].textContent = parseInt(notificacionesTienda[i].textContent) - 1;
-                        if(parseInt(notificacionesTienda[i].textContent) <= 0)
+                        if(parseInt(notificacionesTienda[i].textContent) > 0)
                         {
-                            notificacionesTienda[i].remove();
+                            notificacionesTienda[i].style.display = "none";
+                        }
+                        else
+                        {
+                            notificacionesTienda[i].style.display = "";
                         }
                         break;
                     }

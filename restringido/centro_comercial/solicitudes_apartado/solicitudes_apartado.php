@@ -121,7 +121,7 @@
 
 					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
 					{
-						if ($idTienda == $tienda['idTienda'] && $numeroSoli > 0)
+						if ($idTienda == $tienda['idTienda'])
 						{
 							echo '<p class="notifications_store numero_solicitudes_tienda">' . $numeroSoli . '</p>';
 						}
