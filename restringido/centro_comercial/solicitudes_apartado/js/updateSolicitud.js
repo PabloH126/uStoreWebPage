@@ -9,7 +9,7 @@ const item = document.getElementById('encabezado');
 const nota = document.querySelector('.nota');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
-const contentNumberNotificacion = docuemnt.querySelector('.content_number_notification');
+const contentNumberNotificacion = document.querySelector('.content_number_notification');
 const token = document.cookie
     .split("; ")
     .find(p => p.startsWith("SessionToken="))
