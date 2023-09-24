@@ -1,6 +1,7 @@
 let canva = document.getElementById('grafica');
 let filterList = document.getElementById('filterList');
 let btnCrearPubli = document.getElementById('btnCrearPubli');
+let spanFiltro = document.getElementById('span-seleccion-tienda');
 
 document.addEventListener('DOMContentLoaded', function() {
     canva.style.display = "none";
@@ -98,6 +99,7 @@ function actualizarGrafica(grafica)
 
 function ActivarGrafica()
 {
+    spanFiltro.style.display = "none";
     canva.style.display = "";
     filterList.style.display = "";
     btnCrearPubli.style.display = "";
