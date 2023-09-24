@@ -45,11 +45,11 @@ solicitudesContainer.addEventListener("click", function(e) {
     if (e.target.classList.contains("aprobar")) {
         btnAprobar.style.display = "none";
         btnRechazar.style.display = "none";
-        UpdateSolicitud('activa', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
+        UpdateSolicitud('completada', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     } else if (e.target.classList.contains("rechazar")) {
         btnAprobar.style.display = "none";
         btnRechazar.style.display = "none";
-        UpdateSolicitud('rechazada', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
+        UpdateSolicitud('cancelada', e.target.dataset.solicitudId, e.target.closest('.solicitudesItem'));
     }
 });
 

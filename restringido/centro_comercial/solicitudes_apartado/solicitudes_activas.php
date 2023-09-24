@@ -134,10 +134,6 @@
 				{
 					echo '<span id="span-seleccion-tienda">' .  $solicitudesError . '</span>';
 				}
-				/*else if (isset($messageSolicitud))
-				{
-					echo '<span id="span-seleccion-tienda">' .  $messageSolicitud . '</span>';
-				}*/
 				else
 				{
 				?>
@@ -145,8 +141,6 @@
 					$tiempoActual = new DateTime('now', new DateTimeZone('Etc/GMT+6'));
 					foreach ($solicitudes as $solicitud)
 					{
-						//$tiempoVencimiento = DateTime::createFromFormat('Y-m-d H:i:s.v', $solicitud['fechaVencimiento'], new DateTimeZone('UTC'));
-						//
 						$simpleFecha = substr($solicitud['fechaVencimiento'], 0, 19);
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
 						$tiempoVencimiento->setTimezone(new DateTimeZone('Etc/GMT+6'));
