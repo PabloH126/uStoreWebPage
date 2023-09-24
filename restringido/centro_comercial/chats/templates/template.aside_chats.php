@@ -1,13 +1,13 @@
 <aside>
-    <ul class="list">
-      <div class="header_aside">
-        <div class="aside_options_chat">
-            <button class="options_aside">Usuarios</button>
-          <hr>
-            <button class="options_aside">Gerentes</button>
-        </div>
+  <ul class="list">
+    <div class="header_aside">
+      <div class="aside_options_chat">
+          <button class="options_aside">Usuarios</button>
+        <hr>
+          <button class="options_aside">Gerentes</button>
+      </div>
 
-        <!--  /// -->
+      <!--  /// -->
 
       <div class="cajabuscar">
         <form method="get" id="buscarform">
@@ -16,10 +16,11 @@
             <i class='bx bx-search search'></i>
         </form>
       </div>
+    </div>
+    
+    <div class="body-aside">
 
-      <div class="body-aside">
-
-      </div>
-        
-    </ul>
+    </div>
+      
+  </ul>
 </aside>

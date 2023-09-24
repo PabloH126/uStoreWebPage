@@ -7,6 +7,8 @@ const idTienda = urlParams.get('id');
 const spanSolicitudes = document.getElementById('span-seleccion-tienda');
 const item = document.getElementById('encabezado');
 const nota = document.querySelector('.nota');
+const notificacionesTotal = document.getElementById('number_notification');
+const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 
 const token = document.cookie
     .split("; ")
@@ -60,19 +62,17 @@ connection.on("RecieveSolicitudes", function (solicitudes) {
 
 connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
     console.log(notificaciones);
-    let notificacionesTotal = document.getElementById('number_notification');
-    let notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
     console.log(notificacionesTotal);
     console.log(notificacionesTienda);
     let numNotificaciones = 0;
-    for (var [idTienda, numSoli] of Object.entries(notificaciones)) {
-        console.log("IdTienda: " + idTienda + ", numero de solicitudes: " + numSoli);
+    for (var [idTiendaDictionary, numSoli] of Object.entries(notificaciones)) {
+        console.log("IdTienda: " + idTiendaDictionary + ", numero de solicitudes: " + numSoli);
         numNotificaciones += numSoli;
         
         for (let i = 0; i < notificacionesTienda.length; i++)
         {
             let idTiendaDiv = notificacionesTienda[i].closest('.menu-option').dataset.tiendaId;
-            if (parseInt(idTienda) === parseInt(idTiendaDiv))
+            if (parseInt(idTiendaDictionary) === parseInt(idTiendaDiv))
             {
                 notificacionesTienda[i].textContent = numSoli;
                 break;
@@ -96,6 +96,7 @@ solicitudesContainer.addEventListener("click", function(e) {
 
 async function UpdateSolicitud(status, idSolicitud, elementClicked)
 {
+    let notificacionTienda 
     const formData = new FormData();
     formData.append('statusSolicitud', status);
     formData.append('idSolicitud', idSolicitud);
@@ -113,6 +114,8 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
             elementClicked.addEventListener('animationend', () => {
                 elementClicked.remove();
                 checkSolicitudes();
+                notificacionesTotal.textContent = parseInt(notificacionesTotal.textContent) - 1;
+                
             })
         }
         else
