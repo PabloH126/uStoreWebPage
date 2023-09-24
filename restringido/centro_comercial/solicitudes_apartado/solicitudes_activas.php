@@ -102,7 +102,7 @@
 				</h3>
 			</div>
 			<div id="content-cambio-secc">
-				<a href="solicitudes_apartado.php" class="bttn_cambio_seccion">Solicitudes de apartado</a>
+				<a href="solicitudes_apartado.php<?php echo isset($_GET['id']) ? '?id='. $_GET['id'] : ''; ?>" class="bttn_cambio_seccion">Solicitudes de apartado</a>
 			</div>
 		</div>
 		<?php

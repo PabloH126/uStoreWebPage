@@ -6,7 +6,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const idTienda = urlParams.get('id');
 const spanSolicitudes = document.getElementById('span-seleccion-tienda');
 const item = document.getElementById('encabezado');
-const nota = document.querySelector('.nota');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 const contentNumberNotificacion = document.querySelector('.content_number_notification');
@@ -144,13 +143,11 @@ function checkSolicitudes() {
     console.log(spanSolicitudes);
     if (!solicitudesItem) {
         item.style.display = "none";
-        nota.style.display = "none";
         spanSolicitudes.style.display = "";
     }
     else
     {
         item.style.display = "";
-        nota.style.display = "";
         spanSolicitudes.style.display = "none";
     }
 }

@@ -8,11 +8,6 @@ header .content .final #tendencias img {
 
 /*content*/
 
-.content{
-    display: grid;
-    grid-template-columns: 14vw 1fr;
-}
-
 .body,
 .title {
     /*position: fixed;
