@@ -36,22 +36,8 @@ curl_close($ch);
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
-		<div class="title">
-			<div>
-				<h1>Tendencias de venta</h1>
-			</div>
-			<div id="filterList">
-				<span class="material-symbols-outlined icon-filter" id="menu-icon">filter_list</span>
-				<div id="sub-menu">
-					<div class="menu-option"><a id="MayorMenor">Mayor a Menor</a></div>
-					<div class="menu-option"><a id="MenorMayor">Menor a Mayor</a></div>
-					<div class="menu-option"><a id="A-Z">Nombre: A-Z</a></div>
-					<div class="menu-option"><a id="Z-A">Nombre: Z-A</a></div>
-				</div>
-			</div>
-		</div>
 
-		<aside>
+	<aside>
             <ul class="list">
                 
                 <li class="list_item">
@@ -107,6 +93,21 @@ curl_close($ch);
                 </li>
             </ul>
 		</aside>
+
+		<div class="title">
+			<div>
+				<h1>Tendencias de venta</h1>
+			</div>
+			<div id="filterList">
+				<span class="material-symbols-outlined icon-filter" id="menu-icon">filter_list</span>
+				<div id="sub-menu">
+					<div class="menu-option"><a id="MayorMenor">Mayor a Menor</a></div>
+					<div class="menu-option"><a id="MenorMayor">Menor a Mayor</a></div>
+					<div class="menu-option"><a id="A-Z">Nombre: A-Z</a></div>
+					<div class="menu-option"><a id="Z-A">Nombre: Z-A</a></div>
+				</div>
+			</div>
+		</div>
 
 		<div class="body">
 			<canvas id="grafica"></canvas>

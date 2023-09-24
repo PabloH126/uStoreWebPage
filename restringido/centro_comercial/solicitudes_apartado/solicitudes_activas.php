@@ -128,7 +128,7 @@
 					<p>Recogió</p>
 					<p>Borrar</p>
 				</div>
-				<span id="span-seleccion-tienda">No hay solicitudes pendientes en esta tienda</span>
+				<span id="span-seleccion-tienda">No hay solicitudes activas en esta tienda</span>
 				<?php
 				if (isset($solicitudesError))
 				{
@@ -172,6 +172,6 @@
 		</div>
 	</div>
 	<script src="../js/menu_desplegable.js"></script>
-	<script src="js/updateSolicitud.js"></script>
+	<script src="js/updateSolicitudActiva.js"></script>
 </body>
 </html>
