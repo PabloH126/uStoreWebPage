@@ -40,7 +40,9 @@ require '../../security.php';
 
 	<div class="content">
         <?php require("templates/template.aside_chats.php") ?>
+		<div class="chat-area">
 
+		</div>
 	</div>
 	
 </body>

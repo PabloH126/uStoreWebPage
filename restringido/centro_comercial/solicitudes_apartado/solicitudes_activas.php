@@ -128,16 +128,16 @@
 					<p>Recogió</p>
 					<p>Borrar</p>
 				</div>
+				<span id="span-seleccion-tienda">No hay solicitudes pendientes en esta tienda</span>
 				<?php
-				
 				if (isset($solicitudesError))
 				{
 					echo '<span id="span-seleccion-tienda">' .  $solicitudesError . '</span>';
 				}
-				else if (isset($messageSolicitud))
+				/*else if (isset($messageSolicitud))
 				{
 					echo '<span id="span-seleccion-tienda">' .  $messageSolicitud . '</span>';
-				}
+				}*/
 				else
 				{
 				?>
@@ -153,7 +153,7 @@
 						$tiempoVencimiento = $tiempoVencimiento->format('Y-m-d H:i:s');
 
 				?>
-						<div class="item">
+						<div class="item solicitudesItem">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
 							<p><label><?php echo $solicitud['personalizado'] == true ? 'Personalizado' : '';?></label>
 							<?php echo $solicitud['nombreProducto']?></p>
