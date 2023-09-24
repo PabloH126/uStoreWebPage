@@ -98,7 +98,10 @@ function actualizarGrafica(grafica)
 
 function ActivarGrafica()
 {
-    spanFiltro.remove();
+    if (spanFiltro)
+    {
+        spanFiltro.remove();
+    }
     canva.style.display = "";
     filterList.style.display = "";
     btnCrearPubli.style.display = "";
