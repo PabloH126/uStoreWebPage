@@ -30,9 +30,7 @@ header .content .final #tendencias img {
 }
 
 .body {
-    max-height: 66%;
-    top: 30%;
-    grid-template-columns: none;
+    max-height: 72%;
 }
 
 .crear-publicacion {
