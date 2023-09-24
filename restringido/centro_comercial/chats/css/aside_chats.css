@@ -109,6 +109,7 @@ hr {
 
 .body-aside::-webkit-scrollbar {
     -webkit-appearance: none;
+    width: 0;
 }
 
 .contacto {
