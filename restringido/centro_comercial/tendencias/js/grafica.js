@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function actualizarGrafica(grafica)
 {
-
+    ActivarGrafica();
     var meses = [];
     var ventas = [];
     for (let index = 0; index < 50; index++) {
@@ -94,7 +94,6 @@ function actualizarGrafica(grafica)
     grafica.data.labels = meses;
     grafica.data.datasets[0].data = ventas;
     grafica.update();
-    ActivarGrafica();
 }
 
 function ActivarGrafica()
