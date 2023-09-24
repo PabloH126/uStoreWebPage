@@ -118,7 +118,7 @@
 			{
 		?>
 		<div>
-			<div class="lista">
+			<div class="lista" id="lista">
 				<div class="item" id="encabezado">
 					<p>Imagen del producto</p>
 					<p>Nombre del producto</p>
