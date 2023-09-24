@@ -96,7 +96,6 @@ solicitudesContainer.addEventListener("click", function(e) {
 
 async function UpdateSolicitud(status, idSolicitud, elementClicked)
 {
-    let notificacionTienda 
     const formData = new FormData();
     formData.append('statusSolicitud', status);
     formData.append('idSolicitud', idSolicitud);
@@ -115,7 +114,15 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
                 elementClicked.remove();
                 checkSolicitudes();
                 notificacionesTotal.textContent = parseInt(notificacionesTotal.textContent) - 1;
-                
+                for (let i = 0; i < notificacionesTienda.length; i++)
+                {
+                    let idTiendaDiv = notificacionesTienda[i].closest('.menu-option').dataset.tiendaId;
+                    if (parseInt(idTienda) === parseInt(idTiendaDiv))
+                    {
+                        notificacionesTienda[i].textContent = parseInt(notificacionesTienda[i].textContent) - 1;
+                        break;
+                    }
+                }
             })
         }
         else
