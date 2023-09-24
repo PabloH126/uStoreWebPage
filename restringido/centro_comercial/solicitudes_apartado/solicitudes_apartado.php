@@ -107,7 +107,7 @@
 					}
 
 					echo '<div class="content_number_notification">';
-					echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
+					echo '<div class="notifications_store" ' . $sumaSolicitudes == 0 ? 'style="display: none"' : '' . '><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
 					echo '</div>';
 				?>
 				
@@ -128,7 +128,9 @@
 							break;
 						}
 					}
-					echo '<p class="notifications_store numero_solicitudes_tienda">' . $numeroSolicitud . '</p>';
+
+					echo '<p class="notifications_store numero_solicitudes_tienda" ' . $numeroSolicitud == 0 ? 'style="display: none"' : '' . '>' . $numeroSolicitud . '</p>';
+					
 					echo '</div>';
 
 				};
