@@ -1,6 +1,8 @@
 aside {
+    display: flex;
+    /*
     position: fixed;
-    float: left;
+    float: left;*/
     width: 14vw;
     height: 88vh;
     top: 12vh;
