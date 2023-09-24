@@ -20,7 +20,9 @@
 
     <div class="body-aside">
       <div class="contacto">
-        <div class="contact_profile_img"></div>
+        <div class="contact_profile_img">
+          <img src="" alt="">
+        </div>
         <div class="contact_info">
           <div class="contact_name"></div>
           <div class="message_preview"></div>

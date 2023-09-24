@@ -75,13 +75,15 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
             let idTiendaDiv = menuOption.dataset.tiendaId;
             if (parseInt(idTiendaDictionary) === parseInt(idTiendaDiv))
             {
+                console.log(notificacionesTienda[i]);
                 if (!notificacionesTienda[i])
                 {
                     let p = document.createElement("p");
                     p.classList.add('notifications_store');
                     p.classList.add('numero_solicitudes_tienda');
                     p.textContent = numSoli;
-
+                    console.log(p);
+                    console.log(menuOption);
                     menuOption.appendChild(p);
                 }
                 else
