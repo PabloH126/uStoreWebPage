@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelectorAll('.bttnp').forEach(btn => {
-        btn.addEventListener('click', actualizarGrafica());
+        btn.addEventListener('click', actualizarGrafica(grafica));
     });
     
     document.querySelectorAll("input[name='categorias[]']").forEach(cat => {
-        btn.addEventListener('click', actualizarGrafica());
+        btn.addEventListener('click', actualizarGrafica(grafica));
     });
 
     document.getElementById("downloadImage").addEventListener("click", function() {
