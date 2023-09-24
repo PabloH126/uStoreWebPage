@@ -86,7 +86,7 @@ hr{
     text-align: center;*/
 
     color: #007096;
-    margin: 0 0 0 -35px;
+    
 }
 #buscarform fieldset { width: 100% }
 
@@ -99,6 +99,11 @@ hr{
     border: 1px solid #fff; 
     outline: none;
     border-radius: 5px;
+}
+
+#buscarform .search,
+.button{
+    margin: 0 0 0 -35px;
 }
 
 .button{
