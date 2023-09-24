@@ -69,15 +69,13 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
         
         for (let i = 0; i < notificacionesTienda.length; i++)
         {
-            var idTiendaDiv = notificacionesTienda[i].closest('.menu-option').dataset.tiendaId;
+            let idTiendaDiv = notificacionesTienda[i].closest('.menu-option').dataset.tiendaId;
             if (parseInt(idTienda) === parseInt(idTiendaDiv))
             {
                 notificacionesTienda[i].textContent = numSoli;
+                break;
             }
         }
-        notificacionesTienda.forEach(function (element) {
-            
-        })
     }
     notificacionesTotal.textContent = numNotificaciones;
 });
