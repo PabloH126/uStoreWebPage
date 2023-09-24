@@ -14,7 +14,6 @@
             <input type="text" id="s" value="" placeholder="Buscar"  />
             <input class="button" type="submit" value="" />
             <i class='bx bx-search search'></i>
-            <i class="search"></i>
         </form>
       </div>
 
