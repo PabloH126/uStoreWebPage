@@ -140,6 +140,8 @@ function hideNotification() {
 
 function checkSolicitudes() {
     let solicitudesItem = solicitudesContainer.querySelector('.solicitudesItem');
+    console.log(solicitudesItem);
+    console.log(spanSolicitudes);
     if (!solicitudesItem) {
         item.style.display = "none";
         nota.style.display = "none";

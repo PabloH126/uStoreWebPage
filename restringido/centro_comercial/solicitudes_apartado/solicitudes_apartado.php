@@ -153,7 +153,7 @@
 			</div>
 			
 			<div id="content-cambio-secc">
-				<a href="solicitudes_activas.php?id=<?php echo isset($_GET['id']) ? $_GET['id'] : ''; ?>" class="bttn_cambio_seccion">Ver solicitudes activas</a>
+				<a href="solicitudes_activas.php<?php echo isset($_GET['id']) ? '?id='. $_GET['id'] : ''; ?>" class="bttn_cambio_seccion">Ver solicitudes activas</a>
 			</div>
 			
 		</div>

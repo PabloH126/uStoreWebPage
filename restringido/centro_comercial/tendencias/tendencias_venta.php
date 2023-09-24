@@ -37,7 +37,7 @@ curl_close($ch);
 
 	<div class="content">
 
-	<aside>
+		<aside>
             <ul class="list">
                 
                 <li class="list_item">
@@ -94,6 +94,9 @@ curl_close($ch);
             </ul>
 		</aside>
 
+		<div class="">
+
+		</div>
 		<div class="title">
 			<div>
 				<h1>Tendencias de venta</h1>
