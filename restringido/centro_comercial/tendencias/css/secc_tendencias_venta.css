@@ -7,13 +7,19 @@ header .content .final #tendencias img {
 }
 
 /*content*/
+
+.content{
+    display: grid;
+    grid-template-columns: 14vw 1fr;
+}
+
 .body,
 .title {
-    position: fixed;
-    display: grid;
+    /*position: fixed;
+    display: grid;*/
     grid-template-columns: 93.5% 0%;
-    width: 88%;
-    right: 0;
+    /*width: 88%;
+    right: 0;*/
     align-items: center;
     justify-items: center;
 }

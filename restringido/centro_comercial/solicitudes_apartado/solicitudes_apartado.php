@@ -153,7 +153,7 @@
 			</div>
 			
 			<div id="content-cambio-secc">
-				<a href="solicitudes_activas.php" class="bttn_cambio_seccion">Ver solicitudes activas</a>
+				<a href="solicitudes_activas.php?id=<?php echo isset($_GET['id']) ? $_GET['id'] : ''; ?>" class="bttn_cambio_seccion">Ver solicitudes activas</a>
 			</div>
 			
 		</div>
@@ -187,10 +187,6 @@
 				{
 					echo '<span id="span-seleccion-tienda">' .  $solicitudesError . '</span>';
 				}
-				/*else if (isset($messageSolicitud))
-				{
-					echo '<span id="span-seleccion-tienda">' .  $messageSolicitud . '</span>';
-				}*/
 				else
 				{
 				?>
