@@ -132,6 +132,10 @@ hr {
     padding: 2px 7px;
 }
 
+.contact_name{
+    font-weight: bold;
+}
+
 .contacto.select {
     background-color: white;
     border-radius: 6px;

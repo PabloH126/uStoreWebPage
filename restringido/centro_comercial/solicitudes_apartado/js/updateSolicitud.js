@@ -105,14 +105,7 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
             }
         }
     }
-
-    if(notificacionesTotal)
-    {
-        let contentNumber = document.createElement('div');
-        contentNumber.className = 'content_number_notification';
-        let notificacionStore = document.
-
-    }
+    contentNumberNotificacion.style.display = "";
     notificacionesTotal.textContent = numNotificaciones;
 });
 
@@ -150,7 +143,7 @@ async function UpdateSolicitud(status, idSolicitud, elementClicked)
                 notificacionesTotal.textContent = parseInt(notificacionesTotal.textContent) - 1;
                 if(parseInt(notificacionesTotal.textContent) <= 0)
                 {
-                    contentNumberNotificacion.remove();
+                    contentNumberNotificacion.style.display = "none";
                 }
                 for (let i = 0; i < notificacionesTienda.length; i++)
                 {
