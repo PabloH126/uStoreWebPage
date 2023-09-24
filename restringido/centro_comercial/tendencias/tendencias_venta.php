@@ -121,7 +121,6 @@ curl_close($ch);
 				<div class="menu-option"><a id="downloadPDF">PDF</a></div>
 				<div class="menu-option"><a id="downloadImage">PNG</a></div>
 			</div>
-			
 		</div>
 	</div>
 	<?php require("templates/template.scripts_tendencias.php") ?>

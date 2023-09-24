@@ -87,7 +87,7 @@
 				?>
 			</div>
 			<div id="titles_page">
-				<h1>Solicitudes de apartado</h1>
+				<h1>Solicitudes activas</h1>
 				<h3>
 					<?php 
 						foreach($tiendas as $tienda)
