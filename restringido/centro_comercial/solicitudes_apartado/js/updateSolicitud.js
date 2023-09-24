@@ -71,6 +71,10 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
         
         for (let i = 0; i < notificacionesTienda.length; i++)
         {
+            if (!notificacionesTienda[i])
+            {
+                
+            }
             let menuOption = notificacionesTienda[i].closest('.menu-option');
             console.log("Menu option: ", menuOption);
             let idTiendaDiv = menuOption.dataset.tiendaId;

@@ -31,7 +31,7 @@
 
       <div class="contacto">
         <div class="contact_profile_img">
-          <img src="https://pm1.aminoapps.com/6366/c7a03a8c95506cbdf63b62e7999376336463723e_00.jpg" alt="Imagen de perfil del contacto">
+          <img src="https://i.blogs.es/6d63e9/minato-namikaze/1366_521.jpeg" alt="Imagen de perfil del contacto">
         </div>
         <div class="contact_info">
           <div class="contact_name">Minato chiquito c:</div>
