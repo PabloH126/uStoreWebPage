@@ -62,6 +62,8 @@ connection.on("RecieveUpdateNotificaciones", function (notificaciones) {
     console.log(notificaciones);
     let notificacionesTotal = document.getElementById('number_notification');
     let notificacionesTienda = document.querySelectorAll('.notifications_store');
+    console.log(notificacionesTotal);
+    console.log(notificacionesTienda);
     let numNotificaciones = 0;
     for (var [idTienda, numSoli] of Object.entries(notificaciones)) {
         console.log("IdTienda: " + idTienda + ", numero de solicitudes: " + numSoli);
