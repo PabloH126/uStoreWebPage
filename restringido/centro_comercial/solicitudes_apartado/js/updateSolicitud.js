@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             notificacion.style.display = "";
         }
     });
-    if (parseInt(notificacionesTotal) <= 0)
+    if (parseInt(notificacionesTotal.textContent) > 0)
     {
         contentNumberNotificacion.style.display = "none";
     }
