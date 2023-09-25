@@ -13,6 +13,10 @@
     font-size: 1.4rem;
 }
 
+.text-area:nth-child(1){
+    display: flex;
+}
+
 .text-area:nth-child(0) input,
 .text-area:nth-child(2) input {
     display: none;
