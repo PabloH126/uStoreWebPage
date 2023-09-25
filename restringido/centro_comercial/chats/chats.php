@@ -47,6 +47,7 @@ require '../../security.php';
 					<div>
 						<label for="add_file"><i class='bx bx-plus-circle'></i></label>
 						<input type="file" id="add_file">
+						<i class='bx bxs-plus-circle'></i>
 					</div>
 					
 					<div>
