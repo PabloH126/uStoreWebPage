@@ -17,7 +17,7 @@
     display: none;
 }
 
-.text-area:nth-child(1) textarea{
+.text-area textarea{
     resize: none;
     outline: none;
     width: 100%;
