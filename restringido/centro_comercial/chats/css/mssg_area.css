@@ -1,4 +1,4 @@
-.mssg-area{
+.mssg-area {
     overflow-y: auto;
     padding: 10px 0;
 }
@@ -7,9 +7,11 @@
     display: inline-block;
     vertical-align: top;
 }
+
 .received-msg-inbox {
     width: 57%;
     text-align: initial;
+    margin-left: 1rem;
 }
 
 .received-msg-inbox p {
@@ -22,7 +24,8 @@
     width: 100%;
     box-shadow: rgb(0 0 0 / 25%) 0px 5px 5px 2px;
 }
-    p {
+
+p {
     overflow-wrap: break-word;
 }
 
@@ -32,14 +35,6 @@
     display: block;
     font-size: 12px;
     margin: 8px 0 0;
-}
-
-.received-msg .time{
-    margin: 8px 0 0 1rem;
-}
-
-.outgoing-msg .time{
-    margin: 8px 1rem 0 0;
 }
 
 /*mensajes salientes*/
@@ -57,9 +52,9 @@
     box-shadow: rgb(0 0 0 / 25%) 0px 2px 5px 2px;
 }
 
-
 .outgoing-chats-msg {
-        float: right;
-        width: 46%;
-    }
-
+    float: right;
+    width: 46%;
+    text-align: end;
+    margin-right: 1rem;
+}
