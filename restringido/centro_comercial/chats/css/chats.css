@@ -64,20 +64,6 @@
     content: "\ee9d";
 }
 
-.text-area div:nth-child(3) i:hover {
-    animation: up 0.4s;
-}
-
-@keyframes up {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(-37deg);
-    }
-}
-
 .text-area div:nth-child(3) i {
     animation: down 0.4s;
 }
@@ -89,6 +75,20 @@
 
     100% {
         transform: rotate(0);
+    }
+}
+
+.text-area div:nth-child(3) i:hover {
+    animation: up 0.4s;
+}
+
+@keyframes up {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-37deg);
     }
 }
 
