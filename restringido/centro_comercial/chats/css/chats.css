@@ -10,7 +10,9 @@
 }
 
 .chat-area form i {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #007096;
 }
 
 textarea{
@@ -25,12 +27,6 @@ textarea{
 .text-area:nth-child(0) input,
 .text-area:nth-child(2) input {
     display: none;
-}
-
-.text-area:nth-child(0) i,
-.text-area:nth-child(2) i {
-    cursor: pointer;
-    color: #007096;
 }
 
 .text-area .bx-send.bx-flip-vertical{
