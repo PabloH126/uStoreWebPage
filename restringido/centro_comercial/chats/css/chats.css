@@ -33,7 +33,9 @@ textarea{
     content: "\ee79";
 }
 
-
+.text-area:nth-child(2) i:hover:before{
+    content: "\ee9d";
+}
 
 .text-area .bx-send.bx-flip-vertical{
     transform: rotate(-37deg);
