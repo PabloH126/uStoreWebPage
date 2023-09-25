@@ -18,6 +18,15 @@
     display: none;
 }
 
+.text-area:nth-child(0) i,
+.text-area:nth-child(2) i{
+    cursor: pointer;
+}
+
+.text-area:nth-child(2) i{
+    transform: rotate(-15dgr);
+}
+
 .text-area textarea{
     resize: none;
     outline: none;
