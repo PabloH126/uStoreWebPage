@@ -30,12 +30,15 @@
 
 .text-area div:nth-child(1) i:hover:before {
     content: "\ee79";
+}
+
+.text-area div:nth-child(1) i:hover{
     animation: rotate-center 0.4s;
 }
 
 @keyframes rotate-center{
-    0%{transform:rotate(0)}
-    100%{transform:rotate(360deg)}
+    0%{transform:rotate(0);}
+    100%{transform:rotate(360deg);}
 }
 
 .text-area div:nth-child(3) i:hover:before {
