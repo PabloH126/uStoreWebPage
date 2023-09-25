@@ -64,10 +64,6 @@
     content: "\ee9d";
 }
 
-.text-area .bx-send.bx-flip-vertical {
-    transform: rotate(-37deg);
-}
-
 .text-area textarea {
     resize: none;
     outline: none;
