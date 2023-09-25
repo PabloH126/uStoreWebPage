@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 
-.text-area:nth-child(2) i {
+.text-area .bx-send.bx-flip-vertical{
     transform: rotate(-37deg);
 }
 
