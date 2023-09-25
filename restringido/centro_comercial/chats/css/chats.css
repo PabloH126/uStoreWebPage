@@ -13,6 +13,11 @@
     font-size: 1.4rem;
 }
 
+textarea{
+    display: grid;
+    border-top: 1px solid #dfdfdf;
+}
+
 .text-area:nth-child(1){
     display: flex;
 }
@@ -25,6 +30,7 @@
 .text-area:nth-child(0) i,
 .text-area:nth-child(2) i {
     cursor: pointer;
+    color: #007096;
 }
 
 .text-area .bx-send.bx-flip-vertical{
