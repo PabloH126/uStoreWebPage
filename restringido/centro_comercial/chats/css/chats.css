@@ -1,6 +1,6 @@
 .chat-area {
     display: grid;
-    grid-template-rows: 1fr 29%;
+    grid-template-rows: 1fr 6%;
 }
 
 .chat-area form{
