@@ -1,5 +1,5 @@
 .mssg-area{
-    padding: 0 0 50px 0;
+    overflow-y: auto;
 }
 
 .received-msg {
