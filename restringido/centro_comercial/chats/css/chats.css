@@ -24,15 +24,15 @@
     border-top: 1px solid #dfdfdf;
 }
 
-.text-area form:nth-child(1) {
+.text-area div:nth-child(2) {
     display: flex;
 }
 
-.text-area form:nth-child(0) i:hover:before {
+.text-area div:nth-child(1) i:hover:before {
     content: "\ee79";
 }
 
-.text-area form:nth-child(2) i:hover:before {
+.text-area div:nth-child(3) i:hover:before {
     content: "\ee9d";
 }
 
