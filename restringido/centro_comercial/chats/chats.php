@@ -41,7 +41,17 @@ require '../../security.php';
 	<div class="content">
         <?php require("templates/template.aside_chats.php") ?>
 		<div class="chat-area">
-			<div class="mssg-area"></div>
+			<div class="mssg-area">
+
+				<div class="received-msg">
+					<div class="received-msg-inbox">
+						<p>Hi !! This is message from Riya . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quas nemo eum, earum sunt, nobis similique quisquam eveniet pariatur commodi modi voluptatibus iusto omnis harum illum
+							iste distinctio expedita illo!</p>
+						<span class="time">18:06 PM | July 24 </span>
+					</div>
+				</div>
+
+			</div>
 			<div class="text-area">
 				<form action="">
 					<div>
