@@ -64,36 +64,8 @@
     content: "\ee9d";
 }
 
-.text-area div:nth-child(3) i {
-    animation: down 0.4s;
-}
-
-@keyframes down {
-    0% {
-        transform: rotate(-37deg);
-    }
-
-    100% {
-        transform: rotate(0);
-    }
-}
-
-.text-area div:nth-child(3) i:hover {
-    animation: up 0.4s;
-}
-
-@keyframes up {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(-37deg);
-    }
-}
-
 .text-area .bx-send.bx-flip-vertical {
-    /*transform: rotate(-37deg);*/
+    transform: rotate(-37deg);
 }
 
 .text-area textarea {
