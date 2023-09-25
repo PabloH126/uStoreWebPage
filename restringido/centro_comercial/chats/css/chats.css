@@ -3,6 +3,7 @@
     grid-template-rows: 1fr 44%;
 }
 
-.text-area .add input{
+.text-area:nth-child(0) input,
+.text-area:nth-child(2) input{
     display: none;
 }

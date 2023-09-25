@@ -44,7 +44,7 @@ require '../../security.php';
 			<div class="mssg-area"></div>
 			<div class="text-area">
 				<form action="">
-					<div class="add">
+					<div>
 						<label for="add_file"><i class='bx bx-plus-circle'></i></label>
 						<input type="file" id="add_file">
 					</div>
@@ -54,8 +54,8 @@ require '../../security.php';
 					</div>
 
 					<div>
-						<label for=""><i class='bx bx-send bx-flip-vertical' ></i></label>
-						<input type="submit">
+						<label for="submit_message"><i class='bx bx-send bx-flip-vertical' ></i></label>
+						<input type="submit" id="submit_message">
 					</div>
 				</form>
 			</div>
