@@ -32,30 +32,68 @@
     content: "\ee79";
 }
 
-.text-area div:nth-child(1) i{
+.text-area div:nth-child(1) i {
     animation: rotate-center-inverse 0.4s;
 }
 
-@keyframes rotate-center-inverse{
-    0%{transform:rotate(90deg);}
-    100%{transform:rotate(0);}
+@keyframes rotate-center-inverse {
+    0% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }
 
-.text-area div:nth-child(1) i:hover{
+.text-area div:nth-child(1) i:hover {
     animation: rotate-center 0.4s;
 }
 
-@keyframes rotate-center{
-    0%{transform:rotate(0);}
-    100%{transform:rotate(90deg);}
+@keyframes rotate-center {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
 }
 
 .text-area div:nth-child(3) i:hover:before {
     content: "\ee9d";
 }
 
+.text-area div:nth-child(3) i:hover {
+    animation: up 0.4s;
+}
+
+@keyframes up {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-37deg);
+    }
+}
+
+.text-area div:nth-child(3) i:hover {
+    animation: down 0.4s;
+}
+
+@keyframes down {
+    0% {
+        transform: rotate(-37deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
 .text-area .bx-send.bx-flip-vertical {
-    transform: rotate(-37deg);
+    /*transform: rotate(-37deg);*/
 }
 
 .text-area textarea {
