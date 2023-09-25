@@ -50,7 +50,7 @@ require '../../security.php';
 					</div>
 					
 					<div>
-						<textarea name="" id="" cols="30" rows="1"></textarea>
+						<textarea name="" id="" rows="1"></textarea>
 					</div>
 
 					<div>
