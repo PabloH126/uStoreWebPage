@@ -32,13 +32,22 @@
     content: "\ee79";
 }
 
+.text-area div:nth-child(1) i{
+    animation: rotate-center-inverse 0.4s;
+}
+
+@keyframes rotate-center-inverse{
+    0%{transform:rotate(90deg);}
+    100%{transform:rotate(0);}
+}
+
 .text-area div:nth-child(1) i:hover{
     animation: rotate-center 0.4s;
 }
 
 @keyframes rotate-center{
     0%{transform:rotate(0);}
-    100%{transform:rotate(360deg);}
+    100%{transform:rotate(90deg);}
 }
 
 .text-area div:nth-child(3) i:hover:before {
