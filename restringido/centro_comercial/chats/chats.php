@@ -44,9 +44,9 @@ require '../../security.php';
 			<div class="mssg-area"></div>
 			<div class="text-area">
 				<form action="">
-					<div>
-						<label for=""><i class='bx bx-plus-circle'></i></label>
-						<input type="file">
+					<div class="add">
+						<label for="add_file"><i class='bx bx-plus-circle'></i></label>
+						<input type="file" id="add_file">
 					</div>
 					
 					<div>
