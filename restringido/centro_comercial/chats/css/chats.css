@@ -6,6 +6,7 @@
 .chat-area form{
     display: grid;
     grid-template-columns: 1fr 90% 1fr;
+    align-items: center;
 }
 
 .chat-area form i{
