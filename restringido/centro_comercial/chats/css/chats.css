@@ -78,7 +78,7 @@
     }
 }
 
-.text-area div:nth-child(3) i:hover {
+.text-area div:nth-child(3) i {
     animation: down 0.4s;
 }
 
