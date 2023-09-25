@@ -3,31 +3,31 @@
     grid-template-rows: 1fr 6%;
 }
 
-.chat-area form{
+.chat-area form {
     display: grid;
     grid-template-columns: 1fr 90% 1fr;
     align-items: center;
 }
 
-.chat-area form i{
+.chat-area form i {
     font-size: 1.4rem;
 }
 
 .text-area:nth-child(0) input,
-.text-area:nth-child(2) input{
+.text-area:nth-child(2) input {
     display: none;
 }
 
 .text-area:nth-child(0) i,
-.text-area:nth-child(2) i{
+.text-area:nth-child(2) i {
     cursor: pointer;
 }
 
-.text-area:nth-child(2) i{
-    transform: rotate(-15dgr);
+.text-area:nth-child(2) i {
+    transform: rotate(-37deg);
 }
 
-.text-area textarea{
+.text-area textarea {
     resize: none;
     outline: none;
     width: 100%;
