@@ -8,6 +8,10 @@
     grid-template-columns: 1fr 90% 1fr;
 }
 
+.chat-area form i{
+    font-size: 1rem;
+}
+
 .text-area:nth-child(0) input,
 .text-area:nth-child(2) input{
     display: none;
