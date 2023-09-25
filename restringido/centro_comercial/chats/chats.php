@@ -56,7 +56,6 @@ require '../../security.php';
 					<div>
 						<label for="submit_message"><i class='bx bx-send bx-flip-vertical'></i></label>
 						<input type="submit" id="submit_message">
-						<i class='bx bxs-send'></i>
 					</div>
 				</form>
 			</div>
