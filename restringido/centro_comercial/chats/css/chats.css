@@ -29,6 +29,12 @@ textarea{
     display: none;
 }
 
+.text-area:nth-child(0) i:hover:before{
+    content: "\ee79";
+}
+
+
+
 .text-area .bx-send.bx-flip-vertical{
     transform: rotate(-37deg);
 }

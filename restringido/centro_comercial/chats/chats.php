@@ -47,7 +47,6 @@ require '../../security.php';
 					<div>
 						<label for="add_file"><i class='bx bx-plus-circle'></i></label>
 						<input type="file" id="add_file">
-						<i class='bx bxs-plus-circle'></i>
 					</div>
 					
 					<div>
@@ -55,7 +54,7 @@ require '../../security.php';
 					</div>
 
 					<div>
-						<label for="submit_message"><i class='bx bx-send bx-flip-vertical' ></i></label>
+						<label for="submit_message"><i class='bx bx-send bx-flip-vertical'></i></label>
 						<input type="submit" id="submit_message">
 						<i class='bx bxs-send'></i>
 					</div>
