@@ -34,6 +34,14 @@
     margin: 8px 0 0;
 }
 
+.received-msg .time{
+    margin: 8px 0 0 1rem;
+}
+
+.outgoing-msg .time{
+    margin: 8px 1rem 0 0;
+}
+
 /*mensajes salientes*/
 
 .outgoing-chats-msg p {
