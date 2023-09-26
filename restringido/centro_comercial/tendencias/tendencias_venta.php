@@ -49,8 +49,8 @@ curl_close($ch);
 
                     <ul class="list_show">
                         <li class="list_inside">
-							<button class="bttnp p normal">Tiendas</button>
-							<button class="bttnp p normal">Productos</button>
+							<button class="bttnp p normal tipo">Tiendas</button>
+							<button class="bttnp p normal tipo">Productos</button>
                         </li>
                     </ul>
                 </li>
@@ -85,9 +85,9 @@ curl_close($ch);
 
                     <ul class="list_show">
                         <li class="list_inside">
-							<button class="bttnp p normal">Semanal</button>
-							<button class="bttnp p normal">Quincenal</button>
-							<button class="bttnp p normal">Mensual</button>
+							<button class="bttnp p normal periodo">Semanal</button>
+							<button class="bttnp p normal periodo">Quincenal</button>
+							<button class="bttnp p normal periodo">Mensual</button>
                         </li>
                     </ul>
                 </li>

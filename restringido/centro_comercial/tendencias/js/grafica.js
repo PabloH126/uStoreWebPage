@@ -2,6 +2,10 @@ let canva = document.getElementById('grafica');
 let filterList = document.getElementById('filterList');
 let btnCrearPubli = document.getElementById('btnCrearPubli');
 let spanFiltro = document.getElementById('span-seleccion-tienda');
+let categoriasInput = document.querySelectorAll("input[name='categorias[]']");
+let tipoInput = document.querySelectorAll('.tipo');
+let periodoInput = document.querySelectorAll('.periodo');
+
 let categorias;
 let isTienda;
 let periodoTiempo;
@@ -40,17 +44,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.querySelectorAll('.bttnp').forEach(btn => {
+    tipoInput.forEach(btn => {
         btn.addEventListener('click', function() {
+            categoriasInput.forEach(cat => {
+                if(cat.selected)
+                {
+                    categorias.push = (cat.value);
+                }
+            });
+            periodoInput.forEach(per => {
+                per.addEventListener('click', function() {
+                    periodoTiempo = per.textContent;
+                })
+            });
+            
+            console.log(categorias);
+            console.log(periodoTiempo);
+            console.log(btn.textContent);
             actualizarGrafica(grafica);
         });
     });
     
-    document.querySelectorAll("input[name='categorias[]']").forEach(cat => {
+    categoriasInput.forEach(cat => {
         cat.addEventListener('click', function() {
             actualizarGrafica(grafica);
         });
     });
+
+    periodoInput.forEach(per => {
+        per.addEventListener('click', function() {
+            actualizarGrafica(grafica);
+        })
+    })
 
     document.getElementById("downloadImage").addEventListener("click", function() {
         var grafica = document.getElementById('grafica');
