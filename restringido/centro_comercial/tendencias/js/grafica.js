@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categoriasInput.forEach(cat => {
                 if(cat.selected)
                 {
-                    categorias.push = (cat.value);
+                    categorias.push(cat.value);
                 }
             });
             periodoInput.forEach(per => {
