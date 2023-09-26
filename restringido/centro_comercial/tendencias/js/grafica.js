@@ -137,7 +137,9 @@ async function actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
 {
     let tendencias;
     let formData = new FormData();
-    formData.append("categorias", categorias);
+    categorias.forEach((categoria, index) => {
+        formData.append(`categorias[${index}]`, categoria)
+    });
     formData.append("isTienda", isTienda);
     formData.append("periodoTiempo", periodoTiempo);
 
