@@ -7,9 +7,9 @@
     $isTienda = ($isTiendaValue === 'true' || $isTiendaValue === true);
 
     $data = [
-        "isTienda" => true,
-        "categorias" => /*(isset($_POST['categorias']) ? $_POST['categorias'] : [])*/ [],
-        "periodoTiempo" => /*(isset($_POST['periodoTiempo']) ? $_POST['periodoTiempo'] : */"semanal"//)
+        "isTienda" => $isTienda,
+        "categorias" => (isset($_POST['categorias']) ? $_POST['categorias'] : []),
+        "periodoTiempo" => (isset($_POST['periodoTiempo']) ? $_POST['periodoTiempo'] : "semanal")
     ];
 
     $ch = curl_init();
