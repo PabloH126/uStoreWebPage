@@ -2,8 +2,10 @@
     header('Content-Type: application/json');
     session_start();
     $responseArray = [];
+
     $isTiendaValue = isset($_POST['isTienda']) ? $_POST['isTienda'] : 'false';
     $isTienda = ($isTiendaValue === 'true' || $isTiendaValue === true);
+    
     $data = [
         "isTienda" => $isTienda,
         "categorias" => (isset($_POST['categorias']) ? $_POST['categorias'] : []),
