@@ -2,6 +2,9 @@ let canva = document.getElementById('grafica');
 let filterList = document.getElementById('filterList');
 let btnCrearPubli = document.getElementById('btnCrearPubli');
 let spanFiltro = document.getElementById('span-seleccion-tienda');
+let categorias;
+let isTienda;
+let periodoTiempo;
 
 document.addEventListener('DOMContentLoaded', function() {
     canva.style.display = "none";
