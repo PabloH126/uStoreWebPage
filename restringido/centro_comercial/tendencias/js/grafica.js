@@ -92,13 +92,17 @@ async function actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
         {
             tendencias = data.tendencia;
             ActivarGrafica();
-            console.log(tendencias);
+            console.log("Tendencias: ", tendencias);
             var nombres = tendencias.map(item => item.nombre);
             var numerosSolicitudes = tendencias.map(item => item.numeroSolicitudes);
 
             grafica.data.labels = nombres;
             grafica.data.datasets[0].data = numerosSolicitudes;
             grafica.update();
+        }
+        else
+        {
+            console.log("Error al mandar la solicitud: ", data.status);
         }
     })
     .catch(err => {
