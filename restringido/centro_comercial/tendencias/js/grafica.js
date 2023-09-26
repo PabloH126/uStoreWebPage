@@ -53,9 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
             graficaActivada = true;
 
             categoriasInput.forEach(cat => {
-                if(cat.checked && !categorias.includes(cat.value))
+                if (cat.checked && !categorias.includes(cat.value))
                 {
                     categorias.push(cat.value);
+                }
+                else if (!cat.checked && categorias.includes(cat.value)) 
+                {
+                    categorias = categorias.filter(item => item !== cat.value);
                 }
             });
             periodoInput.forEach(per => {
@@ -83,10 +87,13 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         categoriasInput.forEach(cat => {
             cat.addEventListener('click', function() {
-                categorias = [];
                 if (cat.checked && !categorias.includes(cat.value))
                 {
                     categorias.push(cat.value);
+                }
+                else if (!cat.checked && categorias.includes(cat.value)) 
+                {
+                    categorias = categorias.filter(item => item !== cat.value);
                 }
                 actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
             });
