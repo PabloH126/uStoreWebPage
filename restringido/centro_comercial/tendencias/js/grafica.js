@@ -9,7 +9,7 @@ let periodoInput = document.querySelectorAll('.periodo');
 let categorias = [];
 let isTienda;
 let periodoTiempo;
-let graficaActivada = false;
+const graficaActivada = false;
 
 document.addEventListener('DOMContentLoaded', function() {
     canva.style.display = "none";
