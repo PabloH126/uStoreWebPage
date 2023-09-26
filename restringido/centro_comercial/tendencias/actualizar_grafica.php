@@ -4,9 +4,9 @@
     $responseArray = [];
 
     $data = [
-        "isTienda" => isset($_POST['isTienda']) ? $_POST['isTienda'] : 'false',
-        "categorias" => isset($_POST['categorias']) ? $_POST['categorias'] : [],
-        "periodoTiempo" => isset($_POST['periodoTiempo']) ? $_POST['periodoTiempo'] : "semanal"
+        "isTienda" => (isset($_POST['isTienda']) ? $_POST['isTienda'] : 'false'),
+        "categorias" => (isset($_POST['categorias']) ? $_POST['categorias'] : []),
+        "periodoTiempo" => (isset($_POST['periodoTiempo']) ? $_POST['periodoTiempo'] : "semanal")
     ];
 
     $ch = curl_init();

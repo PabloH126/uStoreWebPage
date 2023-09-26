@@ -92,7 +92,7 @@ async function actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
         {
             tendencias = data.tendencia;
             ActivarGrafica();
-
+            console.log(tendencias);
             var nombres = tendencias.map(item => item.nombre);
             var numerosSolicitudes = tendencias.map(item => item.numeroSolicitudes);
 
