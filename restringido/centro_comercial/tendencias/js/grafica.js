@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 isTienda = false;
             }
+            console.log("isTienda: ", isTienda);
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
         });
     });
