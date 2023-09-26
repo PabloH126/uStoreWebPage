@@ -74,26 +74,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function actualizarGrafica(grafica)
+async function actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
 {
-    ActivarGrafica();
-    var meses = [];
-    var ventas = [];
-    for (let index = 0; index < 50; index++) {
-        meses[index] = 'uwu' + index;
-        ventas[index] = Math.floor(Math.random() * 1000) + 1000;
-    }
+    let tendencias;
+    let formData = new FormData();
+    formData.append("categorias", categorias);
+    formData.append("isTienda", isTienda);
+    formData.append("periodoTiempo", periodoTiempo);
 
-    ventas.map((value, index) => ({ value, index }))
-        .sort((a, b) => a.value - b.value)
-        .forEach((sortedItem, index) => {
-            ventas[index] = sortedItem.value;
-            meses[index] = meses[sortedItem.index];
-        });
+    await fetch('actualizar_grafica.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.status === "success")
+        {
+            tendencias = data.tendencia;
+            ActivarGrafica();
 
-    grafica.data.labels = meses;
-    grafica.data.datasets[0].data = ventas;
-    grafica.update();
+            var nombres = tendencias.map(item => item.nombre);
+            var numerosSolicitudes = tendencias.map(item => item.numeroSolicitudes);
+
+            grafica.data.labels = nombres;
+            grafica.data.datasets[0].data = numerosSolicitudes;
+            grafica.update();
+        }
+    })
+    .catch(err => {
+        console.log("Hubo un error al hacer la peticion al servidor ", err);
+    })
 }
 
 function ActivarGrafica()
