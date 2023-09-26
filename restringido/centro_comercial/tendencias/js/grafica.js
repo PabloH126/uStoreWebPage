@@ -81,32 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             console.log("isTienda: ", isTienda);
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+            ActivarEventosActualizacionGrafica();
         });
     });
-
-    if (graficaActivada)
-    {
-        categoriasInput.forEach(cat => {
-            cat.addEventListener('click', function() {
-                if (cat.checked && !categorias.includes(cat.value))
-                {
-                    categorias.push(cat.value);
-                }
-                else if (!cat.checked && categorias.includes(cat.value)) 
-                {
-                    categorias = categorias.filter(item => item !== cat.value);
-                }
-                actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-            });
-        });
-    
-        periodoInput.forEach(per => {
-            per.addEventListener('click', function() {
-                periodoTiempo = per.textContent.toLowerCase();
-                actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-            })
-        });
-    }
 
     document.getElementById("downloadImage").addEventListener("click", function() {
         var grafica = document.getElementById('grafica');
@@ -180,4 +157,29 @@ function ActivarGrafica()
     canva.style.display = "";
     filterList.style.display = "";
     btnCrearPubli.style.display = "";
+}
+
+function ActivarEventosActualizacionGrafica()
+{
+    if (!graficaActivada) return;
+    categoriasInput.forEach(cat => {
+        cat.addEventListener('click', function() {
+            if (cat.checked && !categorias.includes(cat.value))
+            {
+                categorias.push(cat.value);
+            }
+            else if (!cat.checked && categorias.includes(cat.value)) 
+            {
+                categorias = categorias.filter(item => item !== cat.value);
+            }
+            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+        });
+    });
+
+    periodoInput.forEach(per => {
+        per.addEventListener('click', function() {
+            periodoTiempo = per.textContent.toLowerCase();
+            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+        })
+    });
 }

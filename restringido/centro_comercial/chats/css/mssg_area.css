@@ -3,6 +3,10 @@
     padding: 10px 0;
 }
 
+.mssg-area p{
+    letter-spacing: 0.5pt;
+}
+
 .received-msg {
     display: inline-block;
     vertical-align: top;
