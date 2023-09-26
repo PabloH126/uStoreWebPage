@@ -6,7 +6,7 @@ let categoriasInput = document.querySelectorAll("input[name='categorias[]']");
 let tipoInput = document.querySelectorAll('.tipo');
 let periodoInput = document.querySelectorAll('.periodo');
 
-let categorias;
+let categorias = [];
 let isTienda;
 let periodoTiempo;
 let graficaActivada = false;
@@ -53,14 +53,14 @@ document.addEventListener('DOMContentLoaded', function() {
             graficaActivada = true;
 
             categoriasInput.forEach(cat => {
-                if(cat.selected && !categorias.includes(cat.value))
+                if(cat.checked && !categorias.includes(cat.value))
                 {
                     categorias.push(cat.value);
                 }
             });
             periodoInput.forEach(per => {
                 per.addEventListener('click', function() {
-                    periodoTiempo = per.textContent;
+                    periodoTiempo = per.textContent.toLowerCase();
                 })
             });
             
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         categoriasInput.forEach(cat => {
             cat.addEventListener('click', function() {
-                if (cat.selected && !categorias.includes(cat.value))
+                if (cat.checked && !categorias.includes(cat.value))
                 {
                     categorias.push(cat.value);
                 }
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         periodoInput.forEach(per => {
             per.addEventListener('click', function() {
-                periodoTiempo = per.textContent;
+                periodoTiempo = per.textContent.toLowerCase();
                 actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
             })
         });
