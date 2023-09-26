@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         categoriasInput.forEach(cat => {
             cat.addEventListener('click', function() {
+                categorias = [];
                 if (cat.checked && !categorias.includes(cat.value))
                 {
                     categorias.push(cat.value);
