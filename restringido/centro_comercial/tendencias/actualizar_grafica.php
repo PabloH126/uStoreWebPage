@@ -8,12 +8,9 @@
 
     $data = [
         "isTienda" => $isTienda,
-        "categorias" => (isset($_POST['categorias']) ? $_POST['categorias'] : []),
-        "periodoTiempo" => (isset($_POST['periodoTiempo']) ? $_POST['periodoTiempo'] : "semanal")
+        "categorias" => /*(isset($_POST['categorias']) ? $_POST['categorias'] : [])*/ [],
+        "periodoTiempo" => /*(isset($_POST['periodoTiempo']) ? $_POST['periodoTiempo'] : */"semanal"//)
     ];
-
-    echo json_encode(['status' => $data]);
-        exit;
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/TendenciasVenta/GetTendencias");
