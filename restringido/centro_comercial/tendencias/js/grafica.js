@@ -6,9 +6,9 @@ let categoriasInput = document.querySelectorAll("input[name='categorias[]']");
 let tipoInput = document.querySelectorAll('.tipo');
 let periodoInput = document.querySelectorAll('.periodo');
 
-let categorias;
-let isTienda;
-let periodoTiempo;
+const categorias = [];
+const isTienda = false;
+const periodoTiempo = "semanal";
 
 document.addEventListener('DOMContentLoaded', function() {
     canva.style.display = "none";
