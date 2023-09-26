@@ -45,19 +45,33 @@ require '../../security.php';
 
 				<div class="received-msg">
 					<div class="received-msg-inbox">
-						<p>Hi !! This is message from Riya . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quas nemo eum, earum sunt, nobis similique quisquam eveniet pariatur commodi modi voluptatibus iusto omnis harum illum
+						<div class="recived-box-msg">
+							<p>Hi !! This is message from Riya . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quas nemo eum, earum sunt, nobis similique quisquam eveniet pariatur commodi modi voluptatibus iusto omnis harum illum
 							iste distinctio expedita illo!</p>
+						</div>
 						<span class="time">18:06 PM | July 24 </span>
 					</div>
 				</div>
 
 				<div class="outgoing-msg">
 					<div class="outgoing-chats-msg">
+						<div class="outgoing-box-msg">
 						<p class="multi-msg">Hi riya , Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 							Illo nobis deleniti earum magni recusandae assumenda.
 						</p>
 						<p class="multi-msg">Lorem ipsum dolor sit amet consectetur.</p>
+						</div>
+						
 						<span class="time">18:30 PM | July 24 </span>
+					</div>
+				</div>
+
+				<div class="received-msg">
+					<div class="received-msg-inbox">
+						<div class="recived-box-msg">
+							<img src="https://www.blogdelfotografo.com/wp-content/uploads/2022/01/girasol-foto-perfil.webp" alt="">
+						</div>
+						<span class="time">18:40 PM | July 24 </span>
 					</div>
 				</div>
 

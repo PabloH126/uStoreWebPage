@@ -52,25 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', function() {
             graficaActivada = true;
 
-            categoriasInput.forEach(cat => {
-                if (cat.checked && !categorias.includes(cat.value))
-                {
-                    categorias.push(cat.value);
-                }
-                else if (!cat.checked && categorias.includes(cat.value)) 
-                {
-                    categorias = categorias.filter(item => item !== cat.value);
-                }
-            });
+            CategoriasSelect();
+
             periodoInput.forEach(per => {
-                per.addEventListener('click', function() {
+                if(per.classList.contains('selected'))
+                {
                     periodoTiempo = per.textContent.toLowerCase();
-                })
-            });
-            
+                }
+            })
+
             console.log(categorias);
             console.log(periodoTiempo);
             console.log(btn.textContent);
+
+            
             if(btn.textContent === "Tiendas")
             {
                 isTienda = true;
@@ -162,24 +157,37 @@ function ActivarGrafica()
 function ActivarEventosActualizacionGrafica()
 {
     if (!graficaActivada) return;
+
     categoriasInput.forEach(cat => {
-        cat.addEventListener('click', function() {
-            if (cat.checked && !categorias.includes(cat.value))
-            {
-                categorias.push(cat.value);
-            }
-            else if (!cat.checked && categorias.includes(cat.value)) 
-            {
-                categorias = categorias.filter(item => item !== cat.value);
-            }
-            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-        });
+        cat.removeEventListener('click', CategoriasCambio);
+        cat.addEventListener('click', CategoriasCambio);
     });
 
     periodoInput.forEach(per => {
-        per.addEventListener('click', function() {
-            periodoTiempo = per.textContent.toLowerCase();
-            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-        })
+        per.removeEventListener('click', PeriodoCambio);
+        per.addEventListener('click', PeriodoCambio);
     });
+}
+
+function CategoriasSelect() {
+    categoriasInput.forEach(cat => {
+        if (cat.checked && !categorias.includes(cat.value))
+        {
+            categorias.push(cat.value);
+        }
+        else if (!cat.checked && categorias.includes(cat.value)) 
+        {
+            categorias = categorias.filter(item => item !== cat.value);
+        }
+    });
+}
+
+function CategoriasCambio() {
+    CategoriasSelect();
+    actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+}
+
+function PeriodoCambio() {
+    periodoTiempo = this.textContent.toLowerCase();
+    actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
 }
