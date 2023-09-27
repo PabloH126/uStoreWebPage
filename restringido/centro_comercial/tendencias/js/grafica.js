@@ -53,13 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             graficaActivada = true;
 
             CategoriasSelect();
-
-            periodoInput.forEach(per => {
-                if(per.classList.contains('selected'))
-                {
-                    periodoTiempo = per.textContent.toLowerCase();
-                }
-            })
+            PeriodoSelect();
 
             console.log(categorias);
             console.log(periodoTiempo);
@@ -198,5 +192,6 @@ function PeriodoSelect() {
 function CambioFiltros() {
     CategoriasSelect();
     PeriodoSelect();
+    console.log("Ya entro a CambioFiltros: isTienda: " + isTienda + ". categorias: " + categorias + ". periodoTiempo: " + periodoTiempo);
     actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
 }
