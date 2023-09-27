@@ -45,16 +45,14 @@ require '../../security.php';
 
 				<div class="received-msg">
 					<div class="received-msg-inbox">
-						<p class="recived-box-msg">Hi !! This is message from Riya . Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-						Non quas nemo eum, earum sunt, nobis similique quisquam eveniet pariatur commodi modi voluptatibus iusto omnis harum illumiste distinctio expedita illo!</p>
+						<p class="recived-box-msg">Hi !! This is message from Riya . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quas nemo eum, earum sunt, nobis similique quisquam eveniet pariatur commodi modi voluptatibus iusto omnis harum illumiste distinctio expedita illo!</p>
 						<span class="time">18:06 PM | July 24 </span>
 					</div>
 				</div>
 
 				<div class="outgoing-msg">
 					<div class="outgoing-chats-msg">
-						<p class="outgoing-box-msg">Hi riya , Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-							Illo nobis deleniti earum magni recusandae assumenda.
+						<p class="outgoing-box-msg">Hi riya , Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nobis deleniti earum magni recusandae assumenda.
 						</p>
 						<p class="outgoing-box-msg">Lorem ipsum dolor sit amet consectetur.</p>
 						<span class="time">18:30 PM | July 24 </span>
