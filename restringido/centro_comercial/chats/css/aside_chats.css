@@ -118,6 +118,7 @@ hr {
     height: 8vh;
     cursor: pointer;
     margin: 9px 0px;
+    align-items: center;
 }
 
 .contacto:hover {
