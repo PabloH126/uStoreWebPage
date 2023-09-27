@@ -20,7 +20,7 @@
 }
 
 .received-msg-inbox {
-    max-width: 65%;
+    max-width: 51%;
     float: left;
     text-align: initial;
     margin-left: 1rem;
@@ -65,7 +65,15 @@ p {
 
 .outgoing-chats-msg {
     float: right;
-    max-width: 65%;
+    max-width: 51%;
     text-align: end;
     margin-right: 1rem;
+}
+
+@media only screen and (max-width: 1440px) {
+    
+    .outgoing-chats-msg,
+    .received-msg-inbox{
+        max-width: 65%;
+    }
 }
