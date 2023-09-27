@@ -109,10 +109,9 @@ i.bx.bx-store-alt {
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-#sub-menu2 .menu-option{
+#sub-menu2 .menu-option {
     justify-content: center;
 }
 
