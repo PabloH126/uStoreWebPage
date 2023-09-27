@@ -4,6 +4,10 @@
     height: 82vh;
 }
 
+.mssg-area img{
+    width: 100%;
+}
+
 .mssg-area p{
     letter-spacing: 0.5pt;
 }
