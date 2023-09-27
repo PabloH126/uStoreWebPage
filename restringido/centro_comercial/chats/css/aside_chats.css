@@ -139,6 +139,7 @@ hr {
 }
 
 .contact_info {
+    height: 100%;
     width: 75%;
     text-align: initial;
     display: grid;
