@@ -147,6 +147,14 @@ function ActivarEventosActualizacionGrafica(grafica)
 {
     if (!graficaActivada) return;
 
+    let mayorMenor = document.getElementById('MayorMenor');
+    let menorMayor = document.getElementById('MenorMayor');
+    let aZ = document.getElementById('A-Z');
+    let zA = document.getElementById('Z-A');
+
+    mayorMenor.removeEventListener('click', function () {
+        ordena
+    })
     categoriasInput.forEach(cat => {
         cat.removeEventListener('click', function() {
             CambioFiltros(grafica);       
@@ -194,11 +202,10 @@ function CambioFiltros(grafica) {
     actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
 }
 
-function OrdenamientoMayorAMenor(data) {
+function OrdenamientoMayorMenor(data) {
     return data.sort((a, b) => b.numeroSolicitudes - a.numeroSolicitudes);
 }
-
-function OrdenamientoMenorAMayor(data) {
+function OrdenamientoMenorMayor(data) {
     return data.sort((a, b) => a.numeroSolicitudes - b.numeroSolicitudes);
 }
 
@@ -207,4 +214,14 @@ function OrdenamientoAZ(data) {
 }
 function OrdenamientoZA(data) {
     return data.sort((a, b) => b.nombre.localeCompare(a.nombre));
+}
+
+function OrdenarData(grafica, funcion)
+{
+    let datosOrdenados = funcion([...grafica.data.datasets[0].data]);
+    let labelsOrdenados = datosOrdenados.map(item => item.nombre);
+    let numOrdenados = datosOrdenados.map.(item => item.numeroSolicitudes);
+
+
+    grafica
 }

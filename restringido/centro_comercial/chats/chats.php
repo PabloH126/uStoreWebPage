@@ -70,6 +70,15 @@ require '../../security.php';
 					</div>
 				</div>
 
+				<div class="outgoing-msg">
+					<div class="outgoing-chats-msg">
+						<div class="outgoing-box-msg">
+							<img src="https://hips.hearstapps.com/hmg-prod/images/fotos-1533279584.jpg" alt="">
+						</div>
+						<span class="time">18:30 PM | July 24 </span>
+					</div>
+				</div>
+
 			</div>
 			<div class="text-area">
 				<form action="">
