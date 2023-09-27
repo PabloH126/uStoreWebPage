@@ -227,10 +227,10 @@ function OrdenarData(grafica, funcion)
             numeroSolicitudes: grafica.data.datasets[0].data[index]
         }
     });
+
     let datosOrdenados = funcion(...data);
     let labelsOrdenados = datosOrdenados.map(item => item.nombre);
     let numOrdenados = datosOrdenados.map(item => item.numeroSolicitudes);
-
 
     grafica.data.labels = labelsOrdenados;
     grafica.data.datasets[0].data = numOrdenados;
