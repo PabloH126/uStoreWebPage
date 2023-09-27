@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var ctx = document.getElementById('grafica').getContext('2d');
     var grafica = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: [],
             datasets:  [{
