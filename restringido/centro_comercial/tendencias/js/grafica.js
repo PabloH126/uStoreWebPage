@@ -228,7 +228,7 @@ function OrdenarData(grafica, funcion)
         }
     });
 
-    let datosOrdenados = funcion(...data);
+    let datosOrdenados = funcion(data);
     let labelsOrdenados = datosOrdenados.map(item => item.nombre);
     let numOrdenados = datosOrdenados.map(item => item.numeroSolicitudes);
 
