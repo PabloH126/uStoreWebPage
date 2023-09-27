@@ -54,11 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             CategoriasSelect();
             PeriodoSelect();
-
-            console.log(categorias);
-            console.log(periodoTiempo);
-            console.log(btn.textContent);
-
             
             if(btn.textContent === "Tiendas")
             {
@@ -196,6 +191,5 @@ function PeriodoSelect() {
 function CambioFiltros(grafica) {
     CategoriasSelect();
     PeriodoSelect();
-    console.log("Ya entro a CambioFiltros: isTienda: " + isTienda + ". categorias: " + categorias + ". periodoTiempo: " + periodoTiempo);
     actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
 }
