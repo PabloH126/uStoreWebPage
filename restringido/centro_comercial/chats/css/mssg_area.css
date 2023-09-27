@@ -5,7 +5,9 @@
 }
 
 .mssg-area img{
-    width: 100%;
+    max-width: 100%;
+    max-height: 39vh;
+    object-fit: cover;
 }
 
 .mssg-area p{
@@ -15,6 +17,7 @@
 .received-msg {
     display: inline-block;
     vertical-align: top;
+    width: 100%;
 }
 
 .received-msg-inbox {
