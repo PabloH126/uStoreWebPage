@@ -153,13 +153,21 @@ function ActivarEventosActualizacionGrafica(grafica)
     if (!graficaActivada) return;
 
     categoriasInput.forEach(cat => {
-        cat.removeEventListener('click', CambioFiltros(grafica));
-        cat.addEventListener('click', CambioFiltros(grafica));
+        cat.removeEventListener('click', function() {
+            CambioFiltros(grafica);       
+        });
+        cat.addEventListener('click', function() {
+            CambioFiltros(grafica);   
+        });
     });
 
     periodoInput.forEach(per => {
-        per.removeEventListener('click', CambioFiltros(grafica));
-        per.addEventListener('click', CambioFiltros(grafica));
+        per.removeEventListener('click', function() {
+            CambioFiltros(grafica);
+        });
+        per.addEventListener('click', function() {
+            CambioFiltros(grafica);
+        });
     });
 }
 
