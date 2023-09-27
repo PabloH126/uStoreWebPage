@@ -159,13 +159,13 @@ function ActivarEventosActualizacionGrafica()
     if (!graficaActivada) return;
 
     categoriasInput.forEach(cat => {
-        cat.removeEventListener('click', CategoriasCambio);
-        cat.addEventListener('click', CategoriasCambio);
+        cat.removeEventListener('click', CambioFiltros);
+        cat.addEventListener('click', CambioFiltros);
     });
 
     periodoInput.forEach(per => {
-        per.removeEventListener('click', PeriodoCambio);
-        per.addEventListener('click', PeriodoCambio);
+        per.removeEventListener('click', CambioFiltros);
+        per.addEventListener('click', CambioFiltros);
     });
 }
 
@@ -182,12 +182,21 @@ function CategoriasSelect() {
     });
 }
 
-function CategoriasCambio() {
-    CategoriasSelect();
-    actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+function PeriodoSelect() {
+    periodoInput.forEach(per => {
+        if(per.classList.contains('selected'))
+        {
+            periodoTiempo = per.textContent.toLowerCase();
+        }
+        else
+        {
+            periodoTiempo = "mensual";
+        }
+    });
 }
 
-function PeriodoCambio() {
-    periodoTiempo = this.textContent.toLowerCase();
+function CambioFiltros() {
+    CategoriasSelect();
+    PeriodoSelect();
     actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
 }
