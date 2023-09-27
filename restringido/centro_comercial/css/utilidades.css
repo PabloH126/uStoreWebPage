@@ -90,7 +90,7 @@ i.bx.bx-store-alt {
     width: auto;
     z-index: 1;
     top: 18%;
-    left: 10.6%;
+    left: 11%;
     height: auto;
     -webkit-display: none;
     display: none;
@@ -135,8 +135,13 @@ i.bx.bx-store-alt {
 }
 
 @media only screen and (max-width: 1502px) {
-    .notifications_store{
+    .notifications_store {
         width: 23px;
         height: 23px;
+    }
+
+    #sub-menu,
+    #sub-menu2 {
+        left: 10.6%;
     }
 }
