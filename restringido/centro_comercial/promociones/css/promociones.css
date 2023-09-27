@@ -97,6 +97,11 @@ hr {
         top: 20vh;
     }
 
+    #sub-menu{
+        top: 21%;
+        left: 9%;
+    }
+
     .space-publication .body-publication p{
         font-size: 2.8vh;
     }
