@@ -193,3 +193,15 @@ function CambioFiltros(grafica) {
     PeriodoSelect();
     actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
 }
+
+function OrdenarGrafica(grafica, ) {
+    let mayorMenor = document.getElementById('MayorMenor');
+    let menorMayor = document.getElementById('MenorMayor');
+    let aZ = document.getElementById('A-Z');
+    let zA = document.getElementById('Z-A');
+
+    mayorMenor.addEventListener('click', function() {
+
+    });
+
+}

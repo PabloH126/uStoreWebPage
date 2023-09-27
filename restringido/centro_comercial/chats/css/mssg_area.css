@@ -1,6 +1,7 @@
 .mssg-area {
     overflow-y: auto;
     padding: 10px 0;
+    height: 82vh;
 }
 
 .mssg-area p{
