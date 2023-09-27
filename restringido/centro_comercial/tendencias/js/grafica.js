@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             animation: {
-                duration: 1500,
+                duration: 1000,
                 easing: 'easeInOutQuad',
                 onProgress: function(animation) {
 
