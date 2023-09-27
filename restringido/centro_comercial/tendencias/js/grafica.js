@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             console.log("isTienda: ", isTienda);
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-            ActivarEventosActualizacionGrafica();
+            ActivarEventosActualizacionGrafica(grafica);
         });
     });
 
@@ -148,18 +148,18 @@ function ActivarGrafica()
     btnCrearPubli.style.display = "";
 }
 
-function ActivarEventosActualizacionGrafica()
+function ActivarEventosActualizacionGrafica(grafica)
 {
     if (!graficaActivada) return;
 
     categoriasInput.forEach(cat => {
-        cat.removeEventListener('click', CambioFiltros);
-        cat.addEventListener('click', CambioFiltros);
+        cat.removeEventListener('click', CambioFiltros(grafica));
+        cat.addEventListener('click', CambioFiltros(grafica));
     });
 
     periodoInput.forEach(per => {
-        per.removeEventListener('click', CambioFiltros);
-        per.addEventListener('click', CambioFiltros);
+        per.removeEventListener('click', CambioFiltros(grafica));
+        per.addEventListener('click', CambioFiltros(grafica));
     });
 }
 
@@ -182,14 +182,10 @@ function PeriodoSelect() {
         {
             periodoTiempo = per.textContent.toLowerCase();
         }
-        else
-        {
-            periodoTiempo = "mensual";
-        }
     });
 }
 
-function CambioFiltros() {
+function CambioFiltros(grafica) {
     CategoriasSelect();
     PeriodoSelect();
     console.log("Ya entro a CambioFiltros: isTienda: " + isTienda + ". categorias: " + categorias + ". periodoTiempo: " + periodoTiempo);
