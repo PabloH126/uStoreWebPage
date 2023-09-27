@@ -220,8 +220,10 @@ function OrdenarData(grafica, funcion)
 {
     let datosOrdenados = funcion([...grafica.data.datasets[0].data]);
     let labelsOrdenados = datosOrdenados.map(item => item.nombre);
-    let numOrdenados = datosOrdenados.map.(item => item.numeroSolicitudes);
+    let numOrdenados = datosOrdenados.map(item => item.numeroSolicitudes);
 
 
-    grafica
+    grafica.data.labels = labelsOrdenados;
+    grafica.data.datasets[0].data = numOrdenados;
+    grafica.update();
 }

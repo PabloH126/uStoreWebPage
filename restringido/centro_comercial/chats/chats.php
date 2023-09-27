@@ -64,7 +64,8 @@ require '../../security.php';
 				<div class="received-msg">
 					<div class="received-msg-inbox">
 						<div class="recived-box-msg">
-							<img src="https://www.blogdelfotografo.com/wp-content/uploads/2022/01/girasol-foto-perfil.webp" alt="">
+							<img src="https://hips.hearstapps.com/hmg-prod/images/fotos-1533279584.jpg" alt="">
+							
 						</div>
 						<span class="time">18:06 PM | July 24 </span>
 					</div>
@@ -73,7 +74,7 @@ require '../../security.php';
 				<div class="outgoing-msg">
 					<div class="outgoing-chats-msg">
 						<div class="outgoing-box-msg">
-							<img src="https://hips.hearstapps.com/hmg-prod/images/fotos-1533279584.jpg" alt="">
+							<img src="https://www.blogdelfotografo.com/wp-content/uploads/2022/01/girasol-foto-perfil.webp" alt="">
 						</div>
 						<span class="time">18:30 PM | July 24 </span>
 					</div>
