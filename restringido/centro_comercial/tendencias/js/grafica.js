@@ -152,9 +152,12 @@ function ActivarEventosActualizacionGrafica(grafica)
     let aZ = document.getElementById('A-Z');
     let zA = document.getElementById('Z-A');
 
-    mayorMenor.removeEventListener('click', function () {
-        ordena
-    })
+    AddEventListenerOrdenamiento(mayorMenor, OrdenamientoMayorMenor);
+    AddEventListenerOrdenamiento(menorMayor, OrdenamientoMenorMayor);
+    AddEventListenerOrdenamiento(aZ, OrdenamientoAZ);
+    AddEventListenerOrdenamiento(zA, OrdenamientoZA);
+
+
     categoriasInput.forEach(cat => {
         cat.removeEventListener('click', function() {
             CambioFiltros(grafica);       
@@ -226,4 +229,14 @@ function OrdenarData(grafica, funcion)
     grafica.data.labels = labelsOrdenados;
     grafica.data.datasets[0].data = numOrdenados;
     grafica.update();
+}
+
+function AddEventListenerOrdenamiento(element, funcionElement)
+{
+    element.removeEventListener('click', function () {
+        OrdenarData(grafica, funcionElement)
+    });
+    element.addEventListener('click', function () {
+        OrdenarData(grafica, funcionElement)
+    });
 }
