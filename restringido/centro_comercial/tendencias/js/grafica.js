@@ -221,6 +221,7 @@ function OrdenamientoZA(data) {
 
 function OrdenarData(grafica, funcion)
 {
+    let data = 
     let datosOrdenados = funcion([...grafica.data.datasets[0].data]);
     let labelsOrdenados = datosOrdenados.map(item => item.nombre);
     let numOrdenados = datosOrdenados.map(item => item.numeroSolicitudes);

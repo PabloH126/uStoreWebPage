@@ -16,12 +16,12 @@
 
 .received-msg {
     display: inline-block;
-    vertical-align: top;
     width: 100%;
 }
 
 .received-msg-inbox {
-    width: 57%;
+    max-width: 65%;
+    float: left;
     text-align: initial;
     margin-left: 1rem;
 }
