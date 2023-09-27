@@ -60,7 +60,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                 </div>
                 <div class="botI">
                     <div class="tit">
-                        <h2>Promociones</h2>
+                        <h2>Imágenes del producto</h2>
                     </div>
 
                     <div class="slider-container">
