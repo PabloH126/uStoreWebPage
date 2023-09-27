@@ -112,6 +112,10 @@ i.bx.bx-store-alt {
     justify-content: space-between;
 }
 
+#sub-menu2 .menu-option{
+    justify-content: center;
+}
+
 #sub-menu .menu-option:hover,
 #sub-menu2 .menu-option:hover {
     background-color: #007096;
