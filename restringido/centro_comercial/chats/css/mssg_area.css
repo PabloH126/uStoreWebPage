@@ -38,6 +38,7 @@
 
 p {
     overflow-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 /* Styling the msg-sent time  */

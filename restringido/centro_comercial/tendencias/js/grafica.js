@@ -152,10 +152,10 @@ function ActivarEventosActualizacionGrafica(grafica)
     let aZ = document.getElementById('A-Z');
     let zA = document.getElementById('Z-A');
 
-    AddEventListenerOrdenamiento(mayorMenor, OrdenamientoMayorMenor);
-    AddEventListenerOrdenamiento(menorMayor, OrdenamientoMenorMayor);
-    AddEventListenerOrdenamiento(aZ, OrdenamientoAZ);
-    AddEventListenerOrdenamiento(zA, OrdenamientoZA);
+    AddEventListenerOrdenamiento(grafica, mayorMenor, OrdenamientoMayorMenor);
+    AddEventListenerOrdenamiento(grafica, menorMayor, OrdenamientoMenorMayor);
+    AddEventListenerOrdenamiento(grafica, aZ, OrdenamientoAZ);
+    AddEventListenerOrdenamiento(grafica, zA, OrdenamientoZA);
 
 
     categoriasInput.forEach(cat => {
@@ -231,7 +231,7 @@ function OrdenarData(grafica, funcion)
     grafica.update();
 }
 
-function AddEventListenerOrdenamiento(element, funcionElement)
+function AddEventListenerOrdenamiento(grafica, element, funcionElement)
 {
     element.removeEventListener('click', function () {
         OrdenarData(grafica, funcionElement)
