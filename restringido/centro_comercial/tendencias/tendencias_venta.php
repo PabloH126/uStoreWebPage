@@ -124,7 +124,7 @@ curl_close($ch);
 					<div class="menu-option"><a id="downloadImage">PNG</a></div>
 				</div>
 			</div>
-			<span id="span-seleccion-tienda">Selecciona una opcion de filtro</span>
+			<span id="span-seleccion-tienda">Selecciona una opción de filtro</span>
 		</div>
 		
 	</div>

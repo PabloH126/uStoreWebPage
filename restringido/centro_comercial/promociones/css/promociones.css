@@ -96,4 +96,8 @@ hr {
         left: 5.3vw;
         top: 20vh;
     }
+
+    .space-publication .body-publication p{
+        font-size: 2.8vh;
+    }
 }
