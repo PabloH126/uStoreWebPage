@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const timers = document.querySelectorAll(".timer");
     console.log(timers);
     checkSolicitudes();
+    /*
     notificacionesTienda.forEach(notificacion => {
         if (notificacion.textContent != "0")
         {
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
         contentNumberNotificacion.style.display = "none";
     }
-
+    */
     timers.forEach(timerElement => {
         const time = timerElement.getAttribute("data-time").split(":");
         let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
