@@ -9,7 +9,6 @@ const item = document.getElementById('encabezado');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 const contentNumberNotificacion = document.querySelector('.content_number_notification');
-const timers = document.querySelectorAll(".timer");
 
 const token = document.cookie
     .split("; ")
@@ -17,6 +16,7 @@ const token = document.cookie
     ?.split("=")[1];
 
 document.addEventListener("DOMContentLoaded", function () {
+    const timers = document.querySelectorAll(".timer");
     checkSolicitudes();
     /*
     notificacionesTienda.forEach(notificacion => {
@@ -38,27 +38,26 @@ document.addEventListener("DOMContentLoaded", function () {
         contentNumberNotificacion.style.display = "none";
     }
     */
-});
+    timers.forEach(timer => {
+        const time = timer.getAttribute("data-time").split(":");
+        let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
+        console.log("totalSec: ", totalSec);
+        console.log("time: ", time);
+        setInterval(() => {
+            if (totalSec <= 0) return;
 
-timers.forEach(timer => {
-    const time = timer.getAttribute("data-time").split(":");
-    let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
-    console.log("totalSec: ", totalSec);
-    console.log("time: ", time);
-    setInterval(() => {
-        if (totalSec <= 0) return;
+            totalSec--;
 
-        totalSec--;
+            const dias = Math.floor(totalSec / (24 * 60 * 60));
+            totalSec %= (24 * 60 * 60);
+            const horas = Math.floor(totalSec / (60 * 60));
+            totalSec %= (60 * 60);
+            const minutos = Math.floor(totalSec / 60);
+            const segundos = totalSec % 60;
 
-        const dias = Math.floor(totalSec / (24 * 60 * 60));
-        totalSec %= (24 * 60 * 60);
-        const horas = Math.floor(totalSec / (60 * 60));
-        totalSec %= (60 * 60);
-        const minutos = Math.floor(totalSec / 60);
-        const segundos = totalSec % 60;
-
-        timer.textContent = `${dias} d :${horas.toString().padStart(2, '0')} h :${minutos.toString().padStart(2, '0')} m :${segundos.toString().padStart(2, '0')} s`;
-    }, 1000);
+            timer.textContent = `${dias}d: ${horas.toString().padStart(2, '0')}h: ${minutos.toString().padStart(2, '0')}m: ${segundos.toString().padStart(2, '0')}s`;
+        }, 1000);
+    });
 });
 
 solicitudesContainer.addEventListener("click", function(e) {
