@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const minutos = Math.floor(totalSec / 60);
             const segundos = totalSec % 60;
 
-            timer.textContent = `${days}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            timer.textContent = `${dias}:${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
         }, 1000);
     });
 });
