@@ -166,6 +166,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/easytimer@4.3.4/dist/easytimer.min.js"></script>
 	<script src="../js/menu_desplegable.js"></script>
 	<script src="js/updateSolicitudActiva.js"></script>
 </body>

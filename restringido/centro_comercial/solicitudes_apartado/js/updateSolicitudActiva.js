@@ -9,7 +9,6 @@ const item = document.getElementById('encabezado');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 const contentNumberNotificacion = document.querySelector('.content_number_notification');
-const timers = document.querySelectorAll(".timer");
 
 const token = document.cookie
     .split("; ")
@@ -17,6 +16,7 @@ const token = document.cookie
     ?.split("=")[1];
 
 document.addEventListener("DOMContentLoaded", function () {
+    const timers = document.querySelectorAll(".timer");
     checkSolicitudes();
     notificacionesTienda.forEach(notificacion => {
         if (notificacion.textContent != "0")
@@ -37,22 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
         contentNumberNotificacion.style.display = "none";
     }
 
-    timers.forEach(timer => {
-        const time = timer.getAttribute("data-time").split(":");
+    timers.forEach(timerElement => {
+        const time = timerElement.getAttribute("data-time").split(":");
         let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
 
-        setInterval(() => {
-            if (totalSec <= 0) return;
+        const timer = new easytimer.Timer();
 
-            totalSec--;
+        timer.start({ countdown: true, startValues: { seconds: totalSec } });
+        timer.addEventListener('secondsUpdated', function (e) {
+            const timeValues = timer.getTimeValues().toString().split(":");
+            timerElement.textContent = `${timeValues[0]}:${timeValues[1].padStart(2, '0')}:${timeValues[2].padStart(2, '0')}:${timeValues[3].padStart(2, '0')}`;
+        });
 
-            const dias = Math.floor(totalSec / (24 * 60 * 60));
-            const horas = Math.floor(totalSec / (60 * 60));
-            const minutos = Math.floor(totalSec / 60);
-            const segundos = totalSec % 60;
-
-            timer.textContent = `${days}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }, 1000);
+        timer.addEventListener('targetAchieved', function (e) {
+            timerElement.textContent = "00:00:00:00"
+        })
     });
 });
 
