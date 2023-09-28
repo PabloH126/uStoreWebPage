@@ -16,6 +16,7 @@ const token = document.cookie
     ?.split("=")[1];
 
 document.addEventListener("DOMContentLoaded", function () {
+    const timers = document.querySelectorAll(".timer");
     checkSolicitudes();
     notificacionesTienda.forEach(notificacion => {
         if (notificacion.textContent != "0")
@@ -35,6 +36,24 @@ document.addEventListener("DOMContentLoaded", function () {
     {
         contentNumberNotificacion.style.display = "none";
     }
+
+    timers.forEach(timer => {
+        const time = timer.getAttribute("data-time").split(":");
+        let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
+
+        setInterval(() => {
+            if (totalSec <= 0) return;
+
+            totalSec--;
+
+            const dias = Math.floor(totalSec / (24 * 60 * 60));
+            const horas = Math.floor(totalSec / (60 * 60));
+            const minutos = Math.floor(totalSec / 60);
+            const segundos = totalSec % 60;
+
+            timer.textContent = `${days}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+    });
 });
 
 solicitudesContainer.addEventListener("click", function(e) {
