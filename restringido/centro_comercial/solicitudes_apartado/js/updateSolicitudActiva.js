@@ -49,7 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
             totalSec--;
 
             const dias = Math.floor(totalSec / (24 * 60 * 60));
+            totalSec %= (24 * 60 * 60);
             const horas = Math.floor(totalSec / (60 * 60));
+            totalSec %= (60 * 60);
             const minutos = Math.floor(totalSec / 60);
             const segundos = totalSec % 60;
 
