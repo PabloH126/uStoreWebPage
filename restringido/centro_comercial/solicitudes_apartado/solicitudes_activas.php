@@ -144,16 +144,17 @@
 						$simpleFecha = substr($solicitud['fechaVencimiento'], 0, 19);
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
 						$tiempoVencimiento->setTimezone(new DateTimeZone('Etc/GMT+6'));
+						$intervalo = $tiempoActual->diff($tiempoVencimiento);
 						$tiempoVencimiento = $tiempoVencimiento->format('Y-m-d H:i:s');
 
 				?>
 						<div class="item solicitudesItem">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
 							<p><label><?php echo $solicitud['personalizado'] == true ? 'Personalizado' : '';?></label>
-							<?php echo $solicitud['nombreProducto']?></p>
-							<p>$<?php echo $solicitud['precioProducto']?></p>
-							<p><?php echo $solicitud['unidadesProducto']?></p>
-							<p><?php echo $tiempoVencimiento;?></p>
+							<?php echo $solicitud['nombreProducto']; ?></p>
+							<p>$<?php echo $solicitud['precioProducto']; ?></p>
+							<p><?php echo $solicitud['unidadesProducto']; ?></p>
+							<p><?php echo $intervalo;?></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar bttn_solicitudes'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar bttn_solicitudes'></i></p>
 						</div>
