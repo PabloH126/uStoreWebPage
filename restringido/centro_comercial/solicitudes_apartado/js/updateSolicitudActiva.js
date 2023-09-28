@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const time = timer.getAttribute("data-time").split(":");
         let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
         console.log("totalSec: ", totalSec);
+        console.log("time: ", time);
         setInterval(() => {
             if (totalSec <= 0) return;
 
