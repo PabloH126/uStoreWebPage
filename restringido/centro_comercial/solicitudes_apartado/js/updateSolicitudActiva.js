@@ -17,6 +17,7 @@ const token = document.cookie
 
 document.addEventListener("DOMContentLoaded", function () {
     const timers = document.querySelectorAll(".timer");
+    console.log(timers);
     checkSolicitudes();
     notificacionesTienda.forEach(notificacion => {
         if (notificacion.textContent != "0")
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         timer.start({ countdown: true, startValues: { seconds: totalSec } });
         timer.addEventListener('secondsUpdated', function (e) {
             const timeValues = timer.getTimeValues().toString().split(":");
+            console.log(timeValues);
             timerElement.textContent = `${timeValues[0]}:${timeValues[1].padStart(2, '0')}:${timeValues[2].padStart(2, '0')}:${timeValues[3].padStart(2, '0')}`;
         });
 
