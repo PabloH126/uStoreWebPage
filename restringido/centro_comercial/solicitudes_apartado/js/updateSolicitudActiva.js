@@ -9,6 +9,7 @@ const item = document.getElementById('encabezado');
 const notificacionesTotal = document.getElementById('number_notification');
 const notificacionesTienda = document.querySelectorAll('.numero_solicitudes_tienda');
 const contentNumberNotificacion = document.querySelector('.content_number_notification');
+const timers = document.querySelectorAll(".timer");
 
 const token = document.cookie
     .split("; ")
@@ -16,7 +17,6 @@ const token = document.cookie
     ?.split("=")[1];
 
 document.addEventListener("DOMContentLoaded", function () {
-    const timers = document.querySelectorAll(".timer");
     checkSolicitudes();
     notificacionesTienda.forEach(notificacion => {
         if (notificacion.textContent != "0")
