@@ -48,12 +48,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
             totalSec--;
 
+            let tmpTotalSec = totalSec; // Crear una copia temporal de totalSec para los cálculos
+
+            const dias = Math.floor(tmpTotalSec / (24 * 60 * 60));
+            tmpTotalSec %= (24 * 60 * 60);
+            const horas = Math.floor(tmpTotalSec / (60 * 60));
+            tmpTotalSec %= (60 * 60);
+            const minutos = Math.floor(tmpTotalSec / 60);
+            const segundos = tmpTotalSec % 60;
+            /*
             const dias = Math.floor(totalSec / (24 * 60 * 60));
             totalSec %= (24 * 60 * 60);
             const horas = Math.floor(totalSec / (60 * 60));
             totalSec %= (60 * 60);
             const minutos = Math.floor(totalSec / 60);
-            const segundos = totalSec % 60;
+            const segundos = totalSec % 60;*/
             
             let timerText = [];
 
