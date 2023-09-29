@@ -54,8 +54,26 @@ document.addEventListener("DOMContentLoaded", function () {
             totalSec %= (60 * 60);
             const minutos = Math.floor(totalSec / 60);
             const segundos = totalSec % 60;
+            
+            let timerText = [];
 
-            timer.textContent = `${dias}d: ${horas.toString().padStart(2, '0')}h: ${minutos.toString().padStart(2, '0')}m: ${segundos.toString().padStart(2, '0')}s`;
+            if(dias > 0)
+            {
+                timerText.push(`${dias}d`);
+            }
+            if(horas > 0 || timerText.length > 0)
+            {
+                timerText.push(`${horas}h`);
+            }
+            if(minutos > 0 || timerText.length > 0)
+            {
+                timerText.push(`${minutos}m`);
+            }
+            if(segundos > 0 || timerText.length > 0)
+            {
+                timerText.push(`${segundos}s`);
+            }
+            timer.textContent = timerText.join(": ");
         }, 1000);
     });
 });
