@@ -63,15 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             if(horas > 0 || timerText.length > 0)
             {
-                timerText.push(`${horas}h`);
+                timerText.push(`${horas.toString().padStart(2, '0')}h`);
             }
             if(minutos > 0 || timerText.length > 0)
             {
-                timerText.push(`${minutos}m`);
+                timerText.push(`${minutos.toString().padStart(2, '0')}m`);
             }
             if(segundos > 0 || timerText.length > 0)
             {
-                timerText.push(`${segundos}s`);
+                timerText.push(`${segundos.toString().padStart(2, '0')}s`);
             }
             timer.textContent = timerText.join(": ");
         }, 1000);
