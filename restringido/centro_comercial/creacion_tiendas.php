@@ -263,7 +263,6 @@ function CategoriasSelect($categorias)
     </div>
     <script src="js/mostrarImg.js"></script>
     <script src="js/creacion_tiendas.js"></script>
-    <!--<script src="js/slider_formularios.js"></script>-->
 </body>
 
 </html>

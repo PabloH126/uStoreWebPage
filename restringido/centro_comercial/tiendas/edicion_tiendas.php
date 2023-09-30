@@ -160,7 +160,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                 </div>
 
                 <!-- Categorias de tienda-->
-                <div class="item" id="item-3">
+                <div class="item categorias_form" id="item-3">
                     <p>3/6</p>
                     <div class="categorias">
                         <label><strong>Categorías de la tienda</strong></label>

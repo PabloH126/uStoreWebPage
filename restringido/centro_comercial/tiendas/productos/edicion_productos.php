@@ -89,7 +89,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                 </div>
 
                 <!-- Categorias del producto-->
-                <div class="item" id="item-2">
+                <div class="item categorias_form" id="item-2">
                     <p>2/6</p>
                     <div class="categorias">
                         <label><strong>Categorías del producto</strong></label>

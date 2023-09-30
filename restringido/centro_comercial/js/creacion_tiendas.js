@@ -445,7 +445,6 @@ function showNotification(message) {
     const notification = document.createElement("div");
     notification.classList.add("notification");
     notification.textContent = message;
-    console.log(notification.textContent);
     document.body.appendChild(notification);
     
     currentNotification = notification;
@@ -522,7 +521,6 @@ function showNotificationError(message) {
     const notification = document.createElement("div");
     notification.classList.add("notificationError");
     notification.textContent = message;
-    console.log("Content de la notificacion Error: ", notification.textContent);
     document.body.appendChild(notification);
 
     currentNotification = notification;
