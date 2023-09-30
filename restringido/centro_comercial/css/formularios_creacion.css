@@ -25,6 +25,10 @@ h1 {
 	transition: all .2s linear;
 }
 
+.content .lista form .item.categorias_form{
+	padding: 1%;
+}
+
 .content .lista form .item.active {
 	opacity: 1;
 }
