@@ -321,10 +321,9 @@ h1 {
 }
 
 .content .lista form .item #send button {
-	width: auto;
 	padding: 10%;
 	display: grid;
-    width: 11vw;
+    width: 12vw;
     align-content: center;
 }
 
@@ -377,7 +376,11 @@ h1 {
 
 	.content .lista form .item .bttn button {
 		border-radius: 29px;
-		width: 9vw;
+		width: 73px;
+	}
+
+	.content .lista form .item #send button{
+		
 	}
 
 	.content .lista form .item #one {
