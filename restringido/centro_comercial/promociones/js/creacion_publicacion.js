@@ -1,7 +1,7 @@
 let currentNotification;
 const imagenInput = document.getElementById('logoTienda');
 const imagenMostrada = document.getElementById('imagenSelec');
-
+const deleteIcon = document.getElementById('delete-icon');
 document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const nextButtons = document.querySelectorAll('.bttn-next');
@@ -120,6 +120,16 @@ if(imagenInput && imagenMostrada)
         }
     });
 }
+
+deleteIcon.addEventListener('click', () => {
+    const inputId = icon.getAttribute('data-input-id');
+    const imgId = icon.getAttribute('data-img-id');
+    const inputElement = document.getElementById(inputId);
+    const imgElement = document.getElementById(imgId);
+    deleteIcon.disabled = true;
+    imgElement.src = '';
+    inputElement.value = '';
+});
 
 function tiendasValidacion() {
     var tiendasSelect = document.getElementById('seleccion_tienda');
