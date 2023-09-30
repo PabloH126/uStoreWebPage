@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (isValid == false) {
-                e.target.preventDefault();
+                //e.target.preventDefault();
                 return;
             }
             else 
