@@ -24,7 +24,7 @@
 				<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/chats/chats.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/chat_select.png"></a>
 			</div>
 			<div id="ultimo" title="Perfil">
-				<a href="../../../../Inicio_frms/index.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/account_select.png"></a>	
+				<a href="../perfil/perfil.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/account_select.png"></a>	
 			</div>
 			
 		</div>
