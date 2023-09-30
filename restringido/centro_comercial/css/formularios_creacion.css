@@ -323,6 +323,9 @@ h1 {
 .content .lista form .item #send button {
 	width: auto;
 	padding: 10%;
+	display: grid;
+    width: 11vw;
+    align-content: center;
 }
 
 /*responsivo*/
@@ -374,7 +377,7 @@ h1 {
 
 	.content .lista form .item .bttn button {
 		border-radius: 29px;
-		width: 73px;
+		width: 9vw;
 	}
 
 	.content .lista form .item #one {
