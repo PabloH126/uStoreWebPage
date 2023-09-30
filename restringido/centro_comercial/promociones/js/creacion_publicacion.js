@@ -1,7 +1,7 @@
 let currentNotification;
 const imagenInput = document.getElementById('logoTienda');
 const imagenMostrada = document.getElementById('imagenSelec');
-const deleteIcon = document.getElementById('delete-icon');
+const deleteIcon = document.querySelector('.delete-icon');
 document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const nextButtons = document.querySelectorAll('.bttn-next');
