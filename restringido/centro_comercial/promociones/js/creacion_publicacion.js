@@ -122,8 +122,8 @@ if(imagenInput && imagenMostrada)
 }
 
 deleteIcon.addEventListener('click', () => {
-    const inputId = icon.getAttribute('data-input-id');
-    const imgId = icon.getAttribute('data-img-id');
+    const inputId = deleteIcon.getAttribute('data-input-id');
+    const imgId = deleteIcon.getAttribute('data-img-id');
     const inputElement = document.getElementById(inputId);
     const imgElement = document.getElementById(imgId);
     deleteIcon.disabled = true;
