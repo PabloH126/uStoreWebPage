@@ -20,7 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
     checkSolicitudes();
     
     timers.forEach(timer => {
-        const time = timer.getAttribute("data-time").split(":");
+        var time = timer.getAttribute("data-time");
+        if (time !== "0")
+        {
+            time = time.split(":");
+        }
+        else
+        {
+            timer.style.color = "red";
+            timer.textContent = "Vencida";
+            return;
+        }
         let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
         console.log("totalSec: ", totalSec);
         console.log("time: ", time);
@@ -60,16 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
             {
                 timerText.push(`${segundos.toString().padStart(2, '0')}s`);
             }
-            if(timerText.length <= 0)
-            {
-                timer.style.color = "red";
-                timer.textContent = "Vencida";
-                
-            }
-            else
-            {
-                timer.textContent = timerText.join(": ");
-            }
+            
+            timer.textContent = timerText.join(": ");
         }, 1000);
     });
 });
