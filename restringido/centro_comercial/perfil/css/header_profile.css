@@ -17,6 +17,11 @@
     grid-template-columns: 94% 1fr;
 }
 
+.info_img_profile {
+    display: grid;
+    grid-template-columns: 10% 1fr;
+}
+
 /*
 .content .header_profile .top_menu_profile{
 
