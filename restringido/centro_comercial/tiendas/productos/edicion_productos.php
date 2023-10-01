@@ -274,6 +274,11 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                         </div>
                         <div class="bttn" id="send">
                             <button type="submit">Guardar</button>
+                            <button id="submitBtn" class="loading">
+                                <div class="ball1"></div>
+                                <div class="ball2"></div>
+                                <div class="ball3"></div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -281,7 +286,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
         </div>
     </div>
     <script src="../../js/slider_formularios.js"></script>
-    <!--<script src="../../js/mostrarImg.js"></script>-->
     <script src="js/productosImg.js"></script>
     <script src="js/actualizacion_productos.js"></script>
     <script src="js/eliminacion_productos.js"></script>

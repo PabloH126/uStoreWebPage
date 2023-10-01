@@ -308,7 +308,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         </div>
                         <div class="bttn" id="send">
                             <!-- <button type="submit">Guardar</button> -->
-                            <button id="submitBtn" class="loading">
+                            <button id="submitBtn">
                                 <div class="ball1"></div>
                                 <div class="ball2"></div>
                                 <div class="ball3"></div>
