@@ -332,8 +332,9 @@ h1 {
 }
 
 .content .lista form .item #send button.loading{
-/*  padding: 3%;*/
+  padding: 14%;
   display: flex;
+  justify-content: center;
 }    
 
 .content .lista form .item #send button.loading div {
