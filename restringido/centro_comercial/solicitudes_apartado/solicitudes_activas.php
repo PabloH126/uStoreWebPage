@@ -144,7 +144,15 @@
 						$simpleFecha = substr($solicitud['fechaVencimiento'], 0, 19);
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
 						$tiempoVencimiento->setTimezone(new DateTimeZone('Etc/GMT+6'));
-						$intervalo = $tiempoActual->diff($tiempoVencimiento);
+						if($tiempoVencimiento > $tiempoActual)
+						{
+							$intervalo = $tiempoActual->diff($tiempoVencimiento);
+							$intervalo->format('%a:%H:%I:%S');
+						}
+						else
+						{
+							$intervalo = "vencido";
+						}
 						$tiempoVencimiento = $tiempoVencimiento->format('Y-m-d H:i:s');
 				?>
 						<div class="item solicitudesItem">
@@ -157,7 +165,7 @@
 							<p><?php echo $tiempoVencimiento; ?></p>
 							<p><?php echo $intervalo->format('%a:%H:%I:%S'); ?></p>
 
-							<p style="color: green" class="timer" data-time="<?php echo $intervalo->format('%a:%H:%I:%S'); ?>"></p>
+							<p style="color: green" class="timer" data-time="<?php echo $intervalo ?>"></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar bttn_solicitudes'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar bttn_solicitudes'></i></p>
 						</div>

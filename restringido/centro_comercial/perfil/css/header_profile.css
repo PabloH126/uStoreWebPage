@@ -6,6 +6,10 @@
     height: 20%;
 }
 
+.content .header_profile img{
+    height: 10px;
+}
+
 .content .header_profile .info_profile{
     height: 60%;
     background: grey;
