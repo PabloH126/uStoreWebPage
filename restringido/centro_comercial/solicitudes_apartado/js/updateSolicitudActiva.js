@@ -25,55 +25,54 @@ document.addEventListener("DOMContentLoaded", function () {
         if (time !== "0")
         {
             time = time.split(":");
+            let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
+            console.log("totalSec: ", totalSec);
+            console.log("time: ", time);
+            setInterval(() => {
+                if (totalSec <= 0) return;
+
+                totalSec--;
+
+                let tmpTotalSec = totalSec;
+
+                const dias = Math.floor(tmpTotalSec / (24 * 60 * 60));
+                tmpTotalSec %= (24 * 60 * 60);
+                const horas = Math.floor(tmpTotalSec / (60 * 60));
+                tmpTotalSec %= (60 * 60);
+                const minutos = Math.floor(tmpTotalSec / 60);
+                const segundos = tmpTotalSec % 60;
+                
+                let timerText = [];
+
+                if(dias > 0)
+                {
+                    timerText.push(`${dias}d`);
+                }
+                if(horas > 0 || timerText.length > 0)
+                {
+                    timerText.push(`${horas.toString().padStart(2, '0')}h`);
+                }
+                if(minutos > 0 || timerText.length > 0)
+                {
+                    if(timerText.length <= 0)
+                    {
+                        timer.style.color = "orange";
+                    }
+                    timerText.push(`${minutos.toString().padStart(2, '0')}m`);
+                }
+                if(segundos > 0 || timerText.length > 0)
+                {
+                    timerText.push(`${segundos.toString().padStart(2, '0')}s`);
+                }
+
+                timer.textContent = timerText.join(": ");
+            }, 1000);
         }
         else
         {
             timer.style.color = "red";
             timer.textContent = "Vencida";
-            return;
         }
-        let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
-        console.log("totalSec: ", totalSec);
-        console.log("time: ", time);
-        setInterval(() => {
-            if (totalSec <= 0) return;
-
-            totalSec--;
-
-            let tmpTotalSec = totalSec;
-
-            const dias = Math.floor(tmpTotalSec / (24 * 60 * 60));
-            tmpTotalSec %= (24 * 60 * 60);
-            const horas = Math.floor(tmpTotalSec / (60 * 60));
-            tmpTotalSec %= (60 * 60);
-            const minutos = Math.floor(tmpTotalSec / 60);
-            const segundos = tmpTotalSec % 60;
-            
-            let timerText = [];
-
-            if(dias > 0)
-            {
-                timerText.push(`${dias}d`);
-            }
-            if(horas > 0 || timerText.length > 0)
-            {
-                timerText.push(`${horas.toString().padStart(2, '0')}h`);
-            }
-            if(minutos > 0 || timerText.length > 0)
-            {
-                if(timerText.length <= 0)
-                {
-                    timer.style.color = "orange";
-                }
-                timerText.push(`${minutos.toString().padStart(2, '0')}m`);
-            }
-            if(segundos > 0 || timerText.length > 0)
-            {
-                timerText.push(`${segundos.toString().padStart(2, '0')}s`);
-            }
-
-            timer.textContent = timerText.join(": ");
-        }, 1000);
     });
 });
 
