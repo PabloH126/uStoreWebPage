@@ -3,7 +3,7 @@
 }
 
 .content .header_profile{
-    height: 20%;
+    height: 20vh;
 }
 
 .content .header_profile img{
@@ -20,6 +20,13 @@
 .info_img_profile {
     display: grid;
     grid-template-columns: 10% 1fr;
+    height: 100%;
+}
+
+.img_profile {
+    height: 90%;
+    width: 80%;
+    margin: auto;
 }
 
 /*
