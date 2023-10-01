@@ -18,7 +18,7 @@ const token = document.cookie
 document.addEventListener("DOMContentLoaded", function () {
     const timers = document.querySelectorAll(".timer");
     checkSolicitudes();
-    /*
+    
     timers.forEach(timer => {
         var time = timer.getAttribute("data-time");
         console.log(time);
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timer.textContent = "Vencida";
         }
     });
-    */
+    
 });
 
 solicitudesContainer.addEventListener("click", function(e) {
