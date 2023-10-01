@@ -25,10 +25,6 @@ h1 {
 	transition: all .2s linear;
 }
 
-.content .lista form .item.categorias_form{
-	padding: 1%;
-}
-
 .content .lista form .item.active {
 	opacity: 1;
 }
@@ -422,6 +418,10 @@ h1 {
 	.content .lista form .item .logoT .contentL .ip label::before {
 		width: 74%;
 		font-size: 29px;
+	}
+
+	.content .lista form .item.categorias_form{
+		padding: 0.5% 1%;
 	}
 
 	.content .lista form .item .bttn button {
