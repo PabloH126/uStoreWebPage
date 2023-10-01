@@ -330,13 +330,12 @@ h1 {
     width: 12vw;
     align-content: center;
 }
-
-button{
+/*
+.content .lista form .item #send button.loading{
   padding: 3%;
   display: flex;
-  width: 12vw;
 }    
-
+*/
 .content .lista form .item #send button.loading div {
     height:20px;
     width:20px;
