@@ -146,7 +146,6 @@
 						$tiempoVencimiento->setTimezone(new DateTimeZone('Etc/GMT+6'));
 						$intervalo = $tiempoActual->diff($tiempoVencimiento);
 						$tiempoVencimiento = $tiempoVencimiento->format('Y-m-d H:i:s');
-
 				?>
 						<div class="item solicitudesItem">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
@@ -154,30 +153,7 @@
 							<?php echo $solicitud['nombreProducto']; ?></p>
 							<p>$<?php echo $solicitud['precioProducto']; ?></p>
 							<p><?php echo $solicitud['unidadesProducto']; ?></p>
-							<p class="timer" data-time="
-								<?php 
-									if($intervalo->d > 0){ //dias
-										if($intervalo->d == 1){
-											echo $intervalo->format('%a día');
-										} else{
-											echo $intervalo->format('%a días');
-										}
-									} elseif($intervalo->h > 0){ //horas
-										if($intervalo->h == 1){
-											echo $intervalo->format('%h hora');
-										} else{
-											echo $intervalo->format('%h horas');
-										}
-									} elseif($intervalo->i > 0){ //minutos
-											echo $intervalo->format('%i min.');
-									}elseif($intervalo->s > 0){ //segundo
-										echo $intervalo->format('%s s.');
-									} else{	//vencido
-										echo 'Vencida';
-									}
-
-								?>">
-							</p>
+							<p class="timer" data-time="<?php echo $intervalo->format('%a:%H:%I:%S'); ?>"></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar bttn_solicitudes'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar bttn_solicitudes'></i></p>
 						</div>
@@ -189,7 +165,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/easytimer@4.3.4/dist/easytimer.min.js"></script>
 	<script src="../js/menu_desplegable.js"></script>
 	<script src="js/updateSolicitudActiva.js"></script>
 </body>
