@@ -1,26 +1,21 @@
 .content .header_profile{
-    display: grid;
-    grid-template-areas: 
-     "info info"
-     "graficas gerentes";
+    height: 20%;
 }
 
 .content .header_profile .info_profile{
-    display: grid;
-    grid-area: info;
+    height: 15%;
+    background: grey;
 }
 /*
 .content .header_profile .top_menu_profile{
-    display: grid;
-    grid-area: menu;
-}*/
+
+}
 
 .content .header_profile .top_menu_profile .graficas_option{
-    display: grid;
-    grid-area: graficas;
+
 }
 
 .content .header_profile .top_menu_profile .gerentes_option{
-    display: grid;
-    grid-area: gerentes;
+
 }
+*/
