@@ -1,9 +1,13 @@
+.content{
+    height: 88%;
+}
+
 .content .header_profile{
     height: 20%;
 }
 
 .content .header_profile .info_profile{
-    height: 15%;
+    height: 60%;
     background: grey;
 }
 /*
