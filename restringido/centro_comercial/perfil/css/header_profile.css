@@ -7,17 +7,21 @@
 }
 
 .content .header_profile .info_profile{
+    display: grid;
     grid-area: info;
 }
 
 .content .header_profile .top_menu_profile{
+    display: grid;
     grid-area: menu;
 }
 
 .content .header_profile .top_menu_profile .graficas_option{
+    display: grid;
     grid-area: graficas;
 }
 
 .content .header_profile .top_menu_profile .gerentes_option{
+    display: grid;
     grid-area: gerentes;
 }
