@@ -83,6 +83,7 @@ if (isset($_GET['id']))
 				</div>
 				
 			</div>
+			<div>
 				<div class="graficas_option">
 					graficas
 				</div>

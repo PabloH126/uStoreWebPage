@@ -151,7 +151,7 @@
 						}
 						else
 						{
-							$intervalo = "vencido";
+							$intervalo = "0";
 						}
 						$tiempoVencimiento = $tiempoVencimiento->format('Y-m-d H:i:s');
 				?>
