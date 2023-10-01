@@ -260,9 +260,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let div1 = document.createElement("div");
         div1.classList.add("ball1");
         let div2 = document.createElement("div");
-        div1.classList.add("ball2");
+        div2.classList.add("ball2");
         let div3 = document.createElement("div");
-        div1.classList.add("ball3");
+        div3.classList.add("ball3");
 
         submitButton.appendChild(div1);
         submitButton.appendChild(div2);
