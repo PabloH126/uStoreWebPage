@@ -66,10 +66,7 @@ if (isset($_GET['id']))
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
-		
-
-        
-		
+        holi
 	</div>
 	<script src="../js/menu_desplegable.js"></script>
 </body>
