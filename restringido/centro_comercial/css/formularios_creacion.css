@@ -480,12 +480,15 @@ h1 {
 	.content .lista form .item #send button.loading .ball2 {
 		-moz-animation: bounce 1s infinite ease-in-out;
 		-webkit-animation: bounce 1s infinite ease-in-out;
-
+		-webkit-animation-delay: 0.2s;
+		animation-delay: 0.1s;
 	}
 	
 	.content .lista form .item #send button.loading .ball3 {
 		-moz-animation: bounce 1s infinite ease-in-out;
 		-webkit-animation: bounce 1s infinite ease-in-out;
+		-webkit-animation-delay: 0.2s;
+		animation-delay: 0.2s;
 	}
 
 	@-moz-keyframes bounce {
