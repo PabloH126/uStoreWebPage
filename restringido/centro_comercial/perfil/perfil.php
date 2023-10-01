@@ -70,13 +70,11 @@ if (isset($_GET['id']))
 			<div class="info_profile">
 				info_profile
 			</div>
-			<div class="top_menu_profile">
-				<div class="graficas_option">
-					graficas
-				</div>
-				<div class="gerentes_option">
-					gerentes
-				</div>
+			<div class="graficas_option">
+				graficas
+			</div>
+			<div class="gerentes_option">
+				gerentes
 			</div>
         </div>
         <div>
