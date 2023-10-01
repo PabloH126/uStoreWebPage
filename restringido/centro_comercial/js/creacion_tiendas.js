@@ -522,7 +522,7 @@ function showNotificationError(message) {
     notification.classList.add("notificationError");
     notification.textContent = message;
     document.body.appendChild(notification);
-
+    console.log(notification);
     currentNotification = notification;
     setTimeout(() => {
         notification.classList.add("notificationErrorHide");
