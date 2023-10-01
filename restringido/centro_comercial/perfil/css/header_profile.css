@@ -1,0 +1,22 @@
+.content .header_profile{
+    display: grid;
+    grid-template-areas: "info" "info"
+                         "menu" "menu"
+                         "graficas" "gerentes";
+}
+
+.content .header_profile .info_profile{
+    grid-area: info;
+}
+
+.content .header_profile .top_menu_profile{
+    grid-area: menu;
+}
+
+.content .header_profile .top_menu_profile .graficas_option{
+    grid-area: graficas;
+}
+
+.content .header_profile .top_menu_profile .gerentes_option{
+    grid-area: gerentes;
+}

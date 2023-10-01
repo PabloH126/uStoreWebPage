@@ -71,7 +71,12 @@ if (isset($_GET['id']))
 				info_profile
 			</div>
 			<div class="top_menu_profile">
-				top_menu_profile
+				<div class="graficas_option">
+
+				</div>
+				<div class="gerentes_option">
+
+				</div>
 			</div>
         </div>
         <div>
