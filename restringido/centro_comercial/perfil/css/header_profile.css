@@ -1,8 +1,9 @@
 .content .header_profile{
     display: grid;
-    grid-template-areas: "info" "info"
-                         "menu" "menu"
-                         "graficas" "gerentes";
+    grid-template-areas: 
+     "info info"
+     "menu menu"
+     "graficas gerentes";
 }
 
 .content .header_profile .info_profile{

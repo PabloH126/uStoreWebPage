@@ -50,6 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             if(minutos > 0 || timerText.length > 0)
             {
+                if(timer.length <= 0)
+                {
+                    timer.style.color = "orange";
+                }
                 timerText.push(`${minutos.toString().padStart(2, '0')}m`);
             }
             if(segundos > 0 || timerText.length > 0)

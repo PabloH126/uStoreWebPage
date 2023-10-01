@@ -153,7 +153,7 @@
 							<?php echo $solicitud['nombreProducto']; ?></p>
 							<p>$<?php echo $solicitud['precioProducto']; ?></p>
 							<p><?php echo $solicitud['unidadesProducto']; ?></p>
-							<p class="timer" data-time="<?php echo $intervalo->format('%a:%H:%I:%S'); ?>"></p>
+							<p style="color: green" class="timer" data-time="<?php echo $intervalo->format('%a:%H:%I:%S'); ?>"></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar bttn_solicitudes'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar bttn_solicitudes'></i></p>
 						</div>
