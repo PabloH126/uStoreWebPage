@@ -379,6 +379,9 @@ h1 {
 	h1 {
 		font-size: 3em;
 	}
+
+	.content{
+		height: 88%;
 	
 	.content .lista{
 		margin: 0;;
