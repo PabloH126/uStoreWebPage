@@ -6,6 +6,7 @@
     height: 20vh;
 }
 
+/*info profile*/
 .content .header_profile .header_info_profile{
     height: 60%;
     background: grey;
@@ -46,6 +47,14 @@
 .info_profil div p {
     margin-right: 10px;
 }
+
+.log-out {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+/*top menu*/
 
 /*
 .content .header_profile .top_menu_profile{
