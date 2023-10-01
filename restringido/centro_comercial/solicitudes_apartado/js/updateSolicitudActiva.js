@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             if(minutos > 0 || timerText.length > 0)
             {
-                if(timer.length <= 0)
+                if(timerText.length <= 0)
                 {
                     timer.style.color = "orange";
                 }
