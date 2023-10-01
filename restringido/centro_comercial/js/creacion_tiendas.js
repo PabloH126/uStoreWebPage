@@ -524,11 +524,12 @@ function showNotificationError(message) {
     document.body.appendChild(notification);
     console.log(notification);
     currentNotification = notification;
-    setTimeout(() => {
+    /*setTimeout(() => {
         notification.classList.add("notificationErrorHide");
         setTimeout(() => {
             hideNotification();
         }, 550);
     }, 2500);
+    */
 }
 

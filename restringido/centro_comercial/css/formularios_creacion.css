@@ -331,6 +331,12 @@ h1 {
     align-content: center;
 }
 
+button{
+  padding: 3%;
+  display: flex;
+  width: 12vw;
+}    
+
 .content .lista form .item #send button.loading div {
     height:20px;
     width:20px;
