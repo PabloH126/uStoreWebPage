@@ -29,7 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("totalSec: ", totalSec);
             console.log("time: ", time);
             setInterval(() => {
-                if (totalSec <= 0) return;
+                if (totalSec <= 0){
+                    timer.style.color = "red";
+                    timer.textContent = "Vencida";
+                    return;
+                }
 
                 totalSec--;
 
