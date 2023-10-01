@@ -2,7 +2,6 @@
     display: grid;
     grid-template-areas: 
      "info info"
-     "menu menu"
      "graficas gerentes";
 }
 
