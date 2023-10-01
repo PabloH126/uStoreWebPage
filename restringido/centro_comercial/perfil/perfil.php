@@ -85,13 +85,9 @@ if (isset($_GET['id']))
 				</div>
 				
 			</div>
-			<div>
-				<div class="graficas_option">
-					graficas
-				</div>
-				<div class="gerentes_option">
-					gerentes
-				</div>
+			<div class="top_menu_profile">
+				<button class="graficas_option">Gráficas</div>
+				<button class="gerentes_option">Gerentes</div>
 			</div>
         </div>
         <div>
