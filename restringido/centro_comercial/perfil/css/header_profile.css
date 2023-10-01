@@ -33,9 +33,18 @@
     max-width: 7.5vw;
 }
 
+.info_profil{
+    display: grid;
+    align-items: center;
+    justify-items: start;
+}
 
-.info_profil div{
+.info_profil div {
+    display: flex;
+}
 
+.info_profil div p {
+    margin-right: 10px;
 }
 
 /*
