@@ -154,7 +154,30 @@
 							<?php echo $solicitud['nombreProducto']; ?></p>
 							<p>$<?php echo $solicitud['precioProducto']; ?></p>
 							<p><?php echo $solicitud['unidadesProducto']; ?></p>
-							<p class="timer" data-time="<?php echo $intervalo->format('%a:%H:%I:%S'); ?>"></p>
+							<p class="timer" data-time="
+								<?php 
+									if($intervalo->d > 0){ //dias
+										if($intervalo->d == 1){
+											echo $intervalo->format('%a día');
+										} else{
+											echo $intervalo->format('%a días');
+										}
+									} elseif($intervalo->h > 0){ //horas
+										if($intervalo->h == 1){
+											echo $intervalo->format('%h hora');
+										} else{
+											echo $intervalo->format('%h horas');
+										}
+									} elseif($intervalo->i > 0){ //minutos
+											echo $intervalo->format('%i min.');
+									}elseif($intervalo->s > 0){ //segundo
+										echo $intervalo->format('%s s.');
+									} else{	//vencido
+										echo 'Vencida';
+									}
+
+								?>">
+							</p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar bttn_solicitudes'></i></p>
 							<p><i id="rechazar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: #d30303;" class='bx bxs-x-circle rechazar bttn_solicitudes'></i></p>
 						</div>
