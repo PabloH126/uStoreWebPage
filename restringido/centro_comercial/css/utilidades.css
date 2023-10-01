@@ -51,7 +51,7 @@ i.bx.bx-store-alt {
     color: #007096;
 }
 
-@keyframes background-expand {
+@-webkit-keyframes background-expand {
     0% {
         transform: scale(1);
     }

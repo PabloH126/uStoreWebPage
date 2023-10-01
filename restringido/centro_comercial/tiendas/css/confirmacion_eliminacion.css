@@ -12,7 +12,7 @@
     font-family: "Golos Text", sans-serif;
 }
 
-@keyframes slideIn {
+@-webkit-keyframes slideIn {
     from {
         transform: translateX(100%);
     }

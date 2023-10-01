@@ -20,7 +20,7 @@
 	-webkit-animation: desvanecer 1.25s 1 forwards linear;
 }
 
-@keyframes desvanecer{
+@-webkit-keyframes desvanecer{
 	0%{
 	}
 
