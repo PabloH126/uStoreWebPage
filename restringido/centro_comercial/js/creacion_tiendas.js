@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var submitButton = document.querySelector('button[type="submit"]');
         submitButton.disabled = true;
-        submitButton.style.backgroundColor = "gray";
+        submitButton.classList.add("loading");
         
         try {
             showNotification("Creando tienda...");
@@ -524,12 +524,12 @@ function showNotificationError(message) {
     document.body.appendChild(notification);
     console.log(notification);
     currentNotification = notification;
-    /*setTimeout(() => {
+    setTimeout(() => {
         notification.classList.add("notificationErrorHide");
         setTimeout(() => {
             hideNotification();
         }, 550);
     }, 2500);
-    */
+    
 }
 
