@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        var submitButton = document.querySelector('button[type="submit"]');
+        var submitButton = document.getElementById("submitBtn");
         submitButton.disabled = true;
         submitButton.classList.add("loading");
         
