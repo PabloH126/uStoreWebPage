@@ -154,6 +154,7 @@
 							$intervalo = "0";
 						}
 						$tiempoVencimiento = $tiempoVencimiento->format('Y-m-d H:i:s');
+						echo $intervalo;
 				?>
 						<div class="item solicitudesItem">
 							<img src="<?php echo $solicitud['imageProducto'];?>" alt="">
