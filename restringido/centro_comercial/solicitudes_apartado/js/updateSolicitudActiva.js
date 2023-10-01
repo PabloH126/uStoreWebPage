@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     timers.forEach(timer => {
         var time = timer.getAttribute("data-time");
+        console.log(time);
         if (time !== "0")
         {
             time = time.split(":");
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
             {
                 timerText.push(`${segundos.toString().padStart(2, '0')}s`);
             }
-            
+
             timer.textContent = timerText.join(": ");
         }, 1000);
     });
