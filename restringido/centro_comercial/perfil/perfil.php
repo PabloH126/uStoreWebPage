@@ -67,8 +67,21 @@ if (isset($_GET['id']))
 
 	<div class="content">
         <div class="header_profile">
-			<div class="info_profile">
-				info_profile
+			<div class="header_info_profile">
+				<div class="info_img_profile">
+					<div class="img_profile">
+						<img src="https://i.pinimg.com/564x/4f/cd/0d/4fcd0d0480073175756ac628a1cf959e.jpg" alt="imagen de perfil">
+					</div>
+					<div class="info_profil">
+						<p>Nombre</p>
+						<p>correo</p>
+						<p>fecha</p>
+					</div>
+				</div>
+				<div class="log-out">
+					<img src="https://ustoree.azurewebsites.net/img/log_out.png" alt="Cerrar sesión">
+				</div>
+				
 			</div>
 				<div class="graficas_option">
 					graficas
