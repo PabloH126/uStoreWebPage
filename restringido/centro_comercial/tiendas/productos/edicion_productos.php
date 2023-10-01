@@ -274,10 +274,8 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                         </div>
                         <div class="bttn" id="send">
                             <button type="submit">Guardar</button>
-                            <button id="submitBtn" class="loading">
-                                <div class="ball1"></div>
-                                <div class="ball2"></div>
-                                <div class="ball3"></div>
+                            <button type="submit" id="submitBtn">
+                                Guardar
                             </button>
                         </div>
                     </div>

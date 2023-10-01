@@ -191,9 +191,22 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        var submitButton = document.querySelector('button[type="submit"]');
+        var submitButton = document.getElementById("submitBtn");
         submitButton.disabled = true;
-        submitButton.style.backgroundColor = "gray";
+        submitButton.textContent = "";
+
+        let div1 = document.createElement("div");
+        div1.classList.add("ball1");
+        let div2 = document.createElement("div");
+        div2.classList.add("ball2");
+        let div3 = document.createElement("div");
+        div3.classList.add("ball3");
+
+        submitButton.appendChild(div1);
+        submitButton.appendChild(div2);
+        submitButton.appendChild(div3);
+        
+        submitButton.classList.add("loading");
 
         try {
             showNotification("Cargando producto...");

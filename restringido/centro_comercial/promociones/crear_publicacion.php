@@ -116,10 +116,8 @@ $ch = curl_init();
                         </div>
                         <div class="bttn" id="send">
                             <button type="submit">Publicar</button>
-                            <button id="submitBtn">
-                                <div class="ball1"></div>
-                                <div class="ball2"></div>
-                                <div class="ball3"></div>
+                            <button type="submit" id="submitBtn">
+                                Guardar
                             </button>
                         </div>
                     </div>
