@@ -59,7 +59,7 @@ if (isset($_GET['id']))
 	<meta charset="utf-8">
 	<title>Perfil</title>
 	<?php require("../templates/template.styles.php") ?>
-	<?php require("templates/template.secc_chat.php") ?>
+	<?php require("templates/template.secc_perfil.php") ?>
 </head>
 
 <body>
