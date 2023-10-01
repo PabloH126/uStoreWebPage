@@ -307,7 +307,12 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                             <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
                         </div>
                         <div class="bttn" id="send">
-                            <button type="submit">Guardar</button>
+                            <!-- <button type="submit">Guardar</button> -->
+                            <button class="loadingContainer loading">
+                                <div class="ball1"></div>
+                                <div class="ball2"></div>
+                                <div class="ball3"></div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -316,7 +321,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
     </div>
     <div id="notification-container"></div>
     <script src="../js/slider_formularios.js"></script>
-    <!--<script src="../js/mostrarImg.js"></script>-->
     <script src="../js/edicion_tiendas.js"></script>
     <script src="../js/confirmacion_eliminacion.js"></script>
 </body>
