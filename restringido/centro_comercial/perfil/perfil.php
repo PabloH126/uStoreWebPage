@@ -68,10 +68,10 @@ if (isset($_GET['id']))
 	<div class="content">
         <div class="header_profile">
 			<div class="info_profile">
-
+				info_profile
 			</div>
 			<div class="top_menu_profile">
-
+				top_menu_profile
 			</div>
         </div>
         <div>
