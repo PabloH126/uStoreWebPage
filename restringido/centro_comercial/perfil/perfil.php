@@ -86,8 +86,8 @@ if (isset($_GET['id']))
 				
 			</div>
 			<div class="top_menu_profile">
-				<button class="graficas_option">Gráficas</div>
-				<button class="gerentes_option">Gerentes</div>
+				<button class="graficas_option">Gráficas</button>
+				<button class="gerentes_option">Gerentes</button>
 			</div>
         </div>
         <div>
