@@ -74,8 +74,10 @@ if (isset($_GET['id']))
 					</div>
 					<div class="info_profil">
 						<p>Nombre</p>
-						<p>correo</p>
-						<p>fecha</p>
+						<div>
+							<p>correo</p>
+							<p>fecha</p>
+						</div>
 					</div>
 				</div>
 				<div class="log-out">
