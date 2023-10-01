@@ -42,30 +42,42 @@ document.addEventListener("DOMContentLoaded", function () {
                 const minutos = Math.floor(tmpTotalSec / 60);
                 const segundos = tmpTotalSec % 60;
                 
-                let timerText = [];
+                let timerText;
 
                 if(dias > 0)
                 {
-                    timerText.push(`${dias}d`);
-                }
-                if(horas > 0 || timerText.length > 0)
-                {
-                    timerText.push(`${horas.toString().padStart(2, '0')}h`);
-                }
-                if(minutos > 0 || timerText.length > 0)
-                {
-                    if(timerText.length <= 0)
+                    if (dias == 1)
                     {
-                        timer.style.color = "orange";
+                        timerText = `${dias} día`;
                     }
-                    timerText.push(`${minutos.toString().padStart(2, '0')}m`);
+                    else
+                    {
+                        timerText = `${dias} días`;
+                    }
                 }
-                if(segundos > 0 || timerText.length > 0)
+                if(horas > 0)
                 {
-                    timerText.push(`${segundos.toString().padStart(2, '0')}s`);
+                    if (horas == 1)
+                    {
+                        timerText = `${horas} hora`;
+                    }
+                    else
+                    {
+                        timerText = `${horas} hrs`;
+                    }
+                }
+                if(minutos > 0)
+                {
+                    timer.style.color = "orange";
+                    timerText = `${minutos} min`;
+
+                }
+                if(segundos > 0)
+                {
+                    timerText = `${segundos} s`;
                 }
 
-                timer.textContent = timerText.join(": ");
+                timer.textContent = timerText;
             }, 1000);
         }
         else
