@@ -115,10 +115,7 @@ $ch = curl_init();
                                     data-to_item="2"></i></button>
                         </div>
                         <div class="bttn" id="send">
-                            <button type="submit">Publicar</button>
-                            <button type="submit" id="submitBtn">
-                                Guardar
-                            </button>
+                            <button type="submit" id="submitBtn">Guardar</button>
                         </div>
                     </div>
                 </div>
