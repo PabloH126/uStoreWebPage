@@ -66,8 +66,13 @@ if (isset($_GET['id']))
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
-        <div class="">
+        <div class="header_profile">
+			<div class="info_profile">
 
+			</div>
+			<div class="top_menu_profile">
+
+			</div>
         </div>
         <div>
 
