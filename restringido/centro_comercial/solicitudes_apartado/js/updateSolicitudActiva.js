@@ -77,6 +77,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 timer.textContent = timerText;
             }, 1000);
+            if (totalSec <= 0){
+                timer.style.color = "red";
+                timer.textContent = "Vencida";
+                clearInterval(intervaloTimer);
+            }
         }
         else
         {
