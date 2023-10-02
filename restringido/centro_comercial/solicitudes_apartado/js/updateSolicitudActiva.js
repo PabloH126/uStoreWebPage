@@ -29,13 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("totalSec: ", totalSec);
             console.log("time: ", time);
             let intervaloTimer = setInterval(() => {
-                if (totalSec <= 0){
-                    timer.style.color = "red";
-                    timer.textContent = "Vencida";
-                    clearInterval(intervaloTimer);
-                    return;
-                }
-
                 totalSec--;
 
                 let tmpTotalSec = totalSec;
