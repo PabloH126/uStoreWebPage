@@ -7,9 +7,12 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Perfil/GetPerfil");
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-	'Authorization: Bearer ' . $_COOKIE['SessionToken']
-)
+curl_setopt(
+	$ch,
+	CURLOPT_HTTPHEADER,
+	array(
+		'Authorization: Bearer ' . $_COOKIE['SessionToken']
+	)
 );
 
 $response = curl_exec($ch);
@@ -32,9 +35,12 @@ if (isset($_GET['id'])) {
 	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Publicaciones/GetPublicacionesRecientes?idTienda=" . $_GET['id']);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	)
+	curl_setopt(
+		$ch,
+		CURLOPT_HTTPHEADER,
+		array(
+			'Authorization: Bearer ' . $_COOKIE['SessionToken']
+		)
 	);
 
 	$response = curl_exec($ch);
@@ -96,6 +102,7 @@ if (isset($_GET['id'])) {
 			<?php require("../templates/template.aside.php") ?>
 		</div>
 	</div>
+	<script src="../js/menu_aside.js"></script>
 	<script src="../js/menu_desplegable.js"></script>
 </body>
 
