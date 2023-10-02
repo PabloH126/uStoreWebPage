@@ -70,7 +70,7 @@ if (isset($_GET['id']))
 			<div class="header_info_profile">
 				<div class="info_img_profile">
 					<div class="img_profile">
-						<img src="https://i.pinimg.com/564x/4f/cd/0d/4fcd0d0480073175756ac628a1cf959e.jpg" alt="imagen de perfil">
+						<img src="img/profile_icon.png" alt="imagen de perfil">
 					</div>
 					<div class="info_profil">
 						<p>Nombre</p>

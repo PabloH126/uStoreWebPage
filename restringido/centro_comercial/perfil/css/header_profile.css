@@ -33,6 +33,7 @@
 .content .header_profile img {
     max-height: 8.8vh;
     max-width: 7.5vw;
+    border-radius: 50%;
 }
 
 .info_profil{
