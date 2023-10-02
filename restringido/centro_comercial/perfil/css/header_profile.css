@@ -59,11 +59,14 @@
 
 
 .top_menu_profile{
-
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .top_menu_profile button {
     all: inherit;
+    display: flex;
+    justify-content: center;
 }
 
 /*
