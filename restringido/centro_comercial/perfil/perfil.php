@@ -90,7 +90,7 @@ if (isset($_GET['id']))
 				<button class="gerentes_option">Gerentes</button>
 			</div>
         </div>
-        <div>
+        <div class="aside_profile">
 			<aside>
 
 			</aside>

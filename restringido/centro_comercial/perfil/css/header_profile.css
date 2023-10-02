@@ -1,5 +1,6 @@
 .content{
     height: 88%;
+    display: block;
 }
 
 .content .header_profile{
@@ -83,17 +84,3 @@ button.graficas_option:hover {
     transition-duration: 0.5s;
     -webkit-transition-duration: 0.5s;
 }
-
-/*
-.content .header_profile .top_menu_profile{
-
-}
-
-.content .header_profile .top_menu_profile .graficas_option{
-
-}
-
-.content .header_profile .top_menu_profile .gerentes_option{
-
-}
-*/
