@@ -3,12 +3,13 @@
 }
 
 .content .header_profile{
-    height: 20vh;
+    height: 17vh;
+    display: grid;
+    grid-template-rows: 75% 25%;
 }
 
 /*info profile*/
 .content .header_profile .header_info_profile{
-    height: 60%;
     background: grey;
     display: grid;
     grid-template-columns: 94% 1fr;
@@ -55,6 +56,11 @@
 }
 
 /*top menu*/
+
+
+.top_menu_profile{
+
+}
 
 .top_menu_profile button {
     all: inherit;

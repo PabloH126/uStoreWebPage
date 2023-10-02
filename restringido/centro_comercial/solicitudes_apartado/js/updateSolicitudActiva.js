@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         timerText = `${dias} días`;
                     }
                 }
-                if(horas > 0)
+                if(horas > 0 && dias <= 0)
                 {
                     if (horas == 1)
                     {
@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         timerText = `${horas} hrs`;
                     }
                 }
-                if(minutos > 0)
+                if(minutos > 0 && horas <= 0 && dias <= 0)
                 {
                     timer.style.color = "orange";
                     timerText = `${minutos} min`;
 
                 }
-                if(segundos > 0)
+                if(segundos > 0 && minutos <= 0 && horas <= 0 && dias <= 0)
                 {
                     timerText = `${segundos} s`;
                 }
