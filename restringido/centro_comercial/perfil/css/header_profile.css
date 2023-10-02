@@ -3,7 +3,7 @@
 }
 
 .content .header_profile{
-    height: 17vh;
+    height: 14vh;
     display: grid;
     grid-template-rows: 72% 27%;
 }
