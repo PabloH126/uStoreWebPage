@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     timer.style.color = "red";
                     timer.textContent = "Vencida";
                     clearInterval(intervaloTimer);
+                    return;
                 }
 
                 let tmpTotalSec = totalSec;
