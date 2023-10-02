@@ -80,6 +80,8 @@ button.gerentes_option:hover,
 button.graficas_option:hover {
     background: white;
     color: #007096;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
 }
 
 /*
