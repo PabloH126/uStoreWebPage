@@ -5,7 +5,7 @@
 .content .header_profile{
     height: 17vh;
     display: grid;
-    grid-template-rows: 75% 25%;
+    grid-template-rows: 70% 30%;
 }
 
 /*info profile*/
