@@ -8,6 +8,7 @@ listElements.forEach(listElement => {
             listElement.classList.toggle('arrow');
             let height = 0;
             let menu = listElement.nextElementSibling;
+            console.log(menu);
             if (menu.style.height != '0') {
                 menu.style.height = '0';
             } else {
