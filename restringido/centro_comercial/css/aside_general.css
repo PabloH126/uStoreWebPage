@@ -32,7 +32,7 @@ aside .list .list_item{
     overflow: hidden;
 }
 
-aside .list .list_item ul .select{
+aside .list .list_item ul.select{
     height: 37vh;
 }
 
