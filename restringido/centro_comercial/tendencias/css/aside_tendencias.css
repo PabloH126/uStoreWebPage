@@ -1,8 +1,0 @@
-#categorias::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 0;
-}
-
-#categorias{
-    overflow: auto;
-}
