@@ -11,7 +11,7 @@ listElements.forEach(listElement => {
             console.log(menu);
             console.log(menu.style.height);
 
-            if (menu.style.height != "0px") {
+            if (menu.style.height && menu.style.height != "0px") {
                 console.log("entro al if");
             } else {
                 console.log("entro al else");
