@@ -18,6 +18,7 @@ listElements.forEach(listElement => {
                 console.log("entro al else");
                 // De lo contrario, establece la altura a 37vh
                 menu.classList.add('select');
+                console.log(menu);
             }
 /*
             if (menu.style.height === '37vh') {
