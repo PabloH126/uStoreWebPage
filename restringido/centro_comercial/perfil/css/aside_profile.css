@@ -1,6 +1,6 @@
 .aside_profile {
     display: grid;
-    grid-template-columns: 14vw 80% 1fr;
+    grid-template-columns: 14vw 75% 1fr;
 }
 
 aside {
