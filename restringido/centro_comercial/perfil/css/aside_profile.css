@@ -7,6 +7,6 @@ aside {
     height: 74vh;
 }
 
-aside .list .list_item ul .select {
+aside .list .list_item ul.select {
     height: 20vh;
 }

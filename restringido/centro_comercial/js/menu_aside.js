@@ -12,7 +12,7 @@ listElements.forEach(listElement => {
                 menu.style.height = '0';
             } else {
                 // De lo contrario, establece la altura a 37vh
-                listElement.classList.toggle('select');
+                menu.classList.add('select');
             }
 /*
             if (menu.style.height === '37vh') {
