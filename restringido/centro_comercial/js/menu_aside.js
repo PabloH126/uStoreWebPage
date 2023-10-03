@@ -9,7 +9,6 @@ listElements.forEach(listElement => {
             let height = 0;
             let menu = listElement.nextElementSibling;
             console.log(menu);
-            menu.style.height = 0;
             console.log(menu.style.height);
 
             if (menu.style.height != "0px") {
