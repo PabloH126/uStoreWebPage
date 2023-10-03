@@ -2,6 +2,9 @@ let listElements = document.querySelectorAll('.list_button--click');
 let btnTiendas = document.getElementById('btnTiendas');
 let isPerfil = document.getElementById('isPerfil');
 
+console.log(btnTiendas);
+console.log(isPerfil);
+
 if (isPerfil)
 {
     btnTiendas.textContent = "Sucursales";
