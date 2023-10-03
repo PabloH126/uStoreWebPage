@@ -10,7 +10,7 @@
 
             <ul class="list_show">
                 <li class="list_inside">
-                    <button class="bttnp p normal tipo">Tiendas</button>
+                    <button class="bttnp p normal tipo" id="btnTiendas"></button>
                     <button class="bttnp p normal tipo">Productos</button>
                 </li>
             </ul>

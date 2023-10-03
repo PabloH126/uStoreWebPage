@@ -138,6 +138,7 @@ curl_close($ch);
 		?>
 	</div>
 	<?php require("templates/template.scripts_perfil_grafica.php"); ?>
+	<input type="hidden" id="isPerfil">
 </body>
 
 </html>

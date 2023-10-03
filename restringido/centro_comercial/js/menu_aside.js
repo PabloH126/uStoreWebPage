@@ -1,4 +1,15 @@
 let listElements = document.querySelectorAll('.list_button--click');
+let btnTiendas = document.getElementById('btnTiendas');
+let isPerfil = document.getElementById('isPerfil');
+
+if (isPerfil)
+{
+    btnTiendas.textContent = "Sucursales";
+}
+else
+{
+    btnTiendas.textContent = "Tiendas";
+}
 
 listElements.forEach(listElement => {
     // Verifica si el elemento tiene la clase "categorias"
