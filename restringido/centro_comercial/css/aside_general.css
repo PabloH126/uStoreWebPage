@@ -3,6 +3,10 @@
     grid-template-columns: 14vw 1fr;
 }
 
+.body {
+    max-height: 72%;
+}
+
 aside {
     display: flex;
     height: 88vh;

@@ -100,6 +100,10 @@ if (isset($_GET['id'])) {
 		</div>
 		<div class="aside_profile">
 			<?php require("../templates/template.aside.php") ?>
+
+			<div class="body">
+				<canvas id="grafica"></canvas>
+			</div>
 		</div>
 	</div>
 	<script src="../js/menu_aside.js"></script>

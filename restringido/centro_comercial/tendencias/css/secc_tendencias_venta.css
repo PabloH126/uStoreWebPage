@@ -29,10 +29,6 @@ header .content .final #tendencias img {
     cursor: pointer;
 }
 
-.body {
-    max-height: 72%;
-}
-
 .crear-publicacion {
     position: absolute;
     right: 5vw;
