@@ -6,3 +6,17 @@
 #span-seleccion-tienda{
     margin-top: 0vh;
 }
+
+.crear-publicacion{
+    position: absolute;
+    bottom: 4vh;
+    right: 4vw;
+}
+
+.crear-publicacion i {
+    background: #007096;
+    color: white;
+    padding: 20%;
+    border-radius: 50%;
+    font-size: 2.5rem;
+}
