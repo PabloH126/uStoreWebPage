@@ -13,7 +13,7 @@ listElements.forEach(listElement => {
 
             if (menu.style.height && menu.style.height != "0px") {
                 console.log("entro al if");
-                /*menu.style.height = '0';*/
+                menu.style.height = '0';
             } else {
                 console.log("entro al else");
                 // De lo contrario, establece la altura a 37vh
