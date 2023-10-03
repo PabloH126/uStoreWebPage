@@ -114,19 +114,18 @@ curl_close($ch);
 				</div>
 			</div>
 			<div class="body">
-				<canvas id="grafica"></canvas>
-
-				<div class="crear-publicacion" id="btnCrearPubli">				
-					<a title="Descargar">
-						<i class='bx bxs-download' id="menu-icon2"></i>
-					</a>
-				</div>	
+				<canvas id="grafica"></canvas>	
 
 				<div id="sub-menu2">
 					<div class="menu-option"><a id="downloadPDF">PDF</a></div>
 					<div class="menu-option"><a id="downloadImage">PNG</a></div>
 				</div>
 			</div>
+			<div class="crear-publicacion" id="btnCrearPubli">				
+					<a title="Descargar">
+						<i class='bx bxs-download' id="menu-icon2"></i>
+					</a>
+				</div>	
 			<span id="span-seleccion-tienda">Selecciona una opción de filtro</span>
 		</div>
 		<?php
