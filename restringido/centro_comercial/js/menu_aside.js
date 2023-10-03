@@ -14,7 +14,7 @@ listElements.forEach(listElement => {
 
             if (computedStyleMenu.height && computedStyleMenu.height != "0px") {
                 console.log("entro al if");
-                computedStyleMenu.height = '0';
+                menu.classList.remove("select");
             } else {
                 console.log("entro al else");
                 // De lo contrario, establece la altura mediante css
