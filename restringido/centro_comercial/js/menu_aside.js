@@ -9,14 +9,15 @@ listElements.forEach(listElement => {
             let height = 0;
             let menu = listElement.nextElementSibling;
             console.log(menu);
-            console.log(menu.style.height);
+            let computedStyleMenu = window.getComputedStyle(menu);
+            console.log(computedStyleMenu.height);
 
-            if (menu.style.height && menu.style.height != "0px") {
+            if (computedStyleMenu.height && computedStyleMenu.height != "0px") {
                 console.log("entro al if");
-                menu.style.height = '0';
+                computedStyleMenu.height = '0';
             } else {
                 console.log("entro al else");
-                // De lo contrario, establece la altura a 37vh
+                // De lo contrario, establece la altura mediante css
                 menu.classList.add("select");
                 console.log(menu);
             }

@@ -63,7 +63,7 @@ aside .p{
     margin-left: auto;
     list-style: none;
     transition: height .4s;
-    height: 1px;
+    height: 0;
     text-align: left;
 }
 
