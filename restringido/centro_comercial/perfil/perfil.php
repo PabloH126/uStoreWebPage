@@ -29,10 +29,10 @@ if ($httpStatusCode == 400) {
 $perfil = json_decode($response, true);
 curl_close($ch);
 
-$simpleFecha = substr($perfil['fechaRegistro'], 0, 19);
-$fechaRegistro = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
+$fechaRegistro = DateTime::createFromFormat('Y-m-d\TH:i:s', $perfil['fechaRegistro'], new DateTimeZone('UTC'));
 $fechaRegistro->setTimezone(new DateTimeZone('Etc/GMT+6'));
-$fechaRegistro->format('d-m-Y');
+echo $fechaRegistro->format('d-m-Y');
+
 
 if (isset($_GET['id'])) {
 	$ch = curl_init();
