@@ -31,8 +31,6 @@ curl_close($ch);
 
 $fechaRegistro = DateTime::createFromFormat('Y-m-d\TH:i:s', $perfil['fechaRegistro'], new DateTimeZone('UTC'));
 $fechaRegistro->setTimezone(new DateTimeZone('Etc/GMT+6'));
-echo $fechaRegistro->format('d-m-Y');
-
 
 if (isset($_GET['id'])) {
 	$ch = curl_init();
@@ -97,7 +95,7 @@ if (isset($_GET['id'])) {
 						<p><?php echo $perfil['nombre']; ?></p>
 						<div>
 							<p><?php echo $perfil['correo']; ?></p>
-							<p><?php echo $fechaRegistro; ?></p>
+							<p><?php echo $fechaRegistro->format('d-m-Y'); ?></p>
 						</div>
 					</div>
 				</div>
