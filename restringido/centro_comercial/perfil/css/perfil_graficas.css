@@ -1,6 +1,9 @@
 .body {
-    max-height: 93%;
-    /*margin: auto 0px;*/
+    max-height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 #span-seleccion-tienda {
