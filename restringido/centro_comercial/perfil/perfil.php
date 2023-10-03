@@ -111,7 +111,7 @@ curl_close($ch);
 			<div class="floating_bttns">
 				
 				<div id="filterList">
-					<i class='bx bx-menu menu'></i>
+					<i class='bx bx-menu'></i>
 					<div id="sub-menu">
 						<div class="menu-option"><a id="MayorMenor">Mayor a Menor</a></div>
 						<div class="menu-option"><a id="MenorMayor">Menor a Mayor</a></div>

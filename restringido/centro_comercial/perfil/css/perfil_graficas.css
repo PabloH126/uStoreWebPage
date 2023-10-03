@@ -7,16 +7,27 @@
     margin-top: 0vh;
 }
 
+.floating_bttns {
+    display: grid;
+}
+
+.floating_bttns #filterList i{
+    color: #007096;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
 .crear-publicacion{
-    position: absolute;
-    bottom: 4vh;
-    right: 4vw;
+    display: grid;
+    align-items: end;
 }
 
 .crear-publicacion i {
     background: #007096;
     color: white;
-    padding: 20%;
+    padding: 10%;
     border-radius: 50%;
     font-size: 2.5rem;
+    margin-bottom: 3vh;
 }
+
