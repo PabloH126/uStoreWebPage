@@ -95,12 +95,12 @@ if (isset($_GET['id'])) {
 						<p><?php echo $perfil['nombre']; ?></p>
 						<div>
 							<p><?php echo $perfil['correo']; ?></p>
-							<p><?php echo $fechaRegistro->format('d-m-Y'); ?></p>
+							<p>Registrado desde: <?php echo $fechaRegistro->format('d-m-Y'); ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="log-out">
-					<img src="https://ustoree.azurewebsites.net/img/log_out.png" alt="Cerrar sesión">
+					<a href="https://ustoree.azurewebsites.net/logOut.php"><img src="https://ustoree.azurewebsites.net/img/log_out.png" alt="Cerrar sesión"></a>
 				</div>
 
 			</div>
@@ -122,6 +122,7 @@ if (isset($_GET['id'])) {
 	</div>
 	<script src="../js/menu_aside.js"></script>
 	<script src="../js/menu_desplegable.js"></script>
+	<script src="../tendencias/js/grafica.js"></script>
 </body>
 
 </html>
