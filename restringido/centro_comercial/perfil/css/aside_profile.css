@@ -1,8 +1,8 @@
-.aside_profile{
+.aside_profile {
     display: grid;
-    grid-template-columns: 14vw 1fr;
+    grid-template-columns: 14vw 20vw 1fr;
 }
 
-aside{
+aside {
     height: 74vh;
 }
