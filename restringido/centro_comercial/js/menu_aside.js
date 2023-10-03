@@ -8,10 +8,13 @@ listElements.forEach(listElement => {
             listElement.classList.toggle('arrow');
             let height = 0;
             let menu = listElement.nextElementSibling;
-            if (menu.style.height = '0') {
+            if (menu.style.height != '0') {
+                menu.style.height = '0';
+            } else {
+                // De lo contrario, establece la altura a 37vh
                 listElement.classList.toggle('select');
             }
-            /*
+/*
             if (menu.style.height === '37vh') {
                 // Si la altura actual es 37vh, establece la altura a 0
                 menu.style.height = '0';
