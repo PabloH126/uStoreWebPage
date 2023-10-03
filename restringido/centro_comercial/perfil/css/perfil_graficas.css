@@ -31,27 +31,28 @@
     border-radius: 50%;
     font-size: 5vh;
     margin-bottom: 3vh;
+    cursor: pointer;
 }
 
-#sub-menu{
+#sub-menu {
     top: 29%;
-    left: 86%;
+    right: 6%;
 }
 
-#sub-menu2{
-    top: 86%;
-    left: 90%;
+#sub-menu2 {
+    top: 87%;
+    right: 6.4%;
 }
 
-@media only screen and (max-width: 1440px){
+@media only screen and (max-width: 1440px) {
     #sub-menu {
         top: 30%;
-        left: 83%;
+        right: 6%;
     }
 
     #sub-menu2 {
         top: 85%;
-        left: 88%;
+        right: 7%;
     }
 
 }
