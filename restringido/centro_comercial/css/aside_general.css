@@ -32,6 +32,10 @@ aside .list .list_item{
     overflow: hidden;
 }
 
+aside .list .list_item ul .select{
+    height: 37vh;
+}
+
 aside .list .list_item .list_button{
     display: flex;
     align-items: center;

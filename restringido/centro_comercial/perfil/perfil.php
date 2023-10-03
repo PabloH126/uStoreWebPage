@@ -122,10 +122,10 @@ curl_close($ch);
 				</div>
 			</div>
 			<div class="crear-publicacion" id="btnCrearPubli">				
-					<a title="Descargar">
-						<i class='bx bxs-download' id="menu-icon2"></i>
-					</a>
-				</div>	
+				<a title="Descargar">
+					<i class='bx bxs-download' id="menu-icon2"></i>
+				</a>
+			</div>	
 			<span id="span-seleccion-tienda">Selecciona una opción de filtro</span>
 		</div>
 		<?php
