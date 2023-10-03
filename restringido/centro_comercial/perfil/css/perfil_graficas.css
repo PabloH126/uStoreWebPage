@@ -1,24 +1,25 @@
-.body{
+.body {
     max-height: 93%;
     margin: auto 0px;
 }
 
-#span-seleccion-tienda{
+#span-seleccion-tienda {
     margin-top: 0vh;
 }
 
 .floating_bttns {
     display: grid;
+    justify-items: start;
 }
 
-.floating_bttns #filterList i{
+.floating_bttns #filterList i {
     margin-top: 2vh;
     color: #007096;
     font-size: 7vh;
     cursor: pointer;
 }
 
-.crear-publicacion{
+.crear-publicacion {
     display: grid;
     align-items: end;
 }
@@ -31,4 +32,3 @@
     font-size: 5vh;
     margin-bottom: 3vh;
 }
-
