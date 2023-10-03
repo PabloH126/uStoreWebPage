@@ -32,34 +32,25 @@ curl_close($ch);
 $fechaRegistro = DateTime::createFromFormat('Y-m-d\TH:i:s', $perfil['fechaRegistro'], new DateTimeZone('UTC'));
 $fechaRegistro->setTimezone(new DateTimeZone('Etc/GMT+6'));
 
-if (isset($_GET['id'])) {
-	$ch = curl_init();
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Authorization: Bearer ' . $_COOKIE['SessionToken']
+)
+);
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Publicaciones/GetPublicacionesRecientes?idTienda=" . $_GET['id']);
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt(
-		$ch,
-		CURLOPT_HTTPHEADER,
-		array(
-			'Authorization: Bearer ' . $_COOKIE['SessionToken']
-		)
-	);
+$response = curl_exec($ch);
 
-	$response = curl_exec($ch);
-
-	if ($response === false) {
-		echo 'Error: ' . curl_error($ch);
-	} else {
-		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	}
-
-	if ($httpStatusCode == 400) {
-		$publicacionesError = "Error al intentar recuperar las publicaciones. Codigo de respuesta: " . $httpStatusCode;
-	}
-	$publicaciones = json_decode($response, true);
-	curl_close($ch);
+if ($response === false) {
+    echo 'Error: ' . curl_error($ch);
+} else {
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
+
+$categorias = json_decode($response, true);
+
+curl_close($ch);
 
 ?>
 <!DOCTYPE html>
