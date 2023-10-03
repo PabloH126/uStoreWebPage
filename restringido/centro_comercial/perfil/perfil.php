@@ -24,10 +24,15 @@ if ($response === false) {
 }
 
 if ($httpStatusCode == 400) {
-	$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+	$perfilError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
 }
-$tiendas = json_decode($response, true);
+$perfil = json_decode($response, true);
 curl_close($ch);
+
+$simpleFecha = substr($perfil['fechaRegistro'], 0, 19);
+$fechaRegistro = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
+$fechaRegistro->setTimezone(new DateTimeZone('Etc/GMT+6'));
+$fechaRegistro->format('d-m-Y');
 
 if (isset($_GET['id'])) {
 	$ch = curl_init();
@@ -73,18 +78,26 @@ if (isset($_GET['id'])) {
 	<?php require("../templates/template.menu.php") ?>
 
 	<div class="content">
+		<?php
+		if (isset($perfilError))
+		{
+			echo $perfilError;
+		}
+		else
+		{
+		?>
 		<div class="header_profile">
 			<div class="header_info_profile">
 				<div class="info_img_profile">
 					<div class="img_profile">
-						<img src="https://i.pinimg.com/564x/4f/cd/0d/4fcd0d0480073175756ac628a1cf959e.jpg"
+						<img src="<?php echo $perfil['imagenP']; ?>"
 							alt="imagen de perfil">
 					</div>
 					<div class="info_profil">
-						<p>Nombre</p>
+						<p><?php echo $perfil['nombre']; ?></p>
 						<div>
-							<p>correo</p>
-							<p>fecha</p>
+							<p><?php echo $perfil['correo']; ?></p>
+							<p><?php echo $fechaRegistro; ?></p>
 						</div>
 					</div>
 				</div>
@@ -105,6 +118,9 @@ if (isset($_GET['id'])) {
 				<canvas id="grafica"></canvas>
 			</div>
 		</div>
+		<?php
+		}
+		?>
 	</div>
 	<script src="../js/menu_aside.js"></script>
 	<script src="../js/menu_desplegable.js"></script>
