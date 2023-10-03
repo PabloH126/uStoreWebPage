@@ -94,8 +94,8 @@ curl_close($ch);
 				<div class="log-out">
 					<a href="https://ustoree.azurewebsites.net/logOut.php"><img src="https://ustoree.azurewebsites.net/img/log_out.png" alt="Cerrar sesión"></a>
 				</div>
-
 			</div>
+
 			<div class="top_menu_profile">
 				<button class="graficas_option">Gráficas</button>
 				<button class="gerentes_option">Gerentes</button>
@@ -103,7 +103,20 @@ curl_close($ch);
 		</div>
 		<div class="aside_profile">
 			<?php require("../templates/template.aside.php") ?>
+			<div class="body">
+				<canvas id="grafica"></canvas>	
+			</div>
 
+			<div>
+			<div id="sub-menu2">
+					<div class="menu-option"><a id="downloadPDF">PDF</a></div>
+					<div class="menu-option"><a id="downloadImage">PNG</a></div>
+				</div>
+			<div class="crear-publicacion" id="btnCrearPubli">				
+				<a title="Descargar">
+					<i class='bx bxs-download' id="menu-icon2"></i>
+				</a>
+			</div>	
 			<div id="filterList">
 				<span class="material-symbols-outlined icon-filter" id="menu-icon">filter_list</span>
 				<div id="sub-menu">
@@ -112,20 +125,9 @@ curl_close($ch);
 					<div class="menu-option"><a id="A-Z">Nombre: A-Z</a></div>
 					<div class="menu-option"><a id="Z-A">Nombre: Z-A</a></div>
 				</div>
-			</div>
-			<div class="body">
-				<canvas id="grafica"></canvas>	
-
-				<div id="sub-menu2">
-					<div class="menu-option"><a id="downloadPDF">PDF</a></div>
-					<div class="menu-option"><a id="downloadImage">PNG</a></div>
 				</div>
 			</div>
-			<div class="crear-publicacion" id="btnCrearPubli">				
-				<a title="Descargar">
-					<i class='bx bxs-download' id="menu-icon2"></i>
-				</a>
-			</div>	
+			
 			<span id="span-seleccion-tienda">Selecciona una opción de filtro</span>
 		</div>
 		<?php
