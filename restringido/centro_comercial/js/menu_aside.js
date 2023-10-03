@@ -9,7 +9,6 @@ listElements.forEach(listElement => {
             let height = 0;
             let menu = listElement.nextElementSibling;
             console.log(menu);
-            menu.style.height = 0;
             console.log(menu.style.height);
 
             if (menu.style.height != "0px") {
@@ -17,7 +16,7 @@ listElements.forEach(listElement => {
             } else {
                 console.log("entro al else");
                 // De lo contrario, establece la altura a 37vh
-                menu.classList.add('select');
+                menu.classList.add("select");
                 console.log(menu);
             }
 /*
