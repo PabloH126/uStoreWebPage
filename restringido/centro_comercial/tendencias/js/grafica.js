@@ -151,12 +151,14 @@ function ActivarEventosActualizacionGrafica(grafica)
     let menorMayor = document.getElementById('MenorMayor');
     let aZ = document.getElementById('A-Z');
     let zA = document.getElementById('Z-A');
-
-    AddEventListenerOrdenamiento(grafica, mayorMenor, OrdenamientoMayorMenor);
-    AddEventListenerOrdenamiento(grafica, menorMayor, OrdenamientoMenorMayor);
-    AddEventListenerOrdenamiento(grafica, aZ, OrdenamientoAZ);
-    AddEventListenerOrdenamiento(grafica, zA, OrdenamientoZA);
-
+    
+    if (mayorMenor && menorMayor && aZ && zA)
+    {
+        AddEventListenerOrdenamiento(grafica, mayorMenor, OrdenamientoMayorMenor);
+        AddEventListenerOrdenamiento(grafica, menorMayor, OrdenamientoMenorMayor);
+        AddEventListenerOrdenamiento(grafica, aZ, OrdenamientoAZ);
+        AddEventListenerOrdenamiento(grafica, zA, OrdenamientoZA);
+    }
 
     categoriasInput.forEach(cat => {
         cat.removeEventListener('click', function() {
