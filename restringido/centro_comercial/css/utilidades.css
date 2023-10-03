@@ -89,8 +89,7 @@ i.bx.bx-store-alt {
     position: absolute;
     width: auto;
     z-index: 1;
-    top: 18%;
-    left: 11%;
+
     height: auto;
     -webkit-display: none;
     display: none;
@@ -143,8 +142,5 @@ i.bx.bx-store-alt {
         height: 23px;
     }
 
-    #sub-menu,
-    #sub-menu2 {
-        left: 10.6%;
-    }
+
 }

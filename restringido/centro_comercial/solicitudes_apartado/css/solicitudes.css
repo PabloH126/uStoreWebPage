@@ -36,6 +36,12 @@ h3{
     animation: bounce_shake 1.5s ease-out infinite;
 }
 
+#sub-menu,
+#sub-menu2{
+    top: 18%;
+    left: 11%;
+}
+
 .content .lista {
     grid-template-columns: none;
     width: auto;
@@ -146,6 +152,11 @@ h3{
     #background-animated,
     i.bx.bx-store-alt {
         font-size: 2.5rem;
+    }
+
+    #sub-menu,
+    #sub-menu2 {
+        left: 10.6%;
     }
 
     .content .title-options h1 {
