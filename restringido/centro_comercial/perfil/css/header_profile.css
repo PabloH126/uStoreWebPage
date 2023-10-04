@@ -30,7 +30,7 @@
     justify-content: center;
 }
 
-.content .header_profile img:hover #fltr{
+#fltr{
     border-radius: 50%;
     object-fit: cover;
     overflow: hidden;
