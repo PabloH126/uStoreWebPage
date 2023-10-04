@@ -15,6 +15,16 @@
     justify-items: start;
 }
 
+.content-background-animated {
+    margin-top: 3vh;
+    margin-left: 0.8vh;
+}
+
+#background-animated {
+    height: 5vh;
+    width: 5vh;
+}
+
 .floating_bttns #filterList i {
     margin-top: 2vh;
     color: #007096;
