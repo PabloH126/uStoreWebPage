@@ -113,7 +113,7 @@ i.bx.bx-store-alt {
     justify-content: center;
 }
 
-#sub-menu .menuIconSelected,
+#sub-menu #sub-menu .menu-option .menuIconSelected,
 #sub-menu .menu-option:hover,
 #sub-menu2 .menu-option:hover {
     background-color: #007096;

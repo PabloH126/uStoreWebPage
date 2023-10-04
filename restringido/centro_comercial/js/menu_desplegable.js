@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let menuIcon2 = document.getElementById('menu-icon2');
     let subMenu1 = document.getElementById('sub-menu');
     let subMenu2 = document.getElementById('sub-menu2');
-    let menuOptions = document.querySelectorAll('.menu-option a');
+    let menuOptions = document.querySelectorAll('.menu-option');
 
     menuIcon1.addEventListener('click', function (e) {
         subMenu1.classList.toggle("active");
