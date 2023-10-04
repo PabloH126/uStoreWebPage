@@ -79,7 +79,7 @@
 				<?php foreach ($tiendas as $tienda)
 				{
 					echo '
-					<div class="menu-option">
+					<div class="menu-option '. (isset($_GET['id']) && $_GET['id'] == $tienda['idTienda'] ? 'menuIconSelected' : '') .'">
 						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_activas.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
 					</div>
 					';
