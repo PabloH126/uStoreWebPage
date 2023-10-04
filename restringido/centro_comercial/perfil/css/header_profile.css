@@ -119,6 +119,7 @@ img#img_log-out {
     width: 50%;
     height: 100%;
     border: 1px #00709680 solid;
+    cursor: pointer;
 }
 
 a.gerentes_option:hover,
