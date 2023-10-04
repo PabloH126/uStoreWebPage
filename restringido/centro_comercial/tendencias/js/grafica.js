@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(menuSucursales)
                 {
                     menuSucursales.style.display = "";
+                    console.log(menuSucursales);
                 }
             }
             console.log("isTienda: ", isTienda);
