@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     spanFiltro.textContent = "Seleccione una sucursal";
                     menuSucursales.style.display = "";
-                    //DesactivarGrafica();
+                    DesactivarGrafica();
                     return;
                 }
             }
@@ -184,7 +184,7 @@ function DesactivarGrafica()
         spanFiltro.style.display = "";;
     }
     canva.style.display = "none";
-    filterList.style.display = "none";
+    filterList.style.display = "";
     btnCrearPubli.style.display = "none";
 }
 
