@@ -127,7 +127,7 @@ curl_close($ch);
 								<p>
 									<?php echo $perfil['correo']; ?>
 								</p>
-								<p><br>Registro: <br>
+								<p><b>Registro: <b>
 									<?php echo $fechaRegistro->format('d-m-Y'); ?>
 								</p>
 							</div>
