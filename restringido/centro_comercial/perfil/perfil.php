@@ -35,17 +35,20 @@ $fechaRegistro->setTimezone(new DateTimeZone('Etc/GMT+6'));
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Authorization: Bearer ' . $_COOKIE['SessionToken']
-)
+curl_setopt(
+	$ch,
+	CURLOPT_HTTPHEADER,
+	array(
+		'Authorization: Bearer ' . $_COOKIE['SessionToken']
+	)
 );
 
 $response = curl_exec($ch);
 
 if ($response === false) {
-    echo 'Error: ' . curl_error($ch);
+	echo 'Error: ' . curl_error($ch);
 } else {
-    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
 $categorias = json_decode($response, true);
@@ -57,9 +60,13 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-	'Authorization: Bearer ' . $_COOKIE['SessionToken']
-));
+curl_setopt(
+	$ch,
+	CURLOPT_HTTPHEADER,
+	array(
+		'Authorization: Bearer ' . $_COOKIE['SessionToken']
+	)
+);
 
 $response = curl_exec($ch);
 
@@ -92,87 +99,88 @@ curl_close($ch);
 
 	<div class="content">
 		<?php
-		if (isset($perfilError))
-		{
+		if (isset($perfilError)) {
 			echo $perfilError;
-		}
-		else
-		{
-		?>
-		<div class="header_profile">
-			<div class="header_info_profile">
-				<div class="info_img_profile">
-					<div class="img_profile">
-						<div id="fltr">
-							<img src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
-							<form action="">
-								<label for="change_img">
-									<img  src="https://ustoredata.blob.core.windows.net/webpage/nav/change_img.png" alt="">
-								</label>
-								<input type="img" id="change_img">
-							</form>
+		} else {
+			?>
+			<div class="header_profile">
+				<div class="header_info_profile">
+					<div class="info_img_profile">
+						<div class="img_profile">
+							<div id="fltr">
+								<img class="profile_img" src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
+								<form action="" id="change_img">
+									<label for="change_img">
+										<img src="https://ustoredata.blob.core.windows.net/webpage/nav/change_img.png"
+											alt="">
+									</label>
+									<input type="img" id="change_img">
+								</form>
+							</div>
+						</div>
+						<div class="info_profil">
+							<p>
+								<?php echo $perfil['nombre']; ?>
+							</p>
+							<div>
+								<p>
+									<?php echo $perfil['correo']; ?>
+								</p>
+								<p>Registrado desde:
+									<?php echo $fechaRegistro->format('d-m-Y'); ?>
+								</p>
+							</div>
 						</div>
 					</div>
-					<div class="info_profil">
-						<p><?php echo $perfil['nombre']; ?></p>
-						<div>
-							<p><?php echo $perfil['correo']; ?></p>
-							<p>Registrado desde: <?php echo $fechaRegistro->format('d-m-Y'); ?></p>
-						</div>
+					<div class="log-out">
+						<a href="https://ustoree.azurewebsites.net/logOut.php"><img
+								src="https://ustoree.azurewebsites.net/img/log_out.png" alt="Cerrar sesión"></a>
 					</div>
 				</div>
-				<div class="log-out">
-					<a href="https://ustoree.azurewebsites.net/logOut.php"><img src="https://ustoree.azurewebsites.net/img/log_out.png" alt="Cerrar sesión"></a>
+
+				<div class="top_menu_profile">
+					<button class="graficas_option">Gráficas</button>
+					<button class="gerentes_option">Gerentes</button>
 				</div>
 			</div>
+			<div class="aside_profile">
+				<?php require("../templates/template.aside.php") ?>
+				<div class="body">
+					<canvas id="grafica"></canvas>
+					<span id="span-seleccion-tienda">Selecciona una opción de filtro</span>
+				</div>
 
-			<div class="top_menu_profile">
-				<button class="graficas_option">Gráficas</button>
-				<button class="gerentes_option">Gerentes</button>
-			</div>
-		</div>
-		<div class="aside_profile">
-			<?php require("../templates/template.aside.php") ?>
-			<div class="body">
-				<canvas id="grafica"></canvas>	
-				<span id="span-seleccion-tienda">Selecciona una opción de filtro</span>
-			</div>
+				<div class="floating_bttns">
 
-			<div class="floating_bttns">
-				
-				<div id="filterList">
-					<i class='bx bx-menu' id="menu-icon" style="display: none"></i>
-					<div id="sub-menu">
-						<?php
-						if(isset($tiendasError))
-						{
-							echo "Hubo un error al recuperar las sucursales";
-						}
-						else
-						{
-							foreach($tiendas as $tienda)
-							{
-								echo '<div class="menu-option" data-tienda-id="'. $tienda['idTienda'] .'"><a id="">'. $tienda['nombreTienda'] .'</a></div>';
+					<div id="filterList">
+						<i class='bx bx-menu' id="menu-icon" style="display: none"></i>
+						<div id="sub-menu">
+							<?php
+							if (isset($tiendasError)) {
+								echo "Hubo un error al recuperar las sucursales";
+							} else {
+								foreach ($tiendas as $tienda) {
+									echo '<div class="menu-option" data-tienda-id="' . $tienda['idTienda'] . '"><a id="">' . $tienda['nombreTienda'] . '</a></div>';
+								}
 							}
-						}
-						?>
+							?>
+						</div>
+					</div>
+
+					<div class="crear-publicacion" id="btnCrearPubli">
+						<a title="Descargar">
+							<i class='bx bxs-download' id="menu-icon2"></i>
+						</a>
+						<div id="sub-menu2">
+							<div class="menu-option"><a id="downloadPDF">PDF</a></div>
+							<div class="menu-option"><a id="downloadImage">PNG</a></div>
+						</div>
 					</div>
 				</div>
 
-				<div class="crear-publicacion" id="btnCrearPubli">				
-					<a title="Descargar">
-						<i class='bx bxs-download' id="menu-icon2"></i>
-					</a>
-					<div id="sub-menu2">
-						<div class="menu-option"><a id="downloadPDF">PDF</a></div>
-						<div class="menu-option"><a id="downloadImage">PNG</a></div>
-					</div>
-				</div>	
+
 			</div>
-			
-			
-		</div>
-		<?php
+			<?php
 		}
 		?>
 	</div>
