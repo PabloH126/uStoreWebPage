@@ -3,16 +3,27 @@ document.addEventListener('DOMContentLoaded', function () {
     let menuIcon2 = document.getElementById('menu-icon2');
     let subMenu1 = document.getElementById('sub-menu');
     let subMenu2 = document.getElementById('sub-menu2');
+    let menuOptions = document.querySelectorAll('.menu-option a');
 
     menuIcon1.addEventListener('click', function (e) {
         subMenu1.classList.toggle("active");
         menuIcon1.classList.toggle("active");
-        menuIcon1.classList.add("menuIconSelected");
-        console.log(menuIcon1);
     });
 
     menuIcon2.addEventListener('click', function (e) {
         subMenu2.classList.toggle("active");
         menuIcon2.classList.toggle("active");
+    });
+
+    menuOptions.forEach(option => {
+        option.addEventListener('click', function (e) {
+            e.stopPropagation();
+
+            menuOptions.forEach(opt => {
+                opt.classList.remove("menuIconSelected");
+            });
+            
+            option.classList.add("menuIconSelected");
+        })
     });
 });
