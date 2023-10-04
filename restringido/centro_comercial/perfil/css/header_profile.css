@@ -112,7 +112,7 @@ img#img_log-out {
     letter-spacing: 1px;
 }
 
-.top_menu_profile a {
+.top_menu_profile a{
     all: inherit;
     display: flex;
     justify-content: center;
@@ -122,7 +122,7 @@ img#img_log-out {
 }
 
 a.gerentes_option:hover,
-a.graficas_option:hover {
+a.graficas_option:hover{
     background: white;
     color: #007096;
     transition-duration: 0.5s;
