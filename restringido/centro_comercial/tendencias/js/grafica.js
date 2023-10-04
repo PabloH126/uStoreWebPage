@@ -112,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
             console.log(menuIcon1);
             console.log(subMenu1);
+            subMenu1.classList.toggle("active");
+            menuIcon1.classList.toggle("active");
         })
     });
 
