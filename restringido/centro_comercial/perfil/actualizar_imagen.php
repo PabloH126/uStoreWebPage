@@ -39,11 +39,11 @@ if(verificarImagen($profileImage)){
     $data = json_decode($response);
 
     $responseArray['statusImagen'] = "success";
-    $responseArray['imagenPerfil'] = $data['imageUrl'];
+    $responseArray['imagenPerfil'] = $httpStatusCode;
     
     curl_close($ch);
 
-    echo json_encode($response);
+    echo json_encode($responseArray);
     exit;
 }
 else

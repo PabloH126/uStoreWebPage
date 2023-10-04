@@ -1,0 +1,7 @@
+.content .lista {
+	display: grid;
+	-webkit-display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: 90%;
+	margin: 60px auto 5px auto;
+}
