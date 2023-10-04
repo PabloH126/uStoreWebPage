@@ -88,7 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             console.log("isTienda: ", isTienda);
 
-            if(!isPerfil || (isPerfil && idTiendaMenuOption != undefined) || isTienda)
+            if((!isPerfil || (isPerfil && idTiendaMenuOption !== undefined)) && (isTienda || (btn.textContent !== "Productos" || idTiendaMenuOption !== undefined))
+              )
             {
                 actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
                 ActivarEventosActualizacionGrafica(grafica);
