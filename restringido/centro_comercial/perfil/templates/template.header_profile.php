@@ -36,6 +36,6 @@
 
 				<div class="top_menu_profile">
 					<a class="graficas_option" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/perfil.php">Gráficas</a>
-					<a class="gerentes_option">Gerentes</a>
+					<a class="gerentes_option" href="perfil_gerentes.php">Gerentes</a>
 				</div>
 			</div>
