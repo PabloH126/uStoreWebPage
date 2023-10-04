@@ -30,16 +30,21 @@
     justify-content: center;
 }
 
-.content .header_profile img {
+#fltr{
+    display: grid;
+}
+
+.content .header_profile img:first-child{
     max-height: 8.8vh;
     max-width: 7.5vw;
     border-radius: 50%;
 }
 
-.content .header_profile img:hover{
-    cursor: pointer;
-    filter: brightness(63%);
-    background: #6e6e6e47;
+.content .header_profile img:last-child {
+    max-height: 8.8vh;
+    max-height: 8.8vh;
+    border-radius: 50%;
+    position: absolute;
 }
 
 .info_profil{

@@ -103,7 +103,7 @@ curl_close($ch);
 			<div class="header_info_profile">
 				<div class="info_img_profile">
 					<div class="img_profile">
-						<div>
+						<div id="fltr">
 							<img src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
 							<img src="https://ustoredata.blob.core.windows.net/webpage/nav/change_img.png" alt="">
 						</div>
