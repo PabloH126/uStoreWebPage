@@ -111,7 +111,8 @@ curl_close($ch);
 								<img class="profile_img" src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
 								<form action="" id="change_img">
 									<label for="change_img">
-										<img src="https://ustoredata.blob.core.windows.net/webpage/nav/change_img.png"
+										<img class="filter"
+											src="https://ustoredata.blob.core.windows.net/webpage/nav/change_img.png"
 											alt="">
 									</label>
 									<input type="img" id="change_img">

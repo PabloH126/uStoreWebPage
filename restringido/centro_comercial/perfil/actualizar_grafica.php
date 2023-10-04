@@ -5,7 +5,7 @@
 
     $isTiendaValue = ($_POST['isTienda'] != 'undefined') ? $_POST['isTienda'] : 'false';
     $isTienda = ($isTiendaValue === 'true' || $isTiendaValue === true);
-
+    $idTiendaValue = ($_POST['idTienda'] != 'undefined') ? $_POST['idTienda'] : null;
     $data = [
         "isTienda" => $isTienda,
         "categorias" => (($_POST['categorias'] != 'undefined' && $_POST['categorias'] != null) ? $_POST['categorias'] : []),
@@ -16,7 +16,7 @@
     exit; 
     */
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/TendenciasVenta/GetTendenciasPerfil?idTienda=' . );
+    curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/TendenciasVenta/GetTendenciasPerfil?idTienda=' . $idTiendaValue);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
