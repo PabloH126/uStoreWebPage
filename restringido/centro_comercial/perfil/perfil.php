@@ -115,7 +115,7 @@ curl_close($ch);
 											src="https://ustoredata.blob.core.windows.net/webpage/nav/change_img.png"
 											alt="">
 									</label>
-									<input type="img" id="change_img">
+									<input type="file" id="change_img">
 								</form>
 							</div>
 						</div>
