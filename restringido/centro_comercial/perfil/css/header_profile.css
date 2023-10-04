@@ -42,6 +42,7 @@
 
 #fltr:hover img:last-child{
     display: block;
+    cursor: pointer;
 }
 
 .content .header_profile img:last-child {
