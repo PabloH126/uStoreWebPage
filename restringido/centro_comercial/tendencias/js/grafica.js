@@ -87,9 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             console.log("isTienda: ", isTienda);
-            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-            ActivarEventosActualizacionGrafica(grafica);
-            console.log(idTiendaMenuOption);
+
+            if(!isPerfil || isPerfil && idTiendaMenuOption)
+            {
+                actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+                ActivarEventosActualizacionGrafica(grafica);
+            }
+            
+            console.log("El id es: ", idTiendaMenuOption);
         });
     });
 
