@@ -48,6 +48,8 @@ async function actualizarImagenPerfil(input, url){
 
     const dataImagen = await responseImageProfile.json();
     
+    console.log(dataImagen);
+    
     if(dataImagen.statusImagen !== 'success') {
         console.log("No se pudo actualizar la imagen del perfil", dataImagen.message);
     } else {

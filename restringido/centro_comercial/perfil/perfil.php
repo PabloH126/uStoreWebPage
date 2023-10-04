@@ -139,7 +139,6 @@ curl_close($ch);
 					</div>
 				</div>
 
-
 			</div>
 			<?php
 		}
