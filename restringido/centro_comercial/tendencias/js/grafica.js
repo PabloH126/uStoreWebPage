@@ -98,6 +98,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    menuOptions.forEach(option => {
+        option.addEventListener('click', function (e) {
+            e.stopPropagation();
+
+            menuOptions.forEach(opt => {
+                opt.classList.remove("menuIconSelected");
+            });
+            
+            option.classList.add("menuIconSelected");
+            idTiendaMenuOption = option.dataset.tiendaId;
+
+            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+        })
+    });
+
     document.getElementById("downloadImage").addEventListener("click", function() {
         var grafica = document.getElementById('grafica');
         var image = grafica.toDataURL("image/png").replace("image/png", "image/octet-stream");
