@@ -1,6 +1,10 @@
 let imagenInput = document.getElementById("change_img");
 let imagenPerfil = document.getElementById("profile_img");
 
+console.log(imagenInput);
+console.log(imagenPerfil);
+console.log("Hola");
+
 imagenInput.addEventListener("change", async function () {
     try{
         await actualizarImagenPerfil(imagenInput, 'actualizar_imagen.php');
