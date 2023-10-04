@@ -114,10 +114,12 @@ curl_close($ch);
 				<div class="floating_bttns">
 
 					<div id="filterList">
-						<div class="content-background-animated">
-							<div id="background-animated"></div>
+						<div id="divIconBackground" style="display: none">
+							<div class="content-background-animated">
+								<div id="background-animated"></div>
+							</div>
+							<i class='bx bx-menu' id="menu-icon"></i>
 						</div>
-						<i class='bx bx-menu' id="menu-icon" style="display: none"></i>
 						<div id="sub-menu">
 							<?php
 							if (isset($tiendasError)) {
