@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     menuSucursales.style.display = "none";
                 }
+                subMenu1.classList.remove("active");
+                menuIcon1.classList.remove("active");
             }
             else
             {
@@ -110,8 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             idTiendaMenuOption = option.dataset.tiendaId;
 
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-            console.log(menuIcon1);
-            console.log(subMenu1);
+
             subMenu1.classList.toggle("active");
             menuIcon1.classList.toggle("active");
         })
