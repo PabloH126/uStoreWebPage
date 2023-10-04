@@ -18,6 +18,7 @@
 .content-background-animated {
     margin-top: 3vh;
     margin-left: 0.8vh;
+    position: fixed;
 }
 
 #background-animated {
