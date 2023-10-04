@@ -110,6 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
             idTiendaMenuOption = option.dataset.tiendaId;
 
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+            console.log(menuIcon1);
+            console.log(subMenu1);
         })
     });
 
