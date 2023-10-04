@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     spanFiltro.textContent = "Seleccione una sucursal";
                     menuSucursales.style.display = "";
-                    DesactivarGrafica();
+                    //DesactivarGrafica();
                     return;
                 }
             }
