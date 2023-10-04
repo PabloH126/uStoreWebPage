@@ -103,7 +103,9 @@ curl_close($ch);
 			<div class="header_info_profile">
 				<div class="info_img_profile">
 					<div class="img_profile">
+						<div>
 							<img src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
+						</div>
 					</div>
 					<div class="info_profil">
 						<p><?php echo $perfil['nombre']; ?></p>

@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (isPerfil && !idTiendaMenuOption)
                 {
-                    //spanFiltro.textContent = "Seleccione una sucursal";
+                    spanFiltro.textContent = "Seleccione una sucursal";
                     menuSucursales.style.display = "";
                     DesactivarGrafica();
                     return;
