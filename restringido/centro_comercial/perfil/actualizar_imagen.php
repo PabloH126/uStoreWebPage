@@ -43,7 +43,7 @@ if(verificarImagen($profileImage)){
     
     curl_close($ch);
 
-    echo json_encode($responseArray);
+    echo json_encode($response);
     exit;
 }
 else
