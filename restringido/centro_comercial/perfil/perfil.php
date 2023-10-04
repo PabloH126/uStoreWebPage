@@ -105,7 +105,12 @@ curl_close($ch);
 					<div class="img_profile">
 						<div id="fltr">
 							<img src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
-							<img src="https://ustoredata.blob.core.windows.net/webpage/nav/change_img.png" alt="">
+							<form action="">
+								<label for="change_img">
+									<img  src="https://ustoredata.blob.core.windows.net/webpage/nav/change_img.png" alt="">
+								</label>
+								<input type="img" id="change_img">
+							</form>
 						</div>
 					</div>
 					<div class="info_profil">
