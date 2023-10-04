@@ -110,8 +110,8 @@ curl_close($ch);
 
 			<div class="floating_bttns">
 				
-				<div id="filterList" style="display: none">
-					<i class='bx bx-menu' id="menu-icon"></i>
+				<div id="filterList">
+					<i class='bx bx-menu' id="menu-icon" style="display: none"></i>
 					<div id="sub-menu">
 						<div class="menu-option"><a id="">Sucursal 1</a></div>
 						<div class="menu-option"><a id="">Sucursal 2</a></div>

@@ -5,7 +5,7 @@ let spanFiltro = document.getElementById('span-seleccion-tienda');
 let categoriasInput = document.querySelectorAll("input[name='categorias[]']");
 let tipoInput = document.querySelectorAll('.tipo');
 let periodoInput = document.querySelectorAll('.periodo');
-let menuSucursales = document.getElementById('filterList');
+let menuSucursales = document.getElementById('menu-icon');
 
 let categorias = [];
 let isTienda;
