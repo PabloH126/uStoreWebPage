@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     menuIcon1.addEventListener('click', function (e) {
         subMenu1.classList.toggle("active");
         menuIcon1.classList.toggle("active");
+        menuIcon1.classList.add("")
     });
 
     menuIcon2.addEventListener('click', function (e) {

@@ -117,6 +117,7 @@ i.bx.bx-store-alt {
 #sub-menu .menu-option:hover,
 #sub-menu2 .menu-option:hover {
     background-color: #007096;
+    color: white;
     border-radius: 8px;
     margin: 2px;
 }
