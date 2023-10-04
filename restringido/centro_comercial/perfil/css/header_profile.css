@@ -44,6 +44,7 @@
 
 .info_profil > p:first-child {
     font-weight: bolder;
+    font-size: 3vh;
 }
 
 .info_profil div {
