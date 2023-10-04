@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 isTienda = false;
                 if(menuSucursales)
                 {
+                    console.log("Entro al else: ", menuSucursales);
                     menuSucursales.style.display = "";
                 }
 
