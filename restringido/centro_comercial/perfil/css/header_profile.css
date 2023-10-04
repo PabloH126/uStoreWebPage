@@ -40,7 +40,7 @@
     border-radius: 50%;
 }
 
-.content .header_profile img:first-child:hover + img{
+#fltr:hover img:last-child{
     display: block;
 }
 
