@@ -114,6 +114,9 @@ curl_close($ch);
 				<div class="floating_bttns">
 
 					<div id="filterList">
+						<div class="content-background-animated">
+							<div id="background-animated"></div>
+						</div>
 						<i class='bx bx-menu' id="menu-icon" style="display: none"></i>
 						<div id="sub-menu">
 							<?php
