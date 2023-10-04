@@ -42,6 +42,10 @@
     justify-items: start;
 }
 
+.info_profil > p:first-child {
+    font-weight: bolder;
+}
+
 .info_profil div {
     display: flex;
 }
