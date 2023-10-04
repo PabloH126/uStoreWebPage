@@ -72,9 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     menuSucursales.style.display = "none";
                 }
-
-                actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-                ActivarEventosActualizacionGrafica(grafica);
             }
             else
             {
@@ -88,22 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     spanFiltro.textContent = "Seleccione una sucursal";
                 }
-                else
-                {
-                    actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-                    ActivarEventosActualizacionGrafica(grafica);
-                    console.log(idTiendaMenuOption);
-                }
             }
             console.log("isTienda: ", isTienda);
-            /*
-            if(!isPerfil || isPerfil && idTiendaMenuOption )
-            {
-                actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-                ActivarEventosActualizacionGrafica(grafica);
-                console.log(idTiendaMenuOption);
-            }
-            */
+            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+            ActivarEventosActualizacionGrafica(grafica);
+            console.log(idTiendaMenuOption);
         });
     });
 
