@@ -5,6 +5,7 @@ let spanFiltro = document.getElementById('span-seleccion-tienda');
 let categoriasInput = document.querySelectorAll("input[name='categorias[]']");
 let tipoInput = document.querySelectorAll('.tipo');
 let periodoInput = document.querySelectorAll('.periodo');
+let menuSucursales = document.getElementById('filterList');
 
 let categorias = [];
 let isTienda;
@@ -64,13 +65,17 @@ document.addEventListener('DOMContentLoaded', function() {
             CategoriasSelect();
             PeriodoSelect();
             
-            if(btn.textContent === "Tiendas")
+            if(btn.textContent === "Tiendas" || btn.textContent === "Sucursales")
             {
                 isTienda = true;
             }
             else
             {
                 isTienda = false;
+                if(menuSucursales)
+                {
+                    menuSucursales.style.display = "";
+                }
             }
             console.log("isTienda: ", isTienda);
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
