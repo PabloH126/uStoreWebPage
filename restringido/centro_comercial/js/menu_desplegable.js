@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         subMenu1.classList.toggle("active");
         menuIcon1.classList.toggle("active");
         menuIcon1.classList.add("menuIconSelected");
+        console.log(menuIcon1);
     });
 
     menuIcon2.addEventListener('click', function (e) {
