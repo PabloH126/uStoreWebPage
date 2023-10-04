@@ -82,8 +82,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             console.log("isTienda: ", isTienda);
-            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-            ActivarEventosActualizacionGrafica(grafica);
+            if(!isPerfil || isPerfil && idTiendaMenuOption)
+            {
+                actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+                ActivarEventosActualizacionGrafica(grafica);
+                console.log(idTiendaMenuOption);
+            }
+            else if (isPerfil && !idTiendaMenuOption)
+            {
+                spanFiltro.textContent = "Seleccione una sucursal";
+            }
         });
     });
 
