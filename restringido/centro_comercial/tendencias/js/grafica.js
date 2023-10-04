@@ -84,16 +84,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (isPerfil && !idTiendaMenuOption)
                 {
                     spanFiltro.textContent = "Seleccione una sucursal";
+                    return;
                 }
             }
             console.log("isTienda: ", isTienda);
-
-            if((!isPerfil || (isPerfil && idTiendaMenuOption !== undefined)) && (isTienda || (btn.textContent !== "Productos" || idTiendaMenuOption !== undefined))
-              )
-            {
-                actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-                ActivarEventosActualizacionGrafica(grafica);
-            }
+            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+            ActivarEventosActualizacionGrafica(grafica);
             
             console.log("El id es: ", idTiendaMenuOption);
         });

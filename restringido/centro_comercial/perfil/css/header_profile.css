@@ -33,11 +33,13 @@
 .content .header_profile img {
     max-height: 8.8vh;
     max-width: 7.5vw;
+    border-radius: 50%;
 }
 
 .content .header_profile img:hover{
     cursor: pointer;
     filter: brightness(63%);
+    background: #6e6e6e47;
 }
 
 .info_profil{
