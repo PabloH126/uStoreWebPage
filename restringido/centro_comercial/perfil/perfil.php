@@ -108,7 +108,7 @@ curl_close($ch);
 					<div class="info_img_profile">
 						<div class="img_profile">
 							<div id="fltr">
-								<img class="profile_img" src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
+								<img class="profile_img" id="profile_img" src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
 								<form action="" id="form_change_img">
 									<label for="change_img">
 										<img class="filter"
@@ -140,8 +140,8 @@ curl_close($ch);
 				</div>
 
 				<div class="top_menu_profile">
-					<button class="graficas_option">Gráficas</button>
-					<button class="gerentes_option">Gerentes</button>
+					<a class="graficas_option">Gráficas</a>
+					<a class="gerentes_option">Gerentes</a>
 				</div>
 			</div>
 			<div class="aside_profile">
