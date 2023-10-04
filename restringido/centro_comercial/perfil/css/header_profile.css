@@ -36,6 +36,10 @@
     border-radius: 50%;
 }
 
+.content .header_profile img:hover{
+    cursor: pointer;
+}
+
 .info_profil{
     display: grid;
     align-items: center;

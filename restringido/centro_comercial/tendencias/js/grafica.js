@@ -68,6 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if(btn.textContent === "Tiendas" || btn.textContent === "Sucursales")
             {
                 isTienda = true;
+                if(menuSucursales)
+                {
+                    menuSucursales.style.display = "none";
+                }
             }
             else
             {
@@ -75,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(menuSucursales)
                 {
                     menuSucursales.style.display = "";
-                    console.log(menuSucursales);
                 }
             }
             console.log("isTienda: ", isTienda);
@@ -118,6 +121,11 @@ async function actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
     });
     formData.append("isTienda", isTienda);
     formData.append("periodoTiempo", periodoTiempo);
+    if(isPerfil)
+    {
+        formData.append("idTienda", idTiendaMenuOption);
+        console.log(idTiendaMenuOption);
+    }
 
     await fetch('actualizar_grafica.php', {
         method: 'POST',
