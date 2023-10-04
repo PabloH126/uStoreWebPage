@@ -1,4 +1,6 @@
 let idTiendaMenuOption;
+let menuOptions = document.querySelectorAll('.menu-option');
+
 document.addEventListener('DOMContentLoaded', function () {
     let menuIcon1 = document.getElementById('menu-icon');
     let menuIcon2 = document.getElementById('menu-icon2');
