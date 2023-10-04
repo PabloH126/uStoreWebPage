@@ -11,12 +11,6 @@ let isTienda;
 let periodoTiempo;
 var graficaActivada = false;
 
-let btnTiendas = document.getElementById('btnTiendas');
-let isPerfil = document.getElementById('isPerfil');
-
-console.log(btnTiendas);
-console.log(isPerfil);
-
 if (isPerfil)
 {
     console.log("no hay problema");
