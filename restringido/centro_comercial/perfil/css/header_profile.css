@@ -30,14 +30,6 @@
     justify-content: center;
 }
 
-#fltr{
-    border-radius: 50%;
-    object-fit: cover;
-    overflow: hidden;
-    height: 100%;
-    background: #000000ab;
-}
-
 .content .header_profile img {
     max-height: 8.8vh;
     max-width: 7.5vw;
@@ -45,7 +37,7 @@
 
 .content .header_profile img:hover{
     cursor: pointer;
-    filter: opacity(0.5);
+    filter: brightness(63%);
 }
 
 .info_profil{
