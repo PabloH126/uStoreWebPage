@@ -40,11 +40,16 @@
     border-radius: 50%;
 }
 
+.content .header_profile img:first-child:hover + img{
+    display: block;
+}
+
 .content .header_profile img:last-child {
     max-height: 8.8vh;
     max-height: 8.8vh;
     border-radius: 50%;
     position: absolute;
+    display: none;
 }
 
 .info_profil{
