@@ -181,7 +181,7 @@ function DesactivarGrafica()
 {
     if (spanFiltro)
     {
-        spanFiltro.style.display = "";;
+        spanFiltro.style.display = "none";;
     }
     canva.style.display = "none";
     filterList.style.display = "none";
