@@ -122,6 +122,7 @@ i.bx.bx-store-alt {
     margin: 2px;
 }
 
+#sub-menu .menuIconSelected a,
 #sub-menu .menu-option:hover a,
 #sub-menu2 .menu-option:hover a {
     color: white;
