@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     spanFiltro.textContent = "Seleccione una sucursal";
                     menuSucursales.style.display = "";
+                    DesactivarGrafica();
                     return;
                 }
             }
@@ -168,11 +169,22 @@ function ActivarGrafica()
 {
     if (spanFiltro)
     {
-        spanFiltro.remove();
+        spanFiltro.style.display = "none";
     }
     canva.style.display = "";
     filterList.style.display = "";
     btnCrearPubli.style.display = "";
+}
+
+function DesactivarGrafica()
+{
+    if (spanFiltro)
+    {
+        spanFiltro.style.display = "";;
+    }
+    canva.style.display = "none";
+    filterList.style.display = "none";
+    btnCrearPubli.style.display = "none";
 }
 
 function ActivarEventosActualizacionGrafica(grafica)
