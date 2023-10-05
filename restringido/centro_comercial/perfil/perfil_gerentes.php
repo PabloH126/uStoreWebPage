@@ -108,8 +108,8 @@ curl_close($ch);
 				<div class="lista">
 
 					<div class="item">
-						<a href="tiendas/perfil_tienda.php?id=<?php echo $tienda['idTienda']; ?>"><img width="60%" class="logo" src="<?php echo $tienda['logoTienda']; ?>"></a>
-						<strong class="nombre"><?php echo $tienda['nombreTienda'];?></strong>
+						<a href=""><img width="60%" class="logo" src="https://i.pinimg.com/564x/4f/cd/0d/4fcd0d0480073175756ac628a1cf959e.jpg"></a>
+						<strong class="nombre">Neji chiquito</strong>
 					</div>
 			
 					<div class="item" id="agregar">
