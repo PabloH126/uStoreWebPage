@@ -30,22 +30,20 @@ if($imagenV === true){
     $response = curl_exec($ch);
    
     if ($response === false) {
-         /*
         $responseArray['statusImagen'] = "error";
         $responseArray['message'] = "Hubo un error al mandar la solicitud a la api: " . curl_error($ch);
         echo json_encode($responseArray);
         exit;
-        */
     } else {
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
-    
+    /*
     if($httpStatusCode != 200)
     {
         $responseArray['statusImagen'] = "error";
         $responseArray['message'] = "Hubo un error al mandar la solicitud a la api: " . $httpStatusCode;
     }
-
+    */
     $data = json_decode($response);
 
     $responseArray['statusImagen'] = "success";
