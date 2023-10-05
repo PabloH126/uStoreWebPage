@@ -32,12 +32,10 @@
 
 #fltr {
     display: grid;
-}
-
-.profile_img {
-    max-height: 8.8vh;
-    max-width: 7.5vw;
+    height: 8.8vh;
+    width: 8.8vh;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 form#form_change_img {
@@ -61,9 +59,9 @@ input#change_img {
 }
 
 .content .header_profile img:first-child {
-    max-height: 8.8vh;
-    max-width: 7.5vw;
-    border-radius: 50%;
+    height: 8.8vh;
+    width: 8.8vh;
+    object-fit: cover;
 }
 
 #fltr:hover img:last-child {
