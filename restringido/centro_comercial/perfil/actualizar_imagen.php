@@ -10,20 +10,18 @@ $maxSize = 1 * 1024 * 1024; // 1 MB
 $profileImage = $_FILES['newImageProfile'];
 
 $imagenV = verificarImagen($profileImage);
-$responseArray['statusImagen'] = "success";
-$responseArray['message'] = $imagenV;
-echo json_encode($responseArray);
-exit;
-/*
-if(){
+
+if($imagenV === true){
     $data = [
         'image' => curl_file_create($profileImage['tmp_name'], $profileImage['type'], $profileImage['name'])
     ];
     
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/AdminsTienda/UpdateProfileImage");
-    curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Authorization: Bearer ' . $_COOKIE['SessionToken']
@@ -61,7 +59,6 @@ else
 
 echo json_encode($responseArray);
 exit;
-*/
 
 function verificarImagen($imagen) {
     //Validación de imagenes
