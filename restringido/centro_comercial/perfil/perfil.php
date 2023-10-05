@@ -91,7 +91,7 @@ curl_close($ch);
 	<title>Perfil</title>
 	<?php require("../templates/template.styles.php"); ?>
 	<?php require("templates/template.secc_perfil.php"); ?>
-	<?php //require("../tendencias/templates/template.secc_tendencias_venta.php") ?>
+	<?php //require("../tend/template.perfil_graficas.php.secc_tendencias_venta.php") ?>
 </head>
 
 <body>

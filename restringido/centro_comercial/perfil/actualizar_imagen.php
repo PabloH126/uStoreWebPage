@@ -9,7 +9,13 @@ $maxSize = 1 * 1024 * 1024; // 1 MB
 
 $profileImage = $_FILES['newImageProfile'];
 
-if(verificarImagen($profileImage)){
+$imagenV = verificarImagen($profileImage);
+$responseArray['statusImagen'] = "error";
+$responseArray['message'] = $imagenV;
+echo json_encode($responseArray);
+exit;
+
+if(){
     $data = [
         'image' => curl_file_create($profileImage['tmp_name'], $profileImage['type'], $profileImage['name'])
     ];
