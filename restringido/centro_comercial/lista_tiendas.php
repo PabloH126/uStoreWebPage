@@ -50,19 +50,20 @@
 				}
 				else
 				{ 
+				?>
+					<div class="item" id="agregar">
+						<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
+					</div>
+				<?php
+
 				foreach ($tiendas as $tienda)
 				{ ?>
 					<div class="item">
 						<a href="tiendas/perfil_tienda.php?id=<?php echo $tienda['idTienda']; ?>"><img width="60%" class="logo" src="<?php echo $tienda['logoTienda']; ?>"></a>
 						<strong class="nombre"><?php echo $tienda['nombreTienda'];?></strong>
 					</div>
-			<?php
+				<?php
 				}
-			?>
-					<div class="item" id="agregar">
-						<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
-					</div>
-			<?php
 				}
 			?>
 		</div>
