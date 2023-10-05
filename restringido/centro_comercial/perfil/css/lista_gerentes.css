@@ -4,10 +4,18 @@
 }
 
 .content .lista .item {
-    height: 210px;
+    height: 222px;
     width: 250px;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 58% 42%;
     align-items: center;
+}
+
+.content .lista .item .logo{
+    max-height: 118px;
+}
+
+.item p{
+    margin: 5px 0;
 }
 
 .content .lista #agregar {

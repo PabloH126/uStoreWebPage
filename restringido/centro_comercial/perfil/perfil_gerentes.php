@@ -112,7 +112,11 @@ curl_close($ch);
 
 					<div class="item">
 						<a href=""><img width="60%" class="logo" src="https://i.pinimg.com/564x/4f/cd/0d/4fcd0d0480073175756ac628a1cf959e.jpg"></a>
-						<strong class="nombre">Neji chiquito</strong>
+						<div>
+							<strong class="nombre">Neji chiquito</strong>
+							<p>nancybenzen@gmail.com</p>
+							<p>Mc donalds</p>
+						</div>
 					</div>
 
 				</div>
