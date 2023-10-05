@@ -12,6 +12,7 @@ $profileImage = $_FILES['newImageProfile'];
 $imagenV = verificarImagen($profileImage);
 
 if($imagenV === true){
+    
     $data = [
         'image' => curl_file_create($profileImage['tmp_name'], $profileImage['type'], $profileImage['name'])
     ];
@@ -26,7 +27,7 @@ if($imagenV === true){
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Authorization: Bearer ' . $_COOKIE['SessionToken']
     ));
-    
+    /*
     $response = curl_exec($ch);
    
     if ($response === false) {
@@ -37,18 +38,18 @@ if($imagenV === true){
     } else {
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
-    /*
+    
     if($httpStatusCode != 200)
     {
         $responseArray['statusImagen'] = "error";
         $responseArray['message'] = "Hubo un error al mandar la solicitud a la api: " . $httpStatusCode;
     }
-    */
+    
     $data = json_decode($response);
 
     $responseArray['statusImagen'] = "success";
     $responseArray['imagenPerfil'] = $data['imageUrl'];
-    
+    */
     curl_close($ch);
 }
 else
