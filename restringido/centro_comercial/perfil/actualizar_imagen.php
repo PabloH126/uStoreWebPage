@@ -61,6 +61,7 @@ else
 
 echo json_encode($responseArray);
 exit;
+*/
 
 function verificarImagen($imagen) {
     //Validación de imagenes
@@ -75,5 +76,5 @@ function verificarImagen($imagen) {
         }
     }
 }
-*/
+
 ?>
