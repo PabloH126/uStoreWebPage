@@ -69,7 +69,6 @@ if(isset($_SESSION['idMall']))
 	<title>Selección de plaza</title>
 	<?php require("templates/template.styles.php") ?>
 	<link rel="stylesheet" type="text/css" href="css/seleccionPlaza.css">
-	<link rel="stylesheet" href="centro_comercial/listas.css">
 </head>
 
 <body>
