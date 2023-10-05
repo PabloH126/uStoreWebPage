@@ -27,9 +27,9 @@ if($imagenV === true){
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Authorization: Bearer ' . $_COOKIE['SessionToken']
     ));
-    /*
+
     $response = curl_exec($ch);
-   
+    /*
     if ($response === false) {
         $responseArray['statusImagen'] = "error";
         $responseArray['message'] = "Hubo un error al mandar la solicitud a la api: " . curl_error($ch);
@@ -44,12 +44,12 @@ if($imagenV === true){
         $responseArray['statusImagen'] = "error";
         $responseArray['message'] = "Hubo un error al mandar la solicitud a la api: " . $httpStatusCode;
     }
-    
+    */
     $data = json_decode($response);
 
     $responseArray['statusImagen'] = "success";
     $responseArray['imagenPerfil'] = $data['imageUrl'];
-    */
+    
     curl_close($ch);
 }
 else
