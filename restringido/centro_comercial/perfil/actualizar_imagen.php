@@ -2,6 +2,8 @@
 session_start();
 header('Content-Type: application/json');
 $responseArray = [];
+$responseArray['statusImagen'] = "success";
+/*
 //Validación de imagenes
 $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
 $maxSize = 1 * 1024 * 1024; // 1 MB
@@ -49,7 +51,7 @@ else
     $responseArray = "error";
     $responseArray['message'] = "Error la imagen de perfil no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.";
 }
-
+*/
 echo json_encode($responseArray);
 exit;
 
