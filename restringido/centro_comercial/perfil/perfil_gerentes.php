@@ -91,7 +91,6 @@ curl_close($ch);
 	<title>Perfil</title>
 	<?php require("../templates/template.styles.php"); ?>
 	<?php require("templates/template.secc_perfil_gerentes.php"); ?>
-	<?php //require("../tendencias/templates/template.secc_tendencias_venta.php") ?>
 </head>
 
 <body>
@@ -107,15 +106,15 @@ curl_close($ch);
 			
 				<div class="lista">
 
+					<div class="item" id="agregar">
+						<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
+					</div>
+
 					<div class="item">
 						<a href=""><img width="60%" class="logo" src="https://i.pinimg.com/564x/4f/cd/0d/4fcd0d0480073175756ac628a1cf959e.jpg"></a>
 						<strong class="nombre">Neji chiquito</strong>
 					</div>
-			
-					<div class="item" id="agregar">
-						<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
-					</div>
-					
+
 				</div>
 			<?php
 		}
