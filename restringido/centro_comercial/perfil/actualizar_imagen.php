@@ -29,6 +29,8 @@ if(verificarImagen($profileImage)){
     if ($response === false) {
         $responseArray['statusImagen'] = "error";
         $responseArray['message'] = "Hubo un error al mandar la solicitud a la api: " . curl_error($ch);
+        echo json_encode($responseArray);
+        exit;
     } else {
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
@@ -48,7 +50,7 @@ if(verificarImagen($profileImage)){
 }
 else
 {
-    $responseArray = "error";
+    $responseArray['statusImagen'] = "error";
     $responseArray['message'] = "Error la imagen de perfil no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.";
 }
 
