@@ -3,7 +3,7 @@ let imagenPerfil = document.getElementById("profile_img");
 
 imagenInput.addEventListener("change", function () {
     try{
-        actualizarImagenPerfil(imagenInput, '../actualizar_imagen.php');
+        actualizarImagenPerfil(imagenInput, 'actualizar_imagen.php');
     } catch(error) {
         console.error("Error: ", error);
         showNotificationError("Hubo un error al realizar la solicitu de actualizacion de imagen: " + error);
