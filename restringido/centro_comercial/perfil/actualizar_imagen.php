@@ -8,7 +8,7 @@ $responseArray['statusImagen'] = "success";
 $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
 $maxSize = 1 * 1024 * 1024; // 1 MB
 
-$profileImage = $_FILES['newImageProfile'];
+$profileImage = $_POST['newImageProfile'];
 
 if(verificarImagen($profileImage)){
     $data = [
