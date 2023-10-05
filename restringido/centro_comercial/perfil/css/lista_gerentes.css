@@ -1,0 +1,25 @@
+.content .lista {
+    width: 90%;
+    margin: 60px auto 5px auto;
+}
+
+.content .lista .item {
+    height: 210px;
+    width: 250px;
+    grid-template-rows: 80% 20%;
+    align-items: center;
+}
+
+.content .lista #agregar {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .lista #agregar span {
+    font-size: 9em;
+    color: #ababab;
+}
