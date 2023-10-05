@@ -49,7 +49,7 @@ if($imagenV === true){
     /*
     $responseArray['statusImagen'] = "success";
     $responseArray['imagenPerfil'] = $responseData['imageUrl'];
-    
+    */
     curl_close($ch);
 }
 else
