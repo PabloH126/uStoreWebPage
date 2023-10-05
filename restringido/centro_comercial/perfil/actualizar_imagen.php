@@ -11,7 +11,6 @@ $profileImage = $_FILES['newImageProfile'];
 
 $imagenV = verificarImagen($profileImage);
 
-if($imagenV === true){
     $data = [
         'image' => curl_file_create($profileImage['tmp_name'], $profileImage['type'], $profileImage['name'])
     ];
@@ -50,12 +49,6 @@ if($imagenV === true){
     $responseArray['imagenPerfil'] = $data['imageUrl'];
     
     curl_close($ch);
-}
-else
-{
-    $responseArray['statusImagen'] = "error";
-    $responseArray['message'] = "Error la imagen de perfil no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.";
-}
 
 echo json_encode($responseArray);
 exit;
