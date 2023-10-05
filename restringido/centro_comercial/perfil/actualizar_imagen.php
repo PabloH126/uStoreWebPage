@@ -46,7 +46,7 @@ if($imagenV === true){
     }
     */
     $responseData = json_decode($response);
-    
+    /*
     $responseArray['statusImagen'] = "success";
     $responseArray['imagenPerfil'] = $responseData['imageUrl'];
     

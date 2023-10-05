@@ -214,7 +214,7 @@ function CategoriasSelect($categorias)
                     </div>
                     <div class="notas">
                         <span>* Máximo 5 imágenes.</span><br>
-                        <span>*Cada imagen no debe superar 1Mb. </span>
+                        <span>* Cada imagen no debe superar 1Mb. </span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -238,7 +238,7 @@ function CategoriasSelect($categorias)
                     <div class="notas">
                         <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para
                             apartar.</span><br>
-                        <span>*En caso de que el producto no esté disponible para apartado, ingrese "0".</span>
+                        <span>* En caso de que el producto no esté disponible para apartado, ingrese "0".</span>
                     </div>
                     <div class="bttns">
                         <div class="bttn back" id="ult">
