@@ -38,6 +38,7 @@
 	<?php require("../templates/template.secc_tiendas.php")?>
 	<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
 	<link rel="stylesheet" href="css/lista_productos.css">
+	<link rel="stylesheet" type="text/css" href="../css/lista_tiendas.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="js/actualizar_stock.js"></script>
 	
