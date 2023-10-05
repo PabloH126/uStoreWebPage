@@ -235,7 +235,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                     </div>
                     <div class="notas">
                         <span>* Máximo 5 imágenes.</span><br>
-                        Cada imagen no debe superar 1Mb. </span>
+                        <span>Cada imagen no debe superar 1Mb. </span>
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
