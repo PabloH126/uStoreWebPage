@@ -45,11 +45,11 @@ if($imagenV === true){
         $responseArray['message'] = "Hubo un error al mandar la solicitud a la api: " . $httpStatusCode;
     }
     */
-    $data = json_decode($response);
-
+    $responseData = json_decode($response);
+    /*
     $responseArray['statusImagen'] = "success";
-    $responseArray['imagenPerfil'] = $data['imageUrl'];
-    
+    $responseArray['imagenPerfil'] = $responseData['imageUrl'];
+    */
     curl_close($ch);
 }
 else
