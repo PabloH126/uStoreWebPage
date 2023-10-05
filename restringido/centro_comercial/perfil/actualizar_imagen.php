@@ -2,7 +2,6 @@
 session_start();
 header('Content-Type: application/json');
 $responseArray = [];
-$responseArray['statusImagen'] = "success";
 
 //Validación de imagenes
 $allowedImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
