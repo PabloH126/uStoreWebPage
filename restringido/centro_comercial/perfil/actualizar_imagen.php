@@ -40,7 +40,7 @@ if(verificarImagen($profileImage)){
     $data = json_decode($response);
 
     $responseArray['statusImagen'] = "success";
-    $responseArray['imagenPerfil'] = $httpStatusCode;
+    $responseArray['imagenPerfil'] = $data;
     
     curl_close($ch);
 
