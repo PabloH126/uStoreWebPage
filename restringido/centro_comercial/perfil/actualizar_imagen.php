@@ -12,7 +12,7 @@ $profileImage = $_FILES['newImageProfile'];
 $responseArray['statusImagen'] = "success";
 echo json_encode($responseArray);
 exit;
-
+/*
 $imagenV = verificarImagen($profileImage);
 $responseArray['statusImagen'] = "success";
 $responseArray['message'] = $imagenV;
@@ -79,4 +79,5 @@ function verificarImagen($imagen) {
         }
     }
 }
+*/
 ?>
