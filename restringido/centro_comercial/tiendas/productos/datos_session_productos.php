@@ -36,9 +36,6 @@
 	<title>Selección de productos</title>
 	<?php require("../../templates/template.styles.php")?>
 	<?php require("../templates/template.secc_tiendas.php")?>
-	<link rel="stylesheet" type="text/css" href="../css/lista_tiendas.css">
-	<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css">
-	<link rel="stylesheet" href="css/lista_productos.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="js/actualizar_stock.js"></script>
 	
@@ -56,6 +53,12 @@
 				}
 				else
 				{ 
+				?>
+					<div class="item" id="agregar">
+						<a href="creacion_productos.php?id=<?php echo $_GET['id']; ?>"><span class="material-symbols-outlined">add</span></a>
+					</div>
+				<?php
+
 				foreach ($productos as $producto)
 				{ ?>
 					<div class="item">
@@ -71,13 +74,8 @@
 	                        </span>
                     	</div>
 					</div>
-			<?php
+				<?php
 				}
-			?>
-					<div class="item" id="agregar">
-						<a href="creacion_productos.php?id=<?php echo $_GET['id']; ?>"><span class="material-symbols-outlined">add</span></a>
-					</div>
-			<?php
 				}
 			?>
 		</div>
