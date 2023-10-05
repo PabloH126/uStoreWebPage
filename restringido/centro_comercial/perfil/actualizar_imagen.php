@@ -43,17 +43,15 @@ if(verificarImagen($profileImage)){
     $responseArray['imagenPerfil'] = $data['imageUrl'];
     
     curl_close($ch);
-
-    echo json_encode($responseArray);
-    exit;
 }
 else
 {
     $responseArray = "error";
     $responseArray['message'] = "Error la imagen de perfil no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.";
-    echo json_encode($responseArray);
-    exit;
 }
+
+echo json_encode($responseArray);
+exit;
 
 function verificarImagen($imagen) {
     //Validación de imagenes
