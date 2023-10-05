@@ -106,7 +106,7 @@ $ch = curl_init();
                         </div>
                     </div>
                     <div class="notas">
-                        <span>* Este apartado es opcional.</span>
+                        <span>* Este apartado es opcional.</span><br>
                         <span>* El peso de la imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
