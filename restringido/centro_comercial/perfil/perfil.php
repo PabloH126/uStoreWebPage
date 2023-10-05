@@ -90,8 +90,7 @@ curl_close($ch);
 	<meta charset="utf-8">
 	<title>Perfil</title>
 	<?php require("../templates/template.styles.php"); ?>
-	<?php require("templates/template.secc_perfil.php"); ?>
-	<?php //require("../tend/template.perfil_graficas.phpc_tendencias_venta.php") ?>
+	<?php require("templates/template.secc_perfil_grafica.php"); ?>
 </head>
 
 <body>
