@@ -1,9 +1,9 @@
 let imagenInput = document.getElementById("change_img");
 let imagenPerfil = document.getElementById("profile_img");
 
-imagenInput.addEventListener("change", async function () {
+imagenInput.addEventListener("change", function () {
     try{
-        await actualizarImagenPerfil(imagenInput, 'actualizar_imagen.php');
+        actualizarImagenPerfil(imagenInput, 'actualizar_imagen.php');
     } catch(error) {
         console.error("Error: ", error);
         showNotificationError("Hubo un error al realizar la solicitu de actualizacion de imagen: " + error);
