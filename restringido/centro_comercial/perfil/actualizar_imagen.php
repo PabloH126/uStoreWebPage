@@ -10,7 +10,7 @@ $maxSize = 1 * 1024 * 1024; // 1 MB
 $profileImage = $_FILES['newImageProfile'];
 
 $imagenV = verificarImagen($profileImage);
-$responseArray['statusImagen'] = "error";
+$responseArray['statusImagen'] = "success";
 $responseArray['message'] = $imagenV;
 echo json_encode($responseArray);
 exit;
