@@ -91,7 +91,6 @@ curl_close($ch);
 	<title>Perfil</title>
 	<?php require("../templates/template.styles.php"); ?>
 	<?php require("templates/template.secc_perfil_gerentes.php"); ?>
-	<link rel="stylesheet" href="">
 	<?php //require("../tendencias/templates/template.secc_tendencias_venta.php") ?>
 </head>
 
