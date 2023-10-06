@@ -145,16 +145,20 @@ curl_close($ch);
                     </div>
                 </div>
 
-
-                <!-- Nombre de tienda-->
-                <div class="item active" id="item-1">
-                    <p>1/6</p>
+                <!-- Password del gerente-->
+                <div class="item" id="item-4">
+                    <p>4/6</p>
                     <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" name="nombreTienda">
+                        <label for="passwordGerente"><strong>Contraseña del gerente</strong></label>
+                        <input type="password" id="passwordGerente" name="passwordGerente">
                     </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    <div class="bttns">
+                        <div class="bttn back">
+                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
+                        </div>
                     </div>
                 </div>
 
