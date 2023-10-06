@@ -94,7 +94,7 @@ curl_close($ch);
 </head>
 
 <body>
-    kk1
+    kk2
     <?php require("../templates/template.menu.php") ?>
     kk 
 </body>
