@@ -90,6 +90,7 @@ curl_close($ch);
 	<meta charset="utf-8">
 	<title>Perfil</title>
 	<?php require("../templates/template.styles.php"); ?>
+	<link rel="stylesheet" type="text/css" href="css/lista_gerentes.css">
 	<?php require("templates/template.secc_perfil_gerentes.php"); ?>
 </head>
 
