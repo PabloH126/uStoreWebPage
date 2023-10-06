@@ -31,3 +31,22 @@
     font-size: 9em;
     color: #ababab;
 }
+/**********/
+.edicionTienda{
+    position: absolute;
+    right: 5vw;
+    bottom: 4vh;
+    color: white;
+    font-size: 5.5vh;
+}
+
+.edicionTienda i{
+    background: #007096;
+    color: white;
+    padding: 20%;
+    border-radius: 50%;
+}
+
+.edicionTienda i:hover{
+    background: #016283;
+}

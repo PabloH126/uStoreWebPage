@@ -120,6 +120,11 @@ curl_close($ch);
 					</div>
 
 				</div>
+				<div class="edicionTienda">
+					<a title="Edición de tienda" href="">
+						<i class='bx bx-pencil'></i>
+					</a>
+				</div>
 			<?php
 		}
 		?>
