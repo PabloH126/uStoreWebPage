@@ -8,23 +8,23 @@ curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Perfil/Ge
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt(
-	$ch,
-	CURLOPT_HTTPHEADER,
-	array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	)
+    $ch,
+    CURLOPT_HTTPHEADER,
+    array(
+        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+    )
 );
 
 $response = curl_exec($ch);
 
 if ($response === false) {
-	echo 'Error: ' . curl_error($ch);
+    echo 'Error: ' . curl_error($ch);
 } else {
-	$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
 if ($httpStatusCode == 400) {
-	$perfilError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+    $perfilError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
 }
 $perfil = json_decode($response, true);
 curl_close($ch);
@@ -36,19 +36,19 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt(
-	$ch,
-	CURLOPT_HTTPHEADER,
-	array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	)
+    $ch,
+    CURLOPT_HTTPHEADER,
+    array(
+        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+    )
 );
 
 $response = curl_exec($ch);
 
 if ($response === false) {
-	echo 'Error: ' . curl_error($ch);
+    echo 'Error: ' . curl_error($ch);
 } else {
-	$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
 $categorias = json_decode($response, true);
@@ -61,23 +61,23 @@ curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/G
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt(
-	$ch,
-	CURLOPT_HTTPHEADER,
-	array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	)
+    $ch,
+    CURLOPT_HTTPHEADER,
+    array(
+        'Authorization: Bearer ' . $_COOKIE['SessionToken']
+    )
 );
 
 $response = curl_exec($ch);
 
 if ($response === false) {
-	echo 'Error: ' . curl_error($ch);
+    echo 'Error: ' . curl_error($ch);
 } else {
-	$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
 if ($httpStatusCode == 400) {
-	$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+    $tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
 }
 $tiendas = json_decode($response, true);
 curl_close($ch);
@@ -87,17 +87,17 @@ curl_close($ch);
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>Agregar gerente</title>
-	<?php require("../templates/template.styles.php"); ?>
-	<?php require("templates/template.agregarGerentes.php"); ?>
+    <meta charset="utf-8">
+    <title>Agregar gerente</title>
+    <?php require("../templates/template.styles.php"); ?>
+    <?php require("templates/template.agregarGerentes.php"); ?>
 </head>
 
 <body>
-	<?php require("../templates/template.menu.php") ?>
+    <?php require("../templates/template.menu.php") ?>
 
-	<div class="content">
-    <h1>Creación de tienda</h1>
+    <div class="content">
+        <h1>Creación de tienda</h1>
         <div class="lista">
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->
@@ -108,7 +108,8 @@ curl_close($ch);
                         <input type="text" id="nombreTienda" name="nombreTienda">
                     </div>
                     <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i
+                                class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
                     </div>
                 </div>
 
@@ -124,9 +125,10 @@ curl_close($ch);
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
-                                <input type="file" class="file-input fileLogoTienda" id="logoTienda" name="logoTienda" accept="image/*">
+                                    <input type="file" class="file-input fileLogoTienda" id="logoTienda"
+                                        name="logoTienda" accept="image/*">
                             </div>
-                        </div> 
+                        </div>
                     </div>
 
                     <div class="notas">
@@ -135,10 +137,12 @@ curl_close($ch);
 
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
+                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
+                            <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
                         </div>
                     </div>
                 </div>
@@ -157,10 +161,12 @@ curl_close($ch);
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
+                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
+                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
                         </div>
                     </div>
                 </div>
@@ -196,10 +202,12 @@ curl_close($ch);
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
+                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
+                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
                         </div>
                     </div>
                 </div>
@@ -212,32 +220,38 @@ curl_close($ch);
                         <div class="imageP">
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput1" data-img-id="imagenSelec1"></i>
+                                    <i class='bx bx-x delete-icon' data-input-id="fileInput1"
+                                        data-img-id="imagenSelec1"></i>
                                     <img src="" id="imagenSelec1" alt="">
                                 </div>
                                 <div class="ip">
-                                    <label for="fileInput1" >
-                                    <input type="file" class="file-input fileInputBanner" id="fileInput1" name="imagen1" accept="image/*">
+                                    <label for="fileInput1">
+                                        <input type="file" class="file-input fileInputBanner" id="fileInput1"
+                                            name="imagen1" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput2" data-img-id="imagenSelec2"></i>
+                                    <i class='bx bx-x delete-icon' data-input-id="fileInput2"
+                                        data-img-id="imagenSelec2"></i>
                                     <img src="" id="imagenSelec2" alt="">
                                 </div>
                                 <div class="ip">
-                                    <label for="fileInput2" >
-                                    <input type="file" class="file-input fileInputBanner" id="fileInput2" name="imagen2" accept="image/*">
+                                    <label for="fileInput2">
+                                        <input type="file" class="file-input fileInputBanner" id="fileInput2"
+                                            name="imagen2" accept="image/*">
                                 </div>
                             </div>
                             <div class="contentP">
                                 <div class="box">
-                                    <i class='bx bx-x delete-icon' data-input-id="fileInput3" data-img-id="imagenSelec3"></i>
+                                    <i class='bx bx-x delete-icon' data-input-id="fileInput3"
+                                        data-img-id="imagenSelec3"></i>
                                     <img src="" id="imagenSelec3" alt="">
                                 </div>
                                 <div class="ip">
-                                    <label for="fileInput3" >
-                                    <input type="file" class="file-input fileInputBanner" id="fileInput3" name="imagen3" accept="image/*">
+                                    <label for="fileInput3">
+                                        <input type="file" class="file-input fileInputBanner" id="fileInput3"
+                                            name="imagen3" accept="image/*">
                                 </div>
                             </div>
                         </div>
@@ -247,13 +261,15 @@ curl_close($ch);
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
+                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
+                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- Periodos de apartado de la tienda -->
                 <div class="item" id="item-6">
@@ -273,7 +289,8 @@ curl_close($ch);
                     </div>
                     <div class="bttns">
                         <div class="bttn back" id="ult">
-                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
+                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
                         </div>
                         <div class="bttn" id="send">
                             <button type="submit" id="submitBtn">Guardar</button>
@@ -282,11 +299,9 @@ curl_close($ch);
                 </div>
             </form>
         </div>
-	</div>
-	<input type="hidden" id="isPerfil">
+    </div>
     <script src="../js/slider_formularios.js"></script>
-	<?php require("templates/template.scripts_perfil_grafica.php"); ?>
-	<script src="js/actualizar_imagen.js"></script>
+    <script src="js/actualizar_imagen.js"></script>
 </body>
 
 </html>
