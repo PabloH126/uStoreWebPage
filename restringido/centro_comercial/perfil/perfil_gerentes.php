@@ -107,7 +107,7 @@ curl_close($ch);
 				<div class="lista">
 
 					<div class="item" id="agregar">
-						<a href="creacion_tiendas.php"><span class="material-symbols-outlined">add</span></a>
+						<a href="agregar_gerente.php"><span class="material-symbols-outlined">add</span></a>
 					</div>
 
 					<div class="item">
