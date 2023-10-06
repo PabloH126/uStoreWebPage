@@ -209,7 +209,7 @@ curl_close($ch);
                             <div class="box">
                                 <i class='bx bx-x delete-icon' data-input-id="logoTienda"
                                     data-img-id="imagenSelec"></i>
-                                <img id="imagenSelec" alt="Imagen seleccionada para el gerente">
+                                <img id="imagenSelec" alt="">
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
