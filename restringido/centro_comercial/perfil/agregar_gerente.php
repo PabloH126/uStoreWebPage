@@ -185,7 +185,7 @@ curl_close($ch);
                     <p>6/7</p>
                     <div class="name">
                         <label><strong>Sucursal a la que pertenecerá</strong></label>
-                        <select id="seleccionSucursal" name="idTienda">
+                        <select id="seleccion_tienda" name="idTienda">
                             <option value="">Sucursal</option>
                             <option value=""></option>
                         </select>
