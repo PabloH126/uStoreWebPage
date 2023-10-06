@@ -120,8 +120,8 @@ curl_close($ch);
 					</div>
 
 				</div>
-				<div class="edicionTienda">
-					<a title="Edición de tienda" href="">
+				<div class="edicionGerente">
+					<a title="Editar gerente" href="">
 						<i class='bx bx-pencil'></i>
 					</a>
 				</div>

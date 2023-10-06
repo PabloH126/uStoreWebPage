@@ -32,7 +32,7 @@
     color: #ababab;
 }
 /**********/
-.edicionTienda{
+.edicionGerente{
     position: absolute;
     right: 5vw;
     bottom: 4vh;
@@ -40,13 +40,13 @@
     font-size: 5.5vh;
 }
 
-.edicionTienda i{
+.edicionGerente i{
     background: #007096;
     color: white;
     padding: 20%;
     border-radius: 50%;
 }
 
-.edicionTienda i:hover{
+.edicionGerente i:hover{
     background: #016283;
 }
