@@ -90,7 +90,7 @@ curl_close($ch);
 	<meta charset="utf-8">
 	<title>Agregar gerente</title>
 	<?php require("../templates/template.styles.php"); ?>
-	<?php require("templates/template.secc_perfil_gerentes.php"); ?>
+	<?php require("templates/template.agregarGerentes.php"); ?>
 </head>
 
 <body>
