@@ -298,11 +298,14 @@ curl_close($ch);
                     </div>
                 </div>
             </form>
+            <div class="oli4">oli4</div>
+            <div class="oli3"></div>
         </div>
     </div>
     <div class="oli"></div>
     <script src="../js/slider_formularios.js"></script>
     <script src="js/actualizar_imagen.js"></script>
+    <div class="oli2"></div>
 </body>
 
 </html>
