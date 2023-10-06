@@ -142,28 +142,6 @@ curl_close($ch);
                     </div>
                 </div>
 
-                <!-- Categorias de tienda-->
-                <div class="item categorias_form" id="item-3">
-                    <p>3/6</p>
-                    <div class="categorias">
-                        <label><strong>Categorías de la tienda</strong></label>
-                        <div class="optionsC">
-                            <?php CategoriasSelect($categorias); ?>
-                        </div>
-                        <div class="notas">
-                            <span>* Se pueden seleccionar un máximo de 8 categorías.</span>
-                        </div>
-                    </div>
-                    <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Horario de tienda-->
                 <div class="item" id="item-4">
                     <p>4/6</p>
