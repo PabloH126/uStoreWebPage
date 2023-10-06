@@ -282,8 +282,8 @@ curl_close($ch);
             </form>
         </div>
     </div>
-    <script src="js/mostrarImg.js"></script>
-    <script src="js/creacion_tiendas.js"></script>
+   <!-- <script src="js/mostrarImg.js"></script>
+    <script src="js/creacion_tiendas.js"></script>-->
 </body>
 
 </html>
