@@ -284,7 +284,6 @@ curl_close($ch);
         </div>
 	</div>
 	<input type="hidden" id="isPerfil">
-    <script src="../js/slider_formularios.js"></script>
 	<?php require("templates/template.scripts_perfil_grafica.php"); ?>
 	<script src="js/actualizar_imagen.js"></script>
 </body>
