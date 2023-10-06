@@ -94,17 +94,7 @@ curl_close($ch);
 </head>
 
 <body>
-    <?php require("templates/template.menu.php") ?>
-    <div class="content">
-        <h1>Creación de tienda</h1>
-        <div class="lista">
-            <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
-                
-            </form>
-        </div>
-    </div>
-    <!-- <script src="js/mostrarImg.js"></script>
-    <script src="js/creacion_tiendas.js"></script>-->
+    kk 
 </body>
 
 </html>
