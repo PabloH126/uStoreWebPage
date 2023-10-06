@@ -163,11 +163,11 @@ curl_close($ch);
                 </div>
 
 
-                <!-- Password del gerente-->
+                <!-- Confirmacion password del gerente-->
                 <div class="item" id="item-5">
                     <p>5/6</p>
                     <div class="name">
-                        <label for="repasswordGerente"><strong>Consfirmación de contraseña del gerente</strong></label>
+                        <label for="repasswordGerente"><strong>Confirmación de contraseña del gerente</strong></label>
                         <input type="password" id="repasswordGerente" name="repasswordGerente">
                     </div>
                     <div class="bttns">
@@ -180,16 +180,23 @@ curl_close($ch);
                     </div>
                 </div>
 
-
-                <!-- Nombre de tienda-->
-                <div class="item active" id="item-1">
-                    <p>1/6</p>
+                <!-- Seleccion de sucursal-->
+                <div class="item" id="item-6">
+                    <p>6/6</p>
                     <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" name="nombreTienda">
+                        <label><strong>Sucursal a la que pertenecerá</strong></label>
+                        <select id="seleccionSucursal" name="idTienda">
+                            <option value="">Sucursal</option>
+                            <option value=""></option>
+                        </select>
                     </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    <div class="bttns">
+                        <div class="bttn back">
+                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
+                        </div>
+                        <div class="bttn" id="next">
+                            <button type="button" class="bttn-next" data-item="6" data-to_item="7"><i class='bx bx-right-arrow-alt bttn-next' data-item="6" data-to_item="7"></i></button>
+                        </div>
                     </div>
                 </div>
 
