@@ -101,7 +101,7 @@ curl_close($ch);
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre del gerente-->
                 <div class="item active" id="item-1">
-                    <p>1/6</p>
+                    <p>1/7</p>
                     <div class="name">
                         <label for="nombreGerente"><strong>Primer nombre del gerente</strong></label>
                         <input type="text" id="nombreGerente" name="nombreGerente">
@@ -113,7 +113,7 @@ curl_close($ch);
 
                 <!-- Apellido del gerente-->
                 <div class="item" id="item-2">
-                    <p>2/6</p>
+                    <p>2/7</p>
                     <div class="name">
                         <label for="apellidoGerente"><strong>Primer apellido del gerente</strong></label>
                         <input type="text" id="apellidoGerente" name="apellidoGerente">
@@ -130,7 +130,7 @@ curl_close($ch);
 
                 <!-- Email del gerente-->
                 <div class="item" id="item-3">
-                    <p>3/6</p>
+                    <p>3/7</p>
                     <div class="name">
                         <label for="correoGerente"><strong>Correo electrónico del gerente</strong></label>
                         <input type="email" id="correoGerente" name="correoGerente">
@@ -147,7 +147,7 @@ curl_close($ch);
 
                 <!-- Password del gerente-->
                 <div class="item" id="item-4">
-                    <p>4/6</p>
+                    <p>4/7</p>
                     <div class="name">
                         <label for="passwordGerente"><strong>Contraseña del gerente</strong></label>
                         <input type="password" id="passwordGerente" name="passwordGerente">
@@ -165,7 +165,7 @@ curl_close($ch);
 
                 <!-- Confirmacion password del gerente-->
                 <div class="item" id="item-5">
-                    <p>5/6</p>
+                    <p>5/7</p>
                     <div class="name">
                         <label for="repasswordGerente"><strong>Confirmación de contraseña del gerente</strong></label>
                         <input type="password" id="repasswordGerente" name="repasswordGerente">
@@ -182,7 +182,7 @@ curl_close($ch);
 
                 <!-- Seleccion de sucursal-->
                 <div class="item" id="item-6">
-                    <p>6/6</p>
+                    <p>6/7</p>
                     <div class="name">
                         <label><strong>Sucursal a la que pertenecerá</strong></label>
                         <select id="seleccionSucursal" name="idTienda">
@@ -200,55 +200,40 @@ curl_close($ch);
                     </div>
                 </div>
 
-                <!-- Nombre de tienda-->
-                <div class="item active" id="item-1">
-                    <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" name="nombreTienda">
+                <!-- Imagen del gerente -->
+                <div class="item" id="item-7">
+                    <p>7/7</p>
+                    <div class="logoT">
+                        <label><strong>Imagen del gerente</strong></label>
+                        <div class="contentL">
+                            <div class="box">
+                                <i class='bx bx-x delete-icon' data-input-id="logoTienda"
+                                    data-img-id="imagenSelec"></i>
+                                <img id="imagenSelec" alt="Imagen seleccionada para el gerente">
+                            </div>
+                            <div class="ip">
+                                <label for="logoTienda" id="labelL">
+                                    <input type="file" class="file-input fileLogoTienda" id="logoTienda"
+                                        name="logoTienda" accept="image/*">
+                            </div>
+                        </div>
                     </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    <div class="notas">
+                        <span>* Este apartado es opcional.</span><br>
+                        <span>* El peso de la imagen no debe superar 1 megabyte.</span>
                     </div>
-                </div>
-
-                <!-- Nombre de tienda-->
-                <div class="item active" id="item-1">
-                    <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" name="nombreTienda">
-                    </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
-                    </div>
-                </div>
-
-                <!-- Nombre de tienda-->
-                <div class="item active" id="item-1">
-                    <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" name="nombreTienda">
-                    </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    <div class="bttns">
+                        <div class="bttn back" id="ult">
+                            <button type="button" class="bttn-back" data-item="7" data-to_item="6"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="7"
+                                    data-to_item="6"></i></button>
+                        </div>
+                        <div class="bttn" id="send">
+                            <button type="submit" id="submitBtn">Crear</button>
+                        </div>
                     </div>
                 </div>
 
-
-                <!-- Nombre de tienda-->
-                <div class="item active" id="item-1">
-                    <p>1/6</p>
-                    <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
-                        <input type="text" id="nombreTienda" name="nombreTienda">
-                    </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
-                    </div>
-                </div>
-               
             </form>
         </div>
     </div>
