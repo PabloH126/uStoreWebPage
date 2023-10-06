@@ -96,14 +96,14 @@ curl_close($ch);
 <body>
     <?php require("../templates/template.menu.php") ?>
     <div class="content">
-        <h1>Creación de tienda</h1>
+        <h1>Agregar gerente</h1>
         <div class="lista">
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->
                 <div class="item active" id="item-1">
                     <p>1/6</p>
                     <div class="name">
-                        <label for="nombreTienda"><strong>Nombre de la tienda</strong></label>
+                        <label for="nombreTienda"><strong>Nombre del gerente</strong></label>
                         <input type="text" id="nombreTienda" name="nombreTienda">
                     </div>
                     <div class="bttn" id="one">
