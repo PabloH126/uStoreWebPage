@@ -96,7 +96,7 @@ curl_close($ch);
 <body>
     <?php require("templates/template.menu.php") ?>
     <div class="content">
-        <h1>Agregar gerente</h1>
+        <h1>Creación de tienda</h1>
         <div class="lista">
             <form action="envio_tienda.php" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre de tienda-->
@@ -282,8 +282,8 @@ curl_close($ch);
             </form>
         </div>
     </div>
-   <!-- <script src="js/mostrarImg.js"></script>
-    <script src="js/creacion_tiendas.js"></script>-->
+    <script src="js/mostrarImg.js"></script>
+    <script src="js/creacion_tiendas.js"></script>
 </body>
 
 </html>
