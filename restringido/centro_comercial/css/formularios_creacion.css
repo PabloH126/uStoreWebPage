@@ -54,7 +54,6 @@ h1 {
 	display: block;
 }
 
-.content .lista form .item .name #seleccion_sucursal,
 .content .lista form .item .name input {
 	font-size: 1em;
 	padding: 9px;
@@ -307,6 +306,7 @@ h1 {
     font-family: 'Golos Text', sans-serif;
 }
 
+.content .lista form .item .name #seleccion_sucursal,
 .content .lista form .item .name #seleccion_tienda,
 .content .lista form .item .cantidadApartar input {
     margin: 5% 0 1%;
