@@ -233,10 +233,10 @@ curl_close($ch);
                         </div>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>
+    <script src="../js/slider_formularios.js"></script>
 </body>
 
 </html>
