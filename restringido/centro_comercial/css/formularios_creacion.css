@@ -54,6 +54,7 @@ h1 {
 	display: block;
 }
 
+.content .lista form .item .name #seleccion_sucursal,
 .content .lista form .item .name input {
 	font-size: 1em;
 	padding: 9px;
