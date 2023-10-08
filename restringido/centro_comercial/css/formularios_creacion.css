@@ -317,6 +317,10 @@ h1 {
     padding: 9px;
 }
 
+.content .lista form .item .name #seleccion_sucursal{
+	margin: 8% 0;
+}
+
 .content .lista form .item #ult {
 	margin-left: 51vw;
 }
