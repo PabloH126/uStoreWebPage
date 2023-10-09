@@ -55,9 +55,9 @@ async function actualizarImagenPerfil(input, url){
         showNotification("Imagen actualizada con éxito");
         setTimeout(() => {
             hideNotification();
+            location.reload(true);
         }, 2500);
         imagenPerfil.src = dataImagen.imagenPerfil;
-        location.reload(true);
     }
 }
 
