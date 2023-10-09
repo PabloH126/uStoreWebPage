@@ -112,6 +112,7 @@ function showNotificationError(message) {
         notification.classList.add("notificationErrorHide");
         setTimeout(() => {
             hideNotification();
+            notification.remove();
         }, 550);
     }, 2500);
     
