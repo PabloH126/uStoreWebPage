@@ -150,8 +150,8 @@ curl_close($ch);
                     <p>4/6</p>
                     <div class="name">
                         <label for="passwordGerente"><strong>Contraseña del gerente</strong></label>
-                        <input type="password" id="passwordGerente" name="passwordGerente">
-                        <input type="repassword" id="repasswordGerente" name="repasswordGerente">
+                        <input type="password" id="passwordGerente" name="passwordGerente" placeholder="Contraseña">
+                        <input type="repassword" id="repasswordGerente" name="repasswordGerente" placeholder="Confirmacion de contraseña">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
