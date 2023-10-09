@@ -2,6 +2,8 @@
 session_start();
 require '../../security.php';
 
+//GET DATOS PERFIL
+
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Perfil/GetPerfil");
@@ -32,32 +34,11 @@ curl_close($ch);
 $fechaRegistro = DateTime::createFromFormat('Y-m-d\TH:i:s', $perfil['fechaRegistro'], new DateTimeZone('UTC'));
 $fechaRegistro->setTimezone(new DateTimeZone('Etc/GMT+6'));
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Categorias/GetCategorias");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt(
-	$ch,
-	CURLOPT_HTTPHEADER,
-	array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	)
-);
-
-$response = curl_exec($ch);
-
-if ($response === false) {
-	echo 'Error: ' . curl_error($ch);
-} else {
-	$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-}
-
-$categorias = json_decode($response, true);
-
-curl_close($ch);
+//GET GERENTES ADMINISTRADOR
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Gerentes/Gerentes");
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt(
@@ -79,7 +60,7 @@ if ($response === false) {
 if ($httpStatusCode == 400) {
 	$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
 }
-$tiendas = json_decode($response, true);
+$gerentes = json_decode($response, true);
 curl_close($ch);
 
 ?>
@@ -111,14 +92,20 @@ curl_close($ch);
 						<a href="agregar_gerente.php"><span class="material-symbols-outlined">add</span></a>
 					</div>
 
+					<?php
+					foreach ($gerentes as $gerente) {
+					?>
 					<div class="item">
-						<a href=""><img width="60%" class="logo" src="https://i.pinimg.com/564x/4f/cd/0d/4fcd0d0480073175756ac628a1cf959e.jpg"></a>
+						<a href=""><img width="60%" class="logo" src="<?php echo $gerente['iconoPerfil'] ?>"></a>
 						<div>
-							<strong class="nombre">Neji chiquito</strong>
-							<p>nancybenzen@gmail.com</p>
-							<p>Mc donalds</p>
+							<strong class="nombre"><?php echo $gerente['nombre']?></strong>
+							<p><?php echo $gerente['email']?></p>
+							<p><?php echo $gerente['tiendaName']?></p>
 						</div>
 					</div>
+					<?php
+					}
+					?>
 
 				</div>
 				<div class="edicionGerente">
