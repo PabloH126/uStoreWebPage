@@ -1,5 +1,12 @@
 let currentNotification;
 
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{8,50}$/, // 8 a 50 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const mainFom = document.querySelector(".form-tiendas");
     const nextButtons = document.querySelectorAll('.bttn-next');
