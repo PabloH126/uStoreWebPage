@@ -47,9 +47,6 @@ async function actualizarImagenPerfil(input, url){
 
     if(dataImagen.statusImagen !== 'success') {
         showNotificationError(dataImagen.message);
-        setTimeout(() => {
-            hideNotification();
-        }, 2500);
         console.log("No se pudo actualizar la imagen del perfil", dataImagen.message);
     } else {
         showNotification("Imagen actualizada con éxito");
