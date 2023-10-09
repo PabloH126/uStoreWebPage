@@ -220,6 +220,7 @@ curl_close($ch);
         </div>
     </div>
     <script src="../js/slider_formularios.js"></script>
+    <script src="js/creacion_gerentes.js"></script>
 </body>
 
 </html>
