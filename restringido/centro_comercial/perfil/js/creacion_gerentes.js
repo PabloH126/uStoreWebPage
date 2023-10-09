@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
     const finalNextBtn = document.getElementById('finalBtn');
+    const correoNextBtn = document.getElementById('btnEmail');
 
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
@@ -81,6 +82,34 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    correoNextBtn.addEventListener('click', async function (e) {
+        let correo = document.getElementById("correoGerente").value;
+        let formData = new FormData();
+        formData.append('email', correo);
+        const responseCorreoVerify = await fetch('verify_email_gerente.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!responseCorreoVerify.ok)
+        {
+            showNotificationError("Error de servidor en la respuesta de verificacion de email");
+            return;
+        }
+
+        const correoVerifyResponse = await responseCorreoVerify.json();
+        
+        if (correoVerifyResponse.status !== 'success')
+        {
+            showNotificationError(correoVerifyResponse.message);
+        }
+        else
+        {
+            showNextStep(correoNextBtn, e);
+            showNotification(dataResponse.message);
+        }
+    });
+
     finalNextBtn.addEventListener('click', async function (e) {
         if (!nombreValidacion(expresiones.nombre))
         {
@@ -109,8 +138,10 @@ document.addEventListener('DOMContentLoaded', function () {
         else
         {
             let correo = document.getElementById("correoGerente").value;
+            let nombre = document.getElementById("nombreGerente").value;
             let formData = new FormData();
             formData.append('email', correo);
+            formData.append('nombre', nombre);
             const responseCorreo = await fetch("correo_confirmacion.php", {
                 method: 'POST',
                 body: formData
@@ -132,9 +163,6 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 showNextStep(finalNextBtn, e);
                 showNotification(dataResponse.message);
-                setTimeout(() => {
-                    hideNotification();
-                }, 2500);
             }
         }
 
