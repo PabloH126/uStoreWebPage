@@ -92,6 +92,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function nombreValidacion() {
+    var nombre = document.
+}
+
 function showNotification(message) {
     if (currentNotification) {
         currentNotification.remove();

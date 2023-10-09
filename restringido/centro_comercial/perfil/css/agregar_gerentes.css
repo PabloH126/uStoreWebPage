@@ -1,0 +1,8 @@
+.content .lista form .item .name input #passwordGerente,
+.content .lista form .item .name input #repasswordGerente{
+    display: block;
+}
+
+.content .lista form .item .name #seleccion_tienda{
+	margin: 8% 0;
+}
