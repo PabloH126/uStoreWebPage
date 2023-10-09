@@ -1,12 +1,13 @@
 let imagenInput = document.getElementById("change_img");
 let imagenPerfil = document.getElementById("profile_img");
+let currentNotification;
 
 imagenInput.addEventListener("change", function () {
     try{
         actualizarImagenPerfil(imagenInput, 'actualizar_imagen.php');
     } catch(error) {
         console.error("Error: ", error);
-        showNotificationError("Hubo un error al realizar la solicitu de actualizacion de imagen: " + error);
+        showNotificationError("Hubo un error al realizar la solicitud de actualizacion de imagen: " + error);
     }
     
 });
@@ -45,8 +46,16 @@ async function actualizarImagenPerfil(input, url){
     const dataImagen = await responseImageProfile.json();
 
     if(dataImagen.statusImagen !== 'success') {
+        showNotificationError(dataImagen.message);
+        setTimeout(() => {
+            hideNotification();
+        }, 2500);
         console.log("No se pudo actualizar la imagen del perfil", dataImagen.message);
     } else {
+        showNotification("Imagen actualizada con éxito");
+        setTimeout(() => {
+            hideNotification();
+        }, 2500);
         imagenPerfil.src = dataImagen.imagenPerfil;
         location.reload(true);
     }
