@@ -100,9 +100,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function nombreValidacion(expresion) {
+    console.log("YA ENTRO A LA FUNCION");
     let nombre = document.getElementById("nombreGerente");
     if(!nombre || !nombre.value.trim() || !expresion.test(nombre.value))
     {
+        console.log("ya entro al if");
         showNotificationError("Nombre invalido, favor de ingresar un nombre que no contenga numeros");
         return false;
     }
