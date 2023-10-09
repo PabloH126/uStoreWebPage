@@ -8,7 +8,7 @@ const expresiones = {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const mainFom = document.querySelector(".form-tiendas");
+    const mainForm = document.querySelector(".form-tiendas");
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
 
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = sucursalValidacion();
                     break;
                 case 6:
-                    isValid = validacionCompletaPeriodos();
+                    isValid = imagenesValidacion();
                     break;
 
                 default:
@@ -167,6 +167,42 @@ function sucursalValidacion() {
         showNotificationError("Se debe seleccionar una sucursal para asignar al gerente");
         return false;
     }
+    return true;
+}
+
+function imagenesValidacion() {
+    const maxSize = 1 * 1024 * 1024;
+    let imagenInput = document.getElementById("logoTienda");
+    if(imagenInput.files.length && !validacionTypeImagen(imagenInput))
+        {
+            showNotificationError(`La imagen no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+            return false;
+        }
+        else if (imagenInput.files.length && !validacionSizeImagen(imagenInput, maxSize))
+        {
+            showNotificationError(`La imagen es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+            return false;
+        }
+
+    return true;
+}
+
+function validacionSizeImagen(imagen, maxSize) {
+    if(imagen.files[0].size > maxSize)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+function validacionTypeImagen(imagen)
+{
+    var allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    if (allowedTypes.indexOf(imagen.files[0].type) === -1) {
+        return false;
+    }
+
     return true;
 }
 
