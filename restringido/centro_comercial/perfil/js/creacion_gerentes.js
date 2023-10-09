@@ -108,7 +108,8 @@ function nombreValidacion(expresion) {
     }
     else if (!expresion.test(nombre.value))
     {
-        showNotificationError("Nombre invalido, favor de ingresar un nombre que no contenga numeros")
+        showNotificationError("Nombre invalido, favor de ingresar un nombre que no contenga numeros");
+        return false;
     }
     return true;
 }
