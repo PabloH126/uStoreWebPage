@@ -15,7 +15,11 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 
 if ($response === false) {
-    echo 'Error: ' . curl_error($ch);
+    $responseArray = [
+        'status' => 'error',
+        'message' => 'Error: ' . curl_error($ch)
+    ];
+    echo json_encode($responseArray);
 } else {
     $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
