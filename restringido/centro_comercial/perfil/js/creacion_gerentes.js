@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = nombreValidacion(expresiones.nombre);
                     break;
                 case 2:
-                    isValid = logoValidacion();
+                    isValid = apellidoValidacion(expresiones.nombre);
                     break;
                 case 3:
                     isValid = validacionCategorias();
@@ -109,6 +109,21 @@ function nombreValidacion(expresion) {
     else if (!expresion.test(nombre.value))
     {
         showNotificationError("Nombre invalido, favor de ingresar un nombre que no contenga numeros");
+        return false;
+    }
+    return true;
+}
+
+function apellidoValidacion(expresion) {
+    let apellido = document.getElementById("apellidoGerente");
+    if(!apellido || !apellido.value.trim())
+    {
+        showNotificationError("Se debe ingresar un apellido del gerente");
+        return false;
+    }
+    else if (!expresion.test(apellido.value))
+    {
+        showNotificationError("Apellido invalido, favor de ingresar un nombre que no contenga numeros");
         return false;
     }
     return true;
