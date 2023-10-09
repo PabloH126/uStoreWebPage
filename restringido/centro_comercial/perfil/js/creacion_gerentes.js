@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = passwordValidacion(expresiones.password);
                     break;
                 case 5:
-                    isValid = validacionBanner();
+                    isValid = sucursalValidacion();
                     break;
                 case 6:
                     isValid = validacionCompletaPeriodos();
@@ -155,6 +155,16 @@ function passwordValidacion(expresion) {
     else if (!(password.value === confirmPassword.value))
     {
         showNotificationError("Las contraseñas no coinciden");
+        return false;
+    }
+    return true;
+}
+
+function sucursalValidacion() {
+    let sucursal = document.getElementById("seleccion_tienda");
+    if (sucursal.value !== "")
+    {
+        showNotificationError("Se debe seleccionar una sucursal para asignar al gerente");
         return false;
     }
     return true;
