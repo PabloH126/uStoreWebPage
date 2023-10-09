@@ -151,6 +151,7 @@ curl_close($ch);
                     <div class="name">
                         <label for="passwordGerente"><strong>Contraseña del gerente</strong></label>
                         <input type="password" id="passwordGerente" name="passwordGerente">
+                        <input type="repassword" id="repasswordGerente" name="repasswordGerente">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -158,24 +159,6 @@ curl_close($ch);
                         </div>
                         <div class="bttn" id="next">
                             <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Confirmacion password del gerente-->
-                <div class="item" id="item-5">
-                    <p>5/7</p>
-                    <div class="name">
-                        <label for="repasswordGerente"><strong>Confirmación de contraseña del gerente</strong></label>
-                        <input type="password" id="repasswordGerente" name="repasswordGerente">
-                    </div>
-                    <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
                         </div>
                     </div>
                 </div>

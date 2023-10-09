@@ -1,0 +1,133 @@
+let currentNotification;
+
+document.addEventListener('DOMContentLoaded', function () {
+    const mainFom = document.querySelector(".form-tiendas");
+    const nextButtons = document.querySelectorAll('.bttn-next');
+    const backButtons = document.querySelectorAll('.bttn-back');
+
+    nextButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
+            const currentStep = parseInt(button.getAttribute('data-item'));
+
+            let isValid = false;
+            switch (currentStep) {
+                case 1:
+                    isValid = nombreValidacion();
+                    break;
+                case 2:
+                    isValid = logoValidacion();
+                    break;
+                case 3:
+                    isValid = validacionCategorias();
+                    break;
+                case 4:
+                    isValid = validacionHorarios();
+                    break;
+                case 5:
+                    isValid = validacionBanner();
+                    break;
+                case 6:
+                    isValid = validacionCompletaPeriodos();
+                    break;
+
+                default:
+                    isValid = true;
+                    break;
+            }
+
+            if (isValid == false) {
+                //e.target.preventDefault();
+                return;
+            }
+            else 
+            {
+                let element = e.target;
+                let isButtonNext = element.classList.contains('bttn-next');
+                let isButtonBack = element.classList.contains('bttn-back');
+
+                if (isButtonNext || isButtonBack) {
+                    let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                    let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                    currentStep.classList.remove('active');
+                    jumpStep.classList.add('active');
+                    if (isButtonNext) {
+                        currentStep.classList.add('to-left');
+                        progressOptions[element.dataset.to_step - 1].classList.add('active');
+                    } else {
+                        jumpStep.classList.remove('to-left');
+                    }
+                }
+            }
+
+            const nextStep = parseInt(button.getAttribute('data-to_item'));
+            showStep(nextStep);
+        });
+    });
+
+    backButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (e.target !== button) return;
+
+            let element = e.target; 
+            let isButtonNext = element.classList.contains('bttn-next');
+            let isButtonBack = element.classList.contains('bttn-back');
+
+            if (isButtonNext || isButtonBack) {
+                let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+                let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+                currentStep.classList.remove('active');
+                jumpStep.classList.add('active');
+                if (isButtonNext) {
+                    currentStep.classList.add('to-left');
+                    progressOptions[element.dataset.to_step - 1].classList.add('active');
+                } else {
+                    jumpStep.classList.remove('to-left');
+                }
+            }
+        });
+    });
+});
+
+function showNotification(message) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    currentNotification = notification;
+}
+
+function hideNotification() {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
+    currentNotification = null;
+}
+
+function showNotificationError(message) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+    const notification = document.createElement("div");
+    notification.classList.add("notificationError");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    console.log(notification);
+    currentNotification = notification;
+    setTimeout(() => {
+        notification.classList.add("notificationErrorHide");
+        setTimeout(() => {
+            hideNotification();
+        }, 550);
+    }, 2500);
+    
+}
