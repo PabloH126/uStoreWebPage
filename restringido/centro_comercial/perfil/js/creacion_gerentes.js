@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
+    /*
     correoNextBtn.addEventListener('click', async function (e) {
         let correo = document.getElementById("correoGerente").value;
         let formData = new FormData();
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showNotification(dataResponse.message);
         }
     });
-
+    */
     finalNextBtn.addEventListener('click', async function (e) {
         if (!nombreValidacion(expresiones.nombre))
         {
@@ -250,7 +250,7 @@ function apellidoValidacion(expresion) {
     return true;
 }
 
-function emailValidacion(expresion) {
+async function emailValidacion(expresion) {
     let correo = document.getElementById("correoGerente");
 
     if (!correo || !correo.value.trim()) {
@@ -260,6 +260,31 @@ function emailValidacion(expresion) {
     else if (!expresion.test(correo.value)) {
         showNotificationError("Se debe ingresar una direccion de correo electronico valida");
         return false;
+    }
+    
+    let formData = new FormData();
+    formData.append('email', correo.value);
+    const responseCorreoVerify = await fetch('verify_email_gerente.php', {
+        method: 'POST',
+        body: formData
+    });
+
+    if (!responseCorreoVerify.ok)
+    {
+        showNotificationError("Error de servidor en la respuesta de verificacion de email");
+        return;
+    }
+
+    const correoVerifyResponse = await responseCorreoVerify.json();
+    
+    if (correoVerifyResponse.status !== 'success')
+    {
+        showNotificationError(correoVerifyResponse.message);
+        return false;
+    }
+    else
+    {
+        showNotification(dataResponse.message);
     }
     return true;
 }
