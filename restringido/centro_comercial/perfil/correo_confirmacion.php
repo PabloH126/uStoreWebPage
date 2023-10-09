@@ -20,6 +20,7 @@ if ($response === false) {
         'message' => 'Error: ' . curl_error($ch)
     ];
     echo json_encode($responseArray);
+    exit;
 } else {
     $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
@@ -31,6 +32,7 @@ if ($httpStatusCode == 409)
         'message' => 'Email ya registrado en uStore'
     ];
     echo json_encode($responseArray);
+    exit;
 }
 
 $responseArray = [
