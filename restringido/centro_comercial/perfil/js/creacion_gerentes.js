@@ -100,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function nombreValidacion() {
-    var nombre = document.
+    let nombre = document.getElementById("nombreGerente");
+    if(!nombre || !nombre.value.trim() || )
 }
 
 function showNotification(message) {

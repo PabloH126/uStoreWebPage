@@ -1,5 +1,5 @@
-.content .lista form .item .name input #passwordGerente,
-.content .lista form .item .name input #repasswordGerente{
+.content .lista form .item .name #passwordGerente,
+.content .lista form .item .name #repasswordGerente{
     display: block;
 }
 
