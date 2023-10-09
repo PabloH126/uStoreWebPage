@@ -162,7 +162,7 @@ function passwordValidacion(expresion) {
 
 function sucursalValidacion() {
     let sucursal = document.getElementById("seleccion_tienda");
-    if (sucursal.value !== "")
+    if (sucursal.value === "")
     {
         showNotificationError("Se debe seleccionar una sucursal para asignar al gerente");
         return false;
