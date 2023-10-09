@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = emailValidacion(expresiones.correo);
                     break;
                 case 4:
-                    isValid = validacionHorarios();
+                    isValid = passwordValidacion(expresiones.password);
                     break;
                 case 5:
                     isValid = validacionBanner();
@@ -136,6 +136,26 @@ function emailValidacion(expresion) {
         return false;
     }
     return true;
+}
+
+function passwordValidacion(expresion) {
+    let password = document.getElementById("passwordGerente");
+    let confirmPassword = document.getElementById("repasswordGerente");
+
+    if (!password || !password.value.trim())
+    {
+        showNotificationError("Se debe ingresar una contraseña para la cuenta de gerente");
+        return false;
+    }
+    else if (!expresion.test(password.value))
+    {
+        showNotificationError("Se debe ingresar una contraseña de al menos 8 caracteres");
+        return false;
+    }
+    else if (!(password.value === confirmPassword.value))
+    {
+        showNotificationError("Las contraseñas no coinciden");
+    }
 }
 
 function showNotification(message) {
