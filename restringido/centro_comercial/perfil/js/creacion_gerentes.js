@@ -155,7 +155,9 @@ function passwordValidacion(expresion) {
     else if (!(password.value === confirmPassword.value))
     {
         showNotificationError("Las contraseñas no coinciden");
+        return false;
     }
+    return true;
 }
 
 function showNotification(message) {
