@@ -184,7 +184,7 @@ curl_close($ch);
                 </div>
 
                 <!-- Imagen del gerente -->
-                <div class="item" id="item-7">
+                <div class="item" id="item-6">
                     <p>6/6</p>
                     <div class="logoT">
                         <label><strong>Imagen del gerente</strong></label>

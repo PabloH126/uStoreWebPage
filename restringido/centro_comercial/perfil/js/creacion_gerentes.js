@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let isValid = false;
             switch (currentStep) {
                 case 1:
-                    isValid = nombreValidacion();
+                    isValid = nombreValidacion(expresiones.nombre);
                     break;
                 case 2:
                     isValid = logoValidacion();
@@ -99,9 +99,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-function nombreValidacion() {
+function nombreValidacion(expresion) {
     let nombre = document.getElementById("nombreGerente");
-    if(!nombre || !nombre.value.trim() || )
+    if(!nombre || !nombre.value.trim() || !expresion.test(nombre.value))
+    {
+        showNotificationError("Nombre invalido, favor de ingresar un nombre que no contenga numeros");
+        return false;
+    }
+    return true;
 }
 
 function showNotification(message) {
