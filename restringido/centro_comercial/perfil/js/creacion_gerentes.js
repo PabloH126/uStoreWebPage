@@ -1,10 +1,10 @@
 let currentNotification;
 
 const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{8,50}$/, // 8 a 50 digitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    password: /^.{8,50}$/, // 8 a 50 digitos.
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = apellidoValidacion(expresiones.nombre);
                     break;
                 case 3:
-                    isValid = validacionCategorias();
+                    isValid = emailValidacion(expresiones.correo);
                     break;
                 case 4:
                     isValid = validacionHorarios();
@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 //e.target.preventDefault();
                 return;
             }
-            else 
-            {
+            else {
                 let element = e.target;
                 let isButtonNext = element.classList.contains('bttn-next');
                 let isButtonBack = element.classList.contains('bttn-back');
@@ -79,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.stopPropagation();
             if (e.target !== button) return;
 
-            let element = e.target; 
+            let element = e.target;
             let isButtonNext = element.classList.contains('bttn-next');
             let isButtonBack = element.classList.contains('bttn-back');
 
@@ -101,13 +100,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function nombreValidacion(expresion) {
     let nombre = document.getElementById("nombreGerente");
-    if(!nombre || !nombre.value.trim())
-    {
+    if (!nombre || !nombre.value.trim()) {
         showNotificationError("Se debe ingresar un nombre del gerente");
         return false;
     }
-    else if (!expresion.test(nombre.value))
-    {
+    else if (!expresion.test(nombre.value)) {
         showNotificationError("Nombre invalido, favor de ingresar un nombre que no contenga numeros");
         return false;
     }
@@ -116,14 +113,26 @@ function nombreValidacion(expresion) {
 
 function apellidoValidacion(expresion) {
     let apellido = document.getElementById("apellidoGerente");
-    if(!apellido || !apellido.value.trim())
-    {
+    if (!apellido || !apellido.value.trim()) {
         showNotificationError("Se debe ingresar un apellido del gerente");
         return false;
     }
-    else if (!expresion.test(apellido.value))
-    {
+    else if (!expresion.test(apellido.value)) {
         showNotificationError("Apellido invalido, favor de ingresar un nombre que no contenga numeros");
+        return false;
+    }
+    return true;
+}
+
+function emailValidacion(expresion) {
+    let correo = document.getElementById("correoGerente");
+
+    if (!correo || !correo.value.trim()) {
+        showNotificationError("Se debe ingresar una direccion de correo electronico del gerente");
+        return false;
+    }
+    else if (!expresion.test(correo.value)) {
+        showNotificationError("Se debe ingresar una direccion de correo electronico valida");
         return false;
     }
     return true;
@@ -138,7 +147,7 @@ function showNotification(message) {
     notification.classList.add("notification");
     notification.textContent = message;
     document.body.appendChild(notification);
-    
+
     currentNotification = notification;
 }
 
@@ -166,5 +175,5 @@ function showNotificationError(message) {
             hideNotification();
         }, 550);
     }, 2500);
-    
+
 }
