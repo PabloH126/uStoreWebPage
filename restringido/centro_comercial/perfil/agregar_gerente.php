@@ -151,7 +151,7 @@ curl_close($ch);
                     <div class="name">
                         <label for="passwordGerente"><strong>Contraseña del gerente</strong></label>
                         <input type="password" id="passwordGerente" name="passwordGerente" placeholder="Contraseña">
-                        <input type="repassword" id="repasswordGerente" name="repasswordGerente" placeholder="Confirmacion de contraseña">
+                        <input type="repassword" id="repasswordGerente" name="repasswordGerente" placeholder="Confirmar contraseña">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
