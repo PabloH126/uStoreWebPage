@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector(".form-tiendas");
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
+    const finalNextBtn = document.getElementById('finalBtn');
 
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
+            if(button == finalNextBtn) return;
             if (e.target !== button) return;
 
             const currentStep = parseInt(button.getAttribute('data-item'));
@@ -50,26 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             else {
-                let element = e.target;
-                let isButtonNext = element.classList.contains('bttn-next');
-                let isButtonBack = element.classList.contains('bttn-back');
-
-                if (isButtonNext || isButtonBack) {
-                    let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
-                    let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
-                    currentStep.classList.remove('active');
-                    jumpStep.classList.add('active');
-                    if (isButtonNext) {
-                        currentStep.classList.add('to-left');
-                        progressOptions[element.dataset.to_step - 1].classList.add('active');
-                    } else {
-                        jumpStep.classList.remove('to-left');
-                    }
-                }
+                showNextStep(button, e);
             }
-
-            const nextStep = parseInt(button.getAttribute('data-to_item'));
-            showStep(nextStep);
         });
     });
 
@@ -95,6 +79,120 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+    });
+
+    finalNextBtn.addEventListener('click', async function (e) {
+        if (!nombreValidacion(expresiones.nombre))
+        {
+            return;
+        }
+        else if (!apellidoValidacion(expresiones.nombre))
+        {
+            return;
+        }
+        else if (!emailValidacion(expresiones.correo))
+        {
+            return;
+        }
+        else if (!passwordValidacion(expresiones.password))
+        {
+            return;
+        }
+        else if (!sucursalValidacion())
+        {
+            return;
+        }
+        else if (!imagenesValidacion())
+        {
+            return;
+        }
+        else
+        {
+            let correo = document.getElementById("correoGerente").value;
+            let formData = new FormData();
+            formData.append('email', correo);
+            const responseCorreo = await fetch("correo_confirmacion.php", {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!responseCorreo.ok)
+            {
+                showNotificationError("Error de servidor en la respuesta de registro");
+                return;
+            }
+
+            const dataResponse = await responseCorreo.json();
+
+            if(dataResponse.status !== 'success')
+            {
+                showNotificationError(dataResponse.message);
+            }
+            else
+            {
+                showNextStep(finalNextBtn, e);
+                showNotification(dataResponse.message);
+                setTimeout(() => {
+                    hideNotification();
+                }, 2500);
+            }
+        }
+
+        
+    });
+
+    mainForm.addEventListener('submit', async function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        if (!nombreValidacion(expresiones.nombre))
+        {
+            return;
+        }
+        else if (!apellidoValidacion(expresiones.nombre))
+        {
+            return;
+        }
+        else if (!emailValidacion(expresiones.correo))
+        {
+            return;
+        }
+        else if (!passwordValidacion(expresiones.password))
+        {
+            return;
+        }
+        else if (!sucursalValidacion())
+        {
+            return;
+        }
+        else if (!imagenesValidacion())
+        {
+            return;
+        }
+        else
+        {
+            let formData = new FormData(mainForm);
+            const responseCorreo = await fetch(mainForm.action, {
+                method: mainForm.method,
+                body: formData
+            });
+
+            if (!responseCorreo.ok)
+            {
+                showNotificationError("Error de servidor en la respuesta de registro");
+                return;
+            }
+
+            const dataResponse = await responseCorreo.json();
+
+            if(dataResponse.status !== 'success')
+            {
+                showNotificationError(dataResponse.message);
+            }
+            else
+            {
+
+            }
+        }
     });
 });
 
@@ -204,6 +302,29 @@ function validacionTypeImagen(imagen)
     }
 
     return true;
+}
+
+function showNextStep(button ,e)
+{
+    let element = e.target;
+    let isButtonNext = element.classList.contains('bttn-next');
+    let isButtonBack = element.classList.contains('bttn-back');
+
+    if (isButtonNext || isButtonBack) {
+        let currentStep = document.getElementById('item-' + element.getAttribute('data-item'));
+        let jumpStep = document.getElementById('item-' + element.getAttribute('data-to_item'));
+        currentStep.classList.remove('active');
+        jumpStep.classList.add('active');
+        if (isButtonNext) {
+            currentStep.classList.add('to-left');
+            progressOptions[element.dataset.to_step - 1].classList.add('active');
+        } else {
+            jumpStep.classList.remove('to-left');
+        }
+    }
+
+    const nextStep = parseInt(button.getAttribute('data-to_item'));
+    showStep(nextStep);
 }
 
 function showNotification(message) {
