@@ -89,7 +89,7 @@ curl_close($ch);
 				<div class="lista">
 
 					<div class="item" id="agregar">
-						<a href="agregar_gerente.php"><span class="material-symbols-outlined">add</span></a>
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/agregar_gerente.php"><span class="material-symbols-outlined">add</span></a>
 					</div>
 
 					<?php
