@@ -186,7 +186,7 @@ curl_close($ch);
                             <button type="submit" id="submitBtn">Guardar</button>
                         </div>
                         <div class="bttn" id="volverCorreoBtn">
-                            <button type="submit" id="volverEnviarCorreo">No recibí el correo</button>
+                            <button id="volverEnviarCorreo">No recibí el correo</button>
                         </div>
                     </div>
                 </div>
