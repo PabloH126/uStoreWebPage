@@ -342,7 +342,7 @@ async function imagenesValidacion() {
     let formData = new FormData();
     formData.append('email', correo);
     formData.append('nombre', nombre);
-    const responseCorreo = await fetch("correo_confirmacion.php", {
+    const responseCorreo = await fetch("https://ustoree.azurewebsites.net/correo_confirmacion_gerente.php", {
         method: 'POST',
         body: formData
     });

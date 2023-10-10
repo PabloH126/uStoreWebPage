@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../security.php';
+require 'vendor/autoload.php';
 header('Content-Type: application/json');
 
 $responseArray = [];
@@ -101,13 +101,6 @@ else
         exit;
     }
 }
-
-$responseArray = [
-    'status' => 'success',
-    'message' => 'Correo enviado a ' . $_SESSION['email']
-];
-echo json_encode($responseArray);
-exit;
 /*
 $data = [
     'password' => $_POST['password'],
