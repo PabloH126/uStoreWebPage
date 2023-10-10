@@ -283,7 +283,7 @@ async function emailValidacion(expresion) {
     }
     else
     {
-        showNotification(dataResponse.message);
+        showNotification(correoVerifyResponse.message);
     }
     return true;
 }
