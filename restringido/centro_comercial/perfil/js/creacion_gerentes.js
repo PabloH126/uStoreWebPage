@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     nextButtons.forEach(function (button) {
         button.addEventListener('click', async function (e) {
             e.stopPropagation();
-            if(button == finalNextBtn) return;
             if (e.target !== button) return;
 
             const currentStep = parseInt(button.getAttribute('data-item'));
