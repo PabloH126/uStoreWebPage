@@ -29,20 +29,10 @@ if (isset($_SESSION['claveConfirm'])) {
         $response->statusCode() . "\n";
         $response->headers();
         $response->body() . "\n";
-
-        $responseArray = [
-            'status' => 'success',
-            'message' => 'Correo enviado nuevamente a ' . $_SESSION['email']
-        ];
-        echo json_encode($responseArray);
         exit;
 
     } catch (Exception $e) {
-        $responseArray = [
-            'status' => 'error',
-            'message' => 'Caught exception: ' . $e->getMessage() . "\n"
-        ];
-        echo json_encode($responseArray);
+        echo 'Caught exception: ' . $e->getMessage() . "\n";
         exit;
     }
 } 
