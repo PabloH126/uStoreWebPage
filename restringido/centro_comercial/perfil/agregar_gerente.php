@@ -185,6 +185,7 @@ curl_close($ch);
                             <button type="submit" id="submitBtn">Guardar</button>
                         </div>
                     </div>
+                    <a href="https://ustoree.azurewebsites.net/correo_confirmacion_gerente.php">No recibí el correo</a>
                 </div>
             </form>
         </div>
