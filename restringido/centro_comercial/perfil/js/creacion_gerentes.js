@@ -349,7 +349,7 @@ async function imagenesValidacion() {
 
     if (!responseCorreo.ok)
     {
-        showNotificationError("Error de servidor en la respuesta de registro");
+        showNotificationError("Error de servidor en la respuesta de registro: ", responseCorreo.statusText);
         return;
     }
 
