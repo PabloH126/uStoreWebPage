@@ -91,12 +91,4 @@ else
         exit;
     }
 }
-/*
-$data = [
-    'password' => $_POST['password'],
-    'email' => $_POST['email'],
-    'primerNombre' => $_POST['primerNombre'],
-    'primerApellido' => $_POST['primerApellido']
-]
-*/
 ?>
