@@ -171,58 +171,31 @@ document.addEventListener('DOMContentLoaded', function () {
     mainForm.addEventListener('submit', async function (e) {
         e.stopPropagation();
         e.preventDefault();
-        if (!nombreValidacion(expresiones.nombre))
+        let formData = new FormData(mainForm);
+        const responseCorreo = await fetch(mainForm.action, {
+            method: mainForm.method,
+            body: formData
+        });
+
+        if (!responseCorreo.ok)
         {
+            showNotificationError("Error de servidor en la respuesta de registro");
             return;
         }
-        else if (!apellidoValidacion(expresiones.nombre))
+
+        const dataResponse = await responseCorreo.json();
+
+        if(dataResponse.status !== 'success')
         {
-            return;
-        }
-        else if (!emailValidacion(expresiones.correo))
-        {
-            return;
-        }
-        else if (!passwordValidacion(expresiones.password))
-        {
-            return;
-        }
-        else if (!sucursalValidacion())
-        {
-            return;
-        }
-        else if (!imagenesValidacion())
-        {
-            return;
+            showNotificationError(dataResponse.message);
         }
         else
         {
-            let formData = new FormData(mainForm);
-            const responseCorreo = await fetch(mainForm.action, {
-                method: mainForm.method,
-                body: formData
-            });
-
-            if (!responseCorreo.ok)
-            {
-                showNotificationError("Error de servidor en la respuesta de registro");
-                return;
-            }
-
-            const dataResponse = await responseCorreo.json();
-
-            if(dataResponse.status !== 'success')
-            {
-                showNotificationError(dataResponse.message);
-            }
-            else
-            {
-                showNotification(dataResponse.message);
-                setTimeout(() => {
-                    hideNotification();
-                    window.location.href = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/perfil_gerentes.php';
-                }, 2500);
-            }
+            showNotification(dataResponse.message);
+            setTimeout(() => {
+                hideNotification();
+                window.location.href = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/perfil_gerentes.php';
+            }, 2500);
         }
     });
 });
