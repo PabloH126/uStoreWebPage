@@ -284,6 +284,9 @@ async function emailValidacion(expresion) {
     else
     {
         showNotification(correoVerifyResponse.message);
+        setTimeout(() => {
+            hideNotification();
+        }, 2500);
     }
     return true;
 }
@@ -360,6 +363,9 @@ async function imagenesValidacion() {
     else
     {
         showNotification(dataResponse.message);
+        setTimeout(() => {
+            hideNotification();
+        }, 2500);
     }
 
     return true;
