@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showNotification(dataResponse.message);
         }
     });
-    */
+    
     finalNextBtn.addEventListener('click', async function (e) {
         if (!nombreValidacion(expresiones.nombre))
         {
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         
     });
-
+    */
     mainForm.addEventListener('submit', async function (e) {
         e.stopPropagation();
         e.preventDefault();
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             else
             {
-
+                
             }
         }
     });
@@ -325,15 +325,43 @@ function imagenesValidacion() {
     const maxSize = 1 * 1024 * 1024;
     let imagenInput = document.getElementById("logoTienda");
     if(imagenInput.files.length && !validacionTypeImagen(imagenInput))
-        {
-            showNotificationError(`La imagen no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
-            return false;
-        }
-        else if (imagenInput.files.length && !validacionSizeImagen(imagenInput, maxSize))
-        {
-            showNotificationError(`La imagen es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
-            return false;
-        }
+    {
+        showNotificationError(`La imagen no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
+        return false;
+    }
+    else if (imagenInput.files.length && !validacionSizeImagen(imagenInput, maxSize))
+    {
+        showNotificationError(`La imagen es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
+        return false;
+    }
+
+    let correo = document.getElementById("correoGerente").value;
+    let nombre = document.getElementById("nombreGerente").value;
+    let formData = new FormData();
+    formData.append('email', correo);
+    formData.append('nombre', nombre);
+    const responseCorreo = await fetch("correo_confirmacion.php", {
+        method: 'POST',
+        body: formData
+    });
+
+    if (!responseCorreo.ok)
+    {
+        showNotificationError("Error de servidor en la respuesta de registro");
+        return;
+    }
+
+    const dataResponse = await responseCorreo.json();
+
+    if(dataResponse.status !== 'success')
+    {
+        showNotificationError(dataResponse.message);
+        return false;
+    }
+    else
+    {
+        showNotification(dataResponse.message);
+    }
 
     return true;
 }
