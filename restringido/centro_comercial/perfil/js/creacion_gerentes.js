@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const correoNextBtn = document.getElementById('btnEmail');
 
     nextButtons.forEach(function (button) {
-        button.addEventListener('click', function (e) {
+        button.addEventListener('click', async function (e) {
             e.stopPropagation();
             if(button == finalNextBtn) return;
             if (e.target !== button) return;
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = apellidoValidacion(expresiones.nombre);
                     break;
                 case 3:
-                    isValid = emailValidacion(expresiones.correo);
+                    isValid = await emailValidacion(expresiones.correo);
                     break;
                 case 4:
                     isValid = passwordValidacion(expresiones.password);
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = sucursalValidacion();
                     break;
                 case 6:
-                    isValid = imagenesValidacion();
+                    isValid = await imagenesValidacion();
                     break;
 
                 default:
@@ -321,7 +321,7 @@ function sucursalValidacion() {
     return true;
 }
 
-function imagenesValidacion() {
+async function imagenesValidacion() {
     const maxSize = 1 * 1024 * 1024;
     let imagenInput = document.getElementById("logoTienda");
     if(imagenInput.files.length && !validacionTypeImagen(imagenInput))
