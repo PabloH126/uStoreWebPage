@@ -178,7 +178,7 @@ curl_close($ch);
                     </div>
                     <div class="notas">
                         <span>* Se envió un código de confirmación a la dirección de correo electrónico proporcionada. <br>
-                            En caso de no haberlo recibido, revisar carpeta de SPAM en su buzón</span><br>
+                            En caso de no haberlo recibido, revise la carpeta de SPAM en su buzón.</span><br><br>
                         <span>* Ingrese el código para confirmar el registro del gerente.</span>
                     </div>
                     <div class="bttns">
