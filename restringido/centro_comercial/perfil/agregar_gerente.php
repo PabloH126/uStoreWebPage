@@ -161,7 +161,10 @@ curl_close($ch);
                             <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button id="finalBtn" type="button" class="bttn-next" data-item="6" data-to_item="7">Correo<!--<i class='bx bx-right-arrow-alt bttn-next' data-item="6" data-to_item="7"></i>--></button>
+                            <button id="finalBtn" type="button" class="bttn-next" data-item="6" data-to_item="7">
+                                Correo<!--<i class='bx bx-right-arrow-alt bttn-next' data-item="6" data-to_item="7"></i>-->
+                                
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -184,8 +187,10 @@ curl_close($ch);
                         <div class="bttn" id="send">
                             <button type="submit" id="submitBtn">Guardar</button>
                         </div>
+                        <div class="bttn" id="volverCorreoBtn">
+                            <button type="submit" id="volverEnviarCorreo">No recibí el correo</button>
+                        </div>
                     </div>
-                    <a href="https://ustoree.azurewebsites.net/correo_confirmacion_gerente.php">No recibí el correo</a>
                 </div>
             </form>
         </div>
