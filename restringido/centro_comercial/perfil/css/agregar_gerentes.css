@@ -6,3 +6,7 @@
 .content .lista form .item .name #seleccion_tienda{
 	margin: 8% 0;
 }
+
+.content .lista form .item #send {
+    margin-left: 57vw;
+}
