@@ -217,7 +217,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             else
             {
-                
+                showNotification(dataResponse.message);
+                setTimeout(() => {
+                    hideNotification();
+                    window.location.href = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/perfil_gerentes.php';
+                }, 2500);
             }
         }
     });

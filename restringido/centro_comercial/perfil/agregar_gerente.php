@@ -44,7 +44,7 @@ curl_close($ch);
     <div class="content">
         <h1>Agregar gerente</h1>
         <div class="lista">
-            <form action="" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="envio_gerente.php" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre del gerente-->
                 <div class="item active" id="item-1">
                     <p>1/7</p>
