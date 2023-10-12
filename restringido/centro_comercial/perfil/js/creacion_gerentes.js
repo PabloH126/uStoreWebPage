@@ -1,4 +1,7 @@
 let currentNotification;
+const imagenInput = document.getElementById("logoTienda");
+const imagenMostrada = document.getElementById('imagenSelec');
+const deleteIcon = docuemnt.querySelector('.delete-icon');
 
 const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -11,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector(".form-tiendas");
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
-    const finalNextBtn = document.getElementById('finalBtn');
-    const correoNextBtn = document.getElementById('btnEmail');
     const volverEnviarCorreoBtn = document.getElementById('volverEnviarCorreo');
 
     nextButtons.forEach(function (button) {
@@ -49,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (isValid == false) {
-                //e.target.preventDefault();
                 return;
             }
             else {
@@ -81,6 +81,27 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    imagenInput.addEventListener('change', () => {
+        const imagenSeleccionada = imagenInput.files[0];
+
+        if (imagenSeleccionada)
+        {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada.src = imagenURL;
+        }
+    });
+
+    deleteIcon.addEventListener('click', () => {
+        const imgId = deleteIcon.getAttribute('data-img-id');
+        const imgElement = document.getElementById(imgId);
+
+        if (imagenInput && imgElement)
+        {
+            imgElement.src = '';
+            imagenInput.value = '';
+        }
+    })
 
     volverEnviarCorreoBtn.addEventListener('click', async function (e) {
         await fetch('https://ustoree.azurewebsites.net/correo_confirmacion_gerente.php', {
@@ -236,7 +257,6 @@ function sucursalValidacion() {
 
 async function imagenesValidacion() {
     const maxSize = 1 * 1024 * 1024;
-    let imagenInput = document.getElementById("logoTienda");
     if(imagenInput.files.length && !validacionTypeImagen(imagenInput))
     {
         showNotificationError(`La imagen no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);

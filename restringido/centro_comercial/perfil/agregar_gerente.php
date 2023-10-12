@@ -163,7 +163,7 @@ curl_close($ch);
                         <div class="bttn" id="next">
                             <button id="finalBtn" type="button" class="bttn-next" data-item="6" data-to_item="7">
                                 <!--<i class='bx bx-right-arrow-alt bttn-next' data-item="6" data-to_item="7"></i>-->
-                                <i class='bx bx-envelope bttn-next'></i>
+                                <i class='bx bx-envelope bttn-next' data-item="6" data-to_item="7"></i>
                             </button>
                         </div>
                     </div>
