@@ -7,6 +7,10 @@
 	margin: 8% 0;
 }
 
+.content .lista form #item-7 .name input{
+    margin: 5% 0 3%;
+}
+
 .content .lista form .item #send {
     margin-left: 57vw;
 }
