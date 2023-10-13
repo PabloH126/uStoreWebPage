@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('Content-Type: application/json');
+
 $responseArray = [];
 
 if($_POST['codigoConfirm'] != $_SESSION['claveConfirm'])
