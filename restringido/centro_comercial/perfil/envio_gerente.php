@@ -27,7 +27,7 @@ $dataJson = json_encode($data);
 
 $responseArray = [
     'status' => 'error',
-    'message' => $dataJson
+    'message' => $dataJson, $imagenPerfil
 ];
 echo json_encode($responseArray);
 exit;
