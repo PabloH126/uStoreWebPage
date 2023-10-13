@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if(dataResponse.status !== 'success')
         {
             showNotificationError(dataResponse.message);
+            console.log(dataResponse.message);
         }
         else
         {
