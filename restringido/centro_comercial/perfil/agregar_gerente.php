@@ -174,7 +174,7 @@ curl_close($ch);
                     <p>7/7</p>
                     <div class="name">
                         <label for="codigoConfirm"><strong>Código de confirmación</strong></label>
-                        <input type="text" id="codigoConfirm" name="codigoConfirm"/>
+                        <input type="text" id="codigoConfirm" name="codigoConfirm" maxlength="8"/>
                     </div>
                     <div class="notas">
                         <span>* Se envió un código de confirmación a la dirección de correo electrónico proporcionada. <br>
