@@ -38,7 +38,8 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $dataJson);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Authorization: Bearer ' . $_COOKIE['SessionToken']
+    'Authorization: Bearer ' . $_COOKIE['SessionToken'],
+    'Content-Type: application/json'
 ));
 
 $response = curl_exec($ch);
