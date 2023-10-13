@@ -11,6 +11,10 @@
     margin: 5% 0 3%;
 }
 
+.content .lista form #item-7 .notas span {
+    line-height: 27px;
+}
+
 #volverEnviarCorreo {
     font-size: 2rem;
     cursor: pointer;
