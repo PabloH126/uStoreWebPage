@@ -39,7 +39,7 @@ $response = curl_exec($ch);
 if ($response === false) {
     $responseArray = [
         'status' => 'error',
-        'message' => 'Error curl: curl_error($ch)'
+        'message' => 'Error curl:' . curl_error($ch)
     ];
     echo json_encode($responseArray);
     curl_close($ch);
