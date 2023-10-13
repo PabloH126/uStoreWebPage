@@ -25,6 +25,13 @@ $data = [
 
 $dataJson = json_encode($data);
 
+$responseArray = [
+    'status' => 'error',
+    'message' => $dataJson
+];
+echo json_encode($responseArray);
+exit;
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/Register/RegisterGerente?idTienda=' . $_POST['idTienda']);
 curl_setopt($ch, CURLOPT_POST, 1);
