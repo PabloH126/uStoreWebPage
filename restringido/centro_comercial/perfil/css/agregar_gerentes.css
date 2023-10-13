@@ -11,6 +11,11 @@
     margin: 5% 0 3%;
 }
 
+#volverEnviarCorreo {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 .content .lista form .item #send {
     margin-left: 57vw;
 }
