@@ -36,7 +36,7 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/Register/RegisterGerente?idTienda=' . $_POST['idTienda']);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $dataJson);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Authorization: Bearer ' . $_COOKIE['SessionToken']
 ));
