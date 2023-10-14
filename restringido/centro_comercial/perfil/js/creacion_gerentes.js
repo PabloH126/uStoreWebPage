@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     steps = steps + 1;
                 } else {
                     jumpStep.classList.remove('to-left');
-                    steps = steps - 1;
                 }
             }
         });
@@ -366,7 +365,6 @@ function showNextStep(button ,e)
             steps = steps + 1;
         } else {
             jumpStep.classList.remove('to-left');
-            steps = steps - 1;
         }
     }
 
