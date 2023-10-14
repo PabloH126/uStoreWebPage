@@ -344,16 +344,19 @@ async function imagenesValidacion() {
     
         if(dataResponse.status !== 'success')
         {
+            closeModal();
             showNotificationError(dataResponse.message);
             return false;
         }
         else
         {
+            closeModal();
             showNotification(dataResponse.message);
             setTimeout(() => {
                 hideNotification();
             }, 2500);
         }
+        return true;
     });
 
     cancelButton.addEventListener("click", function() {
@@ -366,8 +369,6 @@ async function imagenesValidacion() {
             closeModal();
         }
     });
-
-    return true;
 }
 
 function validacionSizeImagen(imagen, maxSize) {
