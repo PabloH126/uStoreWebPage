@@ -51,7 +51,7 @@
     background: #016283;
 }
 
-.content  .lista .item.edit{
+.content .lista .item.edit{
     animation: float 2.8s ease-in-out infinite;
 }
 
