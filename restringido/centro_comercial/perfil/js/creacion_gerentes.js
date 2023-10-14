@@ -297,79 +297,86 @@ async function imagenesValidacion() {
     formData.append('email', correo);
     formData.append('nombre', nombre);
     
-    const modalOverlay = document.createElement("div");
-    modalOverlay.classList.add("modal-overlay");
-    
-    const modal = document.createElement("div");
-    modal.classList.add("modal");
+    let promise = new Promise((resolve, reject) => {
+        const modalOverlay = document.createElement("div");
+        modalOverlay.classList.add("modal-overlay");
+        
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
 
-    modal.innerHTML = `
-        <div class="modal-content">
-            <p>¿Estás seguro de registrar este gerente?</p>
-            <p> Una vez mandado el correo los datos no se podrán modificar.</p>
-            <div class="modal-buttons">
-                <button class="modal-accept">Aceptar</button>
-                <button class="modal-cancel">Cancelar</button>
+        modal.innerHTML = `
+            <div class="modal-content">
+                <p>¿Estás seguro de registrar este gerente?</p>
+                <p> Una vez mandado el correo los datos no se podrán modificar.</p>
+                <div class="modal-buttons">
+                    <button class="modal-accept">Aceptar</button>
+                    <button class="modal-cancel">Cancelar</button>
+                </div>
             </div>
-        </div>
-    `;
+        `;
 
-    modalOverlay.appendChild(modal);
-    document.body.appendChild(modalOverlay);
+        modalOverlay.appendChild(modal);
+        document.body.appendChild(modalOverlay);
 
-    const acceptButton = modal.querySelector(".modal-accept");
-    const cancelButton = modal.querySelector(".modal-cancel");
+        const acceptButton = modal.querySelector(".modal-accept");
+        const cancelButton = modal.querySelector(".modal-cancel");
 
-    function closeModal() {
-        modalOverlay.remove();
-    }
+        function closeModal() {
+            modalOverlay.remove();
+        }
 
-    acceptButton.addEventListener("click", async function() {
-        acceptButton.disabled = true;
-        cancelButton.disabled = true;
-        acceptButton.style.backgroundColor = "gray";
+        acceptButton.addEventListener("click", async function() {
+            acceptButton.disabled = true;
+            cancelButton.disabled = true;
+            acceptButton.style.backgroundColor = "gray";
 
-        const responseCorreo = await fetch("https://ustoree.azurewebsites.net/correo_confirmacion_gerente.php", {
-            method: 'POST',
-            body: formData
+            const responseCorreo = await fetch("https://ustoree.azurewebsites.net/correo_confirmacion_gerente.php", {
+                method: 'POST',
+                body: formData
+            });
+        
+            if (!responseCorreo.ok)
+            {
+                showNotificationError("Error de servidor en la respuesta de registro: ", responseCorreo.statusText);
+                return;
+            }
+        
+            const dataResponse = await responseCorreo.json();
+        
+            if(dataResponse.status !== 'success')
+            {
+                closeModal();
+                showNotificationError(dataResponse.message);
+                reject(false);
+            }
+            else
+            {
+                closeModal();
+                showNotification(dataResponse.message);
+                setTimeout(() => {
+                    hideNotification();
+                }, 2500);
+            }
+            resolve(true);
         });
-    
-        if (!responseCorreo.ok)
-        {
-            showNotificationError("Error de servidor en la respuesta de registro: ", responseCorreo.statusText);
-            return;
-        }
-    
-        const dataResponse = await responseCorreo.json();
-    
-        if(dataResponse.status !== 'success')
-        {
-            closeModal();
-            showNotificationError(dataResponse.message);
-            return false;
-        }
-        else
-        {
-            closeModal();
-            showNotification(dataResponse.message);
-            setTimeout(() => {
-                hideNotification();
-            }, 2500);
-        }
-        return true;
-    });
 
-    cancelButton.addEventListener("click", function() {
-        closeModal();
+        cancelButton.addEventListener("click", function() {
+            closeModal();
+            reject(false);
+        });
+
+        modalOverlay.addEventListener("click", function(event) {
+            if (event.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    })
+    .then(result => {
+        return true;
+    })
+    .catch(error => {
         return false;
     });
-
-    modalOverlay.addEventListener("click", function(event) {
-        if (event.target === modalOverlay) {
-            closeModal();
-        }
-    });
-    return false;
 }
 
 function validacionSizeImagen(imagen, maxSize) {
