@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = sucursalValidacion();
                     break;
                 case 6:
-                    isValid = await imagenesValidacion();
+                    isValid = modalCorreoConfirmacion();
                     break;
 
                 default:
