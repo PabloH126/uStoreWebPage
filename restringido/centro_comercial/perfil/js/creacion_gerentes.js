@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 view: window
             });
 
-            let btnNext = e.target.querySelector('.bttn-next');
+            let btnNext = mainForm.querySelector('.bttn-next');
             if (btnNext)
             {
                 btnNext.dispatchEvent(clickEvent);
