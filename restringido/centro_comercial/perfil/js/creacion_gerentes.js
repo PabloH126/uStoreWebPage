@@ -2,7 +2,7 @@ let currentNotification;
 const imagenInput = document.getElementById("logoTienda");
 const imagenMostrada = document.getElementById('imagenSelec');
 const deleteIcon = document.querySelector('.delete-icon');
-let steps;
+let steps = 0;
 
 const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
