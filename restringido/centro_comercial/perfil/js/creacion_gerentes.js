@@ -372,11 +372,11 @@ async function imagenesValidacion() {
         });
     })
     .then(result => {
-        return true;
+        return result;
     })
     .catch(error => {
-        return false;
     });
+    return false;
 }
 
 function validacionSizeImagen(imagen, maxSize) {

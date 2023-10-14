@@ -74,23 +74,6 @@ curl_close($ch);
                     </div>
                 </div>
 
-                <!-- Email del gerente-->
-                <div class="item" id="item-3">
-                    <p>3/7</p>
-                    <div class="name">
-                        <label for="correoGerente"><strong>Correo electrónico del gerente</strong></label>
-                        <input type="email" id="correoGerente" name="correoGerente">
-                    </div>
-                    <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
-                        </div>
-                        <div class="bttn" id="next">
-                            <button id="btnEmail" type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Password del gerente-->
                 <div class="item" id="item-4">
                     <p>4/7</p>
