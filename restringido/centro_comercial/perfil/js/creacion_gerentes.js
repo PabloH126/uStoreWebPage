@@ -359,10 +359,10 @@ function showNextStep(button ,e)
         if (isButtonNext) {
             currentStep.classList.add('to-left');
             progressOptions[element.dataset.to_step - 1].classList.add('active');
-            steps++;
+            steps = steps + 1;
         } else {
             jumpStep.classList.remove('to-left');
-            steps--;
+            steps - 1;
         }
     }
 
