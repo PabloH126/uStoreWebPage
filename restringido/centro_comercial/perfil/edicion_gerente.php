@@ -47,7 +47,7 @@ curl_close($ch);
             <form action="envio_gerente.php" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre del gerente-->
                 <div class="item active" id="item-1">
-                    <p>1/7</p>
+                    <p>1/5</p>
                     <div class="name">
                         <label for="nombreGerente"><strong>Primer nombre del gerente</strong></label>
                         <input type="text" id="nombreGerente" name="nombreGerente">
@@ -59,7 +59,7 @@ curl_close($ch);
 
                 <!-- Apellido del gerente-->
                 <div class="item" id="item-2">
-                    <p>2/7</p>
+                    <p>2/5</p>
                     <div class="name">
                         <label for="apellidoGerente"><strong>Primer apellido del gerente</strong></label>
                         <input type="text" id="apellidoGerente" name="apellidoGerente">
@@ -75,8 +75,8 @@ curl_close($ch);
                 </div>
 
                 <!-- Password del gerente-->
-                <div class="item" id="item-4">
-                    <p>4/7</p>
+                <div class="item" id="item-3">
+                    <p>3/5</p>
                     <div class="name">
                         <label for="passwordGerente"><strong>Contraseña del gerente</strong></label>
                         <input type="password" id="passwordGerente" name="passwordGerente">
@@ -84,17 +84,17 @@ curl_close($ch);
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
+                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
+                            <button type="button" class="bttn-next" data-item="3" data-to_item="4"><i class='bx bx-right-arrow-alt bttn-next' data-item="3" data-to_item="4"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Seleccion de sucursal-->
-                <div class="item" id="item-5">
-                    <p>5/7</p>
+                <div class="item" id="item-4">
+                    <p>4/5</p>
                     <div class="name">
                         <label><strong>Sucursal a la que pertenecerá</strong></label>
                         <select id="seleccion_tienda" name="idTienda">
@@ -109,17 +109,17 @@ curl_close($ch);
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
+                            <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
                         </div>
                         <div class="bttn" id="next">
-                            <button type="button" class="bttn-next" data-item="5" data-to_item="6"><i class='bx bx-right-arrow-alt bttn-next' data-item="5" data-to_item="6"></i></button>
+                            <button type="button" class="bttn-next" data-item="4" data-to_item="5"><i class='bx bx-right-arrow-alt bttn-next' data-item="4" data-to_item="5"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Imagen del gerente -->
-                <div class="item" id="item-6">
-                    <p>6/7</p>
+                <div class="item" id="item-5">
+                    <p>5/5</p>
                     <div class="logoT">
                         <label><strong>Imagen del gerente</strong></label>
                         <div class="contentL">
@@ -140,37 +140,12 @@ curl_close($ch);
                         <span>* El peso de la imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
-                        <div class="bttn back">
-                            <button type="button" class="bttn-back" data-item="6" data-to_item="5"><i class='bx bx-left-arrow-alt bttn-back' data-item="6" data-to_item="5"></i></button>
+                        <div class="bttn back" id="ult">
+                            <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
                         </div>
-                        <div class="bttn" id="next">
-                            <button id="finalBtn" type="button" class="bttn-next" data-item="6" data-to_item="7">
-                                <!--<i class='bx bx-right-arrow-alt bttn-next' data-item="6" data-to_item="7"></i>-->
-                                <i class='bx bx-envelope bttn-next' data-item="6" data-to_item="7"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--Codigo de confirmacion -->
-                <div class="item" id="item-7">
-                    <p>7/7</p>
-                    <div class="name">
-                        <label for="codigoConfirm"><strong>Código de confirmación</strong></label>
-                        <input type="text" id="codigoConfirm" name="codigoConfirm" maxlength="8"/>
-                    </div>
-                    <div class="notas">
-                        <span>* Se envió un código de confirmación a la dirección de correo electrónico proporcionada. <br>
-                            En caso de no haberlo recibido, revise la carpeta de SPAM en su buzón.</span><br>
-                        <span>* Ingrese el código para confirmar el registro del gerente.</span>
-                    </div>
-                    <div class="bttns">
                         <div class="bttn" id="send">
                             <button type="submit" id="submitBtn">Guardar</button>
                         </div>
-                    </div>
-                    <div id="volverCorreoBtn">
-                            <label id="volverEnviarCorreo">No recibí el correo</label>
                     </div>
                 </div>
             </form>
