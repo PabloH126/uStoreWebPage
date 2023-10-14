@@ -2,6 +2,7 @@ let currentNotification;
 const imagenInput = document.getElementById("logoTienda");
 const imagenMostrada = document.getElementById('imagenSelec');
 const deleteIcon = document.querySelector('.delete-icon');
+let steps = 1;
 
 const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -134,7 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 view: window
             });
 
-            let btnNext = mainForm.querySelector('.bttn-next');
+            let item = document.getElementById('.item-' + steps);
+            let btnNext = item.querySelector('.bttn-next');
             if (btnNext)
             {
                 btnNext.dispatchEvent(clickEvent);
@@ -356,8 +358,10 @@ function showNextStep(button ,e)
         if (isButtonNext) {
             currentStep.classList.add('to-left');
             progressOptions[element.dataset.to_step - 1].classList.add('active');
+            steps++;
         } else {
             jumpStep.classList.remove('to-left');
+            steps--;
         }
     }
 
