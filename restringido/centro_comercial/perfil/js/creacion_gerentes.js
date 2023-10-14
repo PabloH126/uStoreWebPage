@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.stopPropagation();
             if (e.target !== button) return;
 
+            steps = steps - 1;
             let element = e.target;
             let isButtonNext = element.classList.contains('bttn-next');
             let isButtonBack = element.classList.contains('bttn-back');
@@ -76,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (isButtonNext) {
                     currentStep.classList.add('to-left');
                     progressOptions[element.dataset.to_step - 1].classList.add('active');
-                    steps = steps + 1;
                 } else {
                     jumpStep.classList.remove('to-left');
                 }
@@ -350,6 +350,7 @@ function validacionTypeImagen(imagen)
 
 function showNextStep(button ,e)
 {
+    steps = steps + 1;
     let element = e.target;
     let isButtonNext = element.classList.contains('bttn-next');
     let isButtonBack = element.classList.contains('bttn-back');
@@ -362,7 +363,6 @@ function showNextStep(button ,e)
         if (isButtonNext) {
             currentStep.classList.add('to-left');
             progressOptions[element.dataset.to_step - 1].classList.add('active');
-            steps = steps + 1;
         } else {
             jumpStep.classList.remove('to-left');
         }
