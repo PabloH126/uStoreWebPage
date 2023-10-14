@@ -358,6 +358,7 @@ async function imagenesValidacion() {
 
     cancelButton.addEventListener("click", function() {
         closeModal();
+        return false;
     });
 
     modalOverlay.addEventListener("click", function(event) {
@@ -365,7 +366,6 @@ async function imagenesValidacion() {
             closeModal();
         }
     });
-
 
     return true;
 }
