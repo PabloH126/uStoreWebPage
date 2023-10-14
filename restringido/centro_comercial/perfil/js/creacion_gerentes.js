@@ -369,6 +369,7 @@ async function imagenesValidacion() {
             closeModal();
         }
     });
+    return false;
 }
 
 function validacionSizeImagen(imagen, maxSize) {
