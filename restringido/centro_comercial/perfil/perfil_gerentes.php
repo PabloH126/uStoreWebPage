@@ -95,10 +95,10 @@ curl_close($ch);
 					<?php
 					foreach ($gerentes as $gerente) {
 					?>
-					<div class="item">
+					<div class="item edit">
 						<a href=""><img width="60%" class="logo" src="<?php echo $gerente['iconoPerfil'] ?>"></a>
 						<div>
-							<strong class="nombre edit"><?php echo $gerente['nombre']?></strong>
+							<strong class="nombre"><?php echo $gerente['nombre']?></strong>
 							<p><?php echo $gerente['email']?></p>
 							<p><?php echo $gerente['tiendaName']?></p>
 						</div>

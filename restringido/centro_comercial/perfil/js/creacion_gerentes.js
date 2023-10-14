@@ -76,8 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (isButtonNext) {
                     currentStep.classList.add('to-left');
                     progressOptions[element.dataset.to_step - 1].classList.add('active');
+                    steps = steps + 1;
                 } else {
                     jumpStep.classList.remove('to-left');
+                    steps = steps - 1;
                 }
             }
         });
@@ -135,7 +137,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 view: window
             });
 
-            let item = document.getElementById('item-' + steps);
+            let currentStepEnter = steps;
+            console.log(currentStepEnter);
+            let item = document.getElementById('item-' + currentStepEnter);
             console.log(item);
             let btnNext = item.querySelector('.bttn-next');
             if (btnNext)
@@ -362,7 +366,7 @@ function showNextStep(button ,e)
             steps = steps + 1;
         } else {
             jumpStep.classList.remove('to-left');
-            steps - 1;
+            steps = steps - 1;
         }
     }
 
