@@ -325,7 +325,7 @@ async function imagenesValidacion() {
     return true;
 }
 
-async function modalCorreoConfirmacion() {
+function modalCorreoConfirmacion() {
     const modalOverlay = document.createElement("div");
     modalOverlay.classList.add("modal-overlay");
     
