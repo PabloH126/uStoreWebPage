@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = sucursalValidacion();
                     break;
                 case 6:
-                    isValid = modalCorreoConfirmacion();
+                    isValid = await modalCorreoConfirmacion();
                     break;
 
                 default:
@@ -325,7 +325,7 @@ async function imagenesValidacion() {
     return true;
 }
 
-function modalCorreoConfirmacion() {
+async function modalCorreoConfirmacion() {
     const modalOverlay = document.createElement("div");
     modalOverlay.classList.add("modal-overlay");
     
@@ -353,11 +353,11 @@ function modalCorreoConfirmacion() {
         modalOverlay.remove();
     }
 
-    acceptButton.addEventListener("click", async function() {
+    acceptButton.addEventListener("click", function() {
         acceptButton.disabled = true;
         cancelButton.disabled = true;
         acceptButton.style.backgroundColor = "gray";
-        let validacion = await imagenesValidacion();
+        let validacion = imagenesValidacion();
         closeModal();
         if (validacion)
         {
