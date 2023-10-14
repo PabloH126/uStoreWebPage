@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 view: window
             });
 
-            let item = document.getElementById();
+            //let item = document.getElementById();
             console.log('.item-' + steps);
             let btnNext = item.querySelector('.bttn-next');
             if (btnNext)
