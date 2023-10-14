@@ -122,6 +122,26 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    mainForm.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter')
+        {
+            e.preventDefault();
+
+            let clickEvent = new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            });
+
+            let btnNext = e.target.querySelector('.bttn-next');
+            if (btnNext)
+            {
+                btnNext.dispatchEvent(clickEvent);
+            }
+            return false;
+        }
+    });
     
     mainForm.addEventListener('submit', async function (e) {
         e.stopPropagation();
