@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     isValid = sucursalValidacion();
                     break;
                 case 6:
-                    isValid = modalCorreoConfirmacion();
+                    const resultadoModal = await modalCorreoConfirmacion();
+                    isValid = resultadoModal;
                     break;
 
                 default:
@@ -325,59 +326,62 @@ async function imagenesValidacion() {
     return true;
 }
 
-function modalCorreoConfirmacion() {
-    const modalOverlay = document.createElement("div");
-    modalOverlay.classList.add("modal-overlay");
-    
-    const modal = document.createElement("div");
-    modal.classList.add("modal");
+async function modalCorreoConfirmacion() {
+    return new Promise((resolve, reject) => {
+        const modalOverlay = document.createElement("div");
+        modalOverlay.classList.add("modal-overlay");
+        
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
 
-    modal.innerHTML = `
-        <div class="modal-content">
-            <p>¿Estás seguro de registrar este gerente?</p>
-            <p> Una vez mandado el correo los datos no se podrán modificar.</p>
-            <div class="modal-buttons">
-                <button class="modal-accept">Aceptar</button>
-                <button class="modal-cancel">Cancelar</button>
+        modal.innerHTML = `
+            <div class="modal-content">
+                <p>¿Estás seguro de registrar este gerente?</p>
+                <p> Una vez mandado el correo los datos no se podrán modificar.</p>
+                <div class="modal-buttons">
+                    <button class="modal-accept">Aceptar</button>
+                    <button class="modal-cancel">Cancelar</button>
+                </div>
             </div>
-        </div>
-    `;
+        `;
 
-    modalOverlay.appendChild(modal);
-    document.body.appendChild(modalOverlay);
+        modalOverlay.appendChild(modal);
+        document.body.appendChild(modalOverlay);
 
-    const acceptButton = modal.querySelector(".modal-accept");
-    const cancelButton = modal.querySelector(".modal-cancel");
+        const acceptButton = modal.querySelector(".modal-accept");
+        const cancelButton = modal.querySelector(".modal-cancel");
 
-    function closeModal() {
-        modalOverlay.remove();
-    }
-
-    acceptButton.addEventListener("click", function() {
-        acceptButton.disabled = true;
-        cancelButton.disabled = true;
-        acceptButton.style.backgroundColor = "gray";
-        let validacion = imagenesValidacion();
-        closeModal();
-        if (validacion)
-        {
-            return true;
+        function closeModal() {
+            modalOverlay.remove();
         }
-        else
-        {
-            return false;
-        }
-    });
 
-    cancelButton.addEventListener("click", function() {
-        closeModal();
-        return false;
-    });
-
-    modalOverlay.addEventListener("click", function(event) {
-        if (event.target === modalOverlay) {
+        acceptButton.addEventListener("click", async function() {
+            acceptButton.disabled = true;
+            cancelButton.disabled = true;
+            acceptButton.style.backgroundColor = "gray";
+            let validacion = await imagenesValidacion();
             closeModal();
-        }
+            if (validacion)
+            {
+                resolve(true);
+            }
+            else
+            {
+                reject(false);
+            }
+        });
+
+        cancelButton.addEventListener("click", function() {
+            closeModal();
+            reject(false);
+        });
+
+        modalOverlay.addEventListener("click", function(event) {
+            if (event.target === modalOverlay) {
+                closeModal();
+                reject(false);
+            }
+        });
     });
 }
 
