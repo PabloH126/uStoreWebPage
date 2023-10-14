@@ -135,11 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 cancelable: true,
                 view: window
             });
-
             let currentStepEnter = steps + 1;
-            console.log(currentStepEnter);
             let item = document.getElementById('item-' + currentStepEnter);
-            console.log(item);
             let btnNext = item.querySelector('.bttn-next');
             if (btnNext)
             {
@@ -169,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if(dataResponse.status !== 'success')
         {
             showNotificationError(dataResponse.message);
-            console.log(dataResponse.message);
         }
         else
         {
@@ -401,7 +397,6 @@ function showNotificationError(message) {
     notification.classList.add("notificationError");
     notification.textContent = message;
     document.body.appendChild(notification);
-    console.log(notification);
     currentNotification = notification;
     setTimeout(() => {
         notification.classList.add("notificationErrorHide");
