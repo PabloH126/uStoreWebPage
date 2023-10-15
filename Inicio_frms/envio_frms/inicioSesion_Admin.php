@@ -109,6 +109,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             $_SESSION['UserType'] = $data['type'];
             echo $_SESSION['UserType'];
             // redirigir al usuario a la página de inicio
+            exit;
             if($_SESSION['UserType'] == "Administrador")
             {
                 header("location: ../../restringido/seleccionPlaza.php");
