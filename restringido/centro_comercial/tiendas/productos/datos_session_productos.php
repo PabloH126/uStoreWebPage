@@ -47,6 +47,9 @@
 	<?php require("../../templates/template.menu.php")?>
 
 	<div class="content">
+		<div class="title">
+				<h1>Lista de tiendas</h1>
+		</div>
 		<div class="lista">
 			<?php 
 				if(isset($productosError))
