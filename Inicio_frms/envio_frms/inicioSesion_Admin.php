@@ -102,7 +102,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             $_SESSION['email'] = $dataClaims['email'];
             $_SESSION['idUser'] = $dataClaims['id'];
             $_SESSION['UserType'] = $dataClaims['type'];
-
+            $_SESSION['idTiendaGerente'] = $dataClaims['idTienda'];
             // redirigir al usuario a la página de inicio
             if($_SESSION['UserType'] == "Administrador")
             {
