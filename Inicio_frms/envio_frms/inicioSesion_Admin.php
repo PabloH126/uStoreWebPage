@@ -104,7 +104,6 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             $_SESSION['UserType'] = $dataClaims['type'];
 
             // redirigir al usuario a la página de inicio
-            exit;
             if($_SESSION['UserType'] == "Administrador")
             {
                 header("location: https://ustoree.azurewebsites.net/restringido/seleccionPlaza.php");
