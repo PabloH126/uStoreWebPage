@@ -95,7 +95,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
                 $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             }
 
-            $dataClaims = json_decode($response, true);
+            $dataClaims = json_decode($responseClaims, true);
             
             if($dataClaims == null)
             {
