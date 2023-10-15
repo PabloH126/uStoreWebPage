@@ -107,7 +107,9 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             $_SESSION['email'] = $data['email'];
             $_SESSION['id'] = $data['id'];
             $_SESSION['UserType'] = $data['type'];
-            echo $data;
+            foreach ($data as $elemento) {
+                echo $elemento . "<br>";
+            }
             // redirigir al usuario a la página de inicio
             exit;
             if($_SESSION['UserType'] == "Administrador")
