@@ -95,19 +95,19 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
                 $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             }
 
-            $data = json_decode($response, true);
+            $dataClaims = json_decode($response, true);
             
-            if($data == null)
+            if($dataClaims == null)
             {
                 echo $httpStatusCode;
             }
             curl_close($ch);
 
-            $_SESSION['nombre'] = $data['nombre'];
-            $_SESSION['email'] = $data['email'];
-            $_SESSION['id'] = $data['id'];
-            $_SESSION['UserType'] = $data['type'];
-            foreach ($data as $elemento) {
+            $_SESSION['nombre'] = $dataClaims['nombre'];
+            $_SESSION['email'] = $dataClaims['email'];
+            $_SESSION['id'] = $dataClaims['id'];
+            $_SESSION['UserType'] = $dataClaims['type'];
+            foreach ($dataClaims as $elemento) {
                 echo $elemento . "<br>";
             }
             // redirigir al usuario a la página de inicio
