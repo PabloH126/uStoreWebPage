@@ -80,7 +80,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Authorization: Bearer ' . $_COOKIE['SessionToken']
+                'Authorization: Bearer ' . $data['token']
             )
             );
 
