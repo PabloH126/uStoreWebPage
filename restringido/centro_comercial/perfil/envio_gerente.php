@@ -16,8 +16,11 @@ if($_POST['codigoConfirm'] != $_SESSION['claveConfirm'])
 unset($_SESSION['claveConfirm']);
 $imagenPerfil = $_FILES['logoTienda'];
 
+$contrasena = $_POST['passwordGerente'];
+$contra = md5(md5($contrasena));
+
 $data = [
-    'password' => $_POST['passwordGerente'],
+    'password' => $contra,
     'email' => $_POST['correoGerente'],
     'primerNombre' => $_POST['nombreGerente'],
     'primerApellido' => $_POST['apellidoGerente']
