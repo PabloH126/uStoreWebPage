@@ -1,6 +1,6 @@
 <?php
 session_start();
-function getDatosTienda($url)
+function getDatosTienda($url, $datoTienda)
 {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -23,7 +23,7 @@ function getDatosTienda($url)
     curl_close($ch);
 
     if ($httpStatusCode != 200) {
-        echo $httpStatusCode;
+        echo $datoTienda . ': ' . $httpStatusCode;
     }
 
     return json_decode($response, true);
@@ -38,12 +38,12 @@ function getHorarioDia($horarios, $dia)
     }
 }
 
-$tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id']);
-$categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id']);
-$horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id']);
-$imagenesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas/GetImagenesTienda?idTienda=" . $_GET['id']);
-$calificacionesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesTienda?idTienda=" . $_GET['id']);
-$periodosPredeterminados = getDatosTienda("https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/GetPeriodos?idTienda=" . $_GET['id']);
+$tiendas = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas?id=" . $_GET['id'], 'tienda');
+$categorias = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasTienda?idTienda=" . $_GET['id'], 'Categorias tienda');
+$horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/GetHorarios?idTienda=" . $_GET['id'], 'Horarios tienda');
+$imagenesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas/GetImagenesTienda?idTienda=" . $_GET['id'], 'Imagenes de tienda');
+$calificacionesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesTienda?idTienda=" . $_GET['id'], 'Calificaciones de tienda');
+$periodosPredeterminados = getDatosTienda("https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/GetPeriodos?idTienda=" . $_GET['id'], 'Periodos predeterminados de tienda');
 
 if (is_array($calificacionesTienda)) {
     $suma = 0;
