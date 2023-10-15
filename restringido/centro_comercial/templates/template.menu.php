@@ -5,9 +5,14 @@
 		</div>
 		
 		<div class="final">
-			<div class="bottn" id="plazas" title="Plazas">
-				<a href="https://ustoree.azurewebsites.net/restringido/seleccionPlaza.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/mall_select.png"></a>
-			</div>
+			<?php
+			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+			{
+				echo '<div class="bottn" id="plazas" title="Plazas">
+						<a href="https://ustoree.azurewebsites.net/restringido/seleccionPlaza.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/mall_select.png"></a>
+					  </div>';
+			}
+			?>
 			<div class="bottn" id="tienda" title="Tiendas creadas">
 				<a href="<?php echo 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall']; ?>"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
 			</div>

@@ -1,7 +1,10 @@
 <?php 
 	session_start();
 	require '../security.php';
-
+	if (isset($_SESSION['UserType']) && $_SESSION['UserType'] != "Administrador")
+	{
+		header("Location: https://ustoree.azurewebsites.net");
+	}
 	$_SESSION['idMall'] = $_GET['id'];
 
 	$ch = curl_init();

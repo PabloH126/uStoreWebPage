@@ -114,7 +114,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             }
             else
             {
-                header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $idTienda);
+                header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $idTienda);
             }
             exit;
         } else {
