@@ -46,7 +46,7 @@
 	<div class="content">
 		<div class="title">
 			<div>
-				<h1>Tendencias de venta</h1>
+				<h1>Lista de tiendas</h1>
 			</div>
 		</div>
 		<div class="lista">
