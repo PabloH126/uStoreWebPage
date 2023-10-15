@@ -142,7 +142,7 @@
 				</div>
 
 				<div class="formulario__grupo" id="grupo__email">
-					<label for="emailA" class="formulario__label">Correo Electrónico</label>
+					<label for="emailA" class="formulario__label">Correo electrónico</label>
 					<div class="formulario__grupo-input">
 						<input class="input" type="email" name="emailA" id="emailA" placeholder="ejemplo@gmail.com"
 							required>
