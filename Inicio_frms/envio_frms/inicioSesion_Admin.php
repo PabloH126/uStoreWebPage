@@ -68,6 +68,11 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             
             setcookie('SessionToken', $data['token'], $ExpiryTime, '/');
 
+            if($data['idTienda'])
+            {
+                $idTienda = $data['idTienda'];
+            }
+
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Login/getClaims");
@@ -101,10 +106,16 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             $_SESSION['nombre'] = $data['nombre'];
             $_SESSION['email'] = $data['email'];
             $_SESSION['id'] = $data['id'];
-
-            //echo $_COOKIE['SessionToken'];
+            $_SESSION['UserType'] = $data['type'];
             // redirigir al usuario a la página de inicio
-            header("location: ../../restringido/seleccionPlaza.php");
+            if($_SESSION['UserType'] == "Administrador")
+            {
+                header("location: ../../restringido/seleccionPlaza.php");
+            }
+            else
+            {
+                header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $idTienda);
+            }
             exit;
         } else {
             echo "Error al decodificar JSON";
