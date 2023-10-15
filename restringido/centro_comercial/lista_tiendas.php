@@ -44,6 +44,11 @@
 	<?php require("templates/template.menu.php")?>
 
 	<div class="content">
+		<div class="title">
+			<div>
+				<h1>Tendencias de venta</h1>
+			</div>
+		</div>
 		<div class="lista">
 			<?php 
 				if($tiendasError != null)
