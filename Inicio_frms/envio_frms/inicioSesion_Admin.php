@@ -68,11 +68,6 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             
             setcookie('SessionToken', $data['token'], $ExpiryTime, '/');
 
-            if($data['idTienda'])
-            {
-                $idTienda = $data['idTienda'];
-            }
-
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Login/getClaims");
@@ -105,20 +100,18 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
 
             $_SESSION['nombre'] = $dataClaims['nombre'];
             $_SESSION['email'] = $dataClaims['email'];
-            $_SESSION['id'] = $dataClaims['id'];
+            $_SESSION['idUser'] = $dataClaims['id'];
             $_SESSION['UserType'] = $dataClaims['type'];
-            foreach ($dataClaims as $elemento) {
-                echo $elemento . "<br>";
-            }
+
             // redirigir al usuario a la página de inicio
             exit;
             if($_SESSION['UserType'] == "Administrador")
             {
-                header("location: ../../restringido/seleccionPlaza.php");
+                header("location: https://ustoree.azurewebsites.net/restringido/seleccionPlaza.php");
             }
             else
             {
-                header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $idTienda);
+                header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $dataClaims['idTienda']);
             }
             exit;
         } else {

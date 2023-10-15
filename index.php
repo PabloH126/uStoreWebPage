@@ -33,8 +33,16 @@
 		}
 
 		curl_close($ch);
-
-		header("location: restringido/seleccionPlaza.php");
+		$dataClaims = json_decode($response, true);
+		if($dataClaims['type'] == "Administrador")
+		{
+			header("location: restringido/seleccionPlaza.php");
+		}
+		else
+		{
+			header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $dataClaims['idTienda']);
+		}
+		
 	}
 ?>
 
