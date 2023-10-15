@@ -45,9 +45,7 @@
 
 	<div class="content">
 		<div class="title">
-			<div>
 				<h1>Lista de tiendas</h1>
-			</div>
 		</div>
 		<div class="lista">
 			<?php 
