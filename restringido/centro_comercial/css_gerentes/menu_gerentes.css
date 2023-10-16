@@ -1,0 +1,4 @@
+header .content .final {
+    width: 55%;
+    grid-template-columns: repeat(6, 1fr);
+}
