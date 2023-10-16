@@ -11,11 +11,18 @@
 				echo '<div class="bottn" id="plazas" title="Plazas">
 						<a href="https://ustoree.azurewebsites.net/restringido/seleccionPlaza.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/mall_select.png"></a>
 					  </div>';
+
+				echo '<div class="bottn" id="tienda" title="Tiendas creadas">
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id="' . $_SESSION['idMall'] . '"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
+					  </div>';
+			}
+			else
+			{
+				echo '<div class="bottn" id="tienda" title="Tiendas creadas">
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $_SESSION['idTiendaGerente']. '"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
+					  </div>';
 			}
 			?>
-			<div class="bottn" id="tienda" title="Tiendas creadas">
-				<a href="<?php echo 'https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall']; ?>"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
-			</div>
 			<div class="bottn" id="solicitudes" title="Solicitudes de apartado">
 				<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/solicitudes_select.png"></a>
 			</div>
