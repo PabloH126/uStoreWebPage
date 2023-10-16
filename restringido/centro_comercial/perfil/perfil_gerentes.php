@@ -109,9 +109,7 @@ curl_close($ch);
 
 				</div>
 				<div class="edicionGerente">
-					<a title="Editar gerente" href="">
-						<i class='bx bx-pencil'></i>
-					</a>
+					<i class='bx bx-pencil'></i>
 				</div>
 			<?php
 		}
@@ -119,6 +117,7 @@ curl_close($ch);
 	</div>
 	<input type="hidden" id="isPerfil">
 	<script src="js/actualizar_imagen.js"></script>
+	<script src="js/activar_edicion_gerente.js"></script>
 </body>
 
 </html>
