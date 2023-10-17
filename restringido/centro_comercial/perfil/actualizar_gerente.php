@@ -99,7 +99,7 @@ if (verificarImagen($imagenPerfil))
 
     $responseArray = [
         'status' => 'success',
-        'message' => 'Gerente e imagen de perfil creados con éxito'
+        'message' => 'Gerente e imagen de perfil actualizados con éxito'
     ];
 
     curl_close($ch);
