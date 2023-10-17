@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const botonEdicion = document.querySelector('.edicionGerente');
     const items = document.querySelectorAll('.gerentes');
 
-    const link = document.getElementById('myLink');
+    const link = document.querySelectorAll('#myLink');
     let linkEnabled = true;
 
     botonEdicion.addEventListener('click', function () {
