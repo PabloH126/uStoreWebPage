@@ -67,3 +67,5 @@ input:checked + .slider:before {
 .stock-unavailable {
     color: #f44336; /* Color rojo cuando no hay stock */
 }
+
+

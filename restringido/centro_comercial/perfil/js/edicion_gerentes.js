@@ -2,6 +2,10 @@ let currentNotification;
 const imagenInput = document.getElementById("logoTienda");
 const imagenMostrada = document.getElementById('imagenSelec');
 const deleteIcon = document.querySelector('.delete-icon');
+const deleteGerenteBtn = document.querySelector('.delete-store-btn');
+
+const urlParams = new URLSearchParams(window.location.search);
+const idGerente = urlParams.get('id');
 let steps = 0;
 
 const expresiones = {
@@ -99,7 +103,14 @@ document.addEventListener('DOMContentLoaded', function () {
             imgElement.src = '';
             imagenInput.value = '';
         }
-    })
+    });
+
+    deleteGerenteBtn.addEventListener('click', function (e) {
+        ModalConfirmacionEliminacion()
+        .catch(error => {
+            window.location.reload(true);
+        });
+    });
 
     mainForm.addEventListener('keydown', function (e) {
         if (e.key === 'Enter')
@@ -338,4 +349,81 @@ function showNotificationError(message) {
         }, 550);
     }, 2500);
 
+}
+
+async function ModalConfirmacionEliminacion() {
+    return new Promise((resolve, reject) => {
+        const modalOverlay = document.createElement("div");
+        modalOverlay.classList.add("modal-overlay");
+        
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
+
+        modal.innerHTML = `
+            <div class="modal-content">
+                <p>¿Estás seguro de eliminar este gerente?</p>
+                <p> Se eliminarán sus datos y se desvinculará de la tienda asignada.</p>
+                <div class="modal-buttons">
+                    <button class="modal-accept">Aceptar</button>
+                    <button class="modal-cancel">Cancelar</button>
+                </div>
+            </div>
+        `;
+
+        modalOverlay.appendChild(modal);
+        document.body.appendChild(modalOverlay);
+
+        const acceptButton = modal.querySelector(".modal-accept");
+        const cancelButton = modal.querySelector(".modal-cancel");
+
+        function closeModal() {
+            modalOverlay.remove();
+        }
+
+        acceptButton.addEventListener("click", async function() {
+            acceptButton.disabled = true;
+            cancelButton.disabled = true;
+            acceptButton.style.backgroundColor = "gray";
+            const responseEliminacion = await fetch("https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/eliminarGerente.php?id=" + idGerente, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                }
+            });
+
+            if (!responseEliminacion.ok)
+            {
+                showNotificationError("Hubo un error en la solicitud de eliminacion del gerente.");
+                return;
+            }
+
+            const eliminacionData = await responseEliminacion.json();
+
+            if(eliminacionData.status !== "success")
+            {
+                showNotificationError("Hubo un error en la eliminacion del gerente: ", eliminacionData.message);
+                return;
+            }
+            else
+            {
+                showNotification("Gerente eliminado exitosamente.");
+                setTimeout(() => {
+                    hideNotification();
+                    window.location.href = 'https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/perfil_gerentes.php';
+                }, 2500);
+            }
+        });
+
+        cancelButton.addEventListener("click", function() {
+            closeModal();
+            reject(false);
+        });
+
+        modalOverlay.addEventListener("click", function(event) {
+            if (event.target === modalOverlay) {
+                closeModal();
+                reject(false);
+            }
+        });
+    });
 }

@@ -23,3 +23,17 @@
 	font-size: 9em;
 	color: #ababab;
 }
+
+@media only screen and (max-width: 1502px) {
+
+    h1 {
+        font-size: 10vh;
+        margin: 35px 35px 10px;
+    }
+
+    .content .lista {
+        width: 90%;
+        margin: 0px auto 5px auto;
+    }
+
+}
