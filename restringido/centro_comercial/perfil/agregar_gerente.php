@@ -182,7 +182,7 @@ curl_close($ch);
                         <span>* Ingrese el código para confirmar el registro del gerente.</span>
                     </div>
                     <div class="bttns">
-                        <div class="bttn" id="send">
+                        <div class="bttn gerente" id="send">
                             <button type="submit" id="submitBtn">Guardar</button>
                         </div>
                     </div>

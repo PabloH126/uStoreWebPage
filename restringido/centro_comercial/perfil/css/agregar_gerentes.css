@@ -20,6 +20,6 @@
     cursor: pointer;
 }
 
-.content .lista form .item #send {
+.content .lista form .item .gerente#send {
     margin-left: 57vw;
 }
