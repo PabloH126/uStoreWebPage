@@ -110,7 +110,7 @@ else
 {
     $responseArray = [
         'status' => 'success',
-        'message' => 'Gerente creado con éxito'
+        'message' => 'Gerente actualizado con éxito'
     ];
 
     curl_close($ch);
