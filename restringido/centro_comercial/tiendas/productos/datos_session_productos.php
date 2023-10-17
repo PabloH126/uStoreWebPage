@@ -51,7 +51,7 @@
 
 	<div class="content">
 		<div class="title">
-				<h1>Lista de tiendas</h1>
+				<h1>Lista de productos</h1>
 		</div>
 		<div class="lista">
 			<?php 
