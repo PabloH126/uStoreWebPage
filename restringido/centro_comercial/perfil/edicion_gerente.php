@@ -58,6 +58,7 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
     <title>Modificar cuenta de <?php echo $gerenteData['primerNombre']; ?></title>
     <?php require("../templates/template.styles.php"); ?>
     <?php require("templates/template.agregarGerentes.php"); ?>
+    <link rel="stylesheet" href="css/agregar_gerentes.css">
 </head>
 
 <body>

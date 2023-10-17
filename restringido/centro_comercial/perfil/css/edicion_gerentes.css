@@ -1,0 +1,38 @@
+.content .lista form .item .bttns{
+    width: 100%;
+}
+
+.content .lista form .item .bttns #delete{
+    margin: 0;
+}
+
+.content .lista form .item #one{
+    margin-left: 81%;
+}
+
+.content .lista form .item .back{
+    margin-right: 1%;
+    margin-left: 70%;
+}
+
+.content .lista form .item #ult{
+    margin-left: 63%;
+}
+
+.content .lista form .item #send{
+    margin: 0;
+}
+
+@media only screen and (max-width: 1502px) {
+    .content .lista form .item #one{
+        margin-left: 85%;
+    }
+
+    .content .lista form .item .back{
+        margin-left: 76%;
+    }
+
+    .content .lista form .item #ult{
+        margin-left: 72%;
+    }
+}

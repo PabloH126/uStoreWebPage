@@ -1,17 +1,13 @@
-.content .lista form .item .bttns #delete{
-    margin: 0;
-}
-
 .content .lista form .item .name #passwordGerente,
-.content .lista form .item .name #repasswordGerente{
+.content .lista form .item .name #repasswordGerente {
     display: block;
 }
 
-.content .lista form .item .name #seleccion_tienda{
-	margin: 8% 0;
+.content .lista form .item .name #seleccion_tienda {
+    margin: 8% 0;
 }
 
-.content .lista form #item-7 .name input{
+.content .lista form #item-7 .name input {
     margin: 5% 0 3%;
 }
 
