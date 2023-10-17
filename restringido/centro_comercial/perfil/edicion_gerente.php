@@ -55,7 +55,7 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
 
 <head>
     <meta charset="utf-8">
-    <title>Actualizar a <?php echo $gerenteData['primerNombre']; ?></title>
+    <title>Modificar cuenta de <?php echo $gerenteData['primerNombre']; ?></title>
     <?php require("../templates/template.styles.php"); ?>
     <?php require("templates/template.agregarGerentes.php"); ?>
 </head>
@@ -63,7 +63,7 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
 <body>
     <?php require("../templates/template.menu.php") ?>
     <div class="content">
-        <h1>Actualizar gerente</h1>
+        <h1>Modificar gerente</h1>
         <div class="lista">
             <form action="actualizar_gerente.php?id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre del gerente-->
