@@ -1,9 +1,6 @@
 <?php
 
 $data = [
-    'primerNombre' => $_POST['nombreGerente'],
-    'primerApellido' => $_POST['apellidoGerente'],
-    ''
 
 ]
 $ch = curl_init();

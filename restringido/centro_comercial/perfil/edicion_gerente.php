@@ -28,6 +28,25 @@ if ($httpStatusCode == 400) {
 }
 $tiendas = json_decode($response, true);
 curl_close($ch);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Gerentes/GetUpdateGerente?id=" . $_GET['id']);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Authorization: Bearer ' . $_COOKIE['SessionToken']
+));
+
+$responseGerenteData = curl_exec($ch);
+
+if ($response === false) {
+    echo 'Error: ' . curl_error($ch);
+} else {
+    $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+}
+
+curl_close($ch);
+
+$gerenteData = json_decode($responseGerenteData, true);
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +69,7 @@ curl_close($ch);
                     <p>1/5</p>
                     <div class="name">
                         <label for="nombreGerente"><strong>Primer nombre del gerente</strong></label>
-                        <input type="text" id="nombreGerente" name="nombreGerente">
+                        <input type="text" id="nombreGerente" name="nombreGerente" value="<?php echo $gerenteData['primerNombre']; ?>">
                     </div>
                     <div class="bttn" id="one">
                         <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
@@ -62,7 +81,7 @@ curl_close($ch);
                     <p>2/5</p>
                     <div class="name">
                         <label for="apellidoGerente"><strong>Primer apellido del gerente</strong></label>
-                        <input type="text" id="apellidoGerente" name="apellidoGerente">
+                        <input type="text" id="apellidoGerente" name="apellidoGerente" value="<?php echo $gerenteData['primerApellido']; ?>">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -102,7 +121,14 @@ curl_close($ch);
                             <?php
                             foreach ($tiendas as $tienda)
                             {
-                                echo '<option value="'. $tienda['idTienda'] .'">' . $tienda['nombreTienda'] . '</option>';
+                                if($tienda['idTienda'] == $gerenteData['idTienda'])
+                                {
+                                    echo '<option value="'. $tienda['idTienda'] .'" selected>' . $tienda['nombreTienda'] . '</option>';
+                                }
+                                else
+                                {
+                                    echo '<option value="'. $tienda['idTienda'] .'">' . $tienda['nombreTienda'] . '</option>';
+                                }
                             }
                             ?>
                         </select>
@@ -126,12 +152,13 @@ curl_close($ch);
                             <div class="box">
                                 <i class='bx bx-x delete-icon' data-input-id="logoTienda"
                                     data-img-id="imagenSelec"></i>
-                                <img id="imagenSelec" alt="">
+                                <img id="imagenSelec" alt="" src="<?php echo $gerenteData['iconoPerfil']?>">
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
                                     <input type="file" class="file-input fileLogoTienda" id="logoTienda"
                                         name="logoTienda" accept="image/*">
+                                    <input type="hidden" id="iconoPerfilId" value="<?php echo $gerenteData['idImagenPerfil']?>">
                             </div>
                         </div>
                     </div>
