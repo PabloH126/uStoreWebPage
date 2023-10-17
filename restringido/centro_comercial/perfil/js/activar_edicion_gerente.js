@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     botonEdicion.addEventListener('click', function () {
         items.forEach(function (elemento) {
+            let idGerente = elemento.querySelector('.idGerente').value;
+            console.log(idGerente);
             if (elemento.classList.contains('edit')) {
                 elemento.classList.remove('edit');
                 deshabilitarLink();
@@ -18,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    function habilitarLink() {
-        link.setAttribute('href', 'edicion_gerente.php');
+    function habilitarLink(idGerente) {
+        link.setAttribute('href', 'https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/edicion_gerente.php?id=' + idGerente);
         link.style.pointerEvents = 'auto'; // Habilita el clic en el enlace
         linkEnabled = true;
     }
