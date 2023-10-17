@@ -51,6 +51,7 @@
     color: white;
     padding: 20%;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .edicionGerente i:hover {
