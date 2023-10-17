@@ -8,7 +8,6 @@
     width: 250px;
     grid-template-rows: 58% 42%;
     align-items: center;
-    transition: 0.5s;
 }
 
 .content .lista .item .logo {
@@ -60,7 +59,6 @@
 
 .content .lista .edit {
     animation: float 2.8s ease-in-out infinite;
-    transition: 0.5s;
 }
 
 @keyframes float {
