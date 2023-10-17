@@ -2,20 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const botonEdicion = document.querySelector('.edicionGerente');
     const gerentes = document.querySelectorAll('.gerentes');
 
-    console.log("entre :c");
-
     botonEdicion.addEventListener('click', function () {
         gerentes.forEach(function (gerente) {
-            console.log("en el foreach :c");
             let idGerente = gerente.querySelector('.idGerente').value;
             let link = gerente.querySelector('.myLink');
 
             if (gerente.classList.contains('edit')) {
-                console.log("en el if :c");
                 gerente.classList.remove('edit');
                 deshabilitarLink(link);
             } else {
-                console.log("en el else :c");
                 gerente.classList.add('edit');
                 habilitarLink(link, idGerente);
             }
