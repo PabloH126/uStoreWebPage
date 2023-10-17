@@ -9,13 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
     botonEdicion.addEventListener('click', function () {
         items.forEach(function (elemento) {
             let idGerente = elemento.querySelector('.idGerente').value;
-            console.log(idGerente);
             if (elemento.classList.contains('edit')) {
                 elemento.classList.remove('edit');
                 deshabilitarLink();
             } else {
                 elemento.classList.add('edit');
-                habilitarLink();
+                habilitarLink(idGerente);
             }
         });
     });
