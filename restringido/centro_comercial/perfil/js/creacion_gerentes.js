@@ -150,6 +150,24 @@ document.addEventListener('DOMContentLoaded', function () {
     mainForm.addEventListener('submit', async function (e) {
         e.stopPropagation();
         e.preventDefault();
+
+        var submitButton = document.getElementById("submitBtn");
+        submitButton.disabled = true;
+        submitButton.textContent = "";
+
+        let div1 = document.createElement("div");
+        div1.classList.add("ball1");
+        let div2 = document.createElement("div");
+        div2.classList.add("ball2");
+        let div3 = document.createElement("div");
+        div3.classList.add("ball3");
+
+        submitButton.appendChild(div1);
+        submitButton.appendChild(div2);
+        submitButton.appendChild(div3);
+        
+        submitButton.classList.add("loading");
+
         let formData = new FormData(mainForm);
         const responseCorreo = await fetch(mainForm.action, {
             method: mainForm.method,
@@ -159,6 +177,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!responseCorreo.ok)
         {
             showNotificationError("Error de servidor en la respuesta de registro");
+            submitButton.disabled = false;
+            submitButton.textContent = "Guardar";
+            div1.remove();
+            div2.remove();
+            div3.remove();
+            submitButton.classList.remove("loading");
             return;
         }
 
@@ -167,6 +191,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if(dataResponse.status !== 'success')
         {
             showNotificationError(dataResponse.message);
+            submitButton.disabled = false;
+            submitButton.textContent = "Guardar";
+            div1.remove();
+            div2.remove();
+            div3.remove();
+            submitButton.classList.remove("loading");
+            return;
         }
         else
         {
