@@ -109,7 +109,7 @@
             transform: translatey(0px);
         }
         50% {
-            box-shadow: 0 11px 15px 0px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 15px 0px rgb(0 112 150 / 37%);
             transform: translatey(-3px);
         }
         100% {
