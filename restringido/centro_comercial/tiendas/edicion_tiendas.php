@@ -271,7 +271,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                         <span>* El peso de cada imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
-                    <div class="bttn" id="delete-store">
+                        <div class="bttn" id="delete-store">
                             <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
                         </div>
                         <div class="bttn back">

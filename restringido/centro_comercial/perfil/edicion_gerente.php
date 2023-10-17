@@ -95,6 +95,9 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
                         <input type="text" id="apellidoGerente" name="apellidoGerente" value="<?php echo $gerenteData['primerApellido']; ?>">
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i class='bx bx-left-arrow-alt bttn-back' data-item="2" data-to_item="1"></i></button>
                         </div>
@@ -113,6 +116,9 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
                         <input type="password" id="repasswordGerente" name="repasswordGerente">
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i class='bx bx-left-arrow-alt bttn-back' data-item="3" data-to_item="2"></i></button>
                         </div>
@@ -145,6 +151,9 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
                         </select>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back">
                             <button type="button" class="bttn-back" data-item="4" data-to_item="3"><i class='bx bx-left-arrow-alt bttn-back' data-item="4" data-to_item="3"></i></button>
                         </div>
@@ -177,6 +186,9 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
                         <span>* El peso de la imagen no debe superar 1 megabyte.</span>
                     </div>
                     <div class="bttns">
+                        <div class="bttn" id="delete">
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
                         <div class="bttn back" id="ult">
                             <button type="button" class="bttn-back" data-item="5" data-to_item="4"><i class='bx bx-left-arrow-alt bttn-back' data-item="5" data-to_item="4"></i></button>
                         </div>
