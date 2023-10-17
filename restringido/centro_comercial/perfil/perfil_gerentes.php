@@ -102,7 +102,7 @@ curl_close($ch);
 							<strong class="nombre"><?php echo $gerente['nombre']?></strong>
 							<p><?php echo $gerente['email']?></p>
 							<p><?php echo $gerente['tiendaName']?></p>
-							<input type="hidden" class="idGerente" value="<?php echo $gerente['id']; ?>"/>
+							<input type="hidden" class="idGerente" value="<?php echo $gerente['idGerente']; ?>"/>
 						</div>
 					</div>
 					<?php
