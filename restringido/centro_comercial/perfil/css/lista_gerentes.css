@@ -8,6 +8,7 @@
     width: 250px;
     grid-template-rows: 58% 42%;
     align-items: center;
+    transition: 0.5s;
 }
 
 .content .lista .item .logo {
