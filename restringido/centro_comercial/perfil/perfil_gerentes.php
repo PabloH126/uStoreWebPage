@@ -111,7 +111,7 @@ curl_close($ch);
 
 				</div>
 				<div class="edicionGerente">
-					<i class='bx bx-pencil'></i>
+					<i class='bx bx-pencil' title="Editar gerentes"></i>
 				</div>
 			<?php
 		}

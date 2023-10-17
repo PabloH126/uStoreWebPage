@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector(".form-tiendas");
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
-    const volverEnviarCorreoBtn = document.getElementById('volverEnviarCorreo');
 
     nextButtons.forEach(function (button) {
         button.addEventListener('click', async function (e) {
@@ -101,26 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
             imagenInput.value = '';
         }
     })
-
-    volverEnviarCorreoBtn.addEventListener('click', async function (e) {
-        await fetch('https://ustoree.azurewebsites.net/correo_confirmacion_gerente.php', {
-            method: 'POST',
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status != 'success')
-            {
-                showNotificationError(data.message);
-            }
-            else
-            {
-                showNotification(data.message);
-                setTimeout(() => {
-                    hideNotification();
-                }, 2500);
-            }
-        });
-    });
 
     mainForm.addEventListener('keydown', function (e) {
         if (e.key === 'Enter')

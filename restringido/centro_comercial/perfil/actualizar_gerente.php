@@ -9,24 +9,20 @@ $contrasena = $_POST['passwordGerente'];
 $contra = md5(md5($contrasena));
 
 $data = [
+    'idCuentaGerente' => $_SESSION['idCuentaGerente'],
     'password' => $contra,
-    'email' => $_POST['correoGerente'],
     'primerNombre' => $_POST['nombreGerente'],
-    'primerApellido' => $_POST['apellidoGerente']
+    'primerApellido' => $_POST['apellidoGerente'],
+    'idTienda' => $_POST['idTienda'],
 ];
 
+unset($_SESSION['idCuentaGerente']);
+
 $dataJson = json_encode($data);
-/*
-$responseArray = [
-    'status' => 'error',
-    'message' => $imagenPerfil
-];
-echo json_encode($responseArray);
-exit;
-*/
+
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/Register/RegisterGerente?idTienda=' . $_POST['idTienda']);
-curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Gerentes/UpdateGerente");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $dataJson);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -48,7 +44,7 @@ if ($response === false) {
     $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
-if ($httpStatusCode != 201)
+if ($httpStatusCode != 204)
 {
     $responseArray = [
         'status' => 'error',
@@ -61,13 +57,12 @@ if ($httpStatusCode != 201)
 
 if (verificarImagen($imagenPerfil))
 {
-    $dataGerente = json_decode($response, true);
     $dataImagen = [
         'image' => curl_file_create($imagenPerfil['tmp_name'], $imagenPerfil['type'], $imagenPerfil['name'])
     ];
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/Gerentes/UpdateProfileImage?idGerente=' . $dataGerente['idGerente']);
+    curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/Gerentes/UpdateProfileImage?idGerente=' . $_GET['id']);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $dataImagen);

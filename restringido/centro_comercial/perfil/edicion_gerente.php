@@ -47,6 +47,8 @@ if ($response === false) {
 curl_close($ch);
 
 $gerenteData = json_decode($responseGerenteData, true);
+
+$_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,7 +65,7 @@ $gerenteData = json_decode($responseGerenteData, true);
     <div class="content">
         <h1>Agregar gerente</h1>
         <div class="lista">
-            <form action="envio_gerente.php" method="post" enctype="multipart/form-data" class="form-tiendas">
+            <form action="actualizar_gerente.php?id=<?php echo $_GET['id']; ?>" method="post" enctype="multipart/form-data" class="form-tiendas">
                 <!-- Nombre del gerente-->
                 <div class="item active" id="item-1">
                     <p>1/5</p>
