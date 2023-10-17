@@ -73,8 +73,16 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
                         <label for="nombreGerente"><strong>Primer nombre del gerente</strong></label>
                         <input type="text" id="nombreGerente" name="nombreGerente" value="<?php echo $gerenteData['primerNombre']; ?>">
                     </div>
-                    <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                    <div class="bttns">
+                        <div class="bttn" id="delete">
+                            <!-- La clase y el atributo de delete store bt y id, no afectan al diseño, supongo que los pusiste para funcionalidad, 
+                            asi que no importa si cambias los nombres para que sean para gerentes en lugar de store-->
+                            <button type="button" class="delete-store-btn" data-store-id="<?php echo $_GET['id']; ?>"><i class='bx bx-trash'></i></button>
+                        </div>
+                        <div class="bttn" id="one">
+                            <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i 
+                                    class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                        </div>
                     </div>
                 </div>
 

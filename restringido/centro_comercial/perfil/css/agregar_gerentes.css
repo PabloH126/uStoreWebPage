@@ -1,3 +1,7 @@
+.content .lista form .item .bttns #delete{
+    margin: 0;
+}
+
 .content .lista form .item .name #passwordGerente,
 .content .lista form .item .name #repasswordGerente{
     display: block;
