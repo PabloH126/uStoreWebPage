@@ -152,13 +152,13 @@ $gerenteData = json_decode($responseGerenteData, true);
                             <div class="box">
                                 <i class='bx bx-x delete-icon' data-input-id="logoTienda"
                                     data-img-id="imagenSelec"></i>
-                                <img id="imagenSelec" alt="" src="<?php echo $gerenteData['iconoPerfil']?>">
+                                <img id="imagenSelec" alt="" src="<?php echo $gerenteData['iconoPerfil']; ?>">
                             </div>
                             <div class="ip">
                                 <label for="logoTienda" id="labelL">
                                     <input type="file" class="file-input fileLogoTienda" id="logoTienda"
                                         name="logoTienda" accept="image/*">
-                                    <input type="hidden" id="iconoPerfilId" value="<?php echo $gerenteData['idImagenPerfil']?>">
+                                    <input type="hidden" id="iconoPerfilId" value="<?php echo $gerenteData['idImagenPerfil']; ?>">
                             </div>
                         </div>
                     </div>
