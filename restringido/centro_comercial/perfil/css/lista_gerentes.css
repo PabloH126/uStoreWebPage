@@ -59,6 +59,7 @@
 
 .content .lista .edit {
     animation: float 2.8s ease-in-out infinite;
+    transition: 0.5s;
 }
 
 @keyframes float {
