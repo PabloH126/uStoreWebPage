@@ -179,7 +179,7 @@ $gerenteData = json_decode($responseGerenteData, true);
         </div>
     </div>
     <script src="../js/slider_formularios.js"></script>
-    <script src="js/creacion_gerentes.js"></script>
+    <script src="js/edicion_gerentes.js"></script>
 </body>
 
 </html>
