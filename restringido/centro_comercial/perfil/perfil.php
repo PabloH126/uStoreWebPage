@@ -91,6 +91,15 @@ curl_close($ch);
 	<title>Perfil</title>
 	<?php require("../templates/template.styles.php"); ?>
 	<?php require("templates/template.secc_perfil_grafica.php"); ?>
+	
+	<!-- Gerentes -->
+	<?php
+	if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Gerente")
+	{ ?>
+		<link rel="stylesheet" type="text/css" href="../css_gerentes/perfil_style_gerentes.css">
+	<?php 
+	}
+	?>
 </head>
 
 <body>
