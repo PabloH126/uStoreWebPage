@@ -384,7 +384,7 @@ async function ModalConfirmacionEliminacion() {
             acceptButton.disabled = true;
             cancelButton.disabled = true;
             acceptButton.style.backgroundColor = "gray";
-            const responseEliminacion = await fetch("https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/eliminarGerente.php?id=" + idGerente, {
+            const responseEliminacion = await fetch("https://ustoree.azurewebsites.net/restringido/centro_comercial/perfil/eliminar_gerente.php?id=" + idGerente, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
