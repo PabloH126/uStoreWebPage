@@ -5,13 +5,14 @@ const token = document.cookie
     .find(p => p.startsWith("SessionToken="))
     ?.split("=")[1];
 
+console.log(token);
 const connection = new signalR.HubConnectionBuilder()
     .withUrl('https://ustoreapi.azurewebsites.net/chatHub', {
         accessTokenFactory: () => token
     })
     .build();
 
-    
+
 if(divsContacto)
 {
     divsContacto.forEach(chat => {
