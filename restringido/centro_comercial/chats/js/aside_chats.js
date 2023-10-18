@@ -15,6 +15,7 @@ contactos.forEach(contacto => {
 
 
 function autoResize() {
+    console.log("funcion c:");
     const textarea = document.getElementById('messageInput');
     const lineHeight = 24; // Adjust this value according to your text area's line height
     const minRows = 1;
@@ -23,8 +24,12 @@ function autoResize() {
     let rows = textarea.value.split('\n').length;
     if (rows < minRows) {
         rows = minRows;
+
+        console.log("if c:");
     } else if (rows > maxRows) {
         rows = maxRows;
+
+        console.log("else c:");
     }
     textarea.rows = rows;
 }
