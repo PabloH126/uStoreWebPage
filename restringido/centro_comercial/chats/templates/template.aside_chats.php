@@ -4,7 +4,15 @@
       <div class="aside_options_chat">
           <button class="options_aside">Usuarios</button>
         <hr>
-          <button class="options_aside">Gerentes</button>
+        <?php
+			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+			{
+        echo '<button class="options_aside">Gerentes</button>';
+			}
+			else
+			{
+        echo '<button class="options_aside">Administrador</button>';
+      }?>
       </div>
 
       <div class="cajabuscar">
