@@ -30,9 +30,6 @@
 	}
 	$tiendas = json_decode($response, true);
 	curl_close($ch);
-
-	var_dump($_SESSION);
-	
 ?>
 <!DOCTYPE html>
 <html>
