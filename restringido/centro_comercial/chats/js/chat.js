@@ -1,7 +1,17 @@
 let divsContacto = document.querySelectorAll('.contacto');
+
+const token = document.cookie
+    .split("; ")
+    .find(p => p.startsWith("SessionToken="))
+    ?.split("=")[1];
+
 const connection = new signalR.HubConnectionBuilder()
-    .withUrl('https://ustoreapi.azurewebsites.net/chatHub')
+    .withUrl('https://ustoreapi.azurewebsites.net/chatHub', {
+        accessTokenFactory: () => token
+    })
     .build();
+
+    
 if(divsContacto)
 {
     divsContacto.forEach(chat => {
