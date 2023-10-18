@@ -12,3 +12,16 @@ contactos.forEach(contacto => {
         contacto.classList.add('select');
     });
 });
+
+
+function autoResize() {
+    const textarea = document.getElementById('text_area');
+    const numberOfLines = textarea.value.split('\n').length;
+
+    if (numberOfLines <= 4) {
+        textarea.rows = numberOfLines;
+    } else {
+        textarea.rows = 5; // Max 5 rows
+        textarea.style.overflowY = 'scroll';
+    }
+}

@@ -86,7 +86,7 @@ require '../../security.php';
 					</div>
 					
 					<div>
-						<textarea name="" id=""></textarea>
+						<textarea id="text_area"></textarea>
 					</div>
 
 					<div>
