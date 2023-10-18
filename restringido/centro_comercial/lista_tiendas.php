@@ -6,14 +6,11 @@
 		header("Location: https://ustoree.azurewebsites.net");
 	}
 
-	if(!isset($_SESSION["idMall"]) || $_SESSION['idMall'] == 0)
-	{
-		$_SESSION['idMallLista'] = $_GET['id'];
-	}
+	$_SESSION['idMall'] = $_GET['id'];
 
 	$ch = curl_init();
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMallLista']);
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(

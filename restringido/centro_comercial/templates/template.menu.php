@@ -15,7 +15,7 @@
 					  </div>';
 
 				echo '<div class="bottn" id="tienda" title="Tiendas creadas">
-						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id="' . $_SESSION['idMallLista'] . '"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id="' . $_SESSION['idMall'] . '"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
 					  </div>';
 			}
 			else
