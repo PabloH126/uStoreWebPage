@@ -14,24 +14,16 @@ contactos.forEach(contacto => {
 });
 
 
-function autoResize() {
-    
-    const textarea = document.getElementById('messageInput');
-    const lineHeight = 24; // Adjust this value according to your text area's line height
-    const minRows = 1;
-    const maxRows = 5;
-    console.log("funcion c:");
-
-    let rows = textarea.value.split('\n').length;
-
-    if (rows < minRows) {
-        rows = minRows;
-
-        console.log("if c:");
-    } else if (rows > maxRows) {
-        rows = maxRows;
-
-        console.log("else c:");
-    }
-    textarea.rows = rows;
-}
+// Espera a que el DOM se cargue completamente
+document.addEventListener('DOMContentLoaded', function() {
+    var textarea = document.getElementById('expanding_textarea');
+    console.log("entro :c");
+    textarea.addEventListener('input', function() {
+      // Resetea el campo de altura en caso de que se reduzca
+      this.style.height = 'auto';
+  
+      // Ajusta la altura del textarea al scroll height, que es la altura completa del contenido
+      this.style.height = (this.scrollHeight) + 'px';
+    });
+  });
+  
