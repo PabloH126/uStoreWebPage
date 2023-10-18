@@ -6,7 +6,6 @@
 		
 		<div class="final">
 			<?php
-			var_dump($_SESSION);
 			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
 			{
 				echo '<div class="bottn" id="plazas" title="Plazas">
@@ -14,7 +13,7 @@
 					  </div>';
 
 				echo '<div class="bottn" id="tienda" title="Tiendas creadas">
-						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id="' . $_SESSION['idMall'] . '"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
+						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=' . $_SESSION['idMall'] . '"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
 					  </div>';
 			}
 			else
