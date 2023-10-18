@@ -5,7 +5,11 @@
 	{
 		header("Location: https://ustoree.azurewebsites.net");
 	}
-	$_SESSION['idMall'] = $_GET['id'];
+
+	if(!isset($_SESSION["idMall"]))
+	{
+		$_SESSION['idMall'] = $_GET['id'];
+	}
 
 	$ch = curl_init();
 
