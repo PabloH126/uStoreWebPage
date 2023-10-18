@@ -102,7 +102,6 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             $_SESSION['email'] = $dataClaims['email'];
             $_SESSION['idUser'] = $dataClaims['id'];
             $_SESSION['UserType'] = $dataClaims['type'];
-            $_SESSION['idTiendaGerente'] = $dataClaims['idTienda'];
             // redirigir al usuario a la página de inicio
             if($_SESSION['UserType'] == "Administrador")
             {
@@ -110,6 +109,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             }
             else
             {
+                $_SESSION['idTiendaGerente'] = $dataClaims['idTienda'];
                 header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $dataClaims['idTienda']);
             }
             exit;
