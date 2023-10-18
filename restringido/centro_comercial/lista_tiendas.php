@@ -6,7 +6,7 @@
 		header("Location: https://ustoree.azurewebsites.net");
 	}
 
-	if(!isset($_SESSION["idMall"]))
+	if(!isset($_SESSION["idMall"]) || $_SESSION['idMall'] == 0)
 	{
 		$_SESSION['idMall'] = $_GET['id'];
 	}
