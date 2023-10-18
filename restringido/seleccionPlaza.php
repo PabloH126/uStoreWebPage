@@ -102,7 +102,7 @@ if(isset($_SESSION['idMall']))
 					foreach ($malls as $mall)
 					{ ?>
 						<div class="item">
-							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas2.php?id=<?php echo $mall['idCentroComercial']?>">
+							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/lista_tiendas.php?id=<?php echo $mall['idCentroComercial']?>">
 							<img width="80%" class="logo"
 									onmouseout="this.src='<?php echo $mall['iconoCentroComercial']; ?>';" 
 									onmouseover="this.src='<?php echo $mall['imagenCentroComercial']; ?>';"
