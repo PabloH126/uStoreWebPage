@@ -36,6 +36,8 @@
       </div>
       
       <?php 
+      var_dump($gerentesConChat);
+      var_dump($gerentesSinChat);
       foreach($gerentesConChat as $gerenteObject)
       {
         $gerente = $gerenteObject['gerente'];

@@ -1,6 +1,6 @@
 let divsContacto = document.querySelectorAll('.contacto');
 const connection = new signalR.HubConnectionBuilder()
-    .WithUrl('https://ustoreapi.azurewebsites.net/chatHub')
+    .withUrl('https://ustoreapi.azurewebsites.net/chatHub')
     .build();
 
 connection.start()
