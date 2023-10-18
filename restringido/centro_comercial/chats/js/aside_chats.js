@@ -15,13 +15,16 @@ contactos.forEach(contacto => {
 
 
 function autoResize() {
-    const textarea = document.getElementById('text_area');
-    const numberOfLines = textarea.value.split('\n').length;
+    const textarea = document.getElementById('messageInput');
+    const lineHeight = 24; // Adjust this value according to your text area's line height
+    const minRows = 1;
+    const maxRows = 5;
 
-    if (numberOfLines <= 4) {
-        textarea.rows = numberOfLines;
-    } else {
-        textarea.rows = 5; // Max 5 rows
-        textarea.style.overflowY = 'scroll';
+    let rows = textarea.value.split('\n').length;
+    if (rows < minRows) {
+        rows = minRows;
+    } else if (rows > maxRows) {
+        rows = maxRows;
     }
+    textarea.rows = rows;
 }

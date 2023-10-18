@@ -86,7 +86,7 @@ require '../../security.php';
 					</div>
 					
 					<div>
-						<textarea id="text_area"></textarea>
+						<textarea id="messageInput" oninput="autoResize()"></textarea>
 					</div>
 
 					<div>
