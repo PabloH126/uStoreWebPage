@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     textarea.addEventListener('input', function() {
         // Resetea el campo de altura en caso de que se reduzca
         textarea.style.height = 'auto';
+        textAreaContainer.style.padding = '0px';
+        textarea.style.height = '0px';
+        content.style.height = '0px';
 
         var numberOfLines = textarea.scrollHeight / lineHeight;
 

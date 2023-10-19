@@ -37,8 +37,11 @@ contactos.forEach(contacto => {
         if (contacto.dataset.chatId)
         {
             console.log(contacto.dataset.chatId);
+            let formData = new FormData();
+            formData.append("idChat", contacto.dataset.chatId);
             await fetch('actualizar_chat.php', {
-
+                method: 'POST',
+                body: formData
             })
         }
         else {
