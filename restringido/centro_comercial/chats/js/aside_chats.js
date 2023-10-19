@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Resetea el campo de altura en caso de que se reduzca
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
-    if(){}
+    //if(){}
       // Ajusta la altura del textarea al scroll height, que es la altura completa del contenido
       this.style.height = (this.scrollHeight) + 'px';
     });
