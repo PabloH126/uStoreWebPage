@@ -1,23 +1,23 @@
-function highlightButton(id) {
-    // Lista de todos los IDs de los botones
-    const allButtonIds = ['usuariosBtn', 'gerentesBtn', 'adminBtn'];
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtener todos los botones que quieres manejar
+    var buttons = document.querySelectorAll('.options_aside');
 
-    // Recorre la lista de IDs de botones
-    for (const buttonId of allButtonIds) {
-        const button = document.getElementById(buttonId);
+    // Función que maneja el evento 'click'
+    function onButtonClick(event) {
+        // Elimina la clase 'selected' de todos los botones
+        buttons.forEach(function (button) {
+            button.classList.remove('selected');
+        });
 
-        // Si el botón existe, cambia su color de fondo según si es el seleccionado o no
-        if (button) {
-            if (buttonId === id) {
-                button.style.backgroundColor = 'white'; // El seleccionado se pone blanco
-                button.style.color = '#007096'; // El seleccionado se pone blanco
-            } else {
-                button.style.backgroundColor = '#007096'; // Los demás regresan a su color original
-                button.style.color = 'white';
-            }
-        }
+        // Agrega la clase 'selected' al botón clickeado
+        event.currentTarget.classList.add('selected');
     }
-}
+
+    // Agrega el evento 'click' a todos los botones
+    buttons.forEach(function (button) {
+        button.addEventListener('click', onButtonClick);
+    });
+});
 
 // Selecciona todos los elementos con la clase .contacto
 const contactos = document.querySelectorAll('.contacto');

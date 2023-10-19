@@ -21,10 +21,8 @@
 }
 
 .text-area {
-   /* display: grid; */
     border-top: 1px solid #dfdfdf;
     position: fixed;
-    /* height: 78px; */
     bottom: 0px;
     width: 80vw;
 }
@@ -93,35 +91,3 @@
     outline: none;
     overflow: hidden;
 }
-
-
-/*
-.text-area textarea {
-    resize: none;
-    outline: none;
-    width: 100%;
-    line-height: 1.5;
-    height: 1.8em;
-    font-family: 'Golos Text', sans-serif;
-    padding: 0 5px;
-    overflow: auto;
-    max-height: calc(1.8em * 5);
-
-
-
-
-
-    resize: none; */
-    /* outline: none; */
-    /* width: 100%; */
-    /* line-height: 1.5; */
-    /* height: 1.8em; */
-    /* padding: 0 5px; */
-    /* overflow: auto; */
-    /* max-height: calc(1.8em * 5); */
-    /* max-height: 7.35em; */
-    /* min-height: 1.8em; */
-    /* user-select: text; */
-    /* white-space: pre-wrap; */
-    /* word-break: break-word;
-}*/

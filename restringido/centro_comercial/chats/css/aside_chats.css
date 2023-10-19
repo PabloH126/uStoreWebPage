@@ -29,6 +29,7 @@ aside .list {
     cursor: pointer;
 }
 
+.options_aside.selected,
 .options_aside:hover {
     background-color: white;
     color: #007096;

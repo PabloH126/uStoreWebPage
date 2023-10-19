@@ -90,6 +90,7 @@ contactos.forEach(contacto => {
         }
         else {
             console.log(contacto.dataset.gerenteId);
+            
         }
     })
 })
