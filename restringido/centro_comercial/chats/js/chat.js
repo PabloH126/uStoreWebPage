@@ -164,7 +164,7 @@ function createOutMsg(message, recievedDate) {
     outGoingChatsMsg.appendChild(timeSpan);
     outGoingMsg.appendChild(outGoingChatsMsg);
 
-    msgArea.appendChild(outGoingChatsMsg); 
+    msgArea.appendChild(outGoingMsg); 
 }
 
 function createOutMsgWithImage(image, recievedDate) {
@@ -189,7 +189,7 @@ function createOutMsgWithImage(image, recievedDate) {
     outGoingChatsMsg.appendChild(timeSpan);
     outGoingMsg.appendChild(outGoingChatsMsg);
 
-    msgArea.appendChild(outGoingChatsMsg);
+    msgArea.appendChild(outGoingMsg);
 }
 
 

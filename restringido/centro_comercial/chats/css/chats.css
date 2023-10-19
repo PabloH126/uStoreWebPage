@@ -38,7 +38,7 @@
     display: flex;
     border: 1pt solid #00000087;
     border-radius: 3px;
-    padding: 5px;
+    padding: 3px 5px;
 }
 
 .text-area div:nth-child(1) i:hover:before {
