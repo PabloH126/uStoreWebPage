@@ -152,6 +152,7 @@ require '../../security.php';
 			</div>
 		</div>
 	</div>
+	<?php var_dump($_SESSION); ?>
 	<script>
 		const idUser = "<?php echo $_SESSION['idUser'] ?>";
 		console.log("IdUser en php: ", idUser);
