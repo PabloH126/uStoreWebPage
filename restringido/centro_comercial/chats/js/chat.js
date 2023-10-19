@@ -78,7 +78,7 @@ sendBtn.addEventListener('click', async function(e) {
     }
     else
     {
-        createOutdMsg(message, formattedDateTime);
+        createOutMsg(message, formattedDateTime);
         isRecieved = true;
     }
     
