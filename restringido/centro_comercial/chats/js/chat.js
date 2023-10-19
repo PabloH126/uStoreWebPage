@@ -232,7 +232,7 @@ sendBtn.addEventListener('click', async function(e) {
 fileInput.addEventListener('change', async function () {
     if (await imagenesValidacion())
     {
-        if(gerenteId !== 0 && idChat === 0)
+        if(gerenteId !== 0 && chatId === 0)
         {
             console.log(gerenteId);
             let formData = new FormData();
