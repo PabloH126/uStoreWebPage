@@ -102,7 +102,7 @@ function createRecievedMsg(message, recievedDate) {
 
     let timeSpan = document.createElement('span');
     timeSpan.classList.add('time');
-    timeSpan.textContent(recievedDate);
+    timeSpan.textContent = recievedDate;
 
     recievedMsgInbox.appendChild(recievedBox);
     recievedMsgInbox.appendChild(timeSpan);
@@ -126,7 +126,7 @@ function createRecievedMsgWithImage(image, recievedDate) {
 
     let timeSpan = document.createElement('span');
     timeSpan.classList.add('time');
-    timeSpan.textContent(recievedDate);
+    timeSpan.textContent = recievedDate;
 
     recievedBox.appendChild(imgMessage);
     recievedMsgInbox.appendChild(recievedBox);
@@ -149,7 +149,7 @@ function createOutMsg(message, recievedDate) {
 
     let timeSpan = document.createElement('span');
     timeSpan.classList.add('time');
-    timeSpan.textContent(recievedDate);
+    timeSpan.textContent = recievedDate;
 
     outGoingChatsMsg.appendChild(outGoingBoxMsg);
     outGoingChatsMsg.appendChild(timeSpan);
@@ -173,7 +173,7 @@ function createOutMsgWithImage(image, recievedDate) {
 
     let timeSpan = document.createElement('span');
     timeSpan.classList.add('time');
-    timeSpan.textContent(recievedDate);
+    timeSpan.textContent = recievedDate;
 
     outGoingBoxMsg.appendChild(imgOutGoingMsg);
     outGoingChatsMsg.appendChild(outGoingBoxMsg);
