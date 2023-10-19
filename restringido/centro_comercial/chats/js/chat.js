@@ -62,7 +62,28 @@ contactos.forEach(contacto => {
                 let mensajes = responseChatData.message;
 
                 mensajes.forEach(mensaje => {
-                    if(mensaje.isRecieved !==)
+                    if(mensaje.isRecieved === true || mensaje.isRecieved === "true")
+                    {
+                        if(mensaje.isImage === true || mensaje.isImage === "true")
+                        {
+                            createRecievedMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+                        }
+                        else
+                        {
+                            createRecievedMsg(mensaje.contenido, mensaje.fechaMensaje);
+                        }
+                    }
+                    else
+                    {
+                        if(mensaje.isImage === true || mensaje.isImage === "true")
+                        {
+                            createOutMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+                        }
+                        else
+                        {
+                            createOutMsg(mensaje.contenido, mensaje.fechaMensaje);
+                        }
+                    }
                 })
             }
 
