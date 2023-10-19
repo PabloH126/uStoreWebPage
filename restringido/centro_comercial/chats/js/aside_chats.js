@@ -34,11 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
             textarea.style.height = (textarea.scrollHeight) + 'px'; // si hay de 2 a 6 líneas, ajusta la altura para mostrar todas las líneas
             content.style.height = (textarea.scrollHeight) + 'px'; // ajusta la altura del contenedor para igualar la del textarea
             textAreaContainer.style.height = 'auto'; // permite que el contenedor crezca con el textarea
+            textAreaContainer.style.padding = '10px';
         } else {
             textarea.style.overflowY = 'scroll'; // muestra el scroll si hay más de 6 líneas
             textarea.style.height = (lineHeight * maxLines) + 'px'; // limita la altura al número de líneas máximas
             content.style.height = (lineHeight * maxLines) + 'px'; // igual con el contenedor
             textAreaContainer.style.height = 'auto'; // permite que el contenedor crezca con el textarea
+            textAreaContainer.style.padding = '10px';
         }
     });
 });
