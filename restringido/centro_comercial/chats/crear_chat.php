@@ -10,7 +10,7 @@ if((!isset($_POST["idMiembro2"]) || $_POST["idMiembro2"] == "undefined") ||
    {
     $responseArray = [
         "status" => "error",
-        "message" => "Datos no establecidos"
+        "message" => "Datos necesarios no establecidos"
     ];
     echo json_encode($responseArray);
     exit;
@@ -27,7 +27,7 @@ if (isset($imagenMensaje))
     if(verificarImagen($imagenMensaje))
     {
         $data = [
-            'image' => curl_file_create($profileImage['tmp_name'], $profileImage['type'], $profileImage['name'])
+            'image' => curl_file_create($imagenMensaje['tmp_name'], $imagenMensaje['type'], $imagenMensaje['name'])
         ];
     }
     else
@@ -57,12 +57,34 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 
 if ($response === false) {
-    echo 'Error: ' . curl_error($ch);
+    $responseArray = [
+        "status" => "error",
+        "message" => 'Error: ' . curl_error($ch)
+    ];
+    echo json_encode($responseArray);
+    exit;
 } else {
     $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 }
 
+if ($httpStatusCode != 200)
+{
+    $responseArray = [
+        "status" => "error",
+        "message" => $httpStatusCode . ": " . $response
+    ];
+    echo json_encode($responseArray);
+    exit;
+}
+
 curl_close($ch);
+
+$responseArray = [
+    "status" => "success",
+    "message" => "Chat creado con éxito"
+];
+echo json_encode($responseArray);
+exit;
 
 function verificarImagen($imagen) {
     //Validación de imagenes

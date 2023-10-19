@@ -2,6 +2,8 @@ const msgArea = document.querySelector('.mssg-area');
 const textArea = document.getElementById('expanding_textarea');
 const fileInput = document.getElementById('add_file');
 const sendBtn = document.getElementById('submit_message');
+const idUser = "<?php echo $_SESSION['idUser']?>";
+console.log(idUser);
 let gerenteId = 0;
 let chatId = 0;
 const token = document.cookie
@@ -105,6 +107,15 @@ connection.on('NameGroup', function (nombre) {
 connection.on('ChatCreated', function (chat, mensaje) {
     console.log(chat);
     console.log(mensaje);
+
+    if(mensaje.isImage === true || mensaje.isImage === "true")
+    {
+        createOutMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+    }
+    else
+    {
+        createOutMsg(mensaje.contenido, fechaMensaje);
+    }
 });
 
 connection.on('RecieveMessage', function (mensaje) {
@@ -155,6 +166,27 @@ sendBtn.addEventListener('click', async function(e) {
     else
     {
         console.log(idChat);
+        let formData = new FormData();
+        formData.append('idChat', idChat);
+        formData.append("contenidoMensaje", message);
+        const responseCreacionMensaje = await fetch('crear_mensaje.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!responseCreacionMensaje.ok)
+        {
+            showNotificationError("Hubo un error al mandar la solicitud al servidor");
+            return;
+        }
+
+        const dataCreacionMensaje = responseCreacionMensaje.json();
+
+        if (dataCreacionMensaje.status !== "success")
+        {
+            showNotificationError(dataCreacionMensaje.message);
+            return;
+        }
     }
     
 });
