@@ -139,7 +139,7 @@ require '../../security.php';
 					</div>
 					
 					<div>
-						<div>
+						<div id="contentTextarea">
 							<textarea id="expanding_textarea"></textarea>
 						</div>
 					</div>

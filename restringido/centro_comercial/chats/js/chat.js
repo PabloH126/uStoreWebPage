@@ -36,7 +36,13 @@ if(contactos)
 
 contactos.forEach(contacto => {
     contacto.addEventListener('click', function () {
-        
+        if (contacto.dataset.chatId)
+        {
+            console.log(contacto.dataset.chatId);
+        }
+        else {
+            console.log(contacto.dataset.gerenteId);
+        }
     })
 })
 
@@ -71,6 +77,9 @@ fileInput.addEventListener('change', async function () {
     if (await imagenesValidacion())
     {
         const imagenURL = URL.createObjectURL(fileInput.files[0]);
+        function formatTwoDigits(n) {
+            return n < 10 ? '0' + n : n;
+        }
         // Crear un nuevo objeto de fecha (contendrá la fecha y hora actual)
         var now = new Date();
 
@@ -155,7 +164,7 @@ function createOutMsg(message, recievedDate) {
     outGoingChatsMsg.appendChild(timeSpan);
     outGoingMsg.appendChild(outGoingChatsMsg);
 
-    msgArea.appendChild(outGoingMsg); 
+    msgArea.appendChild(outGoingChatsMsg); 
 }
 
 function createOutMsgWithImage(image, recievedDate) {
@@ -230,7 +239,7 @@ async function imagenesValidacion() {
         showNotificationError(`La imagen no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
         return false;
     }
-    else if (imagenInput.files.length && !validacionSizeImagen(fileInput, maxSize))
+    else if (fileInput.files.length && !validacionSizeImagen(fileInput, maxSize))
     {
         showNotificationError(`La imagen es demasiado pesada, por favor sube una imagen que pese máximo 1 megabyte`);
         return false;
