@@ -2,7 +2,7 @@ const msgArea = document.querySelector('.mssg-area');
 const textArea = document.getElementById('expanding_textarea');
 const fileInput = document.getElementById('add_file');
 const sendBtn = document.getElementById('submit_message');
-const idUser = "<?php echo $_SESSION['idUser']?>";
+
 console.log(idUser);
 let gerenteId = 0;
 let chatId = 0;
