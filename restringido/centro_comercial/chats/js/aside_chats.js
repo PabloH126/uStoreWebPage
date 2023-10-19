@@ -16,6 +16,7 @@ contactos.forEach(contacto => {
 
 // Espera a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', function() {
+    /*
     var content = document.getElementById('contentTextarea');
     var textarea = document.getElementById('expanding_textarea');
 
@@ -31,5 +32,18 @@ document.addEventListener('DOMContentLoaded', function() {
         content.style.height = (this.scrollHeight) + 'px';
       }
     });
+    */
+    const textarea = document.getElementById('myTextarea');
+    const content = textarea.value;
+    const lines = content.split('\n');
+    let count = 0;
+
+    lines.forEach(line => {
+      if (line.trim() !== '') {
+        count++;
+      }
+    });
+
+    console.log('El número de líneas con contenido es: ' + count);
   });
   
