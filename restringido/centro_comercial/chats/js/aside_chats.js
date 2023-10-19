@@ -16,15 +16,17 @@ contactos.forEach(contacto => {
 
 // Espera a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', function() {
+    var content = document.getElementById('contentTextarea');
     var textarea = document.getElementById('expanding_textarea');
+
     textarea.addEventListener('input', function() {
       // Resetea el campo de altura en caso de que se reduzca
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
       if(this.scrollHeight < 30){
-        this.style.height = '100%';
+        content.style.height = '100%';
       }else{
-        this.style.height = (this.scrollHeight) + 'px';
+        content.style.height = (this.scrollHeight) + 'px';
       }
     });
   });
