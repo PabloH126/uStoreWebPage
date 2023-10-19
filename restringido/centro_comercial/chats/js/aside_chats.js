@@ -18,7 +18,6 @@ contactos.forEach(contacto => {
 document.addEventListener('DOMContentLoaded', function() {
     
     var content = document.getElementById('contentTextarea');
-    var textarea = document.getElementById('expanding_textarea');
 /*/
     textarea.addEventListener('input', function() {
       // Resetea el campo de altura en caso de que se reduzca
