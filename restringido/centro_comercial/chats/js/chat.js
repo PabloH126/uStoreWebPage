@@ -110,16 +110,54 @@ connection.on('ChatCreated', function (chat, mensaje) {
 
     if(mensaje.isImage === true || mensaje.isImage === "true")
     {
-        createOutMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+        if (idUser == mensaje.idRemitente)
+        {
+            createOutMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+        }
+        else
+        {
+            createRecievedMsgWithImage(mensaje.contenido, mensaje.fechaMensaje)
+        }
+        
     }
     else
     {
-        createOutMsg(mensaje.contenido, fechaMensaje);
+        if (idUser == mensaje.idRemitente)
+        {
+            createOutMsg(mensaje.contenido, fechaMensaje);
+        }
+        else
+        {
+            createRecievedMsg(mensaje.contenido, fechaMensaje);
+        } 
     }
 });
 
 connection.on('RecieveMessage', function (mensaje) {
     console.log(mensaje);
+    if(mensaje.isImage === true || mensaje.isImage === "true")
+    {
+        if (idUser == mensaje.idRemitente)
+        {
+            createOutMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+        }
+        else
+        {
+            createRecievedMsgWithImage(mensaje.contenido, mensaje.fechaMensaje)
+        }
+        
+    }
+    else
+    {
+        if (idUser == mensaje.idRemitente)
+        {
+            createOutMsg(mensaje.contenido, fechaMensaje);
+        }
+        else
+        {
+            createRecievedMsg(mensaje.contenido, fechaMensaje);
+        } 
+    }
 })
 
 
