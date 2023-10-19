@@ -2,16 +2,16 @@
   <ul class="list">
     <div class="header_aside">
       <div class="aside_options_chat">
-          <button class="options_aside">Usuarios</button>
+          <button class="options_aside" id="usuariosBtn">Usuarios</button>
         <hr>
         <?php
 			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
 			{
-        echo '<button class="options_aside">Gerentes</button>';
+        echo '<button class="options_aside" id="gerentesBtn">Gerentes</button>';
 			}
 			else
 			{
-        echo '<button class="options_aside">Administrador</button>';
+        echo '<button class="options_aside" id="adminBtn">Administrador</button>';
       }?>
       </div>
 

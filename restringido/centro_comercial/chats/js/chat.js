@@ -50,7 +50,21 @@ contactos.forEach(contacto => {
                 return;
             }
 
-            
+            let responseChatData = await responseChat.json();
+
+            if(responseChatData.status !== "success")
+            {
+                showNotificationError(responseChatData.message);
+                return;
+            }
+            else
+            {
+                let mensajes = responseChatData.message;
+
+                mensajes.forEach(mensaje => {
+                    if(mensaje.isRecieved !==)
+                })
+            }
 
         }
         else {

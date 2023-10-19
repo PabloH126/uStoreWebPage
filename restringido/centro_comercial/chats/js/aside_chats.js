@@ -1,3 +1,24 @@
+function highlightButton(id) {
+    // Lista de todos los IDs de los botones
+    const allButtonIds = ['usuariosBtn', 'gerentesBtn', 'adminBtn'];
+
+    // Recorre la lista de IDs de botones
+    for (const buttonId of allButtonIds) {
+        const button = document.getElementById(buttonId);
+
+        // Si el botón existe, cambia su color de fondo según si es el seleccionado o no
+        if (button) {
+            if (buttonId === id) {
+                button.style.backgroundColor = 'white'; // El seleccionado se pone blanco
+                button.style.color = '#007096'; // El seleccionado se pone blanco
+            } else {
+                button.style.backgroundColor = '#007096'; // Los demás regresan a su color original
+                button.style.color = 'white';
+            }
+        }
+    }
+}
+
 // Selecciona todos los elementos con la clase .contacto
 const contactos = document.querySelectorAll('.contacto');
 
