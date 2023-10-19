@@ -1,4 +1,5 @@
-const msgArea = document.querySelector('.mssg-area');
+const msgOutArea = document.querySelector('.mssg-out-area');
+const msgRecievedArea = document.querySelector('.mssg-recieved-area');
 const textArea = document.getElementById('expanding_textarea');
 const fileInput = document.getElementById('add_file');
 const sendBtn = document.getElementById('submit_message');
@@ -117,7 +118,7 @@ function createRecievedMsg(message, recievedDate) {
     recievedMsgInbox.appendChild(timeSpan);
     divRecieved.appendChild(recievedMsgInbox);
 
-    msgArea.appendChild(divRecieved);
+    msgRecievedArea.appendChild(divRecieved);
 }
 
 function createRecievedMsgWithImage(image, recievedDate) {
@@ -142,7 +143,7 @@ function createRecievedMsgWithImage(image, recievedDate) {
     recievedMsgInbox.appendChild(timeSpan);
     divRecieved.appendChild(recievedMsgInbox);
 
-    msgArea.appendChild(divRecieved);
+    msgRecievedArea.appendChild(divRecieved);
 }
 
 function createOutMsg(message, recievedDate) {
@@ -164,7 +165,7 @@ function createOutMsg(message, recievedDate) {
     outGoingChatsMsg.appendChild(timeSpan);
     outGoingMsg.appendChild(outGoingChatsMsg);
 
-    msgArea.appendChild(outGoingMsg); 
+    msgOutArea.appendChild(outGoingMsg); 
 }
 
 function createOutMsgWithImage(image, recievedDate) {
@@ -189,7 +190,7 @@ function createOutMsgWithImage(image, recievedDate) {
     outGoingChatsMsg.appendChild(timeSpan);
     outGoingMsg.appendChild(outGoingChatsMsg);
 
-    msgArea.appendChild(outGoingMsg);
+    msgOutArea.appendChild(outGoingMsg);
 }
 
 

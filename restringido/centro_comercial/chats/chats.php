@@ -95,6 +95,12 @@ require '../../security.php';
         <?php require("templates/template.aside_chats.php") ?>
 		<div class="chat-area">
 			<div class="mssg-area">
+				<div class="mssg-recieved-area">
+						
+				</div>
+				<div class="mssg-out-area">
+
+				</div>
 				<!--
 				<div class="received-msg">
 					<div class="received-msg-inbox">
