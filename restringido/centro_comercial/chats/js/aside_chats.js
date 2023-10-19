@@ -17,7 +17,8 @@ contactos.forEach(contacto => {
 // Espera a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', function() {
     
-    var content = document.getElementById('contentTextarea');
+   /* var content = document.getElementById('contentTextarea');
+    var textarea = document.getElementById('expanding_textarea');*/
 /*/
     textarea.addEventListener('input', function() {
       // Resetea el campo de altura en caso de que se reduzca
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     */
-    var textarea = document.getElementById('expanding_textarea');
+    const textarea = document.getElementById('expanding_textarea');
     const content = textarea.value;
     const lines = content.split('\n');
     let count = 0;
