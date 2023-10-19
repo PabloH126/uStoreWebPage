@@ -153,7 +153,7 @@ require '../../security.php';
 		</div>
 	</div>
 	<script>
-		const idUser = <?php echo $_SESSION['idUser']?>;
+		const idUser = <?php echo $_SESSION['idUser']; ?>
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.10/signalr.min.js"></script>
 	<script src="js/aside_chats.js"></script>
