@@ -39,10 +39,12 @@ contactos.forEach(contacto => {
             console.log(contacto.dataset.chatId);
             let formData = new FormData();
             formData.append("idChat", contacto.dataset.chatId);
-            await fetch('actualizar_chat.php', {
+            const await fetch('actualizar_chat.php', {
                 method: 'POST',
                 body: formData
             })
+            .then;
+
         }
         else {
             console.log(contacto.dataset.gerenteId);
