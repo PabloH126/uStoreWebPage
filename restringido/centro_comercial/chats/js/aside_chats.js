@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
       if(this.scrollHeight < 30){
-        content.style.height = '100%';
+        content.style.height = '60%';
       }else{
         content.style.height = (this.scrollHeight) + 'px';
       }
