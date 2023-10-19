@@ -39,11 +39,18 @@ contactos.forEach(contacto => {
             console.log(contacto.dataset.chatId);
             let formData = new FormData();
             formData.append("idChat", contacto.dataset.chatId);
-            const await fetch('actualizar_chat.php', {
+            const responseChat = await fetch('actualizar_chat.php', {
                 method: 'POST',
                 body: formData
             })
-            .then;
+            
+            if(!responseChat.ok)
+            {
+                showNotificationError("Hubo un error al mandar la solicitud al servidor");
+                return;
+            }
+
+            
 
         }
         else {

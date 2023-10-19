@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         textarea.style.height = 'auto';
         textAreaContainer.style.padding = '0px';
         textarea.style.height = '0px';
-        content.style.height = '0px';
+        content.style.height = '60%';
 
         var numberOfLines = textarea.scrollHeight / lineHeight;
 
