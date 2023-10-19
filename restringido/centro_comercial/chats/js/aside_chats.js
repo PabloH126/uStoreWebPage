@@ -17,7 +17,6 @@ contactos.forEach(contacto => {
 // Espera a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', function() {
     var textarea = document.getElementById('expanding_textarea');
-    console.log("entro :c");
     textarea.addEventListener('input', function() {
       // Resetea el campo de altura en caso de que se reduzca
       this.style.height = 'auto';

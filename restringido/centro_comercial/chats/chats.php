@@ -95,7 +95,7 @@ require '../../security.php';
         <?php require("templates/template.aside_chats.php") ?>
 		<div class="chat-area">
 			<div class="mssg-area">
-
+				<!--
 				<div class="received-msg">
 					<div class="received-msg-inbox">
 						<p class="recived-box-msg">Hi !! This is message from Riya . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quas nemo eum, earum sunt, nobis similique quisquam eveniet pariatur commodi modi voluptatibus iusto omnis harum illumiste distinctio expedita illo!</p>
@@ -129,7 +129,7 @@ require '../../security.php';
 						<span class="time">18:30 PM | July 24 </span>
 					</div>
 				</div>
-
+				-->
 			</div>
 			<div class="text-area">
 				<form action="">
@@ -139,7 +139,9 @@ require '../../security.php';
 					</div>
 					
 					<div>
-						<textarea id="expanding_textarea"></textarea>
+						<div>
+							<textarea id="expanding_textarea"></textarea>
+						</div>
 					</div>
 
 					<div>
