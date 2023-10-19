@@ -152,9 +152,9 @@ require '../../security.php';
 			</div>
 		</div>
 	</div>
-	<?php var_dump($_SESSION); ?>
+	<?php $idUser = $_SESSION['idUser']; ?>
 	<script>
-		const idUser = "<?php echo $_SESSION['idUser']; ?>";
+		const idUser = "<?php echo $idUser ?>";
 		console.log("IdUser en php: ", idUser);
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.10/signalr.min.js"></script>
