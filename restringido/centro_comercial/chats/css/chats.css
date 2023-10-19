@@ -15,6 +15,7 @@
     color: #007096;
 }
 
+#submit_message,
 .chat-area input {
     display: none;
 }

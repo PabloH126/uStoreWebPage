@@ -144,7 +144,7 @@ require '../../security.php';
 
 					<div>
 						<label for="submit_message"><i class='bx bx-send bx-flip-vertical'></i></label>
-						<input type="submit" id="submit_message">
+						<button type="submit" id="submit_message">
 					</div>
 				</form>
 			</div>

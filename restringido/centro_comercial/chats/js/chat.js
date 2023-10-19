@@ -1,4 +1,3 @@
-let divsContacto = document.querySelectorAll('.contacto');
 
 const token = document.cookie
     .split("; ")
@@ -13,7 +12,7 @@ const connection = new signalR.HubConnectionBuilder()
     .build();
 
 
-if(divsContacto)
+if(contactos)
 {
     divsContacto.forEach(chat => {
         let idChat = chat.querySelector('.idchat');
