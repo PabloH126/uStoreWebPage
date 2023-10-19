@@ -15,7 +15,12 @@
 }
 
 .received-msg {
-    display: inline-block;
+    display: block;
+    width: 100%;
+}
+
+.outgoing-msg {
+    display: block;
     width: 100%;
 }
 

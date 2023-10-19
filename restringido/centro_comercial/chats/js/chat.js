@@ -55,6 +55,7 @@ connection.on('NameGroup', function (nombre) {
 sendBtn.addEventListener('click', async function(e) {
     e.preventDefault();
     let message = textArea.value;
+    if (message === "") return;
     function formatTwoDigits(n) {
         return n < 10 ? '0' + n : n;
     }

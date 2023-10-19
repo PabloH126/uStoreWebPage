@@ -21,8 +21,12 @@
 }
 
 .text-area {
-    display: grid;
+    /*display: grid;*/
     border-top: 1px solid #dfdfdf;
+
+    position: sticky;
+    /* height: 78px; */
+    bottom: 1px;
 }
 
 .text-area div:nth-child(2) {
