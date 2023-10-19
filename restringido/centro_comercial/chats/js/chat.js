@@ -189,7 +189,7 @@ function createOutMsgWithImage(image, recievedDate) {
     outGoingChatsMsg.appendChild(timeSpan);
     outGoingMsg.appendChild(outGoingChatsMsg);
 
-    msgArea.appendChild(outGoingMsg);
+    msgArea.appendChild(outGoingChatsMsg);
 }
 
 
