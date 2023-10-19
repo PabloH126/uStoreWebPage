@@ -138,14 +138,14 @@ function createRecievedMsgWithImage(image, recievedDate) {
 
 function createOutMsg(message, recievedDate) {
     let outGoingMsg = document.createElement('div');
-    divRecieved.classList.add('outgoing-msg');
+    outGoingMsg.classList.add('outgoing-msg');
 
     let outGoingChatsMsg = document.createElement('div');
-    recievedMsgInbox.classList.add('outgoing-chats-msg');
+    outGoingChatsMsg.classList.add('outgoing-chats-msg');
 
     let outGoingBoxMsg = document.createElement('p');
-    recievedBox.classList.add('outgoing-box-msg');
-    recievedBox.textContent = message;
+    outGoingBoxMsg.classList.add('outgoing-box-msg');
+    outGoingBoxMsg.textContent = message;
 
     let timeSpan = document.createElement('span');
     timeSpan.classList.add('time');
@@ -160,13 +160,13 @@ function createOutMsg(message, recievedDate) {
 
 function createOutMsgWithImage(image, recievedDate) {
     let outGoingMsg = document.createElement('div');
-    divRecieved.classList.add('outgoing-msg');
+    outGoingMsg.classList.add('outgoing-msg');
 
     let outGoingChatsMsg = document.createElement('div');
-    recievedMsgInbox.classList.add('outgoing-chats-msg');
+    outGoingChatsMsg.classList.add('outgoing-chats-msg');
 
     let outGoingBoxMsg = document.createElement('div');
-    recievedBox.classList.add('outgoing-box-msg');
+    outGoingBoxMsg.classList.add('outgoing-box-msg');
 
     let imgOutGoingMsg = document.createElement('img');
     imgOutGoingMsg.src = image;
