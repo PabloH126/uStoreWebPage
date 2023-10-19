@@ -3,7 +3,7 @@ const msgRecievedArea = document.querySelector('.mssg-recieved-area');
 const textArea = document.getElementById('expanding_textarea');
 const fileInput = document.getElementById('add_file');
 const sendBtn = document.getElementById('submit_message');
-
+let isRecieved = false;
 const token = document.cookie
     .split("; ")
     .find(p => p.startsWith("SessionToken="))
@@ -72,7 +72,16 @@ sendBtn.addEventListener('click', async function(e) {
     // Formatear la fecha y hora en el formato deseado "HH:MM | mes dia"
     var formattedDateTime = hours + ':' + minutes + ' | ' + month + ' ' + day;
     textArea.value = "";
-    createOutMsg(message, formattedDateTime);
+    if(isRecieved)
+    {
+        createOutMsg(message, formattedDateTime);
+        isRecieved = false;
+    }
+    else
+    {
+        createRecievedMsg(message, formattedDateTime);
+    }
+    
 })
 
 fileInput.addEventListener('change', async function () {
