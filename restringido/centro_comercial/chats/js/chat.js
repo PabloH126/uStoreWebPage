@@ -2,6 +2,8 @@ const msgArea = document.querySelector('.mssg-area');
 const textArea = document.getElementById('expanding_textarea');
 const fileInput = document.getElementById('add_file');
 const sendBtn = document.getElementById('submit_message');
+let gerenteId = 0;
+let chatId = 0;
 const token = document.cookie
     .split("; ")
     .find(p => p.startsWith("SessionToken="))
@@ -36,7 +38,8 @@ contactos.forEach(contacto => {
     contacto.addEventListener('click', async function () {
         if (contacto.dataset.chatId)
         {
-            console.log(contacto.dataset.chatId);
+            chatId = contacto.dataset.chatId
+            console.log(chatId);
             let formData = new FormData();
             formData.append("idChat", contacto.dataset.chatId);
             const responseChat = await fetch('actualizar_chat.php', {
@@ -89,69 +92,116 @@ contactos.forEach(contacto => {
 
         }
         else {
-            console.log(contacto.dataset.gerenteId);
-            
+            gerenteId = contacto.dataset.gerenteId;
+            console.log(gerenteId);
         }
     })
 })
 
 connection.on('NameGroup', function (nombre) {
     console.log(nombre);
+});
+
+connection.on('ChatCreated', function (chat, mensaje) {
+    console.log(chat);
+    console.log(mensaje);
+});
+
+connection.on('RecieveMessage', function (mensaje) {
+    console.log(mensaje);
 })
 
 
 sendBtn.addEventListener('click', async function(e) {
     e.preventDefault();
     let message = textArea.value;
-    if (message === "") return;
-    function formatTwoDigits(n) {
-        return n < 10 ? '0' + n : n;
-    }
-    
-    // Crear un nuevo objeto de fecha (contendrá la fecha y hora actual)
-    var now = new Date();
-    
-    // Obtener horas, minutos, mes y día
-    var hours = formatTwoDigits(now.getHours());
-    var minutes = formatTwoDigits(now.getMinutes());
-    var month = now.toLocaleString('default', { month: 'long' }); // Nombre completo del mes en el idioma local
-    var day = now.getDate();
-    
-    // Formatear la fecha y hora en el formato deseado "HH:MM | mes dia"
-    var formattedDateTime = hours + ':' + minutes + ' | ' + month + ' ' + day;
-    textArea.value = "";
-    if(isRecieved)
+    if(gerenteId !== 0 && idChat === 0)
     {
-        createOutMsg(message, formattedDateTime);
-        isRecieved = false;
+        console.log(gerenteId);
+        let formData = new FormData();
+        formData.append("idMiembro2", contacto.dataset.gerenteId);
+        formData.append("typeMiembro2", "Gerente");
+        formData.append("contenidoMensaje", message);
+        formData.append("imagen", fileInput.files[0]);
+        const responseCreacionChat = await fetch('crear_chat.php', {
+            method: 'POST',
+            body: formData
+        });
+    
+        if (!responseCreacionChat.ok)
+        {
+            showNotificationError('Hubo un error al mandar la solicitud al servidor');
+            return;
+        }
+    
+        const dataCreacionChat = responseCreacionChat.json();
+    
+        if (dataCreacionChat.status !== "success")
+        {
+            showNotificationError(dataCreacionChat.message);
+            return;
+        }
+        else
+        {
+            connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
+            .then(() => {
+                console.log("Unido al chat: ", dataCreacionChat.idChat);
+            })
+            .catch(err => {
+                console.error("Hubo un problema al unirse al chat: ", err);
+            });
+        }
     }
     else
     {
-        createOutMsg(message, formattedDateTime);
-        isRecieved = true;
+        console.log(idChat);
     }
     
-})
+});
 
 fileInput.addEventListener('change', async function () {
     if (await imagenesValidacion())
     {
-        const imagenURL = URL.createObjectURL(fileInput.files[0]);
-        function formatTwoDigits(n) {
-            return n < 10 ? '0' + n : n;
+        if(gerenteId !== 0 && idChat === 0)
+        {
+            console.log(gerenteId);
+            let formData = new FormData();
+            formData.append("idMiembro2", contacto.dataset.gerenteId);
+            formData.append("typeMiembro2", "Gerente");
+            formData.append("imagen", fileInput.files[0]);
+            const responseCreacionChat = await fetch('crear_chat.php', {
+                method: 'POST',
+                body: formData
+            });
+        
+            if (!responseCreacionChat.ok)
+            {
+                showNotificationError('Hubo un error al mandar la solicitud al servidor');
+                return;
+            }
+        
+            const dataCreacionChat = responseCreacionChat.json();
+        
+            if (dataCreacionChat.status !== "success")
+            {
+                showNotificationError(dataCreacionChat.message);
+                return;
+            }
+            else
+            {
+                connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
+                .then(() => {
+                    console.log("Unido al chat: ", dataCreacionChat.idChat);
+                })
+                .catch(err => {
+                    console.error("Hubo un problema al unirse al chat: ", err);
+                });
+            }
         }
-        // Crear un nuevo objeto de fecha (contendrá la fecha y hora actual)
-        var now = new Date();
-
-        // Obtener horas, minutos, mes y día
-        var hours = formatTwoDigits(now.getHours());
-        var minutes = formatTwoDigits(now.getMinutes());
-        var month = now.toLocaleString('default', { month: 'long' }); // Nombre completo del mes en el idioma local
-        var day = now.getDate();
-
-        // Formatear la fecha y hora en el formato deseado "HH:MM | mes dia"
-        var formattedDateTime = hours + ':' + minutes + ' | ' + month + ' ' + day;
-        createOutMsgWithImage(imagenURL, formattedDateTime);
+        else
+        {
+            console.log(idChat);
+        }
     }
 
     fileInput.value = "";
