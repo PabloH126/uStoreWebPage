@@ -2,13 +2,11 @@ const msgArea = document.querySelector('.mssg-area');
 const textArea = document.getElementById('expanding_textarea');
 const fileInput = document.getElementById('add_file');
 const sendBtn = document.getElementById('submit_message');
-let isRecieved = false;
 const token = document.cookie
     .split("; ")
     .find(p => p.startsWith("SessionToken="))
     ?.split("=")[1];
 
-console.log(token);
 const connection = new signalR.HubConnectionBuilder()
     .withUrl('https://ustoreapi.azurewebsites.net/chatHub', {
         accessTokenFactory: () => token
@@ -39,6 +37,9 @@ contactos.forEach(contacto => {
         if (contacto.dataset.chatId)
         {
             console.log(contacto.dataset.chatId);
+            await fetch('actualizar_chat.php', {
+                
+            })
         }
         else {
             console.log(contacto.dataset.gerenteId);
