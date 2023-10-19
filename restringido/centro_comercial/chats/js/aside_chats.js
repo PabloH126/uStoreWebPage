@@ -14,25 +14,31 @@ contactos.forEach(contacto => {
 });
 
 
-// Espera a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', function() {
     
     var content = document.getElementById('contentTextarea');
     var textarea = document.getElementById('expanding_textarea');
+    var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
+    var lineHeight = 24; // altura aproximada de una línea de texto, depende del tamaño de tu fuente y el diseño, es necesario ajustarlo adecuadamente
+    var maxLines = 5; // número máximo de líneas antes de mostrar el scroll
 
     textarea.addEventListener('input', function() {
-      // Resetea el campo de altura en caso de que se reduzca
-      this.style.height = 'auto';
-      content.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
+        // Resetea el campo de altura en caso de que se reduzca
+        textarea.style.height = 'auto';
 
-      if(this.scrollHeight < 30){
-        content.style.height = '60%';
-      }else{
-        content.style.height = (this.scrollHeight) + 'px';
-      }
+        var numberOfLines = textarea.scrollHeight / lineHeight;
+
+        if (numberOfLines <= 1) {
+            textarea.style.height = '100%'; // si solo hay una línea, el textarea toma el 100% de la altura
+        } else if (numberOfLines <= maxLines) {
+            textarea.style.height = (textarea.scrollHeight) + 'px'; // si hay de 2 a 6 líneas, ajusta la altura para mostrar todas las líneas
+            content.style.height = (textarea.scrollHeight) + 'px'; // ajusta la altura del contenedor para igualar la del textarea
+            textAreaContainer.style.height = 'auto'; // permite que el contenedor crezca con el textarea
+        } else {
+            textarea.style.overflowY = 'scroll'; // muestra el scroll si hay más de 6 líneas
+            textarea.style.height = (lineHeight * maxLines) + 'px'; // limita la altura al número de líneas máximas
+            content.style.height = (lineHeight * maxLines) + 'px'; // igual con el contenedor
+            textAreaContainer.style.height = 'auto'; // permite que el contenedor crezca con el textarea
+        }
     });
-    
-
-  });
-  
+});

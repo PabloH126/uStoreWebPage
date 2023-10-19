@@ -33,12 +33,12 @@ if(contactos)
 }
 
 contactos.forEach(contacto => {
-    contacto.addEventListener('click', function () {
+    contacto.addEventListener('click', async function () {
         if (contacto.dataset.chatId)
         {
             console.log(contacto.dataset.chatId);
             await fetch('actualizar_chat.php', {
-                
+
             })
         }
         else {
