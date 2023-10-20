@@ -203,9 +203,9 @@ sendBtn.addEventListener('click', async function(e) {
     }
     else
     {
-        console.log(idChat);
+        console.log(chatId);
         let formData = new FormData();
-        formData.append('idChat', idChat);
+        formData.append('idChat', chatId);
         formData.append("contenidoMensaje", message);
         const responseCreacionMensaje = await fetch('crear_mensaje.php', {
             method: 'POST',
