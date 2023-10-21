@@ -25,6 +25,7 @@
     position: fixed;
     bottom: 0px;
     width: 80vw;
+    display: none;
 }
 
 .text-area div:nth-child(2) {
