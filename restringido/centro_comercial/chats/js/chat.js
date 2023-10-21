@@ -255,6 +255,14 @@ if (contactos) {
             }
         }
     })
+
+    connection.onclose((error) => {
+        if (error) {
+            console.error('La conexión se cerró inesperadamente:', error);
+        } else {
+            console.log('Conexión cerrada por el cliente.');
+        }
+    });
 }
 
 function createRecievedMsg(message, recievedDate) {
