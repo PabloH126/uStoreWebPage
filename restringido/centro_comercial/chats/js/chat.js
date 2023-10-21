@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                                         .then(() => {
                                             console.log("Unido al chat: ", dataCreacionChat.idChat);
                                             chatId = dataCreacionChat.idChat;
+                                            
                                         })
                                         .catch(err => {
                                             console.error("Hubo un problema al unirse al chat: ", err);
@@ -485,6 +486,9 @@ function formatearFecha(fecha) {
     return fechaFormateada;
 }
 
-function moverChatPrincipio() {
-    
+function moverChatPrincipio(element) {
+    const listaContactos = element.parentNode;
+
+    listaContactos.removeChild(element);
+    listaContactos.insertBefore(element, listaContactos.firstChild);
 }
