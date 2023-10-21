@@ -51,11 +51,11 @@
 		$numeroSolicitudes = json_decode($response, true);
 		curl_close($ch);
 
-	}else if (isset($_GET['id']) || isset($_SESSION['idTiendaGerente']))   // si el de gerente entra  aeste, si es is poner get id si es gerente poner idgerente
+	}else if (isset($_GET['id']) || isset($_SESSION['idTiendaGerente'])) 
 	{
 		$ch = curl_init();
-		$url = 
-		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $_GET['id']);
+		$url = isset($_GET['id']) ? $_GET['id'] : $_SESSION['idTiendaGerente'];
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $url);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -174,15 +174,15 @@
 			
 		</div>
 		<?php
-			if (!isset($_GET['id']))
+			if (!isset($_GET['id']) && (isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador"))
 			{
-		?>
-		<div>
-			<span id="span-seleccion-tienda">Seleccione una tienda</span>
-		</div>
-		<?php
+			?>
+				<div>
+					<span id="span-seleccion-tienda">Seleccione una tienda</span>
+				</div>
+			<?php
 			}
-			else
+			else 
 			{
 		?>
 		<div>
