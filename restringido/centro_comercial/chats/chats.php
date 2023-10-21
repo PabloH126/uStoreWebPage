@@ -94,11 +94,16 @@ require '../../security.php';
 	<div class="content">
         <?php require("templates/template.aside_chats.php") ?>
 		<div class="chat-area">
+			<?php
+			if(!$chat['idChat']){
+			?>
 			<div class="mssg-area">
 				<div>
 					<span id="span-seleccion-tienda">Seleccione un chat</span>
 				</div>
 			</div>
+			<?php } ?>
+			
 			<div class="text-area">
 				<form action="">
 					<div>
