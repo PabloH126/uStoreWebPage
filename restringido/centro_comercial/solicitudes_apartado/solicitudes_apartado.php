@@ -84,7 +84,6 @@
 		$solicitudes = json_decode($response, true);
 		curl_close($ch);
 	}
-	echo $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
