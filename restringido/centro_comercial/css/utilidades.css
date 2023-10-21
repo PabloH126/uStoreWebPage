@@ -109,6 +109,11 @@ i.bx.bx-store-alt {
     align-items: center;
 }
 
+.menu-option a{
+    width: 100%;
+    text-align: justify;
+}
+
 #sub-menu2 .menu-option {
     justify-content: center;
 }
