@@ -50,7 +50,6 @@
 		}
 		$numeroSolicitudes = json_decode($response, true);
 		curl_close($ch);
-
 	}
 
 	isset($_SESSION['idTiendaGerente']) ? ($_GET['id'] = $_SESSION['idTiendaGerente']) : '';

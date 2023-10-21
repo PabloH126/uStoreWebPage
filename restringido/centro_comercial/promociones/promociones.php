@@ -74,22 +74,32 @@ if (isset($_GET['id']))
 	<div class="content">
 		<div class="title-options">
 			<div id="content-menu-icon">
-
-				<?php require("../templates/template.background_animated.php") ?>
-				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
-			</div>
-
-			<div id="sub-menu">
-				<?php foreach ($tiendas as $tienda)
-				{
-					echo '
-					<div class="menu-option '. (isset($_GET['id']) && $_GET['id'] == $tienda['idTienda'] ? 'menuIconSelected' : '') .'">
-						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/promociones/promociones.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
-					</div>
-					';
-				};
+				<?php 
+				if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+				{	?>
+					<?php require("../templates/template.background_animated.php") ?>
+					<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
+				<?php 
+				} 
 				?>
 			</div>
+
+			<?php 
+			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+			{	?>
+				<div id="sub-menu">
+					<?php foreach ($tiendas as $tienda)
+					{
+						echo '
+						<div class="menu-option '. (isset($_GET['id']) && $_GET['id'] == $tienda['idTienda'] ? 'menuIconSelected' : '') .'">
+							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/promociones/promociones.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
+						</div>
+						';
+					};
+					?>
+				</div>
+			<?php 
+			} ?>
 			<h1>Publicaciones de tienda</h1>
 		</div>
 		<?php
