@@ -489,7 +489,7 @@ function actualizarContacto(message, gerenteId, chatId) {
     else {
         contactoGerente = document.querySelector(`[data-chat-id="${chatId}"]`);
     }
-    let mensajeContacto = contactoGerente.querySelector('message_preview');
+    let mensajeContacto = contactoGerente.querySelector('.message_preview');
     mensajeContacto.textContent = message;
     console.log(mensajeContacto);
     console.log(contactoGerente);
