@@ -51,7 +51,7 @@
 		$numeroSolicitudes = json_decode($response, true);
 		curl_close($ch);
 
-	}else if (isset($_GET['id']) )   // si el de gerente entra  aeste, si es is poner get id si es gerente poner idgerente
+	}else if (isset($_GET['id']) || isset($_SESSION['idTiendaGerente']))   // si el de gerente entra  aeste, si es is poner get id si es gerente poner idgerente
 	{
 		$ch = curl_init();
 		$url = 
@@ -99,7 +99,7 @@
 
 	<div class="content">
 		<div class="title-options">
-		
+		<>
 			<div id="content-menu-icon">
 				<?php require("../templates/template.background_animated.php") ?>
 				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
