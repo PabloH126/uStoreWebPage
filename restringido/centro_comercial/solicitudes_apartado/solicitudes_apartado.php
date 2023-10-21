@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	require '../../security.php';
-
+//
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
@@ -25,7 +25,6 @@
 	$tiendas = json_decode($response, true);
 	curl_close($ch);
 
-
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetNumeroSolicitudes");
@@ -48,11 +47,12 @@
 	}
 	$numeroSolicitudes = json_decode($response, true);
 	curl_close($ch);
+//
 
-	if (isset($_GET['id']))
+	if (isset($_GET['id'])) // si el de gerente entra  aeste, si es is poner get id si es gerente poner idgerente
 	{
 		$ch = curl_init();
-
+		$url = 
 		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $_GET['id']);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -78,6 +78,9 @@
 		$solicitudes = json_decode($response, true);
 		curl_close($ch);
 	}
+
+	//cualquiera pero especificando id de tienda //httpStatusCode 401 no autirizado //400 bad request es del objeto// 404 no se econtro 
+	//500 culpa de pablito 409 conflicto culpa de pablito tambien 
 	
 ?>
 <!DOCTYPE html>
@@ -132,7 +135,6 @@
 					echo '<p class="notifications_store numero_solicitudes_tienda" ' . ($numeroSolicitud == 0 ? 'style="display: none"' : '') . '>' . $numeroSolicitud . '</p>';
 					
 					echo '</div>';
-
 				};
 				?>
 			</div>
