@@ -95,46 +95,9 @@ require '../../security.php';
         <?php require("templates/template.aside_chats.php") ?>
 		<div class="chat-area">
 			<div class="mssg-area">
-
 				<div>
 					<span id="span-seleccion-tienda">Seleccione un chat</span>
 				</div>
-
-				<!--
-				<div class="received-msg">
-					<div class="received-msg-inbox">
-						<p class="recived-box-msg">Hi !! This is message from Riya . Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non quas nemo eum, earum sunt, nobis similique quisquam eveniet pariatur commodi modi voluptatibus iusto omnis harum illumiste distinctio expedita illo!</p>
-						<span class="time">18:06 PM | July 24 </span>
-					</div>
-				</div>
-
-				<div class="outgoing-msg">
-					<div class="outgoing-chats-msg">
-						<p class="outgoing-box-msg">Hi riya , Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nobis deleniti earum magni recusandae assumenda.</p>
-						<p class="outgoing-box-msg">Lorem ipsum dolor sit amet consectetur.</p>
-						<span class="time">18:30 PM | July 24 </span>
-					</div>
-				</div>
-
-				<div class="received-msg">
-					<div class="received-msg-inbox">
-						<div class="recived-box-msg">
-							<img src="https://hips.hearstapps.com/hmg-prod/images/fotos-1533279584.jpg" alt="">
-							
-						</div>
-						<span class="time">18:06 PM | July 24 </span>
-					</div>
-				</div>
-
-				<div class="outgoing-msg">
-					<div class="outgoing-chats-msg">
-						<div class="outgoing-box-msg">
-							<img src="https://www.blogdelfotografo.com/wp-content/uploads/2022/01/girasol-foto-perfil.webp" alt="">
-						</div>
-						<span class="time">18:30 PM | July 24 </span>
-					</div>
-				</div>
-				-->
 			</div>
 			<div class="text-area">
 				<form action="">
@@ -157,11 +120,6 @@ require '../../security.php';
 			</div>
 		</div>
 	</div>
-	<?php $idUser = $_SESSION['idUser']; ?>
-	<script>
-		const idUser = "<?php echo $idUser ?>";
-		console.log("IdUser en php: ", idUser);
-	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.10/signalr.min.js"></script>
 	<script src="js/aside_chats.js"></script>
 	<script src="js/chat.js"></script>
