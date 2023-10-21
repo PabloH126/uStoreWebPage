@@ -275,18 +275,12 @@ function mutationCallback(mutationsList, observer) {
             var adminButton = document.getElementById('adminBttn');
             if (adminButton && adminButton.classList.contains('selected')) {
                 console.log("la tiene c:");
-                
-                
-                if (!seleccionado) {
-                    textAreaContainer.style.display = 'none';
-                    document.getElementById('span-seleccion-tienda').style.display = 'block'
-                } else {
-                    textAreaContainer.style.display = 'block';
-                    document.getElementById('span-seleccion-tienda').style.display = 'none'
-                }
-                
+                textAreaContainer.style.display = 'block';
+                document.getElementById('span-seleccion-tienda').style.display = 'none'
 
             } else {
+                textAreaContainer.style.display = 'none';
+                document.getElementById('span-seleccion-tienda').style.display = 'block'
                 console.log("no la tiene :c");
             }
         }
