@@ -23,20 +23,20 @@ require '../../security.php';
             <form action="envio_publicacion.php" method="post" enctype="multipart/form-data" class="form-tiendas">
 
                 <!-- Contenido de la publicacion-->
-                <div class="item active" id="item-1">
+                <div class="item active" id="item-2">
                     <p>1/2</p>
                     <div class="descripcion">
                         <label for="descripcionProducto"><strong>Contenido de la publicación</strong></label>
                         <textarea maxlength="300" id="descripcionProducto" name="descripcionProducto"></textarea>
                     </div>
                     <div class="bttn" id="one">
-                        <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i
-                                class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
+                        <button type="button" class="bttn-next" data-item="2" data-to_item="3"><i
+                                class='bx bx-right-arrow-alt bttn-next' data-item="2" data-to_item="3"></i></button>
                     </div>
                 </div>
 
                 <!-- Imagen o imagenes de la publicacion -->
-                <div class="item" id="item-2">
+                <div class="item" id="item-3">
                     <p>2/2</p>
                     <div class="logoT">
                         <label><strong>Imagen de la publicación</strong></label>
@@ -59,9 +59,9 @@ require '../../security.php';
                     </div>
                     <div class="bttns">
                         <div class="bttn back" id="ult">
-                            <button type="button" class="bttn-back" data-item="2" data-to_item="1"><i
-                                    class='bx bx-left-arrow-alt bttn-back' data-item="2"
-                                    data-to_item="1"></i></button>
+                            <button type="button" class="bttn-back" data-item="3" data-to_item="2"><i
+                                    class='bx bx-left-arrow-alt bttn-back' data-item="3"
+                                    data-to_item="2"></i></button>
                         </div>
                         <div class="bttn" id="send">
                             <button type="submit" id="submitBtn">Guardar</button>
