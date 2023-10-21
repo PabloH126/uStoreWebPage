@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 }
 
                 const dataCreacionMensaje = responseCreacionMensaje.json();
-
+                console.log(dataCreacionMensaje);
                 if (dataCreacionMensaje.status !== "success") {
                     showNotificationError(dataCreacionMensaje.message);
                     return;
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     console.log(chatId);
                     let formData = new FormData();
                     formData.append('idChat', chatId);
-                    formData.append("contenidoMensaje", message);
+                    formData.append("imagen", fileInput.files[0]);
                     const responseCreacionMensaje = await fetch('crear_mensaje.php', {
                         method: 'POST',
                         body: formData

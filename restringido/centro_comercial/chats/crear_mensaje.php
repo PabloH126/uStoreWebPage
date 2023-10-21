@@ -4,15 +4,8 @@
 
     $responseArray = [];
 
-    $responseArray = [
-        "status" => "error",
-        "message" => "Datos necesarios no establecidos"
-    ];
-    echo json_encode($responseArray);
-    exit;
-
     if ((!isset($_POST['contenidoMensaje']) || $_POST['contenidoMensaje'] == "undefined") 
-     || (!isset($_POST["idChat"]) || $_POST["idChat"] == "undefined"))
+     && (!isset($_POST["idChat"]) || $_POST["idChat"] == "undefined"))
     {
     $responseArray = [
         "status" => "error",
@@ -48,7 +41,7 @@
     }
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Chat/CreateChat?idChat=" . $_POST["idChat"]);
+    curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Chat/CreateMensaje?idChat=" . $_POST["idChat"]);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
