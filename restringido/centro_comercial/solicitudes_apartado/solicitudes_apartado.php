@@ -103,22 +103,22 @@
 				<?php 
 				if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
 				{	?>
-				<?php require("../templates/template.background_animated.php") ?>
-				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
-				
-				<?php
-					$sumaSolicitudes = 0;
-					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
-					{
-						$sumaSolicitudes += $numeroSoli;
-					}
+					<?php require("../templates/template.background_animated.php") ?>
+					<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
+					
+					<?php
+						$sumaSolicitudes = 0;
+						foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
+						{
+							$sumaSolicitudes += $numeroSoli;
+						}
 
-					echo '<div class="content_number_notification" ' . ($sumaSolicitudes == 0 ? 'style="display: none"' : '') . '>';
-					echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
-					echo '</div>';
-				?>
+						echo '<div class="content_number_notification" ' . ($sumaSolicitudes == 0 ? 'style="display: none"' : '') . '>';
+						echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
+						echo '</div>';
+					?>
 				<?php } ?>
-				</div>
+			</div>
 			<?php 
 			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
 			{	?>
@@ -143,9 +143,9 @@
 						echo '</div>';
 					};
 					?>
-					<?php 
-					} ?>
-			</div>
+				</div>
+			<?php 
+			} ?>
 			
 
 			<div id="titles_page">
