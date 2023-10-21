@@ -17,6 +17,8 @@ const contactos = document.querySelectorAll('.contacto');
 
 function verificarSeleccion() {
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
+    
+    console.log(seleccionado);
     if (!seleccionado) {
         document.getElementById('span-seleccion-tienda').style.display = 'block'
     } else {
