@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.log(mensaje);
             
             let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
-
+            console.log(fechaFormateada);
             if (mensaje.isImage === true || mensaje.isImage === "true") {
                 if (idUser == mensaje.idRemitente) {
                     createOutMsgWithImage(mensaje.contenido, fechaFormateada);
@@ -482,6 +482,5 @@ function formatearFecha(fecha) {
     let dia = partesFecha.find(part => part.type === 'day').value;
     let mes = partesFecha.find(part => part.type === 'month').value;
     let fechaFormateada = `${hora}:${minuto} | ${mes} ${dia}`;
-    console.log(fechaFormateada);
     return fechaFormateada;
 }
