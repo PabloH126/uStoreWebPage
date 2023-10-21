@@ -252,21 +252,35 @@ document.addEventListener('DOMContentLoaded', async function () {
         })
     }
 
-    function mutationCallback(mutationsList, observer) {
-        for (let mutation of mutationsList) {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                var adminButton = document.getElementById('adminBttn');
-                if (adminButton && adminButton.classList.contains('selected')) {
-                    console.log("la tiene c:");
-                } else {
-                    console.log("no la tiene :c");
-                }
+    var adminButton = document.getElementById('adminBttn');
+
+    // Crear una instancia de observer con la función callback que se ejecutará en cada mutación
+    const observer = new MutationObserver(mutationCallback);
+
+    // Opciones de configuración para el observer: observar cambios de atributos
+    const config = { attributes: true, attributeFilter: ['class'] };
+
+    // Empezar a observar el botón con la configuración dada
+    if (adminButton) {
+        observer.observe(adminButton, config);
+    } else {
+        console.error("El botón de administrador no se encontró en el DOM");
+    }
+
+});
+
+function mutationCallback(mutationsList, observer) {
+    for (let mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            var adminButton = document.getElementById('adminBttn');
+            if (adminButton && adminButton.classList.contains('selected')) {
+                console.log("la tiene c:");
+            } else {
+                console.log("no la tiene :c");
             }
         }
     }
-    
-
-});
+}
 
 function createRecievedMsg(message, recievedDate) {
     let divRecieved = document.createElement('div');
@@ -496,6 +510,6 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
             createRecievedMsg(mensaje.contenido, fechaFormateada);
         }
     }
-    console.log(gerenteId, chatId);
+    console.log(gerenteId, chatId, mensaje.contenido);
     actualizarContacto(mensaje.contenido, gerenteId, chatId);
 }
