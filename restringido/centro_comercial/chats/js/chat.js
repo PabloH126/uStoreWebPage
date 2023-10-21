@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     createRecievedMsg(mensaje.contenido, fechaFormateada);
                 }
             }
-            actualizarContacto(mensaje.contenido);
+            //actualizarContacto(mensaje.contenido);
         });
 
         connection.on('RecieveMessage', function (mensaje) {

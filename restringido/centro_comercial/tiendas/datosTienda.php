@@ -79,4 +79,6 @@ $horarioCierre = DateTime::createFromFormat('H:i', $horarioDia['horarioCierre'],
 
 $margenCierre = clone $horarioCierre;
 $margenCierre->sub(new DateInterval('PT60M'));
+
+$_SESSION["idAdmin"] = $tiendas["idAdministrador"];
 ?>
