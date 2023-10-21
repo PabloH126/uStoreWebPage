@@ -15,6 +15,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const contactos = document.querySelectorAll('.contacto');
 
+function verificarSeleccion() {
+    const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
+    if (!seleccionado) {
+        // No se encontró ningún elemento con la clase 'select'.
+        // Aquí puedes agregar el código para hacer algo, como mostrar un letrero.
+        console.log('Ningún contacto está seleccionado');
+        // Por ejemplo, podrías querer mostrar un letrero específico:
+        // document.getElementById('letrero').style.display = 'block';
+        // O mostrar una barra:
+        // document.getElementById('barra').style.display = 'block';
+    } else {
+        // Si hay un contacto seleccionado, podrías querer esconder el letrero o la barra, si estuvieran visibles.
+        // document.getElementById('letrero').style.display = 'none';
+        // document.getElementById('barra').style.display = 'none';
+    }
+}
+
 contactos.forEach(contacto => {
     contacto.addEventListener('click', () => {
 
