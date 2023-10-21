@@ -146,8 +146,7 @@ deleteIcon.addEventListener('click', () => {
 
 function tiendasValidacion() {
     var tiendasSelect = document.getElementById('seleccion_tienda');
-
-    if(!tiendasSelect.value)
+    if(tiendasSelect && !tiendasSelect.value)
     {
         showNotificationError("Se debe seleccionar una tienda para hacer la publicacion");
         return false;
