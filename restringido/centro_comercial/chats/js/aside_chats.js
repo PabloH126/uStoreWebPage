@@ -20,10 +20,10 @@ function verificarSeleccion() {
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
     
     if (!seleccionado) {
-        document.getElementById('textAreaContainer').style.display = 'block'
+        textAreaContainer.style.display = 'block';
         document.getElementById('span-seleccion-tienda').style.display = 'block'
     } else {
-        document.getElementById('textAreaContainer').style.display = 'none'
+        textAreaContainer.style.display = 'none';
         document.getElementById('span-seleccion-tienda').style.display = 'none'
     }
 }

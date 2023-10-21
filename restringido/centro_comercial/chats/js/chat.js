@@ -484,3 +484,7 @@ function formatearFecha(fecha) {
     let fechaFormateada = `${hora}:${minuto} | ${mes} ${dia}`;
     return fechaFormateada;
 }
+
+function moverChatPrincipio() {
+    
+}
