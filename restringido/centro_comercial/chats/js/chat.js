@@ -60,15 +60,22 @@ if(contactos)
                         console.log("Del else:", connection.state);
                         if(connection.state === signalR.HubConnectionState.Connected)
                         {
-                            connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
+                            connection.start()
                             .then(() => {
-                                console.log(connection.state);
-                                console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                console.log("Nueva conexion realizada");
+                                connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
+                                .then(() => {
+                                    console.log(connection.state);
+                                    console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                })
+                                .catch(err => {
+                                    console.error("Hubo un problema al unirse al chat: ", err);
+                                });
                             })
                             .catch(err => {
-                                console.error("Hubo un problema al unirse al chat: ", err);
+                                console.log("Hubo un problema al realizar la nueva conexion con el chat");
                             });
-                        }
+                        }   
                     }
                 }
                 else
