@@ -2,55 +2,55 @@
 	session_start();
 	require '../../security.php';
 
-if(){
+	if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador"){
 
-	$ch = curl_init();
+		$ch = curl_init();
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	));
-	
-	$response = curl_exec($ch);
-	
-	if ($response === false) {
-		echo 'Error: ' . curl_error($ch);
-	} else {
-		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_COOKIE['SessionToken']
+		));
+		
+		$response = curl_exec($ch);
+		
+		if ($response === false) {
+			echo 'Error: ' . curl_error($ch);
+		} else {
+			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		}
+		
+		if ($httpStatusCode == 400) {
+			$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+		}
+		$tiendas = json_decode($response, true);
+		curl_close($ch);
+
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetNumeroSolicitudes");
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_COOKIE['SessionToken']
+		));
+		
+		$response = curl_exec($ch);
+		
+		if ($response === false) {
+			echo 'Error: ' . curl_error($ch);
+		} else {
+			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		}
+		
+		if ($httpStatusCode == 400) {
+			$numeroSolicitudesError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+		}
+		$numeroSolicitudes = json_decode($response, true);
+		curl_close($ch);
+
 	}
-	
-	if ($httpStatusCode == 400) {
-		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
-	}
-	$tiendas = json_decode($response, true);
-	curl_close($ch);
-
-	$ch = curl_init();
-
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetNumeroSolicitudes");
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	));
-	
-	$response = curl_exec($ch);
-	
-	if ($response === false) {
-		echo 'Error: ' . curl_error($ch);
-	} else {
-		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	}
-	
-	if ($httpStatusCode == 400) {
-		$numeroSolicitudesError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
-	}
-	$numeroSolicitudes = json_decode($response, true);
-	curl_close($ch);
-
-}
 //
 
 	if (isset($_GET['id'])) // si el de gerente entra  aeste, si es is poner get id si es gerente poner idgerente

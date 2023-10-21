@@ -168,7 +168,7 @@ sendBtn.addEventListener('click', async function(e) {
     {
         console.log(gerenteId);
         let formData = new FormData();
-        formData.append("idMiembro2", contacto.dataset.gerenteId);
+        formData.append("idMiembro2", gerenteId);
         formData.append("typeMiembro2", "Gerente");
         formData.append("contenidoMensaje", message);
         formData.append("imagen", fileInput.files[0]);
