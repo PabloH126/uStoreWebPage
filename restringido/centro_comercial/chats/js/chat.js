@@ -63,7 +63,7 @@ if(contactos)
                         }
                         else
                         {
-                            console.log(connection.state);
+                            console.log("Del else:", connection.state);
                             connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
                             .then(() => {
                                 console.log(connection.state);
