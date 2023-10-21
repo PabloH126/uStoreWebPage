@@ -98,53 +98,52 @@
     <?php require("../templates/template.menu.php")?>
 
 	<div class="content">
-		<div class="title-options">
-		<?php 
-		if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
-		{	?>
-		
+		<div class="title-options">		
 			<div id="content-menu-icon">
-				<?php require("../templates/template.background_animated.php") ?>
-				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
-				
-				<?php
-					$sumaSolicitudes = 0;
-					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
-					{
-						$sumaSolicitudes += $numeroSoli;
-					}
+			<?php 
+			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+			{	?>
+					<?php require("../templates/template.background_animated.php") ?>
+					<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
+					
+					<?php
+						$sumaSolicitudes = 0;
+						foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
+						{
+							$sumaSolicitudes += $numeroSoli;
+						}
 
-					echo '<div class="content_number_notification" ' . ($sumaSolicitudes == 0 ? 'style="display: none"' : '') . '>';
-					echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
-					echo '</div>';
-				?>
-				
+						echo '<div class="content_number_notification" ' . ($sumaSolicitudes == 0 ? 'style="display: none"' : '') . '>';
+						echo '<div class="notifications_store"><p id="number_notification">' . $sumaSolicitudes . '</p></div>';
+						echo '</div>';
+					?>
+				</div>
+			
+				<div id="sub-menu">
+					<?php foreach ($tiendas as $tienda)
+					{
+						echo '<div class="menu-option '. (isset($_GET['id']) && $_GET['id'] == $tienda['idTienda'] ? 'menuIconSelected' : '') .'" data-tienda-id="' . $tienda['idTienda'] . '">
+								<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
+
+						$numeroSolicitud = 0;
+						foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
+						{
+							if ($idTienda == $tienda['idTienda'])
+							{
+								$numeroSolicitud = $numeroSoli;
+								break;
+							}
+						}
+
+						echo '<p class="notifications_store numero_solicitudes_tienda" ' . ($numeroSolicitud == 0 ? 'style="display: none"' : '') . '>' . $numeroSolicitud . '</p>';
+						
+						echo '</div>';
+					};
+					?>
+					<?php 
+					} ?>
 			</div>
 			
-			<div id="sub-menu">
-				<?php foreach ($tiendas as $tienda)
-				{
-					echo '<div class="menu-option '. (isset($_GET['id']) && $_GET['id'] == $tienda['idTienda'] ? 'menuIconSelected' : '') .'" data-tienda-id="' . $tienda['idTienda'] . '">
-							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_apartado.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>';
-
-					$numeroSolicitud = 0;
-					foreach ($numeroSolicitudes as $idTienda => $numeroSoli)
-					{
-						if ($idTienda == $tienda['idTienda'])
-						{
-							$numeroSolicitud = $numeroSoli;
-							break;
-						}
-					}
-
-					echo '<p class="notifications_store numero_solicitudes_tienda" ' . ($numeroSolicitud == 0 ? 'style="display: none"' : '') . '>' . $numeroSolicitud . '</p>';
-					
-					echo '</div>';
-				};
-				?>
-			</div>
-			<?php 
-		} ?>
 
 			<div id="titles_page">
 				<h1>Solicitudes de apartado</h1>
