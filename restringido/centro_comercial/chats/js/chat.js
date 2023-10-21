@@ -278,6 +278,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     createRecievedMsg(mensaje.contenido, fechaFormateada);
                 }
             }
+            console.log(gerenteId, chatId);
             actualizarContacto(mensaje.contenido, gerenteId, chatId);
         });
 
@@ -304,6 +305,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         })
     }
 
+
+    
     var adminButton = document.getElementById("adminBttn");
     adminButton.addEventListener("click", function() { 
         console.log("cilck c:");
