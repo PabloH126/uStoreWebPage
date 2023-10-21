@@ -60,7 +60,7 @@ if (contactos) {
                                     console.log("Conexion cerrada");
                                     connection.start()
                                         .then(() => {
-                                            connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
+                                            connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
                                             .then(() => {
                                                 console.log(connection.state);
                                                 console.log("Unido al chat: ", dataCreacionChat.idChat);
