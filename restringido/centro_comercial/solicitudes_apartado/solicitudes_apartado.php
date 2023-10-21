@@ -54,8 +54,9 @@
 	}else if (isset($_GET['id']) || isset($_SESSION['idTiendaGerente'])) 
 	{
 		$ch = curl_init();
-		$url = isset($_GET['id']) ? $_GET['id'] : $_SESSION['idTiendaGerente'];
-		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $url);
+		$url = "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . isset($_GET['id']) ? $_GET['id'] : $_SESSION['idTiendaGerente'];
+		echo ''. $url .'';
+		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
