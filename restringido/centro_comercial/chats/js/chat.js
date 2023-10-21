@@ -304,13 +304,14 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         })
     }
+        
+    var adminButton = document.getElementById('adminBttn');
 
-
-    
-    var adminButton = document.getElementById("adminBttn");
-    adminButton.addEventListener("click", function() { 
-        console.log("cilck c:");
-    });
+    if (adminButton.classList.contains('selected')) {
+        console.log("la tiene c:");
+    } else {
+        console.log("no la tiene :c");
+    }
 
 });
 
