@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.target !== button) return;
 
             const currentStep = parseInt(button.getAttribute('data-item'));
-
+            console.log(currentStep);
             let isValid = false;
             switch (currentStep) {
                 case 1: 
