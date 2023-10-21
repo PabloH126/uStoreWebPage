@@ -189,6 +189,7 @@ sendBtn.addEventListener('click', async function(e) {
         if (dataCreacionChat.status !== "success")
         {
             showNotificationError(dataCreacionChat.message);
+            console.log(dataCreacionChat.message);
             return;
         }
         else
