@@ -184,8 +184,9 @@ sendBtn.addEventListener('click', async function(e) {
             return;
         }
     
-        const dataCreacionChat = responseCreacionChat.json();
-    
+        const dataCreacionChat = await responseCreacionChat.json();
+        
+        console.log(dataCreacionChat);
         if (dataCreacionChat.status !== "success")
         {
             showNotificationError(dataCreacionChat.message);
