@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     createRecievedMsg(mensaje.contenido, fechaFormateada);
                 }
             }
-            actualizarContacto(mensaje.contenido);
+            actualizarContacto(mensaje.contenido, gerenteId, chatId);
         });
 
         connection.on('RecieveMessage', function (mensaje) {
@@ -303,6 +303,14 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         })
     }
+
+    var adminButton = document.getElementById("adminBttn");
+    adminButton.addEventListener("click", function() {
+        
+        console.log("El botón ha sido presionado");
+        // Agrega aquí el resto de tu código.
+    });
+
 });
 
 function createRecievedMsg(message, recievedDate) {
@@ -495,9 +503,8 @@ function moverChatPrincipio(element) {
     listaContactos.insertBefore(element, listaContactos.firstChild);
 }
 
-function actualizarContacto(message) {
+function actualizarContacto(message, gerenteId, chatId) {
     let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
-    console.log("Entro a actualizarContacto", contactoGerente);
     contactoGerente.removeAttribute('data-gerente-id');
     contactoGerente.setAttribute('data-chat-id', chatId);
     let mensajeContacto = contactoGerente.querySelector('message_preview');
