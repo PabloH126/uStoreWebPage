@@ -2,7 +2,8 @@
 	session_start();
 	require '../../security.php';
 
-	if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador"){
+	if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+	{
 
 		$ch = curl_init();
 
@@ -50,10 +51,7 @@
 		$numeroSolicitudes = json_decode($response, true);
 		curl_close($ch);
 
-	}
-//
-
-	if (isset($_GET['id'])) // si el de gerente entra  aeste, si es is poner get id si es gerente poner idgerente
+	}else if (isset($_GET['id']) )   // si el de gerente entra  aeste, si es is poner get id si es gerente poner idgerente
 	{
 		$ch = curl_init();
 		$url = 
