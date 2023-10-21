@@ -16,12 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
 const contactos = document.querySelectorAll('.contacto');
 
 function verificarSeleccion() {
+    var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
     
-    console.log(seleccionado);
     if (!seleccionado) {
+        document.getElementById('textAreaContainer').style.display = 'block'
         document.getElementById('span-seleccion-tienda').style.display = 'block'
     } else {
+        document.getElementById('textAreaContainer').style.display = 'none'
         document.getElementById('span-seleccion-tienda').style.display = 'none'
     }
 }
