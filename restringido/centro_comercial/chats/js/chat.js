@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     const idData = await responseId.json();
     const idUser = idData.idUser;
 
+    const idAdmin = idData.idAdmin;
+    
     console.log(idUser);
     let gerenteId = 0;
     let chatId = 0;
@@ -24,7 +26,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             accessTokenFactory: () => token
         })
         .build();
-
 
     if (contactos) {
         connection.start()
@@ -496,6 +497,7 @@ function moverChatPrincipio(element) {
 
 function actualizarContacto(message) {
     let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
+    console.log("Entro a actualizarContacto", contactoGerente);
     contactoGerente.removeAttribute('data-gerente-id');
     contactoGerente.setAttribute('data-chat-id', chatId);
     let mensajeContacto = contactoGerente.querySelector('message_preview');
