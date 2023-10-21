@@ -242,6 +242,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.log('entro al chat created');
             console.log(chat);
             console.log(mensaje);
+            console.log(gerenteId, chat.idChat);
             crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
         });
 
