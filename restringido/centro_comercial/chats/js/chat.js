@@ -482,5 +482,6 @@ function formatearFecha(fecha) {
     let dia = partesFecha.find(part => part.type === 'day').value;
     let mes = partesFecha.find(part => part.type === 'month').value;
     let fechaFormateada = `${hora}:${minuto} | ${mes} ${dia}`;
+    console.log(fechaFormateada);
     return fechaFormateada;
 }
