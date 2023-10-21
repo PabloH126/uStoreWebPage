@@ -236,7 +236,7 @@ fileInput.addEventListener('change', async function () {
         {
             console.log(gerenteId);
             let formData = new FormData();
-            formData.append("idMiembro2", contacto.dataset.gerenteId);
+            formData.append("idMiembro2", gerenteId);
             formData.append("typeMiembro2", "Gerente");
             formData.append("imagen", fileInput.files[0]);
             const responseCreacionChat = await fetch('crear_chat.php', {

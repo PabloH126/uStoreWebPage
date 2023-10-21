@@ -1,7 +1,9 @@
 <?php 
 	session_start();
 	require '../../security.php';
-//
+
+if(){
+
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
@@ -47,6 +49,8 @@
 	}
 	$numeroSolicitudes = json_decode($response, true);
 	curl_close($ch);
+
+}
 //
 
 	if (isset($_GET['id'])) // si el de gerente entra  aeste, si es is poner get id si es gerente poner idgerente

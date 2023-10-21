@@ -109,7 +109,7 @@ if (isset($_POST['emailAL']) && isset($_POST['passAL'])) {
             }
             else
             {
-                $_SESSION['idTiendaGerente'] = $dataClaims['idTienda'];
+                $_SESSION['idTiendaGerente'] = $dataClaims['idTienda']; //varieble para nomas gerente 
                 header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $dataClaims['idTienda']);
             }
             exit;
