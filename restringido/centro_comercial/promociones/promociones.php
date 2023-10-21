@@ -153,7 +153,19 @@ if (isset($_GET['id']))
         </div>
 		<?php } ?>
 		<div class="crear-publicacion">
-			<a title="Crear publicación" href="crear_publicacion.php">
+			<a title="Crear publicación"
+			<?php 
+			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+			{	?>
+				href="crear_publicacion.php"
+			<?php
+			} else{
+			?>
+				href="crear_publicacion_gerentes.php"
+			<?php
+			}
+			?>
+			 >
 				<span class="material-symbols-outlined">add</span>
 			</a>
 		</div>	
