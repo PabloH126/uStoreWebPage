@@ -57,7 +57,7 @@
 	{
 		$ch = curl_init();
 		isset($_SESSION['idTiendaGerente']) ? ($_GET['id'] = $_SESSION['idTiendaGerente']) : '';
-		echo $_GET['id'];
+		
 		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $_GET['id']);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -83,7 +83,7 @@
 		$solicitudes = json_decode($response, true);
 		curl_close($ch);
 	}
-
+	echo $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
