@@ -95,6 +95,11 @@ require '../../security.php';
         <?php require("templates/template.aside_chats.php") ?>
 		<div class="chat-area">
 			<div class="mssg-area">
+
+				<div>
+					<span id="span-seleccion-tienda">Seleccione un chat</span>
+				</div>
+
 				<!--
 				<div class="received-msg">
 					<div class="received-msg-inbox">
