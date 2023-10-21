@@ -214,6 +214,7 @@ if (contactos) {
     })
 
     connection.on('ChatCreated', function (chat, mensaje) {
+        console.log('entro al chat created');
         console.log(chat);
         console.log(mensaje);
 
