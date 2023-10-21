@@ -273,8 +273,11 @@ function mutationCallback(mutationsList, observer) {
     for (let mutation of mutationsList) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
             var adminButton = document.getElementById('adminBttn');
+            var textAreaContainer = document.querySelector('.text-area');
+
             if (adminButton && adminButton.classList.contains('selected')) {
                 console.log("la tiene c:");
+
                 textAreaContainer.style.display = 'block';
                 document.getElementById('span-seleccion-tienda').style.display = 'none'
 
@@ -479,13 +482,11 @@ function moverChatPrincipio(element) {
 
 function actualizarContacto(message, gerenteId, chatId) {
     let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
-    if(contactoGerente)
-    {
+    if (contactoGerente) {
         contactoGerente.removeAttribute('data-gerente-id');
         contactoGerente.setAttribute('data-chat-id', chatId);
     }
-    else
-    {
+    else {
         contactoGerente = document.querySelector(`[data-chat-id="${chatId}"]`);
     }
     let mensajeContacto = contactoGerente.querySelector('message_preview');
