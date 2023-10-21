@@ -51,41 +51,37 @@
 		$numeroSolicitudes = json_decode($response, true);
 		curl_close($ch);
 
-	}else if (isset($_GET['id']) || isset($_SESSION['idTiendaGerente'])) 
-	{
-		$ch = curl_init();
-		$url = "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . isset($_GET['id']) ? $_GET['id'] : $_SESSION['idTiendaGerente'];
-		echo ''. $url .'';
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Authorization: Bearer ' . $_COOKIE['SessionToken']
-		));
-		
-		$response = curl_exec($ch);
-		
-		if ($response === false) {
-			echo 'Error: ' . curl_error($ch);
-		} else {
-			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		}
-		
-		if ($httpStatusCode == 400) {
-			$solicitudesError = "Error al intentar recuperar las solicitudes. Codigo de respuesta: " . $httpStatusCode;
-		}
-		else if ($httpStatusCode == 404)
-		{
-			$messageSolicitud = $response;
-		}
-		$solicitudes = json_decode($response, true);
-		echo $solicitudes;
-		curl_close($ch);
 	}
 
-	//cualquiera pero especificando id de tienda //httpStatusCode 401 no autirizado //400 bad request es del objeto// 404 no se econtro 
-	//500 culpa de pablito 409 conflicto culpa de pablito tambien 
+	isset($_SESSION['idTiendaGerente']) ? ($_GET['id'] = $_SESSION['idTiendaGerente']) : '';
+	$ch = curl_init();
+	echo $_GET['id'];
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $GET["id"]);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Authorization: Bearer ' . $_COOKIE['SessionToken']
+	));
 	
+	$response = curl_exec($ch);
+	
+	if ($response === false) {
+		echo 'Error: ' . curl_error($ch);
+	} else {
+		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	}
+	
+	if ($httpStatusCode == 400) {
+		$solicitudesError = "Error al intentar recuperar las solicitudes. Codigo de respuesta: " . $httpStatusCode;
+	}
+	else if ($httpStatusCode == 404)
+	{
+		$messageSolicitud = $response;
+	}
+	$solicitudes = json_decode($response, true);
+	echo $solicitudes;
+	curl_close($ch);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -154,18 +150,15 @@
 				<h3>
 				<?php 
 				if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
-				{	?>
-					<?php 
-						foreach($tiendas as $tienda)
+				{	 
+					foreach($tiendas as $tienda)
+					{
+						if($tienda['idTienda'] == $_GET['id'])
 						{
-							if($tienda['idTienda'] == $_GET['id'])
-							{
-								echo $tienda['nombreTienda'];
-								break;
-							}
+							echo $tienda['nombreTienda'];
+							break;
 						}
-					?>
-				<?php 
+					}
 				} ?>
 				</h3>
 			</div>
