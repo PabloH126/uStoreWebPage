@@ -169,7 +169,7 @@
 			
 		</div>
 		<?php
-			if (!isset($_GET['id']) && (isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador"))
+			if (!isset($_GET['id']))// && (isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador"))
 			{
 			?>
 				<div>
