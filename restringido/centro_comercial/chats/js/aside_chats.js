@@ -1,35 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtener todos los botones que quieres manejar
     var buttons = document.querySelectorAll('.options_aside');
-
-    // Función que maneja el evento 'click'
     function onButtonClick(event) {
-        // Elimina la clase 'selected' de todos los botones
         buttons.forEach(function (button) {
             button.classList.remove('selected');
         });
-
-        // Agrega la clase 'selected' al botón clickeado
         event.currentTarget.classList.add('selected');
     }
 
-    // Agrega el evento 'click' a todos los botones
     buttons.forEach(function (button) {
         button.addEventListener('click', onButtonClick);
     });
 });
 
-// Selecciona todos los elementos con la clase .contacto
+
 const contactos = document.querySelectorAll('.contacto');
 
-// Agrega un controlador de eventos a cada elemento .contacto
 contactos.forEach(contacto => {
     contacto.addEventListener('click', () => {
-        // Elimina la clase .select de todos los elementos .contacto
+
         contactos.forEach(item => {
             item.classList.remove('select');
         });
-        // Agrega la clase .select al elemento seleccionado
+        
         contacto.classList.add('select');
     });
 });
