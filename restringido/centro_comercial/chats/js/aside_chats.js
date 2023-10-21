@@ -34,8 +34,10 @@ contactos.forEach(contacto => {
         });
         
         contacto.classList.add('select');
+        verificarSeleccion();
     });
 });
+verificarSeleccion();
 
 
 document.addEventListener('DOMContentLoaded', function() {
