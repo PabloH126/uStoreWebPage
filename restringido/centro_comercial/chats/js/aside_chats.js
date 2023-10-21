@@ -23,24 +23,25 @@ document.addEventListener('DOMContentLoaded', function () {
 // Selecciona todos los elementos con la clase .contacto
 const contactos = document.querySelectorAll('.contacto');
 
-// Agrega un controlador de eventos a cada elemento .contacto
-contactos.forEach(contacto => {
-
-    if(){
-
+function verificarSeleccion() {
+    const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
+    if (!seleccionado) {
+        document.getElementById('span-seleccion-tienda').style.display = 'block';
+    } else {
+        document.getElementById('span-seleccion-tienda').style.display = 'none';
     }
+}
 
-    //poner que si no hay ninguno con selected, mostrar el letrero y la barra
-    contacto.addEventListener('click', () => {
-        // Elimina la clase .select de todos los elementos .contacto
+contactos.forEach(contacto => {
+    contactos.addEventListener('click', () => {
         contactos.forEach(item => {
             item.classList.remove('select');
         });
-        // Agrega la clase .select al elemento seleccionado
         contacto.classList.add('select');
+        verificarSeleccion();
     });
 });
-
+verificarSeleccion();
 
 document.addEventListener('DOMContentLoaded', function() {
     
