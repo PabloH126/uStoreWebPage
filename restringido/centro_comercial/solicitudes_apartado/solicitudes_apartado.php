@@ -53,34 +53,35 @@
 
 	}
 
-	isset($_SESSION['idTiendaGerente']) ? ($_GET['id'] = $_SESSION['idTiendaGerente']) : '';
-	$ch = curl_init();
-	echo $_GET['id'];
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $GET["id"]);
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	));
-	
-	$response = curl_exec($ch);
-	
-	if ($response === false) {
-		echo 'Error: ' . curl_error($ch);
-	} else {
-		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	}
-	
-	if ($httpStatusCode == 400) {
-		$solicitudesError = "Error al intentar recuperar las solicitudes. Codigo de respuesta: " . $httpStatusCode;
-	}
-	else if ($httpStatusCode == 404)
+	if (isset($_GET['id']))
 	{
-		$messageSolicitud = $response;
+		$ch = curl_init();
+		isset($_SESSION['idTiendaGerente']) ? ($_GET['id'] = $_SESSION['idTiendaGerente']) : '';
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Apartados/GetSolicitudesPendientes?idTienda=" . $_GET['id']);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_COOKIE['SessionToken']
+		));
+		
+		$response = curl_exec($ch);
+		
+		if ($response === false) {
+			echo 'Error: ' . curl_error($ch);
+		} else {
+			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		}
+		
+		if ($httpStatusCode == 400) {
+			$solicitudesError = "Error al intentar recuperar las solicitudes. Codigo de respuesta: " . $httpStatusCode;
+		}
+		else if ($httpStatusCode == 404)
+		{
+			$messageSolicitud = $response;
+		}
+		$solicitudes = json_decode($response, true);
+		curl_close($ch);
 	}
-	$solicitudes = json_decode($response, true);
-	echo $solicitudes;
-	curl_close($ch);
 
 ?>
 <!DOCTYPE html>
