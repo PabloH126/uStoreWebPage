@@ -55,14 +55,27 @@ if (contactos) {
                         console.log("Del else:", connection.state);
                         console.log(dataCreacionChat.idChat);
                         if (connection.state === signalR.HubConnectionState.Connected) {
-                            connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
+                            connection.stop()
                                 .then(() => {
-                                    console.log(connection.state);
-                                    console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                    console.log("Conexion cerrada");
+                                    connection.start()
+                                        .then(() => {
+                                            connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
+                                            .then(() => {
+                                                console.log(connection.state);
+                                                console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                            })
+                                            .catch(err => {
+                                                console.error("Hubo un problema al unirse al chat: ", err);
+                                            });
+                                        })
+                                        .catch(err => {
+                                            console.error("Hubo un problema al establecer la nueva conexion:", err);
+                                        })
                                 })
-                                .catch(err => {
-                                    console.error("Hubo un problema al unirse al chat: ", err);
-                                });
+                                .then(() => {
+                                    console.error("Hubo un problema al cerrar la conexion: ", err);
+                                })
                         }
                     }
                 }
