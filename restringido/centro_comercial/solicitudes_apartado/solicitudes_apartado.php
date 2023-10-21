@@ -78,6 +78,7 @@
 			$messageSolicitud = $response;
 		}
 		$solicitudes = json_decode($response, true);
+		echo $solicitudes;
 		curl_close($ch);
 	}
 
