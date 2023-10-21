@@ -99,7 +99,10 @@
 
 	<div class="content">
 		<div class="title-options">
-		<>
+		<?php 
+		if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+		{	?>
+		
 			<div id="content-menu-icon">
 				<?php require("../templates/template.background_animated.php") ?>
 				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
@@ -140,6 +143,9 @@
 				};
 				?>
 			</div>
+			<?php 
+		} ?>
+
 			<div id="titles_page">
 				<h1>Solicitudes de apartado</h1>
 				<h3>
