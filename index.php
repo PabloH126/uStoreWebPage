@@ -34,13 +34,20 @@
 
 		curl_close($ch);
 		$dataClaims = json_decode($response, true);
-		if($dataClaims['type'] == "Administrador")
+		
+		$_SESSION['nombre'] = $dataClaims['nombre'];
+		$_SESSION['email'] = $dataClaims['email'];
+		$_SESSION['idUser'] = $dataClaims['id'];
+		$_SESSION['UserType'] = $dataClaims['type'];
+
+		if($_SESSION['UserType'] == "Administrador")
 		{
 			header("location: restringido/seleccionPlaza.php");
 		}
 		else
 		{
-			header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $dataClaims['idTienda']);
+			$_SESSION['idTiendaGerente'] = $dataClaims['idTienda'];
+			header('location: https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $_SESSION['idTiendaGerente']);
 		}
 		
 	}
