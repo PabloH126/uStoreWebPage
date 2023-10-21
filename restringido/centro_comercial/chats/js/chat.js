@@ -277,6 +277,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     createRecievedMsg(mensaje.contenido, fechaFormateada);
                 }
             }
+            actualizarContacto(mensaje.contenido);
         });
 
         connection.on('RecieveMessage', function (mensaje) {
@@ -491,4 +492,13 @@ function moverChatPrincipio(element) {
 
     listaContactos.removeChild(element);
     listaContactos.insertBefore(element, listaContactos.firstChild);
+}
+
+function actualizarContacto(message) {
+    let contactoGerente = document.getElementById(`[data-gerente-id="${gerenteId}"]`);
+    contactoGerente.removeAttribute('data-gerente-id');
+    contactoGerente.setAttribute('data-chat-id', chatId);
+    let mensajeContacto = contactoGerente.querySelector('message_preview');
+    mensajeContacto.textContent = message;
+    moverChatPrincipio(contactoGerente);
 }
