@@ -95,13 +95,9 @@ require '../../security.php';
         <?php require("templates/template.aside_chats.php") ?>
 		<div class="chat-area">
 			<div class="mssg-area">
-				<?php
-				if (empty($gerentesConChat) && empty($gerentesSinChat)) {
-				?>
-					<div>
-						<span id="span-seleccion-tienda">Seleccione un chat</span>
-					</div>
-				<?php } ?>
+				<div>
+					<span id="span-seleccion-tienda">Seleccione un chat</span>
+				</div>
 			</div>
 	
 			<div class="text-area">

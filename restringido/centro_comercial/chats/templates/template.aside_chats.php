@@ -31,7 +31,7 @@
         $gerente = $gerenteObject['gerente'];
         $chat = $gerenteObject['chat'];
       ?>
-      <div class="contacto" data-chat-id="<?php echo $chat['idChat']; ?>">
+      <div class="contacto" data-chat-id="<?php echo $chat['idChat']; ?>"> 
         <div class="contact_profile_img">
           <img src="<?php echo $gerente['iconoPerfil']; ?>" alt="Imagen de perfil del contacto">
         </div>

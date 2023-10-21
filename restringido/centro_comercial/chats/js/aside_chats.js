@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     buttons.forEach(function (button) {
         button.addEventListener('click', onButtonClick);
     });
+
 });
 
 // Selecciona todos los elementos con la clase .contacto
@@ -24,6 +25,12 @@ const contactos = document.querySelectorAll('.contacto');
 
 // Agrega un controlador de eventos a cada elemento .contacto
 contactos.forEach(contacto => {
+
+    if(){
+
+    }
+
+    //poner que si no hay ninguno con selected, mostrar el letrero y la barra
     contacto.addEventListener('click', () => {
         // Elimina la clase .select de todos los elementos .contacto
         contactos.forEach(item => {
