@@ -1,7 +1,6 @@
 <?php
 session_start();
 require '../../security.php';
-
 ?>
 <!DOCTYPE html>
 <html>
