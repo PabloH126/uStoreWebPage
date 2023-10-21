@@ -274,14 +274,16 @@ function mutationCallback(mutationsList, observer) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
             var adminButton = document.getElementById('adminBttn');
             var textAreaContainer = document.querySelector('.text-area');
+            var buscador = document.querySelector('.cajabuscar');
 
             if (adminButton && adminButton.classList.contains('selected')) {
                 console.log("la tiene c:");
-
+                buscador.style.display = 'none';
                 textAreaContainer.style.display = 'block';
                 document.getElementById('span-seleccion-tienda').style.display = 'none'
 
             } else {
+                buscador.style.display = 'block';
                 textAreaContainer.style.display = 'none';
                 document.getElementById('span-seleccion-tienda').style.display = 'block'
                 console.log("no la tiene :c");
