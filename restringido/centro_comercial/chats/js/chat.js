@@ -251,13 +251,19 @@ document.addEventListener('DOMContentLoaded', async function () {
         })
     }
 
-    var adminButton = document.getElementById('adminBttn');
-
-    if (adminButton.classList.contains('selected')) {
-        console.log("la tiene c:");
-    } else {
-        console.log("no la tiene :c");
+    function mutationCallback(mutationsList, observer) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                var adminButton = document.getElementById('adminBttn');
+                if (adminButton && adminButton.classList.contains('selected')) {
+                    console.log("la tiene c:");
+                } else {
+                    console.log("no la tiene :c");
+                }
+            }
+        }
     }
+    
 
 });
 
