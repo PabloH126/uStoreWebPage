@@ -12,6 +12,7 @@
 			else
 			{
         echo '<button class="options_aside">Administrador</button>';
+        
         $_SESSION["idAdmin"];
 
       }?>

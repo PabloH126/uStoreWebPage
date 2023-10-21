@@ -500,5 +500,7 @@ function actualizarContacto(message) {
     contactoGerente.setAttribute('data-chat-id', chatId);
     let mensajeContacto = contactoGerente.querySelector('message_preview');
     mensajeContacto.textContent = message;
+    console.log(mensajeContacto);
+    console.log(contactoGerente);
     moverChatPrincipio(contactoGerente);
 }
