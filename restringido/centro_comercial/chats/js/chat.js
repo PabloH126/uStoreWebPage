@@ -12,29 +12,32 @@ const token = document.cookie
     .find(p => p.startsWith("SessionToken="))
     ?.split("=")[1];
 
-const connection = new signalR.HubConnectionBuilder()
+document.addEventListener('DOMContentLoaded', function () {
+    const connection = new signalR.HubConnectionBuilder()
     .withUrl('https://ustoreapi.azurewebsites.net/chatHub', {
         accessTokenFactory: () => token
     })
     .build();
+    
+    connection.start()
+        .then(() => {
+        console.log('Conexion con SignalR exitosa')
+        })
+        .catch(err => {
+            'Hubo un problema al conectar con SignalR:', err
+        });
+})
 
 
 if(contactos)
 {
-        connection.start()
-        .then(() => {
-            console.log('Conexion con SignalR exitosa');
-            connection.invoke("JoinUserChats")
-            .then(() => {
-                console.log('Conexion con JoinGroupChat exitosa');
-            })
-            .catch(err => {
-                console.error('Hubo un error al conectarse con JoinGroupChat: ', err);
-            });
-        })
-        .catch(err => {
-            console.error('Error al conectarse con SignalR: ', err);
-        });
+    connection.invoke("JoinUserChats")
+    .then(() => {
+        console.log('Conexion con JoinGroupChat exitosa');
+    })
+    .catch(err => {
+        console.error('Hubo un error al conectarse con JoinGroupChat: ', err);
+    });
 }
 
 contactos.forEach(contacto => {
