@@ -29,6 +29,8 @@ if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
 	curl_close($ch);
 }
 
+isset($_SESSION['idTiendaGerente']) ? ($_GET['id'] = $_SESSION['idTiendaGerente']) : '';
+
 if (isset($_GET['id']))
 {
 	$ch = curl_init();
@@ -72,6 +74,7 @@ if (isset($_GET['id']))
 	<div class="content">
 		<div class="title-options">
 			<div id="content-menu-icon">
+
 				<?php require("../templates/template.background_animated.php") ?>
 				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>
 			</div>

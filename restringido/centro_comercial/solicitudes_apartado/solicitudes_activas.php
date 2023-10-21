@@ -2,28 +2,34 @@
 	session_start();
 	require '../../security.php';
 
-	$ch = curl_init();
+	if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+	{
+		$ch = curl_init();
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer ' . $_COOKIE['SessionToken']
-	));
-	
-	$response = curl_exec($ch);
-	
-	if ($response === false) {
-		echo 'Error: ' . curl_error($ch);
-	} else {
-		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Tiendas/GetTiendas?idCentroComercial=" . $_SESSION['idMall']);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer ' . $_COOKIE['SessionToken']
+		));
+		
+		$response = curl_exec($ch);
+		
+		if ($response === false) {
+			echo 'Error: ' . curl_error($ch);
+		} else {
+			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		}
+		
+		if ($httpStatusCode == 400) {
+			$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
+		}
+		$tiendas = json_decode($response, true);
+		curl_close($ch);
+
 	}
-	
-	if ($httpStatusCode == 400) {
-		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
-	}
-	$tiendas = json_decode($response, true);
-	curl_close($ch);
+
+	isset($_SESSION['idTiendaGerente']) ? ($_GET['id'] = $_SESSION['idTiendaGerente']) : '';
 
 	if (isset($_GET['id']))
 	{
@@ -71,25 +77,38 @@
 	<div class="content">
 		<div class="title-options">
 			<div id="content-menu-icon">
-				<?php require("../templates/template.background_animated.php") ?>
-				<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>	
+				<?php 
+				if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+				{	
+					?>
+					<?php require("../templates/template.background_animated.php") ?>
+					<i class='bx bx-store-alt store' id="menu-icon" data-toggle="menu"></i>	
+				<?php } ?>
 			</div>
 
-			<div id="sub-menu">
-				<?php foreach ($tiendas as $tienda)
-				{
-					echo '
-					<div class="menu-option '. (isset($_GET['id']) && $_GET['id'] == $tienda['idTienda'] ? 'menuIconSelected' : '') .'">
-						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_activas.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
-					</div>
-					';
-				};
-				?>
-			</div>
+			<?php 
+				if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+				{	
+			?>
+				<div id="sub-menu">
+					<?php foreach ($tiendas as $tienda)
+					{
+						echo '
+						<div class="menu-option '. (isset($_GET['id']) && $_GET['id'] == $tienda['idTienda'] ? 'menuIconSelected' : '') .'">
+							<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/solicitudes_apartado/solicitudes_activas.php?id=' . $tienda['idTienda'] . '">' . $tienda['nombreTienda'] . '</a>
+						</div>
+						';
+					};
+					?>
+				</div>
+			<?php } ?>
+
 			<div id="titles_page">
 				<h1>Solicitudes activas</h1>
 				<h3>
 					<?php 
+					if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+					{	
 						foreach($tiendas as $tienda)
 						{
 							if($tienda['idTienda'] == $_GET['id'])
@@ -98,23 +117,25 @@
 								break;
 							}
 						}
+					}
 					?>
 				</h3>
 			</div>
+
 			<div id="content-cambio-secc">
 				<a href="solicitudes_apartado.php<?php echo isset($_GET['id']) ? '?id='. $_GET['id'] : ''; ?>" class="bttn_cambio_seccion">Solicitudes de apartado</a>
 			</div>
 		</div>
-		<?php
-			if (!isset($_GET['id']))
+				<?php
+			if (!isset($_GET['id']) && (isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador"))
 			{
-		?>
-		<div>
-			<span id="span-seleccion-tienda">Seleccione una tienda</span>
-		</div>
-		<?php
+			?>
+				<div>
+					<span id="span-seleccion-tienda">Seleccione una tienda</span>
+				</div>
+			<?php
 			}
-			else
+			else 
 			{
 		?>
 		<div>
