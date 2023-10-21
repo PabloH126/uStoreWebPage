@@ -62,20 +62,21 @@ document.addEventListener('DOMContentLoaded', async function () {
                         let mensajes = responseChatData.message;
 
                         mensajes.forEach(mensaje => {
+                            let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
                             if (mensaje.isRecieved === true || mensaje.isRecieved === "true") {
                                 if (mensaje.isImage === true || mensaje.isImage === "true") {
-                                    createRecievedMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+                                    createRecievedMsgWithImage(mensaje.contenido, fechaFormateada);
                                 }
                                 else {
-                                    createRecievedMsg(mensaje.contenido, mensaje.fechaMensaje);
+                                    createRecievedMsg(mensaje.contenido, fechaFormateada);
                                 }
                             }
                             else {
                                 if (mensaje.isImage === true || mensaje.isImage === "true") {
-                                    createOutMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+                                    createOutMsgWithImage(mensaje.contenido, fechaFormateada);
                                 }
                                 else {
-                                    createOutMsg(mensaje.contenido, mensaje.fechaMensaje);
+                                    createOutMsg(mensaje.contenido, fechaFormateada);
                                 }
                             }
                         })
@@ -255,43 +256,46 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.log('entro al chat created');
             console.log(chat);
             console.log(mensaje);
+            
+            let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
 
             if (mensaje.isImage === true || mensaje.isImage === "true") {
                 if (idUser == mensaje.idRemitente) {
-                    createOutMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+                    createOutMsgWithImage(mensaje.contenido, fechaFormateada);
                 }
                 else {
-                    createRecievedMsgWithImage(mensaje.contenido, mensaje.fechaMensaje)
+                    createRecievedMsgWithImage(mensaje.contenido, fechaFormateada)
                 }
 
             }
             else {
                 if (idUser == mensaje.idRemitente) {
-                    createOutMsg(mensaje.contenido, fechaMensaje);
+                    createOutMsg(mensaje.contenido, fechaFormateada);
                 }
                 else {
-                    createRecievedMsg(mensaje.contenido, fechaMensaje);
+                    createRecievedMsg(mensaje.contenido, fechaFormateada);
                 }
             }
         });
 
         connection.on('RecieveMessage', function (mensaje) {
             console.log(mensaje);
+            let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
             if (mensaje.isImage === true || mensaje.isImage === "true") {
                 if (idUser == mensaje.idRemitente) {
-                    createOutMsgWithImage(mensaje.contenido, mensaje.fechaMensaje);
+                    createOutMsgWithImage(mensaje.contenido, fechaFormateada);
                 }
                 else {
-                    createRecievedMsgWithImage(mensaje.contenido, mensaje.fechaMensaje)
+                    createRecievedMsgWithImage(mensaje.contenido, fechaFormateada)
                 }
 
             }
             else {
                 if (idUser == mensaje.idRemitente) {
-                    createOutMsg(mensaje.contenido, fechaMensaje);
+                    createOutMsg(mensaje.contenido, fechaFormateada);
                 }
                 else {
-                    createRecievedMsg(mensaje.contenido, fechaMensaje);
+                    createRecievedMsg(mensaje.contenido, fechaFormateada);
                 }
             }
         })
@@ -460,4 +464,23 @@ function validacionTypeImagen(imagen) {
     }
 
     return true;
+}
+
+function formatearFecha(fecha) {
+    let fechaMensaje = new Date(fecha + "Z");
+    let opciones = {
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+    };
+    let fechaFormat = new Intl.DateTimeFormat('es', opciones);
+    let partesFecha = fechaFormat.formatToParts(fechaMensaje);
+    let hora = partesFecha.find(part => part.type === 'hour').value;
+    let minuto = partesFecha.find(part => part.type === 'minute').value;
+    let dia = partesFecha.find(part => part.type === 'day').value;
+    let mes = partesFecha.find(part => part.type === 'month').value;
+    let fechaFormateada = `${hora}:${minuto} | ${mes} ${dia}`;
+    return fechaFormateada;
 }
