@@ -4,6 +4,13 @@
 
     $responseArray = [];
 
+    $responseArray = [
+        "status" => "error",
+        "message" => "Datos necesarios no establecidos"
+    ];
+    echo json_encode($responseArray);
+    exit;
+
     if ((!isset($_POST['contenidoMensaje']) || $_POST['contenidoMensaje'] == "undefined") 
      || (!isset($_POST["idChat"]) || $_POST["idChat"] == "undefined"))
     {

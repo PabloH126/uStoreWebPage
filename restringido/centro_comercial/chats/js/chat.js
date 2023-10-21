@@ -295,14 +295,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                 }
             }
         })
-
-        connection.onclose((error) => {
-            if (error) {
-                console.error('La conexión se cerró inesperadamente:', error);
-            } else {
-                console.log('Conexión cerrada por el cliente.');
-            }
-        });
     }
 });
 
