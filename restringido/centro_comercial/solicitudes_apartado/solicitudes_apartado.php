@@ -146,11 +146,13 @@
 				</div>
 			<?php 
 			} ?>
-			
 
 			<div id="titles_page">
 				<h1>Solicitudes de apartado</h1>
 				<h3>
+				<?php 
+				if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+				{	?>
 					<?php 
 						foreach($tiendas as $tienda)
 						{
@@ -161,6 +163,8 @@
 							}
 						}
 					?>
+				<?php 
+				} ?>
 				</h3>
 			</div>
 			
