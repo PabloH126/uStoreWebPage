@@ -73,7 +73,7 @@ if (contactos) {
                                             console.error("Hubo un problema al establecer la nueva conexion:", err);
                                         })
                                 })
-                                .then(() => {
+                                .catch(err => {
                                     console.error("Hubo un problema al cerrar la conexion: ", err);
                                 })
                         }
