@@ -6,8 +6,8 @@ $maxSize = 1 * 1024 * 1024; // 1 megabyte
 
 $data = [
     'contenido' => $_POST['descripcionProducto'],
-    'idTienda' => $_POST['idTienda'],
-    'idCentroComercial' => $_SESSION['idMall']
+    'idTienda' => isset($_SESSION['idTiendaGerente']) ? $_SESSION['idTiendaGerente'] : $_POST['idTienda'],
+    'idCentroComercial' => isset($_SESSION['idMall']) ? $_SESSION['idMall'] : null
 ];
 
 if(isset($_FILES['logoTienda']) && $_FILES['logoTienda']['error'] == 0)
