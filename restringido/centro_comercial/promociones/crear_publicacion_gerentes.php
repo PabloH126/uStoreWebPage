@@ -23,7 +23,7 @@ require '../../security.php';
             <form action="envio_publicacion.php" method="post" enctype="multipart/form-data" class="form-tiendas">
 
                 <!-- Contenido de la publicacion-->
-                <div class="item" id="item-1">
+                <div class="item active" id="item-1">
                     <p>1/2</p>
                     <div class="descripcion">
                         <label for="descripcionProducto"><strong>Contenido de la publicación</strong></label>
