@@ -64,14 +64,17 @@ if(contactos)
                         else
                         {
                             console.log("Del else:", connection.state);
-                            connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
-                            .then(() => {
-                                console.log(connection.state);
-                                console.log("Unido al chat: ", dataCreacionChat.idChat);
-                            })
-                            .catch(err => {
-                                console.error("Hubo un problema al unirse al chat: ", err);
-                            });
+                            if(connection.state === signalR.HubConnectionState.Connected)
+                            {
+                                connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
+                                .then(() => {
+                                    console.log(connection.state);
+                                    console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                })
+                                .catch(err => {
+                                    console.error("Hubo un problema al unirse al chat: ", err);
+                                });
+                            }
                         }
                     }
                     else
