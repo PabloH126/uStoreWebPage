@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const idUser = idData.idUser;
 
     const idAdmin = idData.idAdmin;
-    
+
     console.log(idUser);
     let gerenteId = 0;
     let chatId = 0;
@@ -63,23 +63,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                         let mensajes = responseChatData.message;
 
                         mensajes.forEach(mensaje => {
-                            let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
-                            if (mensaje.isRecieved === true || mensaje.isRecieved === "true") {
-                                if (mensaje.isImage === true || mensaje.isImage === "true") {
-                                    createRecievedMsgWithImage(mensaje.contenido, fechaFormateada);
-                                }
-                                else {
-                                    createRecievedMsg(mensaje.contenido, fechaFormateada);
-                                }
-                            }
-                            else {
-                                if (mensaje.isImage === true || mensaje.isImage === "true") {
-                                    createOutMsgWithImage(mensaje.contenido, fechaFormateada);
-                                }
-                                else {
-                                    createOutMsg(mensaje.contenido, fechaFormateada);
-                                }
-                            }
+                            crearMensaje(mensaje, idUser, gerenteId, chatId);
                         })
                     }
 
@@ -125,14 +109,14 @@ document.addEventListener('DOMContentLoaded', async function () {
                                 connection.start()
                                     .then(() => {
                                         connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
-                                        .then(() => {
-                                            console.log("Unido al chat: ", dataCreacionChat.idChat);
-                                            chatId = dataCreacionChat.idChat;
-                                            
-                                        })
-                                        .catch(err => {
-                                            console.error("Hubo un problema al unirse al chat: ", err);
-                                        });
+                                            .then(() => {
+                                                console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                                chatId = dataCreacionChat.idChat;
+
+                                            })
+                                            .catch(err => {
+                                                console.error("Hubo un problema al unirse al chat: ", err);
+                                            });
                                     })
                                     .catch(err => {
                                         console.error("Hubo un problema al establecer la nueva conexion:", err);
@@ -201,13 +185,13 @@ document.addEventListener('DOMContentLoaded', async function () {
                                     connection.start()
                                         .then(() => {
                                             connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
-                                            .then(() => {
-                                                console.log("Unido al chat: ", dataCreacionChat.idChat);
-                                                chatId = dataCreacionChat.idChat;
-                                            })
-                                            .catch(err => {
-                                                console.error("Hubo un problema al unirse al chat: ", err);
-                                            });
+                                                .then(() => {
+                                                    console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                                    chatId = dataCreacionChat.idChat;
+                                                })
+                                                .catch(err => {
+                                                    console.error("Hubo un problema al unirse al chat: ", err);
+                                                });
                                         })
                                         .catch(err => {
                                             console.error("Hubo un problema al establecer la nueva conexion:", err);
@@ -228,14 +212,14 @@ document.addEventListener('DOMContentLoaded', async function () {
                         method: 'POST',
                         body: formData
                     });
-        
+
                     if (!responseCreacionMensaje.ok) {
                         showNotificationError("Hubo un error al mandar la solicitud al servidor");
                         return;
                     }
-        
+
                     const dataCreacionMensaje = await responseCreacionMensaje.json();
-        
+
                     if (dataCreacionMensaje.status !== "success") {
                         showNotificationError(dataCreacionMensaje.message);
                         return;
@@ -258,53 +242,15 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.log('entro al chat created');
             console.log(chat);
             console.log(mensaje);
-            
-            let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
-            console.log(fechaFormateada);
-            if (mensaje.isImage === true || mensaje.isImage === "true") {
-                if (idUser == mensaje.idRemitente) {
-                    createOutMsgWithImage(mensaje.contenido, fechaFormateada);
-                }
-                else {
-                    createRecievedMsgWithImage(mensaje.contenido, fechaFormateada)
-                }
-
-            }
-            else {
-                if (idUser == mensaje.idRemitente) {
-                    createOutMsg(mensaje.contenido, fechaFormateada);
-                }
-                else {
-                    createRecievedMsg(mensaje.contenido, fechaFormateada);
-                }
-            }
-            console.log(gerenteId, chatId);
-            actualizarContacto(mensaje.contenido, gerenteId, chatId);
+            crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
         });
 
         connection.on('RecieveMessage', function (mensaje) {
             console.log(mensaje);
-            let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
-            if (mensaje.isImage === true || mensaje.isImage === "true") {
-                if (idUser == mensaje.idRemitente) {
-                    createOutMsgWithImage(mensaje.contenido, fechaFormateada);
-                }
-                else {
-                    createRecievedMsgWithImage(mensaje.contenido, fechaFormateada)
-                }
-
-            }
-            else {
-                if (idUser == mensaje.idRemitente) {
-                    createOutMsg(mensaje.contenido, fechaFormateada);
-                }
-                else {
-                    createRecievedMsg(mensaje.contenido, fechaFormateada);
-                }
-            }
+            crearMensaje(mensaje, idUser, gerenteId, chatId);
         })
     }
-        
+
     var adminButton = document.getElementById('adminBttn');
 
     if (adminButton.classList.contains('selected')) {
@@ -507,11 +453,42 @@ function moverChatPrincipio(element) {
 
 function actualizarContacto(message, gerenteId, chatId) {
     let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
-    contactoGerente.removeAttribute('data-gerente-id');
-    contactoGerente.setAttribute('data-chat-id', chatId);
+    if(contactoGerente)
+    {
+        contactoGerente.removeAttribute('data-gerente-id');
+        contactoGerente.setAttribute('data-chat-id', chatId);
+    }
+    else
+    {
+        contactoGerente = document.querySelector(`[data-chat-id="${chatId}"]`);
+    }
     let mensajeContacto = contactoGerente.querySelector('message_preview');
     mensajeContacto.textContent = message;
     console.log(mensajeContacto);
     console.log(contactoGerente);
     moverChatPrincipio(contactoGerente);
+}
+
+function crearMensaje(mensaje, idUser, gerenteId, chatId) {
+    let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
+    console.log(fechaFormateada);
+    if (mensaje.isImage === true || mensaje.isImage === "true") {
+        if (idUser == mensaje.idRemitente) {
+            createOutMsgWithImage(mensaje.contenido, fechaFormateada);
+        }
+        else {
+            createRecievedMsgWithImage(mensaje.contenido, fechaFormateada)
+        }
+
+    }
+    else {
+        if (idUser == mensaje.idRemitente) {
+            createOutMsg(mensaje.contenido, fechaFormateada);
+        }
+        else {
+            createRecievedMsg(mensaje.contenido, fechaFormateada);
+        }
+    }
+    console.log(gerenteId, chatId);
+    actualizarContacto(mensaje.contenido, gerenteId, chatId);
 }
