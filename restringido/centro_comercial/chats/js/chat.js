@@ -305,10 +305,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
     var adminButton = document.getElementById("adminBttn");
-    adminButton.addEventListener("click", function() {
-        
-        console.log("El botón ha sido presionado");
-        // Agrega aquí el resto de tu código.
+    adminButton.addEventListener("click", function() { 
+        console.log("cilck c:");
     });
 
 });
