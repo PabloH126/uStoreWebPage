@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     return;
                 }
 
-                const dataCreacionMensaje = responseCreacionMensaje.json();
+                const dataCreacionMensaje = await responseCreacionMensaje.json();
                 console.log(dataCreacionMensaje);
                 if (dataCreacionMensaje.status !== "success") {
                     showNotificationError(dataCreacionMensaje.message);
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                         return;
                     }
         
-                    const dataCreacionMensaje = responseCreacionMensaje.json();
+                    const dataCreacionMensaje = await responseCreacionMensaje.json();
         
                     if (dataCreacionMensaje.status !== "success") {
                         showNotificationError(dataCreacionMensaje.message);
