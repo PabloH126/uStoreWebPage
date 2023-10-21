@@ -26,6 +26,7 @@ if(contactos)
             console.log('Conexion con SignalR exitosa');
             connection.invoke("JoinUserChats")
             .then(() => {
+                console.log(connection.state);
                 console.log('Conexion con JoinGroupChat exitosa');
             })
             .then(() => {
@@ -64,6 +65,7 @@ if(contactos)
                         {
                             connection.invoke("JoinGroupChat", dataCreacionChat.idChat)
                             .then(() => {
+                                console.log(connection.state);
                                 console.log("Unido al chat: ", dataCreacionChat.idChat);
                             })
                             .catch(err => {
