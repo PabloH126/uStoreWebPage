@@ -79,9 +79,12 @@ if ($httpStatusCode != 200)
 
 curl_close($ch);
 
+$dataResponse = json_decode($response, true);
+
 $responseArray = [
     "status" => "success",
-    "message" => "Chat creado con éxito"
+    "message" => "Chat creado con éxito",
+    "idChat" => $dataResponse['idChat']
 ];
 echo json_encode($responseArray);
 exit;
