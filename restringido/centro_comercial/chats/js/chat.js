@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         sendBtn.addEventListener('click', async function (e) {
             e.preventDefault();
             let message = textArea.value;
+            textArea.value = '';
             if (gerenteId !== 0 && chatId === 0) {
                 console.log(gerenteId);
                 let formData = new FormData();
