@@ -547,6 +547,7 @@ function actualizarContacto(message, gerenteId, chatId) {
 }
 
 function crearMensaje(mensaje, idUser, gerenteId, chatId) {
+    console.log(mensaje.fechaMensaje);
     let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
     console.log(fechaFormateada);
     if (mensaje.isImage === true || mensaje.isImage === "true") {
