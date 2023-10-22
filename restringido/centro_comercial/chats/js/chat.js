@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
 
         connection.on('RecieveMessage', function (mensaje) {
-            console.log(mensaje);
+            console.log("Mensaje en RecieveMessage:", mensaje);
             crearMensaje(mensaje, idUser, gerenteId, chatId);
         })
     }
