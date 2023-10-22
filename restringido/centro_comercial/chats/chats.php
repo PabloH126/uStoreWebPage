@@ -78,6 +78,8 @@ require '../../security.php';
 			$gerentesSinChat[] = $gerente;
 		}
 	}
+	var_dump($gerentesConChat);
+	echo '<br>' . $chats;
 ?>
 <!DOCTYPE html>
 <html>

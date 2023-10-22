@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
     const idData = await responseId.json();
     const idUser = idData.idUser;
-
     const idAdmin = idData.idAdmin;
 
     console.log(idUser);
@@ -281,7 +280,51 @@ function mutationCallback(mutationsList, observer) {
                 buscador.style.display = 'none';
                 textAreaContainer.style.display = 'block';
                 document.getElementById('span-seleccion-tienda').style.display = 'none'
+                
+/*tener todos los chats que tiene el gerente y de esos
+                cada chat tiene tipe miembro 1 y 2 
+                ponemos los chats que tiene el gerente que tenga el tipe miembro 1 o 2 = administrador
 
+                si hay, se pone el data set chat id en el boton de administrador, si no
+                no se pone nada y solo se abre el chat
+
+                cuando se abra el chat se pone el el boton
+*//*
+                if (contacto.dataset.chatId) {
+                    chatId = contacto.dataset.chatId
+                    console.log(chatId);
+                    let formData = new FormData();
+                    formData.append("idChat", contacto.dataset.chatId);
+                    const responseChat = await fetch('actualizar_chat.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+
+                    if (!responseChat.ok) {
+                        showNotificationError("Hubo un error al mandar la solicitud al servidor");
+                        return;
+                    }
+
+                    let responseChatData = await responseChat.json();
+
+                    if (responseChatData.status !== "success") {
+                        showNotificationError(responseChatData.message);
+                        return;
+                    }
+                    else {
+                        let mensajes = responseChatData.message;
+                        msgArea.innerHTML = '';
+                        mensajes.forEach(mensaje => {
+                            crearMensaje(mensaje, idUser, gerenteId, chatId);
+                        })
+                    }
+
+                }
+                else {
+                    gerenteId = contacto.dataset.gerenteId;
+                    console.log(gerenteId);
+                }
+*/
             } else {
                 buscador.style.display = 'block';
                 textAreaContainer.style.display = 'none';
