@@ -507,7 +507,8 @@ function validacionTypeImagen(imagen) {
 }
 
 function formatearFecha(fecha) {
-    let fechaMensaje = new Date(fecha);
+    let fechaMensaje = (typeof fecha === 'string' && fecha.endsWith('Z')) ? fecha : new Date(fecha).toISOString();
+    console.log(fechaMensaje);
     let opciones = {
         month: 'long',
         day: 'numeric',
@@ -547,9 +548,7 @@ function actualizarContacto(message, gerenteId, chatId) {
 }
 
 function crearMensaje(mensaje, idUser, gerenteId, chatId) {
-    console.log(mensaje.fechaMensaje);
     let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
-    console.log(fechaFormateada);
     if (mensaje.isImage === true || mensaje.isImage === "true") {
         if (idUser == mensaje.idRemitente) {
             createOutMsgWithImage(mensaje.contenido, fechaFormateada);
