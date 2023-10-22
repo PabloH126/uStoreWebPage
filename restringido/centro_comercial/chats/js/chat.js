@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     chatId = contacto.dataset.chatId
                     console.log(chatId);
                     let formData = new FormData();
-                    formData.append("idChat", contacto.dataset.chatId);
+                    formData.append("idChat", chatId);
                     const responseChat = await fetch('actualizar_chat.php', {
                         method: 'POST',
                         body: formData
@@ -64,6 +64,15 @@ document.addEventListener('DOMContentLoaded', async function () {
                         mensajes.forEach(mensaje => {
                             crearMensaje(mensaje, idUser, gerenteId, chatId);
                         })
+                        connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
+                        .then(() => {
+                            console.log("Unido al chat: ", dataCreacionChat.idChat);
+                            chatId = dataCreacionChat.idChat;
+
+                        })
+                        .catch(err => {
+                            console.error("Hubo un problema al unirse al chat: ", err);
+                        });
                     }
 
                 }
