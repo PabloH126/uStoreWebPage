@@ -39,7 +39,7 @@
           <img src="<?php echo $gerente['iconoPerfil']; ?>" alt="Imagen de perfil del contacto">
         </div>
         <div class="contact_info">
-          <div class="contact_name">$gerente['nombre']</div>
+          <div class="contact_name"><?php echo $gerente['nombre'] ?></div>
           <div class="message_preview"><?php echo $chat['ultimoMensaje'];?></div>
         </div>
       </div>
