@@ -64,11 +64,9 @@ document.addEventListener('DOMContentLoaded', async function () {
                         mensajes.forEach(mensaje => {
                             crearMensaje(mensaje, idUser, gerenteId, chatId);
                         })
-                        connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
+                        connection.invoke("JoinGroupChat", chatId)
                         .then(() => {
-                            console.log("Unido al chat: ", dataCreacionChat.idChat);
-                            chatId = dataCreacionChat.idChat;
-
+                            console.log("Unido al chat: ", chatId);
                         })
                         .catch(err => {
                             console.error("Hubo un problema al unirse al chat: ", err);
