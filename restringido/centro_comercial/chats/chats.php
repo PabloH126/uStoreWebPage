@@ -79,7 +79,6 @@ require '../../security.php';
 		}
 	}
 	var_dump($gerentesConChat);
-	echo '<br>' . $chats;
 ?>
 <!DOCTYPE html>
 <html>
