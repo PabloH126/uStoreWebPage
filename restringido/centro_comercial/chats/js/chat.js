@@ -543,8 +543,6 @@ function actualizarContacto(message, gerenteId, chatId) {
     }
     let mensajeContacto = contactoGerente.querySelector('.message_preview');
     mensajeContacto.textContent = message;
-    console.log(mensajeContacto);
-    console.log(contactoGerente);
     moverChatPrincipio(contactoGerente);
 }
 
@@ -568,6 +566,5 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
             createRecievedMsg(mensaje.contenido, fechaFormateada);
         }
     }
-    console.log(gerenteId, chatId, mensaje.contenido);
     actualizarContacto(mensaje.contenido, gerenteId, chatId);
 }
