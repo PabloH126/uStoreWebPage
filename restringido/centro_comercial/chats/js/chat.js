@@ -507,7 +507,7 @@ function validacionTypeImagen(imagen) {
 }
 
 function formatearFecha(fecha) {
-    let fechaMensaje = (typeof fecha === 'string' && fecha.endsWith('Z')) ? fecha : new Date(fecha).toISOString();
+    let fechaMensaje = fecha.endsWith('Z') ? new Date(fecha) : new Date(fecha).toISOString();
     console.log(fechaMensaje);
     let opciones = {
         month: 'long',
