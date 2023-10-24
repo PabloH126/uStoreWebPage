@@ -106,7 +106,7 @@ optionsAside.forEach(option => {
 
 
 function CreateContacto(chat) {
-
+    console.log(chat);
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
     divContactoContent.dataset.chatId = chat.idChat;
