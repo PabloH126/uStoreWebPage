@@ -1,7 +1,7 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
-const contactoContent = document.querySelectorAll('.contacto_content');
+const contactos = document.querySelectorAll('.contacto');
 
 document.addEventListener('DOMContentLoaded', async function () {
     var buttons = document.querySelectorAll('.options_aside');
@@ -32,14 +32,14 @@ function verificarSeleccion() {
     }
 }
 
-contactoContent.forEach(contacto => {
+contactos.forEach(contacto => {
     contacto.addEventListener('click', () => {
         console.log(contacto);
-        let contactos = document.querySelectorAll('.contacto');
         contactos.forEach(item => {
             item.classList.remove('select');
         });
-        let contactoContentUser = contacto.querySelector('.contacto');
+        let contactoContainer = contacto.closest('.contacto_content');
+        let contactoContentUser = contactoContainer.querySelector('.contacto');
         contactoContentUser.classList.add('select');
         verificarSeleccion();
     });
