@@ -1,5 +1,7 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelector('.options_aside');
+const bodyAside = document.querySelector('.body-aside');
+
 document.addEventListener('DOMContentLoaded', function () {
     var buttons = document.querySelectorAll('.options_aside');
     function onButtonClick(event) {
@@ -93,6 +95,7 @@ searchBox.addEventListener('keyup', async function () {
 })
 
 optionsAside.addEventListener('click', async function (btn) {
+    bodyAside.innerHTML = '';
     await fetchChats(btn.textContent);
 })
 
@@ -164,6 +167,8 @@ function CreateContacto(chat) {
 
     divContactoContent.appendChild(divInitialState);
     divContactoContent.appendChild(divHoverState);
+
+    bodyAside.appendChild(divContactInfo);
 
     /*
         <div class="contacto_content">

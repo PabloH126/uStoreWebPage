@@ -26,7 +26,9 @@
     </div>
 
     <div class="body-aside">
+      
       <?php 
+      /*
       if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
       {
         foreach($gerentesConChat as $gerenteObject)
@@ -60,6 +62,7 @@
         <?php
         }
       }
+      */
       ?> 
     </div>
   </ul>
