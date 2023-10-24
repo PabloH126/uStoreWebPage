@@ -96,6 +96,8 @@ searchBox.addEventListener('keyup', async function () {
 
 optionsAside.addEventListener('click', async function (btn) {
     bodyAside.innerHTML = '';
+    console.log(btn);
+    console.log(btn.textContent);
     await fetchChats(btn.textContent);
 })
 
