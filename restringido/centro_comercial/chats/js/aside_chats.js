@@ -229,7 +229,7 @@ async function fetchChats(typeChat) {
                 chats = chatsData.gerentesConChat;
                 gerentes = chatsData.gerentesSinChat;
                 chats.forEach(chat => {
-                    CreateContacto(chat);
+                    CreateContacto(chat.chat);
                 })
                 break;
             case 'Administrador':
