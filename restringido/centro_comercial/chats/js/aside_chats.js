@@ -2,7 +2,7 @@ let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     var buttons = document.querySelectorAll('.options_aside');
     function onButtonClick(event) {
         buttons.forEach(function (button) {
@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
     buttons.forEach(function (button) {
         button.addEventListener('click', onButtonClick);
     });
+
+    await fetchChats('Usuarios');
 });
 
 
