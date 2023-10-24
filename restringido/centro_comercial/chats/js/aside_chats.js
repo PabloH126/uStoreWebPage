@@ -1,7 +1,7 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
-console.log(bodyAside);
+
 document.addEventListener('DOMContentLoaded', function () {
     var buttons = document.querySelectorAll('.options_aside');
     function onButtonClick(event) {
@@ -94,11 +94,13 @@ searchBox.addEventListener('keyup', async function () {
 
 })
 
-optionsAside.addEventListener('click', async function (btn) {
-    bodyAside.innerHTML = '';
-    console.log(btn);
-    console.log(btn.textContent);
-    await fetchChats(btn.textContent);
+optionsAside.forEach(option => {
+    option.addEventListener('click', async function () {
+        bodyAside.innerHTML = '';
+        console.log(option);
+        console.log(option.textContent);
+        await fetchChats(btn.textContent);
+    })
 })
 
 
