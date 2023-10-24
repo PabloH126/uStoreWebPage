@@ -44,8 +44,8 @@ header .content .final #ultimo {
 	margin-left: 28%;
 }
 
-header .content .final #ultimo img:hover,
-header .content .final .bottn img:hover {
+header .content .final #ultimo:hover img,
+header .content .final .bottn:hover img{
 	filter: none;
 	transition-duration: 0.5s;
 	-webkit-transition-duration: 0.5s;
