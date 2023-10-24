@@ -205,7 +205,7 @@ function CreateContacto(chat) {
 }
 
 async function fetchChats(typeChat) {
-    const chatsResponse = await fetch('aside_' + typeChat.toLowerCase(), {
+    const chatsResponse = await fetch('aside_' + typeChat.toLowerCase() + '.php', {
         method: 'POST'
     });
     if (!chatsResponse.ok) {
