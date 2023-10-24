@@ -34,6 +34,7 @@ function verificarSeleccion() {
 
 contactoContent.forEach(contacto => {
     contacto.addEventListener('click', () => {
+        console.log(contacto);
         let contactos = document.querySelectorAll('.contacto');
         contactos.forEach(item => {
             item.classList.remove('select');
