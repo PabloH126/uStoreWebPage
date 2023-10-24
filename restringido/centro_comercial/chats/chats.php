@@ -31,9 +31,6 @@ require '../../security.php';
 	<title>Chats</title>
 	<?php require("../templates/template.styles.php") ?>
 	<?php require("templates/template.secc_chats.php") ?>
-	<?php 
-	(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador") ? require("aside_gerentes.php") : '';
-	?>
 </head>
 
 <body>
