@@ -2,7 +2,7 @@
   <ul class="list">
     <div class="header_aside">
       <div class="aside_options_chat">
-          <button class="options_aside">Usuarios</button>
+          <button class="options_aside selected">Usuarios</button>
         <hr>
         <?php
 			if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
@@ -11,9 +11,7 @@
 			}
 			else
 			{
-        echo '<button class="options_aside" id="adminBttn">Administrador</button>';
-
-        $_SESSION["idAdmin"];
+        echo '<button class="options_aside" id="adminBttn" data-admin-id="' . $_SESSION["idAdmin"] . '">Administrador</button>';
 
       }?>
       </div>
@@ -29,36 +27,40 @@
 
     <div class="body-aside">
       <?php 
-      foreach($gerentesConChat as $gerenteObject)
+      if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
       {
-        $gerente = $gerenteObject['gerente'];
-        $chat = $gerenteObject['chat'];
-      ?>
-      <div class="contacto" data-chat-id="<?php echo $chat['idChat']; ?>"> 
-        <div class="contact_profile_img">
-          <img src="<?php echo $gerente['iconoPerfil']; ?>" alt="Imagen de perfil del contacto">
+        foreach($gerentesConChat as $gerenteObject)
+        {
+          $gerente = $gerenteObject['gerente'];
+          $chat = $gerenteObject['chat'];
+        ?>
+        <div class="contacto" data-chat-id="<?php echo $chat['idChat']; ?>"> 
+          <div class="contact_profile_img">
+            <img src="<?php echo $gerente['iconoPerfil']; ?>" alt="Imagen de perfil del contacto">
+          </div>
+          <div class="contact_info">
+            <div class="contact_name"><?php echo $gerente['nombre'] ?></div>
+            <div class="message_preview"><?php echo $chat['ultimoMensaje'];?></div>
+          </div>
         </div>
-        <div class="contact_info">
-          <div class="contact_name"><?php echo $gerente['nombre'] ?></div>
-          <div class="message_preview"><?php echo $chat['ultimoMensaje'];?></div>
+        <?php
+        }
+        foreach($gerentesSinChat as $gerente)
+        {
+        ?>
+        <div class="contacto" data-gerente-id="<?php echo $gerente['idGerente']; ?>">
+          <div class="contact_profile_img">
+            <img src="<?php echo $gerente['iconoPerfil']; ?>" alt="Imagen de perfil del contacto">
+          </div>
+          <div class="contact_info">
+            <div class="contact_name"><?php echo $gerente['nombre'] ?></div>
+            <div class="message_preview">Comenzar chat.</div>
+          </div>
         </div>
-      </div>
-      <?php
+        <?php
+        }
       }
-      foreach($gerentesSinChat as $gerente)
-      {
-      ?>
-      <div class="contacto" data-gerente-id="<?php echo $gerente['idGerente']; ?>">
-        <div class="contact_profile_img">
-          <img src="<?php echo $gerente['iconoPerfil']; ?>" alt="Imagen de perfil del contacto">
-        </div>
-        <div class="contact_info">
-          <div class="contact_name"><?php echo $gerente['nombre'] ?></div>
-          <div class="message_preview">Comenzar chat.</div>
-        </div>
-      </div>
-      <?php
-      }
-      ?>
+      ?> 
+    </div>
   </ul>
 </aside>

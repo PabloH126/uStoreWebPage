@@ -3,7 +3,7 @@ session_start();
 require '../../security.php';
 	$ch = curl_init();
 
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Chat/GetChats?typeChat=Gerente");
+	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Chat/GetChats?typeChat=Usuario");
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -21,63 +21,8 @@ require '../../security.php';
 	if ($httpStatusCode == 400) {
 		$chatsError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
 	}
-	$chats = json_decode($response, true);
+	$chatsUsuario = json_decode($response, true);
 	curl_close($ch);
-
-	//GET GERENTES ADMINISTRADOR
-
-	$ch = curl_init();
-
-	curl_setopt($ch, CURLOPT_URL, "https://ustoreapi.azurewebsites.net/api/Gerentes/Gerentes");
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt(
-		$ch,
-		CURLOPT_HTTPHEADER,
-		array(
-			'Authorization: Bearer ' . $_COOKIE['SessionToken']
-		)
-	);
-
-	$response = curl_exec($ch);
-
-	if ($response === false) {
-		echo 'Error: ' . curl_error($ch);
-	} else {
-		$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-	}
-
-	if ($httpStatusCode == 400) {
-		$tiendasError = "Error al intentar recuperar las tiendas. Codigo de respuesta: " . $httpStatusCode;
-	}
-	$gerentes = json_decode($response, true);
-	curl_close($ch);
-
-	$gerentesConChat = [];
-	$gerentesSinChat = [];
-
-	foreach ($gerentes as $gerente)
-	{
-		$chatEncontrado = false;
-		foreach ($chats as $chat)
-		{
-			if (($chat['idMiembro1'] == $gerente['idGerente'] && $chat['typeMiembro1'] == 'Gerente') || 
-			($chat['idMiembro2'] == $gerente['idGerente'] && $chat['typeMiembro2'] == 'Gerente'))
-			{
-				$chatEncontrado = true;
-				$gerentesConChat[] = [
-					'gerente' => $gerente,
-					'chat' => $chat
-				];
-				break;
-			}
-		}
-		
-		if(!$chatEncontrado)
-		{
-			$gerentesSinChat[] = $gerente;
-		}
-	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,6 +31,9 @@ require '../../security.php';
 	<title>Chats</title>
 	<?php require("../templates/template.styles.php") ?>
 	<?php require("templates/template.secc_chats.php") ?>
+	<?php 
+	(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador") ? require("aside_gerentes.php") : '';
+	?>
 </head>
 
 <body>

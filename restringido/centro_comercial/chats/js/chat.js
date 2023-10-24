@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         sendBtn.addEventListener('click', async function (e) {
             e.preventDefault();
+            if(textArea.value === '' || null) return;
             let message = textArea.value;
             textArea.value = '';
             if (gerenteId !== 0 && chatId === 0) {
@@ -256,92 +257,16 @@ document.addEventListener('DOMContentLoaded', async function () {
         connection.on('RecieveMessage', function (mensaje) {
             console.log("Mensaje en RecieveMessage:", mensaje);
             crearMensaje(mensaje, idUser, gerenteId, chatId);
+            let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
+            if (!contactoGerente) {
+                contactoGerente = document.querySelector(`[data-chat-id="${chatId}"]`);
+            }
+            moverChatPrincipio(contactoGerente);
         })
     }
 
     var adminButton = document.getElementById('adminBttn');
-
-    // Crear una instancia de observer con la función callback que se ejecutará en cada mutación
-    const observer = new MutationObserver(mutationCallback);
-
-    // Opciones de configuración para el observer: observar cambios de atributos
-    const config = { attributes: true, attributeFilter: ['class'] };
-
-    // Empezar a observar el botón con la configuración dada
-    if (adminButton) {
-        observer.observe(adminButton, config);
-    } else {
-        console.error("El botón de administrador no se encontró en el DOM");
-    }
-
 });
-
-function mutationCallback(mutationsList, observer) {
-    for (let mutation of mutationsList) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-            var adminButton = document.getElementById('adminBttn');
-            var textAreaContainer = document.querySelector('.text-area');
-            var buscador = document.querySelector('.cajabuscar');
-
-            if (adminButton && adminButton.classList.contains('selected')) {
-                console.log("la tiene c:");
-                buscador.style.display = 'none';
-                textAreaContainer.style.display = 'block';
-                document.getElementById('span-seleccion-tienda').style.display = 'none'
-                
-/*tener todos los chats que tiene el gerente y de esos
-                cada chat tiene tipe miembro 1 y 2 
-                ponemos los chats que tiene el gerente que tenga el tipe miembro 1 o 2 = administrador
-
-                si hay, se pone el data set chat id en el boton de administrador, si no
-                no se pone nada y solo se abre el chat
-
-                cuando se abra el chat se pone el el boton
-*//*
-                if (contacto.dataset.chatId) {
-                    chatId = contacto.dataset.chatId
-                    console.log(chatId);
-                    let formData = new FormData();
-                    formData.append("idChat", contacto.dataset.chatId);
-                    const responseChat = await fetch('actualizar_chat.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-
-                    if (!responseChat.ok) {
-                        showNotificationError("Hubo un error al mandar la solicitud al servidor");
-                        return;
-                    }
-
-                    let responseChatData = await responseChat.json();
-
-                    if (responseChatData.status !== "success") {
-                        showNotificationError(responseChatData.message);
-                        return;
-                    }
-                    else {
-                        let mensajes = responseChatData.message;
-                        msgArea.innerHTML = '';
-                        mensajes.forEach(mensaje => {
-                            crearMensaje(mensaje, idUser, gerenteId, chatId);
-                        })
-                    }
-
-                }
-                else {
-                    gerenteId = contacto.dataset.gerenteId;
-                    console.log(gerenteId);
-                }
-*/
-            } else {
-                buscador.style.display = 'block';
-                textAreaContainer.style.display = 'none';
-                document.getElementById('span-seleccion-tienda').style.display = 'block'
-                console.log("no la tiene :c");
-            }
-        }
-    }
-}
 
 function createRecievedMsg(message, recievedDate) {
     let divRecieved = document.createElement('div');
@@ -544,7 +469,6 @@ function actualizarContacto(message, gerenteId, chatId) {
     }
     let mensajeContacto = contactoGerente.querySelector('.message_preview');
     mensajeContacto.textContent = message;
-    moverChatPrincipio(contactoGerente);
 }
 
 function crearMensaje(mensaje, idUser, gerenteId, chatId) {
