@@ -1,6 +1,7 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
+const contactoContent = document.querySelectorAll('.contacto_content');
 
 document.addEventListener('DOMContentLoaded', async function () {
     var buttons = document.querySelectorAll('.options_aside');
@@ -18,9 +19,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     await fetchChats('Usuarios');
 });
 
-
-const contactos = document.querySelectorAll('.contacto');
-
 function verificarSeleccion() {
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
@@ -34,14 +32,14 @@ function verificarSeleccion() {
     }
 }
 
-contactos.forEach(contacto => {
+contactoContent.forEach(contacto => {
     contacto.addEventListener('click', () => {
-
+        let contactos = document.querySelectorAll('.contacto');
         contactos.forEach(item => {
             item.classList.remove('select');
         });
-
-        contacto.classList.add('select');
+        let contactoContentUser = contacto.querySelector('.contacto');
+        contactoContentUser.classList.add('select');
         verificarSeleccion();
     });
 });
