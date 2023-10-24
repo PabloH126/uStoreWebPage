@@ -1,7 +1,6 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
-const contactos = document.querySelectorAll('.contacto');
 
 document.addEventListener('DOMContentLoaded', async function () {
     var buttons = document.querySelectorAll('.options_aside');
@@ -17,6 +16,22 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     await fetchChats('Usuarios');
+
+    const contactoContents = document.querySelectorAll('.contacto_content');
+    contactoContents.forEach(contacto => {
+        contacto.addEventListener('click', () => {
+            console.log(contacto);
+            let contactos = document.querySelectorAll('.contacto');
+            contactos.forEach(item => {
+                item.classList.remove('select');
+            });
+            let contactoContentUser = contacto.querySelector('.contacto');
+            contactoContentUser.classList.add('select');
+            verificarSeleccion();
+        });
+    });
+    verificarSeleccion();
+    
 });
 
 function verificarSeleccion() {
@@ -31,21 +46,6 @@ function verificarSeleccion() {
         document.getElementById('span-seleccion-tienda').style.display = 'none'
     }
 }
-
-contactos.forEach(contacto => {
-    contacto.addEventListener('click', () => {
-        console.log(contacto);
-        contactos.forEach(item => {
-            item.classList.remove('select');
-        });
-        let contactoContainer = contacto.closest('.contacto_content');
-        let contactoContentUser = contactoContainer.querySelector('.contacto');
-        contactoContentUser.classList.add('select');
-        verificarSeleccion();
-    });
-});
-verificarSeleccion();
-
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -172,6 +172,17 @@ function CreateContacto(chat) {
 
     divContactoContent.appendChild(divInitialState);
     divContactoContent.appendChild(divHoverState);
+
+    divContactoContent.addEventListener('click', () => {
+        console.log(contacto);
+        let contactos = document.querySelectorAll('.contacto');
+        contactos.forEach(item => {
+            item.classList.remove('select');
+        });
+        let contactoContentUser = contacto.querySelector('.contacto');
+        contactoContentUser.classList.add('select');
+        verificarSeleccion();
+    });
 
     bodyAside.appendChild(divContactoContent);
 
