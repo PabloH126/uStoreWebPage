@@ -1,5 +1,5 @@
 let searchBox = document.getElementById('s');
-const optionsAside = document.querySelector('.options_aside');
+const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
 console.log(bodyAside);
 document.addEventListener('DOMContentLoaded', function () {
