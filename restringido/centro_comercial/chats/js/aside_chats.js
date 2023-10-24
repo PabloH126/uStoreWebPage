@@ -172,7 +172,7 @@ function CreateContacto(chat) {
     divContactoContent.appendChild(divInitialState);
     divContactoContent.appendChild(divHoverState);
 
-    bodyAside.appendChild(divContactInfo);
+    bodyAside.appendChild(divContactoContent);
 
     /*
         <div class="contacto_content">
