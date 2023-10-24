@@ -92,13 +92,13 @@ searchBox.addEventListener('keyup', async function () {
 
 })
 
-optionsAside.addEventListener('click', function (btn) {
-    
+optionsAside.addEventListener('click', async function (btn) {
+    await fetchChats(btn.textContent);
 })
 
 
 
-function CreateContacto(chat, iconoPerfil) {
+function CreateContacto(chat) {
 
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
@@ -213,14 +213,14 @@ async function fetchChats(typeChat) {
             case 'Usuarios':
                 chats = chatsData.chatsUsuario;
                 chats.forEach(chat => {
-                    /*funcion crear contactos*/
+                    CreateContacto(chat);
                 });
                 break;
             case 'Gerentes':
                 chats = chatsData.gerentesConChat;
                 gerentes = chatsData.gerentesSinChat;
                 chats.forEach(chat => {
-                    /*funcion crear contacto gerente*/
+                    CreateContacto(chat);
                 })
                 break;
             case 'Administrador':
