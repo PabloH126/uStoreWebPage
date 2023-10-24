@@ -66,7 +66,7 @@ require '../../security.php';
 			</div>
 		</div>
 	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.10/signalr.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
 	<script src="js/aside_chats.js"></script>
 	<script src="js/chat.js"></script>
 </body>
