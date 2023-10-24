@@ -99,7 +99,7 @@ optionsAside.forEach(option => {
         bodyAside.innerHTML = '';
         console.log(option);
         console.log(option.textContent);
-        await fetchChats(btn.textContent);
+        await fetchChats(option.textContent);
     })
 })
 
