@@ -338,13 +338,16 @@ function actualizarChatsContacto() {
                     mensajes.forEach(mensaje => {
                         crearMensaje(mensaje, idUser, gerenteId, chatId);
                     })
-                    connection.invoke("JoinGroupChat", chatId)
-                    .then(() => {
-                        console.log("Unido al chat: ", chatId);
-                    })
-                    .catch(err => {
-                        console.error("Hubo un problema al unirse al chat: ", err);
-                    });
+                    if (connection.state === signalR.HubConnectionState.Connected) 
+                    {
+                        connection.invoke("JoinGroupChat", chatId)
+                        .then(() => {
+                            console.log("Unido al chat: ", chatId);
+                        })
+                        .catch(err => {
+                            console.error("Hubo un problema al unirse al chat: ", err);
+                        });
+                    }
                 }
 
             }
