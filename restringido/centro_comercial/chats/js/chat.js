@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         .build();
 
     if (contactos) {
-        waitForConnection()
+        connection.start()
             .then(() => {
                 console.log('Conexion con SignalR exitosa');
                 actualizarChatsContacto();
