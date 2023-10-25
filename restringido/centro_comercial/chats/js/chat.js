@@ -333,46 +333,6 @@ function createOutMsgWithImage(image, recievedDate) {
     msgArea.appendChild(outGoingMsg);
 }
 
-
-function showNotification(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    const notification = document.createElement("div");
-    notification.classList.add("notification");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    currentNotification = notification;
-}
-
-function hideNotification() {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    currentNotification = null;
-}
-
-function showNotificationError(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-    const notification = document.createElement("div");
-    notification.classList.add("notificationError");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    currentNotification = notification;
-    setTimeout(() => {
-        notification.classList.add("notificationErrorHide");
-        setTimeout(() => {
-            hideNotification();
-        }, 550);
-    }, 2500);
-
-}
-
 async function imagenesValidacion() {
     const maxSize = 1 * 1024 * 1024;
     if (fileInput.files.length && !validacionTypeImagen(fileInput)) {

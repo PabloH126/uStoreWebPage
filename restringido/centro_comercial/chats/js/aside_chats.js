@@ -165,8 +165,6 @@ function CreateContacto(chat) {
     })
 }
 
-
-
 function CreateContactoGerente(gerente) {
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
@@ -214,7 +212,7 @@ function CreateContactoGerente(gerente) {
     divContactProfileImgHover.classList.add('contact_profile_img');
     
     let imgContactProfileImgHover = document.createElement('img');
-    imgContactProfileImgHover.src = chat.imagenTienda;
+    imgContactProfileImgHover.src = gerente.tiendaImage;
     imgContactProfileImgHover.setAttribute('alt', "Imagen de perfil de tienda");
     
     let divContactInfoHover = document.createElement('div');
@@ -222,7 +220,7 @@ function CreateContactoGerente(gerente) {
 
     let divContactNameHover = document.createElement('div');
     divContactNameHover.classList.add('contact_name');
-    divContactNameHover.textContent = chat.tiendaNameChat;
+    divContactNameHover.textContent = gerente.tiendaName;
     
     divContactProfileImgHover.appendChild(imgContactProfileImgHover);
     divContactInfoHover.appendChild(divContactNameHover);
@@ -346,4 +344,43 @@ function actualizarChatsContacto() {
             }
         })
     })
+}
+
+function showNotification(message) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    currentNotification = notification;
+}
+
+function hideNotification() {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+
+    currentNotification = null;
+}
+
+function showNotificationError(message) {
+    if (currentNotification) {
+        currentNotification.remove();
+    }
+    const notification = document.createElement("div");
+    notification.classList.add("notificationError");
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    currentNotification = notification;
+    setTimeout(() => {
+        notification.classList.add("notificationErrorHide");
+        setTimeout(() => {
+            hideNotification();
+        }, 550);
+    }, 2500);
+
 }
