@@ -150,7 +150,7 @@ function CreateContacto(chat, contactos) {
     bodyAside.appendChild(divContactoContent);
 
     contactos = document.querySelectorAll('.contacto_content');
-
+    console.log("Dentro de la funcion create", contactos);
     contactos.forEach(contacto => {
         contacto.addEventListener('click', () => {
             let contactosUsers = document.querySelectorAll('.contacto');
@@ -196,6 +196,7 @@ function CreateContacto(chat, contactos) {
 
 
 function CreateContactoGerente(gerente, contactos) {
+    console.log(gerente);
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
     divContactoContent.dataset.gerenteId = gerente.idGerente;
@@ -264,7 +265,7 @@ function CreateContactoGerente(gerente, contactos) {
     bodyAside.appendChild(divContactoContent);
 
     contactos = document.querySelectorAll('.contacto_content');
-
+    console.log("Dentro de la funcion create", contactos);
     contactos.forEach(contacto => {
         contacto.addEventListener('click', () => {
             let contactosUsers = document.querySelectorAll('.contacto');
