@@ -151,15 +151,17 @@ function CreateContacto(chat, contactos) {
 
     contactos = document.querySelectorAll('.contacto_content');
 
-    contactos.addEventListener('click', () => {
-        let contactosUsers = document.querySelectorAll('.contacto');
-        contactosUsers.forEach(item => {
-            item.classList.remove('select');
+    contactos.forEach(contacto => {
+        contacto.addEventListener('click', () => {
+            let contactosUsers = document.querySelectorAll('.contacto');
+            contactosUsers.forEach(item => {
+                item.classList.remove('select');
+            });
+            let contactoContentUser = contacto.querySelector('.contacto');
+            contactoContentUser.classList.add('select');
+            verificarSeleccion();
         });
-        let contactoContentUser = divContactoContent.querySelector('.contacto');
-        contactoContentUser.classList.add('select');
-        verificarSeleccion();
-    });
+    })
 
     /*
         <div class="contacto_content">
