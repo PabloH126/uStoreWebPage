@@ -40,6 +40,8 @@ const connection = new signalR.HubConnectionBuilder()
 .build();
 
 document.addEventListener('DOMContentLoaded', function () {
+    scrollToBottom();
+
     connection.start()
         .then(() => {
             console.log('Conexion con SignalR exitosa');
@@ -77,6 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+});
+
+function scrollToBottom() {
+    const chatArea = document.querySelector(".mssg-area");
+    chatArea.scrollTop = chatArea.scrollHeight;
+}
 
 searchBox.addEventListener('keyup', async function () {
     let busqueda = searchBox.value.toLowerCase();

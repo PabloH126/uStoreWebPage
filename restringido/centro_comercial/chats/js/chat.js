@@ -411,4 +411,5 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
         }
     }
     actualizarContacto(mensaje.contenido, gerenteId, chatId);
+    scrollToBottom();
 }
