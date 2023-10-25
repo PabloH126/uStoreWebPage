@@ -75,8 +75,6 @@ searchBox.addEventListener('keyup', async function () {
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
         bodyAside.innerHTML = '';
-        console.log(option);
-        console.log(option.textContent);
         await fetchChats(option.textContent);
     })
 })
@@ -84,7 +82,6 @@ optionsAside.forEach(option => {
 
 
 function CreateContacto(chat) {
-    console.log(chat);
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
     divContactoContent.dataset.chatId = chat.idChat;
@@ -151,7 +148,6 @@ function CreateContacto(chat) {
     divContactoContent.appendChild(divHoverState);
 
     divContactoContent.addEventListener('click', () => {
-        console.log(divContactoContent);
         let contactos = document.querySelectorAll('.contacto');
         contactos.forEach(item => {
             item.classList.remove('select');
