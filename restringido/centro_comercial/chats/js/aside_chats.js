@@ -74,12 +74,9 @@ searchBox.addEventListener('keyup', async function () {
 
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
-        try{
-        bodyAside.innerHTML = '';
-        await fetchChats(option.textContent);
-        }catch(err) {
+        await fetchChats(option.textContent).catch(err => {
             console.error(err);
-        };
+        });
     })
 })
 
