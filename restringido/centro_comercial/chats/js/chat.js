@@ -20,21 +20,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     await fetchChats('Usuarios');
 
     const contactos = document.querySelectorAll('.contacto_content');
-    contactos.forEach(contacto => {
-        contacto.addEventListener('click', () => {
-            console.log(contacto);
-            let contactos = document.querySelectorAll('.contacto');
-            contactos.forEach(item => {
-                item.classList.remove('select');
-            });
-            let contactoContentUser = contacto.querySelector('.contacto');
-            contactoContentUser.classList.add('select');
-            verificarSeleccion();
-        });
-    });
     verificarSeleccion();
 
-    console.log("Contactos: ", contactos);
     const responseId = await fetch('obtencion_id_user.php', {
         method: 'POST',
     });
@@ -67,6 +54,15 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         contactos.forEach(contacto => {
             contacto.addEventListener('click', async function () {
+                console.log(contacto);
+                let contactos = document.querySelectorAll('.contacto');
+                contactos.forEach(item => {
+                    item.classList.remove('select');
+                });
+                let contactoContentUser = contacto.querySelector('.contacto');
+                contactoContentUser.classList.add('select');
+                verificarSeleccion();
+
                 if (contacto.dataset.chatId) {
                     chatId = contacto.dataset.chatId
                     console.log(chatId);
