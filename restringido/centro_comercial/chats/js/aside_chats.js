@@ -179,7 +179,7 @@ function CreateContacto(chat) {
         contactos.forEach(item => {
             item.classList.remove('select');
         });
-        let contactoContentUser = contacto.querySelector('.contacto');
+        let contactoContentUser = divContactoContent.querySelector('.contacto');
         contactoContentUser.classList.add('select');
         verificarSeleccion();
     });
