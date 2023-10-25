@@ -416,7 +416,6 @@ function showNotificationError(message) {
 
 async function waitForConnection() {
     return new Promise((resolve, reject) => {
-        console.log(connection.state);
         if(connection.state === signalR.HubConnectionState.Connected) {
             resolve();
             return;
@@ -425,8 +424,21 @@ async function waitForConnection() {
             connection.start()
                 .then(resolve)
                 .catch(reject);
-        } else {
-            reject(new Error("Connection is not in the 'Disconnected' state"));
+            return;
+        } 
+        if(connection.state === signalR.HubConnectionState.Connecting) {
+            const checkStateInterval = setInterval(() => {
+                if (connection.state === signalR.HubConnectionState.Connected) {
+                    clearInterval(checkStateInterval);
+                    resolve();
+                }
+                else if (connection.state === signalR.HubConnectionState.Disconnected) {
+                    clearInterval(checkStateInterval);
+                    reject(new Error("Fallo al conectar con signalR"));
+                }
+            }, 100);
+
+            return;
         }
     })
 }
