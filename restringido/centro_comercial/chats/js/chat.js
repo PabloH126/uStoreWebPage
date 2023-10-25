@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     idUser = idData.idUser;
 
     console.log(idUser);
-    let gerenteId = 0;
-    let chatId = 0;
     const token = document.cookie
         .split("; ")
         .find(p => p.startsWith("SessionToken="))

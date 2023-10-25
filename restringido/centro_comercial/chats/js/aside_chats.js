@@ -3,6 +3,8 @@ const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
 var contactos = document.querySelectorAll('.contacto_content');
 let idUser;
+let gerenteId = 0;
+let chatId = 0;
 
 function verificarSeleccion() {
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
