@@ -420,7 +420,12 @@ async function waitForConnection() {
             resolve();
             return;
         }
-        connection.start()
-            .catch(reject);
+        if(connection.state === signalR.HubConnectionState.Disconnected) {
+            connection.start()
+                .then(resolve)
+                .catch(reject);
+        } else {
+            reject(new Error("Connection is not in the 'Disconnected' state"));
+        }
     })
 }
