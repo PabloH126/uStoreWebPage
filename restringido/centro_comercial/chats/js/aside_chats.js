@@ -416,6 +416,7 @@ function showNotificationError(message) {
 
 async function waitForConnection() {
     return new Promise((resolve, reject) => {
+        console.log(connection.state);
         if(connection.state === signalR.HubConnectionState.Connected) {
             resolve();
             return;
