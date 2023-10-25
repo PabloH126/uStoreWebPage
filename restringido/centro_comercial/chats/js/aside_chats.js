@@ -338,8 +338,8 @@ function actualizarChatsContacto() {
                     mensajes.forEach(mensaje => {
                         crearMensaje(mensaje, idUser, gerenteId, chatId);
                     })
-                    if (connection.state === signalR.HubConnectionState.Connected) 
-                    {
+                    waitForConnection()
+                    .then(() => {
                         connection.invoke("JoinGroupChat", chatId)
                         .then(() => {
                             console.log("Unido al chat: ", chatId);
@@ -347,7 +347,11 @@ function actualizarChatsContacto() {
                         .catch(err => {
                             console.error("Hubo un problema al unirse al chat: ", err);
                         });
-                    }
+                    })
+                    .catch(err => {
+                        console.error("Error al conectarse con SignalR:", err);
+                    })
+                        
                 }
 
             }
@@ -396,4 +400,15 @@ function showNotificationError(message) {
         }, 550);
     }, 2500);
 
+}
+
+async function waitForConnection() {
+    return new Promise((resolve, reject) => {
+        if(connection.state === signalR.HubConnectionState.Connected) {
+            resolve();
+            return;
+        }
+        connection.start()
+            .catch(reject);
+    })
 }
