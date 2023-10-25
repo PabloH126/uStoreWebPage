@@ -1,7 +1,7 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
-
+const contactos = document.querySelectorAll('.contacto_content');
 function verificarSeleccion() {
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
@@ -75,13 +75,13 @@ searchBox.addEventListener('keyup', async function () {
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
         bodyAside.innerHTML = '';
-        await fetchChats(option.textContent);
+        await fetchChats(option.textContent, contactos);
     })
 })
 
 
 
-function CreateContacto(chat) {
+function CreateContacto(chat, contactos) {
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
     divContactoContent.dataset.chatId = chat.idChat;
@@ -147,9 +147,11 @@ function CreateContacto(chat) {
     divContactoContent.appendChild(divInitialState);
     divContactoContent.appendChild(divHoverState);
 
-    divContactoContent.addEventListener('click', () => {
-        let contactos = document.querySelectorAll('.contacto');
-        contactos.forEach(item => {
+    contactos.push(divContactoContent);
+
+    contactos.addEventListener('click', () => {
+        let contactosUsers = document.querySelectorAll('.contacto');
+        contactosUsers.forEach(item => {
             item.classList.remove('select');
         });
         let contactoContentUser = divContactoContent.querySelector('.contacto');
@@ -189,7 +191,7 @@ function CreateContacto(chat) {
     */
 }
 
-async function fetchChats(typeChat) {
+async function fetchChats(typeChat, contactos) {
     const chatsResponse = await fetch('aside_' + typeChat.toLowerCase() + '.php', {
         method: 'POST'
     });
@@ -207,14 +209,14 @@ async function fetchChats(typeChat) {
             case 'Usuarios':
                 chats = chatsData.chatsUsuario;
                 chats.forEach(chat => {
-                    CreateContacto(chat);
+                    CreateContacto(chat, contactos);
                 });
                 break;
             case 'Gerentes':
                 chats = chatsData.gerentesConChat;
                 gerentes = chatsData.gerentesSinChat;
                 chats.forEach(chat => {
-                    CreateContacto(chat.chat);
+                    CreateContacto(chat.chat, contactos);
                 })
                 break;
             case 'Administrador':

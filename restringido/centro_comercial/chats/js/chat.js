@@ -17,9 +17,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         button.addEventListener('click', onButtonClick);
     });
 
-    await fetchChats('Usuarios');
-
-    const contactos = document.querySelectorAll('.contacto_content');
+    await fetchChats('Usuarios', contactos);
     verificarSeleccion();
 
     const responseId = await fetch('obtencion_id_user.php', {
