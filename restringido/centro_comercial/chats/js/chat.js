@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     await fetchChats('Usuarios', contactos);
+    console.log('Contactos en DOM:', contactos);
     verificarSeleccion();
 
     const responseId = await fetch('obtencion_id_user.php', {

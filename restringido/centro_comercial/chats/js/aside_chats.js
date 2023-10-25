@@ -193,6 +193,121 @@ function CreateContacto(chat, contactos) {
     */
 }
 
+
+
+function CreateContactoGerente(gerente, contactos) {
+    let divContactoContent = document.createElement('div');
+    divContactoContent.classList.add('contacto_content');
+    divContactoContent.dataset.gerenteId = gerente.idGerente;
+
+    let divInitialState = document.createElement('div');
+    divInitialState.classList.add('initial_state');
+
+    let divContacto = document.createElement('div');
+    divContacto.classList.add('contacto');
+
+    let divContactProfileImg = document.createElement('div');
+    divContactProfileImg.classList.add('contact_profile_img');
+
+    let imgContactImg = document.createElement('img');
+    imgContactImg.src = gerente.iconoPerfil;
+    imgContactImg.setAttribute('alt', "Imagen de perfil del contacto");
+
+    let divContactInfo = document.createElement('div');
+    divContactInfo.classList.add('contact_info');
+
+    let divContactName = document.createElement('div');
+    divContactName.classList.add('contact_name');
+    divContactName.textContent = gerente.nombre;
+
+    let divMessagePreview = document.createElement('div');
+    divMessagePreview.classList.add('message_preview');
+    divMessagePreview.textContent = "Comenzar chat.";
+
+    divContactProfileImg.appendChild(imgContactImg);
+    divContacto.appendChild(divContactProfileImg);
+    divContactInfo.appendChild(divContactName);
+    divContactInfo.appendChild(divMessagePreview);
+    divContacto.appendChild(divContactInfo);
+    divInitialState.appendChild(divContacto);
+
+    
+    let divHoverState = document.createElement('div');
+    divHoverState.classList.add('hover_state');
+
+    let divContactoHover = document.createElement('div');
+    divContactoHover.classList.add('contacto');
+
+    let divContactProfileImgHover = document.createElement('div');
+    divContactProfileImgHover.classList.add('contact_profile_img');
+    
+    let imgContactProfileImgHover = document.createElement('img');
+    imgContactProfileImgHover.src = chat.imagenTienda;
+    imgContactProfileImgHover.setAttribute('alt', "Imagen de perfil de tienda");
+    
+    let divContactInfoHover = document.createElement('div');
+    divContactInfoHover.classList.add('contact_info');
+
+    let divContactNameHover = document.createElement('div');
+    divContactNameHover.classList.add('contact_name');
+    divContactNameHover.textContent = chat.tiendaNameChat;
+    
+    divContactProfileImgHover.appendChild(imgContactProfileImgHover);
+    divContactInfoHover.appendChild(divContactNameHover);
+    divContactoHover.appendChild(divContactProfileImgHover);
+    divContactoHover.appendChild(divContactInfoHover);
+    divHoverState.appendChild(divContactoHover);
+
+    divContactoContent.appendChild(divInitialState);
+    divContactoContent.appendChild(divHoverState);
+
+    bodyAside.appendChild(divContactoContent);
+
+    contactos = document.querySelectorAll('.contacto_content');
+
+    contactos.forEach(contacto => {
+        contacto.addEventListener('click', () => {
+            let contactosUsers = document.querySelectorAll('.contacto');
+            contactosUsers.forEach(item => {
+                item.classList.remove('select');
+            });
+            let contactoContentUser = contacto.querySelector('.contacto');
+            contactoContentUser.classList.add('select');
+            verificarSeleccion();
+        });
+    })
+
+    /*
+        <div class="contacto_content">
+        ///////////////////////////////////////////////
+              <div class="initial_state">
+                <div class="contacto">
+                  <div class="contact_profile_img">
+                    <img src="https://ustoredata.blob.core.windows.net/gerentes/15.png" alt="Imagen de perfil del contacto">
+                  </div>
+                  <div class="contact_info">
+                    <div class="contact_name">User name</div>
+                    <div class="message_preview">Comenzar chat.</div>
+                  </div>
+                </div>
+              </div>
+        /////////////////////////////////////////////
+              <div class="hover_state">
+                <div class="contacto">
+                  <div class="contact_profile_img">
+                    <img src="https://ustoredata.blob.core.windows.net/gerentes/18.png" alt="Imagen de perfil del contacto">
+                  </div>
+                  <div class="contact_info">
+                    <div class="contact_name">User name</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    */
+}
+
+
 async function fetchChats(typeChat, contactos) {
     const chatsResponse = await fetch('aside_' + typeChat.toLowerCase() + '.php', {
         method: 'POST'
@@ -215,11 +330,14 @@ async function fetchChats(typeChat, contactos) {
                 });
                 break;
             case 'Gerentes':
-                chats = chatsData.gerentesConChat;
-                gerentes = chatsData.gerentesSinChat;
-                chats.forEach(chat => {
-                    CreateContacto(chat.chat, contactos);
-                })
+                gerentesConChat = chatsData.gerentesConChat;
+                gerentesSinChat = chatsData.gerentesSinChat;
+                gerentesConChat.forEach(gerente => {
+                    CreateContacto(gerente.chat, contactos);
+                });
+                gerentesSinChat.forEach(gerente => {
+                    CreateContactoGerente(gerente.gerente, contactos);
+                });
                 break;
             case 'Administrador':
                 chats = chatsData.chatAdministrador;
