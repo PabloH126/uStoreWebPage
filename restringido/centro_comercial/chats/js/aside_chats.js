@@ -8,10 +8,19 @@ function verificarSeleccion() {
 
     if (!seleccionado) {
         textAreaContainer.style.display = 'none';
-        document.getElementById('span-seleccion-tienda').style.display = 'block'
+        verificarSpan(true);
     } else {
         textAreaContainer.style.display = 'block';
-        document.getElementById('span-seleccion-tienda').style.display = 'none'
+        verificarSpan(false);
+    }
+}
+
+function verificarSpan(seleccionado)
+{
+    let spanSeleccionTienda = document.getElementById('span-seleccion-tienda'); // letrero "Seleccione un chat"
+    if (spanSeleccionTienda)
+    {
+        spanSeleccionTienda.style.display = (seleccionado) ? 'block' : 'none';
     }
 }
 
