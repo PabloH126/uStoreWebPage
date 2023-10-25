@@ -74,9 +74,9 @@ searchBox.addEventListener('keyup', async function () {
 
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
-        await fetchChats(option.textContent).catch(err => {
-            console.error(err);
-        });
+        bodyAside.innerHTML = '';
+        await fetchChats(option.textContent);
+        actualizarChatsContacto();
     })
 })
 
@@ -290,4 +290,60 @@ async function fetchChats(typeChat) {
         }
     }
 
+}
+
+function actualizarChatsContacto() {
+    contactos.forEach(contacto => {
+        contacto.addEventListener('click', async function () {
+            let contactos = document.querySelectorAll('.contacto');
+            contactos.forEach(item => {
+                item.classList.remove('select');
+            });
+            let contactoContentUser = contacto.querySelector('.contacto');
+            contactoContentUser.classList.add('select');
+            verificarSeleccion();
+
+            if (contacto.dataset.chatId) {
+                chatId = contacto.dataset.chatId
+                console.log(chatId);
+                let formData = new FormData();
+                formData.append("idChat", chatId);
+                const responseChat = await fetch('actualizar_chat.php', {
+                    method: 'POST',
+                    body: formData
+                })
+
+                if (!responseChat.ok) {
+                    showNotificationError("Hubo un error al mandar la solicitud al servidor");
+                    return;
+                }
+
+                let responseChatData = await responseChat.json();
+
+                if (responseChatData.status !== "success") {
+                    showNotificationError(responseChatData.message);
+                    return;
+                }
+                else {
+                    let mensajes = responseChatData.message;
+                    msgArea.innerHTML = '';
+                    mensajes.forEach(mensaje => {
+                        crearMensaje(mensaje, idUser, gerenteId, chatId);
+                    })
+                    connection.invoke("JoinGroupChat", chatId)
+                    .then(() => {
+                        console.log("Unido al chat: ", chatId);
+                    })
+                    .catch(err => {
+                        console.error("Hubo un problema al unirse al chat: ", err);
+                    });
+                }
+
+            }
+            else {
+                gerenteId = contacto.dataset.gerenteId;
+                console.log(gerenteId);
+            }
+        })
+    })
 }
