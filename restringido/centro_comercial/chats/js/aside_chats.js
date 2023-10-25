@@ -28,6 +28,12 @@ function verificarSpan(seleccionado)
     }
 }
 
+const connection = new signalR.HubConnectionBuilder()
+.withUrl('https://ustoreapi.azurewebsites.net/chatHub', {
+    accessTokenFactory: () => token
+})
+.build();
+
 document.addEventListener('DOMContentLoaded', function () {
 
     var content = document.getElementById('contentTextarea');
