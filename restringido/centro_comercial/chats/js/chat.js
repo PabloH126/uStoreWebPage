@@ -17,7 +17,203 @@ document.addEventListener('DOMContentLoaded', async function () {
         button.addEventListener('click', onButtonClick);
     });
 
-    await fetchChats('Usuarios');
+    fetchChats('Usuarios')
+        .then(() => {
+            if (contactos) {
+                waitForConnection()
+                    .then(() => {
+                        actualizarChatsContacto();
+                    })
+                    .catch(err => {
+                        console.error('Error: ', err);
+                    });
+                sendBtn.addEventListener('click', async function (e) {
+                    e.preventDefault();
+                    if(textArea.value === '' || null) return;
+                    let message = textArea.value;
+                    textArea.value = '';
+                    if (gerenteId !== 0 && chatId === 0) {
+                        console.log(gerenteId);
+                        let formData = new FormData();
+                        formData.append("idMiembro2", gerenteId);
+                        formData.append("typeMiembro2", "Gerente");
+                        formData.append("contenidoMensaje", message);
+                        formData.append("imagen", fileInput.files[0]);
+                        const responseCreacionChat = await fetch('crear_chat.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+        
+                        if (!responseCreacionChat.ok) {
+                            showNotificationError('Hubo un error al mandar la solicitud al servidor');
+                            return;
+                        }
+        
+                        const dataCreacionChat = await responseCreacionChat.json();
+        
+                        if (dataCreacionChat.status !== "success") {
+                            showNotificationError(dataCreacionChat.message);
+                            return;
+                        }
+                        else {
+                            if (connection.state === signalR.HubConnectionState.Connected) {
+                                connection.stop()
+                                    .then(() => {
+                                        console.log("Conexion cerrada");
+                                        connection.start()
+                                            .then(() => {
+                                                connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
+                                                    .then(() => {
+                                                        console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                                        chatId = dataCreacionChat.idChat;
+        
+                                                    })
+                                                    .catch(err => {
+                                                        console.error("Hubo un problema al unirse al chat: ", err);
+                                                    });
+                                            })
+                                            .catch(err => {
+                                                console.error("Hubo un problema al establecer la nueva conexion:", err);
+                                            })
+                                    })
+                                    .catch(err => {
+                                        console.error("Hubo un problema al cerrar la conexion: ", err);
+                                    })
+                            }
+                        }
+                    }
+                    else {
+                        console.log(chatId);
+                        let formData = new FormData();
+                        formData.append('idChat', chatId);
+                        formData.append("contenidoMensaje", message);
+                        const responseCreacionMensaje = await fetch('crear_mensaje.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+        
+                        if (!responseCreacionMensaje.ok) {
+                            showNotificationError("Hubo un error al mandar la solicitud al servidor");
+                            return;
+                        }
+        
+                        const dataCreacionMensaje = await responseCreacionMensaje.json();
+                        console.log(dataCreacionMensaje);
+                        if (dataCreacionMensaje.status !== "success") {
+                            showNotificationError(dataCreacionMensaje.message);
+                            return;
+                        }
+                    }
+        
+                });
+        
+                fileInput.addEventListener('change', async function () {
+                    if (await imagenesValidacion()) {
+                        if (gerenteId !== 0 && chatId === 0) {
+                            console.log(gerenteId);
+                            let formData = new FormData();
+                            formData.append("idMiembro2", gerenteId);
+                            formData.append("typeMiembro2", "Gerente");
+                            formData.append("imagen", fileInput.files[0]);
+                            const responseCreacionChat = await fetch('crear_chat.php', {
+                                method: 'POST',
+                                body: formData
+                            });
+        
+                            if (!responseCreacionChat.ok) {
+                                showNotificationError('Hubo un error al mandar la solicitud al servidor');
+                                return;
+                            }
+        
+                            const dataCreacionChat = responseCreacionChat.json();
+        
+                            if (dataCreacionChat.status !== "success") {
+                                showNotificationError(dataCreacionChat.message);
+                                return;
+                            }
+                            else {
+                                if (connection.state === signalR.HubConnectionState.Connected) {
+                                    connection.stop()
+                                        .then(() => {
+                                            console.log("Conexion cerrada");
+                                            connection.start()
+                                                .then(() => {
+                                                    connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
+                                                        .then(() => {
+                                                            console.log("Unido al chat: ", dataCreacionChat.idChat);
+                                                            chatId = dataCreacionChat.idChat;
+                                                        })
+                                                        .catch(err => {
+                                                            console.error("Hubo un problema al unirse al chat: ", err);
+                                                        });
+                                                })
+                                                .catch(err => {
+                                                    console.error("Hubo un problema al establecer la nueva conexion:", err);
+                                                })
+                                        })
+                                        .catch(err => {
+                                            console.error("Hubo un problema al cerrar la conexion: ", err);
+                                        })
+                                }
+                            }
+                        }
+                        else {
+                            console.log(chatId);
+                            let formData = new FormData();
+                            formData.append('idChat', chatId);
+                            formData.append("imagen", fileInput.files[0]);
+                            const responseCreacionMensaje = await fetch('crear_mensaje.php', {
+                                method: 'POST',
+                                body: formData
+                            });
+        
+                            if (!responseCreacionMensaje.ok) {
+                                showNotificationError("Hubo un error al mandar la solicitud al servidor");
+                                return;
+                            }
+        
+                            const dataCreacionMensaje = await responseCreacionMensaje.json();
+        
+                            if (dataCreacionMensaje.status !== "success") {
+                                showNotificationError(dataCreacionMensaje.message);
+                                return;
+                            }
+                        }
+                    }
+        
+                    fileInput.value = "";
+                })
+        
+                connection.on('NameGroup', function (nombre) {
+                    console.log(nombre);
+                });
+        
+                connection.on('Notify', function (message) {
+                    console.log(message);
+                })
+        
+                connection.on('ChatCreated', function (chat, mensaje) {
+                    console.log('entro al chat created');
+                    console.log(chat);
+                    console.log(mensaje);
+                    console.log(gerenteId, chat.idChat);
+                    crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
+                });
+        
+                connection.on('RecieveMessage', function (mensaje) {
+                    console.log("Mensaje en RecieveMessage:", mensaje);
+                    crearMensaje(mensaje, idUser, gerenteId, chatId);
+                    let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
+                    if (!contactoGerente) {
+                        contactoGerente = document.querySelector(`[data-chat-id="${chatId}"]`);
+                    }
+                    moverChatPrincipio(contactoGerente);
+                })
+            }
+        })
+        .catch(err => {
+            console.error("Error:", err);
+        });
     console.log('Contactos en DOM:', contactos);
     verificarSeleccion();
 
@@ -28,204 +224,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     idUser = idData.idUser;
 
     console.log(idUser);
-
-    const connection = new signalR.HubConnectionBuilder()
-        .withUrl('https://ustoreapi.azurewebsites.net/chatHub', {
-            accessTokenFactory: () => token
-        })
-        .build();
-
-    if (contactos) {
-        waitForConnection()
-            .then(() => {
-                actualizarChatsContacto();
-            })
-            .catch(err => {
-                console.error('Error: ', err);
-            });
-        sendBtn.addEventListener('click', async function (e) {
-            e.preventDefault();
-            if(textArea.value === '' || null) return;
-            let message = textArea.value;
-            textArea.value = '';
-            if (gerenteId !== 0 && chatId === 0) {
-                console.log(gerenteId);
-                let formData = new FormData();
-                formData.append("idMiembro2", gerenteId);
-                formData.append("typeMiembro2", "Gerente");
-                formData.append("contenidoMensaje", message);
-                formData.append("imagen", fileInput.files[0]);
-                const responseCreacionChat = await fetch('crear_chat.php', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (!responseCreacionChat.ok) {
-                    showNotificationError('Hubo un error al mandar la solicitud al servidor');
-                    return;
-                }
-
-                const dataCreacionChat = await responseCreacionChat.json();
-
-                if (dataCreacionChat.status !== "success") {
-                    showNotificationError(dataCreacionChat.message);
-                    return;
-                }
-                else {
-                    if (connection.state === signalR.HubConnectionState.Connected) {
-                        connection.stop()
-                            .then(() => {
-                                console.log("Conexion cerrada");
-                                connection.start()
-                                    .then(() => {
-                                        connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
-                                            .then(() => {
-                                                console.log("Unido al chat: ", dataCreacionChat.idChat);
-                                                chatId = dataCreacionChat.idChat;
-
-                                            })
-                                            .catch(err => {
-                                                console.error("Hubo un problema al unirse al chat: ", err);
-                                            });
-                                    })
-                                    .catch(err => {
-                                        console.error("Hubo un problema al establecer la nueva conexion:", err);
-                                    })
-                            })
-                            .catch(err => {
-                                console.error("Hubo un problema al cerrar la conexion: ", err);
-                            })
-                    }
-                }
-            }
-            else {
-                console.log(chatId);
-                let formData = new FormData();
-                formData.append('idChat', chatId);
-                formData.append("contenidoMensaje", message);
-                const responseCreacionMensaje = await fetch('crear_mensaje.php', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (!responseCreacionMensaje.ok) {
-                    showNotificationError("Hubo un error al mandar la solicitud al servidor");
-                    return;
-                }
-
-                const dataCreacionMensaje = await responseCreacionMensaje.json();
-                console.log(dataCreacionMensaje);
-                if (dataCreacionMensaje.status !== "success") {
-                    showNotificationError(dataCreacionMensaje.message);
-                    return;
-                }
-            }
-
-        });
-
-        fileInput.addEventListener('change', async function () {
-            if (await imagenesValidacion()) {
-                if (gerenteId !== 0 && chatId === 0) {
-                    console.log(gerenteId);
-                    let formData = new FormData();
-                    formData.append("idMiembro2", gerenteId);
-                    formData.append("typeMiembro2", "Gerente");
-                    formData.append("imagen", fileInput.files[0]);
-                    const responseCreacionChat = await fetch('crear_chat.php', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    if (!responseCreacionChat.ok) {
-                        showNotificationError('Hubo un error al mandar la solicitud al servidor');
-                        return;
-                    }
-
-                    const dataCreacionChat = responseCreacionChat.json();
-
-                    if (dataCreacionChat.status !== "success") {
-                        showNotificationError(dataCreacionChat.message);
-                        return;
-                    }
-                    else {
-                        if (connection.state === signalR.HubConnectionState.Connected) {
-                            connection.stop()
-                                .then(() => {
-                                    console.log("Conexion cerrada");
-                                    connection.start()
-                                        .then(() => {
-                                            connection.invoke("JoinGroupChat", dataCreacionChat.idChat.toString())
-                                                .then(() => {
-                                                    console.log("Unido al chat: ", dataCreacionChat.idChat);
-                                                    chatId = dataCreacionChat.idChat;
-                                                })
-                                                .catch(err => {
-                                                    console.error("Hubo un problema al unirse al chat: ", err);
-                                                });
-                                        })
-                                        .catch(err => {
-                                            console.error("Hubo un problema al establecer la nueva conexion:", err);
-                                        })
-                                })
-                                .catch(err => {
-                                    console.error("Hubo un problema al cerrar la conexion: ", err);
-                                })
-                        }
-                    }
-                }
-                else {
-                    console.log(chatId);
-                    let formData = new FormData();
-                    formData.append('idChat', chatId);
-                    formData.append("imagen", fileInput.files[0]);
-                    const responseCreacionMensaje = await fetch('crear_mensaje.php', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    if (!responseCreacionMensaje.ok) {
-                        showNotificationError("Hubo un error al mandar la solicitud al servidor");
-                        return;
-                    }
-
-                    const dataCreacionMensaje = await responseCreacionMensaje.json();
-
-                    if (dataCreacionMensaje.status !== "success") {
-                        showNotificationError(dataCreacionMensaje.message);
-                        return;
-                    }
-                }
-            }
-
-            fileInput.value = "";
-        })
-
-        connection.on('NameGroup', function (nombre) {
-            console.log(nombre);
-        });
-
-        connection.on('Notify', function (message) {
-            console.log(message);
-        })
-
-        connection.on('ChatCreated', function (chat, mensaje) {
-            console.log('entro al chat created');
-            console.log(chat);
-            console.log(mensaje);
-            console.log(gerenteId, chat.idChat);
-            crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
-        });
-
-        connection.on('RecieveMessage', function (mensaje) {
-            console.log("Mensaje en RecieveMessage:", mensaje);
-            crearMensaje(mensaje, idUser, gerenteId, chatId);
-            let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
-            if (!contactoGerente) {
-                contactoGerente = document.querySelector(`[data-chat-id="${chatId}"]`);
-            }
-            moverChatPrincipio(contactoGerente);
-        })
-    }
 
     var adminButton = document.getElementById('adminBttn');
 });
