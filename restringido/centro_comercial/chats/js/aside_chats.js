@@ -2,38 +2,6 @@ let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
 
-document.addEventListener('DOMContentLoaded', async function () {
-    var buttons = document.querySelectorAll('.options_aside');
-    function onButtonClick(event) {
-        buttons.forEach(function (button) {
-            button.classList.remove('selected');
-        });
-        event.currentTarget.classList.add('selected');
-    }
-
-    buttons.forEach(function (button) {
-        button.addEventListener('click', onButtonClick);
-    });
-
-    await fetchChats('Usuarios');
-
-    const contactoContents = document.querySelectorAll('.contacto_content');
-    contactoContents.forEach(contacto => {
-        contacto.addEventListener('click', () => {
-            console.log(contacto);
-            let contactos = document.querySelectorAll('.contacto');
-            contactos.forEach(item => {
-                item.classList.remove('select');
-            });
-            let contactoContentUser = contacto.querySelector('.contacto');
-            contactoContentUser.classList.add('select');
-            verificarSeleccion();
-        });
-    });
-    verificarSeleccion();
-    
-});
-
 function verificarSeleccion() {
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
