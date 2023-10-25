@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         button.addEventListener('click', onButtonClick);
     });
 
-    await fetchChats('Usuarios', contactos);
+    await fetchChats('Usuarios');
     console.log('Contactos en DOM:', contactos);
     verificarSeleccion();
 

@@ -75,13 +75,13 @@ searchBox.addEventListener('keyup', async function () {
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
         bodyAside.innerHTML = '';
-        await fetchChats(option.textContent, contactos);
+        await fetchChats(option.textContent);
     })
 })
 
 
 
-function CreateContacto(chat, contactos) {
+function CreateContacto(chat) {
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
     divContactoContent.dataset.chatId = chat.idChat;
@@ -195,8 +195,7 @@ function CreateContacto(chat, contactos) {
 
 
 
-function CreateContactoGerente(gerente, contactos) {
-    console.log(gerente);
+function CreateContactoGerente(gerente) {
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
     divContactoContent.dataset.gerenteId = gerente.idGerente;
@@ -309,7 +308,7 @@ function CreateContactoGerente(gerente, contactos) {
 }
 
 
-async function fetchChats(typeChat, contactos) {
+async function fetchChats(typeChat) {
     const chatsResponse = await fetch('aside_' + typeChat.toLowerCase() + '.php', {
         method: 'POST'
     });
@@ -334,10 +333,10 @@ async function fetchChats(typeChat, contactos) {
                 gerentesConChat = chatsData.gerentesConChat;
                 gerentesSinChat = chatsData.gerentesSinChat;
                 gerentesConChat.forEach(gerente => {
-                    CreateContacto(gerente.chat, contactos);
+                    CreateContacto(gerente.chat);
                 });
                 gerentesSinChat.forEach(gerente => {
-                    CreateContactoGerente(gerente, contactos);
+                    CreateContactoGerente(gerente);
                 });
                 break;
             case 'Administrador':
