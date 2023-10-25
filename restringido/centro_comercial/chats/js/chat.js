@@ -28,10 +28,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     idUser = idData.idUser;
 
     console.log(idUser);
-    const token = document.cookie
-        .split("; ")
-        .find(p => p.startsWith("SessionToken="))
-        ?.split("=")[1];
 
     const connection = new signalR.HubConnectionBuilder()
         .withUrl('https://ustoreapi.azurewebsites.net/chatHub', {

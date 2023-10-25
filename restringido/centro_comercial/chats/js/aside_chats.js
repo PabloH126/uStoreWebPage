@@ -2,6 +2,11 @@ let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
 var contactos = document.querySelectorAll('.contacto_content');
+
+const token = document.cookie
+.split("; ")
+.find(p => p.startsWith("SessionToken="))
+?.split("=")[1];
 let idUser;
 let gerenteId = 0;
 let chatId = 0;
