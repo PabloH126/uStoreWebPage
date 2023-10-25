@@ -36,14 +36,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         .build();
 
     if (contactos) {
-        connection.start()
+        waitForConnection()
             .then(() => {
-                console.log('Conexion con SignalR exitosa');
+                actualizarChatsContacto();
             })
             .catch(err => {
-                console.error('Error al conectarse con SignalR: ', err);
+                console.error('Error: ', err);
             });
-        actualizarChatsContacto();
         sendBtn.addEventListener('click', async function (e) {
             e.preventDefault();
             if(textArea.value === '' || null) return;

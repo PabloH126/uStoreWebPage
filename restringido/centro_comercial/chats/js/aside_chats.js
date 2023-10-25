@@ -40,7 +40,13 @@ const connection = new signalR.HubConnectionBuilder()
 .build();
 
 document.addEventListener('DOMContentLoaded', function () {
-
+    connection.start()
+        .then(() => {
+            console.log('Conexion con SignalR exitosa');
+        })
+        .catch(err => {
+            console.error('Error al conectarse con SignalR: ', err);
+        });
     var content = document.getElementById('contentTextarea');
     var textarea = document.getElementById('expanding_textarea');
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
@@ -91,7 +97,15 @@ optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
         bodyAside.innerHTML = '';
         await fetchChats(option.textContent);
-        actualizarChatsContacto();
+        waitForConnection()
+            .then(() => {
+                actualizarChatsContacto();
+            })
+            .catch(err => {
+                console.error('Error:', err);
+            });
+        
+        
     })
 })
 
@@ -343,20 +357,13 @@ function actualizarChatsContacto() {
                     mensajes.forEach(mensaje => {
                         crearMensaje(mensaje, idUser, gerenteId, chatId);
                     })
-                    waitForConnection()
+                    connection.invoke("JoinGroupChat", chatId)
                     .then(() => {
-                        connection.invoke("JoinGroupChat", chatId)
-                        .then(() => {
-                            console.log("Unido al chat: ", chatId);
-                        })
-                        .catch(err => {
-                            console.error("Hubo un problema al unirse al chat: ", err);
-                        });
+                        console.log("Unido al chat: ", chatId);
                     })
                     .catch(err => {
-                        console.error("Error al conectarse con SignalR:", err);
-                    })
-                        
+                        console.error("Hubo un problema al unirse al chat: ", err);
+                    });
                 }
 
             }
