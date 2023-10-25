@@ -1,7 +1,7 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
-let contactos = document.querySelectorAll('.contacto_content');
+var contactos = document.querySelectorAll('.contacto_content');
 function verificarSeleccion() {
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
@@ -337,7 +337,7 @@ async function fetchChats(typeChat, contactos) {
                     CreateContacto(gerente.chat, contactos);
                 });
                 gerentesSinChat.forEach(gerente => {
-                    CreateContactoGerente(gerente.gerente, contactos);
+                    CreateContactoGerente(gerente, contactos);
                 });
                 break;
             case 'Administrador':
