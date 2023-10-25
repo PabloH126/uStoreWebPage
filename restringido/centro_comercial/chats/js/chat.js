@@ -6,6 +6,7 @@ const sendBtn = document.getElementById('submit_message');
 
 document.addEventListener('DOMContentLoaded', async function () {
     const contactos = document.querySelectorAll('.contacto_content');
+    console.log("Contactos: ", contactos);
     const responseId = await fetch('obtencion_id_user.php', {
         method: 'POST',
     });
