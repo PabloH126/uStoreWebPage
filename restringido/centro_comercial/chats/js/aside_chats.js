@@ -174,7 +174,7 @@ function CreateContacto(chat) {
     divContactoContent.appendChild(divHoverState);
 
     divContactoContent.addEventListener('click', () => {
-        console.log(contacto);
+        console.log(divContactoContent);
         let contactos = document.querySelectorAll('.contacto');
         contactos.forEach(item => {
             item.classList.remove('select');

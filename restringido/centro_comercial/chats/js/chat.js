@@ -3,6 +3,7 @@ const msgArea = document.querySelector('.mssg-area');
 const textArea = document.getElementById('expanding_textarea');
 const fileInput = document.getElementById('add_file');
 const sendBtn = document.getElementById('submit_message');
+const contactos = document.querySelectorAll('.contacto_content');
 
 document.addEventListener('DOMContentLoaded', async function () {
     const responseId = await fetch('obtencion_id_user.php', {
