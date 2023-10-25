@@ -74,8 +74,12 @@ searchBox.addEventListener('keyup', async function () {
 
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
+        try{
         bodyAside.innerHTML = '';
         await fetchChats(option.textContent);
+        }catch(err) {
+            console.error(err);
+        };
     })
 })
 
@@ -162,35 +166,6 @@ function CreateContacto(chat) {
             verificarSeleccion();
         });
     })
-
-    /*
-        <div class="contacto_content">
-        ///////////////////////////////////////////////
-              <div class="initial_state">
-                <div class="contacto">
-                  <div class="contact_profile_img">
-                    <img src="https://ustoredata.blob.core.windows.net/gerentes/15.png" alt="Imagen de perfil del contacto">
-                  </div>
-                  <div class="contact_info">
-                    <div class="contact_name">User name</div>
-                    <div class="message_preview">Comenzar chat.</div>
-                  </div>
-                </div>
-              </div>
-        /////////////////////////////////////////////
-              <div class="hover_state">
-                <div class="contacto">
-                  <div class="contact_profile_img">
-                    <img src="https://ustoredata.blob.core.windows.net/gerentes/18.png" alt="Imagen de perfil del contacto">
-                  </div>
-                  <div class="contact_info">
-                    <div class="contact_name">User name</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    */
 }
 
 
@@ -276,35 +251,6 @@ function CreateContactoGerente(gerente) {
             verificarSeleccion();
         });
     })
-
-    /*
-        <div class="contacto_content">
-        ///////////////////////////////////////////////
-              <div class="initial_state">
-                <div class="contacto">
-                  <div class="contact_profile_img">
-                    <img src="https://ustoredata.blob.core.windows.net/gerentes/15.png" alt="Imagen de perfil del contacto">
-                  </div>
-                  <div class="contact_info">
-                    <div class="contact_name">User name</div>
-                    <div class="message_preview">Comenzar chat.</div>
-                  </div>
-                </div>
-              </div>
-        /////////////////////////////////////////////
-              <div class="hover_state">
-                <div class="contacto">
-                  <div class="contact_profile_img">
-                    <img src="https://ustoredata.blob.core.windows.net/gerentes/18.png" alt="Imagen de perfil del contacto">
-                  </div>
-                  <div class="contact_info">
-                    <div class="contact_name">User name</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    */
 }
 
 
