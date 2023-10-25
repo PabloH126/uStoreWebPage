@@ -2,6 +2,8 @@ let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
 var contactos = document.querySelectorAll('.contacto_content');
+let idUser;
+
 function verificarSeleccion() {
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.

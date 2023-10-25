@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         method: 'POST',
     });
     const idData = await responseId.json();
-    const idUser = idData.idUser;
-    const idAdmin = idData.idAdmin;
+    idUser = idData.idUser;
 
     console.log(idUser);
     let gerenteId = 0;
