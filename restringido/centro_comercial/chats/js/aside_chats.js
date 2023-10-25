@@ -1,7 +1,7 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
-const contactos = document.querySelectorAll('.contacto_content');
+let contactos = document.querySelectorAll('.contacto_content');
 function verificarSeleccion() {
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
@@ -147,7 +147,9 @@ function CreateContacto(chat, contactos) {
     divContactoContent.appendChild(divInitialState);
     divContactoContent.appendChild(divHoverState);
 
-    contactos.push(divContactoContent);
+    bodyAside.appendChild(divContactoContent);
+
+    contactos = document.querySelectorAll('.contacto_content');
 
     contactos.addEventListener('click', () => {
         let contactosUsers = document.querySelectorAll('.contacto');
@@ -158,8 +160,6 @@ function CreateContacto(chat, contactos) {
         contactoContentUser.classList.add('select');
         verificarSeleccion();
     });
-
-    bodyAside.appendChild(divContactoContent);
 
     /*
         <div class="contacto_content">
