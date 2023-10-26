@@ -222,6 +222,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
     const idData = await responseId.json();
     idUser = idData.idUser;
+    userType = idData.typeUser;
 
     console.log(idUser);
 
@@ -390,11 +391,18 @@ function actualizarContacto(message, gerenteId, chatId) {
     let mensajeContacto = contactoGerente.querySelector('.message_preview');
     mensajeContacto.textContent = message;
 }
+//recuperar el id del gerente, si no es la tienda 
+/**
+ * si type miembro 1 o 2 es usuairo vamos a buscar el id tienda que pertenece al objeto chat
+ * 
+ *
+ */
 
 function crearMensaje(mensaje, idUser, gerenteId, chatId) {
     let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
+    
     if (mensaje.isImage === true || mensaje.isImage === "true") {
-        if (idUser == mensaje.idRemitente) {
+        if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
             createOutMsgWithImage(mensaje.contenido, fechaFormateada);
         }
         else {
@@ -403,7 +411,7 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
 
     }
     else {
-        if (idUser == mensaje.idRemitente) {
+        if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
             createOutMsg(mensaje.contenido, fechaFormateada);
         }
         else {
