@@ -17,7 +17,7 @@ function verificarSeleccion() {
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
     const adminBttnSeleccionado = document.querySelector('#adminBttn.selected');
 
-    if (!seleccionado && (adminButton && !adminBttnSeleccionado)) {
+    if ((!seleccionado && !adminButton) || (!seleccionado && (adminButton && !adminBttnSeleccionado))) {
         textAreaContainer.style.display = 'none';
         verificarSpan(true);
     } else {
