@@ -401,7 +401,7 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
             console.log("Datos user al crear mensaje: ", idUser, userType, mensaje.idRemitente, mensaje.typeRemitente);
             
             if (mensaje.isImage === true || mensaje.isImage === "true") {
-                if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
+                if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente.toString() === idUser && mensaje.typeRemitente === userType)) {
                     createOutMsgWithImage(mensaje.contenido, fechaFormateada);
                 }
                 else {
@@ -409,7 +409,7 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
                 }
             }
             else {
-                if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
+                if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente.toString() === idUser && mensaje.typeRemitente === userType)) {
                     createOutMsg(mensaje.contenido, fechaFormateada);
                 }
                 else {
