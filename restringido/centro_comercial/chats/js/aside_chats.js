@@ -37,10 +37,12 @@ function verificarSpan(seleccionado)
     }
     else
     {
+        let divSpan = document.createElement('div');
         spanSeleccionTienda = document.createElement('span');
         spanSeleccionTienda.classList.add('span-seleccion-tienda');
         spanSeleccionTienda.textContent = 'Seleccione un chat';
-        msgArea.appendChild(spanSeleccionTienda);
+        divSpan.appendChild(spanSeleccionTienda);
+        msgArea.appendChild(divSpan);
         spanSeleccionTienda.style.display = (seleccionado) ? 'block' : 'none';
     }
 }
