@@ -398,7 +398,8 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
     waitForUserData()
         .then(() => {
             let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
-    
+            console.log("Datos user al crear mensaje: ", idUser, userType, mensaje.idRemitente, mensaje.typeRemitente);
+            
             if (mensaje.isImage === true || mensaje.isImage === "true") {
                 if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
                     createOutMsgWithImage(mensaje.contenido, fechaFormateada);
