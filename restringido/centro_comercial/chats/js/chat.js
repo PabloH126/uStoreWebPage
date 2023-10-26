@@ -3,6 +3,7 @@ const msgArea = document.querySelector('.mssg-area');
 const textArea = document.getElementById('expanding_textarea');
 const fileInput = document.getElementById('add_file');
 const sendBtn = document.getElementById('submit_message');
+const adminButton = document.getElementById('adminBttn');
 
 document.addEventListener('DOMContentLoaded', async function () {
     var buttons = document.querySelectorAll('.options_aside');
@@ -210,6 +211,12 @@ document.addEventListener('DOMContentLoaded', async function () {
                     moverChatPrincipio(contactoGerente);
                 })
             }
+            
+            adminButton.addEventListener('click', function(){
+                verificarSeleccion();
+            });
+
+
         })
         .catch(err => {
             console.error("Error:", err);
@@ -226,7 +233,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     console.log(idUser);
 
-    var adminButton = document.getElementById('adminBttn');
 });
 
 function createRecievedMsg(message, recievedDate) {
@@ -391,12 +397,6 @@ function actualizarContacto(message, gerenteId, chatId) {
     let mensajeContacto = contactoGerente.querySelector('.message_preview');
     mensajeContacto.textContent = message;
 }
-//recuperar el id del gerente, si no es la tienda 
-/**
- * si type miembro 1 o 2 es usuairo vamos a buscar el id tienda que pertenece al objeto chat
- * 
- *
- */
 
 function crearMensaje(mensaje, idUser, gerenteId, chatId) {
     let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
@@ -408,7 +408,6 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
         else {
             createRecievedMsgWithImage(mensaje.contenido, fechaFormateada)
         }
-
     }
     else {
         if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {

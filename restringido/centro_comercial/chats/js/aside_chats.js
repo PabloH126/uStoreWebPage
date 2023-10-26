@@ -15,8 +15,9 @@ let chatId = 0;
 function verificarSeleccion() {
     var textAreaContainer = document.querySelector('.text-area'); // contenedor del textarea
     const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
+    const adminBttnSeleccionado = document.querySelector('#adminBttn.selected');
 
-    if (!seleccionado) {
+    if (!seleccionado || !adminBttnSeleccionado) {
         textAreaContainer.style.display = 'none';
         verificarSpan(true);
     } else {
