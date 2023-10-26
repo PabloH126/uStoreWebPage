@@ -116,6 +116,7 @@ optionsAside.forEach(option => {
         waitForConnection()
             .then(() => {
                 actualizarChatsContacto();
+                verificarSeleccion();
             })
             .catch(err => {
                 console.error('Error:', err);
