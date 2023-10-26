@@ -39,7 +39,7 @@ function verificarSpan(seleccionado)
     {
         let divSpan = document.createElement('div');
         spanSeleccionTienda = document.createElement('span');
-        spanSeleccionTienda.classList.add('span-seleccion-tienda');
+        spanSeleccionTienda.id = 'span-seleccion-tienda';
         spanSeleccionTienda.textContent = 'Seleccione un chat';
         divSpan.appendChild(spanSeleccionTienda);
         msgArea.appendChild(divSpan);
