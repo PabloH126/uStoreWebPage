@@ -224,15 +224,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     console.log('Contactos en DOM:', contactos);
     verificarSeleccion();
 
-    const responseId = await fetch('obtencion_id_user.php', {
-        method: 'POST',
-    });
-    const idData = await responseId.json();
-    idUser = idData.idUser;
-    userType = idData.typeUser;
 
-    console.log(idUser);
-
+    waitForUserData()
+        .catch(err => {
+            console.error(err);
+        });
 });
 
 function createRecievedMsg(message, recievedDate) {
@@ -399,24 +395,63 @@ function actualizarContacto(message, gerenteId, chatId) {
 }
 
 function crearMensaje(mensaje, idUser, gerenteId, chatId) {
-    let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
+    waitForUserData()
+        .then(() => {
+            let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
     
-    if (mensaje.isImage === true || mensaje.isImage === "true") {
-        if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
-            createOutMsgWithImage(mensaje.contenido, fechaFormateada);
+            if (mensaje.isImage === true || mensaje.isImage === "true") {
+                if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
+                    createOutMsgWithImage(mensaje.contenido, fechaFormateada);
+                }
+                else {
+                    createRecievedMsgWithImage(mensaje.contenido, fechaFormateada)
+                }
+            }
+            else {
+                if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
+                    createOutMsg(mensaje.contenido, fechaFormateada);
+                }
+                else {
+                    createRecievedMsg(mensaje.contenido, fechaFormateada);
+                }
+            }
+            actualizarContacto(mensaje.contenido, gerenteId, chatId);
+            scrollToBottom();
+        })
+        .catch(err => {
+            console.error('Error al recuperar los datos del usuario: ', err);
+        })
+}
+
+
+async function waitForUserData() {
+    return new Promise((resolve, reject) => {
+        if(idUser !== 0 && userType !== '')
+        {
+            console.log(idUser);
+            console.log(userType);
+            resolve();
+            return;
         }
-        else {
-            createRecievedMsgWithImage(mensaje.contenido, fechaFormateada)
+        else
+        {
+            fetch('obtencion_id_user.php', {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                idUser = data.idUser;
+                userType = data.typeUser;
+                console.log(idUser);
+                console.log(userType);
+            })
+            .then(() => {
+                resolve();
+                return;
+            })
+            .catch(err => {
+                reject(err);
+            });
         }
-    }
-    else {
-        if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente === idUser && mensaje.typeRemitente === userType)) {
-            createOutMsg(mensaje.contenido, fechaFormateada);
-        }
-        else {
-            createRecievedMsg(mensaje.contenido, fechaFormateada);
-        }
-    }
-    actualizarContacto(mensaje.contenido, gerenteId, chatId);
-    scrollToBottom();
+    })
 }

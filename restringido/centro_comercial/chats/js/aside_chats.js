@@ -7,8 +7,8 @@ const token = document.cookie
 .split("; ")
 .find(p => p.startsWith("SessionToken="))
 ?.split("=")[1];
-let idUser;
-let userType;
+let idUser = 0;
+let userType = '';
 let gerenteId = 0;
 let chatId = 0;
 
@@ -456,3 +456,4 @@ async function waitForConnection() {
         }
     })
 }
+
