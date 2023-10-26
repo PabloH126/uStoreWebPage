@@ -112,11 +112,11 @@ searchBox.addEventListener('keyup', async function () {
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
         bodyAside.innerHTML = '';
-        verificarSeleccion();
         await fetchChats(option.textContent);
         waitForConnection()
             .then(() => {
                 actualizarChatsContacto();
+                verificarSeleccion();
             })
             .catch(err => {
                 console.error('Error:', err);
