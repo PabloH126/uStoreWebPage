@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     });
                 sendBtn.addEventListener('click', async function (e) {
                     e.preventDefault();
-                    if(textArea.value === '' || null) return;
+                    if(textArea.value === '' || textArea.value.trim() === '') return;
                     let message = textArea.value;
                     textArea.value = '';
                     if (gerenteId !== 0 && chatId === 0) {

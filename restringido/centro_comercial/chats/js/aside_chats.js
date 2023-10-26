@@ -80,21 +80,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    
-});
-
 function scrollToBottom() {
     const chatArea = document.querySelector(".mssg-area");
     chatArea.scrollTop = chatArea.scrollHeight;
+
+    /*
+     *Esta función selecciona el área del chat y establece su propiedad scrollTop al valor de scrollHeight. 
+     *El scrollTop es la cantidad de desplazamiento hacia abajo, 
+     *y scrollHeight es la altura total del contenido dentro del elemento, incluyendo el contenido no visible. 
+     *Al igualar estos valores, desplazas el contenido del chat hacia abajo.
+     */
 }
 
 searchBox.addEventListener('keyup', async function () {
     let busqueda = searchBox.value.toLowerCase();
     let typeChat = document.querySelector('.options_aside.selected').textContent();
     await fetchChats(typeChat);
-    let contactos = documment.querySelectorAll('.contact_name');
-    let contadosFiltered = contactos.filter(function (contacto) {
+    let contactosNombres = documment.querySelectorAll('.contact_name');
+    let contadosFiltered = contactosNombres.filter(function (contacto) {
         return contacto.textContent.toLowerCase().includes(busqueda);
     }).sort(function (a, b) {
         return a.textContent.localeCompare(b.textContent);
@@ -209,6 +212,7 @@ function CreateContactoGerente(gerente) {
     let divContactoContent = document.createElement('div');
     divContactoContent.classList.add('contacto_content');
     divContactoContent.dataset.gerenteId = gerente.idGerente;
+
 
     let divInitialState = document.createElement('div');
     divInitialState.classList.add('initial_state');
@@ -333,8 +337,8 @@ async function fetchChats(typeChat) {
 function actualizarChatsContacto() {
     contactos.forEach(contacto => {
         contacto.addEventListener('click', async function () {
-            let contactos = document.querySelectorAll('.contacto');
-            contactos.forEach(item => {
+            let contactosUsersChats = document.querySelectorAll('.contacto');
+            contactosUsersChats.forEach(item => {
                 item.classList.remove('select');
             });
             let contactoContentUser = contacto.querySelector('.contacto');
