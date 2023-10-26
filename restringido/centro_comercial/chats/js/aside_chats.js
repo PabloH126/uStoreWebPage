@@ -114,7 +114,7 @@ optionsAside.forEach(option => {
         bodyAside.innerHTML = '';
         const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
         if(seleccionado){
-            seleccionado.classList.remove('.select');
+            seleccionado.classList.remove('select');
         }
         await fetchChats(option.textContent);
         waitForConnection()
