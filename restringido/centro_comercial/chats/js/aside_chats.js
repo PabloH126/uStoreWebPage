@@ -113,6 +113,7 @@ optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
         bodyAside.innerHTML = '';
         const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
+        console.log("ESTA COSA FEA:", seleccionado);
         if(seleccionado){
             seleccionado.classList.remove('select');
         }
