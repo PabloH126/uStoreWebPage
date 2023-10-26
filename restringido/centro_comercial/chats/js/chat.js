@@ -6,6 +6,7 @@ const sendBtn = document.getElementById('submit_message');
 const adminButton = document.getElementById('adminBttn');
 
 document.addEventListener('DOMContentLoaded', async function () {
+    verificarSeleccion();
     var buttons = document.querySelectorAll('.options_aside');
     function onButtonClick(event) {
         buttons.forEach(function (button) {
@@ -211,19 +212,17 @@ document.addEventListener('DOMContentLoaded', async function () {
                     moverChatPrincipio(contactoGerente);
                 })
             }
-            
-            adminButton.addEventListener('click', function(){
-                verificarSeleccion();
-            });
-
-
+            if(adminButton)
+            {
+                adminButton.addEventListener('click', function(){
+                    verificarSeleccion();
+                });
+            }
         })
         .catch(err => {
             console.error("Error:", err);
         });
     console.log('Contactos en DOM:', contactos);
-    verificarSeleccion();
-
 
     waitForUserData()
         .catch(err => {
