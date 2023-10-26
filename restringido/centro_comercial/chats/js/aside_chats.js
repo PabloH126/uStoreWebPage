@@ -94,9 +94,9 @@ function scrollToBottom() {
 
 searchBox.addEventListener('keyup', async function () {
     let busqueda = searchBox.value.toLowerCase();
-    let typeChat = document.querySelector('.options_aside.selected').textContent();
+    let typeChat = document.querySelector('.options_aside.selected').textContent;
     await fetchChats(typeChat);
-    let contactosNombres = documment.querySelectorAll('.contact_name');
+    let contactosNombres = document.querySelectorAll('.contact_name');
     let contadosFiltered = contactosNombres.filter(function (contacto) {
         return contacto.textContent.toLowerCase().includes(busqueda);
     }).sort(function (a, b) {
@@ -337,6 +337,8 @@ async function fetchChats(typeChat) {
 function actualizarChatsContacto() {
     contactos.forEach(contacto => {
         contacto.addEventListener('click', async function () {
+            chatId = 0;
+            gerenteId = 0;
             let contactosUsersChats = document.querySelectorAll('.contacto');
             contactosUsersChats.forEach(item => {
                 item.classList.remove('select');
