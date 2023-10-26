@@ -112,6 +112,10 @@ searchBox.addEventListener('keyup', async function () {
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
         bodyAside.innerHTML = '';
+        const seleccionado = document.querySelector('.contacto.select'); // Busca un elemento con ambas clases.
+        if(seleccionado){
+            seleccionado.classList.remove('.select');
+        }
         await fetchChats(option.textContent);
         waitForConnection()
             .then(() => {
