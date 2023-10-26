@@ -118,12 +118,8 @@ optionsAside.forEach(option => {
             .catch(err => {
                 console.error('Error:', err);
             });
-        
-        
     })
 })
-
-
 
 function CreateContacto(chat) {
     let divContactoContent = document.createElement('div');
@@ -160,7 +156,6 @@ function CreateContacto(chat) {
     divContactInfo.appendChild(divMessagePreview);
     divContacto.appendChild(divContactInfo);
     divInitialState.appendChild(divContacto);
-
     
     let divHoverState = document.createElement('div');
     divHoverState.classList.add('hover_state');
@@ -213,7 +208,6 @@ function CreateContactoGerente(gerente) {
     divContactoContent.classList.add('contacto_content');
     divContactoContent.dataset.gerenteId = gerente.idGerente;
 
-
     let divInitialState = document.createElement('div');
     divInitialState.classList.add('initial_state');
 
@@ -244,7 +238,6 @@ function CreateContactoGerente(gerente) {
     divContactInfo.appendChild(divMessagePreview);
     divContacto.appendChild(divContactInfo);
     divInitialState.appendChild(divContacto);
-
     
     let divHoverState = document.createElement('div');
     divHoverState.classList.add('hover_state');
@@ -329,9 +322,9 @@ async function fetchChats(typeChat) {
                 let adminBtn = document.getElementById('adminBttn');
                 adminBtn.removeAttribute('data-admin-id');
                 adminBtn.dataset.chatId = chats.idChat;
+                break;
         }
     }
-
 }
 
 function actualizarChatsContacto() {
