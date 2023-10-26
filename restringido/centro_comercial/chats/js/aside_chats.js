@@ -39,6 +39,7 @@ function verificarSpan(seleccionado)
     {
         spanSeleccionTienda = document.createElement('span');
         spanSeleccionTienda.classList.add('span-seleccion-tienda');
+        spanSeleccionTienda.textContent = 'Seleccione un chat';
         msgArea.appendChild(spanSeleccionTienda);
         spanSeleccionTienda.style.display = (seleccionado) ? 'block' : 'none';
     }
