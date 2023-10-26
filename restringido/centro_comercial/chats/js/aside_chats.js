@@ -386,6 +386,7 @@ function actualizarChatsContacto() {
             }
             else {
                 gerenteId = contacto.dataset.gerenteId;
+                msgArea.innerHTML = '';
                 console.log(gerenteId);
             }
         })
