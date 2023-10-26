@@ -1,6 +1,8 @@
 let searchBox = document.getElementById('s');
 const optionsAside = document.querySelectorAll('.options_aside');
 const bodyAside = document.querySelector('.body-aside');
+const msgArea = document.querySelector('.mssg-area');
+const textArea = document.getElementById('expanding_textarea');
 var contactos = document.querySelectorAll('.contacto_content');
 
 const token = document.cookie
@@ -31,6 +33,13 @@ function verificarSpan(seleccionado)
     let spanSeleccionTienda = document.getElementById('span-seleccion-tienda'); // letrero "Seleccione un chat"
     if (spanSeleccionTienda)
     {
+        spanSeleccionTienda.style.display = (seleccionado) ? 'block' : 'none';
+    }
+    else
+    {
+        spanSeleccionTienda = document.createElement('span');
+        spanSeleccionTienda.classList.add('span-seleccion-tienda');
+        msgArea.appendChild(spanSeleccionTienda);
         spanSeleccionTienda.style.display = (seleccionado) ? 'block' : 'none';
     }
 }
@@ -112,6 +121,7 @@ searchBox.addEventListener('keyup', async function () {
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
         bodyAside.innerHTML = '';
+        msgArea.innerHTML = '';
         await fetchChats(option.textContent);
         waitForConnection()
             .then(() => {
