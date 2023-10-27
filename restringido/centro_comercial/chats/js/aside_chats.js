@@ -112,12 +112,17 @@ searchBox.addEventListener('keyup', async function () {
     let contactos = document.querySelectorAll('.contacto_content');
     let contactosNombres = document.querySelectorAll('.contact_name');
 
+    
+
     let contactosFiltered = [];
+    
     contactosNombres.forEach((contactoNombre, index) => {
         if(contactoNombre.textContent.toLocaleLowerCase().includes(busqueda)){
             contactosFiltered.push(contactos[index]);
         }
-    }).sort(function (a, b) {
+    });
+    
+    contactosFiltered.sort(function (a, b) {
         return a.textContent.localeCompare(b.textContent);
     });
 
