@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                                 })
             
                                 if (!responseChat.ok) {
-                                    showNotificationError("Hubo un error al mandar la solicitud al servidor");
+                                    showNotificationError("Hubo un error al mandar la solicitud al servidor:", responseChat.state, responseChat.status);
                                     return;
                                 }
             
