@@ -109,9 +109,14 @@ function scrollToBottom() {
 searchBox.addEventListener('keyup', async function () {
     let busqueda = searchBox.value.toLowerCase();
     let typeChat = document.querySelector('.options_aside.selected').textContent;
-    await fetchChats(typeChat);
+    let contactos = document.querySelectorAll('.contacto_content');
+
     let contactosNombres = document.querySelectorAll('.contact_name');
-    let contadosFiltered = contactosNombres.filter(function (contacto) {
+
+
+
+    let contactosFiltered = contactosNombres.filter(function (contacto) {
+        console.log(contacto.textContent.toLowerCase().includes(busqueda));
         return contacto.textContent.toLowerCase().includes(busqueda);
     }).sort(function (a, b) {
         return a.textContent.localeCompare(b.textContent);
