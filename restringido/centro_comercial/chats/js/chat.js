@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                         .then(() => {
                             if(adminButton.dataset.chatId)
                             {
-                                chatId = contacto.dataset.chatId
+                                chatId = adminButton.dataset.chatId
                                 console.log(chatId);
                                 let formData = new FormData();
                                 formData.append("idChat", chatId);
