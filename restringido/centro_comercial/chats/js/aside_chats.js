@@ -346,6 +346,10 @@ async function fetchChats(typeChat) {
 function actualizarChatsContacto() {
     contactos.forEach(contacto => {
         contacto.addEventListener('click', async function () {
+            if(chatId !== 0 && chatId !== null)
+            {
+                await connection.invoke("LeaveGroupChat", chatId);
+            }
             chatId = 0;
             gerenteId = 0;
             let contactosUsersChats = document.querySelectorAll('.contacto');
@@ -384,9 +388,6 @@ function actualizarChatsContacto() {
                         crearMensaje(mensaje, idUser, gerenteId, chatId);
                     })
                     connection.invoke("JoinGroupChat", chatId)
-                    .then(() => {
-                        console.log("Unido al chat: ", chatId);
-                    })
                     .catch(err => {
                         console.error("Hubo un problema al unirse al chat: ", err);
                     });
