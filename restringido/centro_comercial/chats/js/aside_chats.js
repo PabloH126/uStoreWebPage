@@ -112,27 +112,34 @@ searchBox.addEventListener('keyup', async function () {
     let contactos = document.querySelectorAll('.contacto_content');
     let contactosNombres = document.querySelectorAll('.contact_name');
 
-    
+    if(busqueda.trim() !== (null || ""))
+    {
+        let contactosFiltered = [];
+        contactosNombres.forEach((contactoNombre, index) => {
+            if(contactoNombre.textContent.toLowerCase().includes(busqueda)){
+                contactosFiltered.push(contactos[index]);
+            }
+        });
+        
+        contactosFiltered.sort(function (a, b) {
+            return a.textContent.localeCompare(b.textContent);
+        });
 
-    let contactosFiltered = [];
-    
-    contactosNombres.forEach((contactoNombre, index) => {
-        if(contactoNombre.textContent.toLocaleLowerCase().includes(busqueda)){
-            contactosFiltered.push(contactos[index]);
-        }
-    });
-    
-    contactosFiltered.sort(function (a, b) {
-        return a.textContent.localeCompare(b.textContent);
-    });
+        contactos.forEach((contacto) => {
+            contacto.style.display = 'none';
+        });
 
-    contactos.forEach((contacto) => {
-        contacto.style.display = 'none';
-    });
-
-    contactosFiltered.forEach((contactoFiltrado) => {
-        contactoFiltrado.style.display = 'block';
-    })
+        contactosFiltered.forEach((contactoFiltrado) => {
+            contactoFiltrado.style.display = 'block';
+        })
+    }
+    else
+    {
+        contactos.forEach(contacto => {
+            contacto.style.display = 'block';
+        })
+    }
+    
 
 
     /** cuando la barra esta vacia */
