@@ -121,6 +121,17 @@ searchBox.addEventListener('keyup', async function () {
         return a.textContent.localeCompare(b.textContent);
     });
 
+    contactos.forEach((contacto) => {
+        contacto.style.display = 'none';
+    });
+
+    contactosFiltered.forEach((contactoFiltrado) => {
+        contactoFiltrado.style.display = 'block';
+    })
+
+
+    /** cuando la barra esta vacia */
+
     /*mostrar contacto*/
 
 })
