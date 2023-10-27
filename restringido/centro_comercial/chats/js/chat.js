@@ -212,8 +212,59 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
             if(adminButton)
             {
-                adminButton.addEventListener('click', function(){
+                adminButton.addEventListener('click', async function(){
+                    chatId = 0;
+                    gerenteId = 0;
                     verificarSeleccion();
+
+                    fetchChats(adminButton.textContent)
+                        .then(() => {
+                            if(adminButton.dataset.chatId)
+                            {
+                                chatId = contacto.dataset.chatId
+                                console.log(chatId);
+                                let formData = new FormData();
+                                formData.append("idChat", chatId);
+                                const responseChat = fetch('actualizar_chat.php', {
+                                    method: 'POST',
+                                    body: formData
+                                })
+            
+                                if (!responseChat.ok) {
+                                    showNotificationError("Hubo un error al mandar la solicitud al servidor");
+                                    return;
+                                }
+            
+                                let responseChatData = responseChat.json();
+            
+                                if (responseChatData.status !== "success") {
+                                    showNotificationError(responseChatData.message);
+                                    return;
+                                }
+                                else {
+                                    let mensajes = responseChatData.message;
+                                    msgArea.innerHTML = '';
+                                    mensajes.forEach(mensaje => {
+                                        crearMensaje(mensaje, idUser, gerenteId, chatId);
+                                    })
+                                    connection.invoke("JoinGroupChat", chatId)
+                                    .then(() => {
+                                        console.log("Unido al chat: ", chatId);
+                                    })
+                                    .catch(err => {
+                                        console.error("Hubo un problema al unirse al chat: ", err);
+                                    });
+                                }
+
+                            }
+                            else
+                            {
+                                console.log(adminButton.dataset.adminId);
+                            }
+                        })
+                        .catch(err => {
+                            console.error("Error", err);
+                        });
                 });
             }
         })
