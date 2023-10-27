@@ -231,7 +231,9 @@ document.addEventListener('DOMContentLoaded', async function () {
                                 })
             
                                 if (!responseChat.ok) {
-                                    showNotificationError("Hubo un error al mandar la solicitud al servidor:", responseChat.state, responseChat.status);
+                                    
+                                    showNotificationError("Hubo un error al mandar la solicitud al servidor");
+                                    throw new Error(`HTTP error! Status: ${responseChat.status}`);
                                     return;
                                 }
             
@@ -475,7 +477,7 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
 
 async function waitForUserData() {
     return new Promise((resolve, reject) => {
-        if(idUser !== 0 && userType !== '')
+        if(idUser !== 0 && idUser !== null && userType !== '' && userType !== null)
         {
             console.log(idUser);
             console.log(userType);
