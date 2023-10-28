@@ -112,7 +112,7 @@ searchBox.addEventListener('keyup', async function () {
     let contactos = document.querySelectorAll('.contacto_content');
     let contactosNombres = document.querySelectorAll('.contact_name');
 
-    if(busqueda.trim() !== (null || ""))
+    if(busqueda.trim() !== "")
     {
         let contactosFiltered = [];
         contactosNombres.forEach((contactoNombre, index) => {
@@ -130,6 +130,7 @@ searchBox.addEventListener('keyup', async function () {
         });
 
         contactosFiltered.forEach((contactoFiltrado) => {
+            console.log(contactoFiltrado);
             contactoFiltrado.style.display = 'block';
         })
     }
