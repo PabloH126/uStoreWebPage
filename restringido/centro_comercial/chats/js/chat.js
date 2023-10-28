@@ -511,10 +511,16 @@ async function cambiarChatCreated(activar) {
                 }
                 moverChatPrincipio(contactoGerente);
             }
+        })
+        .then(() => {
+            console.log("Se ha activado ChatCreated");
         });
     }
     else
     {
-        connection.off('ChatCreated');
+        connection.off('ChatCreated')
+            .then(() => {
+                console.log("Se ha desactivado ChatCreated");
+            });
     }
 }
