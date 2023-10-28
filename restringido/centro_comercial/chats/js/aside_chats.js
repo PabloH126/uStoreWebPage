@@ -125,11 +125,11 @@ searchBox.addEventListener('keyup', async function () {
             return a.textContent.localeCompare(b.textContent);
         });
 
-        contactos.forEach((contacto) => {
+        contactos.forEach(contacto => {
             contacto.style.display = 'none';
         });
 
-        contactosFiltered.forEach((contactoFiltrado) => {
+        contactosFiltered.forEach(contactoFiltrado => {
             console.log(contactoFiltrado);
             contactoFiltrado.style.display = 'block';
         })
