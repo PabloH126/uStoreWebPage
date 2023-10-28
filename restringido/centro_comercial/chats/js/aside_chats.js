@@ -115,14 +115,17 @@ searchBox.addEventListener('keyup', async function () {
     if(busqueda.trim() !== "")
     {
         let contactosFiltered = [];
-        contactosNombres.forEach((contactoNombre, index) => {
-            if(contactoNombre.textContent.toLowerCase().includes(busqueda)){
-                contactosFiltered.push(contactos[index]);
+        contactos.forEach(contacto => {
+            let nombre = contacto.querySelector('.contact_name').textContent;
+            if(nombre.toLowerCase().includes(busqueda)){
+                contactosFiltered.push(contacto);
             }
         });
         
         contactosFiltered.sort(function (a, b) {
-            return a.textContent.localeCompare(b.textContent);
+            let nombreA = a.querySelector('.contact_name').textContent.toLowerCase();
+            let nombreB = b.querySelector('.contact_name').textContent.toLowerCase();
+            return nombreA.localeCompare(nombreB);
         });
 
         console.log(contactosFiltered);
