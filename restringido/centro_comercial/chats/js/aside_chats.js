@@ -145,13 +145,6 @@ searchBox.addEventListener('keyup', async function () {
             contacto.style.display = 'block';
         })
     }
-    
-
-
-    /** cuando la barra esta vacia */
-
-    /*mostrar contacto*/
-
 })
 
 optionsAside.forEach(option => {
