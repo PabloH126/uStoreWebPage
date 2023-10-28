@@ -184,7 +184,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                 
         
                 connection.on('RecieveMessage', function (mensaje, chat) {
-                    console.log("Mensaje en RecieveMessage:", mensaje);
                     crearMensaje(mensaje, idUser, gerenteId, chatId);
                     if(!(chat.typeMiembro1 === "Administrador" || chat.typeMiembro2 === "Administrador"))
                     {
@@ -262,7 +261,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         .catch(err => {
             console.error("Error:", err);
         });
-    console.log('Contactos en DOM:', contactos);
 
     waitForUserData()
         .catch(err => {
@@ -437,7 +435,6 @@ function crearMensaje(mensaje, idUser, gerenteId, chatId) {
     waitForUserData()
         .then(() => {
             let fechaFormateada = formatearFecha(mensaje.fechaMensaje);
-            console.log("Datos user al crear mensaje: ", idUser, userType, mensaje.idRemitente, mensaje.typeRemitente);
             
             if (mensaje.isImage === true || mensaje.isImage === "true") {
                 if (mensaje.typeRemitente === "Tienda" || (mensaje.idRemitente.toString() === idUser && mensaje.typeRemitente === userType)) {
@@ -467,8 +464,6 @@ async function waitForUserData() {
     return new Promise((resolve, reject) => {
         if(idUser !== 0 && idUser !== null && userType !== '' && userType !== null)
         {
-            console.log(idUser);
-            console.log(userType);
             resolve();
             return;
         }
@@ -481,8 +476,6 @@ async function waitForUserData() {
             .then(data => {
                 idUser = data.idUser;
                 userType = data.typeUser;
-                console.log(idUser);
-                console.log(userType);
             })
             .then(() => {
                 resolve();
@@ -499,10 +492,6 @@ async function cambiarChatCreated(activar) {
     if (activar)
     {
         connection.on('ChatCreated', function (chat, mensaje) {
-            console.log('entro al chat created');
-            console.log(chat);
-            console.log(mensaje);
-            console.log(gerenteId, chat.idChat);
             crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
             if(!(chat.typeMiembro1 === "Administrador" || chat.typeMiembro2 === "Administrador"))
             {

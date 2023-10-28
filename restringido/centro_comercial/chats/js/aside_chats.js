@@ -132,14 +132,11 @@ searchBox.addEventListener('keyup', function () {
                         return nombreA.localeCompare(nombreB);
                     });
             
-                    console.log(contactosFiltered);
-            
                     contactos.forEach(contacto => {
                         contacto.style.display = 'none';
                     });
             
                     contactosFiltered.forEach(contactoFiltrado => {
-                        console.log(contactoFiltrado);
                         contactoFiltrado.style.display = 'block';
                     });
                 })
@@ -247,7 +244,6 @@ function CreateContacto(chat) {
     bodyAside.appendChild(divContactoContent);
 
     contactos = document.querySelectorAll('.contacto_content');
-    console.log("Dentro de la funcion create", contactos);
     contactos.forEach(contacto => {
         contacto.addEventListener('click', () => {
             let contactosUsers = document.querySelectorAll('.contacto');
@@ -329,7 +325,6 @@ function CreateContactoGerente(gerente) {
     bodyAside.appendChild(divContactoContent);
 
     contactos = document.querySelectorAll('.contacto_content');
-    console.log("Dentro de la funcion create", contactos);
     contactos.forEach(contacto => {
         contacto.addEventListener('click', () => {
             let contactosUsers = document.querySelectorAll('.contacto');
