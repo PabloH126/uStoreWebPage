@@ -26,6 +26,7 @@
     bottom: 0px;
     width: 80vw;
     display: none;
+    background: white;
 }
 
 .text-area div:nth-child(2) {
