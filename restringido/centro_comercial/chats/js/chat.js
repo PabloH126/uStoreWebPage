@@ -175,7 +175,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                 waitForConnection()
                     .then(() => {
                         cambiarChatCreated(true);
-                        console.log("Se activo chatCreated");
                     })
                     .catch(err => {
                         console.error("Error al activar ChatCreated:", err);
