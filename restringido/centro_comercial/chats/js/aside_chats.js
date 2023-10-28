@@ -152,6 +152,9 @@ searchBox.addEventListener('keyup', function () {
     {
         waitForConnection()
             .then(() => {
+                contactos.forEach(contacto => {
+                    contacto.style.display = 'block';
+                });
                 cambiarChatCreated(true);
             })
             .catch(err => {
