@@ -179,6 +179,8 @@ hr {
 
 .message_preview {
     font-size: 0.9rem;
+    max-height: 1rem;
+    overflow: hidden;
 }
 
 .contacto.select {
