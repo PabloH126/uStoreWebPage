@@ -114,36 +114,52 @@ searchBox.addEventListener('keyup', function () {
 
     if(busqueda.trim() !== "")
     {
-        let contactosFiltered = [];
-        contactos.forEach(contacto => {
-            let nombre = contacto.querySelector('.contact_name').textContent;
-            if(nombre.toLowerCase().includes(busqueda)){
-                contactosFiltered.push(contacto);
-            }
-        });
-        
-        contactosFiltered.sort(function (a, b) {
-            let nombreA = a.querySelector('.contact_name').textContent.toLowerCase();
-            let nombreB = b.querySelector('.contact_name').textContent.toLowerCase();
-            return nombreA.localeCompare(nombreB);
-        });
-
-        console.log(contactosFiltered);
-
-        contactos.forEach(contacto => {
-            contacto.style.display = 'none';
-        });
-
-        contactosFiltered.forEach(contactoFiltrado => {
-            console.log(contactoFiltrado);
-            contactoFiltrado.style.display = 'block';
+        waitForConnection()
+        .then(() => {
+            cambiarChatCreated(false)
+                .then(() => {
+                    let contactosFiltered = [];
+                    contactos.forEach(contacto => {
+                        let nombre = contacto.querySelector('.contact_name').textContent;
+                        if(nombre.toLowerCase().includes(busqueda)){
+                            contactosFiltered.push(contacto);
+                        }
+                    });
+                    
+                    contactosFiltered.sort(function (a, b) {
+                        let nombreA = a.querySelector('.contact_name').textContent.toLowerCase();
+                        let nombreB = b.querySelector('.contact_name').textContent.toLowerCase();
+                        return nombreA.localeCompare(nombreB);
+                    });
+            
+                    console.log(contactosFiltered);
+            
+                    contactos.forEach(contacto => {
+                        contacto.style.display = 'none';
+                    });
+            
+                    contactosFiltered.forEach(contactoFiltrado => {
+                        console.log(contactoFiltrado);
+                        contactoFiltrado.style.display = 'block';
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                });
+        })
+        .catch(err => {
+            console.error(err);
         })
     }
     else
     {
-        contactos.forEach(contacto => {
-            contacto.style.display = 'block';
-        })
+        waitForConnection()
+            .then(() => {
+                cambiarChatCreated(true);
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
 })
 

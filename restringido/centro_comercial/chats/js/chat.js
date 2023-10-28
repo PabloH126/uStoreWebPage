@@ -171,22 +171,16 @@ document.addEventListener('DOMContentLoaded', async function () {
                 connection.on('Notify', function (message) {
                     console.log(message);
                 })
+
+                waitForConnection()
+                    .then(() => {
+                        cambiarChatCreated(true);
+                    })
+                    .catch(err => {
+                        console.error("Error al activar ChatCreated:", err);
+                    })
         
-                connection.on('ChatCreated', function (chat, mensaje) {
-                    console.log('entro al chat created');
-                    console.log(chat);
-                    console.log(mensaje);
-                    console.log(gerenteId, chat.idChat);
-                    crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
-                    if(!(chat.typeMiembro1 === "Administrador" || chat.typeMiembro2 === "Administrador"))
-                    {
-                        let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
-                        if (!contactoGerente) {
-                            contactoGerente = document.querySelector(`[data-chat-id="${chat.idChat}"]`);
-                        }
-                        moverChatPrincipio(contactoGerente);
-                    }
-                });
+                
         
                 connection.on('RecieveMessage', function (mensaje, chat) {
                     console.log("Mensaje en RecieveMessage:", mensaje);
@@ -498,4 +492,29 @@ async function waitForUserData() {
             });
         }
     })
+}
+
+async function cambiarChatCreated(activar) {
+    if (activar)
+    {
+        connection.on('ChatCreated', function (chat, mensaje) {
+            console.log('entro al chat created');
+            console.log(chat);
+            console.log(mensaje);
+            console.log(gerenteId, chat.idChat);
+            crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
+            if(!(chat.typeMiembro1 === "Administrador" || chat.typeMiembro2 === "Administrador"))
+            {
+                let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
+                if (!contactoGerente) {
+                    contactoGerente = document.querySelector(`[data-chat-id="${chat.idChat}"]`);
+                }
+                moverChatPrincipio(contactoGerente);
+            }
+        });
+    }
+    else
+    {
+        connection.off('ChatCreated');
+    }
 }
