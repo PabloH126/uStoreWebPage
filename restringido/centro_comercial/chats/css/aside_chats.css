@@ -190,4 +190,8 @@ hr {
     box-shadow: -5px 3px 10px 2px #1c4b5a;
 }
 
+.hiddenContact {
+    display: none;
+}
+
   

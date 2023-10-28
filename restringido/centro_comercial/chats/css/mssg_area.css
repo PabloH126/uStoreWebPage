@@ -75,7 +75,7 @@ p {
 .outgoing-chats-msg {
     float: right;
     max-width: 51%;
-    text-align: end;
+    text-align: start;
     margin-right: 1rem;
 }
 

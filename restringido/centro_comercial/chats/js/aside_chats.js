@@ -133,11 +133,11 @@ searchBox.addEventListener('keyup', function () {
                     });
             
                     contactos.forEach(contacto => {
-                        contacto.style.display = 'none';
+                        contacto.classList.add('hiddenContact');
                     });
             
                     contactosFiltered.forEach(contactoFiltrado => {
-                        contactoFiltrado.style.display = 'block';
+                        contactoFiltrado.classList.remove('hiddenContact');
                     });
                 })
                 .catch(err => {
@@ -153,7 +153,7 @@ searchBox.addEventListener('keyup', function () {
         waitForConnection()
             .then(() => {
                 contactos.forEach(contacto => {
-                    contacto.style.display = 'block';
+                    contacto.classList.remove('hiddenContact');
                 });
                 cambiarChatCreated(true);
             })
