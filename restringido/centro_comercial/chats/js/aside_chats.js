@@ -393,6 +393,7 @@ function actualizarChatsContacto() {
             }
             chatId = 0;
             gerenteId = 0;
+            msgArea.innerHTML = '';
             let contactosUsersChats = document.querySelectorAll('.contacto');
             contactosUsersChats.forEach(item => {
                 item.classList.remove('select');
