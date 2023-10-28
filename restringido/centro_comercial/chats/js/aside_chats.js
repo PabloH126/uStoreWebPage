@@ -165,6 +165,7 @@ searchBox.addEventListener('keyup', function () {
 
 optionsAside.forEach(option => {
     option.addEventListener('click', async function () {
+        searchBox.value = '';
         bodyAside.innerHTML = '';
         msgArea.innerHTML = '';
         await fetchChats(option.textContent);
