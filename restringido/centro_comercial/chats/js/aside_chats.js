@@ -106,7 +106,7 @@ function scrollToBottom() {
      */
 }
 
-searchBox.addEventListener('keyup', async function () {
+searchBox.addEventListener('keyup', function () {
     let busqueda = searchBox.value.toLowerCase();
     let typeChat = document.querySelector('.options_aside.selected').textContent;
     let contactos = document.querySelectorAll('.contacto_content');
