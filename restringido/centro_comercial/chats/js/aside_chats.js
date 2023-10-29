@@ -390,7 +390,7 @@ function actualizarChatsContacto() {
             if(chatId !== 0 && chatId !== null)
             {
                 console.log(chatId);
-                connection.invoke("LeaveGroupChat", chatId);
+                connection.invoke("LeaveGroupChat", chatId.toString());
             }
             chatId = 0;
             gerenteId = 0;
