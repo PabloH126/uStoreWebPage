@@ -183,6 +183,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 
         
                 connection.on('RecieveMessage', function (mensaje, chat) {
+                    console.log("Mensaje: ", mensaje);
+                    console.log("Chat", chat);
                     crearMensaje(mensaje, idUser, gerenteId, chatId);
                     if(!(chat.typeMiembro1 === "Administrador" || chat.typeMiembro2 === "Administrador"))
                     {
