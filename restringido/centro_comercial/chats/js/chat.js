@@ -492,14 +492,12 @@ async function cambiarChatCreated(activar) {
             console.log("Mensaje: ", mensaje);
             console.log("Chat", chat);
             crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
-            if(!(chat.typeMiembro1 === "Administrador" || chat.typeMiembro2 === "Administrador"))
-            {
-                let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
-                if (!contactoGerente) {
-                    contactoGerente = document.querySelector(`[data-chat-id="${chat.idChat}"]`);
-                }
-                moverChatPrincipio(contactoGerente);
+            let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
+            if (!contactoGerente) {
+                contactoGerente = document.querySelector(`[data-chat-id="${chat.idChat}"]`);
             }
+            console.log(contactoGerente);
+            moverChatPrincipio(contactoGerente);
         });
         console.log("Se activo chatCreated");
     }
