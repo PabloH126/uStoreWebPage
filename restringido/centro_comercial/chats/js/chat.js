@@ -416,6 +416,7 @@ function moverChatPrincipio(element) {
 }
 
 function actualizarContacto(message, gerenteId, chatId) {
+    console.log(gerenteId);
     let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
     if (contactoGerente) {
         contactoGerente.removeAttribute('data-gerente-id');
@@ -424,8 +425,13 @@ function actualizarContacto(message, gerenteId, chatId) {
     else {
         contactoGerente = document.querySelector(`[data-chat-id="${chatId}"]`);
     }
-    let mensajeContacto = contactoGerente.querySelector('.message_preview');
-    mensajeContacto.textContent = message;
+
+    if(contactoGerente)
+    {
+        let mensajeContacto = contactoGerente.querySelector('.message_preview');
+        mensajeContacto.textContent = message;
+        moverChatPrincipio(contactoGerente);
+    }
 }
 
 function crearMensaje(mensaje, idUser, gerenteId, chatId) {
@@ -491,13 +497,9 @@ async function cambiarChatCreated(activar) {
         connection.on('ChatCreated', function (chat, mensaje) {
             console.log("Mensaje: ", mensaje);
             console.log("Chat", chat);
-            crearMensaje(mensaje, idUser, gerenteId, chat.idChat)
-            let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
-            if (!contactoGerente) {
-                contactoGerente = document.querySelector(`[data-chat-id="${chat.idChat}"]`);
-            }
-            console.log(contactoGerente);
-            moverChatPrincipio(contactoGerente);
+            crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
+            actualizarContacto(mensaje.contenido, gerenteId, chat.idChat);
+            
         });
         console.log("Se activo chatCreated");
     }

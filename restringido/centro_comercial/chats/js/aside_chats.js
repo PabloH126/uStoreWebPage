@@ -389,7 +389,7 @@ function actualizarChatsContacto() {
         contacto.addEventListener('click', async function () {
             if(chatId !== 0 && chatId !== null)
             {
-                await connection.invoke("LeaveGroupChat", chatId);
+                connection.invoke("LeaveGroupChat", chatId);
             }
             chatId = 0;
             gerenteId = 0;
