@@ -182,14 +182,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 connection.on('RecieveMessage', function (mensaje, chat) {
                     crearMensaje(mensaje, idUser, gerenteId, chatId);
-                    if(!(chat.typeMiembro1 === "Administrador" || chat.typeMiembro2 === "Administrador"))
-                    {
-                        let contactoGerente = document.querySelector(`[data-gerente-id="${gerenteId}"]`);
-                        if (!contactoGerente) {
-                            contactoGerente = document.querySelector(`[data-chat-id="${chat.idChat}"]`);
-                        }
-                        moverChatPrincipio(contactoGerente);
-                    }
+                    actualizarContacto(mensaje.contenido, gerenteId, chat.idChat);
                     
                 })
             }
