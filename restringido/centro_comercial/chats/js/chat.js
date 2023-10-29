@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                         console.error("Error al activar ChatCreated:", err);
                     })
 
-        
                 connection.on('RecieveMessage', function (mensaje, chat) {
                     console.log("Mensaje: ", mensaje);
                     console.log("Chat", chat);
