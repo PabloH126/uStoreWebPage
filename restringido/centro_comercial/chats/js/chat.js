@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     })
         
                 
-        
+                    
                 connection.on('RecieveMessage', function (mensaje, chat) {
                     console.log("Mensaje: ", mensaje);
                     console.log("Chat", chat);
