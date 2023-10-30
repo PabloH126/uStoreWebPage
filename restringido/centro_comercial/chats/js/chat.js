@@ -241,10 +241,9 @@ async function envioMssg(){
     else if (contactoSelected)
     {
         let contactoSelectedContainer = contactoSelected.closest('.contacto_content');
-        console.log(contactoSelectedContainer.dataset);
         if(contactoSelectedContainer.dataset.gerenteId)
         {
-            await CrearChatFetch(contactoSelected.dataset.gerenteId, "Gerente", message);
+            await CrearChatFetch(contactoSelectedContainer.dataset.gerenteId, "Gerente", message);
         }
         else
         {
@@ -276,9 +275,6 @@ async function EnviarMensajeFetch(idChat, message) {
 }
 
 async function CrearChatFetch(idMiembro2, typeMiembro2, message) {
-    console.log(idMiembro2);
-    console.log(typeMiembro2);
-    console.log(message);
     let formData = new FormData();
     formData.append("idMiembro2", idMiembro2);
     formData.append("typeMiembro2", typeMiembro2);
