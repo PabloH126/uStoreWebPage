@@ -497,8 +497,8 @@ async function cambiarChatCreated(activar) {
                 console.log(contactoSelectContainer);
                 console.log(contactoSelectContainer.dataset);
                 if(contactoSelectContainer && (
-                    (contactoSelectContainer.dataset.chatId == chat.idChat) || 
-                    (contactoSelectContainer.dataset.chatId == chat.idChat)))
+                    (contactoSelectContainer.dataset.gerenteId == chat.idMiembro1 && chat.typeMiembro1 === "Gerente") || 
+                    (contactoSelectContainer.dataset.gerenteId == chat.idMiembro2 && chat.typeMiembro2 === "Gerente")))
                 {
                     console.log('entro al primer if');
                     crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
