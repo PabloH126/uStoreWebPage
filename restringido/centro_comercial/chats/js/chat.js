@@ -493,14 +493,17 @@ async function cambiarChatCreated(activar) {
             let contactoSelect = document.querySelector('.contacto.select');
             if((contactoSelect.dataset.gerenteId === chat.idMiembro1 && chat.typeMiembro1 === "Gerente") || (contactoSelect.dataset.gerenteId === chat.idMiembro2 && chat.typeMiembro2 === "Gerente" ))
             {
+                console.log('entro al primer if');
                 crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
             }
             if(chat.typeMiembro1 === "Usuario" || chat.typeMiembro2 === "Usuario")
             {
+                console.log('entro al segundo if');
                 CreateContacto(chat);
             }
             else if (chat.typeMiembro1 === "Gerente" || chat.typeMiembro2 === "Gerente")
             {
+                console.log('entro al tercer if');
                 actualizarContacto(mensaje.contenido, gerenteId, chat.idChat);
             }
             

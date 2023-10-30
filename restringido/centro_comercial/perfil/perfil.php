@@ -120,7 +120,6 @@ curl_close($ch);
 				</div>
 
 				<div class="floating_bttns">
-
 					<div id="filterList">
 						<div id="divIconBackground" style="display: none">
 							<div class="content-background-animated">
@@ -140,7 +139,6 @@ curl_close($ch);
 							?>
 						</div>
 					</div>
-
 					<div class="crear-publicacion" id="btnCrearPubli">
 						<a title="Descargar">
 							<i class='bx bxs-download' id="menu-icon2"></i>

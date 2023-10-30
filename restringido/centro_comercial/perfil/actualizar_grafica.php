@@ -12,6 +12,8 @@
         "periodoTiempo" => (($_POST['periodoTiempo'] != 'undefined') ? $_POST['periodoTiempo'] : "mensual")
     ];
 
+    isset($_SESSION['idTiendaGerente']) ? $idTiendaValue = $_SESSION['idTiendaGerente'] : '';
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/TendenciasVenta/GetTendenciasPerfil?idTienda=' . $idTiendaValue);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
