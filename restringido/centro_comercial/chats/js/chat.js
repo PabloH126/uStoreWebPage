@@ -503,6 +503,7 @@ async function cambiarChatCreated(activar) {
             {
                 console.log('entro al segundo if');
                 CreateContacto(chat);
+                actualizarChatsContacto();
             }
             else if (chat.typeMiembro1 === "Gerente" || chat.typeMiembro2 === "Gerente")
             {
