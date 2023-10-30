@@ -495,6 +495,7 @@ async function cambiarChatCreated(activar) {
             {
                 let contactoSelectContainer = contactoSelect.closest('.contacto_content');
                 console.log(contactoSelectContainer);
+                console.log(contactoSelectContainer.dataset.chatId);
                 if(contactoSelectContainer && (
                     (contactoSelectContainer.dataset.chatId == chat.idChat) || 
                     (contactoSelectContainer.dataset.chatId == chat.idChat)))
