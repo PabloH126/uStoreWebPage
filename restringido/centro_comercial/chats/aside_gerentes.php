@@ -86,11 +86,6 @@ foreach ($gerentes as $gerente)
 		($chat['idMiembro2'] == $gerente['idGerente'] && $chat['typeMiembro2'] == 'Gerente'))
 		{
 			$chatEncontrado = true;
-
-			/*$gerentesConChat[] = [
-				'gerente' => $gerente,
-				'chat' => $chat
-			];*/
 			break;
 		}
 	}
@@ -103,7 +98,7 @@ foreach ($gerentes as $gerente)
 
 $responseArray = [
 	'status' => 'success',	
-	'gerentesConChat' => $chatsGerente /* $gerentesConChat*/,
+	'gerentesConChat' => $chatsGerente,
 	'gerentesSinChat' => $gerentesSinChat
 ];
 echo json_encode($responseArray);

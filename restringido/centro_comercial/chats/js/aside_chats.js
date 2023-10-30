@@ -6,9 +6,9 @@ const textArea = document.getElementById('expanding_textarea');
 var contactos = document.querySelectorAll('.contacto_content');
 
 const token = document.cookie
-.split("; ")
-.find(p => p.startsWith("SessionToken="))
-?.split("=")[1];
+    .split("; ")
+    .find(p => p.startsWith("SessionToken="))
+    ?.split("=")[1];
 let idUser = 0;
 let userType = '';
 let gerenteId = 0;
@@ -28,15 +28,12 @@ function verificarSeleccion() {
     }
 }
 
-function verificarSpan(seleccionado)
-{
+function verificarSpan(seleccionado) {
     let spanSeleccionTienda = document.getElementById('span-seleccion-tienda'); // letrero "Seleccione un chat"
-    if (spanSeleccionTienda)
-    {
+    if (spanSeleccionTienda) {
         spanSeleccionTienda.style.display = (seleccionado) ? 'block' : 'none';
     }
-    else
-    {
+    else {
         let divSpan = document.createElement('div');
         spanSeleccionTienda = document.createElement('span');
         spanSeleccionTienda.id = 'span-seleccion-tienda';
@@ -48,10 +45,10 @@ function verificarSpan(seleccionado)
 }
 
 const connection = new signalR.HubConnectionBuilder()
-.withUrl('https://ustoreapi.azurewebsites.net/chatHub', {
-    accessTokenFactory: () => token
-})
-.build();
+    .withUrl('https://ustoreapi.azurewebsites.net/chatHub', {
+        accessTokenFactory: () => token
+    })
+    .build();
 
 document.addEventListener('DOMContentLoaded', function () {
     scrollToBottom();
@@ -112,44 +109,42 @@ searchBox.addEventListener('keyup', function () {
     let contactos = document.querySelectorAll('.contacto_content');
     let contactosNombres = document.querySelectorAll('.contact_name');
 
-    if(busqueda.trim() !== "")
-    {
+    if (busqueda.trim() !== "") {
         waitForConnection()
-        .then(() => {
-            cambiarChatCreated(false)
-                .then(() => {
-                    let contactosFiltered = [];
-                    contactos.forEach(contacto => {
-                        let nombre = contacto.querySelector('.contact_name').textContent;
-                        if(nombre.toLowerCase().includes(busqueda)){
-                            contactosFiltered.push(contacto);
-                        }
+            .then(() => {
+                cambiarChatCreated(false)
+                    .then(() => {
+                        let contactosFiltered = [];
+                        contactos.forEach(contacto => {
+                            let nombre = contacto.querySelector('.contact_name').textContent;
+                            if (nombre.toLowerCase().includes(busqueda)) {
+                                contactosFiltered.push(contacto);
+                            }
+                        });
+
+                        contactosFiltered.sort(function (a, b) {
+                            let nombreA = a.querySelector('.contact_name').textContent.toLowerCase();
+                            let nombreB = b.querySelector('.contact_name').textContent.toLowerCase();
+                            return nombreA.localeCompare(nombreB);
+                        });
+
+                        contactos.forEach(contacto => {
+                            contacto.classList.add('hiddenContact');
+                        });
+
+                        contactosFiltered.forEach(contactoFiltrado => {
+                            contactoFiltrado.classList.remove('hiddenContact');
+                        });
+                    })
+                    .catch(err => {
+                        console.error(err);
                     });
-                    
-                    contactosFiltered.sort(function (a, b) {
-                        let nombreA = a.querySelector('.contact_name').textContent.toLowerCase();
-                        let nombreB = b.querySelector('.contact_name').textContent.toLowerCase();
-                        return nombreA.localeCompare(nombreB);
-                    });
-            
-                    contactos.forEach(contacto => {
-                        contacto.classList.add('hiddenContact');
-                    });
-            
-                    contactosFiltered.forEach(contactoFiltrado => {
-                        contactoFiltrado.classList.remove('hiddenContact');
-                    });
-                })
-                .catch(err => {
-                    console.error(err);
-                });
-        })
-        .catch(err => {
-            console.error(err);
-        })
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
-    else
-    {
+    else {
         waitForConnection()
             .then(() => {
                 contactos.forEach(contacto => {
@@ -215,7 +210,7 @@ function CreateContacto(chat) {
     divContactInfo.appendChild(divMessagePreview);
     divContacto.appendChild(divContactInfo);
     divInitialState.appendChild(divContacto);
-    
+
     let divHoverState = document.createElement('div');
     divHoverState.classList.add('hover_state');
 
@@ -224,18 +219,18 @@ function CreateContacto(chat) {
 
     let divContactProfileImgHover = document.createElement('div');
     divContactProfileImgHover.classList.add('contact_profile_img');
-    
+
     let imgContactProfileImgHover = document.createElement('img');
     imgContactProfileImgHover.src = chat.imagenTienda;
     imgContactProfileImgHover.setAttribute('alt', "Imagen de perfil de tienda");
-    
+
     let divContactInfoHover = document.createElement('div');
     divContactInfoHover.classList.add('contact_info');
 
     let divContactNameHover = document.createElement('div');
     divContactNameHover.classList.add('contact_name');
     divContactNameHover.textContent = chat.tiendaNameChat;
-    
+
     divContactProfileImgHover.appendChild(imgContactProfileImgHover);
     divContactInfoHover.appendChild(divContactNameHover);
     divContactoHover.appendChild(divContactProfileImgHover);
@@ -296,7 +291,7 @@ function CreateContactoGerente(gerente) {
     divContactInfo.appendChild(divMessagePreview);
     divContacto.appendChild(divContactInfo);
     divInitialState.appendChild(divContacto);
-    
+
     let divHoverState = document.createElement('div');
     divHoverState.classList.add('hover_state');
 
@@ -305,18 +300,18 @@ function CreateContactoGerente(gerente) {
 
     let divContactProfileImgHover = document.createElement('div');
     divContactProfileImgHover.classList.add('contact_profile_img');
-    
+
     let imgContactProfileImgHover = document.createElement('img');
     imgContactProfileImgHover.src = gerente.tiendaImage;
     imgContactProfileImgHover.setAttribute('alt', "Imagen de perfil de tienda");
-    
+
     let divContactInfoHover = document.createElement('div');
     divContactInfoHover.classList.add('contact_info');
 
     let divContactNameHover = document.createElement('div');
     divContactNameHover.classList.add('contact_name');
     divContactNameHover.textContent = gerente.tiendaName;
-    
+
     divContactProfileImgHover.appendChild(imgContactProfileImgHover);
     divContactInfoHover.appendChild(divContactNameHover);
     divContactoHover.appendChild(divContactProfileImgHover);
@@ -368,7 +363,7 @@ async function fetchChats(typeChat) {
                 gerentesConChat = chatsData.gerentesConChat;
                 gerentesSinChat = chatsData.gerentesSinChat;
                 gerentesConChat.forEach(gerente => {
-                    CreateContacto(gerente /*gerente.chat*/);
+                    CreateContacto(gerente);
                 });
                 gerentesSinChat.forEach(gerente => {
                     CreateContactoGerente(gerente);
@@ -387,8 +382,7 @@ async function fetchChats(typeChat) {
 function actualizarChatsContacto() {
     contactos.forEach(contacto => {
         contacto.addEventListener('click', async function () {
-            if(chatId !== 0 && chatId !== null)
-            {
+            if (chatId !== 0 && chatId !== null) {
                 console.log(chatId);
                 connection.invoke("LeaveGroupChat", chatId.toString());
             }
@@ -431,9 +425,9 @@ function actualizarChatsContacto() {
                         crearMensaje(mensaje, idUser, gerenteId, chatId);
                     })
                     connection.invoke("JoinGroupChat", chatId)
-                    .catch(err => {
-                        console.error("Hubo un problema al unirse al chat: ", err);
-                    });
+                        .catch(err => {
+                            console.error("Hubo un problema al unirse al chat: ", err);
+                        });
                 }
 
             }
@@ -487,17 +481,17 @@ function showNotificationError(message) {
 
 async function waitForConnection() {
     return new Promise((resolve, reject) => {
-        if(connection.state === signalR.HubConnectionState.Connected) {
+        if (connection.state === signalR.HubConnectionState.Connected) {
             resolve();
             return;
         }
-        if(connection.state === signalR.HubConnectionState.Disconnected) {
+        if (connection.state === signalR.HubConnectionState.Disconnected) {
             connection.start()
                 .then(resolve)
                 .catch(reject);
             return;
-        } 
-        if(connection.state === signalR.HubConnectionState.Connecting) {
+        }
+        if (connection.state === signalR.HubConnectionState.Connecting) {
             const checkStateInterval = setInterval(() => {
                 if (connection.state === signalR.HubConnectionState.Connected) {
                     clearInterval(checkStateInterval);

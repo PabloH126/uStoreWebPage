@@ -64,7 +64,7 @@ input#change_img {
     object-fit: cover;
 }
 
-#fltr:hover img:last-child {
+#fltr:hover img.filter {
     display: block;
     cursor: pointer;
 }

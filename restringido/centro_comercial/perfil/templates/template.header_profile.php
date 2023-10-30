@@ -4,6 +4,10 @@
 			<div class="img_profile">
 				<div id="fltr">
 					<img class="profile_img" id="profile_img" src="<?php echo $perfil['imagenP']; ?>" alt="imagen de perfil">
+								
+				<?php
+				if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
+				{ ?>
 					<form action="" id="form_change_img">
 						<label for="change_img">
 							<img class="filter"
@@ -12,6 +16,7 @@
 						</label>
 						<input type="file" id="change_img">
 					</form>
+				<?php }?>
 				</div>
 			</div>
 			<div class="info_profil">

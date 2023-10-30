@@ -11,10 +11,7 @@
         "categorias" => (($_POST['categorias'] != 'undefined' && $_POST['categorias'] != null) ? $_POST['categorias'] : []),
         "periodoTiempo" => (($_POST['periodoTiempo'] != 'undefined') ? $_POST['periodoTiempo'] : "mensual")
     ];
-    /*
-    echo json_encode(['status' => "hola"]);
-    exit; 
-    */
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://ustoreapi.azurewebsites.net/api/TendenciasVenta/GetTendenciasPerfil?idTienda=' . $idTiendaValue);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
