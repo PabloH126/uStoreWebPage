@@ -214,15 +214,12 @@ document.addEventListener('DOMContentLoaded', async function () {
                     if(chat.typeMiembro1 === "Usuario" || chat.typeMiembro2 === "Usuario")
                     {
                         console.log('entro al segundo if');
-                        actualizarChatsContacto();
                         actualizarContacto(mensaje.contenido, null, chat.idChat);
                     }
                     else if (chat.typeMiembro1 === "Gerente" || chat.typeMiembro2 === "Gerente")
                     {
                         console.log('entro al tercer if');
                         actualizarContacto(mensaje.contenido, null, chat.idChat);
-                        
-                    
                     }
                 })
             }
