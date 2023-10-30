@@ -138,23 +138,17 @@ document.addEventListener('DOMContentLoaded', async function () {
                             crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
                         }
                     }
+                    else if(adminButton && adminButton.classList.contains('selected'))
+                    {
+                        crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
+                    }
                     
-                    if(chat.typeMiembro1 === "Usuario" || chat.typeMiembro2 === "Usuario")
-                    {
-                        console.log('entro al segundo if');
-                        actualizarContacto(mensaje.contenido, null, chat.idChat);
-                    }
-                    else if (chat.typeMiembro1 === "Gerente" || chat.typeMiembro2 === "Gerente")
-                    {
-                        console.log('entro al tercer if');
-                        actualizarContacto(mensaje.contenido, null, chat.idChat);
-                    }
-                })
+                    actualizarContacto(mensaje.contenido, null, chat.idChat);
+                });
 
                 connection.on('NewMessage', function (mensaje, chat) {
-                    console.log(mensaje);
-                    console.log(chat);
-                })
+                    actualizarContacto(mensaje.contenido, null, chat.idChat);
+                });
             }
             if(adminButton)
             {
