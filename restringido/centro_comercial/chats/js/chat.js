@@ -181,9 +181,32 @@ document.addEventListener('DOMContentLoaded', async function () {
                     })
 
                 connection.on('RecieveMessage', function (mensaje, chat) {
-                    crearMensaje(mensaje, idUser, gerenteId, chatId);
-                    actualizarContacto(mensaje.contenido, gerenteId, chat.idChat);
+                    let contactoSelect = document.querySelector('.contacto.select');
+                    if(contactoSelect)
+                    {
+                        let contactoSelectContainer = contactoSelect.closest('.contacto_content');
+                        console.log(contactoSelectContainer);
+                        console.log(contactoSelectContainer.dataset);
+                        if(contactoSelectContainer && (
+                            (contactoSelectContainer.dataset.gerenteId == chat.idMiembro1 && chat.typeMiembro1 === "Gerente") || 
+                            (contactoSelectContainer.dataset.gerenteId == chat.idMiembro2 && chat.typeMiembro2 === "Gerente")))
+                        {
+                            console.log('entro al primer if');
+                            crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
+                        }
+                    }
                     
+                    if(chat.typeMiembro1 === "Usuario" || chat.typeMiembro2 === "Usuario")
+                    {
+                        console.log('entro al segundo if');
+                        actualizarChatsContacto();
+                        actualizarContacto(mensaje.contenido, null, chat.idChat);
+                    }
+                    else if (chat.typeMiembro1 === "Gerente" || chat.typeMiembro2 === "Gerente")
+                    {
+                        console.log('entro al tercer if');
+                        actualizarContacto(mensaje.contenido, null, chat.idChat);
+                    }
                 })
             }
             if(adminButton)
