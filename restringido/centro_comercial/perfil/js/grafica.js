@@ -155,7 +155,7 @@ async function waitForUserData() {
         }
         else
         {
-            fetch('obtencion_id_user.php', {
+            fetch('../chats/obtencion_id_user.php', {
                 method: 'POST',
             })
             .then(response => response.json())
