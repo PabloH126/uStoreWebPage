@@ -188,8 +188,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                         console.log(contactoSelectContainer);
                         console.log(contactoSelectContainer.dataset);
                         if(contactoSelectContainer && (
-                            (contactoSelectContainer.dataset.gerenteId == chat.idMiembro1 && chat.typeMiembro1 === "Gerente") || 
-                            (contactoSelectContainer.dataset.gerenteId == chat.idMiembro2 && chat.typeMiembro2 === "Gerente")))
+                            (contactoSelectContainer.dataset.chatId == chat.idChat) || 
+                            (contactoSelectContainer.dataset.chatId == chat.idChat)))
                         {
                             console.log('entro al primer if');
                             crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
