@@ -559,6 +559,10 @@ async function cambiarChatCreated(activar) {
                     crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
                 }
             }
+            else if(adminButton && adminButton.classList.contains('selected'))
+            {
+                crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
+            }
             
             if(chat.typeMiembro1 === "Usuario" || chat.typeMiembro2 === "Usuario")
             {
@@ -568,8 +572,9 @@ async function cambiarChatCreated(activar) {
             }
             else if (chat.typeMiembro1 === "Gerente" || chat.typeMiembro2 === "Gerente")
             {
+                let idGerenteChat = (chat.typeMiembro1 === "Gerente") ? chat.idMiembro1 : chat.idMiembro2;
                 console.log('entro al tercer if');
-                actualizarContacto(mensaje.contenido, gerenteId, chat.idChat);
+                actualizarContacto(mensaje.contenido, idGerenteChat, chat.idChat);
             }
             
         });
