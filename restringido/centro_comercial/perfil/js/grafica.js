@@ -8,7 +8,7 @@ let periodoInput = document.querySelectorAll('.periodo');
 let menuSucursales = document.getElementById('divIconBackground');
 
 let userType = '';
-
+let idUser = 0;
 let categorias = [];
 let isTienda;
 let periodoTiempo;
