@@ -490,7 +490,12 @@ async function cambiarChatCreated(activar) {
         connection.on('ChatCreated', function (chat, mensaje) {
             console.log("Mensaje: ", mensaje);
             console.log("Chat", chat);
-            crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
+            let contactoSelect = document.querySelector('.contacto.select');
+            if((contactoSelect.dataset.gerenteId === chat.idMiembro1 && chat.typeMiembro1 === "Gerente") || (contactoSelect.dataset.gerenteId === chat.idMiembro2 && chat.typeMiembro2 === "Gerente" ))
+            {
+                crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
+            }
+            CreateContacto(chat);
             actualizarContacto(mensaje.contenido, gerenteId, chat.idChat);
             
         });

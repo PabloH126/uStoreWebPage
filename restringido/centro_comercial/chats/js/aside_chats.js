@@ -245,7 +245,7 @@ function CreateContacto(chat) {
     divContactoContent.appendChild(divInitialState);
     divContactoContent.appendChild(divHoverState);
 
-    bodyAside.appendChild(divContactoContent);
+    bodyAside.prepend(divContactoContent);
 
     contactos = document.querySelectorAll('.contacto_content');
     contactos.forEach(contacto => {
