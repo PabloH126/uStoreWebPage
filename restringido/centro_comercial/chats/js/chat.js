@@ -241,6 +241,7 @@ async function envioMssg(){
     else if (contactoSelected)
     {
         let contactoSelectedContainer = contactoSelected.closest('.contacto_content');
+        console.log(contactoSelectedContainer.dataset);
         if(contactoSelectedContainer.dataset.gerenteId)
         {
             await CrearChatFetch(contactoSelected.dataset.gerenteId, "Gerente", message);
