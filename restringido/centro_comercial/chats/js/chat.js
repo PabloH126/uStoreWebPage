@@ -124,8 +124,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                     })
 
                 connection.on('RecieveMessage', function (mensaje, chat) {
-                    console.log(mensaje);
-                    console.log(chat);
                     let contactoSelect = document.querySelector('.contacto.select');
                     if(contactoSelect)
                     {
@@ -151,6 +149,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                         console.log('entro al tercer if');
                         actualizarContacto(mensaje.contenido, null, chat.idChat);
                     }
+                })
+
+                connection.on('NewMessage', function (mensaje, chat) {
+                    console.log(mensaje);
+                    console.log(chat);
                 })
             }
             if(adminButton)
