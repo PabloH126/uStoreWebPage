@@ -495,8 +495,14 @@ async function cambiarChatCreated(activar) {
             {
                 crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
             }
-            CreateContacto(chat);
-            actualizarContacto(mensaje.contenido, gerenteId, chat.idChat);
+            if(chat.typeMiembro1 === "Usuario" || chat.typeMiembro2 === "Usuario")
+            {
+                CreateContacto(chat);
+            }
+            else if (chat.typeMiembro1 === "Gerente" || chat.typeMiembro2 === "Gerente")
+            {
+                actualizarContacto(mensaje.contenido, gerenteId, chat.idChat);
+            }
             
         });
         console.log("Se activo chatCreated");
