@@ -193,7 +193,10 @@ function ActivarGrafica()
         spanFiltro.style.display = "none";
     }
     canva.style.display = "";
-    filterList.style.display = "";
+
+    if(userType == 'Administrador'){
+        filterList.style.display = "";    
+    }
     btnCrearPubli.style.display = "";
 }
 
