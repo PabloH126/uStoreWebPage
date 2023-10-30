@@ -228,7 +228,15 @@ async function envioMssg(){
     let contactoSelected = document.querySelector('.contacto.select');
     textArea.value = '';
     if (adminButton && adminButton.classList.contains('selected')) {
-        await CrearChatFetch(adminButton.dataset.adminId, "Administrador", message);
+        if (adminButton.dataset.adminId)
+        {
+            await CrearChatFetch(adminButton.dataset.adminId, "Administrador", message);
+        }
+        else
+        {
+            await EnviarMensajeFetch(adminButton.dataset.chatId, message);
+        }
+        
     }
     else if (contactoSelected)
     {
@@ -239,26 +247,30 @@ async function envioMssg(){
         }
         else
         {
-            let formData = new FormData();
-            formData.append('idChat', contactoSelectedContainer.dataset.chatId);
-            formData.append("contenidoMensaje", message);
-            const responseCreacionMensaje = await fetch('crear_mensaje.php', {
-                method: 'POST',
-                body: formData
-            });
-
-            if (!responseCreacionMensaje.ok) {
-                showNotificationError("Hubo un error al mandar la solicitud al servidor");
-                return;
-            }
-
-            const dataCreacionMensaje = await responseCreacionMensaje.json();
-            console.log(dataCreacionMensaje);
-            if (dataCreacionMensaje.status !== "success") {
-                showNotificationError(dataCreacionMensaje.message);
-                return;
-            }
+            await EnviarMensajeFetch(contactoSelectedContainer.dataset.chatId, message);
         }
+    }
+}
+
+async function EnviarMensajeFetch(idChat, message) {
+    let formData = new FormData();
+    formData.append('idChat', idChat);
+    formData.append("contenidoMensaje", message);
+    const responseCreacionMensaje = await fetch('crear_mensaje.php', {
+        method: 'POST',
+        body: formData
+    });
+
+    if (!responseCreacionMensaje.ok) {
+        showNotificationError("Hubo un error al mandar la solicitud al servidor");
+        return;
+    }
+
+    const dataCreacionMensaje = await responseCreacionMensaje.json();
+    console.log(dataCreacionMensaje);
+    if (dataCreacionMensaje.status !== "success") {
+        showNotificationError(dataCreacionMensaje.message);
+        return;
     }
 }
 
