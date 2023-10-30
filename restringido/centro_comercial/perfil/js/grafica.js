@@ -7,6 +7,8 @@ let tipoInput = document.querySelectorAll('.tipo');
 let periodoInput = document.querySelectorAll('.periodo');
 let menuSucursales = document.getElementById('divIconBackground');
 
+let userType = '';
+
 let categorias = [];
 let isTienda;
 let periodoTiempo;
@@ -21,7 +23,8 @@ else
     console.log("no hay problema pero en tendencias");
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    await waitForUserData();
     canva.style.display = "none";
     filterList.style.display = "none"; 
     btnCrearPubli.style.display = "none";
@@ -143,6 +146,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+async function waitForUserData() {
+    return new Promise((resolve, reject) => {
+        if(idUser !== 0 && idUser !== null && userType !== '' && userType !== null)
+        {
+            resolve();
+            return;
+        }
+        else
+        {
+            fetch('obtencion_id_user.php', {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                idUser = data.idUser;
+                userType = data.typeUser;
+            })
+            .then(() => {
+                resolve();
+                return;
+            })
+            .catch(err => {
+                reject(err);
+            });
+        }
+    })
+}
+
 async function actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
 {
     let tendencias;
@@ -207,7 +238,9 @@ function DesactivarGrafica()
         spanFiltro.style.display = "";;
     }
     canva.style.display = "none";
-    filterList.style.display = "";
+    if(userType == 'Administrador'){
+        filterList.style.display = "";
+    }
     btnCrearPubli.style.display = "none";
 }
 
