@@ -491,7 +491,10 @@ async function cambiarChatCreated(activar) {
             console.log("Mensaje: ", mensaje);
             console.log("Chat", chat);
             let contactoSelect = document.querySelector('.contacto.select');
-            if((contactoSelect.dataset.gerenteId === chat.idMiembro1 && chat.typeMiembro1 === "Gerente") || (contactoSelect.dataset.gerenteId === chat.idMiembro2 && chat.typeMiembro2 === "Gerente" ))
+            console.log(contactoSelect);
+            if(contactoSelect && (
+                (contactoSelect.dataset.gerenteId === chat.idMiembro1 && chat.typeMiembro1 === "Gerente") || 
+                (contactoSelect.dataset.gerenteId === chat.idMiembro2 && chat.typeMiembro2 === "Gerente" )))
             {
                 console.log('entro al primer if');
                 crearMensaje(mensaje, idUser, gerenteId, chat.idChat);
