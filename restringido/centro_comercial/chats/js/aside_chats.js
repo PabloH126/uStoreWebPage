@@ -368,7 +368,7 @@ async function fetchChats(typeChat) {
                 gerentesConChat = chatsData.gerentesConChat;
                 gerentesSinChat = chatsData.gerentesSinChat;
                 gerentesConChat.forEach(gerente => {
-                    CreateContacto(gerente.chat);
+                    CreateContacto(gerente /*gerente.chat*/);
                 });
                 gerentesSinChat.forEach(gerente => {
                     CreateContactoGerente(gerente);
