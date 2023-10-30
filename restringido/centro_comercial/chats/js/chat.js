@@ -4,6 +4,21 @@ const sendBtn = document.getElementById('submit_message');
 const adminButton = document.getElementById('adminBttn');
 
 document.addEventListener('DOMContentLoaded', async function () {
+
+
+    const textarea = document.getElementById('expanding_textarea');
+    const formulario = document.getElementById('form_chats');
+
+    textarea.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault(); // Evitar el salto de línea
+            formulario.submit(); // Enviar el formulario
+        }
+    });
+
+
+
+
     verificarSeleccion();
     var buttons = document.querySelectorAll('.options_aside');
     function onButtonClick(event) {
@@ -206,6 +221,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     {
                         console.log('entro al tercer if');
                         actualizarContacto(mensaje.contenido, null, chat.idChat);
+                        
+                    
                     }
                 })
             }

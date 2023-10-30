@@ -46,7 +46,7 @@ require '../../security.php';
 			</div>
 	
 			<div class="text-area">
-				<form action="">
+				<form id="form_chats">
 					<div>
 						<label for="add_file"><i class='bx bx-plus-circle'></i></label>
 						<input type="file" id="add_file">
