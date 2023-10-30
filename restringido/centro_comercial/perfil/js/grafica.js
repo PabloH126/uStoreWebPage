@@ -81,13 +81,13 @@ document.addEventListener('DOMContentLoaded', async function() {
             else
             {
                 isTienda = false;
-                if(menuSucursales)
+                if(menuSucursales && userType === 'Administrador')
                 {
                     console.log("Entro al else: ", menuSucursales);
                     menuSucursales.style.display = "";
                 }
 
-                if (isPerfil && !idTiendaMenuOption)
+                if (isPerfil && !idTiendaMenuOption && userType === 'Administrador')
                 {
                     spanFiltro.textContent = "Seleccione una sucursal";
                     menuSucursales.style.display = "";
@@ -225,7 +225,7 @@ function ActivarGrafica()
     }
     canva.style.display = "";
 
-    if(userType == 'Administrador'){
+    if(userType === 'Administrador'){
         filterList.style.display = "";    
     }
     btnCrearPubli.style.display = "";
