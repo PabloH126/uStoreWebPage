@@ -11,20 +11,24 @@
     <title>Confirmacion de cuenta</title>
 </head>
 <body>
-    <?php if(isset($_SESSION['errorRegistroUser']))
-    {
-    ?>
-    <h1>Error en el registro</h1>
-    <h2><?php echo $_SESSION['errorRegistroUser']; ?></h2>
-    <?php
-    }
-    else
-    {
-    ?>
-    <h1>Cuenta de usuario confirmada</h1>
-    <h3>Ya puede cerrar esta pestaña</h3>
-    <?php
-    }
-    ?>
+    <?php require("templates/template.header_cs.php"); ?>
+    <div class="content">
+        <?php if(isset($_SESSION['errorRegistroUser']))
+        {
+        ?>
+        <h1>Error en el registro</h1>
+        <h2><?php echo $_SESSION['errorRegistroUser']; ?></h2>
+        <?php
+        }
+        else
+        {
+        ?>
+        <h1>Cuenta de usuario confirmada</h1>
+        <h2>¡Bienvenido a uStore!</h2>
+        <h3>Ya puede cerrar esta pestaña</h3>
+        <?php
+        }
+        ?>
+    </div>
 </body>
 </html>
