@@ -2,15 +2,15 @@
     session_start();
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="utf-8">
-    <?php require("../restringido/templates/template.styles.php") ?>
+    <?php //require("../restringido/templates/template.styles.php") ?>
     <link rel="stylesheet" type="text/css" href="../restringido/css/seleccionPlaza.css">
     <title>Confirmacion de cuenta</title>
 </head>
 <body>
-    <?php require("../templates/template.header_cs.php"); ?>
+    <?php //require("../templates/template.header_cs.php"); ?>
     <div class="content">
         <?php if(isset($_SESSION['errorRegistroUser']))
         {
