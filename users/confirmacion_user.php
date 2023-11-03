@@ -24,8 +24,12 @@
         ?>
             <h1>¡Bienvenido a uStore!</h1>
             <div>
-                <h2>Cuenta de usuario confirmada</h2>
-                <h3>Ya puede volver a su aplicación uStore</h3>
+                <div>
+                    <h2>Cuenta de usuario confirmada</h2>
+                </div>
+                <div>
+                    <h3>Ya puede volver a su aplicación uStore</h3>
+                </div>
             </div>
         <?php
         }
