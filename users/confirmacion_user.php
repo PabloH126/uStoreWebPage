@@ -10,7 +10,7 @@
     <title>Confirmacion de cuenta</title>
 </head>
 <body>
-    <?php require("../restringido/templates/template.header_cs.php"); ?>
+    <?php require("templates/template.header_cs_user.php"); ?>
     <div class="content">
         <?php if(isset($_SESSION['errorRegistroUser']))
         {
@@ -23,8 +23,10 @@
         {
         ?>
             <h1>¡Bienvenido a uStore!</h1>
-            <h2>Cuenta de usuario confirmada</h2>
-            <h3>Ya puede cerrar esta pestaña</h3>
+            <div>
+                <h2>Cuenta de usuario confirmada</h2>
+                <h3>Ya puede volver a su aplicación uStore</h3>
+            </div>
         <?php
         }
         ?>
