@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require("restringido/templates/template.styles.php") ?>
-    <link rel="stylesheet" type="text/css" href="restringido/css/seleccionPlaza.css">
+    <link rel="stylesheet" type="text/css" href="../restringido/css/seleccionPlaza.css">
     <title>Confirmacion de cuenta</title>
 </head>
 <body>
-    <?php require("templates/template.header_cs.php"); ?>
+    <?php require("../templates/template.header_cs.php"); ?>
     <div class="content">
         <?php if(isset($_SESSION['errorRegistroUser']))
         {
