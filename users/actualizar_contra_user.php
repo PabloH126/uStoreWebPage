@@ -68,8 +68,7 @@ else
 			}
 			else
 			{
-				$_SESSION['updateExitoso'] = true;
-				header("Location: recuperacionCuenta.php?token=" . $_GET['token']);
+				header("Location: confirmacion_contra_user.php");
 			}
 		}else{
 			$_SESSION['ContrasenasDif'] = True;
