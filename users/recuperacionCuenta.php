@@ -14,23 +14,6 @@
 <body>
 <?php require("../Inicio_frms/templates/template.header_is.php")?>
 <div id="content">
-	<?php
-		if(isset($_SESSION["updateExitoso"])){
-	?>
-		<h1>¡Cuenta de uStore recuperada!</h1>
-		<div>
-			<div>
-				<h2>Nuevo password establecido</h2>
-			</div>
-			<div>
-				<h3>Ya puede volver a su aplicación uStore</h3>
-			</div>
-		</div>
-	<?php
-		}
-		else
-		{
-	?>
 	<div class="form">
 		<form action="actualizar_contra_user.php?token=<?php echo $_GET['token']; ?>" method="post">
 			<h1>Recuperación de cuenta</h1>
@@ -82,9 +65,6 @@
 			</div>
 		</form>
 	</div>
-	<?php
-		}
-	?>
 	<script src="https://kit.fontawesome.com/4995f75cde.js" crossorigin="anonymous"></script>
 </body>
 </html>
