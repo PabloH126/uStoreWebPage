@@ -1,11 +1,11 @@
 <header>
 	<div class="content">
 		<div id="logo">
-			<img src="https://ustoree.azurewebsites.net/img/uStore.png">
+			<img src="../img/uStore.png">
 		</div>
 		<div class="final">
 			<div id="ultimo">
-				<a href="https://ustoree.azurewebsites.net/img/uStore.png"></a>
+				<a href="../index.php"><img src="../img/login.png"></a>
 		</div>
 		</div>
 		
