@@ -1,7 +1,7 @@
-<link rel="shortcut icon" type="text/css" href="../img/icono_uStore1.png">
+<link rel="shortcut icon" type="text/css" href="https://ustoree.azurewebsites.net/img/icono_uStore1.png">
 
-<link rel="stylesheet" type="text/css" href="../css_general/base.css">
-<link rel="stylesheet" type="text/css" href="css_frms/frms.css">
+<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/css_general/base.css">
+<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/Inicio_frms/css_frms/frms.css">
 
 <!----------GOOGLE FONTS -------->
 
