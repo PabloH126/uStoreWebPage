@@ -8,11 +8,11 @@
 	<meta charset="utf-8">
 	<title>Recuperación de cuenta</title>
 
-	<?php require("templates/template.styles_frms.php")?>
-	<link rel="stylesheet" type="text/css" href="css_frms/recuperacionCuenta.css">
+	<?php require("https://ustoree.azurewebsites.net/Inicio_frms/templates/template.styles_frms.php")?>
+	<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/Inicio_frms/css_frms/recuperacionCuenta.css">
 </head>
 <body>
-<?php require("templates/template.header_is.php")?>
+<?php require("https://ustoree.azurewebsites.net/Inicio_frms/templates/template.header_is.php")?>
 <div id="content">
 	<div class="form">
 		<form action="envio_frms/actualizarContraA.php?token=<?php echo $_GET['token']; ?>" method="post">
