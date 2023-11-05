@@ -20,7 +20,15 @@
 
     if ($httpStatusCode != 201)
     {
-       $_SESSION['errorRegistroUser'] = $httpStatusCode . ': ' . $response;
+       if($httpStatusCode == 401)
+       {
+            $_SESSION['errorRegistroUser'] = $httpStatusCode . ': Link no valido';
+       }
+       else
+       {
+            $_SESSION['errorRegistroUser'] = $httpStatusCode . ': ' . $response;
+       }
+       
     }
 
     header("location: https://ustoree.azurewebsites.net/users/confirmacion_user.php");
