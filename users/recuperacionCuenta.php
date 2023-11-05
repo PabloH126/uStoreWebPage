@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../Inicio_frms/css_frms/recuperacionCuenta.css">
 </head>
 <body>
-<?php require("../Inicio_frms/templates/template.header_is.php")?>
+<?php require("templates/template.header_cs_user.php")?>
 <div id="content">
 	<div class="form">
 		<form action="envio_frms/actualizarContraA.php?token=<?php echo $_GET['token']; ?>" method="post">
