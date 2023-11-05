@@ -10,7 +10,8 @@
 
 	<?php //require("../Inicio_frms/templates/template.styles_frms.php")?>
 	<?php require("../restringido/templates/template.styles.php") ?>
-	<link rel="stylesheet" type="text/css" href="../Inicio_frms/css_frms/recuperacionCuenta.css">
+	<!--<link rel="stylesheet" type="text/css" href="../Inicio_frms/css_frms/recuperacionCuenta.css">-->
+	<link rel="stylesheet" type="text/css" href="../restringido/css/seleccionPlaza.css">
 </head>
 <body>
 <?php // require("../Inicio_frms/templates/template.header_is.php")?>
