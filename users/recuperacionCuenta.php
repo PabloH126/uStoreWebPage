@@ -15,7 +15,7 @@
 <?php require("templates/template.header_cs_user.php")?>
 <div id="content">
 	<div class="form">
-		<form action="actualizar_contra_user?token=<?php echo $_GET['token']; ?>" method="post">
+		<form action="actualizar_contra_user.php?token=<?php echo $_GET['token']; ?>" method="post">
 			<h1>Recuperación de cuenta</h1>
 			<div>
 				<label for="passA" pattern=".{8,}">Nueva contraseña</label>
