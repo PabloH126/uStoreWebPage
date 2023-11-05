@@ -15,6 +15,24 @@
 <?php require("templates/template.header_cs_user.php")?>
 <div id="content">
 	<div class="form">
+		<?php
+		if(isset($_SESSION["updateExitoso"]))
+		{
+		?>
+		<h1>¡Bienvenido devuelta a uStore!</h1>
+            <div>
+                <div>
+                    <h2>Cuenta de usuario recuperada</h2>
+                </div>
+                <div>
+                    <h3>Ya puede volver a su aplicación uStore</h3>
+                </div>
+            </div>
+		<?php
+		}
+		else
+		{
+		?>
 		<form action="actualizar_contra_user.php?token=<?php echo $_GET['token']; ?>" method="post">
 			<h1>Recuperación de cuenta</h1>
 			<div>
@@ -64,6 +82,10 @@
 				<input class="submit" type="submit" value="Aceptar">
 			</div>
 		</form>
+		<?php
+		}
+		?>
+
 	</div>
 	<script src="https://kit.fontawesome.com/4995f75cde.js" crossorigin="anonymous"></script>
 </body>
