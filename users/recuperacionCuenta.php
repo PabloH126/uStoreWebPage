@@ -8,19 +8,15 @@
 	<meta charset="utf-8">
 	<title>Recuperación de cuenta</title>
 
-	<?php //require("../Inicio_frms/templates/template.styles_frms.php")?>
-	<?php require("../restringido/templates/template.styles.php") ?>
-	<!--<link rel="stylesheet" type="text/css" href="../Inicio_frms/css_frms/recuperacionCuenta.css">-->
-	<link rel="stylesheet" type="text/css" href="../restringido/css/seleccionPlaza.css">
+	<?php require("../Inicio_frms/templates/template.styles_frms.php")?>
+	<link rel="stylesheet" type="text/css" href="../Inicio_frms/css_frms/recuperacionCuenta.css">
 </head>
 <body>
-<?php // require("../Inicio_frms/templates/template.header_is.php")?>
-<?php require("templates/template.header_cs_user.php"); ?>
+<?php require("../Inicio_frms/templates/template.header_is.php")?>
 <div id="content">
-	<div class="form">
-		<?php
+	<?php
 		if(isset($_SESSION["updateExitoso"])){
-		?>
+	?>
 		<h1>¡Cuenta de uStore recuperada!</h1>
 		<div>
 			<div>
@@ -30,11 +26,12 @@
 				<h3>Ya puede volver a su aplicación uStore</h3>
 			</div>
 		</div>
-		<?php
+	<?php
 		}
 		else
 		{
-		?>
+	?>
+	<div class="form">
 		<form action="actualizar_contra_user.php?token=<?php echo $_GET['token']; ?>" method="post">
 			<h1>Recuperación de cuenta</h1>
 			<div>
@@ -84,10 +81,10 @@
 				<input class="submit" type="submit" value="Aceptar">
 			</div>
 		</form>
-		<?php
-		}
-		?>
 	</div>
+	<?php
+		}
+	?>
 	<script src="https://kit.fontawesome.com/4995f75cde.js" crossorigin="anonymous"></script>
 </body>
 </html>
