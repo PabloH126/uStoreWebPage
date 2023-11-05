@@ -8,11 +8,13 @@
 	<meta charset="utf-8">
 	<title>Recuperación de cuenta</title>
 
-	<?php require("../Inicio_frms/templates/template.styles_frms.php")?>
+	<?php //require("../Inicio_frms/templates/template.styles_frms.php")?>
+	<?php require("../restringido/templates/template.styles.php") ?>
 	<link rel="stylesheet" type="text/css" href="../Inicio_frms/css_frms/recuperacionCuenta.css">
 </head>
 <body>
-<?php require("../Inicio_frms/templates/template.header_is.php")?>
+<?php // require("../Inicio_frms/templates/template.header_is.php")?>
+<?php require("templates/template.header_cs_user.php"); ?>
 <div id="content">
 	<div class="form">
 		<?php
