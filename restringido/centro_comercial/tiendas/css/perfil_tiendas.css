@@ -263,13 +263,20 @@ a {
     background: #016283;
 }
 
-.EstrellasCalificacion {
-    width: 100%;
+.EstrellasSuperior {
+    height: 100%;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
 }
 
-.EstrellasSuperior {
-    display: flex;
+.EstrellasCalificacion {
+    max-height: 3vh;
 }
+
+
+
+
 
 
 /*responsivo*/
