@@ -44,6 +44,7 @@ $horarios = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Horarios/Get
 $imagenesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Tiendas/GetImagenesTienda?idTienda=" . $_GET['id'], 'Imagenes de tienda');
 $calificacionesTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesTienda?idTienda=" . $_GET['id'], 'Calificaciones de tienda');
 $periodosPredeterminados = getDatosTienda("https://ustoreapi.azurewebsites.net/api/PeriodosPredeterminados/GetPeriodos?idTienda=" . $_GET['id'], 'Periodos predeterminados de tienda');
+$comentariosTienda = getDatosTienda("https://ustoreapi.azurewebsites.net/api/Comentarios/GetAllComentariosTienda?idTienda=" . $_GET['id'], 'Comentarios de tienda');
 
 if (is_array($calificacionesTienda)) {
     $suma = 0;
@@ -52,6 +53,11 @@ if (is_array($calificacionesTienda)) {
     }
 
     $promedio = $suma / count($calificacionesTienda);
+    if (count($calificacionesTienda) > 0)
+    {
+        $promedio = round($promedio, 1);
+        $promedioRedondeado = round($promedio);
+    }
 } else {
     $promedio = 0;
 }

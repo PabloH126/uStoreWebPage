@@ -123,7 +123,23 @@ if ($_SESSION['UserType'] == "Gerente")
                                     }
                                 ?>
                             </strong>
-                            <div>estrellitas uwu</div>
+                            <?php
+                            for ($i = 1; $i < 6; $i++)
+                            {
+                                if ($promedioRedondeado && $promedioRedondeado <= $i)
+                                {
+                            ?>
+                            <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_llena.png" alt="CaliLlena"></div>
+                            <?php
+                                }
+                                else
+                                {
+                            ?>
+                            <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_vacia.png" alt="CaliVacia"></div>
+                            <?php        
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="info">
@@ -212,7 +228,16 @@ if ($_SESSION['UserType'] == "Gerente")
                         <h2>Comentarios</h2>
                     </div>
                     <div class="comnts">
-                        <div class="comentarios"></div>
+                        <div class="comentarios">
+                            <?php
+                            foreach($comentariosTienda as $comentario)
+                            {
+                            ?>
+                            <div><?php $comentario['comentario']; ?></div>
+                            <?php
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
