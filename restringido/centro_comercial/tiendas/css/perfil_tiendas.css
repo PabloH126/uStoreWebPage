@@ -141,6 +141,17 @@
     margin: 0 10px;
 }
 
+.EstrellasSuperior {
+    height: 100%;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+.EstrellasCalificacion, .EstrellasCalificacionComentario {
+    max-height: 3vh;
+}
+
 .botI,
 .botD {
     height: 80%;
@@ -227,6 +238,42 @@
     right: 10px;
 }
 
+/* Comentarios */
+
+.comentarios{
+    max-height: 3vh;
+    overflow: auto;
+}
+
+.comentario{
+    height: 100%;
+}
+
+.datosUsuarioComentario {
+    display: flex;
+}
+
+.EstrellasCalificacionComentario{
+    height: 6vh;
+    border-radius: 50%;
+}
+
+.datosComentario{
+    max-width: 100;
+    text-align: start;
+}
+
+.EstrellasComentario {
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+.EstrellasCalificacionComentario{
+    height: 3vh;
+}
+
+
+
 .bttnProductos a {
     background: #007096;
     color: white;
@@ -263,16 +310,7 @@ a {
     background: #016283;
 }
 
-.EstrellasSuperior {
-    height: 100%;
-    display: inline-flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-}
 
-.EstrellasCalificacion {
-    max-height: 3vh;
-}
 
 
 

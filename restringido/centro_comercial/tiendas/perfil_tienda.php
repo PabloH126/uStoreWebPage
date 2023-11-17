@@ -237,7 +237,7 @@ if ($_SESSION['UserType'] == "Gerente")
                             ?>
                             <div class="comentario">
                                 <div class="datosUsuarioComentario">
-                                    <div><img src="<?php echo $comentario['imagenUsuario']; ?>" class="imagenPerfilComentario" alt="imagenPerfil"></div>
+                                    <img src="<?php echo $comentario['imagenUsuario']; ?>" class="imagenPerfilComentario" alt="imagenPerfil">
                                     <div class="datosComentario">
                                         <div><?php echo $comentario['nombreUsuario']; ?></div>
                                         <div class="EstrellasComentario">
