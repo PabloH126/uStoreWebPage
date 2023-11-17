@@ -254,11 +254,6 @@
 }
 
 .imagenPerfilComentario{
-    height: 22px;
-    border-radius: 50%;
-}
-
-.EstrellasCalificacionComentario{
     height: 6vh;
     border-radius: 50%;
 }
