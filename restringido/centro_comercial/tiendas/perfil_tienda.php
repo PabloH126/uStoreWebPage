@@ -235,7 +235,7 @@ if ($_SESSION['UserType'] == "Gerente")
                             foreach($comentariosTienda as $comentario)
                             {
                             ?>
-                            <div><?php $comentario['comentario']; ?></div>
+                            <div><?php echo $comentario['comentario']; ?></div>
                             <?php
                             }
                             ?>
