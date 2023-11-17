@@ -106,7 +106,7 @@
     font-size: 2em;
 }
 
-.derecha .topD .info .precio span i{
+.derecha .topD .info .precio span i {
     color: green;
     font-weight: bold;
 }
@@ -236,15 +236,15 @@
     font-weight: bold;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.bttnProductos a:hover{
+.bttnProductos a:hover {
     background: #016283;
 }
 
-.edicionTienda{
+.edicionTienda {
     position: absolute;
     right: 5vw;
     bottom: 4vh;
@@ -252,15 +252,19 @@ a{
     font-size: 5.5vh;
 }
 
-.edicionTienda i{
+.edicionTienda i {
     background: #007096;
     color: white;
     padding: 20%;
     border-radius: 50%;
 }
 
-.edicionTienda i:hover{
+.edicionTienda i:hover {
     background: #016283;
+}
+
+.EstrellasCalificacion {
+    width: 10%;
 }
 
 
