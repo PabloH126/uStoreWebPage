@@ -123,23 +123,25 @@ if ($_SESSION['UserType'] == "Gerente")
                                     }
                                 ?>
                             </strong>
-                            <?php
-                            for ($i = 1; $i < 6; $i++)
-                            {
-                                if ($promedioRedondeado && $promedioRedondeado <= $i)
+                            <div class="EstrellasSuperior">
+                                <?php
+                                for ($i = 1; $i < 6; $i++)
                                 {
-                            ?>
-                            <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_llena.png" class="EstrellasCalificacion" alt="CaliLlena"></div>
-                            <?php
+                                    if ($promedioRedondeado && $promedioRedondeado <= $i)
+                                    {
+                                ?>
+                                <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_llena.png" class="EstrellasCalificacion" alt="CaliLlena"></div>
+                                <?php
+                                    }
+                                    else
+                                    {
+                                ?>
+                                <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_vacia.png" class="EstrellasCalificacion" alt="CaliVacia"></div>
+                                <?php        
+                                    }
                                 }
-                                else
-                                {
-                            ?>
-                            <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_vacia.png" class="EstrellasCalificacion" alt="CaliVacia"></div>
-                            <?php        
-                                }
-                            }
-                            ?>
+                                ?>
+                            </div>
                         </div>
                     </div>
                     <div class="info">
