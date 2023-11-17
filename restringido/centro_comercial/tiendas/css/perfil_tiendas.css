@@ -265,6 +265,7 @@ a {
 
 .EstrellasCalificacion {
     width: 10%;
+    display: flex;
 }
 
 
