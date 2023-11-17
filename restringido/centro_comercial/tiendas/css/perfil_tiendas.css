@@ -241,7 +241,7 @@
 /* Comentarios */
 
 .comentarios{
-    max-height: 3vh;
+    max-height: 48vh;
     overflow: auto;
 }
 
@@ -251,6 +251,11 @@
 
 .datosUsuarioComentario {
     display: flex;
+}
+
+.imagenPerfilComentario{
+    height: 22px;
+    border-radius: 50%;
 }
 
 .EstrellasCalificacionComentario{
