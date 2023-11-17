@@ -235,7 +235,33 @@ if ($_SESSION['UserType'] == "Gerente")
                             foreach($comentariosTienda as $comentario)
                             {
                             ?>
-                            <div><?php echo $comentario['comentario']; ?></div>
+                            <div class="comentario">
+                                <div class="datosUsuarioComentario">
+                                    <div><img src="<?php echo $comentario['imagenUsuario']; ?>" class="imagenPerfilComentario" alt="imagenPerfil"></div>
+                                    <div class="datosComentario">
+                                        <div><?php echo $comentario['nombreUsuario']; ?></div>
+                                        <div class="EstrellasComentario">
+                                            <?php
+                                            for ($i = 1; $i < 6; $i++)
+                                            {
+                                                if ($comentario['calificacionEstrellas'] <= $i)
+                                                {
+                                            ?>
+                                            <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_llena.png" class="EstrellasCalificacionComentario" alt="CaliLlena"></div>
+                                            <?php
+                                                }
+                                                else
+                                                {
+                                            ?>
+                                            <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_vacia.png" class="EstrellasCalificacionComentario" alt="CaliVacia"></div>
+                                            <?php        
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <?php
                             }
                             ?>
