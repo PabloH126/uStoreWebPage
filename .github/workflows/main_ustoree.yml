@@ -63,4 +63,4 @@ jobs:
           app-name: 'ustoree'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_010A924EBDD1440FA253F0F1CCC52F1C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F6CAAA059C15405288853A191DE3E8B9 }}
