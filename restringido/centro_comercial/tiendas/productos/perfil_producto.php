@@ -53,7 +53,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                                 }
                             ?>
                             </div>
-                            <span>(<?php echo count($calificacionesProducto); ?>)</span>
+                            <span>(<?php echo is_Array($calificacionesProducto) ? count($calificacionesProducto) : 0 ?>)</span>
                         </div>
                         <div class="categorias">
                             <?php

@@ -6,7 +6,6 @@ $categorias = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Categori
 $imagenesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos/GetImagenesProducto?idProducto=" . $_GET['id']);
 $calificacionesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesProducto?idProducto=" . $_GET['id']);
 $comentariosProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Comentarios/GetAllComentariosProducto?idProducto=" . $_GET['id']);
-echo $calificacionesProducto;
 if (is_array($calificacionesProducto)) {
     $suma = 0;
     foreach ($calificacionesProducto as $calificacion) {
