@@ -52,7 +52,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                                     }
                                 }
                             ?>
-                            </div><span><?php echo count($calificacionesProducto); ?></span>
+                            </div><span><?php echo 0;//echo count($calificacionesProducto) ?? 0; ?></span>
                         </div>
                         <div class="categorias">
                             <?php
