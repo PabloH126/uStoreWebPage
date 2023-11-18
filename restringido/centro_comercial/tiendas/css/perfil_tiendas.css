@@ -338,6 +338,10 @@ a {
 /*responsivo*/
 @media only screen and (max-width: 1502px) {
 
+    .nombreUsuarioComentario, .contenidoComentario{
+        font-size: 1rem;
+    }
+
     .contentT .izquierda .topI .nameCat .name h1 {
         font-size: 2.5rem;
     }
