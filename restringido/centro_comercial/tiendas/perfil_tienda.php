@@ -244,7 +244,7 @@ if ($_SESSION['UserType'] == "Gerente")
                                             <?php
                                             for ($i = 1; $i < 6; $i++)
                                             {
-                                                if ($comentario['calificacionEstrellas'] <= $i)
+                                                if ($i <= $comentario['calificacionEstrellas'])
                                                 {
                                             ?>
                                             <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_llena.png" class="EstrellasCalificacionComentario" alt="CaliLlena"></div>
