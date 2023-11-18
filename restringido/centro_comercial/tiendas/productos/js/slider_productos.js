@@ -17,8 +17,8 @@ if((sliderImg.length === 5)){
         img.style.setProperty("width", "calc(100% / 4)");
     });
 }else if(sliderImg.length === 3){
-    izquierda.style.setProperty("height", "67%");
-    derecha.style.setProperty("height", "67%");
+    //izquierda.style.setProperty("height", "67%");
+    //derecha.style.setProperty("height", "67%");
     slider.style.setProperty("width", "300%");
     sliderImg.forEach(img => {
         img.style.setProperty("width", "calc(100% / 3)");
