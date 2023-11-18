@@ -35,12 +35,24 @@ $_SESSION['idProducto'] = $_GET['id'];
                         </div>
                         <div class="cali">
                             <div class="estrellas">
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                            </div><span>(100)</span>
+                            <?php
+                                for ($i = 1; $i < 6; $i++)
+                                {
+                                    if ($promedioRedondeado && $promedioRedondeado <= $i)
+                                    {
+                                ?>
+                                <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_llena.png" class="EstrellasCalificacion" alt="CaliLlena"></div>
+                                <?php
+                                    }
+                                    else
+                                    {
+                                ?>
+                                <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_vacia.png" class="EstrellasCalificacion" alt="CaliVacia"></div>
+                                <?php        
+                                    }
+                                }
+                            ?>
+                            </div><span><?php echo count($calificacionesProducto); ?></span>
                         </div>
                         <div class="categorias">
                             <?php
@@ -144,7 +156,41 @@ $_SESSION['idProducto'] = $_GET['id'];
                             <h2>Comentarios</h2>
                         </div>
                         <div class="contents">
-                            <div class="coment"></div>
+                        <?php
+                            foreach($comentariosProducto as $comentario)
+                            {
+                            ?>
+                            <div class="comentario">
+                                <div class="datosUsuarioComentario">
+                                    <img src="<?php echo $comentario['imagenUsuario']; ?>" class="imagenPerfilComentario" alt="imagenPerfil">
+                                    <div class="datosComentario">
+                                        <div class="nombreUsuarioComentario"><?php echo $comentario['nombreUsuario']; ?></div>
+                                        <div class="EstrellasComentario">
+                                            <?php
+                                            for ($i = 1; $i < 6; $i++)
+                                            {
+                                                if ($i <= $comentario['calificacionEstrellas'])
+                                                {
+                                            ?>
+                                            <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_llena.png" class="EstrellasCalificacionComentario" alt="CaliLlena"></div>
+                                            <?php
+                                                }
+                                                else
+                                                {
+                                            ?>
+                                            <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_vacia.png" class="EstrellasCalificacionComentario" alt="CaliVacia"></div>
+                                            <?php        
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="contenidoComentario"><?php echo $comentario['comentario']; ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                     

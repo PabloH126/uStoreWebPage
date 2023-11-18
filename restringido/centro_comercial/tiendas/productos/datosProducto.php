@@ -5,7 +5,7 @@ $producto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos?
 $categorias = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Categorias/GetCategoriasProducto?idProducto=" . $_GET['id']);
 $imagenesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Productos/GetImagenesProducto?idProducto=" . $_GET['id']);
 $calificacionesProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Calificaciones/GetCalificacionesProducto?idProducto=" . $_GET['id']);
-
+$comentariosProducto = getDatosProducto("https://ustoreapi.azurewebsites.net/api/Comentarios/GetAllComentariosProducto?idProducto=" . $_GET['id']);
 
 if (is_array($calificacionesProducto)) {
     $suma = 0;
@@ -14,6 +14,11 @@ if (is_array($calificacionesProducto)) {
     }
 
     $promedio = $suma / count($calificacionesProducto);
+    if (count($calificacionesProducto) > 0)
+    {
+        $promedio = round($promedio, 1);
+        $promedioRedondeado = round($promedio);
+    }
 } else {
     $promedio = 0;
 }

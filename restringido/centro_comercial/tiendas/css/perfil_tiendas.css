@@ -52,6 +52,12 @@
     align-items: center;
 }
 
+.name{
+    height: 100%;
+    overflow: hidden;
+    text-align: start;
+}
+
 .contentT .izquierda .topI .nameCat .name h1 {
     margin: 0px;
 }
