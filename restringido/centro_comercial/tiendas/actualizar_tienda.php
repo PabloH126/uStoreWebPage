@@ -46,6 +46,7 @@
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: multipart/form-data',
         'Authorization: Bearer ' . $_COOKIE['SessionToken']
     ));
     
