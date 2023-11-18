@@ -148,7 +148,8 @@
     justify-content: space-evenly;
 }
 
-.EstrellasCalificacion, .EstrellasCalificacionComentario {
+.EstrellasCalificacion,
+.EstrellasCalificacionComentario {
     max-height: 3vh;
 }
 
@@ -240,30 +241,32 @@
 
 /* Comentarios */
 
-.comentarios{
+.comentarios {
     max-height: 48vh;
     overflow: auto;
 }
 
-.comentario{
+.comentario {
     height: 100%;
+    margin: 1em 0;
 }
 
 .datosUsuarioComentario {
     display: flex;
 }
 
-.imagenPerfilComentario{
-    height: 6vh;
+.imagenPerfilComentario {
+    height: 5vh;
     border-radius: 50%;
+    margin-right: 3px;
 }
 
-.datosComentario{
+.datosComentario {
     max-width: 100;
     text-align: start;
 }
 
-.nombreUsuarioComentario{
+.nombreUsuarioComentario {
     font-weight: bold;
     font-size: 2vh;
 }
@@ -273,13 +276,16 @@
     flex-direction: row-reverse;
 }
 
-.EstrellasCalificacionComentario{
+.EstrellasCalificacionComentario {
     height: 2vh;
     margin: 1px;
 }
 
-.contenidoComentario{
-
+.contenidoComentario {
+    max-width: 86%;
+    font-size: 1.2em;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 
