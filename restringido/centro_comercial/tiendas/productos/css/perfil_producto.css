@@ -95,6 +95,14 @@
 
 @media only screen and (max-width: 1502px) {
     
+    .name{
+        height: auto;
+    }
+
+    .cali{
+        font-size: 1em;
+    }
+
     .contentT .izquierda .topI .icon img{
         max-height: 108px;    
     }
