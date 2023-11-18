@@ -16,17 +16,16 @@
 }
 
 .cali {
-    font-size: 1.5em;
-    margin: -8px 0 0;
+    font-size: 1.3em;
+    display: flex;
 }
 
 .estrellas{
     display: inline-flex;
 }
 
-.estrellas i{
-    margin: 0 2px;
-    color: #ffc83d;
+.EstrellasCalificacion, .EstrellasCalificacionComentario{
+    max-height: 2.5vh;
 }
 
 .botI, .botD{

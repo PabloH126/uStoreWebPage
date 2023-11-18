@@ -38,7 +38,7 @@ $_SESSION['idProducto'] = $_GET['id'];
                             <?php
                                 for ($i = 1; $i < 6; $i++)
                                 {
-                                    if ($promedioRedondeado && $promedioRedondeado <= $i)
+                                    if ($promedioRedondeado && $i <= $promedioRedondeado)
                                     {
                                 ?>
                                 <div><img src="https://ustoredata.blob.core.windows.net/webpage/nav/estrella_llena.png" class="EstrellasCalificacion" alt="CaliLlena"></div>
