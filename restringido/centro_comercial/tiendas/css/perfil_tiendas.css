@@ -263,15 +263,24 @@
     text-align: start;
 }
 
+.nombreUsuarioComentario{
+    font-weight: bold;
+    font-size: 2vh;
+}
+
 .EstrellasComentario {
     display: inline-flex;
     flex-direction: row-reverse;
 }
 
 .EstrellasCalificacionComentario{
-    height: 3vh;
+    height: 2vh;
+    margin: 1px;
 }
 
+.contenidoComentario{
+
+}
 
 
 .bttnProductos a {

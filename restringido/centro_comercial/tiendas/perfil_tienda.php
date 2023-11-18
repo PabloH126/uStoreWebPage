@@ -239,7 +239,7 @@ if ($_SESSION['UserType'] == "Gerente")
                                 <div class="datosUsuarioComentario">
                                     <img src="<?php echo $comentario['imagenUsuario']; ?>" class="imagenPerfilComentario" alt="imagenPerfil">
                                     <div class="datosComentario">
-                                        <div><?php echo $comentario['nombreUsuario']; ?></div>
+                                        <div class="nombreUsuarioComentario"><?php echo $comentario['nombreUsuario']; ?></div>
                                         <div class="EstrellasComentario">
                                             <?php
                                             for ($i = 1; $i < 6; $i++)
@@ -259,6 +259,7 @@ if ($_SESSION['UserType'] == "Gerente")
                                             }
                                             ?>
                                         </div>
+                                        <div class="contenidoComentario"><?php echo $comentario['comentario']; ?></div>
                                     </div>
                                 </div>
                             </div>
