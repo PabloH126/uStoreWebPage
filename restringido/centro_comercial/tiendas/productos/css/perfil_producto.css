@@ -76,6 +76,14 @@
     margin: 1.5% 0 0 3%;
 }
 
+.comentarios .contents{
+    overflow: auto;
+}
+
+.comentario{
+    height: auto;
+}
+
 .contents textarea{
     height: 100%;
     width: 100%;
