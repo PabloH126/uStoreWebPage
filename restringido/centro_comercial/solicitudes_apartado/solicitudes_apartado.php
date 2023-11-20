@@ -82,24 +82,21 @@
 		}
 		$solicitudes = json_decode($response, true);
 		curl_close($ch);
-
-		foreach ($solicitudes as $solicitud)
-		{
-			$periodo = explode(" ", $solicitud['periodoApartado']);
-			$tipoTiempoSolicitud = $periodo[1];
-			if ($tipoTiempoSolicitud != "dias")
-			{
-				echo $solicitud['periodoApartado'] . "<br>";
-				$cantidadTiempoSolicitud = explode(",", $periodo[0]);
-				echo $cantidadTiempoSolicitud[0] . "<br>";
-				echo $cantidadTiempoSolicitud[1] . "<br>";
-
-				$cantidadFraccion = str_pad(($cantidadTiempoSolicitud[1]/100) * 60, 2, "0", STR_PAD_RIGHT);
-				$solicitud['periodoApartado'] = $cantidadTiempoSolicitud[0] . ':' . $cantidadFraccion . ' ' . $tipoTiempoSolicitud;
-				echo $solicitud['periodoApartado'] . "<br>" . "<br>";
-			}
-		}
 	}
+
+function FormatearHora($solicitud)
+{
+	$periodo = explode(" ", $solicitud['periodoApartado']);
+	$tipoTiempoSolicitud = $periodo[1];
+	if ($tipoTiempoSolicitud != "dias")
+	{
+		$cantidadTiempoSolicitud = explode(",", $periodo[0]);
+
+		$cantidadFraccion = str_pad(($cantidadTiempoSolicitud[1]/100) * 60, 2, "0", STR_PAD_RIGHT);
+		$solicitud['periodoApartado'] = $cantidadTiempoSolicitud[0] . ':' . $cantidadFraccion . ' ' . $tipoTiempoSolicitud;
+		return $solicitud['periodoApartado'];
+	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -227,7 +224,7 @@
 							<p><label><?php echo $solicitud['personalizado'] == true ? 'Personalizado' : '';?></label>
 							<?php echo $solicitud['nombreProducto']?></p>
 							<p>$<?php echo $solicitud['precioProducto']?></p>
-							<p><?php echo $solicitud['periodoApartado']?></p>
+							<p><?php echo FormatearHora($solicitud)?></p>
 							<p><?php echo $solicitud['ratioUsuario']?></p>
 							<p><?php echo $solicitud['unidadesProducto']?></p>
 							<p><i id="aprobar" data-solicitud-id="<?php echo $solicitud['idSolicitud']; ?>" style="color: green;" class='bx bxs-check-circle aprobar bttn_solicitudes'></i></p>
