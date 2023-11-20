@@ -89,6 +89,7 @@
 			$tipoTiempoSolicitud = $periodo[1];
 			if ($tipoTiempoSolicitud != "dias")
 			{
+				echo $solicitud['periodoApartado'] . "<br>";
 				$cantidadTiempoSolicitud = str_replace(",", ".", filter_var($periodo[0], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION));
 				$cantidadEntero = intval($cantidadTiempoSolicitud);
 				$cantidadFraccion = $cantidadTiempoSolicitud - $cantidadEntero;
