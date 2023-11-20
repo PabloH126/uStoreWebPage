@@ -94,7 +94,7 @@
 				$cantidadEntero = intval($cantidadTiempoSolicitud);
 				$cantidadFraccion = $cantidadTiempoSolicitud - $cantidadEntero;
 
-				$cantidadFraccion = round($cantidadFraccion * 60);
+				$cantidadFraccion = $cantidadFraccion * 60;
 				$solicitud['periodoApartado'] = sprintf("%02d:%02d " . $tipoTiempoSolicitud, $cantidadEntero, $cantidadFraccion);
 				echo $solicitud['periodoApartado'];
 			}
