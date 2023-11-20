@@ -92,11 +92,14 @@
 				echo $solicitud['periodoApartado'] . "<br>";
 				$cantidadTiempoSolicitud = str_replace(",", ".", filter_var($periodo[0], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION));
 				$cantidadEntero = intval($cantidadTiempoSolicitud);
+				echo $cantidadEntero . "<br>";
+				echo $cantidadFraccion . "<br>";
+				echo $cantidadTiempoSolicitud . "<br>";
 				$cantidadFraccion = $cantidadTiempoSolicitud - $cantidadEntero;
 
 				$cantidadFraccion = $cantidadFraccion * 60;
 				$solicitud['periodoApartado'] = sprintf("%02d:%02d " . $tipoTiempoSolicitud, $cantidadEntero, $cantidadFraccion);
-				echo $solicitud['periodoApartado'];
+				echo $solicitud['periodoApartado'] . "<br>" . "<br>";
 			}
 		}
 	}
