@@ -96,6 +96,10 @@ function FormatearHora($solicitud)
 		$solicitud['periodoApartado'] = $cantidadTiempoSolicitud[0] . ':' . $cantidadFraccion . ' ' . $tipoTiempoSolicitud;
 		return $solicitud['periodoApartado'];
 	}
+	else
+	{
+		return $solicitud['periodoApartado'];
+	}
 }
 ?>
 <!DOCTYPE html>
