@@ -95,6 +95,7 @@
 
 				$cantidadFraccion = round($cantidadFraccion * 60);
 				$solicitud['periodoApartado'] = sprintf("%02d:%02d " . $tipoTiempoSolicitud, $cantidadEntero, $cantidadFraccion);
+				echo $solicitud['periodoApartado'];
 			}
 		}
 	}
