@@ -82,6 +82,21 @@
 		}
 		$solicitudes = json_decode($response, true);
 		curl_close($ch);
+
+		foreach ($solicitudes as $solicitud)
+		{
+			$periodo = explode(" ", $solicitud['periodoApartado']);
+			$tipoTiempoSolicitud = $periodo[1];
+			if ($tipoTiempoSolicitud != "dias")
+			{
+				$cantidadTiempoSolicitud = str_replace(",", ".", filter_var($periodo[0], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION));
+				$cantidadEntero = intval($cantidadTiempoSolicitud);
+				$cantidadFraccion = $cantidadTiempoSolicitud - $cantidadEntero;
+
+				$cantidadFraccion = round($cantidadFraccion * 60);
+				$solicitud['periodoApartado'] = sprintf("%02d:%02d " . $tipoTiempoSolicitud, $cantidadEntero, $cantidadFraccion);
+			}
+		}
 	}
 ?>
 <!DOCTYPE html>
