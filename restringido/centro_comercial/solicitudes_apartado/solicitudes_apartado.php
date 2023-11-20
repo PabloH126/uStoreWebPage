@@ -95,7 +95,7 @@
 				echo $cantidadTiempoSolicitud[1] . "<br>";
 
 				$cantidadFraccion = $cantidadTiempoSolicitud[1] * 60;
-				$solicitud['periodoApartado'] = $cantidadTiempoSolicitud[0] . ':' . $cantidadTiempoSolicitud[1] . ' ' . $tipoTiempoSolicitud;
+				$solicitud['periodoApartado'] = $cantidadTiempoSolicitud[0] . ':' . $cantidadFraccion . ' ' . $tipoTiempoSolicitud;
 				echo $solicitud['periodoApartado'] . "<br>" . "<br>";
 			}
 		}
