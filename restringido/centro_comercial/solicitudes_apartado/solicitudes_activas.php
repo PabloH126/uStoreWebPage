@@ -165,16 +165,16 @@
 						$simpleFecha = substr($solicitud['fechaVencimiento'], 0, 19);
 						$tiempoVencimiento = DateTime::createFromFormat('Y-m-d\TH:i:s', $simpleFecha, new DateTimeZone('UTC'));
 						$tiempoVencimiento->setTimezone(new DateTimeZone('Etc/GMT+6'));
-						if($tiempoVencimiento > $tiempoActual)
+						if ($solicitud['statusSolicitud'] == "recogida")
 						{
-							$intervalo = $tiempoActual->diff($tiempoVencimiento);
-							$intervalo = $intervalo->format('%a:%H:%I:%S');
+							$intervalo = "recogida";
 						}
 						else
 						{
-							if ($solicitud['statusSolicitud'] == "recogida")
+							if($tiempoVencimiento > $tiempoActual)
 							{
-								$intervalo = "recogida";
+								$intervalo = $tiempoActual->diff($tiempoVencimiento);
+								$intervalo = $intervalo->format('%a:%H:%I:%S');
 							}
 							else
 							{
