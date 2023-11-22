@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     timers.forEach(timer => {
         var time = timer.getAttribute("data-time");
         console.log(time);
-        if (time !== "0")
+        if (time !== "0" && time !== "recogida")
         {
             time = time.split(":");
             let totalSec = parseInt(time[3]) + parseInt(time[2]) * 60 + parseInt(time[1]) * 60 * 60 + parseInt(time[0]) * 24 * 60 * 60;
@@ -84,6 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 timer.textContent = timerText;
             }, 1000);
+        }
+        else if (time === "recogida")
+        {
+            timer.style.color = "green";
+            timer.textContent = "Recogida";
         }
         else
         {

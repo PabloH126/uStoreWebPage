@@ -172,7 +172,14 @@
 						}
 						else
 						{
-							$intervalo = "0";
+							if ($solicitud['statusSolicitud'] == "recogida")
+							{
+								$intervalo = "recogida";
+							}
+							else
+							{
+								$intervalo = "0";
+							}
 						}
 						$tiempoVencimiento = $tiempoVencimiento->format('Y-m-d H:i:s');
 				?>
