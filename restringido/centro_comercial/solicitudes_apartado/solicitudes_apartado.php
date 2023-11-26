@@ -93,7 +93,10 @@ function FormatearHora($solicitud)
 		$cantidadTiempoSolicitud = explode(",", $periodo[0]);
 
 		$cantidadFraccion = str_pad(($cantidadTiempoSolicitud[1]/100) * 60, 2, "0", STR_PAD_RIGHT);
-		$solicitud['periodoApartado'] = $cantidadTiempoSolicitud[0] . ':' . round($cantidadFraccion) . ' ' . $tipoTiempoSolicitud;
+		if ($cantidadFraccion != 0)
+		{
+			$solicitud['periodoApartado'] = $cantidadTiempoSolicitud[0] . ':' . round($cantidadFraccion) . ' ' . $tipoTiempoSolicitud;
+		}
 		return $solicitud['periodoApartado'];
 	}
 	else
