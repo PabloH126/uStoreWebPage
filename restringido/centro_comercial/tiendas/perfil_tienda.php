@@ -94,11 +94,14 @@ if ($_SESSION['UserType'] == "Gerente")
                         <div class="slider" id="slider">
                             <?php
                             foreach ($imagenesTienda as $imagen) {
+                                if ($imagen != null)
+                                {
                                 ?>
                                 <section class="slider-img">
                                     <img src="<?php echo $imagen['imagenTienda'] ?>" alt="">
                                 </section>
                                 <?php
+                                }
                             }
                             ?>
                         </div>
