@@ -195,7 +195,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                                 <div class="contentP">
                                     <div class="box">
                                         <i class='bx bx-x delete-icon' data-input-id="fileInput3" data-img-id="imagenSelec3" data-imgG-id="idImagen3"></i>
-                                        <img src="<?php echo $imagenesProducto[2]['imagenProducto']; ?>" id="imagenSelec3" alt="">
+                                        <img src="<?php echo isset($imagenesProducto[2]['imagenProducto']) ? $imagenesProducto[2]['imagenProducto'] : ''; ?>" id="imagenSelec3" alt="">
                                     </div>
                                     <div class="ip">
                                         <label for="fileInput3">
