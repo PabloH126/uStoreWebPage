@@ -79,15 +79,18 @@ $_SESSION['idProducto'] = $_GET['id'];
                     <div class="slider-container">
 
                         <div class="slider" id="slider">
-                            <?php
+                        <?php
                         foreach ($imagenesProducto as $imagen) {
-                            ?>
+                            if ($imagen != null)
+                            {
+                        ?>
                              <section class="slider-img">
                                  <img src="<?php echo $imagen['imagenProducto']; ?>" alt="" ts=<?php echo time(); ?>>
                              </section>
-                             <?php 
+                        <?php 
+                            }
                         }
-                                ?>
+                        ?>
                         </div>
                         <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
                         <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
