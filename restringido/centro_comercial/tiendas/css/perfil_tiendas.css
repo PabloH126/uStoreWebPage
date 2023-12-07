@@ -262,9 +262,11 @@
 
 .imagenPerfilComentario {
     height: 5vh;
+    width: 5vh;
+    object-fit: cover;
     border-radius: 50%;
     margin-right: 3px;
-}
+} 
 
 .datosComentario {
     max-width: 92%;
