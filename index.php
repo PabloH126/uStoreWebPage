@@ -60,27 +60,26 @@
 	<meta charset="utf-8">
 
 	<title>Inicio de sesión y registro</title>
-	<?php require("Inicio_frms/tempplates/template.styles_frms.php"); ?>
 	
-	<!--<link rel="shortcut icon" type="text/css" href="img/icono_uStore1.png">
+	<link rel="shortcut icon" type="text/css" href="img/icono_uStore1.png">
 	<link rel="stylesheet" type="text/css" href="css_general/base.css">
 	
-	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/frms.css">-->
+	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/frms.css">
 	<link rel="stylesheet" type="text/css" href="Inicio_frms/css_frms/index.css">
 
 	<!----------GOOGLE FONTS -------->
 
 	<!-------------Source Code Pro------->
-	<!--<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
--->
+
 	<!-- ICONS FORMS-->
-	<!--<link rel="stylesheet"
+	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
