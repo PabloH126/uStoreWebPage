@@ -1,1 +1,0 @@
-<link rel="shortcut icon" type="text/css" href="https://ustoree.azurewebsites.net/img/icono_uStore1.png">
