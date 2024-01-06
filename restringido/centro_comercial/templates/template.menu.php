@@ -18,7 +18,7 @@
 			}
 			else
 			{
-				echo '<div class="bottn" id="tienda" title="Tiendas creadas">
+				echo '<div class="bottn" id="tienda" title="Tienda">
 						<a href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/perfil_tienda.php?id=' . $_SESSION['idTiendaGerente']. '"><img src="https://ustoredata.blob.core.windows.net/webpage/nav/tienda_select.png"></a>
 					  </div>';
 			}
