@@ -25,45 +25,6 @@
       </div>
     </div>
 
-    <div class="body-aside">
-      
-      <?php 
-      /*
-      if(isset($_SESSION['UserType']) && $_SESSION['UserType'] == "Administrador")
-      {
-        foreach($gerentesConChat as $gerenteObject)
-        {
-          $gerente = $gerenteObject['gerente'];
-          $chat = $gerenteObject['chat'];
-        ?>
-        <div class="contacto" data-chat-id="<?php echo $chat['idChat']; ?>"> 
-          <div class="contact_profile_img">
-            <img src="<?php echo $gerente['iconoPerfil']; ?>" alt="Imagen de perfil del contacto">
-          </div>
-          <div class="contact_info">
-            <div class="contact_name"><?php echo $gerente['nombre'] ?></div>
-            <div class="message_preview"><?php echo $chat['ultimoMensaje'];?></div>
-          </div>
-        </div>
-        <?php
-        }
-        foreach($gerentesSinChat as $gerente)
-        {
-        ?>
-        <div class="contacto" data-gerente-id="<?php echo $gerente['idGerente']; ?>">
-          <div class="contact_profile_img">
-            <img src="<?php echo $gerente['iconoPerfil']; ?>" alt="Imagen de perfil del contacto">
-          </div>
-          <div class="contact_info">
-            <div class="contact_name"><?php echo $gerente['nombre'] ?></div>
-            <div class="message_preview">Comenzar chat.</div>
-          </div>
-        </div>
-        <?php
-        }
-      }
-      */
-      ?> 
-    </div>
+    <div class="body-aside"></div>
   </ul>
 </aside>
