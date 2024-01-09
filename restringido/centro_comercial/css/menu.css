@@ -30,18 +30,23 @@ header .content .final .bottn {
 	height: 12vh;
 }
 
-header .content .final #ultimo:hover,
-header .content .final .bottn:hover {
-	background: white;
-	transition-duration: 0.5s;
-	-webkit-transition-duration: 0.5s;
-}
-
 header .content .final #ultimo {
 	justify-content: right;
 	padding: 0 20px 0 0;
 	width: 126px;
 	margin-left: 28%;
+}
+
+header .content .final #ultimo img,
+header .content .final .bottn img {
+	filter: saturate(0) brightness(3);
+}
+
+header .content .final #ultimo:hover,
+header .content .final .bottn:hover {
+	background: white;
+	transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
 }
 
 header .content .final #ultimo:hover img,
@@ -50,12 +55,6 @@ header .content .final .bottn:hover img{
 	transition-duration: 0.5s;
 	-webkit-transition-duration: 0.5s;
 }
-
-header .content .final #ultimo img,
-header .content .final .bottn img {
-	filter: saturate(0) brightness(3);
-}
-
 
 header .content .final a {
 	height: 60%;
