@@ -62,7 +62,7 @@ if (isset($_GET['id']))
 
 <head>
 	<meta charset="utf-8">
-	<title>Publicación de promociones</title>
+	<title>Publicaciones de tienda</title>
 	<?php require("../templates/template.styles.php") ?>
 	<?php require("templates/template.secc_promociones.php") ?>
 	<link rel="stylesheet" href="css/promociones.css">

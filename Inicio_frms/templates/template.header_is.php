@@ -6,8 +6,7 @@
 		<div class="final">
 			<div id="ultimo">
 				<a href="../index.php"><img src="../img/login.png"></a>
+			</div>
 		</div>
-		</div>
-		
 	</div>
 </header>
