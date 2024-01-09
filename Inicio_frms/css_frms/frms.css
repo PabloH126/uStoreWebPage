@@ -155,16 +155,6 @@ a:hover{
 	color: #cfcfcf;
 }
 
-.formulario__mensaje{
-	height: 45px;
-	line-height: 58px;
-	background: none;
-	padding: 0 15px;
-	border-radius: 3px;
-	text-align: center;
-	display:none;
-}
-
 .formulario__mensaje p{
 	margin: -20px 0px 7px 0px;
 }
