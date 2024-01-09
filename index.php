@@ -74,7 +74,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
 
-	<!-- ICONS FORMS-->
+	<!--ICONS FORMS-->
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
@@ -187,7 +187,16 @@
 					</div>
 					<p class="formulario__input-error" style="color: #d51b1b">Las contraseñas no coinciden</p><br>
 				</div>
-				
+				<div class="formulario__mensaje <?php 
+						echo (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) ? 'formulario__mensaje-activo' : ''; 
+						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
+						if (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) {
+							unset($_SESSION['emailRegistrado']);
+						}
+					?>" id="formulario__mensaje">
+					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
+							style="color: #cc0000;"></i> Email ya registrado</p>
+				</div>
 				<div class="formulario__grupo formulario__grupo-btn-enviar">
 					<input class="submit" type="submit" value="Enviar correo de confirmación" id="submitRegistro">
 				</div>
