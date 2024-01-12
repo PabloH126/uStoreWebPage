@@ -1,9 +1,9 @@
 <?php
 session_start();
 $imagenes = [];
-verificarImagen(1, $_FILES['imagen1'], $imagenes);
-verificarImagen(2, $_FILES['imagen2'], $imagenes);
-verificarImagen(3, $_FILES['imagen3'], $imagenes);
+verificarImagen('imagen1', $_FILES['imagen1'], $imagenes);
+verificarImagen('imagen2', $_FILES['imagen2'], $imagenes);
+verificarImagen('imagen3', $_FILES['imagen3'], $imagenes);
 $idTienda = $_POST['idTienda']; // Recuperar el idTienda desde el formulario
 
 //CREATE IMAGENES BANNER TIENDA
