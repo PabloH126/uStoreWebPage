@@ -14,9 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 formRegistro.submit();
             }
-            else
+            else if (responseVerifyEmail === 409)
             {
                 alertaEmailRegistrado.classList.add('formulario__mensaje-activo');
+            }
+            else
+            {
+                console.error(`Error en la solicitud. Código de estado: ${responseVerifyEmail.status}`);
             }
             
         }
