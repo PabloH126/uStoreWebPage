@@ -57,7 +57,7 @@ if(isset($_POST['claveA'])){
         // Cierra el manejador de cURL
         curl_close($ch);
 
-        if($httpStatusCode == 200)
+        if($httpStatusCode == 201)
         {
             $responseArray['status'] = 'success';
 
