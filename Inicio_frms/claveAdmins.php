@@ -24,15 +24,7 @@
 			</div>
 			<p class="formulario__input-error" style="color: #d51b1b">La clave no es correcta</p>
 
-			<div class="formulario__mensaje
-				<?php
-					echo (isset($_SESSION['falloClave']) && $_SESSION['falloClave'] == 1) ? 'formulario__mensaje-activo' : ''; 
-					// Limpia la variable de sesión una vez que se ha mostrado el mensaje
-					if (isset($_SESSION['falloClave']) && $_SESSION['fallo'] == 1) {
-						unset($_SESSION['falloClave']);
-					}
-				?>" 
-				id="formulario__mensaje">
+			<div class="formulario__mensaje" id="formulario__mensaje">
 				<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce" style="color: #cc0000;"></i> Clave incorrecta</p>
 			</div>
 
@@ -42,5 +34,6 @@
 		</form>
 	</div>
 	<script src="https://kit.fontawesome.com/4995f75cde.js" crossorigin="anonymous"></script>
+	<script src="js_frms/claveAdmins.js"></script>
 </body>
 </html>
