@@ -292,7 +292,7 @@ function validarHorariosCorrectos()
         let tiempoApertura = horaApertura * 60 + minutoApertura;
         let tiempoCierre = horaCierre * 60 + minutoCierre;
 
-        if(tiempoApertura > tiempoCierre)
+        if((tiempoApertura > tiempoCierre)|| (tiempoApertura === tiempoCierre))
         {
             showNotificationError(`Por favor ingresa un horario válido para el día ${dia}.`);
             return false;
