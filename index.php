@@ -199,7 +199,7 @@
 	</div>
 	<div id="animacion"></div>
 	<script src="Inicio_frms/js_frms/RegistroAdmin.js"></script>
+	<script src="Inicio_frms/js_frms/index.js"></script>
 	<script src="https://kit.fontawesome.com/4995f75cde.js" crossorigin="anonymous"></script>
-	<script src="https://ustoree.azurewebsites.net/Inicio_frms/js_frms/index.js"></script>
 </body>
 </html>

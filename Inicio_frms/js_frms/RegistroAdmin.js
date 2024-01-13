@@ -98,15 +98,3 @@ inputs.forEach((input) => {
 	input.addEventListener('keyup', validarRegistro);
 	input.addEventListener('blur', validarRegistro);
 });
-
-RegistroAdmin.addEventListener('submit', (e) => {
-	if(campos.nombre && campos.apellido && campos.email && campos.password && campos.repassword)
-	{
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-	}
-	else
-	{
-		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-		e.preventDefault();
-	}
-});

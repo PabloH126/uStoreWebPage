@@ -4,10 +4,20 @@ document.addEventListener('DOMContentLoaded', function () {
     formRegistro.addEventListener('submit', async function (e) {
         e.preventDefault();
         let emailInput = document.getElementById('emailA');
-        console.log("holi");
         if (emailInput.value !== "")
         {
-            //const responseVerifyEmail = await fetch(`https://ustoreapi.azurewebsites.net/api/Register/VerifyEmail?email=${emailInput.value}`);
+            const responseVerifyEmail = await fetch(`https://ustoreapi.azurewebsites.net/api/Register/VerifyEmail?email=${emailInput.value}`, {
+                method: 'GET'
+            });
+
+            if (responseVerifyEmail.status === 200)
+            {
+                formRegistro.submit();
+            }
+            else
+            {
+                alertaEmailRegistrado.classList.add('formulario__mensaje-activo');
+            }
             
         }
         
