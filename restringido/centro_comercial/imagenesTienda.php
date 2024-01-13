@@ -24,7 +24,7 @@ function verificarImagen($nombreImagen, $imagen, &$imagenes) {
 
     if(isset($imagen) && $imagen['error'] == 0) {
         if(in_array($imagen['type'], $allowedImageTypes) && $imagen['size'] <= $maxSize) {
-            $imagenes[$nombreImagen] = $imagen;
+            $imagenes = $imagenes + [$imagen];
         } else {
             die("Error las imagenes de producto:" . $nombreImagen . " no válida. Asegúrate de subir un archivo de imagen (JPEG, PNG o JPG) que no supere 1 MB de tamaño máximo y/o sea de un tipo de imagen válido.");
         }
