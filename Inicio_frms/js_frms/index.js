@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 formRegistro.submit();
             }
-            else if (responseVerifyEmail === 409)
+            else if (responseVerifyEmail.status === 409)
             {
                 alertaEmailRegistrado.classList.add('formulario__mensaje-activo');
             }
