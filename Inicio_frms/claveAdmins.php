@@ -9,6 +9,8 @@
 	<title>Clave de confirmación</title>
 	<?php require("templates/template.styles_frms.php")?>
 	<link rel="stylesheet" type="text/css" href="css_frms/claveAdmins.css">
+	<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/notificacion_errores.css">
+	<link rel="stylesheet" type="text/css" href="https://ustoree.azurewebsites.net/restringido/centro_comercial/tiendas/css/confirmacion_eliminacion.css"> 
 </head>
 <body>
 <?php require("templates/template.header_is.php")?>
