@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     formRegistro.addEventListener('submit', async function (e) {
         e.preventDefault();
         let emailInput = document.getElementById('emailA');
-        console.log(emailInput.value);
+        console.log("holi");
         if (emailInput.value !== "")
         {
             //const responseVerifyEmail = await fetch(`https://ustoreapi.azurewebsites.net/api/Register/VerifyEmail?email=${emailInput.value}`);
