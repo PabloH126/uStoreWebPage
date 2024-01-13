@@ -187,7 +187,7 @@
 					</div>
 					<p class="formulario__input-error" style="color: #d51b1b">Las contraseñas no coinciden</p><br>
 				</div>
-				<div class="formulario__mensaje" id="formulario__mensaje">
+				<div class="formulario__mensaje" id="formulario__mensajeEmail">
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> Email ya registrado</p>
 				</div>

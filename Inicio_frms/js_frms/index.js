@@ -1,4 +1,4 @@
-const alertaEmailRegistrado = document.getElementById("formulario__mensaje");
+const alertaEmailRegistrado = document.getElementById("formulario__mensajeEmail");
 const formRegistro = document.getElementById("RegistroAdmin");
 document.addEventListener('DOMContentLoaded', function () {
     formRegistro.addEventListener('submit', async function (e) {
