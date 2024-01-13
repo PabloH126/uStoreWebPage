@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     formClave.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        let formData = (formClave);
+        let formData = new FormData(formClave);
         fetch(formClave.action, {
             method: formClave.method,
             body: formData
@@ -61,7 +61,6 @@ function showNotificationError(message) {
     notification.classList.add("notificationError");
     notification.textContent = message;
     document.body.appendChild(notification);
-    console.log(notification);
     currentNotification = notification;
     setTimeout(() => {
         notification.classList.add("notificationErrorHide");
