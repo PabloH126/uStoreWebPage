@@ -19,16 +19,13 @@ listElements.forEach(listElement => {
             listElement.classList.toggle('arrow');
             let height = 0;
             let menu = listElement.nextElementSibling;
-            console.log(menu);
             let computedStyleMenu = window.getComputedStyle(menu);
-            console.log(computedStyleMenu.height);
 
             if (computedStyleMenu.height && computedStyleMenu.height != "0px") {
                 menu.classList.remove("select");
             } else {
                 // De lo contrario, establece la altura mediante css
                 menu.classList.add("select");
-                console.log(menu);
             }
         });
     } else {
