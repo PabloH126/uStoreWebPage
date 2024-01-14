@@ -410,7 +410,7 @@ function validacionImagenesProducto() {
     let imgSelec5 = document.getElementById("imagenSelec5");
 
     if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length 
-        && imgSelec1.src === '' && imgSelec2.src === '' && imgSelec3.src === '' && imgSelec4.src === '' && imgSelec5.src === '') {
+        && imgSelec1.src === window.location.href && imgSelec2.src === window.location.href && imgSelec3.src === window.location.href && imgSelec4.src === window.location.href && imgSelec5.src === window.location.href) {
         showNotificationError("Se debe subir al menos una imagen del producto");
         return false;
     }

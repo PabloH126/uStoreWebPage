@@ -523,7 +523,7 @@ function validacionBanner() {
 
     let logoTienda = document.getElementById("logoTienda");
 
-    if (!img1.files.length && !img2.files.length && !img3.files.length && imgSelec1.src === '' && imgSelec2.src === '' && imgSelec3.src === '')
+    if (!img1.files.length && !img2.files.length && !img3.files.length && imgSelec1.src === window.location.href && imgSelec2.src === window.location.href && imgSelec3.src === window.location.href)
     {
         showNotificationError("Se debe subir al menos una imagen para el banner de la tienda");
         return false;
