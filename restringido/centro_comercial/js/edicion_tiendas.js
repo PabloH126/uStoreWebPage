@@ -513,17 +513,18 @@ function validacionHorarios() {
 
 function validacionBanner() {
     let img1 = document.getElementById("fileInput1");
-    let imgId1 = document.getElementById("idImagen1");
+    let imgSelec1 = document.getElementById("imagenSelec1");
     
     let img2 = document.getElementById("fileInput2");
-    let imgId2 = document.getElementById("idImagen2");
+    let imgSelec2 = document.getElementById("imagenSelec2");
 
     let img3 = document.getElementById("fileInput3");
-    let imgId3 = document.getElementById("idImagen3");
+    let imgSelec3 = document.getElementById("imagenSelec3");
 
     let logoTienda = document.getElementById("logoTienda");
 
-    if (!img1.files.length && !img2.files.length && !img3.files.length && imgId1.value == "0" && imgId2.value == "0" && imgId3.value == "0") {
+    if (!img1.files.length && !img2.files.length && !img3.files.length && imgSelec1.src === '' && imgSelec2.src === '' && imgSelec3.src === '')
+    {
         showNotificationError("Se debe subir al menos una imagen para el banner de la tienda");
         return false;
     }

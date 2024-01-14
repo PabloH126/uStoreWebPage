@@ -395,22 +395,22 @@ function validacionCategorias() {
 
 function validacionImagenesProducto() {
     let img1 = document.getElementById("fileInput1");
-    let imgId1 = document.getElementById("idImagen1");
+    let imgSelec1 = document.getElementById("imagenSelec1");
 
     let img2 = document.getElementById("fileInput2");
-    let imgId2 = document.getElementById("idImagen2");
+    let imgSelec2 = document.getElementById("imagenSelec2");
 
     let img3 = document.getElementById("fileInput3");
-    let imgId3 = document.getElementById("idImagen3");
+    let imgSelec3 = document.getElementById("imagenSelec3");
 
     let img4 = document.getElementById("fileInput4");
-    let imgId4 = document.getElementById("idImagen4");
+    let imgSelec4 = document.getElementById("imagenSelec4");
 
     let img5 = document.getElementById("fileInput5");
-    let imgId5 = document.getElementById("idImagen5");
+    let imgSelec5 = document.getElementById("imagenSelec5");
 
     if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length 
-        && imgId1.value == "0" && imgId2.value == "0" && imgId3.value == "0" && imgId4.value == "0" && imgId5.value =="0") {
+        && imgSelec1.src === '' && imgSelec2.src === '' && imgSelec3.src === '' && imgSelec4.src === '' && imgSelec5.src === '') {
         showNotificationError("Se debe subir al menos una imagen del producto");
         return false;
     }
