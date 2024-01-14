@@ -265,6 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const fileInputs = document.querySelectorAll('.file-input');
             const idImagenes = document.querySelectorAll('.idImagenes');
             showNotification("Actualizando producto...");
+            await deleteImages('eliminar_imagen_producto.php');
             const data = await sendFormWithoutImages(mainForm, fileInputs);
             hideNotification();
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {

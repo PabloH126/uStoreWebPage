@@ -91,7 +91,7 @@ deleteIcons.forEach((icon) => {
         const inputElement = document.getElementById(inputId);
 
         const imgSelecId = icon.getAttribute('data-img-id');
-        const imagenSelecElement = document.getElementById(imgId);
+        const imagenSelecElement = document.getElementById(imgSelecId);
 
         const imgGuardadaId = icon.getAttribute('data-imgG-id');
         const imagenIdElement = document.getElementById(imgGuardadaId);
@@ -111,28 +111,35 @@ deleteIcons.forEach((icon) => {
     });
 });
 
-async function deleteImages(idsImagenes, url)
+async function deleteImages(url)
 {
+    const idImagenesDelete = document.querySelectorAll('.idImagenes');
     
-    for (const idImagen of idsImagenes) {
-        const formData = new FormData();
-        formData.append("idImagen", idImagen);
+    for (const idImagen of idImagenesDelete) {
+        const inputId = idImagen.dataset.inputId;
+        const inputElement = document.getElementById(inputId);
 
-        fetch(url, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if(data.status !== 'success')
-            {
-                showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
-            }
-        })
-        .catch(error => {
-            console.error("Hubo un error con la petición fetch:", error);
-            showNotificationError("Error al intentar eliminar la imagen.");
-        });
+        if (idImagen.dataset.estadoImagen == "eliminada" && inputElement.files.length <= 0)
+        {
+            const formData = new FormData();
+            formData.append("idImagen", idImagen.value);
+
+            fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status !== 'success')
+                {
+                    showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
+                }
+            })
+            .catch(error => {
+                console.error("Hubo un error con la petición fetch:", error);
+                showNotificationError("Error al intentar eliminar la imagen.");
+            });
+        }
     }
     
 }

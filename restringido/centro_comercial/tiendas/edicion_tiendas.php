@@ -240,7 +240,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput1" >
                                     <input type="file" class="file-input fileInputBanner" id="fileInput1" name="imagen1" accept="image/*">
-                                    <input type="hidden" id="idImagen1" value="<?php echo isset($imagenesTienda[0]['idImagenesTiendas']) ? $imagenesTienda[0]['idImagenesTiendas'] : "0"; ?>" name="idImagen1" class="idImagenes">
+                                    <input type="hidden" id="idImagen1" value="<?php echo isset($imagenesTienda[0]['idImagenesTiendas']) ? $imagenesTienda[0]['idImagenesTiendas'] : "0"; ?>" name="idImagen1" class="idImagenes" data-input-id="fileInput1">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -251,7 +251,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput2" >
                                     <input type="file" class="file-input fileInputBanner" id="fileInput2" name="imagen2" accept="image/*">
-                                    <input type="hidden" id="idImagen2" value="<?php echo isset($imagenesTienda[1]['idImagenesTiendas']) ? $imagenesTienda[1]['idImagenesTiendas'] : "0"; ?>" name="idImagen2" class="idImagenes">
+                                    <input type="hidden" id="idImagen2" value="<?php echo isset($imagenesTienda[1]['idImagenesTiendas']) ? $imagenesTienda[1]['idImagenesTiendas'] : "0"; ?>" name="idImagen2" class="idImagenes" data-input-id="fileInput2">
                                 </div>
                             </div>
                             <div class="contentP">
@@ -262,7 +262,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
                                 <div class="ip">
                                     <label for="fileInput3" >
                                     <input type="file" class="file-input fileInputBanner" id="fileInput3" name="imagen3" accept="image/*">
-                                    <input type="hidden" id="idImagen3" value="<?php echo isset($imagenesTienda[2]['idImagenesTiendas']) ? $imagenesTienda[2]['idImagenesTiendas'] : "0"; ?>" name="idImagen3" class="idImagenes">
+                                    <input type="hidden" id="idImagen3" value="<?php echo isset($imagenesTienda[2]['idImagenesTiendas']) ? $imagenesTienda[2]['idImagenesTiendas'] : "0"; ?>" name="idImagen3" class="idImagenes" data-input-id="fileInput3">
                                 </div>
                             </div>
                         </div>
