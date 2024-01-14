@@ -315,7 +315,6 @@ function CategoriasSelect($categoriasDisponibles, $categoriasTiendaId)
         </div>
     </div>
     <div id="notification-container"></div>
-    <script src="../js/mostrarImg.js"></script>
     <script src="../js/slider_formularios.js"></script>
     <script src="../js/edicion_tiendas.js"></script>
     <script src="../js/confirmacion_eliminacion.js"></script>
