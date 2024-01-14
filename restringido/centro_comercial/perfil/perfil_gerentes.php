@@ -103,7 +103,7 @@ curl_close($ch);
 					?>
 					<div class="item gerentes">
 						<a class="myLink"><img width="60%" class="logo" src="<?php echo $gerente['iconoPerfil'] ?>"></a>
-						<div>
+						<div class="info">
 							<strong class="nombre"><?php echo $gerente['nombre']?></strong>
 							<p><?php echo $gerente['email']?></p>
 							<p><?php echo $gerente['tiendaName']?></p>

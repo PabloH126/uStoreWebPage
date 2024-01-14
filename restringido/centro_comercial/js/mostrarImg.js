@@ -90,31 +90,36 @@ deleteIcons.forEach((icon) => {
         const inputId = icon.getAttribute('data-input-id');
         const inputElement = document.getElementById(inputId);
 
-        const imgId = icon.getAttribute('data-img-id');
-        const imgElement = document.getElementById(imgId);
+        const imgSelecId = icon.getAttribute('data-img-id');
+        const imagenSelecElement = document.getElementById(imgId);
 
         const imgGuardadaId = icon.getAttribute('data-imgG-id');
-        const imgIdElement = document.getElementById(imgGuardadaId);
-        
-        icon.disabled = true;
-        // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
-        if(inputElement && imgElement)
-        {
-            
+        const imagenIdElement = document.getElementById(imgGuardadaId);
 
-            imgElement.src = '';
+        // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
+        if(inputElement && imagenSelecElement)
+        {
+            if(imagenIdElement && imagenIdElement.value !== "0")
+            {
+                imagenIdElement.dataset.estadoImagen = "eliminada";
+            }
+
+            imagenSelecElement.src = '';
             inputElement.value = '';
         }
         
     });
 });
 
-async function deleteImages(idImagen, )
+async function deleteImages(idsImagenes, url)
 {
+    idsImagenes.forEach(idImagen => async function () {
+
+    })
     const formData = new FormData();
     formData.append("idImagen", idImagen);
 
-    fetch('../tiendas/eliminar_imagen_tienda.php', {
+    fetch(url, {
         method: 'POST',
         body: formData
     })
@@ -130,44 +135,6 @@ async function deleteImages(idImagen, )
         showNotificationError("Error al intentar eliminar la imagen.");
     });
 }
-
-async function deleteImagesProducto(idImagen)
-{
-    const formData = new FormData();
-    formData.append("idImagen", idImagen);
-
-    fetch('eliminar_imagen_producto.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.status === 'success')
-        {
-            showNotification('Imagen eliminada con exito');
-            imgIdElement.value = "0";
-            
-            console.log(imgIdElement);
-            setTimeout(() => {
-                hideNotification();
-            }, 1500);
-        }
-        else
-        {
-            showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
-        }
-    })
-    .catch(error => {
-        console.error("Hubo un error con la petición fetch:", error);
-        showNotificationError("Error al intentar eliminar la imagen.");
-    });
-}
-
-
-
-
-
-
 
 function showNotification(message) {
     if (currentNotification) {
