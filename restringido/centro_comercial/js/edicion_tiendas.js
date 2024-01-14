@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const fileInputs = document.querySelectorAll('.fileInputBanner');
             const idImagenes = document.querySelectorAll('.idImagenes');
             showNotification("Actualizando tienda...");
-            await deleteImages('../tiendas/eliminar_imagen_tienda.php');
+            //await deleteImages('../tiendas/eliminar_imagen_tienda.php');
             const data = await sendFormWithoutImages(mainForm, fileInputs);
             hideNotification();
             if (data.statusTienda === 'success' && data.statusHorarios === 'success' && data.statusCatT === 'success' && data.statusPeriodos === 'success') {
