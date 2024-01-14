@@ -7,6 +7,10 @@
     overflow: auto;
 }
 
+.content .lista form #item-5{
+    display: block;
+}
+
 .content .lista form #item-6 .notas{
     margin-bottom: 1%;
 }
@@ -18,5 +22,9 @@
 @media only screen and (max-width: 1502px) {
     .content .lista form .item .descripcion textarea {
         width: 485px;
+    }
+
+    .content .lista form .item .promociones .contentPP {
+        width: 65%;
     }
 }
