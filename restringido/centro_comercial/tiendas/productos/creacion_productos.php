@@ -67,7 +67,7 @@ function CategoriasSelect($categorias)
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreProducto"><strong>Nombre del producto</strong></label>
-                        <input type="text" id="nombreProducto" name="nombreProducto">
+                        <input type="text" id="nombreProducto" name="nombreProducto" maxlength="50">
                     </div>
                     <div class="bttn" id="one">
                         <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i

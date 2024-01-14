@@ -75,7 +75,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                     <p>1/6</p>
                     <div class="name">
                         <label for="nombreProducto"><strong>Nombre del producto</strong></label>
-                        <input type="text" id="nombreProducto" name="nombreProducto" value="<?php echo $producto['nombreProducto']; ?>">
+                        <input type="text" id="nombreProducto" name="nombreProducto" value="<?php echo $producto['nombreProducto']; ?>" maxlength="50">
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
