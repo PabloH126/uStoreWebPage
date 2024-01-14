@@ -1,15 +1,10 @@
 .content .lista form .item .promociones .contentPP{
-    width: 100%;
+    width: 60%;
     overflow: hidden;
 }
 
 .content .lista form .item .promociones .imageP{
     overflow: auto;
-}
-
-.content .lista form .item .promociones .contentPP #content-4,
-.content .lista form .item .promociones .contentPP #content-5{
-    display: block;
 }
 
 .content .lista form #item-6 .notas{
@@ -18,10 +13,6 @@
 
 #imageP{
     grid-template-columns: repeat(5, 1fr);
-}
-
-#contentPP{
-    width: 60%;
 }
 
 @media only screen and (max-width: 1502px) {
