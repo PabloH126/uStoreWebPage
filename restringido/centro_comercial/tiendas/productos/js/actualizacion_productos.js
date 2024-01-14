@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const deleteIcons = document.querySelectorAll('.delete-icon');
 
+    /*
     deleteIcons.forEach((icon) => {
         icon.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -77,7 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
             
         });
     });
-
+    */
+   
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
