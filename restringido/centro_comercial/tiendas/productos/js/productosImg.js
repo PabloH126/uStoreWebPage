@@ -12,24 +12,22 @@ const imagenSelec3 = document.getElementById('imagenSelec3');
 const imagenSelec4 = document.getElementById('imagenSelec4');
 const imagenSelec5 = document.getElementById('imagenSelec5');
 
-document.addEventListener('DOMContentLoaded', function() {
-    if((imagenSelec4.src && imagenSelec4.src !== window.location.href) || imagenSelec3.src)
-    {
+document.addEventListener('DOMContentLoaded', function () {
+    if ((imagenSelec4.src && imagenSelec4.src !== window.location.href) || imagenSelec3.src) {
         content.style.gridTemplateColumns = 'repeat(4, 1fr)';
         contentPP.style.width = '75%';
         content4.style.display = 'block';
 
-        if((imagenSelec5.src && imagenSelec5.src !== window.location.href) || imagenSelec4.src)
-        {
+        if ((imagenSelec5.src && imagenSelec5.src !== window.location.href) || imagenSelec4.src) {
             content.style.gridTemplateColumns = 'repeat(5, 1fr)';
             contentPP.style.width = '60%';
             content5.style.display = 'block';
         }
-        else
-        {
+        else {
             content5.style.display = 'none';
         }
     }
+    /*
     else
     {
         content4.style.display = 'none';
@@ -55,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         input3.addEventListener('input', showInput5);
         input4.addEventListener('input', showInput5);
     }
+    */
 });
 
 function showInput4() {
