@@ -113,27 +113,28 @@ deleteIcons.forEach((icon) => {
 
 async function deleteImages(idsImagenes, url)
 {
-    idsImagenes.forEach(idImagen => async function () {
+    
+    for (const idImagen of idsImagenes) {
+        const formData = new FormData();
+        formData.append("idImagen", idImagen);
 
-    })
-    const formData = new FormData();
-    formData.append("idImagen", idImagen);
-
-    fetch(url, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.status !== 'success')
-        {
-            showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
-        }
-    })
-    .catch(error => {
-        console.error("Hubo un error con la petición fetch:", error);
-        showNotificationError("Error al intentar eliminar la imagen.");
-    });
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.status !== 'success')
+            {
+                showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
+            }
+        })
+        .catch(error => {
+            console.error("Hubo un error con la petición fetch:", error);
+            showNotificationError("Error al intentar eliminar la imagen.");
+        });
+    }
+    
 }
 
 function showNotification(message) {
