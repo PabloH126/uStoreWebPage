@@ -9,11 +9,19 @@
 
 .content .lista form .item .promociones .contentPP #content-4,
 .content .lista form .item .promociones .contentPP #content-5{
-    display: none;
+    display: block;
 }
 
 .content .lista form #item-6 .notas{
     margin-bottom: 1%;
+}
+
+#imageP{
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#contentPP{
+    width: 60%;
 }
 
 @media only screen and (max-width: 1502px) {

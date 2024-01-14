@@ -181,6 +181,7 @@ hr {
     font-size: 0.9rem;
     max-height: 1rem;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .contacto.select {
