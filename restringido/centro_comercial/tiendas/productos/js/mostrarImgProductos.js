@@ -18,6 +18,7 @@ const imagenMostrada5 = document.getElementById('imagenSelec5');
 //LOGO DE TIENDA E IMAGENES EXTRA DE PRODUCTO
 if (imagenInput && imagenMostrada) {
     imagenInput.addEventListener('change', (event) => {
+        imagenMostrada.src = '';
         const imagenSeleccionada = event.target.files[0];
 
         if (imagenSeleccionada) {
@@ -28,6 +29,7 @@ if (imagenInput && imagenMostrada) {
 }
 if (imagenInput4 && imagenMostrada4) {
     imagenInput4.addEventListener('change', (event) => {
+        imagenMostrada4.src = '';
         const imagenSeleccionada = event.target.files[0];
 
         if (imagenSeleccionada) {
@@ -38,6 +40,7 @@ if (imagenInput4 && imagenMostrada4) {
 }
 if (imagenInput5 && imagenMostrada5) {
     imagenInput5.addEventListener('change', (event) => {
+        imagenMostrada5.src = '';
         const imagenSeleccionada = event.target.files[0];
 
         if (imagenSeleccionada) {
@@ -50,6 +53,7 @@ if (imagenInput5 && imagenMostrada5) {
 
 //3 IMAGENES BANNER TIENDA/PRODUCTO
 imagenInput1.addEventListener('change', (event) => {
+    imagenMostrada1.src = '';
     const imagenSeleccionada = event.target.files[0];
 
     if (imagenSeleccionada) {
@@ -59,6 +63,7 @@ imagenInput1.addEventListener('change', (event) => {
 });
 
 imagenInput2.addEventListener('change', (event) => {
+    imagenMostrada2.src = '';
     const imagenSeleccionada = event.target.files[0];
 
     if (imagenSeleccionada) {
@@ -69,6 +74,7 @@ imagenInput2.addEventListener('change', (event) => {
 
 
 imagenInput3.addEventListener('change', (event) => {
+    imagenMostrada3.src = '';
     const imagenSeleccionada = event.target.files[0];
 
     if (imagenSeleccionada) {
