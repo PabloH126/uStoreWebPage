@@ -1,3 +1,4 @@
+/*
 const input1 = document.getElementById('fileInput1');
 const input2 = document.getElementById('fileInput2');
 const input3 = document.getElementById('fileInput3');
@@ -27,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
             content5.style.display = 'none';
         }
     }
-    /*
     else
     {
         content4.style.display = 'none';
@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
         input3.addEventListener('input', showInput5);
         input4.addEventListener('input', showInput5);
     }
-    */
 });
 
 function showInput4() {
@@ -75,3 +74,4 @@ function showInput5() {
         content5.style.display = 'none';
     }
 }
+*/
