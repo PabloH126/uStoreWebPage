@@ -1,3 +1,4 @@
+/*
 const imagenInput = document.getElementById('logoTienda');
 
 const imagenInput1 = document.getElementById('fileInput1');
@@ -102,3 +103,4 @@ deleteIcons.forEach((icon) => {
         
     });
 });
+*/

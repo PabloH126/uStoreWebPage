@@ -636,7 +636,7 @@ function showNotificationError(message) {
     }, 2500);
 }
 
-
+/*
 //LOGO DE TIENDA E IMAGENES EXTRA DE PRODUCTO
 if (imagenInput && imagenMostrada) {
     imagenInput.addEventListener('change', (event) => {
@@ -698,3 +698,4 @@ imagenInput3.addEventListener('change', (event) => {
         imagenMostrada3.src = imagenURL;
     }
 });
+*/
