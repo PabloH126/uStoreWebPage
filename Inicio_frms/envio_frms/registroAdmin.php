@@ -69,9 +69,7 @@ if(isset($_POST['claveA'])){
         echo json_encode($responseArray);
         exit;
 	} else {
-	    // El código no es válido, mostrar un mensaje de error
-	    //echo "Error: El código ingresado no es válido";
-
+	    // El código no es válido
         //Marcar fallo como verdadero
         $responseArray['status'] = 'errorClave';
         echo json_encode($responseArray);
