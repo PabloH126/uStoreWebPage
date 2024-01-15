@@ -6,16 +6,37 @@
 .content .lista .item {
     height: 222px;
     width: 250px;
+    /**/
+    display: block;
     grid-template-rows: 58% 42%;
     align-items: center;
 }
 
 .content .lista .item .logo {
     max-height: 118px;
+    /**/
+    height: 58%;
+}
+
+.info{
+    width: 100%;
+    padding: 8px;
+    height: 42%;
+}
+
+content .lista .item .nombre {
+    font-size: 1.2rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 .item p {
     margin: 5px 0;
+    /**/
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .content .lista #agregar {

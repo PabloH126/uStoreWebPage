@@ -1,3 +1,4 @@
+let currentNotification;
 const imagenInput = document.getElementById('logoTienda');
 
 const imagenInput1 = document.getElementById('fileInput1');
@@ -18,6 +19,7 @@ const imagenMostrada5 = document.getElementById('imagenSelec5');
 //LOGO DE TIENDA E IMAGENES EXTRA DE PRODUCTO
 if (imagenInput && imagenMostrada) {
     imagenInput.addEventListener('change', (event) => {
+        imagenMostrada.src = "";
         const imagenSeleccionada = event.target.files[0];
 
         if (imagenSeleccionada) {
@@ -28,6 +30,7 @@ if (imagenInput && imagenMostrada) {
 }
 if (imagenInput4 && imagenMostrada4) {
     imagenInput4.addEventListener('change', (event) => {
+        imagenMostrada4.src = "";
         const imagenSeleccionada = event.target.files[0];
 
         if (imagenSeleccionada) {
@@ -38,6 +41,7 @@ if (imagenInput4 && imagenMostrada4) {
 }
 if (imagenInput5 && imagenMostrada5) {
     imagenInput5.addEventListener('change', (event) => {
+        imagenMostrada5.src = "";
         const imagenSeleccionada = event.target.files[0];
 
         if (imagenSeleccionada) {
@@ -50,6 +54,7 @@ if (imagenInput5 && imagenMostrada5) {
 
 //3 IMAGENES BANNER TIENDA/PRODUCTO
 imagenInput1.addEventListener('change', (event) => {
+    imagenMostrada1.src = "";
     const imagenSeleccionada = event.target.files[0];
 
     if (imagenSeleccionada) {
@@ -59,6 +64,7 @@ imagenInput1.addEventListener('change', (event) => {
 });
 
 imagenInput2.addEventListener('change', (event) => {
+    imagenMostrada2.src = "";
     const imagenSeleccionada = event.target.files[0];
 
     if (imagenSeleccionada) {
@@ -69,6 +75,7 @@ imagenInput2.addEventListener('change', (event) => {
 
 
 imagenInput3.addEventListener('change', (event) => {
+    imagenMostrada3.src = "";
     const imagenSeleccionada = event.target.files[0];
 
     if (imagenSeleccionada) {
@@ -82,50 +89,61 @@ const deleteIcons = document.querySelectorAll('.delete-icon');
 deleteIcons.forEach((icon) => {
     icon.addEventListener('click', () => {
         const inputId = icon.getAttribute('data-input-id');
-        const imgId = icon.getAttribute('data-img-id');
-        const imgGuardadaId = icon.getAttribute('data-imgG-id');
-        const imgIdElement = document.getElementById(imgGuardadaId);
         const inputElement = document.getElementById(inputId);
-        const imgElement = document.getElementById(imgId);
-        icon.disabled = true;
+
+        const imgSelecId = icon.getAttribute('data-img-id');
+        const imagenSelecElement = document.getElementById(imgSelecId);
+
+        const imgGuardadaId = icon.getAttribute('data-imgG-id');
+        const imagenIdElement = document.getElementById(imgGuardadaId);
+
         // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
-        if(inputElement && imgElement)
+        if(inputElement && imagenSelecElement)
         {
-            if(imgIdElement && imgIdElement.value !== "0")
+            if(imagenIdElement && imagenIdElement.value !== "0")
             {
-                const formData = new FormData();
-                formData.append("idImagen", imgIdElement.value);
-                fetch('../tiendas/eliminar_imagen_tienda.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if(data.status === 'success')
-                    {
-                        showNotification('Imagen eliminada con exito');
-                        imgIdElement.value = "0";
-                        setTimeout(() => {
-                            hideNotification();
-                        }, 1500);
-                    }
-                    else
-                    {
-                        showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
-                    }
-                })
-                .catch(error => {
-                    console.error("Hubo un error con la petición fetch:", error);
-                    showNotificationError("Error al intentar eliminar la imagen.");
-                });
+                imagenIdElement.dataset.estadoImagen = "eliminada";
             }
 
-            imgElement.src = '';
+            imagenSelecElement.src = '';
             inputElement.value = '';
         }
         
     });
 });
+
+async function deleteImages(url)
+{
+    const idImagenesDelete = document.querySelectorAll('.idImagenes');
+    
+    for (const idImagen of idImagenesDelete) {
+        const inputId = idImagen.dataset.inputId;
+        const inputElement = document.getElementById(inputId);
+
+        if (idImagen.dataset.estadoImagen == "eliminada" && inputElement.files.length <= 0)
+        {
+            const formData = new FormData();
+            formData.append("idImagen", idImagen.value);
+
+            fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status !== 'success')
+                {
+                    showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
+                }
+            })
+            .catch(error => {
+                console.error("Hubo un error con la petición fetch:", error);
+                showNotificationError("Error al intentar eliminar la imagen.");
+            });
+        }
+    }
+    
+}
 
 function showNotification(message) {
     if (currentNotification) {

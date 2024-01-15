@@ -62,7 +62,10 @@ h3{
 
 .content .lista .item p {
     padding: 5%;
-    display: grid;
+    /*display: grid;*/
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
 }
 
 .content .lista .item p label {

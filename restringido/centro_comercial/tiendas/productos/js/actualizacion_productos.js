@@ -1,20 +1,3 @@
-let currentNotification;
-const imagenInput = document.getElementById('logoTienda');
-
-const imagenInput1 = document.getElementById('fileInput1');
-const imagenInput2 = document.getElementById('fileInput2');
-const imagenInput3 = document.getElementById('fileInput3');
-const imagenInput4 = document.getElementById('fileInput4');
-const imagenInput5 = document.getElementById('fileInput5');
-
-const imagenMostrada = document.getElementById('imagenSelec');
-
-const imagenMostrada1 = document.getElementById('imagenSelec1');
-const imagenMostrada2 = document.getElementById('imagenSelec2');
-const imagenMostrada3 = document.getElementById('imagenSelec3');
-const imagenMostrada4 = document.getElementById('imagenSelec4');
-const imagenMostrada5 = document.getElementById('imagenSelec5');
-
 document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('.optionsC input[type="checkbox"]');
     var maxSelect = 8;
@@ -24,60 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const idProducto = params.get('id');
     const nextButtons = document.querySelectorAll('.bttn-next');
     const backButtons = document.querySelectorAll('.bttn-back');
-
-    const deleteIcons = document.querySelectorAll('.delete-icon');
-
-    deleteIcons.forEach((icon) => {
-        icon.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const inputId = icon.getAttribute('data-input-id');
-            const imgId = icon.getAttribute('data-img-id');
-            const imgGuardadaId = icon.getAttribute('data-imgG-id');
-            const imgIdElement = document.getElementById(imgGuardadaId);
-            const inputElement = document.getElementById(inputId);
-            const imgElement = document.getElementById(imgId);
-            icon.disabled = true;
-            // Aquí borramos la imagen mostrada y también reseteamos el valor del input de archivo
-            if(inputElement && imgElement)
-            {
-                if(imgIdElement && imgIdElement.value !== "0")
-                {
-                    const formData = new FormData();
-                    formData.append("idImagen", imgIdElement.value);
-                    fetch('eliminar_imagen_producto.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if(data.status === 'success')
-                        {
-                            showNotification('Imagen eliminada con exito');
-                            imgIdElement.value = "0";
-                            
-                            console.log(imgIdElement);
-                            setTimeout(() => {
-                                hideNotification();
-                            }, 1500);
-                        }
-                        else
-                        {
-                            showNotificationError(`Hubo un error al eliminar la imagen: ${data.message}`);
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Hubo un error con la petición fetch:", error);
-                        showNotificationError("Error al intentar eliminar la imagen.");
-                    });
-                }
-
-                imgElement.src = '';
-                inputElement.value = '';
-            }
-            
-        });
-    });
-
+   
     nextButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -263,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const fileInputs = document.querySelectorAll('.file-input');
             const idImagenes = document.querySelectorAll('.idImagenes');
             showNotification("Actualizando producto...");
+            await deleteImages('eliminar_imagen_producto.php');
             const data = await sendFormWithoutImages(mainForm, fileInputs);
             hideNotification();
             if (data.statusProducto === 'success' && data.statusCatP === 'success') {
@@ -464,22 +395,22 @@ function validacionCategorias() {
 
 function validacionImagenesProducto() {
     let img1 = document.getElementById("fileInput1");
-    let imgId1 = document.getElementById("idImagen1");
+    let imgSelec1 = document.getElementById("imagenSelec1");
 
     let img2 = document.getElementById("fileInput2");
-    let imgId2 = document.getElementById("idImagen2");
+    let imgSelec2 = document.getElementById("imagenSelec2");
 
     let img3 = document.getElementById("fileInput3");
-    let imgId3 = document.getElementById("idImagen3");
+    let imgSelec3 = document.getElementById("imagenSelec3");
 
     let img4 = document.getElementById("fileInput4");
-    let imgId4 = document.getElementById("idImagen4");
+    let imgSelec4 = document.getElementById("imagenSelec4");
 
     let img5 = document.getElementById("fileInput5");
-    let imgId5 = document.getElementById("idImagen5");
+    let imgSelec5 = document.getElementById("imagenSelec5");
 
     if (!img1.files.length && !img2.files.length && !img3.files.length && !img4.files.length && !img5.files.length 
-        && imgId1.value == "0" && imgId2.value == "0" && imgId3.value == "0" && imgId4.value == "0" && imgId5.value =="0") {
+        && imgSelec1.src === window.location.href && imgSelec2.src === window.location.href && imgSelec3.src === window.location.href && imgSelec4.src === window.location.href && imgSelec5.src === window.location.href) {
         showNotificationError("Se debe subir al menos una imagen del producto");
         return false;
     }
@@ -508,65 +439,3 @@ function showNotificationError(message) {
         }, 550);
     }, 2500);
 }
-
-//LOGO DE TIENDA E IMAGENES EXTRA DE PRODUCTO
-if (imagenInput && imagenMostrada) {
-    imagenInput.addEventListener('change', (event) => {
-        const imagenSeleccionada = event.target.files[0];
-
-        if (imagenSeleccionada) {
-            const imagenURL = URL.createObjectURL(imagenSeleccionada);
-            imagenMostrada.src = imagenURL;
-        }
-    });
-}
-if (imagenInput4 && imagenMostrada4) {
-    imagenInput4.addEventListener('change', (event) => {
-        const imagenSeleccionada = event.target.files[0];
-
-        if (imagenSeleccionada) {
-            const imagenURL = URL.createObjectURL(imagenSeleccionada);
-            imagenMostrada4.src = imagenURL;
-        }
-    });
-}
-if (imagenInput5 && imagenMostrada5) {
-    imagenInput5.addEventListener('change', (event) => {
-        const imagenSeleccionada = event.target.files[0];
-
-        if (imagenSeleccionada) {
-            const imagenURL = URL.createObjectURL(imagenSeleccionada);
-            imagenMostrada5.src = imagenURL;
-        }
-    });
-}
-
-
-//3 IMAGENES BANNER TIENDA/PRODUCTO
-imagenInput1.addEventListener('change', (event) => {
-    const imagenSeleccionada = event.target.files[0];
-
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada1.src = imagenURL;
-    }
-});
-
-imagenInput2.addEventListener('change', (event) => {
-    const imagenSeleccionada = event.target.files[0];
-
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada2.src = imagenURL;
-    }
-});
-
-
-imagenInput3.addEventListener('change', (event) => {
-    const imagenSeleccionada = event.target.files[0];
-
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada3.src = imagenURL;
-    }
-});

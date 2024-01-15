@@ -187,13 +187,7 @@
 					</div>
 					<p class="formulario__input-error" style="color: #d51b1b">Las contraseñas no coinciden</p><br>
 				</div>
-				<div class="formulario__mensaje <?php 
-						echo (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) ? 'formulario__mensaje-activo' : ''; 
-						// Limpia la variable de sesión una vez que se ha mostrado el mensaje
-						if (isset($_SESSION['emailRegistrado']) && $_SESSION['emailRegistrado'] == true) {
-							unset($_SESSION['emailRegistrado']);
-						}
-					?>" id="formulario__mensaje">
+				<div class="formulario__mensaje" id="formulario__mensajeEmail">
 					<p style="color: #d51b1b"><i class="fa-solid fa-triangle-exclamation fa-bounce"
 							style="color: #cc0000;"></i> Email ya registrado</p>
 				</div>
@@ -205,6 +199,7 @@
 	</div>
 	<div id="animacion"></div>
 	<script src="Inicio_frms/js_frms/RegistroAdmin.js"></script>
+	<script src="Inicio_frms/js_frms/index.js"></script>
 	<script src="https://kit.fontawesome.com/4995f75cde.js" crossorigin="anonymous"></script>
 </body>
 </html>

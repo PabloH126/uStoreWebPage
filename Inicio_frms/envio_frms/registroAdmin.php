@@ -2,6 +2,8 @@
 
 session_start();
 
+$responseArray = [];
+
 if(isset($_POST['claveA'])){
 
 	$nombreA = $_SESSION['nombreA'];
@@ -55,20 +57,22 @@ if(isset($_POST['claveA'])){
         // Cierra el manejador de cURL
         curl_close($ch);
 
-        if($httpStatusCode == 409)
+        if($httpStatusCode == 201)
         {
-            $_SESSION['emailRegistrado'] = true;
+            $responseArray['status'] = 'success';
+
         }
-        
-        header("location: ../../index.php");
+        else
+        {
+            $responseArray['status'] = $response;
+        }
+        echo json_encode($responseArray);
         exit;
 	} else {
-	    // El código no es válido, mostrar un mensaje de error
-	    //echo "Error: El código ingresado no es válido";
-
+	    // El código no es válido
         //Marcar fallo como verdadero
-        $_SESSION['falloClave'] = 1;
-        header("location: ../claveAdmins.php");
+        $responseArray['status'] = 'errorClave';
+        echo json_encode($responseArray);
         exit;
 	}
 } 

@@ -1,5 +1,5 @@
 .content .lista form .item .promociones .contentPP{
-    width: 100%;
+    width: 60%;
     overflow: hidden;
 }
 
@@ -7,17 +7,24 @@
     overflow: auto;
 }
 
-.content .lista form .item .promociones .contentPP #content-4,
-.content .lista form .item .promociones .contentPP #content-5{
-    display: none;
+.content .lista form #item-5{
+    display: block;
 }
 
 .content .lista form #item-6 .notas{
     margin-bottom: 1%;
 }
 
+#imageP{
+    grid-template-columns: repeat(5, 1fr);
+}
+
 @media only screen and (max-width: 1502px) {
     .content .lista form .item .descripcion textarea {
         width: 485px;
+    }
+
+    .content .lista form .item .promociones .contentPP {
+        width: 65%;
     }
 }
