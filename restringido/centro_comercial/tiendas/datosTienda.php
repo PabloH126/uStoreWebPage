@@ -62,9 +62,7 @@ if (is_array($calificacionesTienda)) {
     $promedio = 0;
 }
 
-echo $tiendas['rangoPrecio'];
 $rangoPrecio = (double) $tiendas['rangoPrecio'];
-echo $rangoPrecio;
 
 $zonaHoraria = new DateTimeZone('Etc/GMT+6');
 $fechaActual = new DateTime('now', $zonaHoraria);
