@@ -15,7 +15,7 @@
         <?php if(isset($_SESSION['errorRegistroUser']))
         {
         ?>
-            <h1>Error en el registro</h1>
+            <h1>Error en la recuperación de cuenta</h1>
             <h2><?php echo $_SESSION['errorRegistroUser']; ?></h2>
         <?php
         }
