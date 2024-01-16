@@ -316,14 +316,13 @@ function imagenesValidacion() {
 
 function cantidadApartarValidacion() {
     var apartado = document.querySelector('input[name="cantidadApartar"]');
-    var regex = /\d+/;
 
     if(apartado.value.trim() === "" || apartado.value < 0 || isNaN(Number(apartado.value)))
     {
         showNotificationError("Se debe ingresar una cantidad válida de unidades del producto para apartado");
         return false;
     }
-    else if (!regex.test(apartado.value))
+    else if (!isInteger(Number(apartado.value)))
     {
         showNotificationError("Ingrese un valor entero");
         return false;
