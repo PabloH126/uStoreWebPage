@@ -121,7 +121,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                     <div class="name">
                         <label for="precioProducto"><strong>Precio del producto</strong></label>
                         <strong>$</strong>
-                        <input type="number" id="precioProducto" name="precioProducto" min="1" step="0.01" pattern="^\d+(\.\d{1,2})?$" value="<?php echo $producto['precioProducto']; ?>">
+                        <input type="text" id="precioProducto" name="precioProducto" min="1" step="0.01" pattern="^\d+(\.\d{1,2})?$" value="<?php echo $producto['precioProducto']; ?>">
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
