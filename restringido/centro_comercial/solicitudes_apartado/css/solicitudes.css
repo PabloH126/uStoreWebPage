@@ -71,6 +71,7 @@ h3{
 .content .lista .item p label {
     font-size: 1rem;
     color: #007096;
+    display: block;
 }
 
 .content .lista .item p i {
