@@ -251,10 +251,16 @@ function nombreValidacion() {
 
 function precioValidacion() {
     var precio = document.querySelector('input[name="precioProducto"]');
+    var regex = /^\d+(\.\d{1,2})?$/;
 
     if(precio.value.trim() === "" || precio.value < 0 || isNaN(Number(precio.value)))
     {
         showNotificationError("Se debe ingresar un precio del producto");
+        return false;
+    }
+    else if (!regex.test(precio.value))
+    {
+        showNotificationError("Se debe ingresar un máximo de dos decimales");
         return false;
     }
 
@@ -319,6 +325,11 @@ function cantidadApartarValidacion() {
     if(apartado.value.trim() === "" || apartado.value < 0 || isNaN(Number(apartado.value)))
     {
         showNotificationError("Se debe ingresar una cantidad válida de unidades del producto para apartado");
+        return false;
+    }
+    else if (!Number.isInteger(Number(apartado.value)))
+    {
+        showNotificationError("Ingrese un valor entero");
         return false;
     }
 
