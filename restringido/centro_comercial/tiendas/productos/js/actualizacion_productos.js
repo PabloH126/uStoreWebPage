@@ -322,7 +322,7 @@ function cantidadApartarValidacion() {
         showNotificationError("Se debe ingresar una cantidad válida de unidades del producto para apartado");
         return false;
     }
-    else if (!isInteger(Number(apartado.value)))
+    else if (!Number.isInteger(Number(apartado.value)))
     {
         showNotificationError("Ingrese un valor entero");
         return false;
