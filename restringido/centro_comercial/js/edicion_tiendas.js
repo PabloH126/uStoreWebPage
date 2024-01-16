@@ -375,7 +375,7 @@ function logoValidacion() {
     let logoTienda = document.getElementById("logoTienda");
     let imagenLogoTienda = document.getElementById("imagenSelec");
 
-    if (logoTienda.files.length <= 0 && imagenLogoTienda.src == '') 
+    if (logoTienda.files.length <= 0 && (imagenLogoTienda.src == '' || imagenLogoTienda.src == window.location.href)) 
     {
         showNotificationError("Se debe subir un logo de tienda");
         return false;
