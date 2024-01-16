@@ -246,14 +246,14 @@ function nombreValidacion() {
 
 function precioValidacion() {
     var precio = document.querySelector('input[name="precioProducto"]');
-    var regex = "^\d+(\.\d{1,2})?$";
+    var regex = /^\d+(\.\d{1,2})?$/;
 
     if(precio.value.trim() === "" || precio.value < 0 || isNaN(Number(precio.value)))
     {
         showNotificationError("Se debe ingresar un precio del producto");
         return false;
     }
-    else if (regex.test(precio.value))
+    else if (!regex.test(precio.value))
     {
         showNotificationError("Se debe ingresar un máximo de dos decimales");
         return false;
@@ -316,7 +316,7 @@ function imagenesValidacion() {
 
 function cantidadApartarValidacion() {
     var apartado = document.querySelector('input[name="cantidadApartar"]');
-    var regex = "\d+";
+    var regex = /\d+/;
 
     if(apartado.value.trim() === "" || apartado.value < 0 || isNaN(Number(apartado.value)))
     {

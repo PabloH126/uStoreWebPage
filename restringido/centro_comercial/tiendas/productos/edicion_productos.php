@@ -121,7 +121,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                     <div class="name">
                         <label for="precioProducto"><strong>Precio del producto</strong></label>
                         <strong>$</strong>
-                        <input type="text" id="precioProducto" name="precioProducto" min="1" step="0.01" pattern="^\d+(\.\d{1,2})?$" value="<?php echo $producto['precioProducto']; ?>">
+                        <input type="text" id="precioProducto" name="precioProducto" min="1" step="0.01" value="<?php echo $producto['precioProducto']; ?>">
                     </div>
                     <div class="bttns">
                         <div class="bttn" id="delete-store">
@@ -257,7 +257,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                     <p>6/6</p>
                     <div class="cantidadApartar">
                         <label for="cantidadApartar"><strong>Cantidad para apartar</strong></label>
-                        <input type="text" id="cantidadApartar" name="cantidadApartar" pattern="\d+" title="Ingresa un número entero" min="0" step="1" value="<?php echo $producto['cantidadApartado']; ?>">
+                        <input type="text" id="cantidadApartar" name="cantidadApartar" min="0" step="1" value="<?php echo $producto['cantidadApartado']; ?>">
                     </div>
                     <div class="notas">
                         <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para
