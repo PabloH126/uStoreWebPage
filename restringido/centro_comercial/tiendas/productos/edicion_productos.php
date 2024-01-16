@@ -257,7 +257,7 @@ function CategoriasSelect($categoriasDisponibles, $categoriasProductoId)
                     <p>6/6</p>
                     <div class="cantidadApartar">
                         <label for="cantidadApartar"><strong>Cantidad para apartar</strong></label>
-                        <input type="number" id="cantidadApartar" name="cantidadApartar" min="0" step="1" value="<?php echo $producto['cantidadApartado']; ?>">
+                        <input type="number" id="cantidadApartar" name="cantidadApartar" value="<?php echo $producto['cantidadApartado']; ?>">
                     </div>
                     <div class="notas">
                         <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para
