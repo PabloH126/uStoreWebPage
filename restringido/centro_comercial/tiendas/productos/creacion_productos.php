@@ -105,7 +105,7 @@ function CategoriasSelect($categorias)
                     <div class="name">
                         <label for="precioProducto"><strong>Precio del producto</strong></label>
                         <strong>$</strong>
-                        <input type="number" id="precioProducto" name="precioProducto" min="1" step="0.01">
+                        <input type="number" id="precioProducto" name="precioProducto" min="1" step="0.01" pattern="^\d+(\.\d{1,2})?$">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -233,7 +233,7 @@ function CategoriasSelect($categorias)
                     <p>6/6</p>
                     <div class="cantidadApartar">
                         <label for="cantidadApartar"><strong>Cantidad para apartar</strong></label>
-                        <input type="number" id="cantidadApartar" name="cantidadApartar" min="0" step="1">
+                        <input type="text" id="cantidadApartar" name="cantidadApartar" pattern="\d+" title="Ingresa un número entero" min="0" step="1">
                     </div>
                     <div class="notas">
                         <span>* Este apartado se refiere a la cantidad de unidades del producto destinadas para
