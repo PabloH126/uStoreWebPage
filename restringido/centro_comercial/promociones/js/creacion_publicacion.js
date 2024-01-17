@@ -130,16 +130,6 @@ if(imagenInput && imagenMostrada)
     });
 }
 
-deleteIcon.addEventListener('click', () => {
-    const inputId = deleteIcon.getAttribute('data-input-id');
-    const imgId = deleteIcon.getAttribute('data-img-id');
-    const inputElement = document.getElementById(inputId);
-    const imgElement = document.getElementById(imgId);
-    deleteIcon.disabled = true;
-    imgElement.src = '';
-    inputElement.value = '';
-});
-
 function tiendasValidacion() {
     var tiendasSelect = document.getElementById('seleccion_tienda');
     if(tiendasSelect && !tiendasSelect.value)

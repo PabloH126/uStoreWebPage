@@ -90,17 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    deleteIcon.addEventListener('click', () => {
-        const imgId = deleteIcon.getAttribute('data-img-id');
-        const imgElement = document.getElementById(imgId);
-
-        if (imagenInput && imgElement)
-        {
-            imgElement.src = '';
-            imagenInput.value = '';
-        }
-    });
-
     deleteGerenteBtn.addEventListener('click', function (e) {
         ModalConfirmacionEliminacion()
         .catch(error => {
