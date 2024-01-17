@@ -242,6 +242,10 @@ function sucursalValidacion() {
 async function imagenesValidacion() {
     const maxSize = 1 * 1024 * 1024;
     if (imagenInput.files.length <= 0 && (imagenMostrada.src == '' || imagenMostrada.src == window.location.href))
+    {
+        showNotificationError('Se debe subir una imagen de perfil para el gerente');
+        return false;
+    }
     if(imagenInput.files.length && !validacionTypeImagen(imagenInput))
     {
         showNotificationError(`La imagen no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);
