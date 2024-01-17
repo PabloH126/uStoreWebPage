@@ -7,6 +7,17 @@
     margin: 8% 0;
 }
 
+button#finalBtn {
+    width: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+i.bttn-next {
+    font-style: normal;
+}
+
 .content .lista form #item-7 .name input {
     margin: 5% 0 3%;
 }
