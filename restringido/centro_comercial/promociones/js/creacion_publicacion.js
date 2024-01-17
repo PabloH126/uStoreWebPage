@@ -1,7 +1,3 @@
-let currentNotification;
-const imagenInput = document.getElementById('logoTienda');
-const imagenMostrada = document.getElementById('imagenSelec');
-const deleteIcon = document.querySelector('.delete-icon');
 document.addEventListener('DOMContentLoaded', function () {
     const mainForm = document.querySelector('.form-tiendas');
     const nextButtons = document.querySelectorAll('.bttn-next');
@@ -201,30 +197,4 @@ function logoValidacion() {
     }
 
     return true;
-}
-
-function showNotificationError(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-    const notification = document.createElement("div");
-    notification.classList.add("notificationError");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    currentNotification = notification;
-    setTimeout(() => {
-        notification.classList.add("notificationErrorHide");
-        setTimeout(() => {
-            hideNotification();
-        }, 550);
-    }, 2500);
-}
-
-function hideNotification() {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    currentNotification = null;
 }

@@ -199,6 +199,7 @@ $_SESSION['idCuentaGerente'] = $gerenteData['idCuentaGerente'];
                 </div>
         </div>
     </div>
+    <script src="../js/mostrarImg.js"></script>
     <script src="../js/slider_formularios.js"></script>
     <script src="js/edicion_gerentes.js"></script>
 </body>

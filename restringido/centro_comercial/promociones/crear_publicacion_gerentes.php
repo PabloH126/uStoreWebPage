@@ -71,6 +71,7 @@ require '../../security.php';
             </form>
         </div>
     </div>
+    <script src="../js/mostrarImg.js"></script>
     <script src="js/creacion_publicacion.js"></script>
 </body>
 

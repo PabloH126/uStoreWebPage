@@ -1,7 +1,3 @@
-let currentNotification;
-const imagenInput = document.getElementById("logoTienda");
-const imagenMostrada = document.getElementById('imagenSelec');
-const deleteIcon = document.querySelector('.delete-icon');
 const deleteGerenteBtn = document.querySelector('.delete-store-btn');
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -310,45 +306,6 @@ function showNextStep(button ,e)
 
     const nextStep = parseInt(button.getAttribute('data-to_item'));
     showStep(nextStep);
-}
-
-function showNotification(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    const notification = document.createElement("div");
-    notification.classList.add("notification");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    currentNotification = notification;
-}
-
-function hideNotification() {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    currentNotification = null;
-}
-
-function showNotificationError(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-    const notification = document.createElement("div");
-    notification.classList.add("notificationError");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    currentNotification = notification;
-    setTimeout(() => {
-        notification.classList.add("notificationErrorHide");
-        setTimeout(() => {
-            hideNotification();
-        }, 550);
-    }, 2500);
-
 }
 
 async function ModalConfirmacionEliminacion() {

@@ -1,7 +1,3 @@
-let currentNotification;
-const imagenInput = document.getElementById("logoTienda");
-const imagenMostrada = document.getElementById('imagenSelec');
-const deleteIcon = document.querySelector('.delete-icon');
 let steps = 0;
 
 const expresiones = {

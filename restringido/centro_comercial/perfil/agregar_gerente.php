@@ -193,6 +193,7 @@ curl_close($ch);
             </form>
         </div>
     </div>
+    <script src="../js/mostrarImg.js"></script>
     <script src="../js/slider_formularios.js"></script>
     <script src="js/creacion_gerentes.js"></script>
 </body>
