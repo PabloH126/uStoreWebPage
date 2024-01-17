@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         else if (time === "recogida")
         {
             timer.style.color = "green";
-            timer.textContent = "Recogida";
+            timer.textContent = "Recogio producto";
         }
         else
         {
