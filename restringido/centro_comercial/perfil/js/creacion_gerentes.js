@@ -81,27 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    imagenInput.addEventListener('change', () => {
-        const imagenSeleccionada = imagenInput.files[0];
-
-        if (imagenSeleccionada)
-        {
-            const imagenURL = URL.createObjectURL(imagenSeleccionada);
-            imagenMostrada.src = imagenURL;
-        }
-    });
-
-    deleteIcon.addEventListener('click', () => {
-        const imgId = deleteIcon.getAttribute('data-img-id');
-        const imgElement = document.getElementById(imgId);
-
-        if (imagenInput && imgElement)
-        {
-            imgElement.src = '';
-            imagenInput.value = '';
-        }
-    })
-
     volverEnviarCorreoBtn.addEventListener('click', async function (e) {
         await fetch('https://ustoree.azurewebsites.net/correo_confirmacion_gerente.php', {
             method: 'POST',
@@ -453,43 +432,4 @@ function showNextStep(button ,e)
 
     const nextStep = parseInt(button.getAttribute('data-to_item'));
     showStep(nextStep);
-}
-
-function showNotification(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    const notification = document.createElement("div");
-    notification.classList.add("notification");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    currentNotification = notification;
-}
-
-function hideNotification() {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-
-    currentNotification = null;
-}
-
-function showNotificationError(message) {
-    if (currentNotification) {
-        currentNotification.remove();
-    }
-    const notification = document.createElement("div");
-    notification.classList.add("notificationError");
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    currentNotification = notification;
-    setTimeout(() => {
-        notification.classList.add("notificationErrorHide");
-        setTimeout(() => {
-            hideNotification();
-        }, 550);
-    }, 2500);
-
 }
