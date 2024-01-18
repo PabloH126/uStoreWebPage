@@ -24,6 +24,11 @@
 }
 
 @media only screen and (max-width: 1502px) {
+    
+    .content .lista form .item .bttns {
+        font-size: 1em;
+    }
+    
     .content .lista form .item #one{
         margin-left: 85%;
     }
@@ -35,4 +40,5 @@
     .content .lista form .item #ult{
         margin-left: 72%;
     }
+    
 }
