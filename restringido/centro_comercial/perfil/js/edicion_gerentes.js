@@ -90,17 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    deleteIcon.addEventListener('click', () => {
-        const imgId = deleteIcon.getAttribute('data-img-id');
-        const imgElement = document.getElementById(imgId);
-
-        if (imagenInput && imgElement)
-        {
-            imgElement.src = '';
-            imagenInput.value = '';
-        }
-    });
-
     deleteGerenteBtn.addEventListener('click', function (e) {
         ModalConfirmacionEliminacion()
         .catch(error => {
@@ -252,7 +241,6 @@ function sucursalValidacion() {
 
 async function imagenesValidacion() {
     const maxSize = 1 * 1024 * 1024;
-    if (imagenInput.files.length <= 0 && (imagenMostrada.src == '' || imagenMostrada.src == window.location.href))
     if(imagenInput.files.length && !validacionTypeImagen(imagenInput))
     {
         showNotificationError(`La imagen no es valida, por favor sube una imagen que sea JPEG, PNG o JPG`);

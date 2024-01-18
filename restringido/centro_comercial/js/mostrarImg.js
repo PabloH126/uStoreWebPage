@@ -53,36 +53,45 @@ if (imagenInput5 && imagenMostrada5) {
 
 
 //3 IMAGENES BANNER TIENDA/PRODUCTO
-imagenInput1.addEventListener('change', (event) => {
-    imagenMostrada1.src = "";
-    const imagenSeleccionada = event.target.files[0];
 
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada1.src = imagenURL;
-    }
-});
+if (imagenInput1 && imagenMostrada1)
+{
+    imagenInput1.addEventListener('change', (event) => {
+        imagenMostrada1.src = "";
+        const imagenSeleccionada = event.target.files[0];
+    
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada1.src = imagenURL;
+        }
+    });
+}
 
-imagenInput2.addEventListener('change', (event) => {
-    imagenMostrada2.src = "";
-    const imagenSeleccionada = event.target.files[0];
+if (imagenInput2 && imagenMostrada2)
+{
+    imagenInput2.addEventListener('change', (event) => {
+        imagenMostrada2.src = "";
+        const imagenSeleccionada = event.target.files[0];
+    
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada2.src = imagenURL;
+        }
+    });
+}
 
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada2.src = imagenURL;
-    }
-});
-
-
-imagenInput3.addEventListener('change', (event) => {
-    imagenMostrada3.src = "";
-    const imagenSeleccionada = event.target.files[0];
-
-    if (imagenSeleccionada) {
-        const imagenURL = URL.createObjectURL(imagenSeleccionada);
-        imagenMostrada3.src = imagenURL;
-    }
-});
+if (imagenInput3 && imagenMostrada3)
+{
+    imagenInput3.addEventListener('change', (event) => {
+        imagenMostrada3.src = "";
+        const imagenSeleccionada = event.target.files[0];
+    
+        if (imagenSeleccionada) {
+            const imagenURL = URL.createObjectURL(imagenSeleccionada);
+            imagenMostrada3.src = imagenURL;
+        }
+    });
+}
 
 const deleteIcons = document.querySelectorAll('.delete-icon');
 
