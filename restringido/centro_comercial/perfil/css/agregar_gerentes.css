@@ -47,3 +47,9 @@ i.bttn-next {
 .content .lista form .item .gerente#send {
     margin-left: 57vw;
 }
+
+@media only screen and (max-width: 1502px){
+    .content .lista form .item .bttns {
+        font-size: 1em;
+    }
+}
