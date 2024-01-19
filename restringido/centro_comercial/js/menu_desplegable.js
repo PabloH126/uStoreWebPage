@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     menuIcon1.addEventListener('click', function (e) {
         subMenu1.classList.toggle("active");
         menuIcon1.classList.toggle("active");
-        backgroundAnimated.style.display = "none";
+        backgroundAnimated.style.display = 'none';
     });
 
     menuIcon2.addEventListener('click', function (e) {
