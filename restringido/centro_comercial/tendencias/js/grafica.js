@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             console.log("isTienda: ", isTienda);
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-            ActivarEventosActualizacionGrafica(grafica);
             
             console.log("El id es: ", idTiendaMenuOption);
         });
@@ -145,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
 {
+    graficaActivada = false;
     let tendencias;
     let formData = new FormData();
     categorias.forEach((categoria, index) => {
@@ -175,6 +175,8 @@ async function actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
             grafica.data.labels = nombres;
             grafica.data.datasets[0].data = numerosSolicitudes;
             grafica.update();
+            graficaActivada = true;
+            ActivarEventosActualizacionGrafica(grafica);
         }
         else
         {
