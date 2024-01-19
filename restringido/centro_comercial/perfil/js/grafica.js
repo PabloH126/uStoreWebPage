@@ -116,8 +116,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
 
-            subMenu1.classList.toggle("active");
-            menuIcon1.classList.toggle("active");
+            //subMenu1.classList.toggle("active");
+            //menuIcon1.classList.toggle("active");
         })
     });
 
