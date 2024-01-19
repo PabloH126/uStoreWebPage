@@ -9,7 +9,8 @@
     $data = [
         "isTienda" => $isTienda,
         "categorias" => (($_POST['categorias'] != 'undefined' && $_POST['categorias'] != null) ? $_POST['categorias'] : []),
-        "periodoTiempo" => (($_POST['periodoTiempo'] != 'undefined') ? $_POST['periodoTiempo'] : "mensual")
+        "periodoTiempo" => (($_POST['periodoTiempo'] != 'undefined') ? $_POST['periodoTiempo'] : "mensual"),
+        "idCentroComercial" => $_SESSION['idMall']
     ];
     /*
     echo json_encode(['status' => $data]);
