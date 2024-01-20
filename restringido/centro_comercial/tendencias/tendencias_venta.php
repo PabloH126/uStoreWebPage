@@ -65,8 +65,8 @@ curl_close($ch);
 				</div>	
 				
 				<div id="sub-menu2">
-					<div class="menu-option"><a id="downloadPDF">PDF</a></div>
-					<div class="menu-option"><a id="downloadImage">PNG</a></div>
+					<div class="menu-option download-option"><a id="downloadPDF">PDF</a></div>
+					<div class="menu-option download-option"><a id="downloadImage">PNG</a></div>
 				</div>
 			</div>
 			<span id="span-seleccion-tienda">Selecciona una opción de filtro</span>

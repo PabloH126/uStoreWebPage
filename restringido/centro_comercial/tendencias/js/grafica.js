@@ -110,10 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
             option.classList.add("menuIconSelected");
             idTiendaMenuOption = option.dataset.tiendaId;
 
-            //actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-
-            //subMenu1.classList.toggle("active");
-            //menuIcon1.classList.toggle("active");
+            if (!option.classList.contains("download-option"))
+            {
+                subMenu1.classList.toggle("active");
+                menuIcon1.classList.toggle("active");
+            }
         })
     });
 
@@ -290,20 +291,27 @@ function OrdenamientoZA(data) {
 
 function OrdenarData(grafica, funcion)
 {
-    let data = grafica.data.labels.map((label, index) => {
-        return {
-            nombre: label,
-            numeroSolicitudes: grafica.data.datasets[0].data[index]
-        }
-    });
-
-    let datosOrdenados = funcion(data);
-    let labelsOrdenados = datosOrdenados.map(item => item.nombre);
-    let numOrdenados = datosOrdenados.map(item => item.numeroSolicitudes);
-
-    grafica.data.labels = labelsOrdenados;
-    grafica.data.datasets[0].data = numOrdenados;
-    grafica.update();
+    actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
+    .then(() => {
+        let data = grafica.data.labels.map((label, index) => {
+            return {
+                nombre: label,
+                numeroSolicitudes: grafica.data.datasets[0].data[index]
+            }
+        });
+    
+        let datosOrdenados = funcion(data);
+        let labelsOrdenados = datosOrdenados.map(item => item.nombre);
+        let numOrdenados = datosOrdenados.map(item => item.numeroSolicitudes);
+    
+        grafica.data.labels = labelsOrdenados;
+        grafica.data.datasets[0].data = numOrdenados;
+        grafica.update();
+    })
+    .catch(err => {
+        console.error("Error al ordenar la grafica: ", err);
+    })
+    
 }
 
 function AddEventListenerOrdenamiento(grafica, element, funcionElement)

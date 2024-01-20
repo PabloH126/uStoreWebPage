@@ -114,10 +114,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             option.classList.add("menuIconSelected");
             idTiendaMenuOption = option.dataset.tiendaId;
 
-            actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
-
-            //subMenu1.classList.toggle("active");
-            //menuIcon1.classList.toggle("active");
+            if (!option.classList.contains("download-option"))
+            {
+                actualizarGrafica(grafica, isTienda, categorias, periodoTiempo);
+                subMenu1.classList.toggle("active");
+                menuIcon1.classList.toggle("active");
+            }
         })
     });
 

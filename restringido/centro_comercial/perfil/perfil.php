@@ -144,8 +144,8 @@ curl_close($ch);
 							<i class='bx bxs-download' id="menu-icon2"></i>
 						</a>
 						<div id="sub-menu2">
-							<div class="menu-option"><a id="downloadPDF">PDF</a></div>
-							<div class="menu-option"><a id="downloadImage">PNG</a></div>
+							<div class="menu-option download-option"><a id="downloadPDF">PDF</a></div>
+							<div class="menu-option download-option"><a id="downloadImage">PNG</a></div>
 						</div>
 					</div>
 				</div>
