@@ -291,27 +291,20 @@ function OrdenamientoZA(data) {
 
 function OrdenarData(grafica, funcion)
 {
-    actualizarGrafica(grafica, isTienda, categorias, periodoTiempo)
-    .then(() => {
-        let data = grafica.data.labels.map((label, index) => {
-            return {
-                nombre: label,
-                numeroSolicitudes: grafica.data.datasets[0].data[index]
-            }
-        });
-    
-        let datosOrdenados = funcion(data);
-        let labelsOrdenados = datosOrdenados.map(item => item.nombre);
-        let numOrdenados = datosOrdenados.map(item => item.numeroSolicitudes);
-    
-        grafica.data.labels = labelsOrdenados;
-        grafica.data.datasets[0].data = numOrdenados;
-        grafica.update();
-    })
-    .catch(err => {
-        console.error("Error al ordenar la grafica: ", err);
-    })
-    
+    let data = grafica.data.labels.map((label, index) => {
+        return {
+            nombre: label,
+            numeroSolicitudes: grafica.data.datasets[0].data[index]
+        }
+    });
+
+    let datosOrdenados = funcion(data);
+    let labelsOrdenados = datosOrdenados.map(item => item.nombre);
+    let numOrdenados = datosOrdenados.map(item => item.numeroSolicitudes);
+
+    grafica.data.labels = labelsOrdenados;
+    grafica.data.datasets[0].data = numOrdenados;
+    grafica.update();
 }
 
 function AddEventListenerOrdenamiento(grafica, element, funcionElement)
