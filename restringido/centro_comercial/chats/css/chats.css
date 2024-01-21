@@ -47,10 +47,6 @@
     padding: 3px 5px;
 }
 
-.text-area div:nth-child(1) i:hover:before {
-    content: "\ee79";
-}
-
 .text-area div:nth-child(1) i {
     animation: rotate-center-inverse 0.4s;
 }
@@ -63,6 +59,10 @@
     100% {
         transform: rotate(0);
     }
+}
+
+.text-area div:nth-child(1) i:hover:before {
+    content: "\ee79";
 }
 
 .text-area div:nth-child(1) i:hover {
