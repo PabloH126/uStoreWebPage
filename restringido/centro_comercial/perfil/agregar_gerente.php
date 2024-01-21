@@ -50,7 +50,7 @@ curl_close($ch);
                     <p>1/7</p>
                     <div class="name">
                         <label for="nombreGerente"><strong>Primer nombre del gerente</strong></label>
-                        <input type="text" id="nombreGerente" name="nombreGerente">
+                        <input type="text" id="nombreGerente" name="nombreGerente" maxlength="20">
                     </div>
                     <div class="bttn" id="one">
                         <button type="button" class="bttn-next" data-item="1" data-to_item="2"><i class='bx bx-right-arrow-alt bttn-next' data-item="1" data-to_item="2"></i></button>
@@ -62,7 +62,7 @@ curl_close($ch);
                     <p>2/7</p>
                     <div class="name">
                         <label for="apellidoGerente"><strong>Primer apellido del gerente</strong></label>
-                        <input type="text" id="apellidoGerente" name="apellidoGerente">
+                        <input type="text" id="apellidoGerente" name="apellidoGerente" maxlength="20">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
@@ -79,7 +79,7 @@ curl_close($ch);
                     <p>3/7</p>
                     <div class="name">
                         <label for="correoGerente"><strong>Correo electrónico del gerente</strong></label>
-                        <input type="email" id="correoGerente" name="correoGerente">
+                        <input type="email" id="correoGerente" name="correoGerente" maxlength="40">
                     </div>
                     <div class="bttns">
                         <div class="bttn back">
