@@ -90,10 +90,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    deleteGerenteBtn.addEventListener('click', function (e) {
-        ModalConfirmacionEliminacion()
-        .catch(error => {
-            window.location.reload(true);
+    deleteGerenteBtn.forEach(deleteBtn => {
+        deleteBtn.addEventListener('click', function (e) {
+            ModalConfirmacionEliminacion()
+            .catch(error => {
+                window.location.reload(true);
+            });
         });
     });
 
