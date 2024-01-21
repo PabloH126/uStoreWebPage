@@ -1,4 +1,4 @@
-const deleteGerenteBtn = document.querySelector('.delete-store-btn');
+const deleteGerenteBtn = document.querySelectorAll('.delete-store-btn');
 
 const urlParams = new URLSearchParams(window.location.search);
 const idGerente = urlParams.get('id');
