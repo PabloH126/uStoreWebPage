@@ -118,7 +118,7 @@ require '../../security.php';
                                     data-to_item="2"></i></button>
                         </div>
                         <div class="bttn" id="send">
-                            <button type="submit" id="submitBtn">Guardar</button>
+                            <button type="submit" id="submitBtn">Publicar</button>
                         </div>
                     </div>
                 </div>
